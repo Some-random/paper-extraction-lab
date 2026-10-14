@@ -1,0 +1,14 @@
+label,scope,pmc_public_records,xml_text_mining_candidates,open_access_candidates,open_access_with_pdf_candidates
+Cell,flagship,6173,6171,1134,709
+Nature,flagship,11032,10995,7364,7343
+Science,flagship,5856,5838,491,491
+Flagships combined,flagship_union,23062,23004,8989,8543
+Nature Communications,related_example,88631,88615,88301,88226
+Scientific Reports,related_example,303143,303138,303138,302615
+Cell Reports,related_example,9130,9116,6216,4994
+Science Advances,related_example,20592,20591,20591,20351
+Cell Press selected biology journals,curated_related_set,64539,64235,33135,29072
+Nature selected biology and broad journals,curated_related_set,457018,456892,440805,440160
+Science family six journals,curated_related_set,30971,30946,21413,21174
+Selected related journals combined,curated_related_union,552532,552024,495302,490354
+Selected related journals excluding Scientific Reports,curated_related_union_without_scientific_reports,249389,248939,192216,187791

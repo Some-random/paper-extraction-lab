@@ -1,0 +1,113 @@
+{
+  "completed_at_pst": "2026-10-12T23:52:12.223350-08:00",
+  "timezone": "PST, fixed UTC-8",
+  "original_papers": 3,
+  "original_pdf_pages": 44,
+  "derived_ocr_cases": 2,
+  "original_evidence_bundles": 34,
+  "hybrid_total_with_ryze_stress_case": 35,
+  "bundles_by_document": {
+    "affibody": 11,
+    "ryze": 9,
+    "llava_med": 14,
+    "ryze_scan_p5": 1
+  },
+  "qa_examples": 36,
+  "qa_check": {
+    "total": 36,
+    "exact_replay_passed": 36,
+    "model_training_performed": false,
+    "model_generated_answers": false,
+    "limitation": "Exact source lookup/replay verifies transport only; no reasoning or general benchmark score."
+  },
+  "binding_measurements": 27,
+  "numeric_binding_values": 23,
+  "not_determined_binding_values": 4,
+  "docling_runs": [
+    {
+      "document_id": "affibody",
+      "status": "success",
+      "pages": 19,
+      "text_elements": 170,
+      "figures": 13,
+      "tables": 5,
+      "with_caption": 9,
+      "with_referring_text": 7,
+      "seconds": 23.376,
+      "do_ocr": false
+    },
+    {
+      "document_id": "affibody_scan_p11",
+      "status": "success",
+      "pages": 1,
+      "text_elements": 6,
+      "figures": 1,
+      "tables": 2,
+      "with_caption": 3,
+      "with_referring_text": 0,
+      "seconds": 14.524,
+      "do_ocr": true
+    },
+    {
+      "document_id": "llava_med",
+      "status": "success",
+      "pages": 17,
+      "text_elements": 232,
+      "figures": 7,
+      "tables": 7,
+      "with_caption": 6,
+      "with_referring_text": 5,
+      "seconds": 35.338,
+      "do_ocr": false
+    },
+    {
+      "document_id": "ryze",
+      "status": "success",
+      "pages": 8,
+      "text_elements": 97,
+      "figures": 5,
+      "tables": 4,
+      "with_caption": 9,
+      "with_referring_text": 8,
+      "seconds": 20.582,
+      "do_ocr": false
+    },
+    {
+      "document_id": "ryze_scan_p5",
+      "status": "success",
+      "pages": 1,
+      "text_elements": 12,
+      "figures": 0,
+      "tables": 2,
+      "with_caption": 1,
+      "with_referring_text": 1,
+      "seconds": 30.766,
+      "do_ocr": true
+    }
+  ],
+  "workers": 1,
+  "cpu_math_threads": 2,
+  "gpus_used": 0,
+  "subagents_spawned": 0,
+  "new_ssh_connections": 0,
+  "executed_methods": [
+    "PyMuPDF",
+    "pdfplumber_lines",
+    "pdfplumber_text",
+    "native_JATS",
+    "Docling",
+    "Docling_RapidOCR",
+    "hybrid_geometry_binding"
+  ],
+  "reviewed_not_executed": [
+    "olmOCR",
+    "GLM-OCR",
+    "GROBID"
+  ],
+  "limitations": [
+    "Tiny exploratory source-based checks, not benchmark accuracy.",
+    "QA is deterministic extraction, not model-generated reasoning.",
+    "Figure fallback images are full source pages; crop segmentation is not established.",
+    "OCR/header/footnote mistakes and malformed raw tables remain in raw output."
+  ]
+}

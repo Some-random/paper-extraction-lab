@@ -1,0 +1,51 @@
+{
+  "status": "completed",
+  "updated_at_pst": "2026-10-14T04:14:32.190005-08:00",
+  "stop_at_pst": "2026-10-14T06:12:01.687915-08:00",
+  "downloaded_and_native_parsed_papers": 50,
+  "journal_counts": {
+    "Nature Medicine": 5,
+    "Molecular Cell": 5,
+    "Cell Host & Microbe": 5,
+    "Cell": 5,
+    "Nature": 5,
+    "Science": 5,
+    "Cell Reports": 5,
+    "Science Advances": 5,
+    "Nature Communications": 5,
+    "Nature Methods": 5
+  },
+  "source_pdf_pages": 1582,
+  "complete_ocr_papers": 37,
+  "ocr_status_counts": {
+    "completed": 37,
+    "deferred_page_budget": 12,
+    "partial": 1
+  },
+  "retained_ocr_pages": 1000,
+  "page_status_counts": {
+    "completed": 999,
+    "time_limit": 1
+  },
+  "page_inference_seconds": 12090.324,
+  "maximum_peak_gpu_allocated_gib": 16.243,
+  "source_figures": 382,
+  "source_tables": 34,
+  "source_elements_with_referring_paragraphs": 395,
+  "complete_paper_table_diagnostics": {
+    "table_cells_checked": 1211,
+    "matched_labelled_cells": 91,
+    "matched_with_header_checks": 91,
+    "lookup_qa_diagnostics": 12
+  },
+  "downloaded_response_bytes": 317300745,
+  "artifact_bytes": 357913422,
+  "model": "allenai/olmOCR-2-7B-1025",
+  "model_revision": "e52d6f090b7a9007afffbbd6ce510876222fea93",
+  "evaluation_note": "Exploratory source-derived table checks, not an independently annotated benchmark; figures unverified.",
+  "limitations": [
+    "Table adapter may not support split/multipage tables or unusual markup.",
+    "Complete OCR means all PDF pages reached model EOS; semantic completeness is unverified.",
+    "Selected biology starter corpus, not a representative or exhaustive CNS sample."
+  ]
+}

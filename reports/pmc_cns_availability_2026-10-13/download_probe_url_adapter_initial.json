@@ -1,0 +1,101 @@
+{
+  "checked_at_pst": "2026-10-13T15:12:03.591906-08:00",
+  "purpose": "Availability verification of actual files; no OCR inference or representative biology sampling.",
+  "document_workers": 1,
+  "records": [],
+  "attempts": [
+    {
+      "journal": "Cell",
+      "pmcid": "PMC7619535",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Cell",
+      "pmcid": "PMC13639993",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Cell",
+      "pmcid": "PMC13632647",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Nature",
+      "pmcid": "PMC13645635",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Nature",
+      "pmcid": "PMC13645665",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Nature",
+      "pmcid": "PMC13645639",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Science",
+      "pmcid": "PMC13637827",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Science",
+      "pmcid": "PMC13621437",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Science",
+      "pmcid": "PMC13581189",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Nature Communications",
+      "pmcid": "PMC13655057",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Nature Communications",
+      "pmcid": "PMC13655180",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Nature Communications",
+      "pmcid": "PMC13655123",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Cell Reports",
+      "pmcid": "PMC13656306",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Cell Reports",
+      "pmcid": "PMC13657147",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Cell Reports",
+      "pmcid": "PMC13657255",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Science Advances",
+      "pmcid": "PMC13651880",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Science Advances",
+      "pmcid": "PMC13651884",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    },
+    {
+      "journal": "Science Advances",
+      "pmcid": "PMC13651875",
+      "status": "URLError: <urlopen error unknown url type: s3>"
+    }
+  ],
+  "completed_at_pst": "2026-10-13T15:13:06.728463-08:00",
+  "journals_verified": 0,
+  "journals_requested": 6
+}

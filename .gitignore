@@ -1,0 +1,25 @@
+# Local environments and caches
+.venv/
+.*-venv/
+/cache/
+/logs/
+__pycache__/
+*.py[cod]
+
+# Downloaded papers, model inputs and generated extraction artifacts
+/inputs/
+/outputs/
+/experiments/
+/sources/
+/reports/**/download_probe/
+/reports/**/api/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# Local credentials and machine-specific files
+.env
+.env.*
+!.env.example
+.DS_Store

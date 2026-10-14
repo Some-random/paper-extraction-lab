@@ -1,0 +1,5 @@
+# Keep the existing PyTorch runtime; do not download a second CUDA stack.
+torch==2.5.1+cu121
+torchvision==0.20.1+cpu
+# Transformers 5 uses torch.accelerator, which is absent from this runtime.
+transformers==4.57.6

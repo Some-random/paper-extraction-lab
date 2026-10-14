@@ -1,0 +1,66 @@
+{
+  "checked_date_pst": "2026-10-14",
+  "definitions": "PMC search candidates, not object-verified downloads. Article types and subject areas are unrestricted; licenses vary.",
+  "queries": {
+    "xml_text_mining_candidates": {
+      "count": 9324889,
+      "query": "(open_access[filter] OR author_manuscript[filter]) NOT \"pmc embargo\"[filter]",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+      "checked_at_pst": "2026-10-14T12:15:45.698583-08:00",
+      "response": {
+        "header": {
+          "type": "esearch",
+          "version": "0.3"
+        },
+        "esearchresult": {
+          "count": "9324889",
+          "retmax": "0",
+          "retstart": "0",
+          "idlist": [],
+          "translationset": [],
+          "querytranslation": "(\"open access\"[Filter] OR \"author manuscript\"[Filter]) NOT \"pmc embargo\"[Filter]"
+        }
+      }
+    },
+    "open_access_candidates": {
+      "count": 8303485,
+      "query": "open_access[filter] NOT \"pmc embargo\"[filter]",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=open_access%5Bfilter%5D+NOT+%22pmc+embargo%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+      "checked_at_pst": "2026-10-14T12:15:47.431117-08:00",
+      "response": {
+        "header": {
+          "type": "esearch",
+          "version": "0.3"
+        },
+        "esearchresult": {
+          "count": "8303485",
+          "retmax": "0",
+          "retstart": "0",
+          "idlist": [],
+          "translationset": [],
+          "querytranslation": "\"open access\"[Filter] NOT \"pmc embargo\"[Filter]"
+        }
+      }
+    },
+    "open_access_with_pdf_candidates": {
+      "count": 8207110,
+      "query": "open_access[filter] AND \"has pdf\"[filter] NOT \"pmc embargo\"[filter]",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D+NOT+%22pmc+embargo%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+      "checked_at_pst": "2026-10-14T12:15:49.634783-08:00",
+      "response": {
+        "header": {
+          "type": "esearch",
+          "version": "0.3"
+        },
+        "esearchresult": {
+          "count": "8207110",
+          "retmax": "0",
+          "retstart": "0",
+          "idlist": [],
+          "translationset": [],
+          "querytranslation": "(\"open access\"[Filter] AND \"has pdf\"[Filter]) NOT \"pmc embargo\"[Filter]"
+        }
+      }
+    }
+  }
+}

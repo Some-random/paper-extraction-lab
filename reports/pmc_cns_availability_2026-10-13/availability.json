@@ -1,0 +1,781 @@
+{
+  "started_at_pst": "2026-10-13T15:10:20.693428-08:00",
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+  "scope_definition": {
+    "scope_note": "Exact flagship journals plus an explicit, curated related-journal target set. Related sets are not claimed to exhaust either publisher's portfolio; no biology-only or research-article-only filter has yet been applied.",
+    "journal_query_aliases": {
+      "Current Biology": [
+        "Curr Biol",
+        "0960-9822",
+        "1879-0445"
+      ],
+      "Patterns": [
+        "2666-3899"
+      ]
+    },
+    "flagships": [
+      {
+        "name": "Cell",
+        "aliases": [
+          "Cell",
+          "0092-8674",
+          "1097-4172"
+        ]
+      },
+      {
+        "name": "Nature",
+        "aliases": [
+          "Nature",
+          "0028-0836",
+          "1476-4687"
+        ]
+      },
+      {
+        "name": "Science",
+        "aliases": [
+          "Science",
+          "0036-8075",
+          "1095-9203"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "name": "Nature Communications",
+        "aliases": [
+          "Nature Communications",
+          "2041-1723"
+        ]
+      },
+      {
+        "name": "Scientific Reports",
+        "aliases": [
+          "Scientific Reports",
+          "2045-2322"
+        ]
+      },
+      {
+        "name": "Cell Reports",
+        "aliases": [
+          "Cell Reports",
+          "2211-1247"
+        ]
+      },
+      {
+        "name": "Science Advances",
+        "aliases": [
+          "Science Advances",
+          "2375-2548"
+        ]
+      }
+    ],
+    "related_sets": {
+      "Cell Press selected biology journals": [
+        "Cell",
+        "Cell Reports",
+        "Cell Reports Medicine",
+        "Cell Reports Methods",
+        "Cell Host & Microbe",
+        "Cell Metabolism",
+        "Cell Stem Cell",
+        "Cell Systems",
+        "Molecular Cell",
+        "Cancer Cell",
+        "Developmental Cell",
+        "Immunity",
+        "Neuron",
+        "Current Biology",
+        "Structure",
+        "iScience",
+        "Med",
+        "Patterns"
+      ],
+      "Nature selected biology and broad journals": [
+        "Nature",
+        "Nature Communications",
+        "Scientific Reports",
+        "Scientific Data",
+        "Nature Medicine",
+        "Nature Genetics",
+        "Nature Neuroscience",
+        "Nature Biotechnology",
+        "Nature Methods",
+        "Nature Immunology",
+        "Nature Cell Biology",
+        "Nature Structural & Molecular Biology",
+        "Nature Structural Biology",
+        "Nature Microbiology",
+        "Nature Ecology & Evolution",
+        "Nature Chemical Biology",
+        "Nature Biomedical Engineering",
+        "Nature Cancer",
+        "Nature Aging",
+        "Nature Metabolism",
+        "Nature Reviews Molecular Cell Biology",
+        "Nature Reviews Genetics",
+        "Nature Reviews Immunology",
+        "Nature Reviews Microbiology",
+        "Nature Reviews Cancer",
+        "Nature Reviews Neuroscience",
+        "Communications Biology",
+        "Communications Medicine",
+        "npj Digital Medicine",
+        "npj Vaccines",
+        "npj Biofilms and Microbiomes"
+      ],
+      "Science family six journals": [
+        "Science",
+        "Science Advances",
+        "Science Translational Medicine",
+        "Science Immunology",
+        "Science Signaling",
+        "Science Robotics"
+      ]
+    },
+    "references": [
+      "https://pmc.ncbi.nlm.nih.gov/about/userguide/",
+      "https://pmc.ncbi.nlm.nih.gov/tools/cloud/",
+      "https://pmc-oa-opendata.s3.amazonaws.com/README.txt"
+    ]
+  },
+  "definitions": {
+    "pmc_public_records": "PMC search matches excluding embargoed records; includes author manuscripts and multiple article types.",
+    "xml_text_mining_candidates": "Public PMC matches in the OA subset or Author Manuscript Dataset, eligible for the official XML/text retrieval route.",
+    "open_access_candidates": "Public PMC matches in the Open Access Subset; licenses vary.",
+    "open_access_with_pdf_candidates": "OA subset plus the PMC has-PDF filter; candidate count, not an object-verified download count."
+  },
+  "limitations": [
+    "Search matches are not confirmed file downloads. Validate S3 versions and their xml_url/pdf_url/media_urls before ingestion.",
+    "Author manuscripts without CC licenses have XML/text but not PDF/media/supplemental objects in the official distribution.",
+    "Deduplicate by PMCID/DOI and distinguish accepted manuscripts from final published versions.",
+    "Related journal lists are explicit, curated targets rather than an exhaustive publisher catalogue.",
+    "No biology-only, original-research-only, retraction or correction exclusions were applied to these availability counts."
+  ],
+  "rows": [
+    {
+      "label": "Cell",
+      "scope": "flagship",
+      "names": [
+        "Cell",
+        "0092-8674",
+        "1097-4172"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0092-8674\"[journal] OR \"1097-4172\"[journal] OR \"Cell\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220092-8674%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:07:50.310714-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0092-8674\"[journal] OR \"1097-4172\"[journal] OR \"Cell\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220092-8674%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:07:51.914609-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0092-8674\"[journal] OR \"1097-4172\"[journal] OR \"Cell\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220092-8674%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:07:53.844725-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0092-8674\"[journal] OR \"1097-4172\"[journal] OR \"Cell\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220092-8674%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:07:55.774550-08:00"
+        }
+      },
+      "pmc_public_records": 6173,
+      "xml_text_mining_candidates": 6171,
+      "open_access_candidates": 1134,
+      "open_access_with_pdf_candidates": 709
+    },
+    {
+      "label": "Nature",
+      "scope": "flagship",
+      "names": [
+        "Nature",
+        "0028-0836",
+        "1476-4687"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0028-0836\"[journal] OR \"1476-4687\"[journal] OR \"Nature\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:07:57.301333-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"1476-4687\"[journal] OR \"Nature\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:07:59.658381-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"1476-4687\"[journal] OR \"Nature\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:01.226808-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"1476-4687\"[journal] OR \"Nature\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:03.410326-08:00"
+        }
+      },
+      "pmc_public_records": 11032,
+      "xml_text_mining_candidates": 10995,
+      "open_access_candidates": 7364,
+      "open_access_with_pdf_candidates": 7343
+    },
+    {
+      "label": "Science",
+      "scope": "flagship",
+      "names": [
+        "Science",
+        "0036-8075",
+        "1095-9203"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0036-8075\"[journal] OR \"1095-9203\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220036-8075%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:05.158856-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0036-8075\"[journal] OR \"1095-9203\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220036-8075%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:07.525949-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0036-8075\"[journal] OR \"1095-9203\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220036-8075%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:09.538514-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0036-8075\"[journal] OR \"1095-9203\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220036-8075%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:11.553358-08:00"
+        }
+      },
+      "pmc_public_records": 5856,
+      "xml_text_mining_candidates": 5838,
+      "open_access_candidates": 491,
+      "open_access_with_pdf_candidates": 491
+    },
+    {
+      "label": "Flagships combined",
+      "scope": "flagship_union",
+      "names": [
+        "Cell",
+        "0092-8674",
+        "1097-4172",
+        "Nature",
+        "0028-0836",
+        "1476-4687",
+        "Science",
+        "0036-8075",
+        "1095-9203"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"Cell\"[journal] OR \"Nature\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:13.118195-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"Cell\"[journal] OR \"Nature\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:14.902626-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"Cell\"[journal] OR \"Nature\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:17.058682-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"Cell\"[journal] OR \"Nature\"[journal] OR \"Science\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:18.678169-08:00"
+        }
+      },
+      "pmc_public_records": 23062,
+      "xml_text_mining_candidates": 23004,
+      "open_access_candidates": 8989,
+      "open_access_with_pdf_candidates": 8543
+    },
+    {
+      "label": "Nature Communications",
+      "scope": "related_example",
+      "names": [
+        "Nature Communications",
+        "2041-1723"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"2041-1723\"[journal] OR \"Nature Communications\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222041-1723%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:20.262223-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"2041-1723\"[journal] OR \"Nature Communications\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222041-1723%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:22.370682-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"2041-1723\"[journal] OR \"Nature Communications\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222041-1723%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:24.572453-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"2041-1723\"[journal] OR \"Nature Communications\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222041-1723%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:26.543532-08:00"
+        }
+      },
+      "pmc_public_records": 88631,
+      "xml_text_mining_candidates": 88615,
+      "open_access_candidates": 88301,
+      "open_access_with_pdf_candidates": 88226
+    },
+    {
+      "label": "Scientific Reports",
+      "scope": "related_example",
+      "names": [
+        "Scientific Reports",
+        "2045-2322"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"2045-2322\"[journal] OR \"Scientific Reports\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222045-2322%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:28.236108-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"2045-2322\"[journal] OR \"Scientific Reports\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222045-2322%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:29.884710-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"2045-2322\"[journal] OR \"Scientific Reports\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222045-2322%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:32.011440-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"2045-2322\"[journal] OR \"Scientific Reports\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222045-2322%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:34.054404-08:00"
+        }
+      },
+      "pmc_public_records": 303143,
+      "xml_text_mining_candidates": 303138,
+      "open_access_candidates": 303138,
+      "open_access_with_pdf_candidates": 302615
+    },
+    {
+      "label": "Cell Reports",
+      "scope": "related_example",
+      "names": [
+        "Cell Reports",
+        "2211-1247"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"2211-1247\"[journal] OR \"Cell Reports\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222211-1247%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:36.170401-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"2211-1247\"[journal] OR \"Cell Reports\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222211-1247%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:38.134381-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"2211-1247\"[journal] OR \"Cell Reports\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222211-1247%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:39.998518-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"2211-1247\"[journal] OR \"Cell Reports\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222211-1247%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:42.126542-08:00"
+        }
+      },
+      "pmc_public_records": 9130,
+      "xml_text_mining_candidates": 9116,
+      "open_access_candidates": 6216,
+      "open_access_with_pdf_candidates": 4994
+    },
+    {
+      "label": "Science Advances",
+      "scope": "related_example",
+      "names": [
+        "Science Advances",
+        "2375-2548"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"2375-2548\"[journal] OR \"Science Advances\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222375-2548%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:43.722360-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"2375-2548\"[journal] OR \"Science Advances\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222375-2548%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:45.326341-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"2375-2548\"[journal] OR \"Science Advances\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222375-2548%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:47.045154-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"2375-2548\"[journal] OR \"Science Advances\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%222375-2548%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:48.634153-08:00"
+        }
+      },
+      "pmc_public_records": 20592,
+      "xml_text_mining_candidates": 20591,
+      "open_access_candidates": 20591,
+      "open_access_with_pdf_candidates": 20351
+    },
+    {
+      "label": "Cell Press selected biology journals",
+      "scope": "curated_related_set",
+      "names": [
+        "Cell",
+        "Cell Reports",
+        "Cell Reports Medicine",
+        "Cell Reports Methods",
+        "Cell Host & Microbe",
+        "Cell Metabolism",
+        "Cell Stem Cell",
+        "Cell Systems",
+        "Molecular Cell",
+        "Cancer Cell",
+        "Developmental Cell",
+        "Immunity",
+        "Neuron",
+        "Current Biology",
+        "Structure",
+        "iScience",
+        "Med",
+        "Patterns"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0960-9822\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Neuron\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220960-9822%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:21.847513-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0960-9822\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Neuron\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220960-9822%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:23.821989-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0960-9822\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Neuron\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220960-9822%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:25.346426-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0960-9822\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Neuron\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220960-9822%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:27.360414-08:00"
+        }
+      },
+      "pmc_public_records": 64539,
+      "xml_text_mining_candidates": 64235,
+      "open_access_candidates": 33135,
+      "open_access_with_pdf_candidates": 29072
+    },
+    {
+      "label": "Nature selected biology and broad journals",
+      "scope": "curated_related_set",
+      "names": [
+        "Nature",
+        "Nature Communications",
+        "Scientific Reports",
+        "Scientific Data",
+        "Nature Medicine",
+        "Nature Genetics",
+        "Nature Neuroscience",
+        "Nature Biotechnology",
+        "Nature Methods",
+        "Nature Immunology",
+        "Nature Cell Biology",
+        "Nature Structural & Molecular Biology",
+        "Nature Structural Biology",
+        "Nature Microbiology",
+        "Nature Ecology & Evolution",
+        "Nature Chemical Biology",
+        "Nature Biomedical Engineering",
+        "Nature Cancer",
+        "Nature Aging",
+        "Nature Metabolism",
+        "Nature Reviews Molecular Cell Biology",
+        "Nature Reviews Genetics",
+        "Nature Reviews Immunology",
+        "Nature Reviews Microbiology",
+        "Nature Reviews Cancer",
+        "Nature Reviews Neuroscience",
+        "Communications Biology",
+        "Communications Medicine",
+        "npj Digital Medicine",
+        "npj Vaccines",
+        "npj Biofilms and Microbiomes"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:08:58.467438-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:00.573175-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:02.602695-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:04.746817-08:00"
+        }
+      },
+      "pmc_public_records": 457018,
+      "xml_text_mining_candidates": 456892,
+      "open_access_candidates": 440805,
+      "open_access_with_pdf_candidates": 440160
+    },
+    {
+      "label": "Science family six journals",
+      "scope": "curated_related_set",
+      "names": [
+        "Science",
+        "Science Advances",
+        "Science Translational Medicine",
+        "Science Immunology",
+        "Science Signaling",
+        "Science Robotics"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:06.802409-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:08.426487-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:09.905019-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:09:12.029966-08:00"
+        }
+      },
+      "pmc_public_records": 30971,
+      "xml_text_mining_candidates": 30946,
+      "open_access_candidates": 21413,
+      "open_access_with_pdf_candidates": 21174
+    },
+    {
+      "label": "Selected related journals combined",
+      "scope": "curated_related_union",
+      "names": [
+        "Cell",
+        "0092-8674",
+        "1097-4172",
+        "Nature",
+        "0028-0836",
+        "1476-4687",
+        "Science",
+        "0036-8075",
+        "1095-9203",
+        "Cell",
+        "Cell Reports",
+        "Cell Reports Medicine",
+        "Cell Reports Methods",
+        "Cell Host & Microbe",
+        "Cell Metabolism",
+        "Cell Stem Cell",
+        "Cell Systems",
+        "Molecular Cell",
+        "Cancer Cell",
+        "Developmental Cell",
+        "Immunity",
+        "Neuron",
+        "Current Biology",
+        "Structure",
+        "iScience",
+        "Med",
+        "Patterns",
+        "Nature",
+        "Nature Communications",
+        "Scientific Reports",
+        "Scientific Data",
+        "Nature Medicine",
+        "Nature Genetics",
+        "Nature Neuroscience",
+        "Nature Biotechnology",
+        "Nature Methods",
+        "Nature Immunology",
+        "Nature Cell Biology",
+        "Nature Structural & Molecular Biology",
+        "Nature Structural Biology",
+        "Nature Microbiology",
+        "Nature Ecology & Evolution",
+        "Nature Chemical Biology",
+        "Nature Biomedical Engineering",
+        "Nature Cancer",
+        "Nature Aging",
+        "Nature Metabolism",
+        "Nature Reviews Molecular Cell Biology",
+        "Nature Reviews Genetics",
+        "Nature Reviews Immunology",
+        "Nature Reviews Microbiology",
+        "Nature Reviews Cancer",
+        "Nature Reviews Neuroscience",
+        "Communications Biology",
+        "Communications Medicine",
+        "npj Digital Medicine",
+        "npj Vaccines",
+        "npj Biofilms and Microbiomes",
+        "Science",
+        "Science Advances",
+        "Science Translational Medicine",
+        "Science Immunology",
+        "Science Signaling",
+        "Science Robotics"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:29.366373-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:31.305084-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:33.514227-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Scientific Reports\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Scientific+Reports%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:35.296928-08:00"
+        }
+      },
+      "pmc_public_records": 552532,
+      "xml_text_mining_candidates": 552024,
+      "open_access_candidates": 495302,
+      "open_access_with_pdf_candidates": 490354
+    },
+    {
+      "label": "Selected related journals excluding Scientific Reports",
+      "scope": "curated_related_union_without_scientific_reports",
+      "names": [
+        "Cell",
+        "0092-8674",
+        "1097-4172",
+        "Nature",
+        "0028-0836",
+        "1476-4687",
+        "Science",
+        "0036-8075",
+        "1095-9203",
+        "Cell",
+        "Cell Reports",
+        "Cell Reports Medicine",
+        "Cell Reports Methods",
+        "Cell Host & Microbe",
+        "Cell Metabolism",
+        "Cell Stem Cell",
+        "Cell Systems",
+        "Molecular Cell",
+        "Cancer Cell",
+        "Developmental Cell",
+        "Immunity",
+        "Neuron",
+        "Current Biology",
+        "Structure",
+        "iScience",
+        "Med",
+        "Patterns",
+        "Nature",
+        "Nature Communications",
+        "Scientific Data",
+        "Nature Medicine",
+        "Nature Genetics",
+        "Nature Neuroscience",
+        "Nature Biotechnology",
+        "Nature Methods",
+        "Nature Immunology",
+        "Nature Cell Biology",
+        "Nature Structural & Molecular Biology",
+        "Nature Structural Biology",
+        "Nature Microbiology",
+        "Nature Ecology & Evolution",
+        "Nature Chemical Biology",
+        "Nature Biomedical Engineering",
+        "Nature Cancer",
+        "Nature Aging",
+        "Nature Metabolism",
+        "Nature Reviews Molecular Cell Biology",
+        "Nature Reviews Genetics",
+        "Nature Reviews Immunology",
+        "Nature Reviews Microbiology",
+        "Nature Reviews Cancer",
+        "Nature Reviews Neuroscience",
+        "Communications Biology",
+        "Communications Medicine",
+        "npj Digital Medicine",
+        "npj Vaccines",
+        "npj Biofilms and Microbiomes",
+        "Science",
+        "Science Advances",
+        "Science Translational Medicine",
+        "Science Immunology",
+        "Science Signaling",
+        "Science Robotics"
+      ],
+      "queries": {
+        "pmc_public_records": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:37.290204-08:00"
+        },
+        "xml_text_mining_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND (open_access[filter] OR author_manuscript[filter])",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:39.318107-08:00"
+        },
+        "open_access_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:40.864986-08:00"
+        },
+        "open_access_with_pdf_candidates": {
+          "query": "((\"0028-0836\"[journal] OR \"0036-8075\"[journal] OR \"0092-8674\"[journal] OR \"0960-9822\"[journal] OR \"1095-9203\"[journal] OR \"1097-4172\"[journal] OR \"1476-4687\"[journal] OR \"1879-0445\"[journal] OR \"2666-3899\"[journal] OR \"Cancer Cell\"[journal] OR \"Cell\"[journal] OR \"Cell Host Microbe\"[journal] OR \"Cell Metabolism\"[journal] OR \"Cell Reports\"[journal] OR \"Cell Reports Medicine\"[journal] OR \"Cell Reports Methods\"[journal] OR \"Cell Stem Cell\"[journal] OR \"Cell Systems\"[journal] OR \"Communications Biology\"[journal] OR \"Communications Medicine\"[journal] OR \"Curr Biol\"[journal] OR \"Developmental Cell\"[journal] OR \"Immunity\"[journal] OR \"Med\"[journal] OR \"Molecular Cell\"[journal] OR \"Nature\"[journal] OR \"Nature Aging\"[journal] OR \"Nature Biomedical Engineering\"[journal] OR \"Nature Biotechnology\"[journal] OR \"Nature Cancer\"[journal] OR \"Nature Cell Biology\"[journal] OR \"Nature Chemical Biology\"[journal] OR \"Nature Communications\"[journal] OR \"Nature Ecology Evolution\"[journal] OR \"Nature Genetics\"[journal] OR \"Nature Immunology\"[journal] OR \"Nature Medicine\"[journal] OR \"Nature Metabolism\"[journal] OR \"Nature Methods\"[journal] OR \"Nature Microbiology\"[journal] OR \"Nature Neuroscience\"[journal] OR \"Nature Reviews Cancer\"[journal] OR \"Nature Reviews Genetics\"[journal] OR \"Nature Reviews Immunology\"[journal] OR \"Nature Reviews Microbiology\"[journal] OR \"Nature Reviews Molecular Cell Biology\"[journal] OR \"Nature Reviews Neuroscience\"[journal] OR \"Nature Structural Molecular Biology\"[journal] OR \"Nature Structural Biology\"[journal] OR \"Neuron\"[journal] OR \"Science\"[journal] OR \"Science Advances\"[journal] OR \"Science Immunology\"[journal] OR \"Science Robotics\"[journal] OR \"Science Signaling\"[journal] OR \"Science Translational Medicine\"[journal] OR \"Scientific Data\"[journal] OR \"Structure\"[journal] OR \"iScience\"[journal] OR \"npj Biofilms and Microbiomes\"[journal] OR \"npj Digital Medicine\"[journal] OR \"npj Vaccines\"[journal]) NOT \"pmc embargo\"[filter]) AND open_access[filter] AND \"has pdf\"[filter]",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28%28%220028-0836%22%5Bjournal%5D+OR+%220036-8075%22%5Bjournal%5D+OR+%220092-8674%22%5Bjournal%5D+OR+%220960-9822%22%5Bjournal%5D+OR+%221095-9203%22%5Bjournal%5D+OR+%221097-4172%22%5Bjournal%5D+OR+%221476-4687%22%5Bjournal%5D+OR+%221879-0445%22%5Bjournal%5D+OR+%222666-3899%22%5Bjournal%5D+OR+%22Cancer+Cell%22%5Bjournal%5D+OR+%22Cell%22%5Bjournal%5D+OR+%22Cell+Host+Microbe%22%5Bjournal%5D+OR+%22Cell+Metabolism%22%5Bjournal%5D+OR+%22Cell+Reports%22%5Bjournal%5D+OR+%22Cell+Reports+Medicine%22%5Bjournal%5D+OR+%22Cell+Reports+Methods%22%5Bjournal%5D+OR+%22Cell+Stem+Cell%22%5Bjournal%5D+OR+%22Cell+Systems%22%5Bjournal%5D+OR+%22Communications+Biology%22%5Bjournal%5D+OR+%22Communications+Medicine%22%5Bjournal%5D+OR+%22Curr+Biol%22%5Bjournal%5D+OR+%22Developmental+Cell%22%5Bjournal%5D+OR+%22Immunity%22%5Bjournal%5D+OR+%22Med%22%5Bjournal%5D+OR+%22Molecular+Cell%22%5Bjournal%5D+OR+%22Nature%22%5Bjournal%5D+OR+%22Nature+Aging%22%5Bjournal%5D+OR+%22Nature+Biomedical+Engineering%22%5Bjournal%5D+OR+%22Nature+Biotechnology%22%5Bjournal%5D+OR+%22Nature+Cancer%22%5Bjournal%5D+OR+%22Nature+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Chemical+Biology%22%5Bjournal%5D+OR+%22Nature+Communications%22%5Bjournal%5D+OR+%22Nature+Ecology+Evolution%22%5Bjournal%5D+OR+%22Nature+Genetics%22%5Bjournal%5D+OR+%22Nature+Immunology%22%5Bjournal%5D+OR+%22Nature+Medicine%22%5Bjournal%5D+OR+%22Nature+Metabolism%22%5Bjournal%5D+OR+%22Nature+Methods%22%5Bjournal%5D+OR+%22Nature+Microbiology%22%5Bjournal%5D+OR+%22Nature+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Reviews+Cancer%22%5Bjournal%5D+OR+%22Nature+Reviews+Genetics%22%5Bjournal%5D+OR+%22Nature+Reviews+Immunology%22%5Bjournal%5D+OR+%22Nature+Reviews+Microbiology%22%5Bjournal%5D+OR+%22Nature+Reviews+Molecular+Cell+Biology%22%5Bjournal%5D+OR+%22Nature+Reviews+Neuroscience%22%5Bjournal%5D+OR+%22Nature+Structural+Molecular+Biology%22%5Bjournal%5D+OR+%22Nature+Structural+Biology%22%5Bjournal%5D+OR+%22Neuron%22%5Bjournal%5D+OR+%22Science%22%5Bjournal%5D+OR+%22Science+Advances%22%5Bjournal%5D+OR+%22Science+Immunology%22%5Bjournal%5D+OR+%22Science+Robotics%22%5Bjournal%5D+OR+%22Science+Signaling%22%5Bjournal%5D+OR+%22Science+Translational+Medicine%22%5Bjournal%5D+OR+%22Scientific+Data%22%5Bjournal%5D+OR+%22Structure%22%5Bjournal%5D+OR+%22iScience%22%5Bjournal%5D+OR+%22npj+Biofilms+and+Microbiomes%22%5Bjournal%5D+OR+%22npj+Digital+Medicine%22%5Bjournal%5D+OR+%22npj+Vaccines%22%5Bjournal%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D%29+AND+open_access%5Bfilter%5D+AND+%22has+pdf%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+          "checked_at_pst": "2026-10-13T15:10:42.861753-08:00"
+        }
+      },
+      "pmc_public_records": 249389,
+      "xml_text_mining_candidates": 248939,
+      "open_access_candidates": 192216,
+      "open_access_with_pdf_candidates": 187791
+    }
+  ],
+  "completed_at_pst": "2026-10-13T15:10:43.267384-08:00"
+}

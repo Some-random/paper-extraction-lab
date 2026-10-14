@@ -1,0 +1,206 @@
+# Biology paper extraction lab
+
+The active experiment applies Ryze-style evidence binding to **actual experimental
+biology papers** and compares extraction tools on the same source pages. Ryze
+and OLMo are method references, not extraction targets.
+
+Everything is stored in `/data/rustfs1/dongweij/paper-extraction-lab`.
+Experiments run sequentially with one document/inference worker, at most one
+GPU, no subagents, and no new SSH connections.
+
+## Overnight download and full-paper extraction
+
+The October 14 batch finished at **04:14 PST**: **50 papers downloaded and parsed
+from XML, 37 complete OCR papers, one partial OCR paper and 12 papers deferred
+at the 1,000-page limit**. Of the retained OCR pages, 999 completed and one
+reached the per-page time limit. The batch used about 341 MiB of artifacts and
+303 MiB of downloaded response bodies. See the tracked
+[result summary](reports/pmc_cns_biology_2026-10-14/summary.json) and
+[paper manifest](reports/pmc_cns_biology_2026-10-14/papers.csv).
+
+The batch used [these resource limits](config/pmc_overnight_2026-10-14.json).
+Its [detailed report](experiments/pmc_cns_biology_2026-10-14/report.html) and
+[state](experiments/pmc_cns_biology_2026-10-14/state.json) are retained on RustFS.
+It targeted 50 biology papers across ten CNS and related journals, with one
+serial worker, GPU 0 only, at most 1,000 OCR pages, 2 GiB of new batch artifacts,
+1 GiB of downloaded response bodies and six hours of cumulative runtime.
+Cached olmOCR 2 weights were reused offline, with no paid model API calls.
+All human-facing times use fixed PST (UTC-8). No extraction worker remains
+running for this completed batch.
+
+Each accepted paper retains its original PDF/XML, version/license metadata,
+hashes, full native section text, tables, captions and explicitly referring
+paragraphs. Whole-paper olmOCR 2 runs shortest-first within the page/time budget.
+Raw per-page outputs and combined text are kept, while temporary page images
+are regenerated from the source PDF and removed after inference. The report
+distinguishes complete, partial and deferred OCR from XML parsing. This is a
+selected starter corpus, not a representative benchmark. Figure interpretation
+is unverified; generated lookup QA remains diagnostic, with no training run.
+
+Outputs are in `experiments/pmc_cns_biology_2026-10-14/`. Each paper has
+`fullpaper_native.md`, `native_document.json` and `source_evidence.jsonl`.
+OCR papers also have `fullpaper_olmocr.md`, `olmocr_document.json`, raw page
+outputs, `table_checks.json` and `lookup_qa_diagnostics.jsonl`. The final
+`exports/` directory holds path manifests, avoiding redundant corpus copies.
+Its `summary.json` records completed/partial/deferred counts, inference time,
+GPU memory, resource usage and table diagnostics for completed OCR papers.
+The exploratory caption/row/column adapter matched 91 of 1,211 checked source
+cells, with the same 91 passing header checks. Missing caption bindings, split
+tables and unsupported markup affect this diagnostic; it is not a general OCR
+accuracy score or scientific validation. Original outputs remain unchanged.
+Secure downloads use the existing CPU environment through `src/pmc_http_fetch.py`;
+model inference uses the existing GPU environment. Workers can run detached from
+the chat session and checkpoint after every accepted paper and inferred page.
+
+To stop gracefully, create `experiments/pmc_cns_biology_2026-10-14/STOP`.
+Before resuming, confirm no worker is running and remove that stop file only
+if a resume is intended. The worker lock also rejects duplicate starts.
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 \
+  HF_HUB_OFFLINE=1 .ocr-venv/bin/python -u src/run_pmc_batch.py \
+  --config config/pmc_overnight_2026-10-14.json
+```
+
+Open [the current comparison](experiments/bio_tool_comparison_v1/reports/results.html)
+to inspect source pages and cell-by-cell tool output. Detailed results, frozen
+inputs, references, exact model revisions, logs and source-native evidence live
+in `experiments/bio_tool_comparison_v1/`.
+
+**Selected PDF extractor: olmOCR 2** (`allenai/olmOCR-2-7B-1025`). The default
+is pinned in [config/extraction.json](config/extraction.json). The existing
+comparison already ran this checkpoint on all nine pages. It uses Transformers
+and the official v4 no-anchoring page prompt; this is not an execution of the
+full official pipeline with its retry, rotation and document-level heuristics.
+Preserve source pages, raw output, captions and referring text. Check scientific
+identifiers, quantities, units and table structure before producing grounded QA.
+
+## Completed comparison
+
+All five methods have finished all nine diagnostic pages. No inference or
+model-download process remains running for that comparison. The separate
+overnight batch above reused its cached olmOCR 2 model and is also complete.
+
+| Executed method | Caption-linked cells / 243 | Value + header checks / 243 | Correct power-bearing headers / 12 | Page seconds |
+| --- | ---: | ---: | ---: | ---: |
+| docling | 189 | 165 | 0 | 48.4 |
+| docling_rapidocr | 162 | 106 | 0 | 114.9 |
+| olmocr | 201 | 183 | 0 | 150.4 |
+| mineru | 200 | 200 | 12 | 218.9 |
+| glmocr_docling | 159 | 159 | 12 | 188.2 |
+
+For this small stress set, MinerU preserves scientific table structure and
+headers most consistently; olmOCR has one additional strict value match.
+MinerU's 43 CD69 failures preserve the values but alter identifier punctuation;
+the source/model pairs are recorded in the identifier error audit, without
+repairing outputs or changing its strict score. The GLM result is a custom
+Docling-region hybrid, not its official SDK. Current public leaders beyond
+these tested tools are listed separately in the report.
+
+Use publisher XML/JATS first when available. For PDF-only extraction, preserve
+source pixels, use layout/table recognition, bind captions and referring text,
+and check identifiers, row groups, units, powers and uncertainty before using
+the evidence in QA. Figure annotations in this run were not validated as chart
+values or biological image interpretations.
+
+## Meaning of the two cell scores
+
+These are local source-reference checks, not official olmOCR-bench metrics.
+The denominator is 243 logical body cells from 12 tables in publisher JATS XML.
+Merged or multiline measurements can form one logical cell; headers are not
+part of this denominator. XML is used by the evaluator, never by OCR inference.
+
+**Reference-matched labelled cells** require the extracted table to bind to the
+correct caption label, the row/group identifier to match, the column count to
+match, and the value to match at the same column position. Normalization permits
+equivalent whitespace, Unicode and TeX formatting, but not number rounding,
+changed uncertainty, signs or identifier punctuation. Caption binding uses
+extractor output, not the expected values. The separate best-matrix oracle
+score is not this score.
+
+**Also passed quantity/unit header checks** counts the subset of those cells
+whose column header preserves the quantity, units and numeric powers after
+format normalization. Plain category headers can be discarded; quantity/unit
+parent headers are retained. This is a conservative text/notation check, not a
+semantic verifier, so equivalent wording may fail.
+
+olmOCR 2 scored **201/243 (82.7%)** and **183/243 (75.3%)**, respectively.
+For example, source `−23 ± 1` and extracted `-23 \pm 1` match, but the source
+header `Thermodynamic / ΔG° (kJ mol⁻¹)` became only `Thermodynamic`, failing
+the second check. The 18-cell difference comes from the first two plasma-protein
+tables. See [metric definitions and the recorded example](experiments/bio_tool_comparison_v1/reports/metric_definitions.json)
+and [the evaluator](src/bio_table_metrics.py). Raw outputs and scores are retained.
+
+## Current experiment
+
+Three papers cover HER2 Affibody drug conjugates, CD69-binding Affibodies, and
+oligopeptide interactions with plasma proteins. Nine fixed pages contain 12
+tables and six figures. Publisher JATS XML provides a source-derived silver
+reference, with 243 logical body-value cells. This is an exploratory diagnostic,
+not an independently annotated or representative benchmark.
+
+The comparison runs Docling on digital PDFs, Docling plus RapidOCR on text-free
+rendered copies, olmOCR-2-7B-1025, MinerU2.5-Pro-2605, and a GLM-OCR hybrid using
+Docling region proposals. Runtime progress is in the experiment logs; only
+completed outputs contribute to the report. Exact values, row/group labels,
+caption binding, merged/multiline cells, headers, powers, signs, missing values,
+time and peak GPU allocation are retained. Neither reference XML nor expected
+answers enter model inference.
+
+The separate native-source evidence branch contains 34 bundles across the full
+three-paper corpus: visual pages, captions, structured source tables, notes,
+explicitly referring paragraphs, source hashes and XML provenance. Its 29 QA
+examples are deterministic table lookups verified against source cells; they
+are not teacher-generated reasoning or an approved training dataset.
+
+## Commands
+
+```bash
+cd /data/rustfs1/dongweij/paper-extraction-lab
+CUDA_VISIBLE_DEVICES=0 .ocr-venv/bin/python src/run_bio_tool.py
+CUDA_VISIBLE_DEVICES='' .venv/bin/python src/run_bio_tool.py --tool docling
+CUDA_VISIBLE_DEVICES='' .venv/bin/python src/run_bio_tool.py --tool docling_rapidocr
+CUDA_VISIBLE_DEVICES=0 .ocr-venv/bin/python src/run_bio_tool.py --tool olmocr
+CUDA_VISIBLE_DEVICES=0 .ocr-venv/bin/python src/run_bio_tool.py --tool mineru
+CUDA_VISIBLE_DEVICES=0 .glm-venv/bin/python src/run_glm_regions.py
+.venv/bin/python src/evaluate_bio_tools.py --tools docling docling_rapidocr olmocr mineru glmocr_docling
+.venv/bin/python src/render_bio_comparison.py
+```
+
+Model records must exist before their inference commands. Inputs and raw outputs
+are preserved; a completed case is skipped on rerun. Per-page timing excludes
+model downloads and records initialization separately. GLM's custom region
+hybrid is distinguished from its official PP-DocLayoutV3 SDK. GPU runtimes
+reuse the existing Torch installation read-only; local package additions and
+all model caches remain inside this project.
+
+## PMC corpus availability
+
+The user confirmed including related journals alongside Cell, Nature and
+Science. The October 13, 2026 [availability report](reports/pmc_cns_availability_2026-10-13/index.html)
+counts an explicit set of 55 journal titles, including a historical predecessor;
+it is not an exhaustive publisher catalogue or a biology-only corpus.
+The combined query returns 552,532 public PMC records, 552,024 XML/text-mining
+candidates and 490,354 open-access records marked as having PDFs. Excluding
+Scientific Reports yields 187,791 PDF candidates. Counts are availability
+inventory, not successful full-corpus downloads or completed extractions.
+
+Six actual PDF/XML pairs from Cell, Nature, Science, Nature Communications,
+Cell Reports and Science Advances were downloaded through the official PMC S3
+dataset. Their hashes match, and their version/license provenance is retained.
+No OCR inference was run on these new availability probes. The corpus-size
+report includes explicit throughput and storage assumptions; the current
+filesystem cannot hold the entire pool under ordinary PDF-size assumptions.
+
+```bash
+.venv/bin/python src/inventory_pmc_cns.py
+.venv/bin/python src/probe_pmc_downloads.py
+.venv/bin/python src/render_pmc_inventory.py
+```
+
+## Earlier pilot
+
+The earlier mixed-domain CPU pilot remains available as
+[an archived description](reports/legacy_mixed_pilot_readme.md), with its original
+inputs, outputs and reports preserved. Its Ryze/LLaVA-Med extraction results do
+not constitute the current biological-paper tool comparison.

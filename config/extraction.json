@@ -1,0 +1,12 @@
+{
+  "primary_tool": "olmocr",
+  "model": "allenai/olmOCR-2-7B-1025",
+  "revision": "e52d6f090b7a9007afffbbd6ce510876222fea93",
+  "runner": "Transformers checkpoint inference with the official olmOCR v4 no-anchoring page prompt",
+  "runner_scope": "Page extraction; not the full official production pipeline with retry, rotation and document-level heuristics",
+  "document_workers": 1,
+  "inference_batch_size": 1,
+  "maximum_visible_gpus": 1,
+  "preserve_raw_outputs": true,
+  "reference_xml_in_prompt": false
+}

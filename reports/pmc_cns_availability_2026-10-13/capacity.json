@@ -1,0 +1,74 @@
+{
+  "checked_at_pst": "2026-10-13T15:19:45.504804-08:00",
+  "user_confirmed_scope": "Include related journals, confirmed in this chat on October 13, 2026.",
+  "counting_scope": "55 named journal titles, including one historical predecessor; selected target set, not an exhaustive publisher census.",
+  "candidate_pdf_records": 490354,
+  "confirmed_pdf_xml_downloads": 6,
+  "confirmed_downloads_ocr_status": "not_run",
+  "pilot_throughput": {
+    "model": "allenai/olmOCR-2-7B-1025",
+    "runner": "single-worker Transformers BF16",
+    "gpu": "one H200",
+    "pages": 9,
+    "total_page_seconds": 150.412,
+    "seconds_per_page": 16.712444444444444,
+    "note": "Nine selected table-heavy pages; not a full-paper or production-throughput benchmark. Excludes initialization/downloads and downstream QA."
+  },
+  "compute_scenarios": [
+    {
+      "assumed_pages_per_paper": 10,
+      "papers_per_24_gpu_hours": 516.9800281892402,
+      "gpu_hours_per_1000_papers": 46.42345679012345
+    },
+    {
+      "assumed_pages_per_paper": 20,
+      "papers_per_24_gpu_hours": 258.4900140946201,
+      "gpu_hours_per_1000_papers": 92.8469135802469
+    },
+    {
+      "assumed_pages_per_paper": 30,
+      "papers_per_24_gpu_hours": 172.32667606308007,
+      "gpu_hours_per_1000_papers": 139.27037037037036
+    }
+  ],
+  "filesystem": {
+    "mount": "/data/rustfs1",
+    "available_bytes": 285339410432,
+    "available_gib": 265.74303436279297,
+    "note": "Shared filesystem free space, not a reserved user quota."
+  },
+  "pdf_storage_scenarios": [
+    {
+      "assumed_pdf_bytes_per_paper": 2000000,
+      "corpus_pdf_bytes": 980708000000
+    },
+    {
+      "assumed_pdf_bytes_per_paper": 5000000,
+      "corpus_pdf_bytes": 2451770000000
+    },
+    {
+      "assumed_pdf_bytes_per_paper": 10000000,
+      "corpus_pdf_bytes": 4903540000000
+    }
+  ],
+  "download_probe": {
+    "papers": 6,
+    "pdf_pages_range": [
+      8,
+      57
+    ],
+    "pdf_bytes_total": 19354916,
+    "mean_pdf_bytes": 3225819.3333333335,
+    "note": "Availability probes, not representative sampling. Three are accepted manuscripts; no inference was run on these six documents."
+  },
+  "limitations": [
+    "Filter biology and article type before fixing the training/evidence corpus. Availability counts include reviews and other article types.",
+    "Candidate counts use official PMC filters; actual object presence and article versions must be verified during ingestion.",
+    "Counts were queried sequentially; the index can update between calls. Combined counts come from Boolean unions, not summing family counts.",
+    "Keep PDF/XML originals, hashes, PMCID/DOI, version and license provenance. Preserve the frozen nine-page comparison separately."
+  ],
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/tools/cloud/",
+    "https://pmc-oa-opendata.s3.amazonaws.com/README.txt"
+  ]
+}
