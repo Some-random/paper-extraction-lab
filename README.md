@@ -28,6 +28,38 @@ Cached olmOCR 2 weights were reused offline, with no paid model API calls.
 All human-facing times use fixed PST (UTC-8). No extraction worker remains
 running for this completed batch.
 
+### Review the extracted results
+
+Three small, byte-identical text examples are tracked here for browser review.
+The source authors, article links, licenses and text hashes are retained in each
+sample's `provenance.json`.
+
+| Paper | olmOCR output | Native XML text |
+| --- | --- | --- |
+| Nature: Lsp2, early-life diet and adult lifespan in Drosophila | [OCR](reports/pmc_cns_biology_2026-10-14/samples/PMC13645648/fullpaper_olmocr.md) | [Native text](reports/pmc_cns_biology_2026-10-14/samples/PMC13645648/fullpaper_native.md) |
+| Nature Communications: population proteomic profiles | [OCR](reports/pmc_cns_biology_2026-10-14/samples/PMC13655163/fullpaper_olmocr.md) | [Native text](reports/pmc_cns_biology_2026-10-14/samples/PMC13655163/fullpaper_native.md) |
+| Science Advances: OTULIN, Wnt and skin inflammation | [OCR](reports/pmc_cns_biology_2026-10-14/samples/PMC13651886/fullpaper_olmocr.md) | [Native text](reports/pmc_cns_biology_2026-10-14/samples/PMC13651886/fullpaper_native.md) |
+
+For all 50 papers, run `.venv/bin/python scripts/render_pmc_review.py` on the
+machine holding the experiment artifacts. It creates a standalone
+`experiments/pmc_cns_biology_2026-10-14/review.html` with searchable papers,
+OCR/native text, source tables, captions, referring paragraphs, original table
+diagnostics and lookup QA. Open it directly in a browser; no server is needed.
+`paper_review.zip` in that directory packages the reader and compact manifests.
+Original PDFs are linked through the official PMC cloud distribution.
+
+The [table-check audit](reports/pmc_cns_biology_2026-10-14/table_diagnostic_audit.json)
+found that the original caption matcher linked 4 of 18 checked source tables.
+Of 1,211 source cells, 1,072 had no linked generated table; 91 of the remaining
+139 passed strict value/header checks. Captions using `Table 1 | ...` and
+unnumbered resource tables are unsupported by that matcher. These counts explain
+the existing diagnostic; they do not change original scores or model outputs.
+
+The [500-paper estimate](reports/pmc_cns_biology_2026-10-14/scaling_estimate.json)
+extrapolates about 15,820 pages and 53 hours of full-page OCR on the same GPU,
+plus downloading and XML parsing. Batch artifacts would occupy a few GiB with
+temporary page images removed. This estimate does not start a new batch.
+
 Each accepted paper retains its original PDF/XML, version/license metadata,
 hashes, full native section text, tables, captions and explicitly referring
 paragraphs. Whole-paper olmOCR 2 runs shortest-first within the page/time budget.

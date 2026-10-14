@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC13645648",
+  "title": "Lsp2 links early-life diet to adult translation and lifespan in Drosophila",
+  "journal": "Nature",
+  "doi": "10.1038/s41586-026-11031-3",
+  "license_code": "CC BY",
+  "version": 1,
+  "is_manuscript": false,
+  "pdf_sha256": "9db59ec317ba5505c37b0db9547fac47abef19d05498e1bdfff6f055f8d0cc98",
+  "xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+  "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13645648.1.json",
+  "pdf_pages": 33,
+  "ocr_status": "completed",
+  "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13645648/",
+  "source_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13645648.1/PMC13645648.1.pdf?md5=4fbf8b6e2cdda173f5cc3566e624af49",
+  "note": "Byte-identical derived-text copies for review; original PDF/XML and page outputs remain on RustFS.",
+  "files": {
+    "fullpaper_native.md": {
+      "sha256": "3f356c8f597f72dedcc2d817f3748de0a7f7c2c61b9761aad74aad494f43dd9e",
+      "bytes": 130320
+    },
+    "fullpaper_olmocr.md": {
+      "sha256": "d8eac2e29d648f9a38926d81ffafe230ab34c68ddc7e966cf2e825d3bc8beeb9",
+      "bytes": 124602
+    }
+  },
+  "authors": [
+    "Hina Kosakamoto",
+    "Rina Okada",
+    "Clive S. Barker",
+    "Ayako Isomura-Matoba",
+    "Jun Seita",
+    "Naoshi Dohmae",
+    "Koshi Imami",
+    "Fumiaki Obata"
+  ],
+  "license_statements": [
+    "https://creativecommons.org/licenses/by/4.0/ Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  http://creativecommons.org/licenses/by/4.0/ ."
+  ]
+}

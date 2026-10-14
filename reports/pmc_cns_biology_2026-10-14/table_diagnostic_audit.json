@@ -1,0 +1,167 @@
+{
+  "source": "Original, unchanged per-paper table_checks.json for complete OCR papers.",
+  "original_matched_cells": 91,
+  "original_checked_cells": 1211,
+  "categories": {
+    "numeric_source_label_not_bound_tables": 8,
+    "numeric_source_label_not_bound_cells": 522,
+    "source_label_missing_or_non_numeric_tables": 6,
+    "source_label_missing_or_non_numeric_cells": 550,
+    "bound_to_generated_table_tables": 4,
+    "bound_to_generated_table_cells": 139
+  },
+  "tables": [
+    {
+      "pmcid": "PMC13577906",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 1",
+      "source_cells": 236,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13631411",
+      "category": "source_label_missing_or_non_numeric",
+      "label": "",
+      "source_cells": 118,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13655163",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 1",
+      "source_cells": 24,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13655163",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 2",
+      "source_cells": 12,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13657255",
+      "category": "source_label_missing_or_non_numeric",
+      "label": "KEY RESOURCES TABLE",
+      "source_cells": 78,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13577916",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 1",
+      "source_cells": 108,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13577916",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 2",
+      "source_cells": 54,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC7618952",
+      "category": "source_label_missing_or_non_numeric",
+      "label": "",
+      "source_cells": 110,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13651885",
+      "category": "bound_to_generated_table",
+      "label": "Table 1.",
+      "source_cells": 15,
+      "matched_cells": 0,
+      "candidate_page": 5
+    },
+    {
+      "pmcid": "PMC13651885",
+      "category": "bound_to_generated_table",
+      "label": "Table 2.",
+      "source_cells": 20,
+      "matched_cells": 10,
+      "candidate_page": 7
+    },
+    {
+      "pmcid": "PMC13653327",
+      "category": "source_label_missing_or_non_numeric",
+      "label": "",
+      "source_cells": 86,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13651886",
+      "category": "bound_to_generated_table",
+      "label": "Table 1.",
+      "source_cells": 28,
+      "matched_cells": 7,
+      "candidate_page": 4
+    },
+    {
+      "pmcid": "PMC13651886",
+      "category": "bound_to_generated_table",
+      "label": "Table 2.",
+      "source_cells": 76,
+      "matched_cells": 74,
+      "candidate_page": 4
+    },
+    {
+      "pmcid": "PMC7619462",
+      "category": "source_label_missing_or_non_numeric",
+      "label": "",
+      "source_cells": 36,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC7619462",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 1",
+      "source_cells": 24,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC7618106",
+      "category": "source_label_missing_or_non_numeric",
+      "label": "",
+      "source_cells": 122,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13654927",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 1",
+      "source_cells": 48,
+      "matched_cells": 0,
+      "candidate_page": null
+    },
+    {
+      "pmcid": "PMC13654927",
+      "category": "numeric_source_label_not_bound",
+      "label": "Table 2",
+      "source_cells": 16,
+      "matched_cells": 0,
+      "candidate_page": null
+    }
+  ],
+  "findings": [
+    "The original matcher requires a period/colon after a numeric caption label.",
+    "Observed generated captions include Table 1 | ... and Table 1 (continued) | ...; these are not bound.",
+    "Missing source labels and KEY RESOURCES TABLE are unsupported by the numeric-label matcher.",
+    "Of 1,211 source cells, 1,072 had no linked generated table; 91 of the remaining 139 passed the strict value and header checks.",
+    "This is an audit of the existing score, not a repaired score or a general OCR accuracy estimate.",
+    "No model output, source value or existing metric result was changed."
+  ]
+}

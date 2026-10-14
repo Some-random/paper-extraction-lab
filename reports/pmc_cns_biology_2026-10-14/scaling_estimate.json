@@ -1,0 +1,19 @@
+{
+  "target_papers": 500,
+  "observed_papers": 50,
+  "measured_ocr_seconds_per_page": 12.090324,
+  "observed_source_pdf_pages_per_paper": 31.64,
+  "estimated_source_pdf_pages": 15820.0,
+  "estimated_ocr_hours_one_gpu": 53.13025713333334,
+  "observed_download_and_xml_minutes_including_debugging": 38.20307951666667,
+  "linear_download_and_xml_hours": 6.367179919444444,
+  "batch_artifact_gib_times_ten": 3.3333284966647625,
+  "download_gib_times_ten": 2.955093467608094,
+  "assumptions": [
+    "Same hardware, one worker, similar article lengths and the current file/page filters.",
+    "OCR processed the shorter papers first; the unprocessed pages may have different runtimes.",
+    "Storage extrapolation reflects 1,000 OCR pages per 50 downloads; full OCR adds more output.",
+    "Cached model weights are reused, not multiplied by the number of papers.",
+    "Projection only; this does not launch or authorize a 500-paper run."
+  ]
+}

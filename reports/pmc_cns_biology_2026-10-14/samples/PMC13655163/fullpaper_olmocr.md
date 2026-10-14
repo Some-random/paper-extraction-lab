@@ -1,0 +1,346 @@
+Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals
+
+Anne Richmond1,10, Josephine A. Robertson1,10, Hannah M. Smith1,10, Robert F. Hillary1,10, Aleksej Zelezniaik2,3,4,5, Spyros Vernardis2,4, Aleksandra D. Chybowska1, Arturas Grauslys4, Jure Mur1,6, Archie Campbell1, Camilla Drake1, Hannah Grant1, Poppy Adkin1,2, Matthew White2, Charles Bridgen4, Christoph B. Messner2,7, David J. Porteous1, Caroline Hayward1, Andrew M. McIntosh8, Daniel L. McCartney1, Markus Ralser2,4,9 & Riccardo E. Marioni1
+
+Received: 4 September 2025
+Accepted: 29 July 2026
+Published online: 09 September 2026
+
+Understanding the genetic architecture of the circulating proteome can help determine if a protein is causally linked to disease. Previous large-scale genome-wide association studies of proteins have mostly been conducted on pre-defined, targeted subsets of the proteome, and have often concentrated on low-abundance proteins, many of which don’t exert their main function in serum. Mass spectrometry-based proteomics facilitates the study of high-abundance proteins and their isoforms, focusing on proteins active in blood. In 15035 individuals from Generation Scotland, we perform genome-wide association studies of 439 highly abundant serum protein groups as identified and quantified by liquid chromatography tandem mass spectrometry. We identify 1553 independent SNP signals for 398 proteins (\( P < 1.2 \times 10^{-10} \)). Two-sample Mendelian Randomisation analyses are applied to test if the 398 proteins with significant SNP signals are causally associated with 79 common causes of morbidity and mortality. We report putative causal associations between 13 proteins and 17 outcomes, including neuropsychiatric and cardiovascular conditions. Large-scale genome-wide analyses of the high-abundance proteome complement targeted approaches for the discovery of causal pathways of disease.
+
+The circulating proteome can capture a readout of lifestyle and environmental exposures and inform disease risk prediction1. As a consequence, serum proteins are used as biomarkers in several conditions, such as cardiac Troponin I and T to indicate myocardial infarction2, cystatin C to indicate kidney dysfunction3, C-reactive protein to indicate inflammation4, or prostate-specific antigen as a marker of prostate cancer5. In addition to biomarker work, understanding the genetic architecture of blood-based
+
+proteins helps to determine causal disease mechanisms and identify drug targets.
+
+To date, large-scale studies have used targeted aptamer- or affinity-based platforms that can assess upwards of 3000 (Olink Explore 3072 panel) and 7000 (SomaLogic SomaScan assay) predefined proteins9,10. Genome-wide association studies (GWAS) of these proteins have helped to give mechanistic insights into multiple disease outcomes—including those where blood is not the primary tissue of interest10–12. However, affinity assay-based techniques have limitations. Quantification of functionally important, high-abundance serum proteins can be inaccurate due to signals exceeding the dynamic range of the array and the presence of different isoforms14. They are also limited by a pre-defined list of protein targets, off-target binding and interference caused by autoantibodies15, as well as lack of concordance across arrays16. In contrast, untargeted approaches for proteomics such as mass spectrometry are unbiased and yield comprehensive and granular coverage of the high-abundance proteome. This non-reliance on an epitope confers higher analytical specificity relative to affinity-based methods and enables direct interrogation of protein isoforms and peptide-level variation. When integrated with genomic data, this resolution facilitates direct mapping of genetic variation to specific peptides and proteins, offering a deeper mechanistic view of genotype-protein relationships. To date, only a small number of studies have performed GWAS on mass spectrometry-measured proteins. However, their sample sizes have been limited to under 3000 individuals8,17,18. This is an important limitation as GWAS typically require large sample sizes to achieve adequate statistical power to detect variants with small effect sizes.
+
+Recently, we and others have developed an ultra-high-throughput mass spectrometry proteomic technology that can measure proteins and peptides in excess of 200 samples per day, while advances in sample processing and data analysis have increasingly mitigated the impact of problematic batch effects19. The application of this technology to large population biobanks will accelerate insights into the genetic control of the human proteome by providing an unprecedented scale and accuracy of protein quantification6.
+
+Here, we characterise the genetic architecture of 439 mass spectrometry-measured proteins in 15,035 individuals from the Generation Scotland study. This study is 5–10 times larger than recently published GWAS of mass spectrometry proteomics9,17,18. First, we identify genetic variants that associate with mean differences in serum protein levels (i.e. protein quantitative trait loci, or pQTLs). Second, harnessing these data, we perform Mendelian Randomisation (MR) to explore causal associations between protein levels and 79 leading causes of morbidity and mortality20,21. Together, we leverage unbiased protein measurements to provide a catalogue of genetic influences on serum protein levels as well as detail their causal associations with prevalent disease states.
+
+Results
+pQTL discovery
+GWAS analyses of 439 serum proteins (mapped to one UniProt ID) or protein groups (mapped to multiple UniProt IDs) levels were conducted using data from 15,035 participants from Generation Scotland. We observed 199,489 genome-wide significant (\( P < 1.2 \times 10^{-10} \)) SNP associations with 398 (91%) of the proteins/protein groups. Following conditional analysis, 1553 independent signals were identified with the lead variant defined as the SNP with the lowest \( P \)-value within the given locus (Supplementary Data 1). 1199 of the significant pQTLs were found in uniquely mapped proteins (i.e. non-protein groups), 656 (54.7%) of which were cis (\( \pm 1 \)Mb), and 543 (45.3%) trans (Fig. 1A). Over 40% of discovered pQTLs (404 cis and 200 trans) were associated with a single protein. Our results also indicated the presence of a pQTL hotspot within SERPINA1, with 17 independent signals generating 181 associations with 140 proteins. 71 proteins/protein groups had only one independent pQTL whilst 48 protein/protein groups had seven or more (Fig. 1B). When comparing effect size with minor allele frequency, a negative correlation (for cis loci: \( r_{\text{Pearson}} = -0.60, P = 1.0 \times 10^{-64} \); for trans loci: \( r_{\text{Pearson}} = -0.72, P = 3.6 \times 10^{-88} \)) between the log beta and the log MAF was observed (Fig. 1C). In general, for the same MAF, larger effect sizes were found with cis loci than with trans (Fig. 1C). An inverse association (\( r_{\text{Pearson}} = -0.15, P = 1.8 \times 10^{-4} \)) was found between strength of cis pQTL and distance from transcription start site (Fig. 1D). The pQTL analysis was repeated to include a SNP-sex interaction term to test for sex differences in genetic effects. One significant association (\( P < 1.2 \times 10^{-10} \)) was found: a cis locus in Ceruloplasmin (CP) (Supplementary Data 2). This locus remained significant after running a sensitivity analysis which included contraception as a covariate to determine if the signal was being driven by hormonal contraceptive use.
+
+Replication of known genetic associations
+The significant pQTLs discovered in our study were compared to three previous proteomics GWAS. These include two large-scale affinity-based proteomics GWAS using Olink Explore 3072 PEA in the UK Biobank14 and SomaScan v4 in the deCODE study10, and a smaller-scale mass-spectrometry proteomics GWAS using the MS-based Seer Proteograph platform in the Tarkin study18. For all significant pQTLs in the current study, we performed lookup analyses in these studies, where the same protein was assessed and also demonstrated significant associations. We replicated 46 of 199 (23.12%), 64 of 275 (23.27%) and 10 of 25 (40%) pQTLs with the Sun et al.14, Eldjarn et al.10, and Suhr et al.18, studies, respectively (see Table 1). Effect sizes of the overlapping associations correlated highly between platforms (\( R_{\text{Pearson}} = 0.94 \) (MS:UKB14)); 0.90 (MS:deCODE cohort10); 0.89 (MS:Tarkin18) (Fig. 2). A list of the overlapping proteins-SNP associations can be found in Supplementary Data 3, 4 and 5.
+
+MR of protein levels and 79 disease and health outcomes
+Identifying causal protein—disease pathways could aid the discovery of novel drug targets; human genetic evidence increases the success rate for approval of developed drugs22,23. Given this, we tested whether any of the proteins or protein groups were causally associated with 79 disease or health outcomes (for full list see Supplementary Data 6). We identified 13 proteins that were putatively causal factors for 17 traits (Supplementary Data 7), giving a total of 31 significant results (inverse variance weighted (IVW) method with \( P < 1.59 \times 10^{-5} \), at least one other method with \( P < 0.05 \) and a minimum of 3 SNP instruments). The causal direction was from exposure (protein) to disease outcome, as determined by the Steiger directionality test. The proteins apolipoprotein E (APOE) and apolipoprotein B (APOB) were each associated with five of the cardiovascular-related and metabolic traits (Fig. 3). The strongest APOE association was with systolic blood pressure (IVW beta = 0.42, \( P = 8.5 \times 10^{-16} \)) while the strongest APOB association was with LDL cholesterol (IVW beta = 1.17, \( P = 1.4 \times 10^{-39} \)). This was supported by posterior probabilities of >0.99 (HA) for both LDL and HDL cholesterol in colocalization analysis, suggesting a shared causal variant. Significant MR results were also found for three neuropsychiatric traits: autism spectrum disorder (ASD), schizophrenia, and Alzheimer’s disease (AD). The trypsin inhibitors inter-alpha-trypsin inhibitor heavy chain 3 (ITIH3) and inter-alpha-trypsin inhibitor heavy chain 4 (ITIH4) were associated with Schizophrenia (IVW log odds = −0.16, \( P = 1.7 \times 10^{-6} \)) and ASD (IVW log odds = −0.21, \( P = 6.3 \times 10^{-7} \)), respectively. Alpha-1-antitrypsin (AAT) was also found to be associated with ASD (IVW log odds = −0.11, \( P = 4.2 \times 10^{-2} \)). AAT, ITIH3 and ITIH4 were also found to have associations or interactions with each other as defined by StringDB24 (Supplementary Fig. 1). One protein, Immunoglobulin heavy constant mu (IGHM), showed evidence for a causal association with Alzheimer’s Disease (IVW log odds = −0.063, \( P = 4.3 \times 10^{-7} \)) (Fig. 4). To further support our findings of causal
+
+Fig. 1 | Genome-wide association studies to identify pQTLs for highly abundant proteins as measured by mass spectrometry. A The x-axis represents the chromosomal location of independent cis and trans pQTLs. The y-axis represents the position of the gene encoding the protein. Only uniquely mapped proteins are shown. Cis associations for proteins are marked by orange circles and trans associations (not linked to any protein targets) are marked by purple circles. B The number of independent pQTLs per protein (or protein group). C Association between the common logarithm of minor allele frequencies and the natural logarithm of absolute effect sizes for cis and trans pQTLs. Only uniquely mapped proteins are shown. Cis (orange circles and line); trans (purple circles and line). D Association between the strength of cis pQTL associations and their distance in kilobases (kb) from their respective transcription start sites. pQTL protein quantitative trait locus, kb kilobases. Source data are provided as a Source Data file.
+
+associations between our protein exposures and disease outcomes we ran colocalisation analysis using coloc. 15 out of the 31 (48.4%) significant MR results showed strong evidence (PP.H4.abf>0.8), with a further two (6.5%) showing moderate evidence (PP.H4.abf>0.6) of a shared causal variant between the exposure and outcome (Supplementary Data 7).
+
+Gene set and tissue enrichment analysis
+To further understand the biological mechanisms underlying the QTL signals for each protein with a significant MR result, we ran gene set enrichment analysis using FUMA. The full list of gene set databases used to test for enrichment can be found in the methods. Protein-specific QTL gene sets were tested for enrichment; significant findings were observed for all 17 proteins under investigation (P < 0.05, Supplementary Data 8). Pathways related to lipids and lipoproteins saw the most enrichment, with 144 pathways from 10 gene set databases enriched across 11 of the proteins. Numerous disease-related pathways from the GWAS Catalog geneset database were significantly enriched. Pathways related to schizophrenia and age-related macular degeneration (AMD) were the most prominent, showing enrichment across 7 proteins, followed by Alzheimer’s disease and ASD, whose associated pathways were enriched across 5 proteins.
+
+Genes associated with ITIH4 and ITIH3, two of our proteins with significant MR results with psychiatric conditions, were significantly enriched in pathways related to the psychiatric conditions ASD, Schizophrenia, Bipolar Disorder and Depression. They were also both significantly enriched in brain-related pathways including brain morphology, subcortical volume and cortical surface area. Genes associated with IGHM and APOM, proteins with MR associations with Alzheimer’s disease and neutrophil count, respectively, were both significantly enriched in immunology-related pathways, including
+
+interferon signalling, autoimmune thyroid disease and MHC class II protein complex pathways.
+
+Nine proteins were significantly overrepresented in at least one tissue type (P < 0.05, Supplementary Data 9). Genes associated with IGHM were found to be significantly overrepresented in blood, lung and spleen tissue and underrepresented in ovarian tissue and genes associated with SERPINA1, a protein with an MR association with ASD, were found to be overrepresented in liver tissue.
+
+Discussion
+Here, we describe a large-scale GWAS of 439 serum protein/protein group levels from the highly-abundant proteome fraction in the Generation Scotland cohort (N_{samples} = 15,035). The high-abundance proteome fraction is important for human physiology as it contains proteins important for metabolism, nutrient transport and the innate immune system, including complement and coagulation factors. However, these proteins can be challenging to quantify as they exist in many isoforms and can saturate the measurement reagents. We identified 1553 significant (P < 1.2 \times 10^{-10}) independent pQTLs with 398 of the proteins/protein groups. Of the 1199 loci significantly associated with unique proteins, we reported 656 as cis and 543 as trans.
+
+We identified pQTLs that replicate those in previous proteomics GWAS, with highly correlated effect sizes (R_{Pearson} > 0.89). We replicate approximately 23% of associations within overlapping proteins with significant associations identified in two large-scale affinity-based studies using the SomaScan v4 and Olink platforms (sample sizes - 35,892 and 54,219, respectively). We additionally compared our results with a smaller-scale mass-spectrometry proteomics GWAS using the Seer platform (N_{samples} = 1260), replicating 40% of the identified associations within overlapping proteins with significant associations in both studies. This degree of replication with the affinity-based studies is higher than that of this previous MS proteomics study\(^{28}\). Our cross-platform replication demonstrates the validity of a mass-spectrometry approach and further helps to identify pQTLs that are unlikely to be driven by antibody cross-reactivity or epitope-binding artifacts.
+
+Our results identify a trans hotspot within SERPINA1, with at least one significant association found with 140 of the 439 proteins. SERPINA1 encodes a serine protease inhibitor, AAT, predominantly produced in the liver\(^{25}\). Accordingly, significant GWAS loci associated with AAT were found to be overrepresented in liver tissue on tissue-enrichment analysis. AAT is involved in many biological processes, including inflammation, coagulation, homeostasis and the immune response\(^{26}\). Mutations in SERPINA1 can result in AAT deficiency, increasing risk of liver and lung disease\(^{25,27}\). Given its involvement in a diverse range of pathways, it is biologically plausible that pQTLs within SERPINA1 have wide-ranging associations.
+
+Whilst research into biomarkers for disease has identified many protein – disease associations, unpicking the biological mechanisms or causality for these associations is more challenging. MR analysis offers one route to assess for putative causal relationships between associations. We used two-sample MR to investigate causal associations between any of the proteins with identified pQTLs and 79 disease/health outcomes. There was evidence for causal associations between 13 proteins and 17 traits, including several neuropsychiatric disorders and cardiovascular-related traits.
+
+MR analysis identified causal associations between APOB and APOE and coronary artery disease (CAD) and pulse pressure. Circulating APOB concentration is considered a biomarker for atherogenic lipids that are known to promote fatty deposits in arteries\(^{28}\). Polymorphisms in the APOE e4 allele have been shown to increase the risk of CAD\(^{29}\). Gene set enrichment analysis of APOE-associated loci demonstrates enrichment in metabolic pathways and, via the GWAS package in R. A 10 overlapping pQTLs with the Seer proteomics GWAS (Suhre et al.\(^{18}\)); B 64 overlapping pQTLs with the Icelandic SomaScan v4 platform GWAS (Eldjarn et al.\(^{19}\)); C 46 overlapping pQTLs with the UK Biobank GWAS (Sun et al.\(^{11}\)). Source data are provided as a Source Data file.
+
+<table>
+  <tr>
+    <th>Comparator GWAS study</th>
+    <th>Sun et al.\(^{11}\)</th>
+    <th>Eldjarn et al.\(^{19}\)</th>
+    <th>Suhre et al.\(^{18}\)</th>
+  </tr>
+  <tr>
+    <td>Cohort</td>
+    <td>UK Biobank</td>
+    <td>Decode</td>
+    <td>Tarkin</td>
+  </tr>
+  <tr>
+    <td>Sample size</td>
+    <td>54,219</td>
+    <td>35,892</td>
+    <td>1260</td>
+  </tr>
+  <tr>
+    <td>Proteomics platform</td>
+    <td>Olink</td>
+    <td>SomaScan</td>
+    <td>Seer</td>
+  </tr>
+  <tr>
+    <td>N proteins tested</td>
+    <td>2923</td>
+    <td>4719</td>
+    <td>1980</td>
+  </tr>
+  <tr>
+    <td>Overlap of proteins*</td>
+    <td>58</td>
+    <td>75</td>
+    <td>114</td>
+  </tr>
+  <tr>
+    <td>Overlap of proteins with significant associations*</td>
+    <td>51</td>
+    <td>69</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>N significant associations with overlapping proteins in comparator study</td>
+    <td>199</td>
+    <td>275</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>Replicated pQTLs (%)*</td>
+    <td>46 (23.1%)</td>
+    <td>64 (23.3%)</td>
+    <td>10 (40%)</td>
+  </tr>
+</table>
+
+The three comparator studies considered include two large-scale affinity-based proteomics GWAS using Olink Explore 3072 PEA in the UK Biobank\(^{11}\) and SomaScan v4 in the deCODE study\(^{19}\), and a smaller scale mass-spectrometry proteomics GWAS using the MS-based Seer Proteograph platform in the Tarkin study\(^{18}\).
+*These rows refer to overlap between our study (Eliptica MS GWAS) and the respective study for each column.
+
+![Three scatter plots comparing effect sizes from different GWAS studies](page_1012_1342_495_312.png)
+
+Fig. 2 | Overlapping associations with comparator pQTL studies. Overlapping associations were defined as those where the genome-wide significant lead variant from the comparator study was within 1Mb of the discovered lead variant, with a same direction effect size, and has an LD score of >0.6. “MS GWAS” refers to the current study. R denotes Pearson R, calculated using cor.test from the Statistics package in R. A 10 overlapping pQTLs with the Seer proteomics GWAS (Suhre et al.\(^{18}\)); B 64 overlapping pQTLs with the Icelandic SomaScan v4 platform GWAS (Eldjarn et al.\(^{19}\)); C 46 overlapping pQTLs with the UK Biobank GWAS (Sun et al.\(^{11}\)). Source data are provided as a Source Data file.
+
+Fig. 3 | Traits associated with apolipoprotein B (APOB) apolipoprotein E (APOE) in MR analysis. Data shown are effect sizes and 95% confidence intervals of the significant (\( P < 1.59 \times 10^{-6} \)) causal associations of APOB and APOE with 8 traits following MR analysis. Effect sizes displayed are log odds for binary traits and beta values for continuous traits, per SD of the rank transformed protein. Where multiple isoforms of the same protein were associated with one trait, the association with the largest effect size is shown. APOB and APOE: \( N = 15,035 \). Coronary Artery Disease: \( N = 184,305 \). HDL cholesterol, LDL cholesterol and Total cholesterol: \( N = 188,577 \). Pulse pressure and Systolic blood pressure: \( N = 757,601 \). Red cell distribution width and Reticulocyte count: \( N = 173,480 \). Source data are provided as a Source Data file.
+
+Catalog geneset database, diseases such as Alzheimer’s Disease, non-alcoholic fatty liver disease and metabolic disorders.
+
+MR also revealed putative causal associations between anti-inflammatory proteins and neuropsychiatric disorders. Evidence is building for a role of immune dysregulation in the aetiology of ASD and schizophrenia\(^{30,31}\). In our analysis, AAT and ITIH4 associated with ASD, and ITIH3 associated with schizophrenia, with all associations suggesting that increased protein levels reduce the odds ratio of diagnosis. These proteins have both anti-inflammatory and immunomodulatory functions\(^{32}\), have been implicated in the pathogenesis of autoimmune conditions and have also been proposed as potential therapeutic tools to manage these conditions\(^{33}\). They are produced both peripherally and in nervous-system tissue\(^{34}\). Further, gene set enrichment analysis for the significant GWAS loci in ITIH4 and ITIH3 identified significant enrichment in pathways related to psychiatric disorders, including ASD, Schizophrenia, Bipolar Disorder and Depression. This also identified significant enrichment in pathways related to brain morphology, subcortical volume and cortical surface area, aligning with well-described structural brain changes in Schizophrenia\(^{34}\) and ASD\(^{35}\). Results for neither protein demonstrated tissue-specific enrichment. Our results build on existing evidence of a role of inter-alpha-trypsins in neuropsychiatric disorders from both genetic and proteomic studies. Schizophrenia is a highly heritable condition\(^{36}\) and previous large-scale GWAS studies have identified SNPs in ITIH3/4 in association with Schizophrenia\(^{37-39}\) and also between SERPINA1 and ASD\(^{40}\) and ITIH3/4 and ASD\(^{41}\). However, colocalisation analysis (PP(H3) > 0.99) did not support the same causal variant for ITIH3 and Schizophrenia, ITIH4 and ASD or AAT and ASD.
+
+A few small-scale studies have identified associations between AAT and ASD. One study, using mass spectrometry proteomics, identified increased expression levels of AAT in participants with ASD (\( N_{cases} = 30, N_{controls} = 30 \))\(^{42}\); similarly, another study using mass spectrometry proteomics (\( N_{cases} = 30, N_{controls} = 30 \)) identified increased AAT in children with ASD\(^{43}\). However, although our results suggest that
+
+Fig. 4 | Proteins causally associated with Alzheimer’s disease (AD), Autism Spectrum Disorder (ASD) and Schizophrenia in MR analysis. Data shown are log odds effect sizes and 95% confidence intervals of the significantly (\( P < 1.59 \times 10^{-6} \)) associated proteins with the neuropsychiatric conditions AD, ASD and Schizophrenia following MR analysis. Effect sizes are per SD of the rank transformed proteins. ITIH4, ITIH3, IGHM and SERPINA1: \( N = 15,035 \). Alzheimer’s disease: \( N = 455,258 \). Autism spectrum disorder: \( N = 46,350 \). Schizophrenia: \( N = 82,315 \). Source data are provided as a Source Data file.
+
+increased AAT could be protective against ASD, colocalisation analysis revealed a posterior probability (PP) of H3 as >0.99, implying no shared causal variant. Associations between AAT and Schizophrenia have also been demonstrated\(^{44}\), though our analysis did not identify a significant causal association. Our results support the hypothesis that AAT may perform an immunomodulatory role, which is protective against ASD. However, given that we have identified SERPINA1 as a trans-hotspot for associations with multiple other proteins, including overlap in the SNP associations (Supplementary Data 3 and Supplementary Data 4), it is possible that genetic variants may affect the disease outcome through alternate pathways despite a non-zero Egger MR regression intercept.
+
+Interestingly, we did not identify significant associations with Schizophrenia for all protein or protein groups mapped to AAT (total in the dataset = 5), though effect directions were concordant. These different entries may reflect different isoforms of the protein, which is known to have complex regulation and post-translational modifications\(^{51}\). Our findings of SERPINA1 as a trans pQTL hotspot further reinforce the complexity of its involvement in diverse molecular pathways. Mass spectrometry proteomics may prove to be a useful tool for studying similarly complex proteins, aiding the identification and study of different isoforms.
+
+We also identified an MR-significant association between immunoglobulin heavy constant mu (IGHM), and Alzheimer’s disease (AD). IGHM is a component of immunoglobulin M (IgM), an antibody involved in the adaptive immune response and a function of which is to target and clear amyloid beta deposits. Gene set enrichment analysis for the significant GWAS loci associated with this protein identified enrichment in pathways related to interferon signalling, increasingly implicated in Alzheimer’s disease\(^{45}\), and also pathways related to autoimmune thyroid disease and MHC class II protein complexes. Further, the IGHM-associated genes were significantly enriched in blood, lung and spleen, aligning with immunological functions. The immune system is thought to play a role in the progression of AD\(^{46,47}\) and decreased levels of IgM have been found in patients with AD than with age and sex matched healthy controls (\( n_{cases} = 26, n_{controls} = 26; n_{cases} = 30, n_{controls} = 30 \))\(^{48,49}\). However, findings on this topic have been inconsistent as IGHM has previously been shown to be a potential biomarker for AD, with increased levels found in patients with AD than with healthy controls (\( n_{cases} = 45, n_{controls} = 45 \))\(^{50}\). IgM levels in frontal cortex tissue have also been found to be increased in people with late-stage (stages V and VI) AD compared to healthy controls of the same age (\( n_{cases} = 11, n_{controls} = 9 \))\(^{50,51}\). Further, colocalisation analysis revealed a posterior probability >0.99 for H3, suggesting that while both the disease and protein have causal variants in the region, they do not share a causal variant.
+
+Technological advances in mass spectrometry are increasing its potential for application both in large cohorts and clinical settings\(^{52}\). Its
+
+untargeted approach avoids bias associated with antibody- or aptamer-based protein panels. Further, mass spectrometry best captures the high-abundance serum proteins5, which are not well quantified by assays reliant on an epitope, due to saturation and the presence of multiple isoforms14,53. Isoforms that modify protein affinity to assay epitopes can interfere with MR analyses dependent on these results. Mass spectrometry is robust to isoform effects and therefore an important technique for identification or verification of disease-relevant pQTLs4, in addition to allowing exploration of high-abundance proteins less well captured by assay-based methods58. These high-abundance proteins are typically involved in processes occurring within the blood, such as nutrient transport, coagulation and innate immunity and have been less prioritised in proteomic biomarker work thus far26. By concentrating on the highly abundant serum proteome fraction, we have not investigated lower-abundance proteins, predominantly associated with cell signalling or leakage from tissues57, which can yield meaningful biological insights58.
+
+This study benefits from a large sample size (N = 15,035) for pQTL analyses, giving us the ability to detect small effects. Our replication analysis, which included comparison with three independent studies using three different proteomics technology platforms, demonstrated 23–40% replication. Nonetheless, we acknowledge that replication in an external cohort with proteomic data generated using the same methodology would be desirable. Additionally, our study and comparative analysis included individuals of European ancestry only. Future work should focus on generating mass spectrometry datasets and replicating findings in non-European cohorts. This study provides a valuable pQTL resource and suggests potential causal relationships between proteins and health conditions. Follow-up studies will be required to determine the underlying mechanisms of these relationships and to confirm their validity.
+
+We used a recently developed high-throughput mass spectrometry platform for a large-scale GWAS study of high-abundant circulating proteins, many of which function in plasma. Following pQTL identification, conditional and joint analysis revealed 1553 significant and independent pQTLs for 398 proteins or protein groups, including a trans pQTL hotspot in SERPINA1. MR analysis revealed 13 proteins that have potential causal associations with 17 disease traits, though the presence of a shared causal variant was only supported by subsequent colocalisation analysis for 17 of the 31 significant MR results. Within these results, we found associations between trypsin inhibitors and the neuropsychiatric conditions ASD and schizophrenia. This demonstrates that the combined approaches of GWAS and MR can reveal biologically relevant protein networks which warrant further investigation for understanding of disease.
+
+Methods
+Ethics
+All components of Generation Scotland received ethical approval from the NHS Tayside Committee on Medical Research Ethics [REC Reference Number: 05/S1401/89]. Generation Scotland has also been granted Research Tissue Bank status by the East of Scotland Research Ethics Service [REC Reference Number: 20-ES-0021], providing generic ethical approval for a wide range of uses within medical research. All participants provided written informed consent. This study was performed in accordance with the Helsinki Declaration.
+
+Generation Scotland
+Generation Scotland is a family-based cohort study of 23,960 volunteers, aged 18–99 at recruitment59. Recruitment occurred between 2006 and 2011 when volunteers attended a baseline clinic where they completed health and lifestyle questionnaires, provided samples for biochemistry and omics analyses, and gave consent for data linkage to their medical records. There were 5573 families with a mean size of 4 members and 1400 participants without relatives. The median age at baseline was 47 years, and the sample was 59% female. In the 15,035 individuals with both genetic and protein data, the median age (range of 18–99 years) was 49 years, and the sample was 58% female.
+
+Sample sizes for analysis were determined by the size of the cohort. Exclusions were made based on missingness in proteomic and covariate data and quality control of genetic data. The demographics of the cohort can be observed in Supplementary Data 10.
+
+DNA extraction and genotyping
+Samples were collected, processed and stored using standard operating procedures previously reported60,61 and managed through a laboratory information management system at the Edinburgh Clinical Research Facility. A Nucleon Kit (Tepnel Life Science) with the BACC3 protocol was used for DNA extraction. DNA concentrations were determined using Picogreen and diluted to 50 ng/μL for genotyping.
+
+Genotyping was carried out using one of two arrays - the Illumina HumanOmniExpressExome-8v1-2_A or HumanOmniExpressExome-8v1-A. Quality control steps41 included filtering for single-nucleotide polymorphisms (SNPs) with missingness (>2% across all individuals), minor allele frequency (MAF)>1% with Hardy-Weinberg p-value <1 × 10^{-4}. Samples were removed based on sex mismatches with the phenotypic database and on missingness (>2% across SNPs). Genetic outliers were identified as lying more than six standard deviations (SDs) beyond the mean on the first two principal components upon integration with the 1000 Genomes population62. These individuals were removed, leaving a dataset of 604,858 SNPs and 20,032 individuals63. SNP data were then imputed using the Haplotype Reference Consortium (HRC) imputation panel64, yielding 24,161,581 variants with MAF >1% and INFO > 0.4 for the downstream analyses.
+
+Proteomics
+High-throughput mass spectrometry proteomics was carried out using our in-house developed method on serum samples pre-processed for protein denaturation and trypsinisation65,66.
+
+Serum samples (5 μl) were denatured in a solution of 50 μl of 8 M urea (Sigma-Aldrich, 1084870500) and 0.1 M ammonium bicarbonate (ABC, Thermo Fisher, 15645440) at pH 8.0. 5 μl of 50 mM dithiothreitol (DTT, Sigma-Aldrich, 43815) was used to reduce the proteins for 1 h at 30 °C. The proteins were then alkylated in the dark for 30 min using 5 μl of 100 mM iodoacetamide (IAA, Sigma-Aldrich, I1149). Dilution of the sample was performed with 340 μl of 0.1 M ammonium bicarbonate to a concentration of 1.5 M urea. 200 μl of the solution was treated with trypsin (12.5 μl, 0.1 μg/μl, Promega, Sequence Grade, V5117) overnight at 37 °C (at a 1/40 trypsin/total protein ratio) to digest the proteins. 25 μl of 0.1% v/v formic acid (FA, Thermo Fisher Scientific, 85178) was used to quench the digestion. C18 96-well plates (BioPureSPN Macro 96-well, 100 mg PROTO 300 C18, HNS S18V-L) were used to purify the peptides, which were eluted with 50% v/v acetonitrile (ACN, Thermo Fisher, 10001334), dried by a vacuum concentrator (Eppendorf Concentrator Plus), and redissolved in 50 μl of 0.1% v/v formic acid.
+
+Liquid-chromatography-mass spectrometry (LC-MS) was carried out on the processed samples using the Agilent 1290 Infinity II system (LC) and a Triple TOF 6600 mass spectrometer (SCIEX)6. A Phenomenex Luna Omega LC Column (1.6 μ PS C18 100A, 30 × 2.1 mm) was used to separate peptides of a 2 μg total over a 3-min gradient. Buffer A (0.1% v/v FA) and Buffer B (ACN/0.1% v/v FA) were used to create a linear gradient, starting from 1% Buffer B and reaching 40% Buffer B over 3 min with an 800 μl/min flow rate. At a 40% gradient, washing and re-equilibration steps were carried out in the following manner: Buffer B was increased from 40% to 80% over 0.5 min, followed by 80% Buffer B for 0.2 min, and then decreased from 80% to 3% Buffer B over 0.1 min. Re-equilibration at 3% Buffer B was maintained for 1 min until the next sample injection.
+
+Table 2 | Illustration of protein annotation strategy
+
+<table>
+  <tr>
+    <th>Protein category</th>
+    <th>Count (n)</th>
+    <th>Example UniProtID(s)</th>
+    <th>Gene symbol(s)</th>
+    <th>Final annotation</th>
+  </tr>
+  <tr>
+    <td>Unique Proteins</td>
+    <td>133</td>
+    <td>P00450</td>
+    <td>CP</td>
+    <td>Ceruloplasmin</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Gene-Derived Protein Groups (G)</td>
+    <td>199</td>
+    <td>P02647.F8W696</td>
+    <td>APOA1, APOA1</td>
+    <td>Apolipoprotein A-I (G)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>P00736.F5H2D0.B4DPQ0<br>P00736.F5H1V0.F5H6Y3.B4DPQ0</td>
+    <td>C1R, C1R, C1R<br>C1R, C1R, C1R, C1R</td>
+    <td>Complement C1r subcomponent (G1)<br>Complement C1r subcomponent (G2)</td>
+  </tr>
+  <tr>
+    <td>Mixed Protein Groups (PG)</td>
+    <td>107</td>
+    <td>P07478.A0A0T5B6K5<br>P00751.C9JRT3.B4E1Z4<br>A0A0B4J1V1.P01780.P01767.<br>A0A0B4JX5S.A0A0J9YY3.P0DP02.<br>P01762.A0A0C4DH42.P01772.<br>P01763</td>
+    <td>IGLV3-21, IGLV3-9<br>BF, BFD, CFB<br>IGHV3-21, IGHV3-7, IGHV3-53,<br>IGHV3-74, IGHV7-41, IGHV3-30-3,<br>IGHV3-11, IGHV3-66, IGHV3-33,<br>IGHV3-48</td>
+    <td>PG 70 (IGLV3-21, IGLV3-9)<br>PG 18 (BF, BFD, CFB)<br>PG 7 (IGHV3-11, IGHV3-74, IGHV7-4-1,...)</td>
+  </tr>
+</table>
+
+Sample acquisition was carried out using a Scanning SWATH method19. High-sensitivity mode was used for the mass spectrometer. The source conditions were as follows: source gas one at 15 psi, source gas two at 20 psi, curtain gas at 25 psi, temperature at 0 °C, IonSpray floating voltage at 5500 V, and declustering potential at 80 V. Rolling collision energies were determined using the following equation: CE = 0.034×m/z+2, where m/z represents the centre of the scanning quadrupole bin. The Scanning SWATH parameters were as follows: total cycle time 0.69 s, transmission window width 10 Da, Sample duration 3.103 min, precursor range 450–850 Da, fragment range 100–1500 Da and effective accumulation time 16.90 ms.
+
+DIA-NN (version 1.8.12) in Robust LC (high precision) was used to process the raw data using default parameters. A human plasma project-independent public spectral library26 was used for identification and refined with parameters estimated from the data being processed26. Precursor false discovery rate (FDR) filtering was set to 1%. Additional processing was carried out in R. A gene group q-value filter of 1% was applied. Samples with a minimum precursor identification of 2000 were retained in the analysis, and an 80% prevalence rate for precursors was used to filter QC samples. A cubic-spline model was fit using the repeat injections of pooled QC samples and used to correct samples for within-batch drift26. Between-batch correction was performed using the limma v3.54.2 linear batch-correction algorithm70.
+
+439 proteins and protein groups were considered; 133 (30.3%) of these were uniquely mapped to one UniProt ID (termed “proteins”), with the remaining 306 (69.7%) mapping to multiple potential UniProt IDs (termed “protein groups”). 199 of these protein groups represent different isoforms of the same protein, and 107 mixed protein groups where the signal mapped to different proteins. 138 out of the 199 isoform signals were mapped to proteins that were identified more than once (repeated isoform groups). We use a “G” naming system, where “G” signifies a group and “X” refers to a number to identify these repeated isoform groups (Table 2). For example, Apolipoprotein D was identified twice, with one of the signals annotating to three isoforms [UniProt identifiers: P05090, C9JF17, C9JX71] and was given the name Apolipoprotein D (G1) and another signal mapped to two isoforms [UniProt identifiers: P05090,C9JF17], therefore was named Apolipoprotein D (G2). 61 signals were annotated to protein isoform groups that did not repeat; these therefore only have a “G” after their protein name. We used a “PG X” naming system to identify the 107 signals that map to multiple different proteins. For example, one signal is annotated to multiple immunoglobulins (Immunoglobulin lambda variable 3-27, Immunoglobulin lambda variable 3-25 and Immunoglobulin lambda variable 3-16), and therefore is referred to as protein group 1 (PG 1). As can be observed with the PG1 example, in many cases, the protein groups with mixed labels contain related proteins. In some instances, a protein is identified as a unique signal and as several protein groups. For example, one mass spectrometry signal mapped to Alpha-1-antitrypsin identified via a single UniProt ID P01009; therefore, it was named Alpha-1-antitrypsin. However, five other mass spectrometry signals mapped to five different combinations of UniProt IDs that were all related to Alpha-1-antitrypsin and were therefore named Alpha-1-antitrypsin G1 to G5. Given that these groups originate from different signals, they were maintained as separate entities in downstream analysis. Annotation of the 439 proteins considered in this study is provided in Supplementary Data 11.
+
+Statistical analyses
+pQTL discovery. GWAS were used to identify pQTLs for protein levels (N = 15,035, Fig. 5A). Linear regression was run using the fastGWA command in GCTA (version 1.94.1)71. Protein levels were transformed by rank-based inverse normalisation. Age, sex and 20 genetic principal components (to capture population structure) were included as fixed effect covariates in the GWAS models. Correlations between all protein levels and covariates are detailed in Supplementary Data 12. A sparse genetic relationship matrix (GRM) was generated using a GRM cut-off value of 0.05 and fitted as a random effect to control for family structure. A Bonferroni statistical significance threshold was set at \( P < 1.2 \times 10^{-10} \) (genome-wide significance threshold divided by number of inferred proteins, \( 5 \times 10^{4}/439 \)). Cis pQTLs were defined as variants lying within 1 Mb of the transcription start site for the gene encoding the primary protein target. Lead-independent pQTLs were identified via conditional and joint analysis of the summary statistics for each protein using GCTA-COJO72. Default settings were specified, which included a stepwise selection procedure across 10 Mb regions and SNP linkage disequilibrium (LD) cut-offs set to \( R^2 < 0.9 \) to avoid multicollinearity. The statistical significance threshold was once again set to \( P < 1.2 \times 10^{-10} \). HRC4 imputed data from Generation Scotland was used as the reference panel for LD calculations.
+
+Comparison with previous pQTL studies
+The discovered pQTLs were compared with those found in two previous affinity-based large-scale pQTL studies by Sun et al.11 and Eldjarn et al.10. Sun et al. used the Olink proximity extension assay for protein measurement in 54,265 UK biobank participants, while Eldjarn et al. used the SomaScan v4 assay with a cohort of 35,892 Icelanders. Additionally, we compared our results with a recent pQTL study of mass-spectrometry-based proteomics (Suhré et al.) using the Seer Proteograph nanoparticle enrichment MS platform in a discovery cohort of 126018. Of the 439 proteins and protein groups quantified in our study, 58 and 75 were also included in the Sun et al. and Eldjarn et al. studies, respectively, and 114 from the discovery results in the Suhré et al. study, using “mapped UniProt ID” from their results to identify overlapping proteins. A pQTL was considered replicated if the genome-wide significant lead variant from the published studies was within 1Mb and with an effect size in the same direction as the discovered lead variant, as well as having an LD score of >0.6.
+
+Fig. 5 | Outline of methods for GWAS and 2-sample MR. A GWAS: GWAS was run on 15,035 samples to identify pQTLs for 439 mass spectrometry proteins using the fastGWA option from GCTA. Age, sex and the first 20 genetic principal components were included as covariates. B MR: two-sample Mendelian randomisation was carried out using results from our protein GWAS and summary statistics for GWAS of the 79 selected disease outcomes. MR was run for the 398 proteins with pQTLs in the GWAS results. Figure created with BioRender.com.
+
+SNP-by-sex interactions
+Sex differences in genetic effects have been described across complex traits27, but sex differences for molecular phenotypes remain largely underexplored. However, recently, a study of high-abundant plasma proteins measured by the same mass-spectrometry method as in our study identified modulation of the proteome by hormonal contraceptive use24. To explore whether there may be sex-specific effects of SNPs on protein abundance, we repeated the primary pQTL analyses using fastGWA-GE75 with a SNP-by-sex interaction term for all proteins. A sparse GRM was specified as per the primary pQTL analyses, and the same stringent Bonferroni correction was applied.
+
+Mendelian randomisation and colocalisation
+To investigate possible causal associations between protein levels and disease risk, two-sample MR76 analyses were carried out using TwoSampleMR (version 0.6.8) for each protein with >1 independent pQTL (exposure, n = 398) and a list of 78 common causes of morbidity and mortality taken from Gudjonsson et al.77, plus critical COVID-19 as outcomes (Fig. 4B). A full list of these outcomes can be found in Supplementary Data 6, along with source information for the summary statistics. The lead independent SNPs were included as instruments for each protein and inverse-variance weighted (IVW) MR was run alongside MR-Egger, weighted median MR, weighted mode MR and simple mode MR sensitivity analyses. Evidence of directional horizontal pleiotropy was queried for by testing for a non-zero Egger MR regression intercept. MR-Steiger directionality78 was used to determine the causal direction of the instruments on the exposure and outcome. A Bonferroni statistical significance threshold was set at \( P < 1.59 \times 10^{-6} \) (0.05/(number of outcomes x number of exposures)). An MR result was considered significant if the IVW p-value was below this threshold, at least one other method had \( P < 0.05 \), and it had at least 3 SNP instruments.
+
+For each significant MR result, colocalisation analysis was performed using the R package coloc (version 5.2.3)80. Input regions for coloc were defined as 1 Mb ± the instrument SNP used for MR analysis. A PP.H4.afb threshold of >0.6 was used to consider a causal variant shared between the outcome and the exposure.
+
+Gene set and tissue enrichment
+Gene set enrichment analysis and tissue-specific enrichment analysis were carried out on each of our proteins with a significant MR result using the GENE2FUNC function in the Functional Mapping and Annotation of Genome-Wide Association Studies (FUMA) online tool (version 1.8.2)81. Genes annotated to SNPs with \( P < 5 \times 10^{-8} \) from the GWAS were used as input. Default settings of a minimum of two genes per gene set and an FDR Benjamini–Hochberg adjusted \( P < 0.05 \) were used to define significantly enriched gene sets.
+
+For gene set enrichment analysis, gene sets from the Molecular Signatures Database (MSigDB) (hallmark, positional, curated (which includes BioCarta, KEGG and Reactome gene sets), motif, computational, gene ontology (GO), oncogenic signature, immunologic signature and cell type signature gene sets), as well as WikiPathway and GWAS catalog gene sets were used to test for enrichment. For tissue-specific enrichment analysis, the GTEx v8 54 tissue types and the GTEx v8 30 general tissue types databases were used to test for overrepresentation of differentially expressed genes in specific tissue types.
+
+Reporting summary
+Further information on research design is available in the Nature Portfolio Reporting Summary linked to this article.
+
+Data availability
+According to the terms of consent for Generation Scotland participants, access to data must be reviewed by the Generation Scotland Access Committee. Access requests can be made through the researcher portal (https://gsaccess.igc.ed.ac.uk/) and normally take up to six weeks for approval. Further information can be found on the Generation Scotland website: https://genscot.ed.ac.uk/for-researchers/access. GWAS summary statistics are available on the Edinburgh DataShare site: https://datashare.ed.ac.uk/handle/10283/9082. Datasets used in the replication analysis can be found in the Supplementary Information of their associated publications: https://www.nature.com/articles/s41586-023-06563-x#MOESM3*, https://www.nature.com/articles/s41586-023-06592-6#Sec49* and https://www.nature.com/articles/s41588-025-02413-w#Sec27*. The figure data generated in this study are provided in the Source Data file. Source data are provided with this paper.
+
+Code availability
+All code associated with this manuscript is available open access at the following GitHub repository: https://doi.org/10.5281/zenodo.200825578*.
+
+References
+1. Anderson, N. L. & Anderson, N. G. The human plasma proteome: history, character, and diagnostic prospects. Mol. Cell Proteom. 1, 845–867 (2002).
+2. Mingle, A. M., Mills, N. L., Mueller, C., & on behalf of the Study Group on Biomarkers of the ESC Association for Acute CardioVascular Care. Cardiac troponin T and I: back to basics. Eur. Heart J. Acute Cardiovasc. Care 12, 631–632 (2023).
+3. Benoit, S. W., Ciccia, E. A. & Devarajan, P. Cystatin C as a biomarker of chronic kidney disease: latest developments. Expert Rev. Mol. Diagn. 20, 1019–1026 (2020).
+4. Cem, G. & Irving, K. Acute-Phase Proteins and Other Systemic Responses to Inflammation. N. Engl. J. Med. 340, 448–454 (1999).
+5. Lilja, H., Ulmert, D. & Vickers, A. J. Prostate-specific antigen and prostate cancer: prediction, detection and monitoring. Nat. Rev. Cancer 8, 268–278 (2008).
+6. Suhre, K., McCarthy, M. I. & Schwenk, J. M. Genetics meets proteomics: perspectives for large population-based studies. Nat. Rev. Genet. 22, 19–37 (2021).
+7. Assarsson, E. et al. Homogenous 96-plex PEA immunoassay exhibiting high sensitivity, specificity, and excellent scalability. PLoS ONE 9, e95192 (2014).
+8. Gold, L. et al. Aptamer-based multiplexed proteomic technology for biomarker discovery. PLoS ONE 5, e15004 (2010).
+9. Niu, L. et al. Plasma proteome variation and its genetic determinants in children and adolescents. Nat. Genet. 57, 635–646 (2025).
+10. Eldjarn, G. H. et al. Large-scale plasma proteomics comparisons through genetics and disease associations. Nature 622, 348–358 (2023).
+11. Sun, B. B. et al. Plasma proteomic associations with genetics and health in the UK Biobank. Nature 622, 329–338 (2023).
+12. Pietzner, M. et al. Mapping the proteo-genomic convergence of human diseases. Science 374, eabj5141 (2021).
+13. Zhao, J. H. et al. Genetics of circulating inflammatory proteins identifies drivers of immune-mediated disease risk and therapeutic targets. Nat. Immunol. 24, 1540–1551 (2023).
+14. Kingsmore, S. F. Multiplexed protein measurement: technologies and applications of protein and antibody arrays. Nat. Rev. Drug Discov. 5, 310–321 (2006).
+15. Messner, C. B. et al. Mass spectrometry-based high-throughput proteomics and its role in biomedical studies and systems biology. Proteomics 23, 2200013 (2023).
+16. Raffield, L. M. et al. Comparison of proteomic assessment methods in multiple cohort studies. Proteomics 20, e1900278 (2020).
+17. Xu, F. et al. Genome-wide genotype-serum proteome mapping provides insights into the cross-ancestry differences in cardiometabolic disease susceptibility. Nat. Commun. 14, 896 (2023).
+18. Suhare, K. et al. A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform. Nat. Genet. 57, 2987–2996 (2025).
+19. Messner, C. B. et al. Ultra-fast proteomics with Scanning SWATH. Nat. Biotechnol. 39, 846–854 (2021).
+20. Paré, G., Cook, N. R., Ridker, P. M. & Chasman, D. I. On the use of variance per genotype as a tool to identify quantitative trait interaction effects: a report from the Women’s Genome Health Study. PLoS Genet. 6, e1000981 (2010).
+21. Wang, H. et al. Genotype-by-environment interactions inferred from genetic effects on phenotypic variability in the UK Biobank. Sci. Adv. 5, eaaw3538 (2019).
+22. Trajanoska, K. et al. From target discovery to clinical drug development with human genetics. Nature 620, 737–745 (2023).
+23. Minikel, E. V., Painter, J. L., Dong, C. C. & Nelson, M. R. Refining the impact of genetic evidence on clinical success. Nature 629, 624–629 (2024).
+24. Szklarczyk, D. et al. The STRING database in 2023: protein–protein association networks and functional enrichment analyses for any sequenced genome of interest. Nucleic Acids Res. 51, D638 (2022).
+25. Janciulskiene, S. M. et al. The discovery of α1-antitrypsin and its role in health and disease. Respir. Med. 105, 1129–1139 (2011).
+26. O’Brien, M. E. et al. A review of alpha-1 antitrypsin binding partners for immune regulation and potential therapeutic application. Int. J. Mol. Sci. 23, 2441 (2022).
+27. Strnad, P., McElvaney, N. G. & Lomas, D. A. Alpha1-antitrypsin deficiency. N. Engl. J. Med. 382, 1443–1455 (2020).
+28. Behboodikham, J. et al. Apolipoprotein B and cardiovascular disease: biomarker and potential therapeutic target. Metabolites 11, 690 (2021).
+29. Ashiq, S. & Ashiq, K. The association of apolipoprotein-E (APOE) gene polymorphisms with coronary artery disease: a systematic review and meta-analysis. Egypt. J. Med. Hum. Genet. 22, 16 (2021).
+30. Hughes, H. K., Moreno, R. J. & Ashwood, P. Innate immune dysfunction and neuroinflammation in autism spectrum disorder (ASD). Focus 22, 229–241 (2024).
+31. Iakunchykova, O., Leonardsen, E. H. & Wang, Y. Genetic evidence for causal effects of immune dysfunction in psychiatric disorders: where are we? Transl. Psychiatry 14, 1–11 (2024).
+32. Lord, M. S., Melrose, J., Day, A. J. & Whitelock, J. M. The inter-α-tryptsin inhibitor family: versatile molecules in biology and pathology. J. Histochem. Cytochem. 68, 907–927 (2020).
+33. Song, S. Alpha-1 antitrypsin therapy for autoimmune disorders. Chronic Obstr. Pulm. Dis. J. 5, 289–301 (2018).
+34. Birur, B., Kraguljac, N. V., Shelton, R. C. & Lahti, A. C. Brain structure, function, and neurochemistry in schizophrenia and bipolar
+
+disorder—a systematic review of the magnetic resonance neuroimaging literature. npj Schizophr. 3, 15 (2017).
+35. Ecker, C., Bookheimer, S. Y. & Murphy, D. G. M. Neuroimaging in autism spectrum disorder: brain structure and function across the lifespan. Lancet Neurol. 14, 1121–1134 (2015).
+36. Owen, M. J., Legge, S. E., Rees, E., Walters, J. T. R. & O’Donovan, M. C. Genomic findings in schizophrenia and their implications. Mol. Psychiatry 28, 3638–3647 (2023).
+37. Ripke, S. et al. Genome-wide association analysis identifies 13 new risk loci for schizophrenia. Nat. Genet. 45, 1150–1159 (2013).
+38. Hamshere, M. L. et al. Genome-wide significant associations in schizophrenia to ITIH3/4, CACNA1C and SDCCAG8, and extensive replication of associations reported by the Schizophrenia PGC. Mol. Psychiatry 18, 708–712 (2013).
+39. Ripke, S. et al. Biological insights from 108 schizophrenia-associated genetic loci. Nature 511, 421–427 (2014).
+40. Grove, J. et al. Identification of common genetic risk variants for autism spectrum disorder. Nat. Genet. 51, 431–444 (2019).
+41. Yao, X. et al. Integrative analysis of genome-wide association studies identifies novel loci associated with neuropsychiatric disorders. Transl. Psychiatry 11, 1–12 (2021).
+42. Cortelazzo, A. et al. Expression and oxidative modifications of plasma proteins in autism spectrum disorders: Interplay between inflammatory response and lipid peroxidation. Proteomics 10, 1103–1112 (2016).
+43. Shen, L. et al. iTRAQ-based proteomic analysis reveals protein profile in plasma from children with autism. Proteomics 12, 1700085 (2018).
+44. Chan, M. K. et al. Associations between SNPs and immune-related circulating proteins in schizophrenia. Sci. Rep. 7, 12586 (2017).
+45. Gorlé, N. & Vandebroucke, R. E. Interferons: a molecular switch between damage and repair in ageing and Alzheimer’s disease. Mech. Ageing Dev. 183, 111148 (2019).
+46. Wu, K.-M. et al. The role of the immune system in Alzheimer’s disease. Ageing Res. Rev. 70, 101409 (2021).
+47. Heppner, F. L., Ransohoff, R. M. & Becher, B. Immune attack: the role of inflammation in Alzheimer disease. Nat. Rev. Neurosci. 16, 358–372 (2015).
+48. Agrawal, S., Abud, E. M., Snigdha, S. & Agrawal, A. IgM response against amyloid-beta in aging: a potential peripheral protective mechanism. Alzheimers Res. Ther. 10, 81 (2018).
+49. Marcello, A. et al. Reduced levels of IgM autoantibodies against N-truncated pyroglutamate Aβ in plasma of patients with Alzheimer’s disease. Neurobiol. Aging 32, 1379–1387 (2011).
+50. Yang, L. et al. Serum protein-based profiles for the diagnostic model of Alzheimer’s disease. Am. J. Alzheimers Dis. Dement. * 38, 15333175231202166 (2023).
+51. Lekhraj, R. et al. Altered abundances of human immunoglobulin M and immunoglobulin G subclasses in Alzheimer’s disease frontal cortex. Sci. Rep. 12, 6934 (2022).
+52. Bader, J. M., Albrecht, V. & Mann, M. MS-based proteomics of body fluids: the end of the beginning. Mol. Cell. Proteom. 22, 100577 (2023).
+53. Pietzner, M. et al. Synergistic insights into human health from aptamer- and antibody-based proteomic profiling. Nat. Commun. 12, 6822 (2021).
+54. Suhre, K. et al. Nanoparticle enrichment mass-spectrometry proteomics identifies protein-altering variants for precise pQTL mapping. Nat. Commun. 15, 989 (2024).
+55. Integrating Mass Spectrometry and Affinity-Based Proteomics. https://olink.com/blog/mass-spectrometry-and-affinity-proteomics-roundtable (2025).
+56. Surinova, S. et al. On the development of plasma protein biomarkers. J. Proteome Res. 10, 5–16 (2011).
+57. Geyer, P. E., Holdt, L. M., Teupser, D. & Mann, M. Revisiting biomarker discovery by plasma proteomics. Mol. Syst. Biol. 13, 942 (2017).
+58. da Costa, J. P., Santos, P. S. M., Vitorino, R., Rocha-Santos, T. & Duarte, A. C. How low can you go? A current perspective on low-abundance proteomics. Trends Anal. Chem. 93, 171–182 (2017).
+59. Smith, B. H. et al. Cohort Profile: Generation Scotland: Scottish Family Health Study (GS:SFHS). The study, its participants and their potential for genetic research on health and illness. Int. J. Epidemiol. 42, 689–700 (2013).
+60. Kerr, S. M. et al. Pedigree and genotyping quality analyses of over 10,000 DNA samples from the Generation Scotland: Scottish Family Health Study. BMC Med. Genet. 14, 38 (2013).
+61. Nagy, R. et al. Exploration of haplotype research consortium imputation for genome-wide association studies in 20,032 Generation Scotland participants. Genome Med. 9, 23 (2017).
+62. Durbin, R. M. et al. A map of human genome variation from population-scale sequencing. Nature 467, 1061–1073 (2010).
+63. Amador, C. et al. Recent genomic heritage in Scotland. BMC Genomics 16, 437 (2015).
+64. McCarthy, S. et al. A reference panel of 64,976 haplotypes for genotype imputation. Nat. Genet. 48, 1279–1283 (2016).
+65. Messner, C. B. et al. Ultra-high-throughput clinical proteomics reveals classifiers of COVID-19 infection. Cell Syst. 11, 11–24.e4 (2020).
+66. Vernardis, S. I. et al. The impact of acute nutritional interventions on the plasma proteome. J. Clin. Endocrinol. Metab. 108, 2087–2098 (2023).
+67. Demichev, V., Messner, C. B., Vernardis, S. I., Lilley, K. S. & Ralser, M. DIA-NN: neural networks and interference correction enable deep proteome coverage in high throughput. Nat. Methods 17, 41–44 (2020).
+68. Bruderer, R. et al. Analysis of 1508 plasma samples by capillary-flow data-independent acquisition profiles proteomics of weight loss and maintenance. Mol. Cell Proteom. 18, 1242–1254 (2019).
+69. Rusilowicz, M., Dickinson, M., Charlton, A., O’Keefe, S. & Wilson, J. A batch correction method for liquid chromatography–mass spectrometry data that does not depend on quality control samples. Metabolomics 12, 56 (2016).
+70. Ritchie, M. E. et al. limma powers differential expression analyses for RNA-sequencing and microarray studies. Nucleic Acids Res. 43, e47 (2015).
+71. Yang, J., Lee, S. H., Goddard, M. E. & Visscher, P. M. GCTA: a tool for genome-wide complex trait analysis. Am. J. Hum. Genet. 88, 76–82 (2011).
+72. Yang, J. et al. Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits. Nat. Genet. 44, 369–375 (2012).
+73. Bernabeu, E. et al. Sex differences in genetic architecture in the UK Biobank. Nat. Genet. 53, 1283–1289 (2021).
+74. Dordevic, N. et al. Extensive modulation of the circulating blood proteome by hormonal contraceptive use across two population studies. Commun. Med. 5, 131 (2025).
+75. Zhong, W., Chhibber, A., Luo, L., Mehrotra, D. V. & Shen, J. A fast and powerful linear mixed model approach for genotype-environment interaction tests in large-scale GWAS. Brief. Bioinform. 24, bbac547 (2022).
+76. Hemani, G. et al. The MR-Base platform supports systematic causal inference across the human phenotype. eLife 7, e34408 (2018).
+77. Gudbjartsson, A. et al. A genome-wide association study of serum proteins reveals shared loci with common diseases. Nat. Commun. 13, 480 (2022).
+78. Pairo-Castineira, E. et al. GWAS and meta-analysis identifies 49 genetic variants underlying critical COVID-19. Nature 617, 764–768 (2023).
+
+79. Hemani, G., Tilling, K. & Smith, G. D. Orienting the causal relationship between imprecisely measured traits using GWAS summary data. PLoS Genet. 13, e1007081 (2017).
+80. Giambartolomei, C. et al. Bayesian test for colocalisation between pairs of genetic association studies using summary statistics. PLoS Genet. 10, e1004383 (2014).
+81. Watanabe, K., Taskesen, E., van Bochoven, A. & Posthuma, D. Functional mapping and annotation of genetic associations with FUMA. Nat. Commun. 8, 1826 (2017).
+82. Richmond A. et al. Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals. marioni-group/Generation_Scotland_Protein_GWAS https://doi.org/10.5281/zenodo.20082557 (2026).
+
+Author contributions
+Conceptualisation: A.R., J.A.R. H.M.S., R.F.H. and R.E.M. Formal analysis: A.R., J.A.R., H.M.S. and R.F.H. Data generation: A.Z., S.V., A.G., A.C., C.D., H.G., P.A., M.W., C.B., C.B.M. and M.R. Writing: A.R., J.A.R., H.M.S. and R.F.H. Supervision: R.E.M. Reviewing and approving final manuscript: A.R., J.A.R., H.M.S., R.F.H., A.Z., S.V., A.D.C., A.G., J.M., A.C., C.D., H.G., P.A., M.W., C.B., C.B.M., D.J.P., C.H., A.M.M, D.L.M, M.R. and R.E.M.
+
+Funding
+This research was funded in whole, or in part, by the Wellcome Trust [104036/Z/14/Z, 108890/Z/15/Z, 221890/Z/20/Z, 220857/Z/20/Z and 218493/Z/19/Z]. For the purpose of open access, the author has applied a CC BY public copyright licence to any Author Accepted Manuscript version arising from this submission. GS received core support from the Chief Scientist Office of the Scottish Government Health Directorates [CZD/16/6] and the Scottish Funding Council [HR03006]. Genotyping of the GS samples was carried out by the Genetics Core Laboratory at the Edinburgh Clinical Research Facility, Edinburgh, Scotland and was funded by the Medical Research Council UK and the Wellcome Trust (Wellcome Trust Strategic Award “STratifying Resilience and Depression Longitudinally” STRADL Reference 104036/Z/14/Z). R.F.H. is supported by a British Heart Foundation Immediate Fellowship [FS/IPBSRF/22/27042]. C.H. is supported by an MRC Human Genetics Unit programme grant ‘Quantitative traits in health and disease’ [U. MC_UU_00007/10]. R.E.M. is supported by an Alzheimer’s Society major project grant [AS-PG-19b-010]. H.M.S is a student on the Translational Neuroscience PhD programme funded by Wellcome [21843/Z/19/Z]. J.A.R. is a University of Edinburgh Clinical Academic Track PhD student, supported by the Wellcome Trust [319878/Z/24/Z]. A.D.C. is supported by a Medical Research Council PhD Studentship in Precision Medicine with funding from the Medical Research Council Doctoral Training Program and the University of Edinburgh College of Medicine and Veterinary Medicine.
+
+Competing interests
+R.F.H. and R.E.M. act as scientific consultants for Optima Partners. R.E.M. is an advisor to the Epigenetic Clock Development Foundation. R.F.H. has received consultant fees from Illumina. All other authors declare no competing interests.
+
+Additional information
+Supplementary information The online version contains supplementary material available at https://doi.org/10.1038/s41467-026-76474-8.
+
+Correspondence and requests for materials should be addressed to Riccardo E. Marioni.
+
+Peer review information Nature Communications thanks the anonymous reviewers for their contribution to the peer review of this work. A peer review file is available.
+
+Reprints and permissions information is available at http://www.nature.com/reprints
+
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.

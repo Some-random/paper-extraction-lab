@@ -1,0 +1,43 @@
+{
+  "pmcid": "PMC13651886",
+  "title": "Canonical Wnt induction by OTULIN prevents keratinocyte death and skin inflammation",
+  "journal": "Science Advances",
+  "doi": "10.1126/sciadv.adz0181",
+  "license_code": "CC BY",
+  "version": 1,
+  "is_manuscript": false,
+  "pdf_sha256": "39d9334992c91e38f806860d15b8c4f67ec48b7d17fe02f7cfe8518072c885ef",
+  "xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+  "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13651886.1.json",
+  "pdf_pages": 15,
+  "ocr_status": "completed",
+  "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13651886/",
+  "source_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13651886.1/PMC13651886.1.pdf?md5=32582d7f44efc799cd17ff56f85a4719",
+  "note": "Byte-identical derived-text copies for review; original PDF/XML and page outputs remain on RustFS.",
+  "files": {
+    "fullpaper_native.md": {
+      "sha256": "2a8087ca0973583584a3702e21961f8b863ac5bf0ad65447dd998e958441606d",
+      "bytes": 81617
+    },
+    "fullpaper_olmocr.md": {
+      "sha256": "820c6f50d4668f56637df79f6c140fdcd9874a1bf2c3c0a4c8ddccde32bc9d2a",
+      "bytes": 71493
+    }
+  },
+  "authors": [
+    "Kim Lecomte",
+    "Pieter Hertens",
+    "Virginie Wylleman",
+    "Annagiada Toniolo",
+    "Febe Roelandt",
+    "Fleur Boone",
+    "Maarten Ciers",
+    "Lien Verboom",
+    "Katrien Staes",
+    "Geert van Loo",
+    "Esther Hoste"
+  ],
+  "license_statements": [
+    "https://creativecommons.org/licenses/by/4.0/ This is an open-access article distributed under the terms of the  Creative Commons Attribution license , which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+  ]
+}

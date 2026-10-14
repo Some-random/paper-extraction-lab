@@ -1,0 +1,418 @@
+Canonical Wnt induction by OTULIN prevents keratinocyte death and skin inflammation
+
+Kim Lecomte1,2,3, Pieter Hertens1,2, Virginie Wylleman1,2, Annagiada Toniolo1,2,3, Febe Roelandt1,2,3, Fleur Boone1,2, Maarten Ciers1,2, Lien Verboom1,2, Katrien Staes1,2, Geert van Loo1,2,3, Esther Hoste1,2,3*
+
+Loss-of-function mutations in the human OTULIN gene, encoding a deubiquitinase with exclusive specificity for linear ubiquitin chains, cause a severe multiorgan autoinflammatory condition involving the skin. Mice lacking OTULIN selectively in keratinocytes develop inflamed skin lesions that progress into squamous tumors, a phenotype driven by excessive tumor necrosis factor (TNF)-induced cell death. Previous studies suggest a role for OTULIN in mediating Wnt signaling during development, but the physiological relevance of this association is unknown. Here, we show that OTULIN promotes Wnt signaling in keratinocytes by regulating the linear ubiquitination status of β-catenin. Stabilization of β-catenin in OTULIN-deficient keratinocytes prevents progressive skin inflammation in prophylactic and therapeutic settings by blocking keratinocyte death. We demonstrate that OTULIN prevents proteasomal degradation of β-catenin in cultured keratinocytes. Reduced Wnt signaling in OTULIN-deficient keratinocytes leads to degradation of TCF3/4, an essential survival factor for keratinocytes. Collectively, our data identify OTULIN’s linear deubiquitination activity as a key regulator of epithelial cell viability, not only by preventing cell death downstream of TNF, but also by promoting canonical Wnt signaling.
+
+INTRODUCTION
+Keratinocytes (KC), the epithelial cells of the skin, constitute a crucial structural and immunological barrier protecting the organism from dehydration and external hazards (1). The survival of KCs under environmental stress critically depends on their precise regulation of inflammatory signaling cascades, which are largely mediated through specific and fast posttranslational modifications of signaling proteins, ultimately triggering downstream transcriptional responses (2). Ubiquitination is a posttranslational modification that plays a key role in orchestrating cellular responses in inflammation. Linear (M1-linked) ubiquitin (Ubq) chains are head-to-tail Ubq moieties important for assembling protein complexes downstream of tumor necrosis factor (TNF), interleukin-1β (IL-1β) and Toll-like receptors (3–6). M1-linked Ubq chains are added to substrates by the linear ubiquitin chain assembly complex (LUBAC), consisting of heme-oxidized IRP2 ubiquitin ligase-1 (HOIL-1), HOIL interacting protein-1 (HOIP), and shank-associated RH domain-interacting protein (SHARPIN) (7). These M1 Ubq chains can be removed from substrates by the deubiquitinases (DUBs) OTU DUB with linear linkage specificity (OTULIN, encoded by the gene Fam105b, also known as gumby) and cylindromatosis (CYLD). OTULIN is the only DUB with exclusive specificity for M1-linked Ubq chains, whereas CYLD is also capable of removing Lys63 (K63)-linked Ubq chains (8–10). OTULIN prevents LUBAC autoubiquitination and degradation, stabilizing LUBAC in specific cell types, including KCs, thereby regulating NF-κB signaling and preventing cell death (11–15).
+
+Patients harboring loss-of-function mutations in OTULIN develop a severe, often lethal, disease with skin involvement, termed ORAS (OTULIN-related autoinflammatory syndrome), and can be successfully treated with TNF-blocking therapies (11, 16). In mice, genetic deletion of Otulin or expression of a catalytically inactive OTULIN mutant results in embryonic lethality due to excessive cell death (11, 14, 17). We and others have previously shown that mice lacking OTULIN selectively in KCs develop severe skin inflammation driven by TNFR1 signaling (12, 13). Rivkin et al. identified the Otulin/gumby gene as causative for the recessive, embryonically lethal gumby mouse mutant and suggested a critical role for the gumby-LUBAC axis in regulating canonical Wnt signaling (17). However, direct in vivo evidence supporting such a role is currently lacking. Wnt signaling pathways regulate a diverse range of cellular processes, including cell fate determination, proliferation, and migration (18). Wnt is crucial for timely adaption of embryonic and adult stem cell behavior and induces hair follicle (HF) stem cell proliferation in the skin, while also controlling the commitment and differentiation of other KCs (19, 20). Canonical Wnt signaling converges on cytoplasmic β-catenin accumulation. In absence of Wnt ligands, β-catenin is bound by a destruction complex comprising glycogen synthase kinase-3β (GSK3β), axis inhibition 2 (AXIN2), adenomatous polyposis coli (APC), and casein kinase 1α (CK1α), resulting in β-catenin phosphorylation. Phosphorylated β-catenin is subsequently recognized by β-transducin repeat containing E3 Ubq protein ligase (β-TrCP), which catalyzes the addition of K48-linked Ubq chains, thereby targeting β-catenin for proteasomal degradation (21). Upon binding of Wnt ligands to Frizzled (Fzd) receptors and low-density lipoprotein receptor-related protein 5/6 (LRP5/6), the adaptor protein Dishevelled2 (DVL2) is recruited to the membrane and binds AXIN2, thereby disrupting the destruction complex. This disruption allows β-catenin to accumulate in the cytosol and translocate to the nucleus, where it activates transcription of Wnt target genes by forming a complex with members of the T cell factor (TCF)/lymphoid enhancer–binding factor (LEF) family of transcription factors (22). The E3 Ubq ligases RNF43 and ZNRF3 function as Wnt repressors by catalyzing K48-linked ubiquitination, triggering the turnover or endocytosis of Fzd receptors (23, 24), whereas β-catenin degradation is predominantly mediated by the SCF E3 ligase complex containing
+
+β-TrCP (21, 25). Overexpression studies in cancer cell lines suggested that linear ubiquitination of β-catenin promotes its K48-linked ubiquitination and degradation in response to DNA damage, a process counteracted by OTULIN (26).
+
+In this study, we elucidate the in vivo importance of OTULIN in regulating canonical Wnt signaling in KCs. We demonstrate that stabilization of β-catenin and expression of the Wnt target genes Tcf3 and Tcf4 depends on OTULIN’s DUB activity, thereby protecting KCs from TNF-induced cell death and severe skin inflammation in mice. Notably, stabilizing β-catenin in OTULIN-deficient KCs prevents or ameliorates skin inflammation in prophylactic and therapeutic settings, respectively. These findings provide important insights into how morphogen signaling intersects with cell death pathways to safeguard epithelial cell survival.
+
+RESULTS
+Wnt signaling is down-regulated in OTULIN-deficient KCs
+OTULIN was initially identified as a modulator of canonical Wnt signaling regulating embryonic angiogenesis (17). To determine whether OTULIN and linear (de)ubiquitination modulate Wnt responses in adult tissues, we analyzed Wnt signaling in the skin of mice with OTULIN-deficient KCs (ΔKerOTULIN mice). We previously demonstrated that ΔKerOTULIN mice develop inflamed skin lesions that progress into well-differentiated squamous carcinomas (12, 13). Gene ontology (GO) enrichment analysis of our published single-cell RNA sequencing (scRNA-seq) dataset comparing total skin of wild-type (WT; Cre-negative OTULINFL/FL) and ΔKerOTULIN mice (12) revealed Wnt signaling as one of the top down-regulated GO terms in OTULIN-deficient KCs (Fig. 1A and fig. S1A). When probing expression levels of specific Wnt mediators in our scRNA-seq dataset, we indeed observed marked down-regulation in OTULIN-deficient KCs relative to control KCs (Fig. 1B). Quantitative polymerase chain reaction (qPCR) analysis of epidermal tail lysates confirmed the down-regulation of Wnt target genes in ΔKerOTULIN epidermis (Fig. 1C and Table 1). In agreement, expression levels of several members of the TCF/LEF family, key downstream mediators of canonical Wnt signaling, were also significantly reduced in ΔKerOTULIN epidermis (Fig. 1D). Immunoblotting for nonphosphorylated β-catenin, indicative of stabilized β-catenin and active Wnt signaling, confirmed reduced Wnt activation in epidermal tail lysates from ΔKerOTULIN relative to control mice (Fig. 1E). Wnt activation in KCs from adult skin is most prominent during the growth phase of HF, also referred to as anagen, culminating in nuclear expression of LEF1 (20, 27). Immunofluorescence staining of anagen skin indicated nuclear LEF1 in WT HFs, whereas no nuclear LEF1 was observed in anagen-like HFs in lesional ΔKerOTULIN skin (Fig. 1F and Table 2). When probing HF cell populations (outer and inner layer, bulge and upper HF) of our scRNA-seq data for Wnt target gene expression, the down-regulation of Wnt target gene expression in OTULIN-deficient KCs was even more pronounced than in the total KC population (Fig. 1G). In addition to OTULIN, SHARPIN has also been implicated in stabilizing β-catenin (28). Therefore, we quantified expression levels of Wnt mediators and target genes in SHARPINcpdm/cpdm epidermis and control epidermis. Down-regulation of canonical Wnt signaling was observed in SHARPINcpdm/cpdm epidermis, supporting a role for linear ubiquitination in promoting Wnt signaling in adult KCs (fig. S1B). β-catenin also performs Wnt-independent roles at the plasma membrane (29). We assessed the levels of cytosolic β-catenin in OTULIN-deficient and control epidermis and observed higher levels in control epidermis, indicating that OTULIN promotes canonical Wnt signaling in the skin (fig. S1C). Together, these data demonstrate that OTULIN promotes canonical Wnt signaling in adult KCs.
+
+Stabilization of β-catenin prevents dermatitis and tumor formation in ΔKerOTULIN mice
+Canonical Wnt signaling is driven by cytosolic β-catenin accumulation and subsequent nuclear translocation, facilitating the interaction of β-catenin with TCF/LEF transcription factors to drive Wnt target gene expression (22). To assess whether inducing canonical Wnt signaling could compensate for the loss of OTULIN-driven Wnt activation, we stabilized β-catenin in KCs of ΔKerOTULIN mice. Given the crucial role of Wnt signaling in embryogenesis, ΔKerOTULIN mice were crossed to K14ΔNβ-catenin-ER mice (hereafter referred to as ΔNβcat mice), which express a transgene lacking the N-terminal degronade of β-catenin under the control of a KC-selective promoter following postnatal tamoxifen induction (30). Transgene induction in newborn ΔKerOTULIN ΔNβcat pups at postnatal day 0.5 (P0.5) and P1.5 provided complete protection from dermatitis in the tail skin (Fig. 2A). Approximately 20% of these mice also exhibited full protection from dermatitis in the back skin, even at old age (fig. S2A). The remaining mice developed skin lesions, albeit significantly later than ΔKerOTULIN mice (Fig. 2, A to C). Notably, all ΔKerOTULIN ΔNβcat mice were protected from exophytic tumor formation (fig. S2B). Time course measurements of transepidermal water loss (TEWL) indicated that ΔKerOTULIN mice exhibited more severe epidermal barrier perturbation compared to ΔKerOTULIN ΔNβcat littermates (Fig. 2C). Clinical scoring of the mice further confirmed the significant improvement in skin pathology observed in ΔKerOTULIN ΔNβcat relative to ΔKerOTULIN mice (Fig. 2D). Additionally, protection from systemic autoinflammation in ΔKerOTULIN ΔNβcat mice was evidenced by reduced levels of circulating IL-6 relative to ΔKerOTULIN mice (Fig. 2E).
+
+Histomorphological analyses of the back skin revealed reduced epidermal hyperplasia in lesional skin of ΔKerOTULIN ΔNβcat relative to ΔKerOTULIN mice (Fig. 2F and fig. S2C), which was further confirmed by reduced Ki67 staining (Fig. 2F). Given that skin pathology associated with defective linear (de)ubiquitination in KCs is driven by excessive cell death (12, 13), we next questioned whether stabilization of β-catenin protects OTULIN-deficient KCs from death. In lesional skin sections, a significant reduction in apoptotic interfollicular epidermal cells was observed in ΔKerOTULIN ΔNβcat skin compared to ΔKerOTULIN skin, as assessed by cleaved caspase-3 staining (Fig. 2, F and G). Similar reductions in cell death levels were observed using TUNEL (terminal deoxynucleotidyl transferase dUTP nick end labeling) staining, which marks both apoptotic and necrotic cells (Fig. 2F). Immunostaining for keratin-10 (K10) and K14 revealed aberrant K14 expression in lesional skin of both ΔKerOTULIN ΔNβcat and ΔKerOTULIN mice (Fig. 2F), indicating that KC differentiation is impaired in lesional skin irrespective of the levels of β-catenin. OTULIN stabilizes LUBAC components in various cell types, including KCs (11, 12, 14). One potential explanation for the marked improvement in the inflammatory phenotype of ΔKerOTULIN mice upon β-catenin stabilization is that LUBAC proteins might also be stabilized under these conditions. However, immunoblotting for HOIL-1 and HOIP in epidermal lysates from ΔKerOTULIN
+
+Fig. 1. Wnt signaling is down-regulated in OTULIN-deficient KCs. (A) Left: UMAP clustering of scRNA-seq data obtained from cells isolated from ΔKerOTULIN and control skin (12), highlighting the KC cluster. Right: GO enrichment analysis of genes significantly down-regulated in OTULIN-deficient KCs relative to control KCs. (B) Violin plots showing distribution of expression of the indicated Wnt target genes in scRNA-seq data of KCs from OTULINFL/FL and ΔKerOTULIN skin. (C) qPCR analysis for the indicated Wnt target genes on epidermal tail lysates of OTULINFL/FL and ΔKerOTULIN mice (aged 8 to 11 weeks). Data are means ± SEM, *P < 0.05; **P < 0.01; ***P < 0.001. (D) qPCR analysis for the indicated Wnt effector genes on epidermal tail lysates of OTULINFL/FL and ΔKerOTULIN mice. Data are means ± SEM, *P < 0.05; **P < 0.01; ***P < 0.001. Violin plots showing distribution of expression of the indicated genes in scRNA-seq data of HF KCs from OTULINFL/FL and ΔKerOTULIN skin. (E) Immunoblotting for nonphosphorylated (active) β-catenin and OTULIN in epidermal tail lysates from OTULINFL/FL and ΔKerOTULIN mice. α-Actin is shown as loading control. (F) Immunofluorescence images of LEF1 staining in OTULINFL/FL anagen skin and ΔKerOTULIN lesional skin. Top panels are hematoxylin and eosin (H&E)–stained skin sections from the same mice. Scale bars, 100 μm (top); 50 μm (bottom). (G) Violin plots showing distribution of expression of the indicated genes in scRNA-seq data of HF KCs from OTULINFL/FL and ΔKerOTULIN skin.
+
+Table 1. List of mouse-specific qPCR primers.
+
+<table>
+  <tr>
+    <th>Gene</th>
+    <th>Forward primer</th>
+    <th>Reverse primer</th>
+  </tr>
+  <tr>
+    <td>Axin2</td>
+    <td>CTCACCCATTTACCAAGGACC</td>
+    <td>GTTCCGTGCCCTCCTGCTGAC</td>
+  </tr>
+  <tr>
+    <td>Ctnnb</td>
+    <td>CACAGCTCCCTTCCCTGAGTG</td>
+    <td>GCCTCTCATCTAGGGCTTCAG</td>
+  </tr>
+  <tr>
+    <td>Bmp4</td>
+    <td>CTTGCAGGATCCAGTCTCT</td>
+    <td>ACTACGGAAATGGCTCCATT</td>
+  </tr>
+  <tr>
+    <td>Gja1</td>
+    <td>CCAAGGAGTTCACCACTTTG</td>
+    <td>CCATGCTGCGGACCTCTCT</td>
+  </tr>
+  <tr>
+    <td>Id2</td>
+    <td>CTGGGCAAAGAGCATACCTT</td>
+    <td>CCCTTCTGAGCTTAGTGCAGTG</td>
+  </tr>
+  <tr>
+    <td>Lef1</td>
+    <td>GAT CCC CTT CAA GGA CGA AG</td>
+    <td>GGC TTG TCT GAC CAC CTC AT</td>
+  </tr>
+  <tr>
+    <td>Lgr5</td>
+    <td>TCTTACCTCTTACCTGGACCT</td>
+    <td>GGCGTAGTCTGCTATGTGGTGT</td>
+  </tr>
+  <tr>
+    <td>Lrp6</td>
+    <td>CTGAATGCTGACAACAGGACCTG</td>
+    <td>GACGTTCCGAAGGCTGTGGATA</td>
+  </tr>
+  <tr>
+    <td>Tcf3</td>
+    <td>CCATGCTAGGAGGCGCTTTC</td>
+    <td>GGAGGACCTAAACCTCAGATCC</td>
+  </tr>
+  <tr>
+    <td>Tcf4</td>
+    <td>CTTCCAAATCTTCACTCTCTTG</td>
+    <td>TCCAAACGCTTCTGATTCGGC</td>
+  </tr>
+  <tr>
+    <td>Tcf7</td>
+    <td>ATCCCTGATGCTGGGATCTTG</td>
+    <td>CTTCTCTTGGCTTGGGTTCTG</td>
+  </tr>
+  <tr>
+    <td>Hprt1</td>
+    <td>AGTTGTTGATACAGGCCCAGAC</td>
+    <td>CGTGAATCAAATCCCTGGAAGT</td>
+  </tr>
+  <tr>
+    <td>Matrin3</td>
+    <td>TGG ACC AAG AGG AAA TCT GG</td>
+    <td>TGA ACA ACT CGG CTG GTT TC</td>
+  </tr>
+  <tr>
+    <td>Eef1a1</td>
+    <td>TCGCCCTTGGAGCTTCTTTT</td>
+    <td>GTGGAATTTGCCGGAATCTAC</td>
+  </tr>
+</table>
+
+Table 2. List of antibodies.
+
+<table>
+  <tr>
+    <th>Antibody</th>
+    <th>Concentration</th>
+    <th>Manufacture</th>
+    <th>Catalog number</th>
+    <th>Application</th>
+  </tr>
+  <tr>
+    <td>Cleaved caspase-3</td>
+    <td>1/500</td>
+    <td>Cell Signaling Technology</td>
+    <td>9661</td>
+    <td>Immunohistochemistry</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Immunofluorescence</td>
+  </tr>
+  <tr>
+    <td>Cleaved caspase-8</td>
+    <td>1/500</td>
+    <td>Cell Signaling Technology</td>
+    <td>9429</td>
+    <td>Immunofluorescence</td>
+  </tr>
+  <tr>
+    <td>Ki67</td>
+    <td>1/300</td>
+    <td>Invitrogen</td>
+    <td>14-5698-82</td>
+    <td>Immunohistochemistry</td>
+  </tr>
+  <tr>
+    <td>Tcf4</td>
+    <td>1/100</td>
+    <td>Santa Cruz Biotechnology</td>
+    <td>SC166699</td>
+    <td>Immunofluorescence</td>
+  </tr>
+  <tr>
+    <td>Lef1</td>
+    <td>1/200</td>
+    <td>Cell Signaling Technology</td>
+    <td>22305</td>
+    <td>Immunofluorescence</td>
+  </tr>
+  <tr>
+    <td>K10</td>
+    <td>1/500</td>
+    <td>Invitrogen</td>
+    <td>MA5-42858</td>
+    <td>Immunofluorescence</td>
+  </tr>
+  <tr>
+    <td>K14</td>
+    <td>1/500</td>
+    <td>Santa Cruz Biotechnology</td>
+    <td>sc53253</td>
+    <td>Immunofluorescence</td>
+  </tr>
+  <tr>
+    <td>Tcf3</td>
+    <td>1/500</td>
+    <td>Cell Signaling</td>
+    <td>2883</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>β-Catenin</td>
+    <td>1/2000</td>
+    <td>BD Biosciences</td>
+    <td>610153</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>Non-P-β-catenin</td>
+    <td>1/1000</td>
+    <td>Merck</td>
+    <td>05-665</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>M1 Ubq</td>
+    <td>1/2000 or 1/10 000</td>
+    <td>Sigma-Aldrich</td>
+    <td>ZRB2114-4X25UL (clone 1E3)</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>OTULIN</td>
+    <td>1/1000</td>
+    <td>Cell Signaling Technology</td>
+    <td>14127</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>HOIP</td>
+    <td>1/1000</td>
+    <td>Gift of R. Damgaard</td>
+    <td></td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>SHARPIN</td>
+    <td>1/1000</td>
+    <td>Proteintech</td>
+    <td>14626-1-AP</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>Caspase-3</td>
+    <td>1/1000</td>
+    <td>Cell Signaling Technology</td>
+    <td>9662</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>ACTIN-HRP</td>
+    <td>1/10000</td>
+    <td>Santa Cruz Biotechnology</td>
+    <td>sc-47778</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>Anti-rabbit HRP</td>
+    <td>1/2500</td>
+    <td>Amersham</td>
+    <td>NA931</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>Anti-mouse HRP</td>
+    <td>1/2500</td>
+    <td>Amersham</td>
+    <td>NA934</td>
+    <td>Western blotting</td>
+  </tr>
+  <tr>
+    <td>Anti-goat HRP</td>
+    <td>1/2500</td>
+    <td>Amersham</td>
+    <td>Sc-2354</td>
+    <td>Western blotting</td>
+  </tr>
+</table>
+
+ΔNβcat and ΔKerOTULIN mice showed a similar reduction in protein expression in both genotypes (fig. S2D). Multiple reports suggest a role for Wnt signaling in skin wound healing (31, 32). When we subjected ΔKerOTULIN and ΔKerOTULIN ΔNβcat mice to full-thickness excisional skin wounding, we observed that ΔKerOTULIN ΔNβcat mice close their wounds faster compared to ΔKerOTULIN mice, as evidenced by accelerated epidermal barrier recovery (fig. S2E). Collectively, our findings demonstrate that skin inflammation driven by aberrant linear ubiquitination can be effectively mitigated in vivo by induction of canonical Wnt signaling.
+
+Therapeutic stabilization of β-catenin ameliorates dermatitis in ΔKerOTULIN mice
+To assess whether inducing Wnt signaling can halt the progression of established skin lesions, ΔKerOTULIN ΔNβcat and ΔKerOTULIN mice were injected with tamoxifen at 3 and 4 weeks of age, a time
+
+Fig. 2. Stabilizing β-catenin in KCs protects ΔKerOTULIN skin from dermatitis and tumor formation. (A) Representative images of the back skin and tail of 8 to 10 weeks old OTULINFL/FL, ΔKerOTULIN, and ΔKerOTULIN ΔNβcat mice. (B) Representative images of H&E-stained skin sections of 10-week-old mice of the indicated genotypes. Scale bar, 200 μm. (C) Time-course TEWL measurements on lesional skin of ΔKerOTULIN and ΔKerOTULIN ΔNβcat mice (n > 4 mice per condition, multiple lesions per mouse were scored). Data are means ± SEM, *P < 0.05; **P < 0.01; ***P < 0.001; ****P < 0.0001. (D) Clinical scoring (see Materials and Methods) of back and tail skin inflammation in mice of the indicated genotypes at week 14 of age. Data represent means ± SEM, ****P < 0.0001. (E) Levels of IL-6 in serum of 10- to 14-week-old mice of the indicated genotypes (n > 4 mice per genotype) (*P < 0.05; **P < 0.01, Kruskal-Wallis test). (F) Immunostaining of skin sections from 10- to 14-week-old mice of the indicated genotypes using antibodies against cleaved caspase-3 (CC3), Ki67, TUNEL, K10, and K14. Each staining was performed on five mice per condition. Scale bar, 200 μm. (G) Quantification of the number of interfollicular epidermis (IFE) cells that stain positive for cleaved caspase-3 in skin sections from 10- to 14-week-old mice of the indicated genotypes (OTULINFL/FL, n = 5; OTULINFL/FL ΔNβcat, n = 6; ΔKerOTULIN NL, n = 4; ΔKerOTULIN L, n = 6; ΔKerOTULIN ΔNβcat NL, n = 6; ΔKerOTULIN ΔNβcat L, n = 6). Data represent means ± SEM, *P < 0.05; **P < 0.01; ***P < 0.001.
+
+point when lesions were already present. Macroscopic examination of the skin revealed that inflammatory parameters, such as edema and erythema, either remained static or improved over time in ΔKerOTULIN ΔNβcat mice, in contrast to the progressive inflammation observed in ΔKerOTULIN skin (Fig. 3, A and B). Clinical scoring confirmed the beneficial effect of Wnt induction in lesional ΔKerOTULIN skin, reducing lesion progression and tail skin involvement (Fig. 3C). Time course analysis of TEWL further demonstrated that stabilization of β-catenin prevents worsening of barrier perturbation (Fig. 3D). Moreover, cleaved caspase-3 and TUNEL staining indicated reduced cell death levels in lesional skin of ΔKerOTULIN ΔNβcat mice relative to ΔKerOTULIN mice (Fig. 3, E and F). These data show that promoting canonical Wnt signaling in KCs effectively halts the progression of skin inflammation caused by aberrant linear deubiquitination.
+
+OTULIN promotes β-catenin stability
+Wnt/β-catenin activation was previously shown to be regulated by ubiquitin (23–26). To assess whether OTULIN mediates the stability of β-catenin in primary mouse KCs, we performed a K48-linked Ubq chain pulldown under denaturing conditions to precipitate proteins targeted for proteasomal degradation. In untreated conditions, a more substantial enrichment for β-catenin was observed in OTULIN-deficient KCs compared to control KCs upon K48 Ubq pulldown, indicating that proteasomal targeting of β-catenin is enhanced in absence of OTULIN (Fig. 4A). In KCs treated with the proteasome inhibitor MG132, smearing of β-catenin upon K48 pulldown became apparent in both control and OTULIN-deficient KCs. Immunoblotting for M1 Ubq chains in K48 Ubq pulldown lysates indicated an accumulation of proteins that are M1 and K48 ubiquitinated in OTULIN-deficient KCs relative to control KCs (Fig. 4A). Next, we performed a cycloheximide (CHX) chase for β-catenin in WNT3A-pretreated OTULIN-deficient and control mouse KCs. Monitoring β-catenin protein levels over time revealed faster degradation of β-catenin in the absence of OTULIN (Fig. 4, B and C). To investigate the role of linear deubiquitination in human KCs, we generated HaCaTs with strongly reduced OTULIN levels using OTULIN-targeting nanoblades (fig. S3, A and B). OTULIN knockdown (KD) HaCaT cells displayed increased sensitivity to TNF-induced cell death, consistent with our previous observations in OTULIN-deficient mouse KCs (fig. S3C) (12). Analysis of an interaction between β-catenin and OTULIN in human KCs was carried out through coimmunoprecipitation (IP) studies using a β-catenin–specific antibody. Pulldown analysis indicated that β-catenin and OTULIN co-precipitate (Fig. 4D and fig. S3, D and E). Incubation of β-catenin IP lysates from OTULIN KD and control HaCaT cells with recombinant human OTULIN resulted in the collapse of the M1-linked Ubq smearing on both unphosphorylated and total β-catenin, corroborating its linear Ubq status in human KCs (Fig. 4E). Collectively, these findings demonstrate that OTULIN interacts with β-catenin in homeostatic KCs, modulating its linear Ubq status and promoting its stability.
+
+OTULIN-dependent Wnt signaling protects KCs from death
+We and others previously demonstrated that skin inflammation in ΔKerOTULIN mice is driven by TNF-mediated apoptotic and necrotic KC death (12, 13). To investigate whether the enhanced sensitivity of OTULIN-deficient KCs to TNF-induced cell death is normalized upon β-catenin stabilization, primary KCs isolated from ΔKerOTULIN, ΔKerOTULIN ΔNβcat, and control mice were stimulated with TNF following pretreatment with interferon γ (IFNγ). IFNγ pretreatment was used to assess TNF cytotoxicity under conditions of ZBP1 (Z-DNA binding protein 1) up-regulation, as OTULIN deficiency in mouse KCs is known to induce IFN responses (12, 33). OTULIN-deficient KCs with stabilized β-catenin were markedly protected from TNF-induced apoptosis, as evidenced by decreased cleaved caspase-3 levels compared with ΔKerOTULIN KCs (Fig. 5A). In agreement, reduced levels of cleaved caspase-8 and cleaved caspase-3 were detected in tail whole mounts from ΔKerOTULIN ΔNβcat compared to ΔKerOTULIN epidermis (Fig. 5, B and C). Protection from TNF-induced cell death was further confirmed in primary mouse KCs from ΔKerOTULIN ΔNβcat mice relative to KCs from ΔKerOTULIN mice using dye penetration assays (Fig. 5D). To analyze whether the increased KC cell death levels repress Wnt signaling in ΔKerOTULIN skin, we quantified Wnt target gene expression in ΔKerOTULIN/FADD/MLKL mice, which are protected from FADD and MLKL-dependent KC death and subsequent skin inflammation (12). qPCR analyses indicated that the levels of various Wnt mediators and target genes were similarly reduced in both ΔKerOTULIN/FADD/MLKL and ΔKerOTULIN skin (Fig. 5E), indicating that OTULIN promotes Wnt signaling independently of KC cell death levels. Last, pretreatment of KCs with WNT3A reduced TNF-induced cell death in OTULIN-deficient cells (Fig. 5F). Collectively, these findings indicate that the induction of Wnt signaling by OTULIN sets the threshold for KC susceptibility to TNF-induced cell death.
+
+OTULIN regulates the stability of the survival factors TCF3 and TCF4
+To investigate how linear ubiquitination of β-catenin influences KC survival, we focused on two Wnt target genes, Tcf3 and Tcf4, previously shown to protect cells from death by cooperative functioning with β-catenin to drive transcription (22, 34, 35). Tcf3 and Tcf4 were significantly suppressed in OTULIN-deficient mouse KCs (Fig. 1D). Previous studies demonstrated that genetic ablation of Tcf3/4 in KCs results in a marked increase of dying cells in neonatal mouse epidermis (34). Immunoblotting for TCF3 revealed a reduction in protein expression in OTULIN-deficient primary mouse KCs relative to WT KCs (Fig. 6A). Proteasome inhibition stabilized TCF3 in both WT and OTULIN-deficient cells, indicating that TCF3 stability is regulated by K48-linked ubiquitination in KCs. Both Wnt-repressive and Wnt-activating properties have been attributed to TCF3/4 (34). TCF3 expression in primary KCs strongly correlated with the levels of activated β-catenin levels, suggesting that TCF3 functions as a Wnt activator under these conditions (Fig. 6A). Consistently, Tcf3 and Tcf4 levels were reduced in epidermal lysates obtained from ΔKerOTULIN skin relative to control epidermis, and no significant difference in Tcf3 or Tcf4 levels was observed between control epidermis and epidermis from ΔKerOTULIN ΔNβcat mice (Fig. 6B). These findings indicate that the protection from cell death observed in KCs from ΔKerOTULIN ΔNβcat mice relative to ΔKerOTULIN mice could be linked to altered TCF3/4 expression levels. To test this hypothesis, OTULIN KD HaCaTs were reconstituted with TCF3 by lentiviral transduction (fig. S4A). Reconstitution of TCF3 significantly reduced TNF cytotoxicity in OTULIN KD cells; however, cell death in these reconstituted KCs remained higher than in control KCs (Fig. 6C). This indicates that TCF3/4 contribute to the cellular response to TNF, with evidence suggesting a modulatory, rather than exclusively protective, role in cell viability. Immunofluorescence staining for TCF4 in tail whole mounts of control mice confirmed
+
+Fig. 3. Stabilizing β-catenin in established ΔKerOTULIN skin lesions prevents progressive inflammation. (A) Representative images of lesional back skin of ΔKerOTULIN and ΔKerOTULIN ΔNβcat mice at 4, 7, and 10 weeks of age (W). Mice were treated with tamoxifen at P21 and P28. (B) Representative images of the back skin and tail of 8- to 10-week-old ΔKerOTULIN and ΔKerOTULIN ΔNβcat mice treated with tamoxifen at P21 and P28. (C) Clinical scoring of back and tail skin inflammation in mice of the indicated genotypes at week 14 of age. Data represent means ± SEM, ****P < 0.0001. (D) Time-course TEWL measurements on lesional skin of ΔKerOTULIN and ΔKerOTULIN ΔNβcat mice (n = 4 mice per condition, multiple lesions per mouse were scored, **P < 0.01). (E) Quantification of the number of IFE cells that stain for cleaved caspase-3 in skin sections from 10- to 14-week-old mice of the indicated genotypes (OTULINFL/FL, n = 4; OTULINFL/FL ΔNβcat, n = 4; ΔKerOTULIN NL, n = 4; ΔKerOTULIN L, n = 5; ΔKerOTULIN ΔNβcat NL, n = 4; ΔKerOTULIN ΔNβcat L, n = 5). Data represent means ± SEM, *P < 0.5; ***P < 0.001; ****P < 0.0001. (F) Immunostaining of skin sections from 10- to 14-week-old mice of the indicated genotypes using antibody against cleaved caspase-3 and TUNEL staining. Each staining was performed on n = 5 mice per condition. Scale bar, 200 μm. Arrows indicate apoptotic cells.
+
+Fig. 4. β-catenin is linearly ubiquitinated and coprecipitates with OTULIN in adult KCs. (A) K48 Ubq pulldown (left) and corresponding pre-pulldown (right) lysates of primary mouse KCs isolated from OTULINFL/FL and ΔKerOTULIN mice pretreated or not with MG132 for 16 hours and immunoblotted for β-catenin, OTULIN, K48 Ubq, or M1 Ubq chains. α-Actin is shown as loading control. (B) Primary mouse KCs isolated from OTULINFL/FL, and ΔKerOTULIN mice were pretreated with WNT3A (50 ng/ml) for 24 hours and subsequently exposed to CHX (20 μg/ml) for the indicated time. Lysates were immunoblotted for β-catenin and OTULIN. α-Actin is shown as loading control. Immunoblots are representative of three independent experiments. (C) Densitometric analyses of ratio of β-catenin to actin in untreated and CHX-treated KCs (two-way ANOVA with multiple comparisons, **P = 0.0045; *P = 0.0173). (D) Co-IP using an antibody against β-catenin on lysates from WT and OTULIN KD HaCaTs left untreated or treated with MG132 for 16 hours. Preimmunoprecipitation (PIP) lysates were blotted for the same proteins, and α-actin is shown as loading control. (E) Immunoprecipitation lysates using an antibody against β-catenin were untreated or supplemented with recombinant human OTULIN post-IP, followed by immunoblotting for M1 Ubq, active β-catenin, and total β-catenin.
+
+TCF4 expression in adult normal HFs (36), whereas no TCF4 could be observed in ΔKerOTULIN skin (Fig. 6D). In contrast, TCF4 expression in the tail epidermis of ΔKerOTULIN ΔNβcat mice was comparable to that observed in control mice. Notably, co-staining for TCF4 with cleaved caspase-3 revealed that TCF4-expressing KCs were not undergoing apoptosis, as no double-stained cells were observed (Fig. 6D).
+
+Last, we questioned whether OTULIN can drive canonical Wnt signaling in tissues beyond the skin. TCF3 and TCF4 are transcription factors associated with repression of differentiation, not only in skin, but also in intestinal epithelia (35, 37). Analysis of Tcf4 levels in intestinal epithelial cells (IECs) isolated from IEC-selective OTULIN-deficient and WT mice confirmed a significant down-regulation of Tcf4 in OTULIN-deficient IECs (Fig. 6E). Supporting a role for OTULIN in regulating stemness, our previously published scRNA-seq dataset comparing control and ΔKerOTULIN nonlesional (NL) and lesional (L) skin (12) revealed higher expression of the HF stem cell markers Cd34 and Lgr5 in OTULIN-positive versus OTULIN-negative KCs (fig. S4B). Given the frequent dysregulation of Wnt signaling in cancer and the dependence of various tumor types on canonical Wnt activation for growth and progression (22), these findings suggest a broader role for OTULIN in modulating Wnt-driven processes, as also suggested by others (26). Colorectal cancer is a well-characterized Wnt-driven tumor type, often promoted by mutations in Wnt pathway genes such as APC, CTNNB1, and AXIN2 (38). Analysis of a publicly available scRNA-seq dataset of human colorectal cancer samples and healthy colon tissue (Human Colon Cancer Atlas, GEO: GSE178341) (39) revealed elevated levels of OTULIN, TCF3, and TCF4 in epithelial tumor cells compared with normal IECs (Fig. 6F and fig. S4C). Together, these findings highlight OTULIN as a driver of Wnt signaling across various epithelial tissues and disease contexts.
+
+Fig. 5. OTULIN-driven Wnt signaling protects KCs from death. (A) Immunoblotting for (cleaved) caspase-3 of lysates from KCs isolated from OTULINFL/FL and ΔKerOTULIN mice. Cells were untreated or pretreated overnight with IFNγ prior to TNF treatment. Actin blot is shown as loading control. Arrowheads indicate cleavage fragments of caspase-3. (B) Immunofluorescence staining for cleaved caspase-3 and cleaved caspase-8 on epidermal tail whole mounts from OTULINFL/FL, ΔKerOTULIN, and ΔKerOTULIN ΔNβcat mice. Insets represent magnified views. Scale bars, 100 μm. (C) Quantification of cleaved caspase-3 (left) and cleaved caspase-8–positive (right) cells per field (n = 4 mice per genotype; one-way ANOVA). Data represent means ± SEM of three different microscopic fields. (D) Viability assay on primary mouse KCs isolated from OTULINFL/FL, ΔNβcat, ΔKerOTULIN mice, and ΔKerOTULIN ΔNβcat mice pretreated with IFNγ and treated for 24 hours with TNF. Viability was assessed by SYTOX Green (SG) uptake on Incucyte images (two-way ANOVA with multiple comparisons, **P < 0.01; ****P < 0.0001). (E) Relative mRNA expression of the indicated Wnt target genes in epidermal tail lysates of OTULINFL/FL, ΔKerOTULIN, and ΔKerOTULIN FADD MLKL mice. Data represent means ± SEM (**P < 0.05; *P < 0.01; ****P < 0.0001). (F) Viability assay on WT and OTULIN KD HaCaTs pretreated for 24 hours with WNT3A (50 ng/ml) and subsequently treated with for 24 hours with TNF. Viability was assessed by SYTOX Green uptake on Incucyte images (two-way ANOVA with multiple comparisons, **P < 0.01; ****P < 0.0001).
+
+Fig. 6. OTULIN promotes TCF3/4 stability. (A) Western blot analysis of lysates from untreated or MG132-treated primary mouse KCs isolated from OTULINFL/FL and ΔKer-OTULIN mice using antibodies against TCF3, β-catenin, nonphosphorylated β-catenin, OTULIN, and K48 Ubq. (B) Relative mRNA expression of Tcf3 and Tcf4 in epidermal tail lysates of OTULINFL/FL, ΔNjcat, ΔKerOTULIN, and ΔKerOTULIN ΔNjcat mice. Data represent means ± SEM (*P < 0.05). (C) Viability assay on WT, OTULIN KD, and OTULIN KD HaCaTs reconstituted with TCF3. Cells were treated with for 24 hours with TNF. Viability was assessed by SYTOX Green uptake on Incucyte images (two-way ANOVA with multiple comparisons, **P < 0.01; ***P < 0.001; ****P < 0.0001). (D) Immunofluorescence staining for TCF4 (red) and cleaved caspase-3 (green) in epidermal tail whole mounts of OTULINFL/FL, ΔKerOTULIN, and ΔKerOTULIN ΔNjcat mice. Scale bars, 50 μm. White boxes indicate higher magnification insets. (E) Relative mRNA expression of Tcf4 in intestinal lysates of OTULINFL/FL and ΔIEC-OTULIN mice. Data represent means ± SEM (P = 0.0035). (F) Percentage of epithelial cells expressing OTULIN, TCF3, or TCF4 in normal human colon tissue versus colorectal cancer (tumor) samples as observed by scRNA-seq (39).
+
+DISCUSSION
+Protection from cell death is crucial for KCs to ensure proper epidermal barrier function. The physiological impact of KC death depends on both the mode of cell death and the spatial context of the tissue (40). Aberrant linear deubiquitination due to absence of OTULIN predisposes KCs to apoptosis and necroptosis, two modes of regulated cell death that contribute to the development of dermatitis and squamous carcinogenesis (12, 13, 41). In the original study identifying OTULIN as the DUB for linear Ubq chains, a potential role for OTULIN in promoting canonical Wnt signaling in endothelial cells was already proposed (17). However, direct physiological evidence supporting this connection has been lacking. Overexpression studies later suggested that SHARPIN can regulate Wnt signaling independently of linear ubiquitination by binding with β-catenin and thereby preventing its association with β-TrCP1 (28). In this study, we provide physiological evidence positioning OTULIN as a dual-function survival factor in KCs. We show that OTULIN’s DUB activity not only stabilizes LUBAC to prevent TNF-induced cell death and inflammation but also promotes canonical Wnt signaling in KCs. Notably, inhibition of cell death by depletion of cell death executioners
+
+in OTULIN-deficient KCs did not restore Wnt target gene expression, indicating that Wnt down-regulation occurs independently of KC death. Moreover, stabilization of β-catenin in KCs, through genetic crossing with mice expressing a truncated variant of β-catenin, potently halted or prevented the progressive dermatitis caused by OTULIN deficiency. This truncated β-catenin lacks lysine residues required for K48-linked ubiquitination, as well as K133, the residue implicated in linear ubiquitination by LUBAC (26). Induction of truncated β-catenin expression in KCs of ΔKerOTULIN mice significantly reduced KC death and subsequent skin inflammation. The prosurvival effects of β-catenin stabilization were independent of LUBAC protein levels, which remained down-regulated in ΔKerOTULIN ΔNβcat mice. These data indicate that canonical Wnt signaling can, at least partially, bypass cell death checkpoints controlled by LUBAC activity (42). Notably, primary KCs from ΔKerOTULIN ΔNβcat mice exhibited reduced TNF-induced cell death relative to KCs from ΔKerOTULIN mice, suggesting that the extent of canonical Wnt signaling sets the threshold for TNF cytotoxicity in OTULIN-deficient KCs. Furthermore, we observed comparable down-regulation of canonical Wnt signaling in OTULIN-deficient and SHARPINpdm/pdm epidermis, underscoring the pivotal role of linear (de)ubiquitination in fine-tuning canonical Wnt pathway activity.
+
+Our findings indicate that β-catenin is linearly ubiquitinated in homeostatic KCs. In the absence of OTULIN, β-catenin stability is reduced due to its enhanced K48-linked ubiquitination and subsequent proteasomal degradation. Notably, smearing of β-catenin, indicative of ubiquitination, was only observed in pulldown assays. This could be explained by the presence of multiple β-catenin pools within KCs in which only a fraction of β-catenin molecules is linearly and/or K48-ubiquitinated. Consistent with this, β-catenin localized at adherens junctions may be protected from ubiquitination events, as canonical Wnt signaling is mediated by the cytoplasmic pool of β-catenin. Previous studies suggested a role for OTULIN in stabilizing β-catenin in breast cancer cell lines exposed to genotoxic stress (26). Our findings extend this concept, demonstrating that β-catenin undergoes linear ubiquitination in normal adult KCs, both in vivo and in vitro. In the absence of OTULIN, β-catenin exhibits increased K48-linked ubiquitination, resulting in its proteasomal degradation. We establish that this regulatory mechanism operates in homeostatic KCs, where β-catenin interacts with OTULIN to modulate KC susceptibility to cell death. In agreement, a study probing for linearly ubiquitinated substrates in glioblastoma cells identified β-catenin as an M1 ubiquitination target (43). However, it remains unclear whether OTULIN-mediated regulation of Wnt signaling represents a general mechanism for safeguarding cell viability in conditions of stress.
+
+The levels of activated β-catenin closely correlated with TCF3 expression in KCs, and both were markedly reduced in absence of OTULIN. TCF3 and TCF4 function as transcription factors upon binding with β-catenin (35) and are essential regulators of postnatal KC survival (34). We show that TCF3/4 stability appears to depend on OTULIN expression. Notably, TCF3 and TCF4 are known repressors of differentiation in postnatal skin and IECs (34, 36, 37). In OTULIN-deficient KCs, TCF3 and TCF4 are markedly down-regulated, potentially opposing differentiation of stem cells into HF cells. This is supported by our scRNA-seq data, which reveal a marked increase in the relative abundance of HF bulge cells in ΔKerOTULIN skin. In IECs, TCF3/4 levels are down-regulated in adult tissues but are re-expressed in epithelial colorectal tumor cells (37). This re-expression is associated with a more undifferentiated state and coincides with OTULIN up-regulation. In line with these observations, we found that reconstitution of TCF3 in OTULIN KD KCs reduced cytotoxicity of TNF. Together, these findings indicate that OTULIN, by driving canonical Wnt signaling and maintaining TCF3/4 expression, may constitute a survival pathway in various cell types and disease contexts.
+
+In conclusion, our findings establish OTULIN as a critical regulator of KC survival through a dual mechanism: mediating the linear (de)ubiquitination of proteins involved in the TNF pathway and promoting canonical Wnt signaling upstream of cell death. This two-tiered mechanism likely acts as a safeguard to maintain stemness and suppress differentiation in conditions of heightened proliferative needs, as is the case in inflammation.
+
+MATERIALS AND METHODS
+
+Mice
+The following mouse lines were used: OtulinFL (44), K14-Cre (45), FaddFL (46), MlklFL (47), SHARPINpdm (48), ΔNβcateninERKil/+ line D2 (30). All alleles were maintained on a C57BL/6 genetic background. Mice were housed in individually ventilated cages at the VIB Center for Inflammation Research, in a specific pathogen-free animal facility. All animal experiments were conducted according to institutional, national, and European animal regulations for animal testing and research. Animal protocols were approved by the VIB-Ghent University ethical review board (study approval numbers: LP0035, EC2024-008, and EC2024-009). Animals requiring medical attention were provided with appropriate care and were sacrificed when reaching predetermined criteria of disease severity. Female and male mice of the indicated genotype were assigned at random to groups. Mouse studies as well as microscopy-based assessment of pathology were performed in a blinded fashion. Inducible mouse lines were treated topically with 4-hydroxytamoxifen (20 mg/ml) at P0.5 and P1.5 or by intraperitoneal injection of tamoxifen (10 mg/ml) at older age.
+
+Clinical scoring of lesions
+Mice were scored for clinical signs of inflammation: A score of 0 to 3 was assigned to each mouse based on the size of lesions on the back skin: 0 = no lesions; 1 = all skin lesions smaller than 3 mm²; 2 = at least one skin lesions bigger than 3 mm²; 3 = papilloma-like structures. Added to this score was a score of 0 to 2 based on the level of tail skin inflammation: 0 = normal; 1 = inflammation; 2 = loss of tail caused by severe inflammation, totaling up to a score of 0 to 5 to assess skin inflammation.
+
+KC cultures
+Primary mouse KCs were isolated from OTULINFL/FL, ΔKerOTULIN, OTULINFL/FL ΔNβcat, and ΔKerOTULIN ΔNβcat skin as previously described (49). Briefly, shaved back skin was isolated, sterilized, and floated on 0.25% trypsin overnight. The epidermis was separated from dermis and cultured on confluent feeder cultures. Primary mouse KCs were cultured in FAD medium (Bio&Sell) containing one part Ham’s F12, three parts Dulbecco’s modified Eagle’s medium, 0.18 mM adenine, supplemented with 10% chelated fetal calf serum (Bodinco, S-FBS-EU-015) and a cocktail of hydrocortisone (0.5 μg/ml; Sigma-Aldrich, H4001), insulin (5 μg/ml; Sigma-Aldrich, I3536), and 1 × 10^{-10} M cholera enterotoxin (Sigma-Aldrich, C8052). Murine cells were pretreated for 8 to 12 hours with IFNγ (10 ng/ml;
+
+VIB Protein Service Facility) and subsequently stimulated with murine TNF (30 ng/ml; VIB Protein Service Facility) for 12 hours, or treated with MG132 (0.25 μM; Sigma-Aldrich 474790) for 12 to 16 hours. Generation of HaCaTs with KD of OTULIN was achieved using virus-like particles (nanoblades). Two single guide RNAs were used to create a 29–base pair deletion in the OTULIN gene. HaCaTs were treated with 20 pM nanoblades for 24 hours for two consecutive rounds, followed by TIDE analysis. HaCaTs with a predicted indel efficiency of over 95% were used for further experimentation. WT and OTULIN KD HaCaTs were stimulated with human TNF (30 ng/ml; VIB Protein Service Facility) for 12 hours or treated with MG132 (0.25 μM; Sigma-Aldrich, 474790) for 12 to 16 hours.
+
+Cell death assays
+Cell death assays were performed on subconfluent KCs in six-well plates. Cells were pretreated as indicated in figure legends and stimulated with TNF (30 ng/ml) in the presence of 2.5 μM SYTOX Green Nucleic Acid Stain (S7020, Molecular Probes). SYTOX Green uptake was imaged every 1 or 4 hours with an IncuCyteS3 Live-Cell Analysis System (Essen BioScience). The relative percentage of SYTOX Green–positive cells was determined by dividing the number of SYTOX Green–positive cells per image by the percentage of confluency using phase contrast images.
+
+Real-time qPCR
+Total RNA was isolated using TRIzol reagent (Invitrogen) and Aurum Total RNA Isolation Mini Kit (Biorad), according to the manufacturer’s instructions. Synthesis of cDNA was performed using SensiFAST cDNA Synthesis Kit (Bioline). cDNA was amplified on qPCR in a total volume of 10 μl with SensiFAST SYBR No-ROX Kit (Bioline) and specific primers on a LightCycler 480 (Roche). The reactions were performed in technical triplicates. The mouse-specific primers used are summarized in Table 2.
+
+Lentiviral transduction of HaCaTs
+Human embryonic kidney–293 cells were transfected using calcium phosphate, either with a vector coding for human TCF3 or the empty vector backbone (Addgene), and the viral packaging vectors pMD2-VSVG (in-house) and pCMVΔR8.91 (in-house). Six hours posttransfection, medium was changed. After 2 days, medium containing lentiviral particles was harvested and filtered (0.22 μm). HaCaTs were seeded at 1 × 10^5 cells per well in a six-well plate. The following day, polybrene (8 μg/ml) was added to the culture medium, and a twofold dilution series of virus was made in the first five wells, with the last well serving as a nontransduced control. Plates were subsequently spun down for 1 hour at 800g and 32°C. Medium was added and after 2 days, and cells stably expressing the construct of interest were selected with puromycin (0.5 μg/ml).
+
+Western blotting
+Primary KCs and epidermal tail tissue were homogenized using E1A lysis buffer (50 mM Hepes, pH 7.6; 250 mM NaCl; 5 mM EDTA; 0.5% NP40) or NP-40 lysis buffer (50 mM tris-HCl, pH 7.6; 1 mM EDTA; 150 mM NaCl; 1% NP-40; 0.5% sodiumdeoxycholate; 0.1% SDS), respectively containing protease inhibitors (Roche) and phosphatase inhibitors (Sigma-Aldrich). Epidermal or cell lysates were separated by SDS–polyacrylamide gel electrophoresis and transferred to nitrocellulose membranes. Membranes were probed with antibodies (Table 2) against OTULIN (1:1000, Cell Signaling Technology, 14127), HOIL-1 (1:2000, Henning Walczak laboratory), HOIP (1:1000, Rune Damgaard laboratory), SHARPIN (1:1000, Proteintech, 14626-1-AP), linear Ubq (1:2500, Sigma-Aldrich, ZRB2114), K48 Ubq (1:1000; Cell Signaling, D9D5), caspase-3 (1:1000; Cell Signaling, 9662), MLKL (1:1000, Millipore, MABC604), P-MLKL (1:1000, Abcam, ab196436), β-catenin (1:2000, BD, 610153), nonphosphorylated-β-catenin (1:1000, Merck, 05-665), TCF3 (1:1000, Cell Signaling, D15G11), and actin-HRP (1:10,000, Santa Cruz Biotechnology, SC-47778HRP). As secondary antibodies, HRP coupled anti-rabbit-HRP, anti-mouse-HRP, and anti-goat-HRP were used (1:2500, Amersham), and detection was done by chemiluminescence (Western Lightning Plus ECL, Perkin Elmer) using an Amersham Imager 600 (GE Healthcare).
+
+Precipitation studies
+Cell lysates from primary mouse KCs were prepared under denaturing conditions using RIPA lysis buffer [150 mM NaCl, 1% NP-40, 0.5% sodium deoxycholate, 0.1% SDS, and 10 mM tris-HCl (pH 8) supplemented with phosphatase and protease inhibitor cocktail tablets (Roche Diagnostics)], protein concentration was determined, and equal concentrations of protein lysates were incubated overnight with K48 Ubq-binding beads (K48 TUBE HF, Lifesensors, UM607). The next day, the beads were washed three times in RIPA lysis buffer. Beads were then resuspended in 60 μl of 1× Laemmli buffer for direct analysis.
+
+Coimmunoprecipitation studies
+Protein G Sepharose beads (Cytiva, 17-0618-01) were washed three times with NP-40 (50 mM tris-HCl, pH 7.6; 1 mM EDTA; 150 mM NaCl; 1% NP-40; 0.5% sodiumdeoxycholate; 0.1% SDS) buffer containing protease inhibitors (Roche) and phosphatase inhibitors (Sigma-Aldrich) before being coupled to anti-β-catenin (10 μl/ml; BD, 610153) overnight. Cell lysates from HaCaTs were prepared using NP-40 buffer. Protein concentration was determined, and equal concentrations of protein lysates were incubated overnight with β-catenin–coupled beads. The next day, the beads were washed three times in NP40 lysis buffer. Beads were then resuspended in 60 μl of 1× Laemmli buffer for direct analysis.
+
+Linear deubiquitination of cell lysates with recombinant OTULIN
+Co-IP was performed as mentioned above. After the overnight incubation step with β-catenin–coupled beads, protein complexes were deubiquitinated by incubation of beads with 2 μg (1 μM) recombinant human OTULIN protein (Abcam, ab268829). Recombinant OTULIN was first diluted to 2 μM in DUB dilution buffer [25 mM tris (pH 7.5), 150 mM NaCl, and 10 mM dithiothreitol (DTT)] to achieve full activity through reduction of oxidized species. Subsequently recombinant OTULIN was diluted to the final concentration (1 μM) in DUB reaction buffer [50 mM tris-HCl (pH 8), 50 mM NaCl, 5 mM DTT, and 1 mM MnCl2] and added to the beads for 30 min at 37°C. Beads were washed one time with DUB reaction buffer, and proteins were eluted in 50 μl of 1× LL (3 min, 70°C).
+
+Cytokine detection
+Cytokine concentrations in serum were determined by a magnetic bead–based multiplex assay using Luminex technology (Bio-Rad), according to the manufacturer’s instructions.
+
+Analysis of scRNA-seq data
+The previously obtained scRNA-seq dataset (12) was probed for gene expression levels using Seurat version 5.0.3. Heatmaps, violin plots, and dotplots were generated utilizing Seurat’s default functions. GO enrichment analysis was performed using the enrichGO function from clusterProfiler (v4.12.6) package. The analysis was conducted on the down-regulated genes from NL versus WT KCs with a P value cutoff of 0.05. The publicly available scRNA-seq dataset GSE178341 (39) on human colon tissue was analyzed for normalized relative expression of OTULIN, TCF3, and TCF4 in epithelial cells.
+
+Skin wounding
+Full-thickness skin wounds were inflicted with an 8-mm punch biopsy on 7-week-old female and male mice after shaving of the back skin and subcutaneous administration of Vetgesics (15 μg/ml). Wound sizes were measured with electronic callipers every other day by two independent researchers who were blinded to the genotypes. Wounding procedures were repeated in three independent experiments with similar results and performed under analgesia and general anesthesia.
+
+Immunofluorescence
+Dewaxed paraffin skin sections or tail whole mounts were labeled with respective antibodies listed in table S2. As secondary antibodies, donkey-anti-mouse AlexaFluor 488, donkey anti-rabbit DyLight 488, goat anti-mouse DyLight 633, and goat-anti-rabbit DyLight 586 were used (1:2000) in combination with 4′,6-diamidino-2-phenylindole (DAPI). TUNEL kit (Millipore) was used according to manufacturer’s instructions.
+
+Immunohistochemistry
+Dewaxed paraffin skin sections were subjected to heat-mediated antigen retrieval (citrate buffer; pH = 6) and labeled with Ki67 Ab (1:1000; Cell Signaling Technology, D3B5, 12202) or cleaved caspase-3 Ab (1:500; Cell Signaling Technology, 9661). Next, the slides were incubated with biotin-coupled goat anti-rabbit (1:500, Dako). Subsequently, slides were incubated in ABC solution (Vectastain ELITE ABC Kit Standard, Vector Laboratories). Peroxidase activity was detected by adding diaminobutyric acid (DAB) substrate [ImmPACT DAB Peroxidase (HRP) Substrate, Vector Laboratories].
+
+TEWL measurement
+Mice were shaved prior to TEWL assessment. TEWL was measured on the back skin of anesthetized mice using a TEWA meter (Courage and Khazaka, TM 210). Lesions were followed over time. If multiple lesions per mouse were present, these were all assessed.
+
+Statistics
+Results are expressed as the means ± SEM, with n as the number of mice. Normality tests (Kolmogorov-Smirnov) were performed to check for normal distribution of the data. Parametric tests were performed on normally distributed data, and nonparametric tests on not normally distributed data. Statistical significance of data obtained from different genotypes was assessed using two-way analysis of variance (ANOVA) tests, unpaired two-sided Student’s t tests or nonparametric Mann-Whitney tests, or one-way ANOVA test followed by Tukey’s multiple comparisons test. The analysis was performed with Prism 9 software. Time-course analysis of TEWL in Fig. 3D and cell death kinetics in fig. S3C were analyzed as repeated measurements using method of residual maximum likelihood (REML), as implemented in Genstat version 21.
+
+Supplementary Materials
+This PDF file includes:
+Figs. S1 to S4
+
+REFERENCES
+1. Y. C. Hsu, E. Fuchs, Building and maintaining the skin. Cold Spring Harb. Perspect. Biol. 14, a040840 (2022).
+2. M. Pasparakis, I. Haase, F. O. Nestle, Mechanisms regulating skin immunity and inflammation. Nat. Rev. Immunol. 14, 289–301 (2014).
+3. T. L. Haas, C. H. Emmerich, B. Gerlach, A. C. Schmukle, S. M. Cordier, E. Rieser, R. Feltham, J. Vince, U. Warnken, T. Wenger, R. Koschiny, D. Komander, J. Silke, H. Walczak, Recruitment of the linear ubiquitin chain assembly complex stabilizes the TNF-R1 signaling complex and is required for TNF-mediated gene induction. Mol. Cell 36, 831–844 (2009).
+4. F. Tokunaga, S. Sakata, Y. Saeki, Y. Satomi, T. Kirisako, K. Kamel, T. Nakagawa, M. Kato, S. Murata, S. Yamamoto, M. Yamamoto, S. Akira, T. Takao, K. Tanaka, K. Iwai, Involvement of linear polyubiquitylation of NEMO in NF-kappaB activation. Nat. Cell Biol. 11, 123–132 (2009).
+5. N. Peltzer, M. Darding, A. Montinaro, P. Draber, H. Drabrova, S. Kupka, E. Rieser, A. Fisher, C. Hutchinson, L. Taraborrelli, T. Hartwig, T. Lafont, T. L. Haas, Y. Shimizu, C. Böiers, A. Sarr, J. Rickard, S. Alvarez-Diaz, M. T. Ashworth, A. Beal, T. Enver, J. Bertin, W. Kaiser, A. Strasser, J. Silke, P. Bouillet, H. Walczak, LUBAC is essential for embryogenesis by preventing cell death and enabling haematopoiesis. Nature 557, 112–117 (2018).
+6. J. Zingrebe, E. Rieser, L. Taraborrelli, N. Peltzer, T. Hartwig, H. Ren, I. Kovacs, C. Endres, P. Draber, M. Darding, S. von Karstedt, J. Lenke, B. Dome, M. Bergmann, B. J. Ferguson, H. Walczak, LUBAC deficiency perturbs TLR3 signaling to cause immunodeficiency and autoinflammation. J. Exp. Med. 213, 2671–2689 (2016).
+7. B. Gerlach, S. M. Cordier, A. C. Schmukle, C. H. Emmerich, E. Rieser, T. L. Haas, A. I. Webb, J. A. Rickard, H. Anderton, W. Wong, U. Nachbur, L. Gangoda, U. Warnken, A. W. Purcell, J. Silke, H. Walczak, Linear ubiquitination prevents inflammation and regulates immune signalling. Nature 471, 591–596 (2011).
+8. D. Komander, F. Reyes-Turcu, J. D. Licchesi, P. Odenwaldler, K. D. Wilkinson, D. Barford, Molecular discrimination of structurally equivalent Lys 63-linked and linear polyubiquitin chains. EMBO Rep. 10, 466–473 (2009).
+9. Y. Sato, E. Goto, Y. Shibata, Y. Kubota, A. Yamagata, S. Goto-Ito, K. Kubota, J. Inoue, M. Takefawa, K. Tokunaga, S. Fukai, Structures of CYLD with Met1- or Lys63-linked diubiquitin reveal mechanisms for dual specificity. Nat. Struct. Mol. Biol. 22, 222–229 (2015).
+10. K. Keusekotten, P. R. Elliott, L. Glockner, B. K. Fil, R. B. Damgaard, Y. Kulathu, T. Wauer, M. K. Hospenthal, M. Gyrd-Hansen, D. Krappmann, K. Hoffmann, D. Komander, OTULIN antagonizes LUBAC signaling by specifically hydrolyzing Met1-linked polyubiquitin. Cell 153, 1312–1326 (2013).
+11. R. B. Damgaard, J. A. Walker, P. Marco-Casanova, N. V. Morgan, H. L. Titheradge, P. R. Elliott, D. McEne, R. E. Maher, A. N. J. McKenzie, D. Komander, The deubiquitase OTULIN is an essential negative regulator of inflammation and autoimmunity. Cell 166, 1215–1230.e20 (2016).
+12. E. Hoste, K. Lecomte, K. Annusver, N. Vandamme, J. Roels, S. Maschalidi, L. Verboom, H. K. Vikkula, M. Sze, L. Van Hoeve, K. Verstaen, A. Martens, T. Hoepched, Y. Saeyes, K. Ravichandran, M. Kasper, G. van Loo, OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity. Nat. Commun. 12, 5913 (2021).
+13. H. Schunke, U. Gobel, I. Dikic, M. Pasparakis, OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice. Nat. Commun. 12, 5912 (2021).
+14. K. Heger, K. E. Wickliffe, A. Ndjoa, J. Zhang, A. Murthy, D. L. Dugger, A. Maltzman, E. M. F. de Sousa, J. Hung, Y. Zeng, E. Verschuuren, D. S. Kirkpatrick, D. Vucic, W. P. Lee, M. Roose-Girma, R. J. Newton, S. Warming, Y. C. Hsiao, L. G. Kömüves, J. D. Webster, K. Newton, V. M. Dixit, OTULIN limits cell death and inflammation by deubiquitinating LUBAC. Nature 559, 120–124 (2018).
+15. L. Taraborrelli, N. Peltzer, A. Montinaro, S. Kupka, E. Rieser, T. Hartwig, A. Sarr, M. Darding, P. Draber, T. L. Haas, A. Akara, T. Marafoti, M. Pasparakis, J. Bertin, P. J. Gough, P. Bouillet, A. Strasser, M. Leversuk, J. Silke, H. Walczak, LUBAC prevents lethal dermatitis by inhibiting cell death induced by TNF, TRAIL and CD95L. Nat. Commun. 9, 3910 (2018).
+16. Q. Zhou, X. Yu, E. Demirkaya, N. Deutch, D. Stone, W. L. Tsai, H. S. Kuehn, H. Wang, D. Yang, Y. H. Park, A. K. Ombrello, M. Blake, T. Romeo, E. F. Remmers, J. J. Chae, J. C. Mullikin, F. Güzeld, J. D. Melton, M. Boehm, S. D. Rosenzweig, M. Gadia, S. B. Welch, S. Ozen, R. Topaloglu, M. Abinun, D. L. Kastner, I. Akentjevich, Biallelic hypomorphic mutations in a linear deubiquitinase define otulipenia, an early-onset autoinflammatory disease. Proc. Natl. Acad. Sci. U.S.A. 113, 10127–10132 (2016).
+
+17. E. Rivkin, S. M. Almeida, D. F. Ceccarelli, Y. C. Juang, T. A. MacLean, T. Srikumar, H. Huang, W. H. Dunham, R. Fukumura, G. Xie, Y. Gondo, B. Raught, A. C. Gingras, F. Sicheri, S. P. Cordes, The linear ubiquitin-specific deubiquitinating enzyme gumbu regulates angiogenesis. Nature 498, 318–324 (2013).
+18. C. Y. Logan, R. Nusse, The Wnt signaling pathway in development and disease. Annu. Rev. Cell Dev. Biol. 20, 781–810 (2004).
+19. Y. S. Choi, Y. Zhang, M. Xu, Y. Yang, M. Ito, T. Peng, Z. Cui, A. Nagy, A. K. Hadjantonakis, R. A. Lang, G. Cotsarelis, T. Andl, E. E. Morrissey, S. E. Millar, Distinct functions for Wnt/β-catenin in hair follicle stem cell proliferation and survival and interfollicular epidermal homeostasis. Cell Stem Cell 13, 720–733 (2013).
+20. X. Lim, R. Nusse, Wnt signaling in skin development, homeostasis, and disease. Cold Spring Harb. Perspect. Biol. 5, a008029 (2013).
+21. M. Hart, J. P. Concodet, I. Lasso, T. Albert, R. del los Santos, H. Durand, C. Perret, B. Rubinfeld, F. Margottin, R. Benarous, P. Polakis, The F-box protein beta-TrCP associates with phosphorylated beta-catenin and regulates its activity in the cell. Curr. Biol. 9, 207–211 (1999).
+22. R. Nusse, H. Clevers, Wnt/β-catenin signaling, disease, and emerging therapeutic modalities. Cell 169, 985–999 (2017).
+23. H. X. Hao, Y. Xie, Y. Zhang, O. Charlat, E. Oster, M. Avello, H. Lei, C. Mickanin, D. Liu, H. Ruffner, X. Mao, Q. Ma, R. Zamponi, T. Bouwmeester, P. M. Finan, M. W. Kirschner, J. A. Porter, F. C. Serluca, F. Cong, ZNF3 promotes Wnt reporter turnover in an R-spondin-sensitive manner. Nature 485, 195–200 (2012).
+24. B. K. Koo, M. Spit, J. Lørdens, T. Y. Low, D. E. Stange, M. van de Wetering, J. H. van Es, S. Mohammed, A. J. Heek, M. M. Maurice, H. Clevers, Tumour suppressor RNF43 is a stem-cell E3 ligase that induces endocytosis of Wnt receptors. Nature 488, 665–669 (2012).
+25. J. T. Winston, P. Strack, P. Beer-Romero, C. Y. Chu, S. J. Elledge, J. W. Harper, The SCFbeta-TrCP-ubiquitin ligase complex associates specifically with phosphorylated destruction motifs in IκBalpha/beta and beta-catenin and stimulates IκBalpha/beta ubiquitination in vitro. Genes Dev. 13, 270–283 (1999).
+26. W. Wang, M. Li, S. Ponnumusamy, Y. Chi, J. Xue, B. Fahmy, M. Fan, G. A. Miranda-Carboni, R. Narayanan, J. Wu, Z. H. Wu, ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers. Nat. Commun. 11, 3965 (2020).
+27. U. Gat, R. DasGupta, L. Degnenstein, E. Fuchs, De novo hair follicle morphogenesis and hair tumors in mice expressing a truncated beta-catenin in skin. Cell 95, 605–614 (1998).
+28. L. Zhang, Q. Liu, K. W. Liu, Z. Y. Qin, G. X. Zhu, L. T. Shen, N. Zhang, B. Y. Liu, L. R. Che, J. Y. Li, T. Wang, L. Wen, K. J. Liu, Y. Guo, X. R. Yin, X. Wang, Z. H. Zhou, H. L. Xiao, Y. H. Cui, X. W. Bian, C. H. Lan, D. Chen, B. Wang, SHARPIN stabilizes β-catenin through a linear ubiquitination-independent manner to support gastric tumorigenesis. Gastric Cancer 24, 402–416 (2021).
+29. D. Pinheiro, Y. Bellaiche, Mechanical force-driven adherens junction remodeling and epithelial dynamics. Dev. Cell 47, 3–19 (2018).
+30. C. Lo Celso, D. M. Prowse, F. M. Watt, Transient activation of beta-catenin signalling in adult mouse epidermis is sufficient to induce new hair follicles but continuous activation is required to maintain hair follicle tumours. Development 131, 1787–1799 (2004).
+31. S. S. Cheon, A. Y. Cheah, S. Turley, P. Nadesan, R. Poon, H. Clevers, B. A. Alman, β-Catenin stabilization dysregulates mesenchymal cell proliferation, motility, and invasiveness and causes aggressive fibromatosis and hyperplastic cutaneous wounds. Proc. Natl. Acad. Sci. U.S.A. 99, 6973–6978 (2002).
+32. S. S. Cheon, Q. Wei, A. Gurung, A. Youn, T. Bright, R. Poon, H. Whetstone, A. Guha, B. A. Alman, β-catenin regulates wound size and mediates the effect of TGF-beta in cutaneous healing. FASEB J. 20, 692–701 (2006).
+33. M. Devos, G. Tanghe, B. Gilbert, E. Dierick, M. Verheistraeten, J. Nemegeer, R. de Reuver, S. Lefebvre, J. De Munck, J. Rehwinkel, P. Vandenameele, W. Declercq, J. Maelfait, Sensing of endogenous nucleic acids by ZBP1 induces keratinocyte necroptosis and skin inflammation. J. Exp. Med. 217, e20191913 (2020).
+34. H. Nguyen, J. B. Merrill II, Polak, M. Nikolaou, M. Rendil, T. M. Shaver, H. A. Pasolli, E. Fuchs, Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia. Nat. Genet. 41, 1068–1075 (2009).
+35. M. van de Wetering, R. Cavallo, D. Dooijes, M. van Beest, J. van Es, J. Loureiro, A. Ypma, D. Hursh, T. Jones, A. Bejsovec, M. Peifer, M. Martin, H. Clevers, Armadillo coactivates transcription driven by the product of the Drosophila segment polarity gene dTCF. Cell 88, 789–799 (1997).
+36. H. Nguyen, M. Rendil, E. Fuchs, Tcf3 governs stem cell features and represses cell fate determination in skin. Cell 127, 171–183 (2006).
+37. M. van de Wetering, E. Sancho, C. Verweij, W. de Lau, I. Oving, A. Hurlstone, K. van der Horn, E. Batlle, D. Couderc, A. P. Haramis, M. Tjon-Pon-Fong, P. Moerer, M. van den Born, G. Soete, S. Pals, M. Ellers, R. Medema, H. Clevers, The beta-catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells. Cell 111, 241–250 (2002).
+38. K. W. Kinzler, B. Vogelstein, Lessons from hereditary colorectal cancer. Cell 87, 159–170 (1996).
+39. K. Pelka, M. Hofree, J. H. Chen, S. Sarkizova, J. D. Pirl, V. Jorgji, A. Bejoond, D. Dionne, W. H. Ge, K. H. Xu, S. X. Chao, D. R. Zollinger, D. J. Lieb, J. W. Reeves, C. A. Fuhrman, M. L. Hoang, T. Delorey, L. T. Nguyen, J. Waldman, M. Klapholtz, I. Wakino, O. Cohen, J. Albers, C. S. Smillie, M. S. Cuoco, J. Wu, M. J. Su, J. Yeung, B. Vijayakar, A. M. Magnuson, N. Asinovski, T. Moll, M. N. Goder-Reiser, A. S. Applebaum, L. K. Brais, L. K. DelloStritto, S. L. Denning, S. Phillips, E. Hill, J. K. Meehan, D. T. Frederick, T. Sharova, A. Kanodia, E. Z. Todres, J. Jané-Valbuena, M. Biton, B. Izar, C. D. Lambden, T. E. Clancy, R. Bleday, N. Melnitchouk, J. Irani, H. Kunikatake, D. L. Berger, A. Srivastava, J. L. Hornick, S. Ogino, A. Rotem, S. Vigneau, B. E. Johnson, R. B. Corcoran, A. H. Sharpe, V. K. Kuchroo, K. Ng, M. Giannakis, L. T. Nieman, G. M. Boland, A. J. Aguirre, A. C. Anderson, O. Rozenblatt-Rosen, A. Regev, N. Hacohen, Spatially organized multicellular immune hubs in human colorectal cancer. Cell 184, 4734–4752.e20 (2021).
+40. K. Lecomte, A. Toniolo, E. Hoste, Cell death as an architect of adult skin stem cell niches. Cell Death Differ. 31, 957–969 (2024).
+41. M. C. Bonnet, D. Preuschkaf, F. S. Welz, G. van Loo, M. A. Ermolaeva, W. Bloch, I. Haase, M. Pasparakis, The adaptor protein FADD protects epidermal keratinocytes from necroptosis in vivo and prevents skin inflammation. Immunity 35, 572–582 (2011).
+42. J. Huyghe, D. Priem, M. M. J. Bertrand, Cell death checkpoints in the TNF pathway. Trends Immunol. 44, 628–643 (2023).
+43. X. Du, J. Pang, B. Gu, T. Si, Y. Chang, T. Li, M. Wu, Z. Wang, Y. Wang, J. Feng, N. Wu, J. Man, H. Li, A. Li, T. Zhang, B. Wang, X. Duan, A bio-orthogonal linear ubiquitin probe identifies STAT3 as a direct substrate of OTULIN in glioblastoma. Nucleic Acids Res. 51, 1050–1066 (2023).
+44. L. Verboom, A. Martens, D. Priem, E. Hoste, M. Sze, H. Vikkula, L. Van Hove, S. Voet, J. Roels, J. Maelfait, L. Bongiovanni, A. de Bruin, C. L. Scott, Y. Saeyes, M. Pasparakis, M. J. M. Bertrand, G. van Loo, OTULIN prevents liver inflammation and hepatocellular carcinoma by inhibiting FADD- and RIPK1 kinase-mediated hepatocyte apoptosis. Cell Rep. 30, 2237–2247.e6 (2020).
+45. M. Hafner, J. Wenk, A. Nenci, M. Pasparakis, K. Scharfetter-Kochanek, N. Smyth, T. Peters, D. Kess, O. Holtkotter, F. Sheppard, J. E. Kudlow, H. Smola, I. Haase, A. Schippers, T. Krieg, W. Müller, Keratin 14 Cre transgenic mice authenticate keratin 14 as an oocyte-expressed protein. Genesis 38, 176–181 (2004).
+46. C. M. Guiere, T. Volckaert, U. Wolke, M. Sze, R. de Rycke, A. Waisman, M. Prinz, R. Beyaert, M. Pasparakis, G. van Loo, Oligodendrocyte-specific FADD deletion protects mice from autoimmune-mediated demyelination. J. Immunol. 185, 7646–7653 (2010).
+47. J. M. Murphy, P. E. Cabotar, J. M. Hildebrandt, I. S. Lucet, J. G. Zhang, S. Alvarez-Diaz, R. Lewis, N. Lalouci, D. Metcalfe, I. A. Webb, S. N. Young, L. N. Varghese, G. M. Tamannah, E. C. Hatchell, I. J. Majewski, T. Okamoto, R. C. Dobson, D. J. Hilton, J. J. Babon, A. Nicola, A. Strasser, J. Silke, W. S. Alexander, The pseudokinase MLKL mediates necroptosis via a molecular switch mechanism. Immunity 39, 443–453 (2013).
+48. R. E. Seymour, M. G. Hasham, G. A. Cox, L. D. Shultz, H. Hogenesch, D. C. Roopenian, J. P. Sundberg, Spontaneous mutations in the mouse Sharpin gene result in multorgan inflammation, immune system dysregulation and dermatitis. Genes Immun. 8, 416–421 (2007).
+49. K. B. Jensen, R. R. Driskell, F. M. Watt, Assaying proliferation and differentiation capacity of stem cells using disaggregated adult mouse epidermis. Nat. Protoc. 5, 898–911 (2010).
+
+Acknowledgments: We thank F. Watt for providing K14ΔNβcatenin mice and A. Wullaert for helpful insights. We thank the VIB Bioimaging Core and VIB Flow Cytometry Core for assistance with experiments and the animal caretakers of the Center for Inflammation Research for colony maintenance of the mice. Funding: This research was funded by FWO research projects (G.V.L. and E.H.: 3G032320; and E.H.: G071224N), Foundation Against Cancer (G.V.L. and E.H.; 365L04523), LEO Foundation Award Region EMEA 2022 (E.H.), a LEO Foundation Serendipity grant (E.H.; LF-SE-24-800055), and the Special Research Fund of Ghent University (E.H.; BOF/24/2023/138). Research in the van Loo laboratory is supported by VIB and research grants from Ghent University (G.V.L.; 01G00123), FWO (G.V.L.; 3G090322 and 3G0H2522), the Charcot Foundation (G.V.L.), the Queen Elisabeth Medical Foundation, and the FOREUM Foundation (G.V.L.). Author contributions: K.L.: Writing—original draft, conceptualization, investigation, methodology, resources, data curation, validation, formal analysis, project administration, and visualization. P.H.: Investigation, validation, writing—reviewing and editing, formal analysis, and visualization. V.W.: Investigation, formal analysis, and visualization. A.T.: Investigation and validation. F.R.: Validation. F.B.: Investigation, methodology, data curation, validation, formal analysis, and project administration. M.C.: Software, validation, formal analysis, data curation, and visualization. L.V.: Investigation and formal analysis. K.S.: Investigation, validation, and formal analysis. G.V.L.: Conceptualization, writing—reviewing and editing, methodology, resources, funding acquisition, and supervision. E.H.: Conceptualization, investigation, writing—original draft, writing—reviewing and editing, methodology, resources, funding acquisition, data curation, validation, formal analysis, project administration, and visualization. Competing interests: The authors declare that they have no
+
+competing interests: Data, code, and materials availability: All data and code needed to evaluate and reproduce the results in the paper are present in the paper and/or the Supplementary Materials. Reagents and materials generated in this study are available upon request to the corresponding author.
+
+Submitted 14 May 2025
+Accepted 4 September 2026
+Published 9 October 2026
+10.1126/sciadv.adz0181

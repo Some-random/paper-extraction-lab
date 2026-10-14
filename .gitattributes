@@ -1,2 +1,5 @@
 # Preserve the original CSV exports, including their standard CRLF line endings.
 *.csv -text whitespace=cr-at-eol
+
+# Review samples retain the exact extraction bytes, including original spacing.
+reports/**/samples/** -text -whitespace
