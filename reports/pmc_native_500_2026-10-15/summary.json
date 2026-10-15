@@ -34,5 +34,21 @@
     "Source checks do not validate biological figure interpretation.",
     "Unresolved/oversized/failed media remain explicitly listed.",
     "Prior outputs and model caches are retained; this batch runs no new OCR."
-  ]
+  ],
+  "reviewed_at_pst": "2026-10-15T11:28:25.809225-08:00",
+  "target_reached": false,
+  "remaining_papers": 205,
+  "worker_running": false,
+  "interruption_note": "The serial worker stopped after exhausting its attempted candidate list; 1404 candidate attempts failed with Connection refused. This does not establish exhaustion of available PMC papers. The original runtime deadline has now passed; no download worker was restarted.",
+  "rejected_connection_refused_attempts": 1404,
+  "total_pdf_pages": 9274,
+  "total_main_article_tables": 342,
+  "total_text_tokens": 6932658,
+  "total_text_chunks": 3976,
+  "total_source_table_cells": 51195,
+  "media_failures": 0,
+  "required_output_files_verified": true,
+  "validation_note": "Structural and provenance checks against publisher XML; not an independent OCR accuracy or biological correctness score.",
+  "references_without_source_titles": 960,
+  "references_without_source_authors": 725
 }
