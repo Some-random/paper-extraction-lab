@@ -2,16 +2,7 @@
 
 A caption is normally written by the paper's authors. Recovering it from XML is extraction. Asking a VLM to explain the image creates a new interpretation. These should have different provenance fields.
 
-| Published recipe | Pixels used in training? | Source captions / generated material |
-|---|---|---|
-| [BioGPT](https://arxiv.org/pdf/2210.10341) | No | Its pretraining source is titles and abstracts; it does not ingest the full paper's figures |
-| [BioMedGPT-LM, PharMolix](https://arxiv.org/html/2308.09442v2) | No paper-image branch in the described CPT | Removes chart data from its S2ORC literature input. Subsequent molecule/protein encoders are not figure-image encoders |
-| [MEDITRON](https://arxiv.org/html/2311.16079v1), Appendix B.2 | No | Discards figure pixels and table bodies; **retains captions** with figure/table tags. Inline figure/table references include a caption fragment truncated to 12 words. This is source-caption processing, not a VLM-generated caption |
-| [peS2o](https://github.com/allenai/pes2o) | No | Full-text cleaning removes figures, tables and references. A cleaned text corpus cannot restore the original images |
-| [NatureLM](https://arxiv.org/html/2502.07527v2) / [BioMatrix](https://arxiv.org/pdf/2606.22138v1) | Their disclosed biological modalities are sequences / structures / text | “Multimodal” here does not establish paper-figure training. Molecule/protein “captioning” can mean generating a biological description from a molecular/protein representation |
-| [BiomedCLIP](https://arxiv.org/html/2303.00915) | Yes | Pairs original PMC figures with author captions for contrastive training; not a requirement to recaption them with a teacher VLM |
-| [LLaVA-Med](https://arxiv.org/html/2306.00890) | Yes | First aligns image features to original captions. Later GPT-4 conversations are generated from caption/context text and kept as instruction data; the original method does not require GPT-4 to inspect the pixels |
-| [PMC-InterCPT](https://arxiv.org/html/2606.01049v2) | Yes | Recovers missing captions from XML and interleaves figures with explicitly referring article passages. Text classifiers filter quality/relevance; the method explicitly prefers source-caption recovery to replacement generation |
+Published per-model figure policies are now attached to each entry in the [shared catalog](README.md).
 
 For some older text-only reports, exact caption-retention settings are not documented. I have not inferred that all retained captions, or that all removed them. Likewise, running a page-OCR VLM does not itself establish that the model read a multi-panel experiment correctly.
 

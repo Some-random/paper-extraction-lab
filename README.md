@@ -64,25 +64,25 @@ The text-packing demonstration uses the cached Qwen-family tokenizer on CPU;
 re-tokenize for the eventual training backbone. Multimodal records have explicit
 source-linked segments but have not been vision-tokenized for a particular VLM.
 
-The [foundation-model training-data review](reports/bio_foundation_review_2026-10-15/README.md)
-is also readable directly on GitHub, with primary sources and disclosure gaps
-for 17 model families and three training-data studies.
-The [biology-focused source review](reports/bio_foundation_review_2026-10-15/biology_sources.md)
-prioritizes biological research models, reusable real-data corpora and biological
-databases. Clinical-note training is outside this project's scope.
+The [shared biological foundation-model literature catalog](reports/bio_foundation_review_2026-10-15/README.md)
+is the literature home for this project and `bio-evaluation`. Each model or
+study has one page with its source papers, datasets and amounts, extraction,
+filtering, figures, citations and disclosure gaps. The older review, dataset
+breakdown and additional-coverage tables have been merged into this catalog.
+The catalog has 31 model-family entries, three training-data studies, three
+reusable corpora and four method references; ten model entries retain
+historical medical context. Clinical-note acquisition remains outside scope.
 
-The [per-model dataset budgets](reports/bio_foundation_review_2026-10-15/dataset_breakdown.md)
-separate literature, web text, database data, corpus sizes and sampled training
-mixtures. The [web acquisition guide](reports/bio_foundation_review_2026-10-15/web_acquisition.md)
-includes an actual 64 KiB / eight-record corpus probe; the
-[figure review](reports/bio_foundation_review_2026-10-15/figure_handling.md)
-distinguishes original captions, image-based training and generated descriptions.
+The [web acquisition guide](reports/bio_foundation_review_2026-10-15/web_acquisition.md),
+[executed web probe](reports/bio_foundation_review_2026-10-15/web_sample.md) and
+[figure representation guide](reports/bio_foundation_review_2026-10-15/figure_handling.md)
+remain topic guides linked from that catalog.
 
 The user-confirmed [500-paper native-source expansion](reports/pmc_native_500_2026-10-15/README.md)
 retains original figures, full captions, referring paragraphs and source tables,
 with no new OCR or model training. The [storage/time estimate and firm limits](reports/pmc_native_500_2026-10-15/scaling_estimate.md)
-precede the run. The [additional model coverage table](reports/bio_foundation_review_2026-10-15/coverage_update.md)
-adds TheBioCollection, SciReasoner, LOGOS, TxGemma and other relevant recipes.
+precede the run. Acquisition is paused at the user's request while literature
+is consolidated; the batch's STOP file remains in place.
 
 ## Overnight download and full-paper extraction
 

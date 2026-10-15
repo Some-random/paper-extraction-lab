@@ -1,0 +1,15 @@
+{
+  "checked_at_pst": "2026-10-15T12:11:05.238332-08:00",
+  "unique_catalog_entries": 41,
+  "model_entries": 31,
+  "training_data_studies": 3,
+  "method_references": 4,
+  "reusable_corpora": 3,
+  "original_model_and_study_records_preserved": 20,
+  "source_table_records_retained_verbatim": 48,
+  "all_primary_urls_from_retired_tables_retained": true,
+  "generated_pages_and_csv_match_registry": true,
+  "broken_checked_local_links": [],
+  "renderer_idempotent": true,
+  "scope": "Local consolidation audit, not fresh paper/source verification or model evaluation."
+}
