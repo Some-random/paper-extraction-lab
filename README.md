@@ -10,16 +10,29 @@ GPU, no subagents, and no new SSH connections.
 
 ## Updated native-source preview: three papers
 
-Read the [three-paper results directly on GitHub](reports/pmc_native_v3_preview_2026-10-15/README.md).
+Read the [current three-paper results directly on GitHub](reports/pmc_native_v4_citations_2026-10-15/README.md).
 The first table links the full extracted research text, original figures with
 captions and referring paragraphs, source tables, and complete structured JSON.
 Each paper also includes every text chunk and figure/table–context record;
 Q&A examples appear as optional derivatives below the extracted outputs.
 It includes 140 research paragraphs, 25 original figure images, four source
-tables, 30 text chunks of at most 2,048 tokens, 23 figure/table–context records,
+tables, 35 text chunks of at most 2,048 tokens, 23 figure/table–context records,
 and nine source-checked reading/lookup examples. The tracked
-[summary](reports/pmc_native_v3_preview_2026-10-15/summary.json) and
-[examples](reports/pmc_native_v3_preview_2026-10-15/examples.json) include provenance.
+[summary](reports/pmc_native_v4_citations_2026-10-15/summary.json) and
+[examples](reports/pmc_native_v4_citations_2026-10-15/examples.json) include provenance.
+
+Literature citations now use full cited titles and first author/et al. All 211
+bibliography records retain source-supplied authors and identifiers; all 322
+source citation-marker elements were checked, including 12 numeric ranges.
+The original-marker views remain available. No citation-policy comparison is run.
+
+The [supplementary-file inventory and full spreadsheet exports](reports/pmc_native_v4_citations_2026-10-15/supplements/README.md)
+cover 41 linked files, including 33 XLSX files. Two source workbooks were fully
+parsed: nine worksheets, 35,468 nonempty source rows and 184,530 populated cells.
+Full TSV sheets preserve source row/column coordinates; preview excerpts are
+labeled separately. Original workbooks add approximately 1.9 MB on RustFS.
+Unparsed supplements have explicit status. The [previous v3 preview](reports/pmc_native_v3_preview_2026-10-15/README.md)
+is retained.
 
 The preview uses the same CC BY OTULIN/Wnt, population-proteomics, and Lsp2
 papers already cached in the October 14 batch. It parses publisher XML, retains
@@ -42,10 +55,11 @@ classifier or biological entity linker has been run.
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 \
   TOKENIZERS_PARALLELISM=false .venv/bin/python src/run_native_preview.py
 .venv/bin/python scripts/export_github_preview.py
+.venv/bin/python scripts/extract_supplement_sample.py
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Configuration is in [config/pmc_native_v3_preview.json](config/pmc_native_v3_preview.json).
+Configuration is in [config/pmc_native_v4_citations.json](config/pmc_native_v4_citations.json).
 The text-packing demonstration uses the cached Qwen-family tokenizer on CPU;
 re-tokenize for the eventual training backbone. Multimodal records have explicit
 source-linked segments but have not been vision-tokenized for a particular VLM.
@@ -53,6 +67,9 @@ source-linked segments but have not been vision-tokenized for a particular VLM.
 The [foundation-model training-data review](reports/bio_foundation_review_2026-10-15/README.md)
 is also readable directly on GitHub, with primary sources and disclosure gaps
 for 17 model families and three training-data studies.
+The [biology-focused source review](reports/bio_foundation_review_2026-10-15/biology_sources.md)
+prioritizes biological research models, reusable real-data corpora and biological
+databases. Clinical-note training is outside this project's scope.
 
 ## Overnight download and full-paper extraction
 

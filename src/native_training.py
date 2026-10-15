@@ -12,6 +12,7 @@ from collections import Counter
 from pathlib import Path
 
 from lxml import etree
+from jats_citations import CitationIndex
 
 XLINK = "{http://www.w3.org/1999/xlink}href"
 ADMIN = re.compile(
@@ -127,7 +128,7 @@ def inline_html(node):
     ) + closing
 
 
-def table_grid(table, tree, paths=None):
+def table_grid(table, tree, paths=None, normalize=None):
     """Physical cells and span-expanded occupancy; no inferred cell values."""
     occupied = {}
     cells = []
@@ -144,8 +145,10 @@ def table_grid(table, tree, paths=None):
             rs, cs = int(cell.get("rowspan", "1")), int(cell.get("colspan", "1"))
             if not (1 <= rs <= 150 and 1 <= cs <= 50 and ci + cs <= 50):
                 raise ValueError("Invalid or oversized source cell span")
+            normalized = normalize(cell) if normalize else cell
             item = dict(id=f"r{ri}c{ci}", row=ri, column=ci, rowspan=rs, colspan=cs,
                         text=text(cell), html=inline_html(cell), source_xpath=paths[cell] if paths else tree.getpath(cell),
+                        training_text=text(normalized), training_html=inline_html(normalized),
                         raw_xml=etree.tostring(cell, encoding="unicode"),
                         tag=tag(cell), scope=cell.get("scope"),
                         is_column_header=any(tag(a) == "thead" for a in cell.iterancestors()))
@@ -171,7 +174,7 @@ def table_grid(table, tree, paths=None):
                for c in range(nc)] for r in range(nr)]
     # Never repeat a group total as if it were a value for each physical row.
     # Covered slots explicitly point to the source cell; HTML retains spans.
-    def tsv_slot(r, c):
+    def tsv_slot(r, c, field):
         cell = occupied.get((r, c))
         if cell is None:
             return ''
@@ -180,13 +183,15 @@ def table_grid(table, tree, paths=None):
         suffix = ''
         if cell['rowspan'] > 1 or cell['colspan'] > 1:
             suffix = f" [rowspan={cell['rowspan']}, colspan={cell['colspan']}]"
-        return cell['text'] + suffix
-    tsv = "\n".join("\t".join(tsv_slot(r, c) for c in range(nc)) for r in range(nr))
+        return cell[field] + suffix
+    tsv = "\n".join("\t".join(tsv_slot(r, c, 'training_text') for c in range(nc)) for r in range(nr))
+    source_tsv = "\n".join("\t".join(tsv_slot(r, c, 'text') for c in range(nc)) for r in range(nr))
     return dict(cells=cells, occupancy=matrix, nrows=nr, ncols=nc,
-                header_paths=header_paths, source_cell_count=len(cells), text_tsv=tsv)
+                header_paths=header_paths, source_cell_count=len(cells), text_tsv=tsv,
+                source_text_tsv=source_tsv)
 
 
-def parse_jats(source: Path, pmcid: str, tokenizer):
+def parse_jats(source: Path, pmcid: str, tokenizer, *, citation_overrides=None):
     tree = etree.parse(str(source), etree.XMLParser(resolve_entities=False, no_network=True))
     # Strip names only in the working copy; retain unmodified source XPaths.
     paths = {n: tree.getpath(n) for n in tree.iter() if isinstance(n.tag, str)}
@@ -196,31 +201,38 @@ def parse_jats(source: Path, pmcid: str, tokenizer):
     meta = tree.find('front/article-meta')
     if meta is None or tree.find('body') is None:
         raise ValueError("JATS metadata or body missing")
+    source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+    citations = CitationIndex(tree, pmcid, paths, source_hash, citation_overrides)
     blocks, excluded = [], []
     title = text(meta.find('title-group/article-title'))
     visuals = []
     for index, v in enumerate(tree.xpath('//fig | //table-wrap')):
         vid = v.get('id') or f"unidentified-{index}"
         table = v.find('.//table')
-        grid = table_grid(table, tree, paths) if table is not None else None
+        normalized = citations.normalized_copy(v)
+        grid = table_grid(table, tree, paths, citations.normalized_copy) if table is not None else None
         visuals.append(dict(id=pmcid + ':' + vid, xml_id=vid,
             kind='figure' if v.tag == 'fig' else 'table', label=text(v.find('label')),
             caption=text(v.find('caption')), caption_html=inline_html(v.find('caption')),
-            caption_training_text=text(v.find('caption')),
+            caption_training_text=text(normalized.find('caption')),
+            caption_training_html=inline_html(normalized.find('caption')),
+            citation_mention_ids=citations.mentions_in(v),
             notes=text(v.find('table-wrap-foot')), table=grid,
+            notes_training_text=text(normalized.find('table-wrap-foot')),
             table_html=inline_html(table) if table is not None else None,
+            table_training_html=inline_html(normalized.find('.//table')) if table is not None else None,
             source_xpath=paths[v], graphics=[g.get(XLINK) or g.get('href') for g in v.findall('.//graphic')],
-            source_xml_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+            source_xml_sha256=source_hash,
             validation_status='native_source_structure; figure_semantics_not_adjudicated'))
     by_xml_id = {v['xml_id']: v for v in visuals}
 
-    def emit(node, section, region, kind='paragraph', reason=None, content=None):
+    def emit(node, section, region, kind='paragraph', reason=None, content=None, training_content=None):
         view = prose_only(node) if kind in {'paragraph', 'abstract'} else node
         reader_text = text(view) if content is None else content
-        # Keep source citation markers rather than heuristically deleting ranges
-        # and risking malformed scientific notation. Bibliographies are routed
-        # outside this preview's CPT stream; reference metadata stays in XML.
-        training_text = text(view) if content is None else content
+        normalized = citations.normalized_copy(node)
+        if kind in {'paragraph', 'abstract'}:
+            normalized = prose_only(normalized)
+        training_text = (text(normalized) if content is None else content) if training_content is None else training_content
         if not reader_text:
             return
         refs = [dict(ref_type=x.get('ref-type'), rid=rid, source_xpath=paths[x], label=text(x))
@@ -240,6 +252,8 @@ def parse_jats(source: Path, pmcid: str, tokenizer):
         item = dict(id=f'{pmcid}:block{len(blocks) + len(excluded):04d}',
             kind=kind, region=region, section_path=section, text=reader_text,
             training_text=training_text, html=inline_html(view) if content is None else None,
+            training_html=inline_html(normalized) if content is None else None,
+            citation_mention_ids=citations.mentions_in(node, exclude_floats=kind in {'paragraph', 'abstract'}),
             source_xpath=paths[node], raw_xml=etree.tostring(node, encoding='unicode'),
             references=refs, token_count=n_tokens, quality_flags=flags,
             training_eligible=not reason, exclusion_reason=reason,
@@ -269,10 +283,12 @@ def parse_jats(source: Path, pmcid: str, tokenizer):
                 emit(cap, section, region, 'caption', reason)
                 blocks_or_excluded = excluded if reason else blocks
                 blocks_or_excluded[-1]['visual_id'] = obj['id']
-                if obj['table']:
-                    emit(node, section, region, 'table', reason,
-                         obj['label'] + '\n' + obj['table']['text_tsv'] + '\n' + obj['notes'])
-                    blocks_or_excluded[-1]['visual_id'] = obj['id']
+            if obj and obj['table']:
+                emit(node, section, region, 'table', reason,
+                     obj['label'] + '\n' + obj['table']['source_text_tsv'] + '\n' + obj['notes'],
+                     obj['label'] + '\n' + obj['table']['text_tsv'] + '\n' + obj['notes_training_text'])
+                blocks_or_excluded = excluded if reason else blocks
+                blocks_or_excluded[-1]['visual_id'] = obj['id']
         elif name == 'p':
             emit(node, section, region, 'paragraph', reason)
             # Floating Nature objects can live inside a paragraph. Emit their
@@ -314,10 +330,13 @@ def parse_jats(source: Path, pmcid: str, tokenizer):
         if digests[hashlib.sha256(b['training_text'].encode()).hexdigest()] > 1:
             b['quality_flags'].append('exact_repeated_paragraph_review; retained_with_provenance')
     return dict(pmcid=pmcid, title=title, blocks=blocks, excluded_blocks=excluded,
+        citation_policy='full_source_title_and_first_author_or_et_al; complete_bibliography_preserved; no_generation',
+        bibliography=citations.bibliography, citation_mentions=citations.mentions,
+        unresolved_citations=[m for m in citations.mentions if m['unresolved_target_ids']],
         visuals=visuals, unresolved_references=unresolved,
         duplicate_visual_ids=[k for k, n in id_counts.items() if n > 1],
         identifiers={n.get('pub-id-type'): text(n) for n in meta.findall('article-id')},
-        source_xml_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+        source_xml_sha256=source_hash,
         license_statements=[text(n) for n in meta.findall('permissions/license')],
         authors=[text(n.find('given-names')) + ' ' + text(n.find('surname'))
                  for n in meta.findall('contrib-group/contrib/name')])
@@ -346,6 +365,7 @@ def interleaved_records(document):
         output.append(dict(id=f"{document['pmcid']}:interleaved{i:03d}",
             context_block_ids=[b['id'] for b in group], visual_ids=[visuals[r]['id'] for r in refs],
             context_text='\n\n'.join(b['training_text'] for b in group), edges=edges,
+            citation_mention_ids=list(dict.fromkeys(m for b in group for m in b.get('citation_mention_ids', []))),
             context_policy='consecutive_source_paragraphs_in_same_section; explicit_xref_only',
             captions=[dict(visual_id=visuals[r]['id'], text=visuals[r]['caption_training_text']) for r in refs],
             source_xml_sha256=document['source_xml_sha256'],
@@ -386,6 +406,11 @@ def pack_text(document, tokenizer, maximum=2048):
                 end = len(value)
             else:
                 proposed = enc.offsets[maximum - 8][0]
+                # Keep each normalized reference intact across chunk boundaries.
+                for citation in re.finditer(r'\[bib_ref\].*?\[/bib_ref\]', rest):
+                    if citation.start() < proposed < citation.end():
+                        proposed = citation.start()
+                        break
                 boundaries = list(re.finditer(r'\s+', rest[:proposed]))
                 if not boundaries:
                     raise ValueError('Oversized uninterrupted scientific string: preserve outside packed stream')
@@ -394,6 +419,8 @@ def pack_text(document, tokenizer, maximum=2048):
                     end = cursor + max(m.start() for m in boundaries if cursor + m.start() < end)
             units.append(dict(block_id=block['id'], char_start=cursor, char_end=end,
                               text=value[cursor:end], source_xpath=block['source_xpath'],
+                              offset_basis='citation_normalized_training_text',
+                              source_citation_mention_ids=block.get('citation_mention_ids', []),
                               section_path=block['section_path']))
             cursor = end
     chunks = []

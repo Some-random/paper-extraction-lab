@@ -1,0 +1,8 @@
+Protein category	Count (n)	Example UniProtID(s)	Gene symbol(s)	Final annotation
+Unique Proteins	133	P00450	CP	Ceruloplasmin
+Gene-Derived Protein Groups (G)	199 [rowspan=3, colspan=1]	P02647.F8W696	APOA1, APOA1	Apolipoprotein A-I (G)
+	[merged from r2c1]	P00736.F5H2D0.B4DPQ0	C1R, C1R, C1R	Complement C1r subcomponent (G1)
+	[merged from r2c1]	P00736.F5H1V0.F5H6Y3.B4DPQ0	C1R, C1R, C1R, C1R	Complement C1r subcomponent (G2)
+Mixed Protein Groups (PG)	107 [rowspan=3, colspan=1]	P80748.A0A075B6K5	IGLV3-21, IGLV3-9	PG 70 (IGLV3-21, IGLV3-9)
+	[merged from r5c1]	P00751.C9JRT3.B4E1Z4	BF, BFD, CFB	PG 18 (BF, BFD, CFB)
+	[merged from r5c1]	A0A0B4J1V1.P01780.P01767. A0A0B4J1X5.A0A0J9YVY3.P0DP02. P01762.A0A0C4DH42.P01772. P01763	IGHV3-21, IGHV3-7, IGHV3-53, IGHV3-74, IGHV7-4-1, IGHV3-30-3, IGHV3-11, IGHV3-66, IGHV3-33, IGHV3-48	PG 7 (IGHV3-11, IGHV3-74, IGHV7-4-1,…)

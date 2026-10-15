@@ -1,0 +1,2879 @@
+[
+  {
+    "id": "PMC13655163:ref:CR1",
+    "xml_id": "CR1",
+    "label": "1.",
+    "title": "The human plasma proteome: history, character, and diagnostic prospects",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "NL Anderson",
+        "surname": "Anderson",
+        "given_names": "NL",
+        "collective": false
+      },
+      {
+        "name": "NG Anderson",
+        "surname": "Anderson",
+        "given_names": "NG",
+        "collective": false
+      }
+    ],
+    "year": "2002",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1074/mcp.R200007-MCP200",
+      "pmid": "12488461"
+    },
+    "raw_reference_text": "AndersonNLAndersonNGThe human plasma proteome: history, character, and diagnostic prospectsMol. Cell Proteom.2002184586710.1074/mcp.R200007-MCP20012488461",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[1]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1074/mcp.r200007-mcp200",
+      "pmid": "12488461"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR2",
+    "xml_id": "CR2",
+    "label": "2.",
+    "title": "Cardiac troponin T and I: back to basics",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "A. M. Mingels",
+        "surname": "Mingels"
+      },
+      {
+        "name": "N. L. Mills",
+        "surname": "Mills"
+      },
+      {
+        "name": "C. Mueller",
+        "surname": "Mueller"
+      },
+      {
+        "name": "Study Group on Biomarkers of the ESC Association for Acute CardioVascular Care",
+        "collective": true
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": false,
+    "identifiers": {},
+    "raw_reference_text": "Mingels, A. M., Mills, N. L., Mueller, C., & on behalf of the Study Group on Biomarkers of the ESC Association for Acute CardioVascular Care. Cardiac troponin T and I: back to basics. Eur. Heart J. Acute Cardiovasc. Care12, 631–632 (2023).",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[2]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {}
+  },
+  {
+    "id": "PMC13655163:ref:CR3",
+    "xml_id": "CR3",
+    "label": "3.",
+    "title": "Cystatin C as a biomarker of chronic kidney disease: latest developments",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SW Benoit",
+        "surname": "Benoit",
+        "given_names": "SW",
+        "collective": false
+      },
+      {
+        "name": "EA Ciccia",
+        "surname": "Ciccia",
+        "given_names": "EA",
+        "collective": false
+      },
+      {
+        "name": "P Devarajan",
+        "surname": "Devarajan",
+        "given_names": "P",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1080/14737159.2020.1768849",
+      "pmid": "32450046",
+      "pmcid": "PMC7657956"
+    },
+    "raw_reference_text": "BenoitSWCicciaEADevarajanPCystatin C as a biomarker of chronic kidney disease: latest developmentsExpert Rev. Mol. Diagn.2020201019102610.1080/14737159.2020.176884932450046PMC7657956",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[3]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1080/14737159.2020.1768849",
+      "pmid": "32450046",
+      "pmcid": "PMC7657956"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR4",
+    "xml_id": "CR4",
+    "label": "4.",
+    "title": "Acute-Phase Proteins and Other Systemic Responses to Inflammation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "G Cem",
+        "surname": "Cem",
+        "given_names": "G",
+        "collective": false
+      },
+      {
+        "name": "K Irving",
+        "surname": "Irving",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "1999",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1056/NEJM199902113400607",
+      "pmid": "9971870"
+    },
+    "raw_reference_text": "CemGIrvingKAcute-Phase Proteins and Other Systemic Responses to InflammationN. Engl. J. Med.199934044845410.1056/NEJM1999021134006079971870",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[4]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1056/nejm199902113400607",
+      "pmid": "9971870"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR5",
+    "xml_id": "CR5",
+    "label": "5.",
+    "title": "Prostate-specific antigen and prostate cancer: prediction, detection and monitoring",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Lilja",
+        "surname": "Lilja",
+        "given_names": "H",
+        "collective": false
+      },
+      {
+        "name": "D Ulmert",
+        "surname": "Ulmert",
+        "given_names": "D",
+        "collective": false
+      },
+      {
+        "name": "AJ Vickers",
+        "surname": "Vickers",
+        "given_names": "AJ",
+        "collective": false
+      }
+    ],
+    "year": "2008",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nrc2351",
+      "pmid": "18337732"
+    },
+    "raw_reference_text": "LiljaHUlmertDVickersAJProstate-specific antigen and prostate cancer: prediction, detection and monitoringNat. Rev. Cancer2008826827810.1038/nrc235118337732",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[5]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/nrc2351",
+      "pmid": "18337732"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR6",
+    "xml_id": "CR6",
+    "label": "6.",
+    "title": "Genetics meets proteomics: perspectives for large population-based studies",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Suhre",
+        "surname": "Suhre",
+        "given_names": "K",
+        "collective": false
+      },
+      {
+        "name": "MI McCarthy",
+        "surname": "McCarthy",
+        "given_names": "MI",
+        "collective": false
+      },
+      {
+        "name": "JM Schwenk",
+        "surname": "Schwenk",
+        "given_names": "JM",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41576-020-0268-2",
+      "pmid": "32860016"
+    },
+    "raw_reference_text": "SuhreKMcCarthyMISchwenkJMGenetics meets proteomics: perspectives for large population-based studiesNat. Rev. Genet.202122193710.1038/s41576-020-0268-232860016",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[6]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41576-020-0268-2",
+      "pmid": "32860016"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR7",
+    "xml_id": "CR7",
+    "label": "7.",
+    "title": "Homogenous 96-plex PEA immunoassay exhibiting high sensitivity, specificity, and excellent scalability",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "E Assarsson",
+        "surname": "Assarsson",
+        "given_names": "E",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1371/journal.pone.0095192",
+      "pmid": "24755770",
+      "pmcid": "PMC3995906"
+    },
+    "raw_reference_text": "AssarssonEHomogenous 96-plex PEA immunoassay exhibiting high sensitivity, specificity, and excellent scalabilityPLoS ONE20149e9519210.1371/journal.pone.009519224755770PMC3995906",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[7]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1371/journal.pone.0095192",
+      "pmid": "24755770",
+      "pmcid": "PMC3995906"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR8",
+    "xml_id": "CR8",
+    "label": "8.",
+    "title": "Aptamer-based multiplexed proteomic technology for biomarker discovery",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Gold",
+        "surname": "Gold",
+        "given_names": "L",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1371/journal.pone.0015004",
+      "pmid": "21165148",
+      "pmcid": "PMC3000457"
+    },
+    "raw_reference_text": "GoldLAptamer-based multiplexed proteomic technology for biomarker discoveryPLoS ONE20105e1500410.1371/journal.pone.001500421165148PMC3000457",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[8]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1371/journal.pone.0015004",
+      "pmid": "21165148",
+      "pmcid": "PMC3000457"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR9",
+    "xml_id": "CR9",
+    "label": "9.",
+    "title": "Plasma proteome variation and its genetic determinants in children and adolescents",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Niu",
+        "surname": "Niu",
+        "given_names": "L",
+        "collective": false
+      }
+    ],
+    "year": "2025",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41588-025-02089-2",
+      "pmid": "39972214",
+      "pmcid": "PMC11906355"
+    },
+    "raw_reference_text": "NiuLPlasma proteome variation and its genetic determinants in children and adolescentsNat. Genet.20255763564610.1038/s41588-025-02089-239972214PMC11906355",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[9]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41588-025-02089-2",
+      "pmid": "39972214",
+      "pmcid": "PMC11906355"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR10",
+    "xml_id": "CR10",
+    "label": "10.",
+    "title": "Large-scale plasma proteomics comparisons through genetics and disease associations",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "GH Eldjarn",
+        "surname": "Eldjarn",
+        "given_names": "GH",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41586-023-06563-x",
+      "pmid": "37794188",
+      "pmcid": "PMC10567571"
+    },
+    "raw_reference_text": "EldjarnGHLarge-scale plasma proteomics comparisons through genetics and disease associationsNature202362234835810.1038/s41586-023-06563-x37794188PMC10567571",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[10]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-023-06563-x",
+      "pmid": "37794188",
+      "pmcid": "PMC10567571"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR11",
+    "xml_id": "CR11",
+    "label": "11.",
+    "title": "Plasma proteomic associations with genetics and health in the UK Biobank",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "BB Sun",
+        "surname": "Sun",
+        "given_names": "BB",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41586-023-06592-6",
+      "pmid": "37794186",
+      "pmcid": "PMC10567551"
+    },
+    "raw_reference_text": "SunBBPlasma proteomic associations with genetics and health in the UK BiobankNature202362232933810.1038/s41586-023-06592-637794186PMC10567551",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[11]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-023-06592-6",
+      "pmid": "37794186",
+      "pmcid": "PMC10567551"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR12",
+    "xml_id": "CR12",
+    "label": "12.",
+    "title": "Mapping the proteo-genomic convergence of human diseases",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M Pietzner",
+        "surname": "Pietzner",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1126/science.abj1541",
+      "pmid": "34648354",
+      "pmcid": "PMC9904207"
+    },
+    "raw_reference_text": "PietznerMMapping the proteo-genomic convergence of human diseasesScience2021374eabj154110.1126/science.abj154134648354PMC9904207",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[12]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1126/science.abj1541",
+      "pmid": "34648354",
+      "pmcid": "PMC9904207"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR13",
+    "xml_id": "CR13",
+    "label": "13.",
+    "title": "Genetics of circulating inflammatory proteins identifies drivers of immune-mediated disease risk and therapeutic targets",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JH Zhao",
+        "surname": "Zhao",
+        "given_names": "JH",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41590-023-01588-w",
+      "pmid": "37563310",
+      "pmcid": "PMC10457199"
+    },
+    "raw_reference_text": "ZhaoJHGenetics of circulating inflammatory proteins identifies drivers of immune-mediated disease risk and therapeutic targetsNat. Immunol.2023241540155110.1038/s41590-023-01588-w37563310PMC10457199",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[13]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41590-023-01588-w",
+      "pmid": "37563310",
+      "pmcid": "PMC10457199"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR14",
+    "xml_id": "CR14",
+    "label": "14.",
+    "title": "Multiplexed protein measurement: technologies and applications of protein and antibody arrays",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SF Kingsmore",
+        "surname": "Kingsmore",
+        "given_names": "SF",
+        "collective": false
+      }
+    ],
+    "year": "2006",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nrd2006",
+      "pmid": "16582876",
+      "pmcid": "PMC1780251"
+    },
+    "raw_reference_text": "KingsmoreSFMultiplexed protein measurement: technologies and applications of protein and antibody arraysNat. Rev. Drug Discov.2006531032110.1038/nrd200616582876PMC1780251",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[14]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/nrd2006",
+      "pmid": "16582876",
+      "pmcid": "PMC1780251"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR15",
+    "xml_id": "CR15",
+    "label": "15.",
+    "title": "Mass spectrometry-based high-throughput proteomics and its role in biomedical studies and systems biology",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CB Messner",
+        "surname": "Messner",
+        "given_names": "CB",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1002/pmic.202200013",
+      "pmid": "36349817"
+    },
+    "raw_reference_text": "MessnerCBMass spectrometry-based high-throughput proteomics and its role in biomedical studies and systems biologyProteomics202323220001310.1002/pmic.20220001336349817",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[15]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1002/pmic.202200013",
+      "pmid": "36349817"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR16",
+    "xml_id": "CR16",
+    "label": "16.",
+    "title": "Comparison of proteomic assessment methods in multiple cohort studies",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "LM Raffield",
+        "surname": "Raffield",
+        "given_names": "LM",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1002/pmic.201900278",
+      "pmid": "32386347",
+      "pmcid": "PMC7425176"
+    },
+    "raw_reference_text": "RaffieldLMComparison of proteomic assessment methods in multiple cohort studiesProteomics202020e190027810.1002/pmic.20190027832386347PMC7425176",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[16]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1002/pmic.201900278",
+      "pmid": "32386347",
+      "pmcid": "PMC7425176"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR17",
+    "xml_id": "CR17",
+    "label": "17.",
+    "title": "Genome-wide genotype-serum proteome mapping provides insights into the cross-ancestry differences in cardiometabolic disease susceptibility",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "F Xu",
+        "surname": "Xu",
+        "given_names": "F",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-023-36491-3",
+      "pmid": "36797296",
+      "pmcid": "PMC9935862"
+    },
+    "raw_reference_text": "XuFGenome-wide genotype-serum proteome mapping provides insights into the cross-ancestry differences in cardiometabolic disease susceptibilityNat. Commun.20231489610.1038/s41467-023-36491-336797296PMC9935862",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[17]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-023-36491-3",
+      "pmid": "36797296",
+      "pmcid": "PMC9935862"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR18",
+    "xml_id": "CR18",
+    "label": "18.",
+    "title": "A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Suhre",
+        "surname": "Suhre",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2025",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41588-025-02413-w",
+      "pmid": "41310232",
+      "pmcid": "PMC12695657"
+    },
+    "raw_reference_text": "SuhreKA genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platformNat. Genet.2025572987299610.1038/s41588-025-02413-w41310232PMC12695657",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[18]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41588-025-02413-w",
+      "pmid": "41310232",
+      "pmcid": "PMC12695657"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR19",
+    "xml_id": "CR19",
+    "label": "19.",
+    "title": "Ultra-fast proteomics with Scanning SWATH",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CB Messner",
+        "surname": "Messner",
+        "given_names": "CB",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41587-021-00860-4",
+      "pmid": "33767396",
+      "pmcid": "PMC7611254"
+    },
+    "raw_reference_text": "MessnerCBUltra-fast proteomics with Scanning SWATHNat. Biotechnol.20213984685410.1038/s41587-021-00860-433767396PMC7611254",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[19]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41587-021-00860-4",
+      "pmid": "33767396",
+      "pmcid": "PMC7611254"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR20",
+    "xml_id": "CR20",
+    "label": "20.",
+    "title": "On the use of variance per genotype as a tool to identify quantitative trait interaction effects: a report from the Women’s Genome Health Study",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "G Paré",
+        "surname": "Paré",
+        "given_names": "G",
+        "collective": false
+      },
+      {
+        "name": "NR Cook",
+        "surname": "Cook",
+        "given_names": "NR",
+        "collective": false
+      },
+      {
+        "name": "PM Ridker",
+        "surname": "Ridker",
+        "given_names": "PM",
+        "collective": false
+      },
+      {
+        "name": "DI Chasman",
+        "surname": "Chasman",
+        "given_names": "DI",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1371/journal.pgen.1000981",
+      "pmid": "20585554",
+      "pmcid": "PMC2887471"
+    },
+    "raw_reference_text": "ParéGCookNRRidkerPMChasmanDIOn the use of variance per genotype as a tool to identify quantitative trait interaction effects: a report from the Women’s Genome Health StudyPLoS Genet20106e100098110.1371/journal.pgen.100098120585554PMC2887471",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[20]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1371/journal.pgen.1000981",
+      "pmid": "20585554",
+      "pmcid": "PMC2887471"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR21",
+    "xml_id": "CR21",
+    "label": "21.",
+    "title": "Genotype-by-environment interactions inferred from genetic effects on phenotypic variability in the UK Biobank",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Wang",
+        "surname": "Wang",
+        "given_names": "H",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1126/sciadv.aaw3538",
+      "pmid": "31453325",
+      "pmcid": "PMC6693916"
+    },
+    "raw_reference_text": "WangHGenotype-by-environment interactions inferred from genetic effects on phenotypic variability in the UK BiobankSci. Adv.20195eaaw353810.1126/sciadv.aaw353831453325PMC6693916",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[21]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1126/sciadv.aaw3538",
+      "pmid": "31453325",
+      "pmcid": "PMC6693916"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR22",
+    "xml_id": "CR22",
+    "label": "22.",
+    "title": "From target discovery to clinical drug development with human genetics",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Trajanoska",
+        "surname": "Trajanoska",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41586-023-06388-8",
+      "pmid": "37612393"
+    },
+    "raw_reference_text": "TrajanoskaKFrom target discovery to clinical drug development with human geneticsNature202362073774510.1038/s41586-023-06388-837612393",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[22]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-023-06388-8",
+      "pmid": "37612393"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR23",
+    "xml_id": "CR23",
+    "label": "23.",
+    "title": "Refining the impact of genetic evidence on clinical success",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "EV Minikel",
+        "surname": "Minikel",
+        "given_names": "EV",
+        "collective": false
+      },
+      {
+        "name": "JL Painter",
+        "surname": "Painter",
+        "given_names": "JL",
+        "collective": false
+      },
+      {
+        "name": "CC Dong",
+        "surname": "Dong",
+        "given_names": "CC",
+        "collective": false
+      },
+      {
+        "name": "MR Nelson",
+        "surname": "Nelson",
+        "given_names": "MR",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41586-024-07316-0",
+      "pmid": "38632401",
+      "pmcid": "PMC11096124"
+    },
+    "raw_reference_text": "MinikelEVPainterJLDongCCNelsonMRRefining the impact of genetic evidence on clinical successNature202462962462910.1038/s41586-024-07316-038632401PMC11096124",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[23]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-024-07316-0",
+      "pmid": "38632401",
+      "pmcid": "PMC11096124"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR24",
+    "xml_id": "CR24",
+    "label": "24.",
+    "title": "The STRING database in 2023: protein–protein association networks and functional enrichment analyses for any sequenced genome of interest",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "D Szklarczyk",
+        "surname": "Szklarczyk",
+        "given_names": "D",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1093/nar/gkac1000",
+      "pmcid": "PMC9825434",
+      "pmid": "36370105"
+    },
+    "raw_reference_text": "SzklarczykDThe STRING database in 2023: protein–protein association networks and functional enrichment analyses for any sequenced genome of interestNucleic Acids Res.202251D63810.1093/nar/gkac1000PMC982543436370105",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[24]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1093/nar/gkac1000",
+      "pmcid": "PMC9825434",
+      "pmid": "36370105"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR25",
+    "xml_id": "CR25",
+    "label": "25.",
+    "title": "The discovery of α1-antitrypsin and its role in health and disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SM Janciauskiene",
+        "surname": "Janciauskiene",
+        "given_names": "SM",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.rmed.2011.02.002",
+      "pmid": "21367592"
+    },
+    "raw_reference_text": "JanciauskieneSMThe discovery of α1-antitrypsin and its role in health and diseaseRespir. Med.20111051129113910.1016/j.rmed.2011.02.00221367592",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[25]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.rmed.2011.02.002",
+      "pmid": "21367592"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR26",
+    "xml_id": "CR26",
+    "label": "26.",
+    "title": "A review of alpha-1 antitrypsin binding partners for immune regulation and potential therapeutic application",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "ME O’Brien",
+        "surname": "O’Brien",
+        "given_names": "ME",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.3390/ijms23052441",
+      "pmid": "35269582",
+      "pmcid": "PMC8910375"
+    },
+    "raw_reference_text": "O’BrienMEA review of alpha-1 antitrypsin binding partners for immune regulation and potential therapeutic applicationInt. J. Mol. Sci.202223244110.3390/ijms2305244135269582PMC8910375",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[26]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.3390/ijms23052441",
+      "pmid": "35269582",
+      "pmcid": "PMC8910375"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR27",
+    "xml_id": "CR27",
+    "label": "27.",
+    "title": "Alpha1-antitrypsin deficiency",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "P Strnad",
+        "surname": "Strnad",
+        "given_names": "P",
+        "collective": false
+      },
+      {
+        "name": "NG McElvaney",
+        "surname": "McElvaney",
+        "given_names": "NG",
+        "collective": false
+      },
+      {
+        "name": "DA Lomas",
+        "surname": "Lomas",
+        "given_names": "DA",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1056/NEJMra1910234",
+      "pmid": "32268028"
+    },
+    "raw_reference_text": "StrnadPMcElvaneyNGLomasDAAlpha1-antitrypsin deficiencyN. Engl. J. Med.20203821443145510.1056/NEJMra191023432268028",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[27]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1056/nejmra1910234",
+      "pmid": "32268028"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR28",
+    "xml_id": "CR28",
+    "label": "28.",
+    "title": "Apolipoprotein B and cardiovascular disease: biomarker and potential therapeutic target",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Behbodikhah",
+        "surname": "Behbodikhah",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.3390/metabo11100690",
+      "pmid": "34677405",
+      "pmcid": "PMC8540246"
+    },
+    "raw_reference_text": "BehbodikhahJApolipoprotein B and cardiovascular disease: biomarker and potential therapeutic targetMetabolites20211169010.3390/metabo1110069034677405PMC8540246",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[28]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.3390/metabo11100690",
+      "pmid": "34677405",
+      "pmcid": "PMC8540246"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR29",
+    "xml_id": "CR29",
+    "label": "29.",
+    "title": "The association of apolipoprotein-E (APOE) gene polymorphisms with coronary artery disease: a systematic review and meta-analysis. Egypt",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Ashiq",
+        "surname": "Ashiq",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "K Ashiq",
+        "surname": "Ashiq",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1186/s43042-021-00135-2"
+    },
+    "raw_reference_text": "AshiqSAshiqKThe association of apolipoprotein-E (APOE) gene polymorphisms with coronary artery disease: a systematic review and meta-analysis. EgyptJ. Med. Hum. Genet.2021221610.1186/s43042-021-00135-2",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[29]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1186/s43042-021-00135-2"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR30",
+    "xml_id": "CR30",
+    "label": "30.",
+    "title": "Innate immune dysfunction and neuroinflammation in autism spectrum disorder (ASD)",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "HK Hughes",
+        "surname": "Hughes",
+        "given_names": "HK",
+        "collective": false
+      },
+      {
+        "name": "RJ Moreno",
+        "surname": "Moreno",
+        "given_names": "RJ",
+        "collective": false
+      },
+      {
+        "name": "P Ashwood",
+        "surname": "Ashwood",
+        "given_names": "P",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1176/appi.focus.24022004",
+      "pmid": "38680981",
+      "pmcid": "PMC11046725"
+    },
+    "raw_reference_text": "HughesHKMorenoRJAshwoodPInnate immune dysfunction and neuroinflammation in autism spectrum disorder (ASD)Focus20242222924110.1176/appi.focus.2402200438680981PMC11046725",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[30]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1176/appi.focus.24022004",
+      "pmid": "38680981",
+      "pmcid": "PMC11046725"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR31",
+    "xml_id": "CR31",
+    "label": "31.",
+    "title": "Genetic evidence for causal effects of immune dysfunction in psychiatric disorders: where are we?",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "O Iakunchykova",
+        "surname": "Iakunchykova",
+        "given_names": "O",
+        "collective": false
+      },
+      {
+        "name": "EH Leonardsen",
+        "surname": "Leonardsen",
+        "given_names": "EH",
+        "collective": false
+      },
+      {
+        "name": "Y Wang",
+        "surname": "Wang",
+        "given_names": "Y",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41398-024-02778-2",
+      "pmcid": "PMC10810856",
+      "pmid": "38272880"
+    },
+    "raw_reference_text": "IakunchykovaOLeonardsenEHWangYGenetic evidence for causal effects of immune dysfunction in psychiatric disorders: where are we?Transl. Psychiatry20241411110.1038/s41398-024-02778-2PMC1081085638272880",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[31]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41398-024-02778-2",
+      "pmcid": "PMC10810856",
+      "pmid": "38272880"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR32",
+    "xml_id": "CR32",
+    "label": "32.",
+    "title": "The inter-α-trypsin inhibitor family: versatile molecules in biology and pathology",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MS Lord",
+        "surname": "Lord",
+        "given_names": "MS",
+        "collective": false
+      },
+      {
+        "name": "J Melrose",
+        "surname": "Melrose",
+        "given_names": "J",
+        "collective": false
+      },
+      {
+        "name": "AJ Day",
+        "surname": "Day",
+        "given_names": "AJ",
+        "collective": false
+      },
+      {
+        "name": "JM Whitelock",
+        "surname": "Whitelock",
+        "given_names": "JM",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1369/0022155420940067",
+      "pmid": "32639183",
+      "pmcid": "PMC7711241"
+    },
+    "raw_reference_text": "LordMSMelroseJDayAJWhitelockJMThe inter-α-trypsin inhibitor family: versatile molecules in biology and pathologyJ. Histochem. Cytochem.20206890792710.1369/002215542094006732639183PMC7711241",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[32]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1369/0022155420940067",
+      "pmid": "32639183",
+      "pmcid": "PMC7711241"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR33",
+    "xml_id": "CR33",
+    "label": "33.",
+    "title": "Alpha-1 antitrypsin therapy for autoimmune disorders",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Song",
+        "surname": "Song",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.15326/jcopdf.5.4.2018.0131",
+      "pmcid": "PMC6361478",
+      "pmid": "30723786"
+    },
+    "raw_reference_text": "SongSAlpha-1 antitrypsin therapy for autoimmune disordersChronic Obstr. Pulm. Dis. J.2018528930110.15326/jcopdf.5.4.2018.0131PMC636147830723786",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[33]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.15326/jcopdf.5.4.2018.0131",
+      "pmcid": "PMC6361478",
+      "pmid": "30723786"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR34",
+    "xml_id": "CR34",
+    "label": "34.",
+    "title": "Brain structure, function, and neurochemistry in schizophrenia and bipolar disorder—a systematic review of the magnetic resonance neuroimaging literature",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "B Birur",
+        "surname": "Birur",
+        "given_names": "B",
+        "collective": false
+      },
+      {
+        "name": "NV Kraguljac",
+        "surname": "Kraguljac",
+        "given_names": "NV",
+        "collective": false
+      },
+      {
+        "name": "RC Shelton",
+        "surname": "Shelton",
+        "given_names": "RC",
+        "collective": false
+      },
+      {
+        "name": "AC Lahti",
+        "surname": "Lahti",
+        "given_names": "AC",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41537-017-0013-9",
+      "pmid": "28560261",
+      "pmcid": "PMC5441538"
+    },
+    "raw_reference_text": "BirurBKraguljacNVSheltonRCLahtiACBrain structure, function, and neurochemistry in schizophrenia and bipolar disorder—a systematic review of the magnetic resonance neuroimaging literaturenpj Schizophr.201731510.1038/s41537-017-0013-928560261PMC5441538",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[34]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41537-017-0013-9",
+      "pmid": "28560261",
+      "pmcid": "PMC5441538"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR35",
+    "xml_id": "CR35",
+    "label": "35.",
+    "title": "Neuroimaging in autism spectrum disorder: brain structure and function across the lifespan",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "C Ecker",
+        "surname": "Ecker",
+        "given_names": "C",
+        "collective": false
+      },
+      {
+        "name": "SY Bookheimer",
+        "surname": "Bookheimer",
+        "given_names": "SY",
+        "collective": false
+      },
+      {
+        "name": "DGM Murphy",
+        "surname": "Murphy",
+        "given_names": "DGM",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/S1474-4422(15)00050-2",
+      "pmid": "25891007"
+    },
+    "raw_reference_text": "EckerCBookheimerSYMurphyDGMNeuroimaging in autism spectrum disorder: brain structure and function across the lifespanLancet Neurol.2015141121113410.1016/S1474-4422(15)00050-225891007",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[35]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/s1474-4422(15)00050-2",
+      "pmid": "25891007"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR36",
+    "xml_id": "CR36",
+    "label": "36.",
+    "title": "Genomic findings in schizophrenia and their implications",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MJ Owen",
+        "surname": "Owen",
+        "given_names": "MJ",
+        "collective": false
+      },
+      {
+        "name": "SE Legge",
+        "surname": "Legge",
+        "given_names": "SE",
+        "collective": false
+      },
+      {
+        "name": "E Rees",
+        "surname": "Rees",
+        "given_names": "E",
+        "collective": false
+      },
+      {
+        "name": "JTR Walters",
+        "surname": "Walters",
+        "given_names": "JTR",
+        "collective": false
+      },
+      {
+        "name": "MC O’Donovan",
+        "surname": "O’Donovan",
+        "given_names": "MC",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41380-023-02293-8",
+      "pmid": "37853064",
+      "pmcid": "PMC10730422"
+    },
+    "raw_reference_text": "OwenMJLeggeSEReesEWaltersJTRO’DonovanMCGenomic findings in schizophrenia and their implicationsMol. Psychiatry2023283638364710.1038/s41380-023-02293-837853064PMC10730422",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[36]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41380-023-02293-8",
+      "pmid": "37853064",
+      "pmcid": "PMC10730422"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR37",
+    "xml_id": "CR37",
+    "label": "37.",
+    "title": "Genome-wide association analysis identifies 13 new risk loci for schizophrenia",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Ripke",
+        "surname": "Ripke",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/ng.2742",
+      "pmid": "23974872",
+      "pmcid": "PMC3827979"
+    },
+    "raw_reference_text": "RipkeSGenome-wide association analysis identifies 13 new risk loci for schizophreniaNat. Genet.2013451150115910.1038/ng.274223974872PMC3827979",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[37]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/ng.2742",
+      "pmid": "23974872",
+      "pmcid": "PMC3827979"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR38",
+    "xml_id": "CR38",
+    "label": "38.",
+    "title": "Genome-wide significant associations in schizophrenia to ITIH3/4, CACNA1C and SDCCAG8, and extensive replication of associations reported by the Schizophrenia PGC",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "ML Hamshere",
+        "surname": "Hamshere",
+        "given_names": "ML",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/mp.2012.67",
+      "pmid": "22614287",
+      "pmcid": "PMC4724864"
+    },
+    "raw_reference_text": "HamshereMLGenome-wide significant associations in schizophrenia to ITIH3/4, CACNA1C and SDCCAG8, and extensive replication of associations reported by the Schizophrenia PGCMol. Psychiatry20131870871210.1038/mp.2012.6722614287PMC4724864",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[38]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/mp.2012.67",
+      "pmid": "22614287",
+      "pmcid": "PMC4724864"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR39",
+    "xml_id": "CR39",
+    "label": "39.",
+    "title": "Biological insights from 108 schizophrenia-associated genetic loci",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Ripke",
+        "surname": "Ripke",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nature13595",
+      "pmcid": "PMC4112379",
+      "pmid": "25056061"
+    },
+    "raw_reference_text": "RipkeSBiological insights from 108 schizophrenia-associated genetic lociNature201451142142710.1038/nature13595PMC411237925056061",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[39]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature13595",
+      "pmcid": "PMC4112379",
+      "pmid": "25056061"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR40",
+    "xml_id": "CR40",
+    "label": "40.",
+    "title": "Identification of common genetic risk variants for autism spectrum disorder",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Grove",
+        "surname": "Grove",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41588-019-0344-8",
+      "pmid": "30804558",
+      "pmcid": "PMC6454898"
+    },
+    "raw_reference_text": "GroveJIdentification of common genetic risk variants for autism spectrum disorderNat. Genet.20195143144410.1038/s41588-019-0344-830804558PMC6454898",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[40]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41588-019-0344-8",
+      "pmid": "30804558",
+      "pmcid": "PMC6454898"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR41",
+    "xml_id": "CR41",
+    "label": "41.",
+    "title": "Integrative analysis of genome-wide association studies identifies novel loci associated with neuropsychiatric disorders",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "X Yao",
+        "surname": "Yao",
+        "given_names": "X",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41398-020-01195-5",
+      "pmcid": "PMC7820351",
+      "pmid": "33479212"
+    },
+    "raw_reference_text": "YaoXIntegrative analysis of genome-wide association studies identifies novel loci associated with neuropsychiatric disordersTransl. Psychiatry20211111210.1038/s41398-020-01195-5PMC782035133479212",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[41]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41398-020-01195-5",
+      "pmcid": "PMC7820351",
+      "pmid": "33479212"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR42",
+    "xml_id": "CR42",
+    "label": "42.",
+    "title": "Expression and oxidative modifications of plasma proteins in autism spectrum disorders: Interplay between inflammatory response and lipid peroxidation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "A Cortelazzo",
+        "surname": "Cortelazzo",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "pmid": "27246309",
+      "doi": "10.1002/prca.201500076"
+    },
+    "raw_reference_text": "CortelazzoAExpression and oxidative modifications of plasma proteins in autism spectrum disorders: Interplay between inflammatory response and lipid peroxidationProteomics201610110311122724630910.1002/prca.201500076",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[42]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "pmid": "27246309",
+      "doi": "10.1002/prca.201500076"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR43",
+    "xml_id": "CR43",
+    "label": "43.",
+    "title": "iTRAQ-based proteomic analysis reveals protein profile in plasma from children with autism",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Shen",
+        "surname": "Shen",
+        "given_names": "L",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1002/prca.201700085",
+      "pmid": "29274201"
+    },
+    "raw_reference_text": "ShenLiTRAQ-based proteomic analysis reveals protein profile in plasma from children with autismProteomics201812170008510.1002/prca.20170008529274201",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[43]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1002/prca.201700085",
+      "pmid": "29274201"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR44",
+    "xml_id": "CR44",
+    "label": "44.",
+    "title": "Associations between SNPs and immune-related circulating proteins in schizophrenia",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MK Chan",
+        "surname": "Chan",
+        "given_names": "MK",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41598-017-12986-0",
+      "pmid": "28974776",
+      "pmcid": "PMC5626704"
+    },
+    "raw_reference_text": "ChanMKAssociations between SNPs and immune-related circulating proteins in schizophreniaSci. Rep.201771258610.1038/s41598-017-12986-028974776PMC5626704",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[44]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41598-017-12986-0",
+      "pmid": "28974776",
+      "pmcid": "PMC5626704"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR45",
+    "xml_id": "CR45",
+    "label": "45.",
+    "title": "Interferons: a molecular switch between damage and repair in ageing and Alzheimer’s disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "N Gorlé",
+        "surname": "Gorlé",
+        "given_names": "N",
+        "collective": false
+      },
+      {
+        "name": "RE Vandenbroucke",
+        "surname": "Vandenbroucke",
+        "given_names": "RE",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.mad.2019.111148",
+      "pmid": "31541624"
+    },
+    "raw_reference_text": "GorléNVandenbrouckeREInterferons: a molecular switch between damage and repair in ageing and Alzheimer’s diseaseMech. Ageing Dev.201918311114810.1016/j.mad.2019.11114831541624",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[45]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.mad.2019.111148",
+      "pmid": "31541624"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR46",
+    "xml_id": "CR46",
+    "label": "46.",
+    "title": "The role of the immune system in Alzheimer’s disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K-M Wu",
+        "surname": "Wu",
+        "given_names": "K-M",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.arr.2021.101409",
+      "pmid": "34273589"
+    },
+    "raw_reference_text": "WuK-MThe role of the immune system in Alzheimer’s diseaseAgeing Res. Rev.20217010140910.1016/j.arr.2021.10140934273589",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[46]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.arr.2021.101409",
+      "pmid": "34273589"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR47",
+    "xml_id": "CR47",
+    "label": "47.",
+    "title": "Immune attack: the role of inflammation in Alzheimer disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "FL Heppner",
+        "surname": "Heppner",
+        "given_names": "FL",
+        "collective": false
+      },
+      {
+        "name": "RM Ransohoff",
+        "surname": "Ransohoff",
+        "given_names": "RM",
+        "collective": false
+      },
+      {
+        "name": "B Becher",
+        "surname": "Becher",
+        "given_names": "B",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nrn3880",
+      "pmid": "25991443"
+    },
+    "raw_reference_text": "HeppnerFLRansohoffRMBecherBImmune attack: the role of inflammation in Alzheimer diseaseNat. Rev. Neurosci.20151635837210.1038/nrn388025991443",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[47]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/nrn3880",
+      "pmid": "25991443"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR48",
+    "xml_id": "CR48",
+    "label": "48.",
+    "title": "IgM response against amyloid-beta in aging: a potential peripheral protective mechanism",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Agrawal",
+        "surname": "Agrawal",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "EM Abud",
+        "surname": "Abud",
+        "given_names": "EM",
+        "collective": false
+      },
+      {
+        "name": "S Snigdha",
+        "surname": "Snigdha",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "A Agrawal",
+        "surname": "Agrawal",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1186/s13195-018-0412-9",
+      "pmid": "30115117",
+      "pmcid": "PMC6097437"
+    },
+    "raw_reference_text": "AgrawalSAbudEMSnigdhaSAgrawalAIgM response against amyloid-beta in aging: a potential peripheral protective mechanismAlzheimers Res. Ther.2018108110.1186/s13195-018-0412-930115117PMC6097437",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[48]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1186/s13195-018-0412-9",
+      "pmid": "30115117",
+      "pmcid": "PMC6097437"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR49",
+    "xml_id": "CR49",
+    "label": "49.",
+    "title": "Reduced levels of IgM autoantibodies against N-truncated pyroglutamate Aβ in plasma of patients with Alzheimer’s disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "A Marcello",
+        "surname": "Marcello",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.neurobiolaging.2009.08.011",
+      "pmid": "19781815"
+    },
+    "raw_reference_text": "MarcelloAReduced levels of IgM autoantibodies against N-truncated pyroglutamate Aβ in plasma of patients with Alzheimer’s diseaseNeurobiol. Aging2011321379138710.1016/j.neurobiolaging.2009.08.01119781815",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[49]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.neurobiolaging.2009.08.011",
+      "pmid": "19781815"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR50",
+    "xml_id": "CR50",
+    "label": "50.",
+    "title": "Serum protein-based profiles for the diagnostic model of Alzheimer’s disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Yang",
+        "surname": "Yang",
+        "given_names": "L",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1177/15333175231220166",
+      "pmcid": "PMC10693785",
+      "pmid": "38041525"
+    },
+    "raw_reference_text": "YangLSerum protein-based profiles for the diagnostic model of Alzheimer’s diseaseAm. J. Alzheimers Dis. Dement. ®2023381533317523122016610.1177/15333175231220166PMC1069378538041525",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[50]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1177/15333175231220166",
+      "pmcid": "PMC10693785",
+      "pmid": "38041525"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR51",
+    "xml_id": "CR51",
+    "label": "51.",
+    "title": "Altered abundances of human immunoglobulin M and immunoglobulin G subclasses in Alzheimer’s disease frontal cortex",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R Lekhraj",
+        "surname": "Lekhraj",
+        "given_names": "R",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41598-022-10793-w",
+      "pmid": "35484384",
+      "pmcid": "PMC9050688"
+    },
+    "raw_reference_text": "LekhrajRAltered abundances of human immunoglobulin M and immunoglobulin G subclasses in Alzheimer’s disease frontal cortexSci. Rep.202212693410.1038/s41598-022-10793-w35484384PMC9050688",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[51]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41598-022-10793-w",
+      "pmid": "35484384",
+      "pmcid": "PMC9050688"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR52",
+    "xml_id": "CR52",
+    "label": "52.",
+    "title": "MS-based proteomics of body fluids: the end of the beginning",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JM Bader",
+        "surname": "Bader",
+        "given_names": "JM",
+        "collective": false
+      },
+      {
+        "name": "V Albrecht",
+        "surname": "Albrecht",
+        "given_names": "V",
+        "collective": false
+      },
+      {
+        "name": "M Mann",
+        "surname": "Mann",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.mcpro.2023.100577",
+      "pmcid": "PMC10388585",
+      "pmid": "37209816"
+    },
+    "raw_reference_text": "BaderJMAlbrechtVMannMMS-based proteomics of body fluids: the end of the beginningMol. Cell. Proteom.20232210057710.1016/j.mcpro.2023.100577PMC1038858537209816",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[52]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.mcpro.2023.100577",
+      "pmcid": "PMC10388585",
+      "pmid": "37209816"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR53",
+    "xml_id": "CR53",
+    "label": "53.",
+    "title": "Synergistic insights into human health from aptamer- and antibody-based proteomic profiling",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M Pietzner",
+        "surname": "Pietzner",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-021-27164-0",
+      "pmid": "34819519",
+      "pmcid": "PMC8613205"
+    },
+    "raw_reference_text": "PietznerMSynergistic insights into human health from aptamer- and antibody-based proteomic profilingNat. Commun.202112682210.1038/s41467-021-27164-034819519PMC8613205",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[53]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-021-27164-0",
+      "pmid": "34819519",
+      "pmcid": "PMC8613205"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR54",
+    "xml_id": "CR54",
+    "label": "54.",
+    "title": "Nanoparticle enrichment mass-spectrometry proteomics identifies protein-altering variants for precise pQTL mapping",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Suhre",
+        "surname": "Suhre",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-024-45233-y",
+      "pmid": "38307861",
+      "pmcid": "PMC10837160"
+    },
+    "raw_reference_text": "SuhreKNanoparticle enrichment mass-spectrometry proteomics identifies protein-altering variants for precise pQTL mappingNat. Commun.20241598910.1038/s41467-024-45233-y38307861PMC10837160",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[54]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-024-45233-y",
+      "pmid": "38307861",
+      "pmcid": "PMC10837160"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR55",
+    "xml_id": "CR55",
+    "label": "55.",
+    "title": "Integrating Mass Spectrometry and Affinity-Based Proteomics",
+    "title_kind": "web-resource-title",
+    "authors": [],
+    "year": "2025",
+    "source_author_list_has_et_al": false,
+    "identifiers": {},
+    "raw_reference_text": "Integrating Mass Spectrometry and Affinity-Based Proteomics. https://olink.com/blog/mass-spectrometry-and-affinity-proteomics-roundtable (2025).",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[55]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {}
+  },
+  {
+    "id": "PMC13655163:ref:CR56",
+    "xml_id": "CR56",
+    "label": "56.",
+    "title": "On the development of plasma protein biomarkers",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Surinova",
+        "surname": "Surinova",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1021/pr1008515",
+      "pmid": "21142170"
+    },
+    "raw_reference_text": "SurinovaSOn the development of plasma protein biomarkersJ. Proteome Res.20111051610.1021/pr100851521142170",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[56]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1021/pr1008515",
+      "pmid": "21142170"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR57",
+    "xml_id": "CR57",
+    "label": "57.",
+    "title": "Revisiting biomarker discovery by plasma proteomics",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "PE Geyer",
+        "surname": "Geyer",
+        "given_names": "PE",
+        "collective": false
+      },
+      {
+        "name": "LM Holdt",
+        "surname": "Holdt",
+        "given_names": "LM",
+        "collective": false
+      },
+      {
+        "name": "D Teupser",
+        "surname": "Teupser",
+        "given_names": "D",
+        "collective": false
+      },
+      {
+        "name": "M Mann",
+        "surname": "Mann",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.15252/msb.20156297",
+      "pmid": "28951502",
+      "pmcid": "PMC5615924"
+    },
+    "raw_reference_text": "GeyerPEHoldtLMTeupserDMannMRevisiting biomarker discovery by plasma proteomicsMol. Syst. Biol.20171394210.15252/msb.2015629728951502PMC5615924",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[57]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.15252/msb.20156297",
+      "pmid": "28951502",
+      "pmcid": "PMC5615924"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR58",
+    "xml_id": "CR58",
+    "label": "58.",
+    "title": "How low can you go? A current perspective on low-abundance proteomics",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JP da Costa",
+        "surname": "da Costa",
+        "given_names": "JP",
+        "collective": false
+      },
+      {
+        "name": "PSM Santos",
+        "surname": "Santos",
+        "given_names": "PSM",
+        "collective": false
+      },
+      {
+        "name": "R Vitorino",
+        "surname": "Vitorino",
+        "given_names": "R",
+        "collective": false
+      },
+      {
+        "name": "T Rocha-Santos",
+        "surname": "Rocha-Santos",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "AC Duarte",
+        "surname": "Duarte",
+        "given_names": "AC",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.trac.2017.05.014"
+    },
+    "raw_reference_text": "da CostaJPSantosPSMVitorinoRRocha-SantosTDuarteACHow low can you go? A current perspective on low-abundance proteomicsTrends Anal. Chem.20179317118210.1016/j.trac.2017.05.014",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[58]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.trac.2017.05.014"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR59",
+    "xml_id": "CR59",
+    "label": "59.",
+    "title": "Cohort Profile: Generation Scotland: Scottish Family Health Study (GS:SFHS). The study, its participants and their potential for genetic research on health and illness",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "BH Smith",
+        "surname": "Smith",
+        "given_names": "BH",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1093/ije/dys084",
+      "pmid": "22786799"
+    },
+    "raw_reference_text": "SmithBHCohort Profile: Generation Scotland: Scottish Family Health Study (GS:SFHS). The study, its participants and their potential for genetic research on health and illnessInt. J. Epidemiol.20134268970010.1093/ije/dys08422786799",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[59]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1093/ije/dys084",
+      "pmid": "22786799"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR60",
+    "xml_id": "CR60",
+    "label": "60.",
+    "title": "Pedigree and genotyping quality analyses of over 10,000 DNA samples from the Generation Scotland: Scottish Family Health Study",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SM Kerr",
+        "surname": "Kerr",
+        "given_names": "SM",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1186/1471-2350-14-38",
+      "pmid": "23521772",
+      "pmcid": "PMC3614907"
+    },
+    "raw_reference_text": "KerrSMPedigree and genotyping quality analyses of over 10,000 DNA samples from the Generation Scotland: Scottish Family Health StudyBMC Med. Genet.2013143810.1186/1471-2350-14-3823521772PMC3614907",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[60]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1186/1471-2350-14-38",
+      "pmid": "23521772",
+      "pmcid": "PMC3614907"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR61",
+    "xml_id": "CR61",
+    "label": "61.",
+    "title": "Exploration of haplotype research consortium imputation for genome-wide association studies in 20,032 Generation Scotland participants",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R Nagy",
+        "surname": "Nagy",
+        "given_names": "R",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1186/s13073-017-0414-4",
+      "pmid": "28270201",
+      "pmcid": "PMC5339960"
+    },
+    "raw_reference_text": "NagyRExploration of haplotype research consortium imputation for genome-wide association studies in 20,032 Generation Scotland participantsGenome Med.201792310.1186/s13073-017-0414-428270201PMC5339960",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[61]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1186/s13073-017-0414-4",
+      "pmid": "28270201",
+      "pmcid": "PMC5339960"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR62",
+    "xml_id": "CR62",
+    "label": "62.",
+    "title": "A map of human genome variation from population-scale sequencing",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "RM Durbin",
+        "surname": "Durbin",
+        "given_names": "RM",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nature09534",
+      "pmid": "20981092",
+      "pmcid": "PMC3042601"
+    },
+    "raw_reference_text": "DurbinRMA map of human genome variation from population-scale sequencingNature20104671061107310.1038/nature0953420981092PMC3042601",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[62]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature09534",
+      "pmid": "20981092",
+      "pmcid": "PMC3042601"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR63",
+    "xml_id": "CR63",
+    "label": "63.",
+    "title": "Recent genomic heritage in Scotland",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "C Amador",
+        "surname": "Amador",
+        "given_names": "C",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1186/s12864-015-1605-2",
+      "pmid": "26048416",
+      "pmcid": "PMC4458001"
+    },
+    "raw_reference_text": "AmadorCRecent genomic heritage in ScotlandBMC Genomics20151643710.1186/s12864-015-1605-226048416PMC4458001",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[63]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1186/s12864-015-1605-2",
+      "pmid": "26048416",
+      "pmcid": "PMC4458001"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR64",
+    "xml_id": "CR64",
+    "label": "64.",
+    "title": "A reference panel of 64,976 haplotypes for genotype imputation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S McCarthy",
+        "surname": "McCarthy",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/ng.3643",
+      "pmid": "27548312",
+      "pmcid": "PMC5388176"
+    },
+    "raw_reference_text": "McCarthySA reference panel of 64,976 haplotypes for genotype imputationNat. Genet.2016481279128310.1038/ng.364327548312PMC5388176",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[64]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/ng.3643",
+      "pmid": "27548312",
+      "pmcid": "PMC5388176"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR65",
+    "xml_id": "CR65",
+    "label": "65.",
+    "title": "Ultra-high-throughput clinical proteomics reveals classifiers of COVID-19 infection",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CB Messner",
+        "surname": "Messner",
+        "given_names": "CB",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.cels.2020.05.012",
+      "pmid": "32619549",
+      "pmcid": "PMC7264033"
+    },
+    "raw_reference_text": "MessnerCBUltra-high-throughput clinical proteomics reveals classifiers of COVID-19 infectionCell Syst.2020111124.e410.1016/j.cels.2020.05.01232619549PMC7264033",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[65]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cels.2020.05.012",
+      "pmid": "32619549",
+      "pmcid": "PMC7264033"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR66",
+    "xml_id": "CR66",
+    "label": "66.",
+    "title": "The impact of acute nutritional interventions on the plasma proteome",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SI Vernardis",
+        "surname": "Vernardis",
+        "given_names": "SI",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1210/clinem/dgad031",
+      "pmid": "36658456",
+      "pmcid": "PMC10348471"
+    },
+    "raw_reference_text": "VernardisSIThe impact of acute nutritional interventions on the plasma proteomeJ. Clin. Endocrinol. Metab.20231082087209810.1210/clinem/dgad03136658456PMC10348471",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[66]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1210/clinem/dgad031",
+      "pmid": "36658456",
+      "pmcid": "PMC10348471"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR67",
+    "xml_id": "CR67",
+    "label": "67.",
+    "title": "DIA-NN: neural networks and interference correction enable deep proteome coverage in high throughput",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "V Demichev",
+        "surname": "Demichev",
+        "given_names": "V",
+        "collective": false
+      },
+      {
+        "name": "CB Messner",
+        "surname": "Messner",
+        "given_names": "CB",
+        "collective": false
+      },
+      {
+        "name": "SI Vernardis",
+        "surname": "Vernardis",
+        "given_names": "SI",
+        "collective": false
+      },
+      {
+        "name": "KS Lilley",
+        "surname": "Lilley",
+        "given_names": "KS",
+        "collective": false
+      },
+      {
+        "name": "M Ralser",
+        "surname": "Ralser",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41592-019-0638-x",
+      "pmid": "31768060",
+      "pmcid": "PMC6949130"
+    },
+    "raw_reference_text": "DemichevVMessnerCBVernardisSILilleyKSRalserMDIA-NN: neural networks and interference correction enable deep proteome coverage in high throughputNat. Methods202017414410.1038/s41592-019-0638-x31768060PMC6949130",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[67]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41592-019-0638-x",
+      "pmid": "31768060",
+      "pmcid": "PMC6949130"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR68",
+    "xml_id": "CR68",
+    "label": "68.",
+    "title": "Analysis of 1508 plasma samples by capillary-flow data-independent acquisition profiles proteomics of weight loss and maintenance",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R Bruderer",
+        "surname": "Bruderer",
+        "given_names": "R",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1074/mcp.RA118.001288",
+      "pmcid": "PMC6553938",
+      "pmid": "30948622"
+    },
+    "raw_reference_text": "BrudererRAnalysis of 1508 plasma samples by capillary-flow data-independent acquisition profiles proteomics of weight loss and maintenanceMol. Cell Proteom.2019181242125410.1074/mcp.RA118.001288PMC655393830948622",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[68]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1074/mcp.ra118.001288",
+      "pmcid": "PMC6553938",
+      "pmid": "30948622"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR69",
+    "xml_id": "CR69",
+    "label": "69.",
+    "title": "A batch correction method for liquid chromatography–mass spectrometry data that does not depend on quality control samples",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M Rusilowicz",
+        "surname": "Rusilowicz",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "M Dickinson",
+        "surname": "Dickinson",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "A Charlton",
+        "surname": "Charlton",
+        "given_names": "A",
+        "collective": false
+      },
+      {
+        "name": "S O’Keefe",
+        "surname": "O’Keefe",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "J Wilson",
+        "surname": "Wilson",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1007/s11306-016-0972-2",
+      "pmid": "27069441",
+      "pmcid": "PMC4757603"
+    },
+    "raw_reference_text": "RusilowiczMDickinsonMCharltonAO’KeefeSWilsonJA batch correction method for liquid chromatography–mass spectrometry data that does not depend on quality control samplesMetabolomics2016125610.1007/s11306-016-0972-227069441PMC4757603",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[69]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1007/s11306-016-0972-2",
+      "pmid": "27069441",
+      "pmcid": "PMC4757603"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR70",
+    "xml_id": "CR70",
+    "label": "70.",
+    "title": "limma powers differential expression analyses for RNA-sequencing and microarray studies",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "ME Ritchie",
+        "surname": "Ritchie",
+        "given_names": "ME",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1093/nar/gkv007",
+      "pmid": "25605792",
+      "pmcid": "PMC4402510"
+    },
+    "raw_reference_text": "RitchieMElimma powers differential expression analyses for RNA-sequencing and microarray studiesNucleic Acids Res.201543e4710.1093/nar/gkv00725605792PMC4402510",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[70]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1093/nar/gkv007",
+      "pmid": "25605792",
+      "pmcid": "PMC4402510"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR71",
+    "xml_id": "CR71",
+    "label": "71.",
+    "title": "GCTA: a tool for genome-wide complex trait analysis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Yang",
+        "surname": "Yang",
+        "given_names": "J",
+        "collective": false
+      },
+      {
+        "name": "SH Lee",
+        "surname": "Lee",
+        "given_names": "SH",
+        "collective": false
+      },
+      {
+        "name": "ME Goddard",
+        "surname": "Goddard",
+        "given_names": "ME",
+        "collective": false
+      },
+      {
+        "name": "PM Visscher",
+        "surname": "Visscher",
+        "given_names": "PM",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.ajhg.2010.11.011",
+      "pmid": "21167468",
+      "pmcid": "PMC3014363"
+    },
+    "raw_reference_text": "YangJLeeSHGoddardMEVisscherPMGCTA: a tool for genome-wide complex trait analysisAm. J. Hum. Genet.201188768210.1016/j.ajhg.2010.11.01121167468PMC3014363",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[71]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.ajhg.2010.11.011",
+      "pmid": "21167468",
+      "pmcid": "PMC3014363"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR72",
+    "xml_id": "CR72",
+    "label": "72.",
+    "title": "Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Yang",
+        "surname": "Yang",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2012",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/ng.2213",
+      "pmid": "22426310",
+      "pmcid": "PMC3593158"
+    },
+    "raw_reference_text": "YangJConditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traitsNat. Genet.20124436937510.1038/ng.221322426310PMC3593158",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[72]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/ng.2213",
+      "pmid": "22426310",
+      "pmcid": "PMC3593158"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR73",
+    "xml_id": "CR73",
+    "label": "73.",
+    "title": "Sex differences in genetic architecture in the UK Biobank",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "E Bernabeu",
+        "surname": "Bernabeu",
+        "given_names": "E",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41588-021-00912-0",
+      "pmid": "34493869"
+    },
+    "raw_reference_text": "BernabeuESex differences in genetic architecture in the UK BiobankNat. Genet.2021531283128910.1038/s41588-021-00912-034493869",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[73]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41588-021-00912-0",
+      "pmid": "34493869"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR74",
+    "xml_id": "CR74",
+    "label": "74.",
+    "title": "Extensive modulation of the circulating blood proteome by hormonal contraceptive use across two population studies",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "N Dordevic",
+        "surname": "Dordevic",
+        "given_names": "N",
+        "collective": false
+      }
+    ],
+    "year": "2025",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s43856-025-00856-0",
+      "pmid": "40263456",
+      "pmcid": "PMC12015301"
+    },
+    "raw_reference_text": "DordevicNExtensive modulation of the circulating blood proteome by hormonal contraceptive use across two population studiesCommun. Med.2025513110.1038/s43856-025-00856-040263456PMC12015301",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[74]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s43856-025-00856-0",
+      "pmid": "40263456",
+      "pmcid": "PMC12015301"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR75",
+    "xml_id": "CR75",
+    "label": "75.",
+    "title": "A fast and powerful linear mixed model approach for genotype-environment interaction tests in large-scale GWAS",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "W. Zhong",
+        "surname": "Zhong"
+      },
+      {
+        "name": "A. Chhibber",
+        "surname": "Chhibber"
+      },
+      {
+        "name": "L. Luo",
+        "surname": "Luo"
+      },
+      {
+        "name": "D. V. Mehrotra",
+        "surname": "Mehrotra"
+      },
+      {
+        "name": "J. Shen",
+        "surname": "Shen"
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/bib/bbac547",
+      "pmid": "36545787"
+    },
+    "raw_reference_text": "Zhong, W., Chhibber, A., Luo, L., Mehrotra, D. V. & Shen, J. A fast and powerful linear mixed model approach for genotype-environment interaction tests in large-scale GWAS. Brief. Bioinform. 24, bbac547 (2022).10.1093/bib/bbac54736545787",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[75]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1093/bib/bbac547",
+      "pmid": "36545787"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR76",
+    "xml_id": "CR76",
+    "label": "76.",
+    "title": "The MR-Base platform supports systematic causal inference across the human phenome",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "G Hemani",
+        "surname": "Hemani",
+        "given_names": "G",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.7554/eLife.34408",
+      "pmid": "29846171",
+      "pmcid": "PMC5976434"
+    },
+    "raw_reference_text": "HemaniGThe MR-Base platform supports systematic causal inference across the human phenomeeLife20187e3440810.7554/eLife.3440829846171PMC5976434",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[76]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.7554/elife.34408",
+      "pmid": "29846171",
+      "pmcid": "PMC5976434"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR77",
+    "xml_id": "CR77",
+    "label": "77.",
+    "title": "A genome-wide association study of serum proteins reveals shared loci with common diseases",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "A Gudjonsson",
+        "surname": "Gudjonsson",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-021-27850-z",
+      "pmid": "35078996",
+      "pmcid": "PMC8789779"
+    },
+    "raw_reference_text": "GudjonssonAA genome-wide association study of serum proteins reveals shared loci with common diseasesNat. Commun.20221348010.1038/s41467-021-27850-z35078996PMC8789779",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[77]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-021-27850-z",
+      "pmid": "35078996",
+      "pmcid": "PMC8789779"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR78",
+    "xml_id": "CR78",
+    "label": "78.",
+    "title": "GWAS and meta-analysis identifies 49 genetic variants underlying critical COVID-19",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "E Pairo-Castineira",
+        "surname": "Pairo-Castineira",
+        "given_names": "E",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41586-023-06034-3",
+      "pmid": "37198478",
+      "pmcid": "PMC10208981"
+    },
+    "raw_reference_text": "Pairo-CastineiraEGWAS and meta-analysis identifies 49 genetic variants underlying critical COVID-19Nature202361776476810.1038/s41586-023-06034-337198478PMC10208981",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[78]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-023-06034-3",
+      "pmid": "37198478",
+      "pmcid": "PMC10208981"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR79",
+    "xml_id": "CR79",
+    "label": "79.",
+    "title": "Orienting the causal relationship between imprecisely measured traits using GWAS summary data",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "G Hemani",
+        "surname": "Hemani",
+        "given_names": "G",
+        "collective": false
+      },
+      {
+        "name": "K Tilling",
+        "surname": "Tilling",
+        "given_names": "K",
+        "collective": false
+      },
+      {
+        "name": "GD Smith",
+        "surname": "Smith",
+        "given_names": "GD",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1371/journal.pgen.1007081",
+      "pmid": "29149188",
+      "pmcid": "PMC5711033"
+    },
+    "raw_reference_text": "HemaniGTillingKSmithGDOrienting the causal relationship between imprecisely measured traits using GWAS summary dataPLoS Genet.201713e100708110.1371/journal.pgen.100708129149188PMC5711033",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[79]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1371/journal.pgen.1007081",
+      "pmid": "29149188",
+      "pmcid": "PMC5711033"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR80",
+    "xml_id": "CR80",
+    "label": "80.",
+    "title": "Bayesian test for colocalisation between pairs of genetic association studies using summary statistics",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "C Giambartolomei",
+        "surname": "Giambartolomei",
+        "given_names": "C",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1371/journal.pgen.1004383",
+      "pmid": "24830394",
+      "pmcid": "PMC4022491"
+    },
+    "raw_reference_text": "GiambartolomeiCBayesian test for colocalisation between pairs of genetic association studies using summary statisticsPLoS Genet.201410e100438310.1371/journal.pgen.100438324830394PMC4022491",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[80]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1371/journal.pgen.1004383",
+      "pmid": "24830394",
+      "pmcid": "PMC4022491"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR81",
+    "xml_id": "CR81",
+    "label": "81.",
+    "title": "Functional mapping and annotation of genetic associations with FUMA",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Watanabe",
+        "surname": "Watanabe",
+        "given_names": "K",
+        "collective": false
+      },
+      {
+        "name": "E Taskesen",
+        "surname": "Taskesen",
+        "given_names": "E",
+        "collective": false
+      },
+      {
+        "name": "A van Bochoven",
+        "surname": "van Bochoven",
+        "given_names": "A",
+        "collective": false
+      },
+      {
+        "name": "D Posthuma",
+        "surname": "Posthuma",
+        "given_names": "D",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41467-017-01261-5",
+      "pmid": "29184056",
+      "pmcid": "PMC5705698"
+    },
+    "raw_reference_text": "WatanabeKTaskesenEvan BochovenAPosthumaDFunctional mapping and annotation of genetic associations with FUMANat. Commun.20178182610.1038/s41467-017-01261-529184056PMC5705698",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[81]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-017-01261-5",
+      "pmid": "29184056",
+      "pmcid": "PMC5705698"
+    }
+  },
+  {
+    "id": "PMC13655163:ref:CR82",
+    "xml_id": "CR82",
+    "label": "82.",
+    "title": "Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals",
+    "title_kind": "dataset-title",
+    "authors": [
+      {
+        "name": "A. Richmond",
+        "surname": "Richmond"
+      }
+    ],
+    "year": "2026",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.5281/zenodo.20082557",
+      "pmid": "42860425"
+    },
+    "raw_reference_text": "Richmond A. et al. Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals. marioni-group/Generation_Scotland_Protein_GWAS 10.5281/zenodo.20082557 (2026).42860425",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[82]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "normalized_identifiers": {
+      "doi": "10.5281/zenodo.20082557",
+      "pmid": "42860425"
+    }
+  }
+]

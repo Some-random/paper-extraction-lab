@@ -1,5 +1,7 @@
 # Three biology papers: updated extraction results
 
+[Current v4 results: cited titles/authors and full supplementary spreadsheet exports](../pmc_native_v4_citations_2026-10-15/README.md). The v3 outputs below are preserved as the earlier snapshot.
+
 The actual extracted content is linked directly below: full research text, original figure images with extracted captions and referring paragraphs, source tables, and complete structured data. The Q&A examples are optional derivatives of these outputs.
 
 Results generated **2026-10-14T20:42:29.106737-08:00** (fixed PST, UTC-8).

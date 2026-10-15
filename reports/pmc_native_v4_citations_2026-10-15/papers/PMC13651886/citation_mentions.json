@@ -1,0 +1,1794 @@
+[
+  {
+    "id": "PMC13651886:citation0000",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/xref[1]"
+    ],
+    "raw_marker": "1",
+    "explicit_rids": [
+      "R1"
+    ],
+    "target_xml_ids": [
+      "R1"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R1"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Building and maintaining the skin — Hsu et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0001",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/xref[2]"
+    ],
+    "raw_marker": "2",
+    "explicit_rids": [
+      "R2"
+    ],
+    "target_xml_ids": [
+      "R2"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R2"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Mechanisms regulating skin immunity and inflammation — Pasparakis et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0002",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/xref[3]",
+      "/article/body/sec[1]/p[1]/xref[4]"
+    ],
+    "raw_marker": "3–6",
+    "explicit_rids": [
+      "R3",
+      "R6"
+    ],
+    "target_xml_ids": [
+      "R3",
+      "R4",
+      "R5",
+      "R6"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R3",
+      "PMC13651886:ref:R4",
+      "PMC13651886:ref:R5",
+      "PMC13651886:ref:R6"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Recruitment of the linear ubiquitin chain assembly complex stabilizes the TNF-R1 signaling complex and is required for TNF-mediated gene induction — Haas et al.[/bib_ref] [bib_ref]Involvement of linear polyubiquitylation of NEMO in NF-kappaB activation — Tokunaga et al.[/bib_ref] [bib_ref]LUBAC is essential for embryogenesis by preventing cell death and enabling haematopoiesis — Peltzer et al.[/bib_ref] [bib_ref]LUBAC deficiency perturbs TLR3 signaling to cause immunodeficiency and autoinflammation — Zinngrebe et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0003",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/xref[5]"
+    ],
+    "raw_marker": "7",
+    "explicit_rids": [
+      "R7"
+    ],
+    "target_xml_ids": [
+      "R7"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R7"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Linear ubiquitination prevents inflammation and regulates immune signalling — Gerlach et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0004",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/xref[6]",
+      "/article/body/sec[1]/p[1]/xref[7]"
+    ],
+    "raw_marker": "8–10",
+    "explicit_rids": [
+      "R8",
+      "R10"
+    ],
+    "target_xml_ids": [
+      "R8",
+      "R9",
+      "R10"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R8",
+      "PMC13651886:ref:R9",
+      "PMC13651886:ref:R10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Molecular discrimination of structurally equivalent Lys 63-linked and linear polyubiquitin chains — Komander et al.[/bib_ref] [bib_ref]Structures of CYLD USP with Met1- or Lys63-linked diubiquitin reveal mechanisms for dual specificity — Sato et al.[/bib_ref] [bib_ref]OTULIN antagonizes LUBAC signaling by specifically hydrolyzing Met1-linked polyubiquitin — Keusekotten et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0005",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/xref[8]",
+      "/article/body/sec[1]/p[1]/xref[9]"
+    ],
+    "raw_marker": "11–15",
+    "explicit_rids": [
+      "R11",
+      "R15"
+    ],
+    "target_xml_ids": [
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R11",
+      "PMC13651886:ref:R12",
+      "PMC13651886:ref:R13",
+      "PMC13651886:ref:R14",
+      "PMC13651886:ref:R15"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]The deubiquitinase OTULIN is an essential negative regulator of inflammation and autoimmunity — Damgaard et al.[/bib_ref] [bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref] [bib_ref]OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice — Schunke et al.[/bib_ref] [bib_ref]OTULIN limits cell death and inflammation by deubiquitinating LUBAC — Heger et al.[/bib_ref] [bib_ref]LUBAC prevents lethal dermatitis by inhibiting cell death induced by TNF, TRAIL and CD95L — Taraborrelli et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0006",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[1]"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "R11"
+    ],
+    "target_xml_ids": [
+      "R11"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The deubiquitinase OTULIN is an essential negative regulator of inflammation and autoimmunity — Damgaard et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0007",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[2]"
+    ],
+    "raw_marker": "16",
+    "explicit_rids": [
+      "R16"
+    ],
+    "target_xml_ids": [
+      "R16"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R16"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Biallelic hypomorphic mutations in a linear deubiquitinase define otulipenia, an early-onset autoinflammatory disease — Zhou et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0008",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[3]"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "R11"
+    ],
+    "target_xml_ids": [
+      "R11"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The deubiquitinase OTULIN is an essential negative regulator of inflammation and autoimmunity — Damgaard et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0009",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[4]"
+    ],
+    "raw_marker": "14",
+    "explicit_rids": [
+      "R14"
+    ],
+    "target_xml_ids": [
+      "R14"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R14"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN limits cell death and inflammation by deubiquitinating LUBAC — Heger et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0010",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[5]"
+    ],
+    "raw_marker": "17",
+    "explicit_rids": [
+      "R17"
+    ],
+    "target_xml_ids": [
+      "R17"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The linear ubiquitin-specific deubiquitinase gumby regulates angiogenesis — Rivkin et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0011",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[6]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0012",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[7]"
+    ],
+    "raw_marker": "13",
+    "explicit_rids": [
+      "R13"
+    ],
+    "target_xml_ids": [
+      "R13"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R13"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice — Schunke et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0013",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[8]"
+    ],
+    "raw_marker": "17",
+    "explicit_rids": [
+      "R17"
+    ],
+    "target_xml_ids": [
+      "R17"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The linear ubiquitin-specific deubiquitinase gumby regulates angiogenesis — Rivkin et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0014",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[9]"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "R18"
+    ],
+    "target_xml_ids": [
+      "R18"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The Wnt signaling pathway in development and disease — Logan et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0015",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[10]"
+    ],
+    "raw_marker": "19",
+    "explicit_rids": [
+      "R19"
+    ],
+    "target_xml_ids": [
+      "R19"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R19"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Distinct functions for Wnt/β-catenin in hair follicle stem cell proliferation and survival and interfollicular epidermal homeostasis — Choi et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0016",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[11]"
+    ],
+    "raw_marker": "20",
+    "explicit_rids": [
+      "R20"
+    ],
+    "target_xml_ids": [
+      "R20"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R20"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Wnt signaling in skin development, homeostasis, and disease — Lim et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0017",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[12]"
+    ],
+    "raw_marker": "21",
+    "explicit_rids": [
+      "R21"
+    ],
+    "target_xml_ids": [
+      "R21"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R21"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The F-box protein beta-TrCP associates with phosphorylated beta-catenin and regulates its activity in the cell — Hart et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0018",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[13]"
+    ],
+    "raw_marker": "22",
+    "explicit_rids": [
+      "R22"
+    ],
+    "target_xml_ids": [
+      "R22"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R22"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Wnt/β-catenin signaling, disease, and emerging therapeutic modalities — Nusse et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0019",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[14]"
+    ],
+    "raw_marker": "23",
+    "explicit_rids": [
+      "R23"
+    ],
+    "target_xml_ids": [
+      "R23"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R23"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]ZNRF3 promotes Wnt receptor turnover in an R-spondin-sensitive manner — Hao et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0020",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[15]"
+    ],
+    "raw_marker": "24",
+    "explicit_rids": [
+      "R24"
+    ],
+    "target_xml_ids": [
+      "R24"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R24"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tumour suppressor RNF43 is a stem-cell E3 ligase that induces endocytosis of Wnt receptors — Koo et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0021",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[16]"
+    ],
+    "raw_marker": "21",
+    "explicit_rids": [
+      "R21"
+    ],
+    "target_xml_ids": [
+      "R21"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R21"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The F-box protein beta-TrCP associates with phosphorylated beta-catenin and regulates its activity in the cell — Hart et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0022",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[17]"
+    ],
+    "raw_marker": "25",
+    "explicit_rids": [
+      "R25"
+    ],
+    "target_xml_ids": [
+      "R25"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R25"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The SCFbeta-TRCP-ubiquitin ligase complex associates specifically with phosphorylated destruction motifs in IkappaBalpha and beta-catenin and stimulates IkappaBalpha ubiquitination in vitro — Winston et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0023",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/xref[18]"
+    ],
+    "raw_marker": "26",
+    "explicit_rids": [
+      "R26"
+    ],
+    "target_xml_ids": [
+      "R26"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0024",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[1]"
+    ],
+    "raw_marker": "17",
+    "explicit_rids": [
+      "R17"
+    ],
+    "target_xml_ids": [
+      "R17"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The linear ubiquitin-specific deubiquitinase gumby regulates angiogenesis — Rivkin et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0025",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[2]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0026",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[3]"
+    ],
+    "raw_marker": "13",
+    "explicit_rids": [
+      "R13"
+    ],
+    "target_xml_ids": [
+      "R13"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R13"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice — Schunke et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0027",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[4]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0028",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[11]"
+    ],
+    "raw_marker": "20",
+    "explicit_rids": [
+      "R20"
+    ],
+    "target_xml_ids": [
+      "R20"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R20"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Wnt signaling in skin development, homeostasis, and disease — Lim et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0029",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[12]"
+    ],
+    "raw_marker": "27",
+    "explicit_rids": [
+      "R27"
+    ],
+    "target_xml_ids": [
+      "R27"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R27"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]De novo hair follicle morphogenesis and hair tumors in mice expressing a truncated beta-catenin in skin — Gat et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0030",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[16]"
+    ],
+    "raw_marker": "28",
+    "explicit_rids": [
+      "R28"
+    ],
+    "target_xml_ids": [
+      "R28"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R28"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]SHARPIN stabilizes β-catenin through a linear ubiquitination-independent manner to support gastric tumorigenesis — Zhang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0031",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/p/xref[17]"
+    ],
+    "raw_marker": "29",
+    "explicit_rids": [
+      "R29"
+    ],
+    "target_xml_ids": [
+      "R29"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R29"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Mechanical force-driven adherens junction remodeling and epithelial dynamics — Pinheiro et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0032",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[1]/fig/caption/p/xref"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0033",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[1]/xref[1]"
+    ],
+    "raw_marker": "22",
+    "explicit_rids": [
+      "R22"
+    ],
+    "target_xml_ids": [
+      "R22"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R22"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Wnt/β-catenin signaling, disease, and emerging therapeutic modalities — Nusse et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0034",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[1]/xref[2]"
+    ],
+    "raw_marker": "30",
+    "explicit_rids": [
+      "R30"
+    ],
+    "target_xml_ids": [
+      "R30"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R30"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Transient activation of beta-catenin signalling in adult mouse epidermis is sufficient to induce new hair follicles but continuous activation is required to maintain hair follicle tumours — Lo Celso et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0035",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[3]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0036",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[4]"
+    ],
+    "raw_marker": "13",
+    "explicit_rids": [
+      "R13"
+    ],
+    "target_xml_ids": [
+      "R13"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R13"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice — Schunke et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0037",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[8]"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "R11"
+    ],
+    "target_xml_ids": [
+      "R11"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The deubiquitinase OTULIN is an essential negative regulator of inflammation and autoimmunity — Damgaard et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0038",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[9]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0039",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[10]"
+    ],
+    "raw_marker": "14",
+    "explicit_rids": [
+      "R14"
+    ],
+    "target_xml_ids": [
+      "R14"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R14"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN limits cell death and inflammation by deubiquitinating LUBAC — Heger et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0040",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[11]"
+    ],
+    "raw_marker": "31",
+    "explicit_rids": [
+      "R31"
+    ],
+    "target_xml_ids": [
+      "R31"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R31"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]β-Catenin stabilization dysregulates mesenchymal cell proliferation, motility, and invasiveness and causes aggressive fibromatosis and hyperplastic cutaneous wounds — Cheon et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0041",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p[2]/xref[12]"
+    ],
+    "raw_marker": "32",
+    "explicit_rids": [
+      "R32"
+    ],
+    "target_xml_ids": [
+      "R32"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R32"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]β-catenin regulates wound size and mediates the effect of TGF-beta in cutaneous healing — Cheon et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0042",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[4]/p/xref[1]",
+      "/article/body/sec[2]/sec[4]/p/xref[2]"
+    ],
+    "raw_marker": "23–26",
+    "explicit_rids": [
+      "R23",
+      "R26"
+    ],
+    "target_xml_ids": [
+      "R23",
+      "R24",
+      "R25",
+      "R26"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R23",
+      "PMC13651886:ref:R24",
+      "PMC13651886:ref:R25",
+      "PMC13651886:ref:R26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]ZNRF3 promotes Wnt receptor turnover in an R-spondin-sensitive manner — Hao et al.[/bib_ref] [bib_ref]Tumour suppressor RNF43 is a stem-cell E3 ligase that induces endocytosis of Wnt receptors — Koo et al.[/bib_ref] [bib_ref]The SCFbeta-TRCP-ubiquitin ligase complex associates specifically with phosphorylated destruction motifs in IkappaBalpha and beta-catenin and stimulates IkappaBalpha ubiquitination in vitro — Winston et al.[/bib_ref] [bib_ref]ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0043",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[4]/p/xref[6]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0044",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[5]/p/xref[1]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0045",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[5]/p/xref[2]"
+    ],
+    "raw_marker": "13",
+    "explicit_rids": [
+      "R13"
+    ],
+    "target_xml_ids": [
+      "R13"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R13"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice — Schunke et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0046",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[5]/p/xref[3]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0047",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[5]/p/xref[4]"
+    ],
+    "raw_marker": "33",
+    "explicit_rids": [
+      "R33"
+    ],
+    "target_xml_ids": [
+      "R33"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R33"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Sensing of endogenous nucleic acids by ZBP1 induces keratinocyte necroptosis and skin inflammation — Devos et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0048",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[5]/p/xref[8]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0049",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[1]/xref[1]"
+    ],
+    "raw_marker": "22",
+    "explicit_rids": [
+      "R22"
+    ],
+    "target_xml_ids": [
+      "R22"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R22"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Wnt/β-catenin signaling, disease, and emerging therapeutic modalities — Nusse et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0050",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[1]/xref[2]"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "R34"
+    ],
+    "target_xml_ids": [
+      "R34"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0051",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[1]/xref[3]"
+    ],
+    "raw_marker": "35",
+    "explicit_rids": [
+      "R35"
+    ],
+    "target_xml_ids": [
+      "R35"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R35"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Armadillo coactivates transcription driven by the product of the Drosophila segment polarity gene dTCF — van de Wetering et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0052",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[1]/xref[5]"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "R34"
+    ],
+    "target_xml_ids": [
+      "R34"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0053",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[1]/xref[7]"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "R34"
+    ],
+    "target_xml_ids": [
+      "R34"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0054",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[1]/xref[11]"
+    ],
+    "raw_marker": "36",
+    "explicit_rids": [
+      "R36"
+    ],
+    "target_xml_ids": [
+      "R36"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R36"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 governs stem cell features and represses cell fate determination in skin — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0055",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/fig/caption/p/xref"
+    ],
+    "raw_marker": "39",
+    "explicit_rids": [
+      "R39"
+    ],
+    "target_xml_ids": [
+      "R39"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R39"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Spatially organized multicellular immune hubs in human colorectal cancer — Pelka et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0056",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[1]"
+    ],
+    "raw_marker": "35",
+    "explicit_rids": [
+      "R35"
+    ],
+    "target_xml_ids": [
+      "R35"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R35"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Armadillo coactivates transcription driven by the product of the Drosophila segment polarity gene dTCF — van de Wetering et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0057",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[2]"
+    ],
+    "raw_marker": "37",
+    "explicit_rids": [
+      "R37"
+    ],
+    "target_xml_ids": [
+      "R37"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R37"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The beta-catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells — van de Wetering et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0058",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[4]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0059",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[5]"
+    ],
+    "raw_marker": "22",
+    "explicit_rids": [
+      "R22"
+    ],
+    "target_xml_ids": [
+      "R22"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R22"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Wnt/β-catenin signaling, disease, and emerging therapeutic modalities — Nusse et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0060",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[6]"
+    ],
+    "raw_marker": "26",
+    "explicit_rids": [
+      "R26"
+    ],
+    "target_xml_ids": [
+      "R26"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0061",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[7]"
+    ],
+    "raw_marker": "38",
+    "explicit_rids": [
+      "R38"
+    ],
+    "target_xml_ids": [
+      "R38"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R38"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Lessons from hereditary colorectal cancer — Kinzler et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0062",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[6]/p[2]/xref[8]"
+    ],
+    "raw_marker": "39",
+    "explicit_rids": [
+      "R39"
+    ],
+    "target_xml_ids": [
+      "R39"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R39"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Spatially organized multicellular immune hubs in human colorectal cancer — Pelka et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0063",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[1]"
+    ],
+    "raw_marker": "40",
+    "explicit_rids": [
+      "R40"
+    ],
+    "target_xml_ids": [
+      "R40"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R40"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Cell death as an architect of adult skin stem cell niches — Lecomte et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0064",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[2]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0065",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[3]"
+    ],
+    "raw_marker": "13",
+    "explicit_rids": [
+      "R13"
+    ],
+    "target_xml_ids": [
+      "R13"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R13"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice — Schunke et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0066",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[4]"
+    ],
+    "raw_marker": "41",
+    "explicit_rids": [
+      "R41"
+    ],
+    "target_xml_ids": [
+      "R41"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R41"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The adaptor protein FADD protects epidermal keratinocytes from necroptosis in vivo and prevents skin inflammation — Bonnet et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0067",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[5]"
+    ],
+    "raw_marker": "17",
+    "explicit_rids": [
+      "R17"
+    ],
+    "target_xml_ids": [
+      "R17"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The linear ubiquitin-specific deubiquitinase gumby regulates angiogenesis — Rivkin et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0068",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[6]"
+    ],
+    "raw_marker": "28",
+    "explicit_rids": [
+      "R28"
+    ],
+    "target_xml_ids": [
+      "R28"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R28"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]SHARPIN stabilizes β-catenin through a linear ubiquitination-independent manner to support gastric tumorigenesis — Zhang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0069",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[7]"
+    ],
+    "raw_marker": "26",
+    "explicit_rids": [
+      "R26"
+    ],
+    "target_xml_ids": [
+      "R26"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0070",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[1]/xref[8]"
+    ],
+    "raw_marker": "42",
+    "explicit_rids": [
+      "R42"
+    ],
+    "target_xml_ids": [
+      "R42"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R42"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Cell death checkpoints in the TNF pathway — Huyghe et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0071",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[2]/xref[1]"
+    ],
+    "raw_marker": "26",
+    "explicit_rids": [
+      "R26"
+    ],
+    "target_xml_ids": [
+      "R26"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0072",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[2]/xref[2]"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "R43"
+    ],
+    "target_xml_ids": [
+      "R43"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A bio-orthogonal linear ubiquitin probe identifies STAT3 as a direct substrate of OTULIN in glioblastoma — Du et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0073",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/xref[1]"
+    ],
+    "raw_marker": "35",
+    "explicit_rids": [
+      "R35"
+    ],
+    "target_xml_ids": [
+      "R35"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R35"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Armadillo coactivates transcription driven by the product of the Drosophila segment polarity gene dTCF — van de Wetering et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0074",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/xref[2]"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "R34"
+    ],
+    "target_xml_ids": [
+      "R34"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0075",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/xref[3]"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "R34"
+    ],
+    "target_xml_ids": [
+      "R34"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0076",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/xref[4]"
+    ],
+    "raw_marker": "36",
+    "explicit_rids": [
+      "R36"
+    ],
+    "target_xml_ids": [
+      "R36"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R36"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Tcf3 governs stem cell features and represses cell fate determination in skin — Nguyen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0077",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/xref[5]"
+    ],
+    "raw_marker": "37",
+    "explicit_rids": [
+      "R37"
+    ],
+    "target_xml_ids": [
+      "R37"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R37"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The beta-catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells — van de Wetering et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0078",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/xref[6]"
+    ],
+    "raw_marker": "37",
+    "explicit_rids": [
+      "R37"
+    ],
+    "target_xml_ids": [
+      "R37"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R37"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The beta-catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells — van de Wetering et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0079",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[1]/p/xref[1]"
+    ],
+    "raw_marker": "44",
+    "explicit_rids": [
+      "R44"
+    ],
+    "target_xml_ids": [
+      "R44"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R44"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN prevents liver inflammation and hepatocellular carcinoma by inhibiting FADD- and RIPK1 kinase-mediated hepatocyte apoptosis — Verboom et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0080",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[1]/p/xref[2]"
+    ],
+    "raw_marker": "45",
+    "explicit_rids": [
+      "R45"
+    ],
+    "target_xml_ids": [
+      "R45"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R45"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Keratin 14 Cre transgenic mice authenticate keratin 14 as an oocyte-expressed protein — Hafner et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0081",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[1]/p/xref[3]"
+    ],
+    "raw_marker": "46",
+    "explicit_rids": [
+      "R46"
+    ],
+    "target_xml_ids": [
+      "R46"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R46"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Oligodendrocyte-specific FADD deletion protects mice from autoimmune-mediated demyelination — Mc Guire et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0082",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[1]/p/xref[4]"
+    ],
+    "raw_marker": "47",
+    "explicit_rids": [
+      "R47"
+    ],
+    "target_xml_ids": [
+      "R47"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R47"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The pseudokinase MLKL mediates necroptosis via a molecular switch mechanism — Murphy et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0083",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[1]/p/xref[5]"
+    ],
+    "raw_marker": "48",
+    "explicit_rids": [
+      "R48"
+    ],
+    "target_xml_ids": [
+      "R48"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R48"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Spontaneous mutations in the mouse Sharpin gene result in multiorgan inflammation, immune system dysregulation and dermatitis — Seymour et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0084",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[1]/p/xref[6]"
+    ],
+    "raw_marker": "30",
+    "explicit_rids": [
+      "R30"
+    ],
+    "target_xml_ids": [
+      "R30"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R30"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Transient activation of beta-catenin signalling in adult mouse epidermis is sufficient to induce new hair follicles but continuous activation is required to maintain hair follicle tumours — Lo Celso et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0085",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p/xref"
+    ],
+    "raw_marker": "49",
+    "explicit_rids": [
+      "R49"
+    ],
+    "target_xml_ids": [
+      "R49"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R49"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Assaying proliferation and differentiation capacity of stem cells using disaggregated adult mouse epidermis — Jensen et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0086",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[12]/p/xref[1]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "R12"
+    ],
+    "target_xml_ids": [
+      "R12"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity — Hoste et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  },
+  {
+    "id": "PMC13651886:citation0087",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[12]/p/xref[2]"
+    ],
+    "raw_marker": "39",
+    "explicit_rids": [
+      "R39"
+    ],
+    "target_xml_ids": [
+      "R39"
+    ],
+    "reference_ids": [
+      "PMC13651886:ref:R39"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Spatially organized multicellular immune hubs in human colorectal cancer — Pelka et al.[/bib_ref]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014"
+  }
+]

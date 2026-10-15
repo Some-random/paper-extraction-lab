@@ -1,0 +1,63 @@
+{
+  "note": "Manual segmentation of eight unstructured bibliography entries, checked against literal source XML text. No external lookup or generated metadata. All other entries use structured publisher metadata.",
+  "papers": {
+    "PMC13655163": {
+      "CR2": {
+        "title": "Cardiac troponin T and I: back to basics",
+        "authors": [{"name": "A. M. Mingels", "surname": "Mingels"}, {"name": "N. L. Mills", "surname": "Mills"}, {"name": "C. Mueller", "surname": "Mueller"}, {"name": "Study Group on Biomarkers of the ESC Association for Acute CardioVascular Care", "collective": true}],
+        "year": "2023",
+        "required_source_literals": ["Mingels", "Mills", "Mueller", "Cardiac troponin T and I: back to basics", "2023"]
+      },
+      "CR55": {
+        "title": "Integrating Mass Spectrometry and Affinity-Based Proteomics",
+        "authors": [],
+        "year": "2025",
+        "title_kind": "web-resource-title",
+        "required_source_literals": ["Integrating Mass Spectrometry and Affinity-Based Proteomics", "2025"]
+      },
+      "CR75": {
+        "title": "A fast and powerful linear mixed model approach for genotype-environment interaction tests in large-scale GWAS",
+        "authors": [{"name": "W. Zhong", "surname": "Zhong"}, {"name": "A. Chhibber", "surname": "Chhibber"}, {"name": "L. Luo", "surname": "Luo"}, {"name": "D. V. Mehrotra", "surname": "Mehrotra"}, {"name": "J. Shen", "surname": "Shen"}],
+        "year": "2022",
+        "required_source_literals": ["Zhong", "Chhibber", "Luo", "Mehrotra", "Shen", "A fast and powerful linear mixed model approach for genotype-environment interaction tests in large-scale GWAS", "2022"]
+      },
+      "CR82": {
+        "title": "Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals",
+        "authors": [{"name": "A. Richmond", "surname": "Richmond"}],
+        "year": "2026",
+        "title_kind": "dataset-title",
+        "required_source_literals": ["Richmond A. et al.", "Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals", "2026"]
+      }
+    },
+    "PMC13645648": {
+      "CR11": {
+        "title": "The Childhood Environment and Adult Disease: Ciba Foundation Symposium",
+        "title_kind": "container-title; chapter title not supplied",
+        "authors": [{"name": "A. Lucas", "surname": "Lucas"}],
+        "year": "1991",
+        "required_source_literals": ["Lucas, A.", "The Childhood Environment and Adult Disease: Ciba Foundation Symposium", "1991"]
+      },
+      "CR64": {
+        "title": "A Package for Survival Analysis in R",
+        "authors": [{"name": "T. M. Therneau", "surname": "Therneau"}],
+        "year": "2022",
+        "title_kind": "source-title",
+        "required_source_literals": ["Therneau, T. M.", "A Package for Survival Analysis in R", "2022"]
+      },
+      "CR66": {
+        "title": "FastQC: a quality control tool for high throughput sequence data",
+        "authors": [{"name": "S. Andrews", "surname": "Andrews"}],
+        "year": "2010",
+        "title_kind": "software-title",
+        "required_source_literals": ["Andrews, S.", "FastQC: a quality control tool for high throughput sequence data", "2010"]
+      },
+      "CR68": {
+        "title": "TrimGalore: a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data",
+        "authors": [{"name": "F. Krueger", "surname": "Krueger"}],
+        "year": "2026",
+        "title_kind": "software-title",
+        "required_source_literals": ["Krueger, F.", "TrimGalore: a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data", "2026"]
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Citations to earlier papers and sources for continued pretraining
 
+Update: the user selected title/author expansion directly. It is now [implemented in v4](../pmc_native_v4_citations_2026-10-15/README.md), without a citation-policy comparison. The audit and recommendations below describe the earlier v3 state. The [biology-focused review](biology_sources.md) supersedes the clinical-data recommendations for this project's scope.
+
 Source review and read-only audit, October 14, 2026, fixed PST (UTC−8). This adds documentation and diagnostic counts; it does not implement citation-aware training or change the existing extraction outputs.
 
 **Our current citation handling is incomplete.** Inline literature citation markers survive in the retained prose, while bibliography entries are excluded from the main training chunks. The pipeline currently exports explicit figure/table links, but does not export structured links from inline literature citations to cited-paper identifiers. A citation in a paragraph does not automatically download the cited paper or expose its contents to the model.

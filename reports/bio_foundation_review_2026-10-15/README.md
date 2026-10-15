@@ -6,6 +6,8 @@ Targeted web searches, citation following, and reading primary papers, official 
 
 This is a source review. Published model results below were not reproduced by our extraction experiment.
 
+[Biology-focused models and real-data sources](biology_sources.md) is the current research scope: literature, figures, full tables, reusable corpora including Dolma/peS2o, and biological databases. Clinical-note recipes below remain historical review entries, not project data recommendations.
+
 [Citation handling and CPT data sources](citations_and_cpt_sources.md) adds an audit of the three extracted biology samples, published citation-processing choices, and examples of native, structured, clinical and synthetic CPT data. [Audit counts and source hashes](citation_audit.json) are available separately.
 
 ## How to interpret the numbers

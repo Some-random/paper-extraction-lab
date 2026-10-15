@@ -2,3 +2,6 @@ PyMuPDF
 pdfplumber
 requests[socks]
 lxml
+tokenizers
+Pillow
+openpyxl

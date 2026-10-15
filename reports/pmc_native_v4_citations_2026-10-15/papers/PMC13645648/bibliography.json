@@ -1,0 +1,2954 @@
+[
+  {
+    "id": "PMC13645648:ref:CR1",
+    "xml_id": "CR1",
+    "label": "1.",
+    "title": "A study of longevity, growth, reproduction and heart rate in Daphnia longispina as influenced by limitations in quantity of food",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Ingle",
+        "surname": "Ingle",
+        "given_names": "L",
+        "collective": false
+      },
+      {
+        "name": "TR Wood",
+        "surname": "Wood",
+        "given_names": "TR",
+        "collective": false
+      },
+      {
+        "name": "AM Banta",
+        "surname": "Banta",
+        "given_names": "AM",
+        "collective": false
+      }
+    ],
+    "year": "1937",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1002/jez.1400760206"
+    },
+    "raw_reference_text": "IngleLWoodTRBantaAMA study of longevity, growth, reproduction and heart rate in Daphnia longispina as influenced by limitations in quantity of foodJ. Exp. Zool.19377632535210.1002/jez.1400760206",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[1]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1002/jez.1400760206"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR2",
+    "xml_id": "CR2",
+    "label": "2.",
+    "title": "Retarded growth, life span, ultimate body size and age changes in the albino rat after feeding diets restricted in calories",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CM McCay",
+        "surname": "McCay",
+        "given_names": "CM",
+        "collective": false
+      },
+      {
+        "name": "LA Maynard",
+        "surname": "Maynard",
+        "given_names": "LA",
+        "collective": false
+      },
+      {
+        "name": "G Sperling",
+        "surname": "Sperling",
+        "given_names": "G",
+        "collective": false
+      },
+      {
+        "name": "LL Barnes",
+        "surname": "Barnes",
+        "given_names": "LL",
+        "collective": false
+      }
+    ],
+    "year": "1939",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/jn/18.1.1",
+      "pmid": "1095975"
+    },
+    "raw_reference_text": "McCayCMMaynardLASperlingGBarnesLLRetarded growth, life span, ultimate body size and age changes in the albino rat after feeding diets restricted in caloriesJ. Nutr.19391811310.1093/jn/18.1.11095975",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[2]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/jn/18.1.1",
+      "pmid": "1095975"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR3",
+    "xml_id": "CR3",
+    "label": "3.",
+    "title": "Growth rate and life span in Drosophila. II. A biphasic relationship between growth rate and life span",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "AC Economos",
+        "surname": "Economos",
+        "given_names": "AC",
+        "collective": false
+      },
+      {
+        "name": "FA Lints",
+        "surname": "Lints",
+        "given_names": "FA",
+        "collective": false
+      }
+    ],
+    "year": "1984",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/0047-6374(84)90039-3",
+      "pmid": "6492891"
+    },
+    "raw_reference_text": "EconomosACLintsFAGrowth rate and life span in Drosophila. II. A biphasic relationship between growth rate and life spanMech. Ageing Dev.19842714315110.1016/0047-6374(84)90039-36492891",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[3]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/0047-6374(84)90039-3",
+      "pmid": "6492891"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR4",
+    "xml_id": "CR4",
+    "label": "4.",
+    "title": "The effect of developmental nutrition on life span and fecundity depends on the adult reproductive environment in Drosophila melanogaster",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CM May",
+        "surname": "May",
+        "given_names": "CM",
+        "collective": false
+      },
+      {
+        "name": "A Doroszuk",
+        "surname": "Doroszuk",
+        "given_names": "A",
+        "collective": false
+      },
+      {
+        "name": "BJ Zwaan",
+        "surname": "Zwaan",
+        "given_names": "BJ",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1002/ece3.1389",
+      "pmid": "25859322",
+      "pmcid": "PMC4377260"
+    },
+    "raw_reference_text": "MayCMDoroszukAZwaanBJThe effect of developmental nutrition on life span and fecundity depends on the adult reproductive environment in Drosophila melanogasterEcol. Evol.201551156116810.1002/ece3.138925859322PMC4377260",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[4]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1002/ece3.1389",
+      "pmid": "25859322",
+      "pmcid": "PMC4377260"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR5",
+    "xml_id": "CR5",
+    "label": "5.",
+    "title": "Developmental diet regulates Drosophila lifespan via lipid autotoxins",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MI Stefana",
+        "surname": "Stefana",
+        "given_names": "MI",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-017-01740-9",
+      "pmid": "29123106",
+      "pmcid": "PMC5680271"
+    },
+    "raw_reference_text": "StefanaMIDevelopmental diet regulates Drosophila lifespan via lipid autotoxinsNat. Commun.20178138410.1038/s41467-017-01740-929123106PMC5680271",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[5]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-017-01740-9",
+      "pmid": "29123106",
+      "pmcid": "PMC5680271"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR6",
+    "xml_id": "CR6",
+    "label": "6.",
+    "title": "The retardation of aging in mice by dietary restriction: longevity, cancer, immunity and lifetime energy intake",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R Weindruch",
+        "surname": "Weindruch",
+        "given_names": "R",
+        "collective": false
+      },
+      {
+        "name": "RL Walford",
+        "surname": "Walford",
+        "given_names": "RL",
+        "collective": false
+      },
+      {
+        "name": "S Fligiel",
+        "surname": "Fligiel",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "D Guthrie",
+        "surname": "Guthrie",
+        "given_names": "D",
+        "collective": false
+      }
+    ],
+    "year": "1986",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/jn/116.4.641",
+      "pmid": "3958810"
+    },
+    "raw_reference_text": "WeindruchRWalfordRLFligielSGuthrieDThe retardation of aging in mice by dietary restriction: longevity, cancer, immunity and lifetime energy intakeJ. Nutr.198611664165410.1093/jn/116.4.6413958810",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[6]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/jn/116.4.641",
+      "pmid": "3958810"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR7",
+    "xml_id": "CR7",
+    "label": "7.",
+    "title": "Catch-up growth and obesity in male mice",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SE Ozanne",
+        "surname": "Ozanne",
+        "given_names": "SE",
+        "collective": false
+      },
+      {
+        "name": "CN Hales",
+        "surname": "Hales",
+        "given_names": "CN",
+        "collective": false
+      }
+    ],
+    "year": "2004",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/427411b",
+      "pmid": "14749819"
+    },
+    "raw_reference_text": "OzanneSEHalesCNCatch-up growth and obesity in male miceNature200442741141210.1038/427411b14749819",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[7]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/427411b",
+      "pmid": "14749819"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR8",
+    "xml_id": "CR8",
+    "label": "8.",
+    "title": "Life-span extension in mice by preweaning food restriction and by methionine restriction in middle age",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Sun",
+        "surname": "Sun",
+        "given_names": "L",
+        "collective": false
+      },
+      {
+        "name": "AA Sadighi Akha",
+        "surname": "Sadighi Akha",
+        "given_names": "AA",
+        "collective": false
+      },
+      {
+        "name": "RA Miller",
+        "surname": "Miller",
+        "given_names": "RA",
+        "collective": false
+      },
+      {
+        "name": "JM Harper",
+        "surname": "Harper",
+        "given_names": "JM",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/gerona/glp051",
+      "pmcid": "PMC2691799",
+      "pmid": "19414512"
+    },
+    "raw_reference_text": "SunLSadighi AkhaAAMillerRAHarperJMLife-span extension in mice by preweaning food restriction and by methionine restriction in middle ageJ. Gerontol. A20096471172210.1093/gerona/glp051PMC269179919414512",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[8]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/gerona/glp051",
+      "pmcid": "PMC2691799",
+      "pmid": "19414512"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR9",
+    "xml_id": "CR9",
+    "label": "9.",
+    "title": "Early-life nutrition and adult-life outcomes",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JGB Alves",
+        "surname": "Alves",
+        "given_names": "JGB",
+        "collective": false
+      },
+      {
+        "name": "LV Alves",
+        "surname": "Alves",
+        "given_names": "LV",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.jped.2023.08.007",
+      "pmcid": "PMC10960187",
+      "pmid": "37813343"
+    },
+    "raw_reference_text": "AlvesJGBAlvesLVEarly-life nutrition and adult-life outcomesJ. Pediatr.2024100S4S910.1016/j.jped.2023.08.007PMC1096018737813343",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[9]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.jped.2023.08.007",
+      "pmcid": "PMC10960187",
+      "pmid": "37813343"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR10",
+    "xml_id": "CR10",
+    "label": "10.",
+    "title": "The association between birthweight and longevity in the rat is complex and modulated by maternal protein intake during fetal life",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SC Langley-Evans",
+        "surname": "Langley-Evans",
+        "given_names": "SC",
+        "collective": false
+      },
+      {
+        "name": "DV Sculley",
+        "surname": "Sculley",
+        "given_names": "DV",
+        "collective": false
+      }
+    ],
+    "year": "2006",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.febslet.2006.06.062",
+      "pmid": "16828754"
+    },
+    "raw_reference_text": "Langley-EvansSCSculleyDVThe association between birthweight and longevity in the rat is complex and modulated by maternal protein intake during fetal lifeFEBS Lett.20065804150415310.1016/j.febslet.2006.06.06216828754",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[10]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.febslet.2006.06.062",
+      "pmid": "16828754"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR11",
+    "xml_id": "CR11",
+    "label": "11.",
+    "title": "The Childhood Environment and Adult Disease: Ciba Foundation Symposium",
+    "title_kind": "container-title; chapter title not supplied",
+    "authors": [
+      {
+        "name": "A. Lucas",
+        "surname": "Lucas"
+      }
+    ],
+    "year": "1991",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "pmid": "1677325"
+    },
+    "raw_reference_text": "Lucas, A. in The Childhood Environment and Adult Disease: Ciba Foundation Symposium Vol. 156 (eds. Gregory, B. & Whelan, J.) 38–50 (Wiley, 1991).1677325",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[11]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "pmid": "1677325"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR12",
+    "xml_id": "CR12",
+    "label": "12.",
+    "title": "Programming by early nutrition: an experimental approach",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "A Lucas",
+        "surname": "Lucas",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "1998",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/jn/128.2.401S",
+      "pmid": "9478036"
+    },
+    "raw_reference_text": "LucasAProgramming by early nutrition: an experimental approachJ. Nutr.1998128401S406S10.1093/jn/128.2.401S9478036",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[12]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/jn/128.2.401s",
+      "pmid": "9478036"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR13",
+    "xml_id": "CR13",
+    "label": "13.",
+    "title": "Mechanisms linking suboptimal early nutrition and increased risk of type 2 diabetes and obesity",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MS Martin-Gronert",
+        "surname": "Martin-Gronert",
+        "given_names": "MS",
+        "collective": false
+      },
+      {
+        "name": "SE Ozanne",
+        "surname": "Ozanne",
+        "given_names": "SE",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.3945/jn.109.111237",
+      "pmid": "20107142"
+    },
+    "raw_reference_text": "Martin-GronertMSOzanneSEMechanisms linking suboptimal early nutrition and increased risk of type 2 diabetes and obesityJ. Nutr.201014066266610.3945/jn.109.11123720107142",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[13]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.3945/jn.109.111237",
+      "pmid": "20107142"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR14",
+    "xml_id": "CR14",
+    "label": "14.",
+    "title": "Metabolic programming in early life in humans",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CHD Fall",
+        "surname": "Fall",
+        "given_names": "CHD",
+        "collective": false
+      },
+      {
+        "name": "K Kumaran",
+        "surname": "Kumaran",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1098/rstb.2018.0123",
+      "pmcid": "PMC6460078",
+      "pmid": "30966889"
+    },
+    "raw_reference_text": "FallCHDKumaranKMetabolic programming in early life in humansPhil. Trans. R. Soc. Lond. B20193742018012310.1098/rstb.2018.0123PMC646007830966889",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[14]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1098/rstb.2018.0123",
+      "pmcid": "PMC6460078",
+      "pmid": "30966889"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR15",
+    "xml_id": "CR15",
+    "label": "15.",
+    "title": "The impact of early nutrition on the ageing trajectory",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JL Tarry-Adkins",
+        "surname": "Tarry-Adkins",
+        "given_names": "JL",
+        "collective": false
+      },
+      {
+        "name": "SE Ozanne",
+        "surname": "Ozanne",
+        "given_names": "SE",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1017/S002966511300387X",
+      "pmid": "24411102"
+    },
+    "raw_reference_text": "Tarry-AdkinsJLOzanneSEThe impact of early nutrition on the ageing trajectoryProc. Nutr. Soc.20147328930110.1017/S002966511300387X24411102",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[15]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1017/s002966511300387x",
+      "pmid": "24411102"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR16",
+    "xml_id": "CR16",
+    "label": "16.",
+    "title": "Developmental origins of metabolic diseases",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "DJ Hoffman",
+        "surname": "Hoffman",
+        "given_names": "DJ",
+        "collective": false
+      },
+      {
+        "name": "TL Powell",
+        "surname": "Powell",
+        "given_names": "TL",
+        "collective": false
+      },
+      {
+        "name": "ES Barrett",
+        "surname": "Barrett",
+        "given_names": "ES",
+        "collective": false
+      },
+      {
+        "name": "DB Hardy",
+        "surname": "Hardy",
+        "given_names": "DB",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1152/physrev.00002.2020",
+      "pmid": "33270534",
+      "pmcid": "PMC8526339"
+    },
+    "raw_reference_text": "HoffmanDJPowellTLBarrettESHardyDBDevelopmental origins of metabolic diseasesPhysiol. Rev.202110173979510.1152/physrev.00002.202033270534PMC8526339",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[16]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1152/physrev.00002.2020",
+      "pmid": "33270534",
+      "pmcid": "PMC8526339"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR17",
+    "xml_id": "CR17",
+    "label": "17.",
+    "title": "Early developmental conditioning of later health and disease: physiology or pathophysiology?",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MA Hanson",
+        "surname": "Hanson",
+        "given_names": "MA",
+        "collective": false
+      },
+      {
+        "name": "PD Gluckman",
+        "surname": "Gluckman",
+        "given_names": "PD",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1152/physrev.00029.2013",
+      "pmid": "25287859",
+      "pmcid": "PMC4187033"
+    },
+    "raw_reference_text": "HansonMAGluckmanPDEarly developmental conditioning of later health and disease: physiology or pathophysiology?Physiol. Rev.2014941027107610.1152/physrev.00029.201325287859PMC4187033",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[17]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1152/physrev.00029.2013",
+      "pmid": "25287859",
+      "pmcid": "PMC4187033"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR18",
+    "xml_id": "CR18",
+    "label": "18.",
+    "title": "Juvenile diet restriction and the aging and reproduction of adult Drosophila melanogaster",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M-P Tu",
+        "surname": "Tu",
+        "given_names": "M-P",
+        "collective": false
+      },
+      {
+        "name": "M Tatar",
+        "surname": "Tatar",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2003",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1046/j.1474-9728.2003.00064.x",
+      "pmid": "14677635"
+    },
+    "raw_reference_text": "TuM-PTatarMJuvenile diet restriction and the aging and reproduction of adult Drosophila melanogasterAging Cell2003232733310.1046/j.1474-9728.2003.00064.x14677635",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[18]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1046/j.1474-9728.2003.00064.x",
+      "pmid": "14677635"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR19",
+    "xml_id": "CR19",
+    "label": "19.",
+    "title": "Relating past and present diet to phenotypic and transcriptomic variation in the fruit fly",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "CM May",
+        "surname": "May",
+        "given_names": "CM",
+        "collective": false
+      },
+      {
+        "name": "BJ Zwaan",
+        "surname": "Zwaan",
+        "given_names": "BJ",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1186/s12864-017-3968-z",
+      "pmid": "28830340",
+      "pmcid": "PMC5568309"
+    },
+    "raw_reference_text": "MayCMZwaanBJRelating past and present diet to phenotypic and transcriptomic variation in the fruit flyBMC Genomics20171864010.1186/s12864-017-3968-z28830340PMC5568309",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[19]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1186/s12864-017-3968-z",
+      "pmid": "28830340",
+      "pmcid": "PMC5568309"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR20",
+    "xml_id": "CR20",
+    "label": "20.",
+    "title": "The genetic basis of pigmentation differences within and between Drosophila species",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JH Massey",
+        "surname": "Massey",
+        "given_names": "JH",
+        "collective": false
+      },
+      {
+        "name": "PJ Wittkopp",
+        "surname": "Wittkopp",
+        "given_names": "PJ",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/bs.ctdb.2016.03.004",
+      "pmid": "27282023",
+      "pmcid": "PMC5002358"
+    },
+    "raw_reference_text": "MasseyJHWittkoppPJThe genetic basis of pigmentation differences within and between Drosophila speciesCurr. Top. Dev. Biol2016119276110.1016/bs.ctdb.2016.03.00427282023PMC5002358",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[20]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/bs.ctdb.2016.03.004",
+      "pmid": "27282023",
+      "pmcid": "PMC5002358"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR21",
+    "xml_id": "CR21",
+    "label": "21.",
+    "title": "Evolution in black and white: genetic control of pigment patterns in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "PJ Wittkopp",
+        "surname": "Wittkopp",
+        "given_names": "PJ",
+        "collective": false
+      },
+      {
+        "name": "SB Carroll",
+        "surname": "Carroll",
+        "given_names": "SB",
+        "collective": false
+      },
+      {
+        "name": "A Kopp",
+        "surname": "Kopp",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "2003",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/S0168-9525(03)00194-X",
+      "pmid": "12957543"
+    },
+    "raw_reference_text": "WittkoppPJCarrollSBKoppAEvolution in black and white: genetic control of pigment patterns in DrosophilaTrends Genet.20031949550410.1016/S0168-9525(03)00194-X12957543",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[21]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0168-9525(03)00194-x",
+      "pmid": "12957543"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR22",
+    "xml_id": "CR22",
+    "label": "22.",
+    "title": "Insect melanism: the molecules matter",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JR True",
+        "surname": "True",
+        "given_names": "JR",
+        "collective": false
+      }
+    ],
+    "year": "2003",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.tree.2003.09.006"
+    },
+    "raw_reference_text": "TrueJRInsect melanism: the molecules matterTrends Ecol. Evol.20031864064710.1016/j.tree.2003.09.006",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[22]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.tree.2003.09.006"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR23",
+    "xml_id": "CR23",
+    "label": "23.",
+    "title": "The roles of cell size and cell number in determining ovariole number in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "DP Sarikaya",
+        "surname": "Sarikaya",
+        "given_names": "DP",
+        "collective": false
+      }
+    ],
+    "year": "2012",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.ydbio.2011.12.017",
+      "pmid": "22200592"
+    },
+    "raw_reference_text": "SarikayaDPThe roles of cell size and cell number in determining ovariole number in DrosophilaDev. Biol.201236327928910.1016/j.ydbio.2011.12.01722200592",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[23]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.ydbio.2011.12.017",
+      "pmid": "22200592"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR24",
+    "xml_id": "CR24",
+    "label": "24.",
+    "title": "A holidic medium for Drosophila melanogaster",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MDW Piper",
+        "surname": "Piper",
+        "given_names": "MDW",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nmeth.2731",
+      "pmid": "24240321",
+      "pmcid": "PMC3877687"
+    },
+    "raw_reference_text": "PiperMDWA holidic medium for Drosophila melanogasterNat. Methods20141110010510.1038/nmeth.273124240321PMC3877687",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[24]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nmeth.2731",
+      "pmid": "24240321",
+      "pmcid": "PMC3877687"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR25",
+    "xml_id": "CR25",
+    "label": "25.",
+    "title": "Matching dietary amino acid balance to the in silico-translated exome optimizes growth and reproduction without cost to lifespan",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MDW Piper",
+        "surname": "Piper",
+        "given_names": "MDW",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.cmet.2017.02.005",
+      "pmid": "28273481",
+      "pmcid": "PMC5355364"
+    },
+    "raw_reference_text": "PiperMDWMatching dietary amino acid balance to the in silico-translated exome optimizes growth and reproduction without cost to lifespanCell Metab.20172561062110.1016/j.cmet.2017.02.00528273481PMC5355364",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[25]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cmet.2017.02.005",
+      "pmid": "28273481",
+      "pmcid": "PMC5355364"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR26",
+    "xml_id": "CR26",
+    "label": "26.",
+    "title": "Early-adult methionine restriction reduces methionine sulfoxide and extends lifespan in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Kosakamoto",
+        "surname": "Kosakamoto",
+        "given_names": "H",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-023-43550-2",
+      "pmid": "38052797",
+      "pmcid": "PMC10698029"
+    },
+    "raw_reference_text": "KosakamotoHEarly-adult methionine restriction reduces methionine sulfoxide and extends lifespan in DrosophilaNat. Commun.202314783210.1038/s41467-023-43550-238052797PMC10698029",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[26]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-023-43550-2",
+      "pmid": "38052797",
+      "pmcid": "PMC10698029"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR27",
+    "xml_id": "CR27",
+    "label": "27.",
+    "title": "A Drosophila holidic diet optimized for growth and development",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Sorge",
+        "surname": "Sorge",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2025",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.devcel.2025.01.008",
+      "pmid": "39909045"
+    },
+    "raw_reference_text": "SorgeSA Drosophila holidic diet optimized for growth and developmentDev. Cell2025601636164810.1016/j.devcel.2025.01.00839909045",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[27]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.devcel.2025.01.008",
+      "pmid": "39909045"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR28",
+    "xml_id": "CR28",
+    "label": "28.",
+    "title": "Role of insulin-like signalling in Drosophila lifespan",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "ME Giannakou",
+        "surname": "Giannakou",
+        "given_names": "ME",
+        "collective": false
+      },
+      {
+        "name": "L Partridge",
+        "surname": "Partridge",
+        "given_names": "L",
+        "collective": false
+      }
+    ],
+    "year": "2007",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.tibs.2007.02.007",
+      "pmid": "17412594"
+    },
+    "raw_reference_text": "GiannakouMEPartridgeLRole of insulin-like signalling in Drosophila lifespanTrends Biochem. Sci.20073218018810.1016/j.tibs.2007.02.00717412594",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[28]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.tibs.2007.02.007",
+      "pmid": "17412594"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR29",
+    "xml_id": "CR29",
+    "label": "29.",
+    "title": "Juvenile hormone regulation of Drosophila aging",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R Yamamoto",
+        "surname": "Yamamoto",
+        "given_names": "R",
+        "collective": false
+      },
+      {
+        "name": "H Bai",
+        "surname": "Bai",
+        "given_names": "H",
+        "collective": false
+      },
+      {
+        "name": "AG Dolezal",
+        "surname": "Dolezal",
+        "given_names": "AG",
+        "collective": false
+      },
+      {
+        "name": "G Amdam",
+        "surname": "Amdam",
+        "given_names": "G",
+        "collective": false
+      },
+      {
+        "name": "M Tatar",
+        "surname": "Tatar",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1186/1741-7007-11-85",
+      "pmid": "23866071",
+      "pmcid": "PMC3726347"
+    },
+    "raw_reference_text": "YamamotoRBaiHDolezalAGAmdamGTatarMJuvenile hormone regulation of Drosophila agingBMC Biol.2013118510.1186/1741-7007-11-8523866071PMC3726347",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[29]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1186/1741-7007-11-85",
+      "pmid": "23866071",
+      "pmcid": "PMC3726347"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR30",
+    "xml_id": "CR30",
+    "label": "30.",
+    "title": "Drosophila FIT is a protein-specific satiety hormone essential for feeding control",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Sun",
+        "surname": "Sun",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/ncomms14161",
+      "pmid": "28102207",
+      "pmcid": "PMC5253699"
+    },
+    "raw_reference_text": "SunJDrosophila FIT is a protein-specific satiety hormone essential for feeding controlNat. Commun.201781416110.1038/ncomms1416128102207PMC5253699",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[30]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/ncomms14161",
+      "pmid": "28102207",
+      "pmcid": "PMC5253699"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR31",
+    "xml_id": "CR31",
+    "label": "31.",
+    "title": "Context-dependent impact of the dietary non-essential amino acid tyrosine on Drosophila physiology and longevity",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Kosakamoto",
+        "surname": "Kosakamoto",
+        "given_names": "H",
+        "collective": false
+      },
+      {
+        "name": "C Sakuma",
+        "surname": "Sakuma",
+        "given_names": "C",
+        "collective": false
+      },
+      {
+        "name": "R Okada",
+        "surname": "Okada",
+        "given_names": "R",
+        "collective": false
+      },
+      {
+        "name": "M Miura",
+        "surname": "Miura",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "F Obata",
+        "surname": "Obata",
+        "given_names": "F",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1126/sciadv.adn7167",
+      "pmid": "39213345",
+      "pmcid": "PMC11364096"
+    },
+    "raw_reference_text": "KosakamotoHSakumaCOkadaRMiuraMObataFContext-dependent impact of the dietary non-essential amino acid tyrosine on Drosophila physiology and longevitySci. Adv.202410eadn716710.1126/sciadv.adn716739213345PMC11364096",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[31]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1126/sciadv.adn7167",
+      "pmid": "39213345",
+      "pmcid": "PMC11364096"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR32",
+    "xml_id": "CR32",
+    "label": "32.",
+    "title": "Sensing of the non-essential amino acid tyrosine governs the response to protein restriction in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Kosakamoto",
+        "surname": "Kosakamoto",
+        "given_names": "H",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s42255-022-00608-7",
+      "pmid": "35879463"
+    },
+    "raw_reference_text": "KosakamotoHSensing of the non-essential amino acid tyrosine governs the response to protein restriction in DrosophilaNat. Metab.2022494495910.1038/s42255-022-00608-735879463",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[32]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s42255-022-00608-7",
+      "pmid": "35879463"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR33",
+    "xml_id": "CR33",
+    "label": "33.",
+    "title": "4E-BP is a target of the GCN2–ATF4 pathway during Drosophila development and aging",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MJ Kang",
+        "surname": "Kang",
+        "given_names": "MJ",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1083/jcb.201511073",
+      "pmid": "27979906",
+      "pmcid": "PMC5223598"
+    },
+    "raw_reference_text": "KangMJ4E-BP is a target of the GCN2–ATF4 pathway during Drosophila development and agingJ. Cell Biol.201721611512910.1083/jcb.20151107327979906PMC5223598",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[33]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1083/jcb.201511073",
+      "pmid": "27979906",
+      "pmcid": "PMC5223598"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR34",
+    "xml_id": "CR34",
+    "label": "34.",
+    "title": "Resource allocation to reproduction and soma in Drosophila: a stable isotope analysis of carbon from dietary sugar",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K-J Min",
+        "surname": "Min",
+        "given_names": "K-J",
+        "collective": false
+      },
+      {
+        "name": "MF Hogan",
+        "surname": "Hogan",
+        "given_names": "MF",
+        "collective": false
+      },
+      {
+        "name": "M Tatar",
+        "surname": "Tatar",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "DM O’Brien",
+        "surname": "O’Brien",
+        "given_names": "DM",
+        "collective": false
+      }
+    ],
+    "year": "2006",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.jinsphys.2006.04.004",
+      "pmid": "16753176"
+    },
+    "raw_reference_text": "MinK-JHoganMFTatarMO’BrienDMResource allocation to reproduction and soma in Drosophila: a stable isotope analysis of carbon from dietary sugarJ. Insect Physiol.20065276377010.1016/j.jinsphys.2006.04.00416753176",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[34]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.jinsphys.2006.04.004",
+      "pmid": "16753176"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR35",
+    "xml_id": "CR35",
+    "label": "35.",
+    "title": "Use of stable isotopes to examine how dietary restriction extends Drosophila lifespan",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "DM O’Brien",
+        "surname": "O’Brien",
+        "given_names": "DM",
+        "collective": false
+      },
+      {
+        "name": "K-J Min",
+        "surname": "Min",
+        "given_names": "K-J",
+        "collective": false
+      },
+      {
+        "name": "T Larsen",
+        "surname": "Larsen",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "M Tatar",
+        "surname": "Tatar",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2008",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.cub.2008.01.021",
+      "pmid": "18302914"
+    },
+    "raw_reference_text": "O’BrienDMMinK-JLarsenTTatarMUse of stable isotopes to examine how dietary restriction extends Drosophila lifespanCurr. Biol.200818R155R15610.1016/j.cub.2008.01.02118302914",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[35]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cub.2008.01.021",
+      "pmid": "18302914"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR36",
+    "xml_id": "CR36",
+    "label": "36.",
+    "title": "Turnover atlas of proteome and phosphoproteome across mouse tissues and brain regions",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "W Li",
+        "surname": "Li",
+        "given_names": "W",
+        "collective": false
+      }
+    ],
+    "year": "2025",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2025.02.021",
+      "pmid": "40118046",
+      "pmcid": "PMC12033170"
+    },
+    "raw_reference_text": "LiWTurnover atlas of proteome and phosphoproteome across mouse tissues and brain regionsCell20251882267228710.1016/j.cell.2025.02.02140118046PMC12033170",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[36]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2025.02.021",
+      "pmid": "40118046",
+      "pmcid": "PMC12033170"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR37",
+    "xml_id": "CR37",
+    "label": "37.",
+    "title": "Identification of long-lived proteins reveals exceptional stability of essential cellular structures",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "BH Toyama",
+        "surname": "Toyama",
+        "given_names": "BH",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2013.07.037",
+      "pmid": "23993091",
+      "pmcid": "PMC3788602"
+    },
+    "raw_reference_text": "ToyamaBHIdentification of long-lived proteins reveals exceptional stability of essential cellular structuresCell201315497198210.1016/j.cell.2013.07.03723993091PMC3788602",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[37]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2013.07.037",
+      "pmid": "23993091",
+      "pmcid": "PMC3788602"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR38",
+    "xml_id": "CR38",
+    "label": "38.",
+    "title": "Global quantification of mammalian gene expression control",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "B Schwanhäusser",
+        "surname": "Schwanhäusser",
+        "given_names": "B",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nature10098",
+      "pmid": "21593866"
+    },
+    "raw_reference_text": "SchwanhäusserBGlobal quantification of mammalian gene expression controlNature201147333734210.1038/nature1009821593866",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[38]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature10098",
+      "pmid": "21593866"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR39",
+    "xml_id": "CR39",
+    "label": "39.",
+    "title": "SUnSET, a nonradioactive method to monitor protein synthesis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "EK Schmidt",
+        "surname": "Schmidt",
+        "given_names": "EK",
+        "collective": false
+      },
+      {
+        "name": "G Clavarino",
+        "surname": "Clavarino",
+        "given_names": "G",
+        "collective": false
+      },
+      {
+        "name": "M Ceppi",
+        "surname": "Ceppi",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "P Pierre",
+        "surname": "Pierre",
+        "given_names": "P",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nmeth.1314",
+      "pmid": "19305406"
+    },
+    "raw_reference_text": "SchmidtEKClavarinoGCeppiMPierrePSUnSET, a nonradioactive method to monitor protein synthesisNat. Methods2009627527710.1038/nmeth.131419305406",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[39]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nmeth.1314",
+      "pmid": "19305406"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR40",
+    "xml_id": "CR40",
+    "label": "40.",
+    "title": "Early-adulthood spike in protein translation drives aging via juvenile hormone/germline signaling",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "HS Kim",
+        "surname": "Kim",
+        "given_names": "HS",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41467-023-40618-x",
+      "pmid": "37596266",
+      "pmcid": "PMC10439225"
+    },
+    "raw_reference_text": "KimHSEarly-adulthood spike in protein translation drives aging via juvenile hormone/germline signalingNat. Commun.202314502110.1038/s41467-023-40618-x37596266PMC10439225",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[40]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-023-40618-x",
+      "pmid": "37596266",
+      "pmcid": "PMC10439225"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR41",
+    "xml_id": "CR41",
+    "label": "41.",
+    "title": "Insect storage proteins: gene families and receptors",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "NH Haunerland",
+        "surname": "Haunerland",
+        "given_names": "NH",
+        "collective": false
+      }
+    ],
+    "year": "1996",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/S0965-1748(96)00035-5",
+      "pmid": "9014325"
+    },
+    "raw_reference_text": "HaunerlandNHInsect storage proteins: gene families and receptorsInsect Biochem. Mol. Biol.19962675576510.1016/S0965-1748(96)00035-59014325",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[41]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0965-1748(96)00035-5",
+      "pmid": "9014325"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR42",
+    "xml_id": "CR42",
+    "label": "42.",
+    "title": "The function and evolution of insect storage hexamers",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "WH Telfer",
+        "surname": "Telfer",
+        "given_names": "WH",
+        "collective": false
+      },
+      {
+        "name": "JG Kunkel",
+        "surname": "Kunkel",
+        "given_names": "JG",
+        "collective": false
+      }
+    ],
+    "year": "1991",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1146/annurev.en.36.010191.001225",
+      "pmid": "2006868"
+    },
+    "raw_reference_text": "TelferWHKunkelJGThe function and evolution of insect storage hexamersAnnu. Rev. Entomol.19913620522810.1146/annurev.en.36.010191.0012252006868",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[42]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1146/annurev.en.36.010191.001225",
+      "pmid": "2006868"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR43",
+    "xml_id": "CR43",
+    "label": "43.",
+    "title": "A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L Valzania",
+        "surname": "Valzania",
+        "given_names": "L",
+        "collective": false
+      },
+      {
+        "name": "A Alami",
+        "surname": "Alami",
+        "given_names": "A",
+        "collective": false
+      },
+      {
+        "name": "P Léopold",
+        "surname": "Léopold",
+        "given_names": "P",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.devcel.2024.05.018",
+      "pmid": "38851190"
+    },
+    "raw_reference_text": "ValzaniaLAlamiALéopoldPA temporal allocation of amino acid resources ensures fitness and body allometry in DrosophilaDev. Cell2024592277228610.1016/j.devcel.2024.05.01838851190",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[43]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.devcel.2024.05.018",
+      "pmid": "38851190"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR44",
+    "xml_id": "CR44",
+    "label": "44.",
+    "title": "Adult expression of the Drosophila Lsp-2 gene",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Benes",
+        "surname": "Benes",
+        "given_names": "H",
+        "collective": false
+      }
+    ],
+    "year": "1990",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/0012-1606(90)90157-E",
+      "pmid": "2227091"
+    },
+    "raw_reference_text": "BenesHAdult expression of the Drosophila Lsp-2 geneDev. Biol.199014213814610.1016/0012-1606(90)90157-E2227091",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[44]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/0012-1606(90)90157-e",
+      "pmid": "2227091"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR45",
+    "xml_id": "CR45",
+    "label": "45.",
+    "title": "Ecdysone-regulation of synthesis and processing of fat body protein 1, the larval serum protein receptor of Drosophila melanogaster",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "T Burmester",
+        "surname": "Burmester",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "C Antoniewski",
+        "surname": "Antoniewski",
+        "given_names": "C",
+        "collective": false
+      },
+      {
+        "name": "JA Lepesant",
+        "surname": "Lepesant",
+        "given_names": "JA",
+        "collective": false
+      }
+    ],
+    "year": "1999",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1046/j.1432-1327.1999.00315.x",
+      "pmid": "10231363"
+    },
+    "raw_reference_text": "BurmesterTAntoniewskiCLepesantJAEcdysone-regulation of synthesis and processing of fat body protein 1, the larval serum protein receptor of Drosophila melanogasterEur. J. Biochem.1999262495510.1046/j.1432-1327.1999.00315.x10231363",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[45]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1046/j.1432-1327.1999.00315.x",
+      "pmid": "10231363"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR46",
+    "xml_id": "CR46",
+    "label": "46.",
+    "title": "Adipocyte-derived amino acid storage proteins are required for germline stem cell maintenance in adult Drosophila females",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "AB Zike",
+        "surname": "Zike",
+        "given_names": "AB",
+        "collective": false
+      }
+    ],
+    "year": "2026",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.ydbio.2026.03.004",
+      "pmid": "41825648",
+      "pmcid": "PMC13054685"
+    },
+    "raw_reference_text": "ZikeABAdipocyte-derived amino acid storage proteins are required for germline stem cell maintenance in adult Drosophila femalesDev. Biol.2026534617310.1016/j.ydbio.2026.03.00441825648PMC13054685",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[46]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.ydbio.2026.03.004",
+      "pmid": "41825648",
+      "pmcid": "PMC13054685"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR47",
+    "xml_id": "CR47",
+    "label": "47.",
+    "title": "Lsp2 links mTORC1 to TOP mRNA translation and lifespan in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Wang",
+        "surname": "Wang",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2026",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s41586-026-11029-x",
+      "pmid": "42778591"
+    },
+    "raw_reference_text": "WangJLsp2 links mTORC1 to TOP mRNA translation and lifespan in DrosophilaNature202610.1038/s41586-026-11029-x42778591",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[47]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-026-11029-x",
+      "pmid": "42778591"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR48",
+    "xml_id": "CR48",
+    "label": "48.",
+    "title": "Necrosis-driven systemic immune response alters SAM metabolism through the FOXO–GNMT axis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "F Obata",
+        "surname": "Obata",
+        "given_names": "F",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1016/j.celrep.2014.03.046",
+      "pmid": "24746817"
+    },
+    "raw_reference_text": "ObataFNecrosis-driven systemic immune response alters SAM metabolism through the FOXO–GNMT axisCell Rep.2014782183310.1016/j.celrep.2014.03.04624746817",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[48]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.celrep.2014.03.046",
+      "pmid": "24746817"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR49",
+    "xml_id": "CR49",
+    "label": "49.",
+    "title": "Epidermal tyrosine catabolism is crucial for metabolic homeostasis and survival against high-protein diets in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Kosakamoto",
+        "surname": "Kosakamoto",
+        "given_names": "H",
+        "collective": false
+      },
+      {
+        "name": "M Miura",
+        "surname": "Miura",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "F Obata",
+        "surname": "Obata",
+        "given_names": "F",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1242/dev.202372",
+      "pmid": "38165175"
+    },
+    "raw_reference_text": "KosakamotoHMiuraMObataFEpidermal tyrosine catabolism is crucial for metabolic homeostasis and survival against high-protein diets in DrosophilaDevelopment2024151dev20237210.1242/dev.20237238165175",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[49]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1242/dev.202372",
+      "pmid": "38165175"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR50",
+    "xml_id": "CR50",
+    "label": "50.",
+    "title": "The biology of developmental plasticity and the predictive adaptive response hypothesis: developmental plasticity and the PAR response",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "P Bateson",
+        "surname": "Bateson",
+        "given_names": "P",
+        "collective": false
+      },
+      {
+        "name": "P Gluckman",
+        "surname": "Gluckman",
+        "given_names": "P",
+        "collective": false
+      },
+      {
+        "name": "M Hanson",
+        "surname": "Hanson",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1113/jphysiol.2014.271460",
+      "pmid": "24882817",
+      "pmcid": "PMC4048093"
+    },
+    "raw_reference_text": "BatesonPGluckmanPHansonMThe biology of developmental plasticity and the predictive adaptive response hypothesis: developmental plasticity and the PAR responseJ. Physiol.20145922357236810.1113/jphysiol.2014.27146024882817PMC4048093",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[50]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1113/jphysiol.2014.271460",
+      "pmid": "24882817",
+      "pmcid": "PMC4048093"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR51",
+    "xml_id": "CR51",
+    "label": "51.",
+    "title": "Predictive adaptive responses and human evolution",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "PD Gluckman",
+        "surname": "Gluckman",
+        "given_names": "PD",
+        "collective": false
+      },
+      {
+        "name": "MA Hanson",
+        "surname": "Hanson",
+        "given_names": "MA",
+        "collective": false
+      },
+      {
+        "name": "HG Spencer",
+        "surname": "Spencer",
+        "given_names": "HG",
+        "collective": false
+      }
+    ],
+    "year": "2005",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.tree.2005.08.001",
+      "pmid": "16701430"
+    },
+    "raw_reference_text": "GluckmanPDHansonMASpencerHGPredictive adaptive responses and human evolutionTrends Ecol. Evol.20052052753310.1016/j.tree.2005.08.00116701430",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[51]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.tree.2005.08.001",
+      "pmid": "16701430"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR52",
+    "xml_id": "CR52",
+    "label": "52.",
+    "title": "GCN2 mediates access to stored amino acids for somatic maintenance during Drosophila aging",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "JN Johnstone",
+        "surname": "Johnstone",
+        "given_names": "JN",
+        "collective": false
+      },
+      {
+        "name": "CK Mirth",
+        "surname": "Mirth",
+        "given_names": "CK",
+        "collective": false
+      },
+      {
+        "name": "TK Johnson",
+        "surname": "Johnson",
+        "given_names": "TK",
+        "collective": false
+      },
+      {
+        "name": "RB Schittenhelm",
+        "surname": "Schittenhelm",
+        "given_names": "RB",
+        "collective": false
+      },
+      {
+        "name": "MDW Piper",
+        "surname": "Piper",
+        "given_names": "MDW",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.59368/agingbio.20240026"
+    },
+    "raw_reference_text": "JohnstoneJNMirthCKJohnsonTKSchittenhelmRBPiperMDWGCN2 mediates access to stored amino acids for somatic maintenance during Drosophila agingAgingBio202412024002610.59368/agingbio.20240026",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[52]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.59368/agingbio.20240026"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR53",
+    "xml_id": "CR53",
+    "label": "53.",
+    "title": "Interspecies differences in proteome turnover kinetics are correlated with lifespans and energetic demands",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Swovick",
+        "surname": "Swovick",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1074/mcp.RA120.002301",
+      "pmcid": "PMC7950207",
+      "pmid": "33639418"
+    },
+    "raw_reference_text": "SwovickKInterspecies differences in proteome turnover kinetics are correlated with lifespans and energetic demandsMol. Cell. Proteomics20202010004110.1074/mcp.RA120.002301PMC795020733639418",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[53]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1074/mcp.ra120.002301",
+      "pmcid": "PMC7950207",
+      "pmid": "33639418"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR54",
+    "xml_id": "CR54",
+    "label": "54.",
+    "title": "Slowed protein turnover in aging Drosophila reflects a shift in cellular priorities",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "ES Vincow",
+        "surname": "Vincow",
+        "given_names": "ES",
+        "collective": false
+      },
+      {
+        "name": "RE Thomas",
+        "surname": "Thomas",
+        "given_names": "RE",
+        "collective": false
+      },
+      {
+        "name": "GE Merrihew",
+        "surname": "Merrihew",
+        "given_names": "GE",
+        "collective": false
+      },
+      {
+        "name": "MJ MacCoss",
+        "surname": "MacCoss",
+        "given_names": "MJ",
+        "collective": false
+      },
+      {
+        "name": "LJ Pallanck",
+        "surname": "Pallanck",
+        "given_names": "LJ",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/gerona/glab015",
+      "pmcid": "PMC8436993",
+      "pmid": "33453098"
+    },
+    "raw_reference_text": "VincowESThomasREMerrihewGEMacCossMJPallanckLJSlowed protein turnover in aging Drosophila reflects a shift in cellular prioritiesJ. Gerontol. A2021761734173910.1093/gerona/glab015PMC843699333453098",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[54]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/gerona/glab015",
+      "pmcid": "PMC8436993",
+      "pmid": "33453098"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR55",
+    "xml_id": "CR55",
+    "label": "55.",
+    "title": "Conservation of hexamerin endocytosis in Diptera",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "T Burmester",
+        "surname": "Burmester",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "K Scheller",
+        "surname": "Scheller",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "1997",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1111/j.1432-1033.1997.00713.x",
+      "pmid": "9108239"
+    },
+    "raw_reference_text": "BurmesterTSchellerKConservation of hexamerin endocytosis in DipteraEur. J. Biochem.199724471372010.1111/j.1432-1033.1997.00713.x9108239",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[55]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1111/j.1432-1033.1997.00713.x",
+      "pmid": "9108239"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR56",
+    "xml_id": "CR56",
+    "label": "56.",
+    "title": "Long-lasting geroprotection from brief rapamycin treatment in early adulthood by persistently increased intestinal autophagy",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "P Juricic",
+        "surname": "Juricic",
+        "given_names": "P",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/s43587-022-00278-w",
+      "pmid": "37118497",
+      "pmcid": "PMC10154223"
+    },
+    "raw_reference_text": "JuricicPLong-lasting geroprotection from brief rapamycin treatment in early adulthood by persistently increased intestinal autophagyNat. Aging2022282483610.1038/s43587-022-00278-w37118497PMC10154223",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[56]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s43587-022-00278-w",
+      "pmid": "37118497",
+      "pmcid": "PMC10154223"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR57",
+    "xml_id": "CR57",
+    "label": "57.",
+    "title": "Transient rapamycin treatment during developmental stage extends lifespan in Mus musculus and Drosophila melanogaster",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "G Aiello",
+        "surname": "Aiello",
+        "given_names": "G",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.15252/embr.202255299",
+      "pmid": "35796299",
+      "pmcid": "PMC9442325"
+    },
+    "raw_reference_text": "AielloGTransient rapamycin treatment during developmental stage extends lifespan in Mus musculus and Drosophila melanogasterEMBO Rep.202223e5529910.15252/embr.20225529935796299PMC9442325",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[57]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.15252/embr.202255299",
+      "pmid": "35796299",
+      "pmcid": "PMC9442325"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR58",
+    "xml_id": "CR58",
+    "label": "58.",
+    "title": "Human serum albumin homeostasis: a new look at the roles of synthesis, catabolism, renal and gastrointestinal excretion, and the clinical value of serum albumin measurements",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "DG Levitt",
+        "surname": "Levitt",
+        "given_names": "DG",
+        "collective": false
+      },
+      {
+        "name": "MD Levitt",
+        "surname": "Levitt",
+        "given_names": "MD",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.2147/IJGM.S102819",
+      "pmid": "27486341",
+      "pmcid": "PMC4956071"
+    },
+    "raw_reference_text": "LevittDGLevittMDHuman serum albumin homeostasis: a new look at the roles of synthesis, catabolism, renal and gastrointestinal excretion, and the clinical value of serum albumin measurementsInt. J. Gen. Med.2016922925510.2147/IJGM.S10281927486341PMC4956071",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[58]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.2147/ijgm.s102819",
+      "pmid": "27486341",
+      "pmcid": "PMC4956071"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR59",
+    "xml_id": "CR59",
+    "label": "59.",
+    "title": "A screen of apoptosis and senescence regulatory genes for life span effects when over-expressed in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Shen",
+        "surname": "Shen",
+        "given_names": "J",
+        "collective": false
+      },
+      {
+        "name": "C Curtis",
+        "surname": "Curtis",
+        "given_names": "C",
+        "collective": false
+      },
+      {
+        "name": "S Tavaré",
+        "surname": "Tavaré",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "J Tower",
+        "surname": "Tower",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.18632/aging.100018",
+      "pmid": "20157509",
+      "pmcid": "PMC2806004"
+    },
+    "raw_reference_text": "ShenJCurtisCTavaréSTowerJA screen of apoptosis and senescence regulatory genes for life span effects when over-expressed in DrosophilaAging2009119121110.18632/aging.10001820157509PMC2806004",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[59]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.18632/aging.100018",
+      "pmid": "20157509",
+      "pmcid": "PMC2806004"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR60",
+    "xml_id": "CR60",
+    "label": "60.",
+    "title": "Activation of innate immunity during development induces unresolved dysbiotic inflammatory gut and shortens lifespan",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K Yamashita",
+        "surname": "Yamashita",
+        "given_names": "K",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1242/dmm.049103",
+      "pmid": "34448472",
+      "pmcid": "PMC8405880"
+    },
+    "raw_reference_text": "YamashitaKActivation of innate immunity during development induces unresolved dysbiotic inflammatory gut and shortens lifespanDis. Model. Mech.202114dmm04910310.1242/dmm.04910334448472PMC8405880",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[60]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1242/dmm.049103",
+      "pmid": "34448472",
+      "pmcid": "PMC8405880"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR61",
+    "xml_id": "CR61",
+    "label": "61.",
+    "title": "Rapid and efficient generation of GFP-knocked-in Drosophila by the CRISPR–Cas9-mediated genome editing",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H Kina",
+        "surname": "Kina",
+        "given_names": "H",
+        "collective": false
+      },
+      {
+        "name": "T Yoshitani",
+        "surname": "Yoshitani",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "K Hanyu-Nakamura",
+        "surname": "Hanyu-Nakamura",
+        "given_names": "K",
+        "collective": false
+      },
+      {
+        "name": "A Nakamura",
+        "surname": "Nakamura",
+        "given_names": "A",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1111/dgd.12607",
+      "pmid": "31037730"
+    },
+    "raw_reference_text": "KinaHYoshitaniTHanyu-NakamuraKNakamuraARapid and efficient generation of GFP-knocked-in Drosophila by the CRISPR–Cas9-mediated genome editingDev. Growth Differ.20196126527510.1111/dgd.1260731037730",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[61]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1111/dgd.12607",
+      "pmid": "31037730"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR62",
+    "xml_id": "CR62",
+    "label": "62.",
+    "title": "Highly specific and efficient CRISPR/Cas9-catalyzed homology-directed repair in Drosophila",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SJ Gratz",
+        "surname": "Gratz",
+        "given_names": "SJ",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1534/genetics.113.160713",
+      "pmid": "24478335",
+      "pmcid": "PMC3982687"
+    },
+    "raw_reference_text": "GratzSJHighly specific and efficient CRISPR/Cas9-catalyzed homology-directed repair in DrosophilaGenetics201419696197110.1534/genetics.113.16071324478335PMC3982687",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[62]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1534/genetics.113.160713",
+      "pmid": "24478335",
+      "pmcid": "PMC3982687"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR63",
+    "xml_id": "CR63",
+    "label": "63.",
+    "title": "OASIS 2: online application for survival analysis 2 with features for the analysis of maximal lifespan and healthspan in aging research",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "SK Han",
+        "surname": "Han",
+        "given_names": "SK",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.18632/oncotarget.11269",
+      "pmid": "27528229",
+      "pmcid": "PMC5302902"
+    },
+    "raw_reference_text": "HanSKOASIS 2: online application for survival analysis 2 with features for the analysis of maximal lifespan and healthspan in aging researchOncotarget20167561475615210.18632/oncotarget.1126927528229PMC5302902",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[63]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.18632/oncotarget.11269",
+      "pmid": "27528229",
+      "pmcid": "PMC5302902"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR64",
+    "xml_id": "CR64",
+    "label": "64.",
+    "title": "A Package for Survival Analysis in R",
+    "title_kind": "source-title",
+    "authors": [
+      {
+        "name": "T. M. Therneau",
+        "surname": "Therneau"
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": false,
+    "identifiers": {},
+    "raw_reference_text": "Therneau, T. M. A Package for Survival Analysis in R (Springer, 2022).",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[64]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {}
+  },
+  {
+    "id": "PMC13645648:ref:CR65",
+    "xml_id": "CR65",
+    "label": "65.",
+    "title": "Investigation of protein synthesis in Drosophila larvae using puromycin labelling",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "LP Deliu",
+        "surname": "Deliu",
+        "given_names": "LP",
+        "collective": false
+      },
+      {
+        "name": "A Ghosh",
+        "surname": "Ghosh",
+        "given_names": "A",
+        "collective": false
+      },
+      {
+        "name": "SS Grewal",
+        "surname": "Grewal",
+        "given_names": "SS",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "pmid": "28642244",
+      "doi": "10.1242/bio.026294",
+      "pmcid": "PMC5576084"
+    },
+    "raw_reference_text": "DeliuLPGhoshAGrewalSSInvestigation of protein synthesis in Drosophila larvae using puromycin labellingBiol. Open20176122912342864224410.1242/bio.026294PMC5576084",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[65]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "pmid": "28642244",
+      "doi": "10.1242/bio.026294",
+      "pmcid": "PMC5576084"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR66",
+    "xml_id": "CR66",
+    "label": "66.",
+    "title": "FastQC: a quality control tool for high throughput sequence data",
+    "title_kind": "software-title",
+    "authors": [
+      {
+        "name": "S. Andrews",
+        "surname": "Andrews"
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": false,
+    "identifiers": {},
+    "raw_reference_text": "Andrews, S. FastQC: a quality control tool for high throughput sequence data. Babraham Institutehttps://www.bioinformatics.babraham.ac.uk/projects/fastqc/ (2010).",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[66]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {}
+  },
+  {
+    "id": "PMC13645648:ref:CR67",
+    "xml_id": "CR67",
+    "label": "67.",
+    "title": "MultiQC: summarize analysis results for multiple tools and samples in a single report",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "P Ewels",
+        "surname": "Ewels",
+        "given_names": "P",
+        "collective": false
+      },
+      {
+        "name": "M Magnusson",
+        "surname": "Magnusson",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "S Lundin",
+        "surname": "Lundin",
+        "given_names": "S",
+        "collective": false
+      },
+      {
+        "name": "M Käller",
+        "surname": "Käller",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/bioinformatics/btw354",
+      "pmid": "27312411",
+      "pmcid": "PMC5039924"
+    },
+    "raw_reference_text": "EwelsPMagnussonMLundinSKällerMMultiQC: summarize analysis results for multiple tools and samples in a single reportBioinformatics2016323047304810.1093/bioinformatics/btw35427312411PMC5039924",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[67]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/bioinformatics/btw354",
+      "pmid": "27312411",
+      "pmcid": "PMC5039924"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR68",
+    "xml_id": "CR68",
+    "label": "68.",
+    "title": "TrimGalore: a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data",
+    "title_kind": "software-title",
+    "authors": [
+      {
+        "name": "F. Krueger",
+        "surname": "Krueger"
+      }
+    ],
+    "year": "2026",
+    "source_author_list_has_et_al": false,
+    "identifiers": {},
+    "raw_reference_text": "Krueger, F. TrimGalore: a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data. GitHubhttps://github.com/felixkrueger/trimgalore (2026).",
+    "metadata_status": "source_checked_segmentation_of_unstructured_reference",
+    "source_xpath": "/article/back/ref-list/ref[68]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {}
+  },
+  {
+    "id": "PMC13645648:ref:CR69",
+    "xml_id": "CR69",
+    "label": "69.",
+    "title": "Graph-based genome alignment and genotyping with HISAT2 and HISAT-genotype",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "D Kim",
+        "surname": "Kim",
+        "given_names": "D",
+        "collective": false
+      },
+      {
+        "name": "JM Paggi",
+        "surname": "Paggi",
+        "given_names": "JM",
+        "collective": false
+      },
+      {
+        "name": "C Park",
+        "surname": "Park",
+        "given_names": "C",
+        "collective": false
+      },
+      {
+        "name": "C Bennett",
+        "surname": "Bennett",
+        "given_names": "C",
+        "collective": false
+      },
+      {
+        "name": "SL Salzberg",
+        "surname": "Salzberg",
+        "given_names": "SL",
+        "collective": false
+      }
+    ],
+    "year": "2019",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41587-019-0201-4",
+      "pmid": "31375807",
+      "pmcid": "PMC7605509"
+    },
+    "raw_reference_text": "KimDPaggiJMParkCBennettCSalzbergSLGraph-based genome alignment and genotyping with HISAT2 and HISAT-genotypeNat. Biotechnol.20193790791510.1038/s41587-019-0201-431375807PMC7605509",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[69]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41587-019-0201-4",
+      "pmid": "31375807",
+      "pmcid": "PMC7605509"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR70",
+    "xml_id": "CR70",
+    "label": "70.",
+    "title": "StringTie enables improved reconstruction of a transcriptome from RNA-seq reads",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M Pertea",
+        "surname": "Pertea",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nbt.3122",
+      "pmid": "25690850",
+      "pmcid": "PMC4643835"
+    },
+    "raw_reference_text": "PerteaMStringTie enables improved reconstruction of a transcriptome from RNA-seq readsNat. Biotechnol.20153329029510.1038/nbt.312225690850PMC4643835",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[70]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nbt.3122",
+      "pmid": "25690850",
+      "pmcid": "PMC4643835"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR71",
+    "xml_id": "CR71",
+    "label": "71.",
+    "title": "K. edgeR: a Bioconductor package for differential expression analysis of digital gene expression data",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "MD Robinson",
+        "surname": "Robinson",
+        "given_names": "MD",
+        "collective": false
+      },
+      {
+        "name": "DJ McCarthy",
+        "surname": "McCarthy",
+        "given_names": "DJ",
+        "collective": false
+      },
+      {
+        "name": "G Smyth",
+        "surname": "Smyth",
+        "given_names": "G",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/bioinformatics/btp616",
+      "pmid": "19910308",
+      "pmcid": "PMC2796818"
+    },
+    "raw_reference_text": "RobinsonMDMcCarthyDJSmythGK. edgeR: a Bioconductor package for differential expression analysis of digital gene expression dataBioinformatics20102613914010.1093/bioinformatics/btp61619910308PMC2796818",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[71]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/bioinformatics/btp616",
+      "pmid": "19910308",
+      "pmcid": "PMC2796818"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR72",
+    "xml_id": "CR72",
+    "label": "72.",
+    "title": "Fiji: an open-source platform for biological-image analysis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Schindelin",
+        "surname": "Schindelin",
+        "given_names": "J",
+        "collective": false
+      }
+    ],
+    "year": "2012",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nmeth.2019",
+      "pmid": "22743772",
+      "pmcid": "PMC3855844"
+    },
+    "raw_reference_text": "SchindelinJFiji: an open-source platform for biological-image analysisNat. Methods2012967668210.1038/nmeth.201922743772PMC3855844",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[72]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nmeth.2019",
+      "pmid": "22743772",
+      "pmcid": "PMC3855844"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR73",
+    "xml_id": "CR73",
+    "label": "73.",
+    "title": "Amino acid analysis of sub-picomolar amounts of proteins by precolumn fluorescence derivatization with 6-aminoquinolyl-N-hydroxysuccinimidyl carbamate",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "A Masuda",
+        "surname": "Masuda",
+        "given_names": "A",
+        "collective": false
+      },
+      {
+        "name": "N Dohmae",
+        "surname": "Dohmae",
+        "given_names": "N",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.5582/bst.2011.v5.6.231",
+      "pmid": "22281536"
+    },
+    "raw_reference_text": "MasudaADohmaeNAmino acid analysis of sub-picomolar amounts of proteins by precolumn fluorescence derivatization with 6-aminoquinolyl-N-hydroxysuccinimidyl carbamateBiosci. Trends2011523123810.5582/bst.2011.v5.6.23122281536",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[73]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.5582/bst.2011.v5.6.231",
+      "pmid": "22281536"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR74",
+    "xml_id": "CR74",
+    "label": "74.",
+    "title": "A method for the quantitative recovery of protein in dilute solution in the presence of detergents and lipids",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "D Wessel",
+        "surname": "Wessel",
+        "given_names": "D",
+        "collective": false
+      },
+      {
+        "name": "UI Flügge",
+        "surname": "Flügge",
+        "given_names": "UI",
+        "collective": false
+      }
+    ],
+    "year": "1984",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/0003-2697(84)90782-6",
+      "pmid": "6731838"
+    },
+    "raw_reference_text": "WesselDFlüggeUIA method for the quantitative recovery of protein in dilute solution in the presence of detergents and lipidsAnal. Biochem.198413814114310.1016/0003-2697(84)90782-66731838",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[74]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1016/0003-2697(84)90782-6",
+      "pmid": "6731838"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR75",
+    "xml_id": "CR75",
+    "label": "75.",
+    "title": "Protocol for micro-purification, enrichment, pre-fractionation and storage of peptides for proteomics using StageTips",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J Rappsilber",
+        "surname": "Rappsilber",
+        "given_names": "J",
+        "collective": false
+      },
+      {
+        "name": "M Mann",
+        "surname": "Mann",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "Y Ishihama",
+        "surname": "Ishihama",
+        "given_names": "Y",
+        "collective": false
+      }
+    ],
+    "year": "2007",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nprot.2007.261",
+      "pmid": "17703201"
+    },
+    "raw_reference_text": "RappsilberJMannMIshihamaYProtocol for micro-purification, enrichment, pre-fractionation and storage of peptides for proteomics using StageTipsNat. Protoc.200721896190610.1038/nprot.2007.26117703201",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[75]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nprot.2007.261",
+      "pmid": "17703201"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR76",
+    "xml_id": "CR76",
+    "label": "76.",
+    "title": "DIA-NN: neural networks and interference correction enable deep proteome coverage in high throughput",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "V Demichev",
+        "surname": "Demichev",
+        "given_names": "V",
+        "collective": false
+      },
+      {
+        "name": "CB Messner",
+        "surname": "Messner",
+        "given_names": "CB",
+        "collective": false
+      },
+      {
+        "name": "SI Vernardis",
+        "surname": "Vernardis",
+        "given_names": "SI",
+        "collective": false
+      },
+      {
+        "name": "KS Lilley",
+        "surname": "Lilley",
+        "given_names": "KS",
+        "collective": false
+      },
+      {
+        "name": "M Ralser",
+        "surname": "Ralser",
+        "given_names": "M",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41592-019-0638-x",
+      "pmid": "31768060",
+      "pmcid": "PMC6949130"
+    },
+    "raw_reference_text": "DemichevVMessnerCBVernardisSILilleyKSRalserMDIA-NN: neural networks and interference correction enable deep proteome coverage in high throughputNat. Methods202017414410.1038/s41592-019-0638-x31768060PMC6949130",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[76]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41592-019-0638-x",
+      "pmid": "31768060",
+      "pmcid": "PMC6949130"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR77",
+    "xml_id": "CR77",
+    "label": "77.",
+    "title": "Phase transfer surfactant-aided trypsin digestion for membrane proteome analysis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "T Masuda",
+        "surname": "Masuda",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "M Tomita",
+        "surname": "Tomita",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "Y Ishihama",
+        "surname": "Ishihama",
+        "given_names": "Y",
+        "collective": false
+      }
+    ],
+    "year": "2008",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1021/pr700658q",
+      "pmid": "18183947"
+    },
+    "raw_reference_text": "MasudaTTomitaMIshihamaYPhase transfer surfactant-aided trypsin digestion for membrane proteome analysisJ. Proteome Res.2008773174010.1021/pr700658q18183947",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[77]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1021/pr700658q",
+      "pmid": "18183947"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR78",
+    "xml_id": "CR78",
+    "label": "78.",
+    "title": "Unbiased quantitation of Escherichia coli membrane proteome using phase transfer surfactants",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "T Masuda",
+        "surname": "Masuda",
+        "given_names": "T",
+        "collective": false
+      },
+      {
+        "name": "N Saito",
+        "surname": "Saito",
+        "given_names": "N",
+        "collective": false
+      },
+      {
+        "name": "M Tomita",
+        "surname": "Tomita",
+        "given_names": "M",
+        "collective": false
+      },
+      {
+        "name": "Y Ishihama",
+        "surname": "Ishihama",
+        "given_names": "Y",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1074/mcp.M900240-MCP200",
+      "pmid": "19767571",
+      "pmcid": "PMC2816013"
+    },
+    "raw_reference_text": "MasudaTSaitoNTomitaMIshihamaYUnbiased quantitation of Escherichia coli membrane proteome using phase transfer surfactantsMol. Cell. Proteomics200982770277710.1074/mcp.M900240-MCP20019767571PMC2816013",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[78]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1074/mcp.m900240-mcp200",
+      "pmid": "19767571",
+      "pmcid": "PMC2816013"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR79",
+    "xml_id": "CR79",
+    "label": "79.",
+    "title": "Proteome-wide identification of ubiquitin interactions using UbIA-MS",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "X Zhang",
+        "surname": "Zhang",
+        "given_names": "X",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1038/nprot.2017.147",
+      "pmid": "29446774"
+    },
+    "raw_reference_text": "ZhangXProteome-wide identification of ubiquitin interactions using UbIA-MSNat. Protoc.20181353055010.1038/nprot.2017.14729446774",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[79]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1038/nprot.2017.147",
+      "pmid": "29446774"
+    }
+  },
+  {
+    "id": "PMC13645648:ref:CR80",
+    "xml_id": "CR80",
+    "label": "80.",
+    "title": "jPOST environment accelerates the reuse and reanalysis of public proteome mass spectrometry data",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S Okuda",
+        "surname": "Okuda",
+        "given_names": "S",
+        "collective": false
+      }
+    ],
+    "year": "2025",
+    "source_author_list_has_et_al": true,
+    "identifiers": {
+      "doi": "10.1093/nar/gkae1032",
+      "pmid": "39526391",
+      "pmcid": "PMC11701591"
+    },
+    "raw_reference_text": "OkudaSjPOST environment accelerates the reuse and reanalysis of public proteome mass spectrometry dataNucleic Acids Res.202553D462D46710.1093/nar/gkae103239526391PMC11701591",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[80]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "normalized_identifiers": {
+      "doi": "10.1093/nar/gkae1032",
+      "pmid": "39526391",
+      "pmcid": "PMC11701591"
+    }
+  }
+]

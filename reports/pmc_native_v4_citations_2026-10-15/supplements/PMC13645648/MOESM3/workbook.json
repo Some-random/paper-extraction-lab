@@ -1,0 +1,381 @@
+{
+  "pmcid": "PMC13645648",
+  "xml_id": "MOESM3",
+  "label": "Supplementary Table 1",
+  "caption": "Cox proportional hazards analysis of lifespan data.",
+  "filename": "41586_2026_11031_MOESM3_ESM.xlsx",
+  "extension": ".xlsx",
+  "source_xml_xpath": "/article/body/sec[12]/p/supplementary-material[3]",
+  "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13645648.1/41586_2026_11031_MOESM3_ESM.xlsx?md5=f555b109129a895bc925ee7653424a8e",
+  "status": "parsed_all_sheets_and_nonempty_rows",
+  "bytes": 13588,
+  "sha256": "8a25e7bec873cd8061de9c74a93f4573dd20e69b3acc34eaccc9fde429ce4666",
+  "manifest_md5": "f555b109129a895bc925ee7653424a8e",
+  "manifest_checksum_passed": true,
+  "original_workbook": "experiments/pmc_native_v4_citations_2026-10-15/supplements/PMC13645648/MOESM3/41586_2026_11031_MOESM3_ESM.xlsx",
+  "sheets": [
+    {
+      "name": "Fig1o,p_ePR_adultHM_female",
+      "worksheet_number": 1,
+      "source_extent_rows": 11,
+      "source_extent_columns": 6,
+      "nonempty_rows": 10,
+      "nonempty_cells": 50,
+      "formula_cells": 0,
+      "merged_ranges": [],
+      "cell_type_counts": {
+        "s": 20,
+        "n": 30
+      },
+      "date_typed_cells": 0,
+      "first_date_cells": [],
+      "complete_tsv": "sheet01.tsv",
+      "source_cells_jsonl": "sheet01.cells.jsonl",
+      "source_tsv_sha256": "731e6e5ef5491b11bc8af6613d4d4ecee8ef0d1ffc2b463ff31a912c887d1ba1",
+      "preview_rows": [
+        [
+          1,
+          "AA 10-100%",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          2,
+          "term",
+          "HR",
+          "CI_lower",
+          "CI_upper",
+          "z",
+          "p"
+        ],
+        [
+          3,
+          "Larval_diet",
+          0.47928343735659,
+          0.392776616814861,
+          0.584842894129376,
+          -7.24176461807121,
+          4.42884019355785e-13
+        ],
+        [
+          4,
+          "Adult_diet",
+          1.00618670968242,
+          1.00375916473504,
+          1.00862012553457,
+          5.00443124549146,
+          5.60272041454678e-07
+        ],
+        [
+          5,
+          "Larval_diet:Adult_diet",
+          0.999877757393707,
+          0.996443179627219,
+          1.0033241735918,
+          -0.0696343972931727,
+          0.944484658299597
+        ],
+        [
+          7,
+          "AA0-300%",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          8,
+          "term",
+          "HR",
+          "CI_lower",
+          "CI_upper",
+          "z",
+          "p"
+        ],
+        [
+          9,
+          "Larval_diet",
+          0.534334138114657,
+          0.467967262486148,
+          0.61011312979011,
+          -9.26216135044478,
+          2.00335160642115e-20
+        ],
+        [
+          10,
+          "Adult_diet",
+          1.01184089146432,
+          1.01091076545591,
+          1.01277187326972,
+          25.0867626895348,
+          6.93639675379758e-139
+        ],
+        [
+          11,
+          "Larval_diet:Adult_diet",
+          1.00137742635844,
+          1.00035960300559,
+          1.00239628530326,
+          2.65290761614484,
+          0.00798017091325861
+        ]
+      ],
+      "extraction_status": "all_nonempty_rows_exported",
+      "value_policy": "stored values/formulas, not formula evaluation; date-typed cells use ISO representation; original row/column coordinates retained; no gene-name repair"
+    },
+    {
+      "name": "Fig1q,r_ePR_adultHM_male",
+      "worksheet_number": 2,
+      "source_extent_rows": 11,
+      "source_extent_columns": 6,
+      "nonempty_rows": 10,
+      "nonempty_cells": 50,
+      "formula_cells": 0,
+      "merged_ranges": [],
+      "cell_type_counts": {
+        "s": 20,
+        "n": 30
+      },
+      "date_typed_cells": 0,
+      "first_date_cells": [],
+      "complete_tsv": "sheet02.tsv",
+      "source_cells_jsonl": "sheet02.cells.jsonl",
+      "source_tsv_sha256": "c36782aa444d063eb1f7307158eec18542eaef0cb0ae19966860b3e7f3824ccd",
+      "preview_rows": [
+        [
+          1,
+          "AA 10-100%",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          2,
+          "term",
+          "HR",
+          "CI_lower",
+          "CI_upper",
+          "z",
+          "p"
+        ],
+        [
+          3,
+          "Larval_diet",
+          0.60715990408187,
+          0.497730270076284,
+          0.740648442113448,
+          -4.92090053144083,
+          8.61469072455694e-07
+        ],
+        [
+          4,
+          "Adult_diet",
+          1.00654653265424,
+          1.00412005220597,
+          1.00897887675133,
+          5.2987665760151,
+          1.16587566901115e-07
+        ],
+        [
+          5,
+          "Larval_diet:Adult_diet",
+          0.999750719566649,
+          0.996457388204891,
+          1.00305493551974,
+          -0.148091596069583,
+          0.882270481681485
+        ],
+        [
+          7,
+          "AA0-300%",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          8,
+          "term",
+          "HR",
+          "CI_lower",
+          "CI_upper",
+          "z",
+          "p"
+        ],
+        [
+          9,
+          "Larval_diet",
+          0.691127084913479,
+          0.609584652440809,
+          0.783577220306385,
+          -5.76739331068401,
+          8.05070178227436e-09
+        ],
+        [
+          10,
+          "Adult_diet",
+          1.00803882267131,
+          1.00725138548782,
+          1.00882687544821,
+          20.0813270237358,
+          1.07484818059368e-89
+        ],
+        [
+          11,
+          "Larval_diet:Adult_diet",
+          1.00011770492365,
+          0.999149558431978,
+          1.00108678952077,
+          0.238186373483895,
+          0.811736545411819
+        ]
+      ],
+      "extraction_status": "all_nonempty_rows_exported",
+      "value_policy": "stored values/formulas, not formula evaluation; date-typed cells use ISO representation; original row/column coordinates retained; no gene-name repair"
+    },
+    {
+      "name": "Fig4r_WBFBGS_Lsp2i",
+      "worksheet_number": 3,
+      "source_extent_rows": 6,
+      "source_extent_columns": 6,
+      "nonempty_rows": 6,
+      "nonempty_cells": 36,
+      "formula_cells": 0,
+      "merged_ranges": [],
+      "cell_type_counts": {
+        "s": 11,
+        "n": 25
+      },
+      "date_typed_cells": 0,
+      "first_date_cells": [],
+      "complete_tsv": "sheet03.tsv",
+      "source_cells_jsonl": "sheet03.cells.jsonl",
+      "source_tsv_sha256": "6c275b0eedbfdf8a4351950f2f8eb4902f6ef49d78adaedf5d5c480c56fe5e7b",
+      "preview_rows": [
+        [
+          1,
+          "term",
+          "HR",
+          "CI_lower",
+          "CI_upper",
+          "z",
+          "p"
+        ],
+        [
+          2,
+          "Larval_diet",
+          0.68218499606545,
+          0.542354108858356,
+          0.858067379329761,
+          -3.26790100948523,
+          0.00108348254322962
+        ],
+        [
+          3,
+          "RU_1week",
+          0.591124709781388,
+          0.466934419953431,
+          0.748345822415447,
+          -4.36913321968101,
+          1.24740656818776e-05
+        ],
+        [
+          4,
+          "RU_lifelong",
+          0.587419853068164,
+          0.466124799401966,
+          0.74027832078734,
+          -4.50839785068027,
+          6.53190043639771e-06
+        ],
+        [
+          5,
+          "Larval_diet:RU_1week",
+          2.44099118456975,
+          1.75309365145333,
+          3.39881326830867,
+          5.28387614579001,
+          1.2647877686726e-07
+        ],
+        [
+          6,
+          "Larval_diet:RU_lifelong",
+          1.99141436455077,
+          1.43540302813524,
+          2.76279978069373,
+          4.12374426172818,
+          3.72762758774863e-05
+        ]
+      ],
+      "extraction_status": "all_nonempty_rows_exported",
+      "value_policy": "stored values/formulas, not formula evaluation; date-typed cells use ISO representation; original row/column coordinates retained; no gene-name repair"
+    },
+    {
+      "name": "Ext.Fig8m_Lsp2i_ePR_female",
+      "worksheet_number": 4,
+      "source_extent_rows": 4,
+      "source_extent_columns": 6,
+      "nonempty_rows": 4,
+      "nonempty_cells": 24,
+      "formula_cells": 0,
+      "merged_ranges": [],
+      "cell_type_counts": {
+        "s": 9,
+        "n": 15
+      },
+      "date_typed_cells": 0,
+      "first_date_cells": [],
+      "complete_tsv": "sheet04.tsv",
+      "source_cells_jsonl": "sheet04.cells.jsonl",
+      "source_tsv_sha256": "0c101314a23f596eb4708316064fe7568069d49f65db793576e668e59b9c374c",
+      "preview_rows": [
+        [
+          1,
+          "term",
+          "HR",
+          "CI_lower",
+          "CI_upper",
+          "z",
+          "p"
+        ],
+        [
+          2,
+          "Genotype",
+          0.6622998689474,
+          0.52714572315236,
+          0.832105994874902,
+          -3.53825983872814,
+          0.000402773491970921
+        ],
+        [
+          3,
+          "Larval_diet",
+          0.458828604233743,
+          0.360831789736851,
+          0.583439968569889,
+          -6.35534490213317,
+          2.0795948215201e-10
+        ],
+        [
+          4,
+          "Genotype:Larval_diet",
+          1.53386615178645,
+          1.10339280087961,
+          2.13228269182161,
+          2.54539050185969,
+          0.0109155592243459
+        ]
+      ],
+      "extraction_status": "all_nonempty_rows_exported",
+      "value_policy": "stored values/formulas, not formula evaluation; date-typed cells use ISO representation; original row/column coordinates retained; no gene-name repair"
+    }
+  ]
+}

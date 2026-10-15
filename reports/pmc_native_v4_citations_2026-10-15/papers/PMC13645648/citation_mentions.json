@@ -1,0 +1,2136 @@
+[
+  {
+    "id": "PMC13645648:citation0000",
+    "source_xpaths": [
+      "/article/front/article-meta/abstract[1]/p/sup[1]/xref[1]"
+    ],
+    "raw_marker": "1",
+    "explicit_rids": [
+      "CR1"
+    ],
+    "target_xml_ids": [
+      "CR1"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR1"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A study of longevity, growth, reproduction and heart rate in Daphnia longispina as influenced by limitations in quantity of food — Ingle et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0001",
+    "source_xpaths": [
+      "/article/front/article-meta/abstract[1]/p/sup[1]/xref[2]"
+    ],
+    "raw_marker": "2",
+    "explicit_rids": [
+      "CR2"
+    ],
+    "target_xml_ids": [
+      "CR2"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR2"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Retarded growth, life span, ultimate body size and age changes in the albino rat after feeding diets restricted in calories — McCay et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0002",
+    "source_xpaths": [
+      "/article/front/article-meta/abstract[1]/p/sup[2]/xref[1]",
+      "/article/front/article-meta/abstract[1]/p/sup[2]/xref[2]"
+    ],
+    "raw_marker": "3–5",
+    "explicit_rids": [
+      "CR3",
+      "CR5"
+    ],
+    "target_xml_ids": [
+      "CR3",
+      "CR4",
+      "CR5"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR3",
+      "PMC13645648:ref:CR4",
+      "PMC13645648:ref:CR5"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Growth rate and life span in Drosophila. II. A biphasic relationship between growth rate and life span — Economos et al.[/bib_ref] [bib_ref]The effect of developmental nutrition on life span and fecundity depends on the adult reproductive environment in Drosophila melanogaster — May et al.[/bib_ref] [bib_ref]Developmental diet regulates Drosophila lifespan via lipid autotoxins — Stefana et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0003",
+    "source_xpaths": [
+      "/article/front/article-meta/abstract[1]/p/sup[3]/xref[1]",
+      "/article/front/article-meta/abstract[1]/p/sup[3]/xref[2]"
+    ],
+    "raw_marker": "6–8",
+    "explicit_rids": [
+      "CR6",
+      "CR8"
+    ],
+    "target_xml_ids": [
+      "CR6",
+      "CR7",
+      "CR8"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR6",
+      "PMC13645648:ref:CR7",
+      "PMC13645648:ref:CR8"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]The retardation of aging in mice by dietary restriction: longevity, cancer, immunity and lifetime energy intake — Weindruch et al.[/bib_ref] [bib_ref]Catch-up growth and obesity in male mice — Ozanne et al.[/bib_ref] [bib_ref]Life-span extension in mice by preweaning food restriction and by methionine restriction in middle age — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0004",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "4",
+    "explicit_rids": [
+      "CR4"
+    ],
+    "target_xml_ids": [
+      "CR4"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR4"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The effect of developmental nutrition on life span and fecundity depends on the adult reproductive environment in Drosophila melanogaster — May et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0005",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "5",
+    "explicit_rids": [
+      "CR5"
+    ],
+    "target_xml_ids": [
+      "CR5"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR5"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Developmental diet regulates Drosophila lifespan via lipid autotoxins — Stefana et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0006",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[1]/xref[3]"
+    ],
+    "raw_marker": "7",
+    "explicit_rids": [
+      "CR7"
+    ],
+    "target_xml_ids": [
+      "CR7"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR7"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Catch-up growth and obesity in male mice — Ozanne et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0007",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[1]/xref[4]"
+    ],
+    "raw_marker": "9",
+    "explicit_rids": [
+      "CR9"
+    ],
+    "target_xml_ids": [
+      "CR9"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR9"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Early-life nutrition and adult-life outcomes — Alves et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0008",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[1]/xref[5]"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The association between birthweight and longevity in the rat is complex and modulated by maternal protein intake during fetal life — Langley-Evans et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0009",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[2]/xref[1]"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The Childhood Environment and Adult Disease: Ciba Foundation Symposium — Lucas[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0010",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "12",
+    "explicit_rids": [
+      "CR12"
+    ],
+    "target_xml_ids": [
+      "CR12"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR12"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Programming by early nutrition: an experimental approach — Lucas[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0011",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[3]/xref[1]",
+      "/article/body/sec[1]/p[1]/sup[3]/xref[2]"
+    ],
+    "raw_marker": "13–17",
+    "explicit_rids": [
+      "CR13",
+      "CR17"
+    ],
+    "target_xml_ids": [
+      "CR13",
+      "CR14",
+      "CR15",
+      "CR16",
+      "CR17"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR13",
+      "PMC13645648:ref:CR14",
+      "PMC13645648:ref:CR15",
+      "PMC13645648:ref:CR16",
+      "PMC13645648:ref:CR17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Mechanisms linking suboptimal early nutrition and increased risk of type 2 diabetes and obesity — Martin-Gronert et al.[/bib_ref] [bib_ref]Metabolic programming in early life in humans — Fall et al.[/bib_ref] [bib_ref]The impact of early nutrition on the ageing trajectory — Tarry-Adkins et al.[/bib_ref] [bib_ref]Developmental origins of metabolic diseases — Hoffman et al.[/bib_ref] [bib_ref]Early developmental conditioning of later health and disease: physiology or pathophysiology? — Hanson et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0012",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[1]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Juvenile diet restriction and the aging and reproduction of adult Drosophila melanogaster — Tu et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0013",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[2]/xref[1]"
+    ],
+    "raw_marker": "4",
+    "explicit_rids": [
+      "CR4"
+    ],
+    "target_xml_ids": [
+      "CR4"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR4"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The effect of developmental nutrition on life span and fecundity depends on the adult reproductive environment in Drosophila melanogaster — May et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0014",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "5",
+    "explicit_rids": [
+      "CR5"
+    ],
+    "target_xml_ids": [
+      "CR5"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR5"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Developmental diet regulates Drosophila lifespan via lipid autotoxins — Stefana et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0015",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[2]/xref[3]"
+    ],
+    "raw_marker": "19",
+    "explicit_rids": [
+      "CR19"
+    ],
+    "target_xml_ids": [
+      "CR19"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR19"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Relating past and present diet to phenotypic and transcriptomic variation in the fruit fly — May et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0016",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[3]/xref"
+    ],
+    "raw_marker": "19",
+    "explicit_rids": [
+      "CR19"
+    ],
+    "target_xml_ids": [
+      "CR19"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR19"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Relating past and present diet to phenotypic and transcriptomic variation in the fruit fly — May et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0017",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[4]/xref"
+    ],
+    "raw_marker": "5",
+    "explicit_rids": [
+      "CR5"
+    ],
+    "target_xml_ids": [
+      "CR5"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR5"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Developmental diet regulates Drosophila lifespan via lipid autotoxins — Stefana et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0018",
+    "source_xpaths": [
+      "/article/body/sec[2]/p[1]/sup/xref[1]",
+      "/article/body/sec[2]/p[1]/sup/xref[2]"
+    ],
+    "raw_marker": "20–22",
+    "explicit_rids": [
+      "CR20",
+      "CR22"
+    ],
+    "target_xml_ids": [
+      "CR20",
+      "CR21",
+      "CR22"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR20",
+      "PMC13645648:ref:CR21",
+      "PMC13645648:ref:CR22"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]The genetic basis of pigmentation differences within and between Drosophila species — Massey et al.[/bib_ref] [bib_ref]Evolution in black and white: genetic control of pigment patterns in Drosophila — Wittkopp et al.[/bib_ref] [bib_ref]Insect melanism: the molecules matter — True[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0019",
+    "source_xpaths": [
+      "/article/body/sec[2]/p[2]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Juvenile diet restriction and the aging and reproduction of adult Drosophila melanogaster — Tu et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0020",
+    "source_xpaths": [
+      "/article/body/sec[2]/p[2]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "23",
+    "explicit_rids": [
+      "CR23"
+    ],
+    "target_xml_ids": [
+      "CR23"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR23"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The roles of cell size and cell number in determining ovariole number in Drosophila — Sarikaya et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0021",
+    "source_xpaths": [
+      "/article/body/sec[2]/p[2]/sup[2]/xref[1]",
+      "/article/body/sec[2]/p[2]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "24–26",
+    "explicit_rids": [
+      "CR24",
+      "CR26"
+    ],
+    "target_xml_ids": [
+      "CR24",
+      "CR25",
+      "CR26"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR24",
+      "PMC13645648:ref:CR25",
+      "PMC13645648:ref:CR26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]A holidic medium for Drosophila melanogaster — Piper et al.[/bib_ref] [bib_ref]Matching dietary amino acid balance to the in silico-translated exome optimizes growth and reproduction without cost to lifespan — Piper et al.[/bib_ref] [bib_ref]Early-adult methionine restriction reduces methionine sulfoxide and extends lifespan in Drosophila — Kosakamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0022",
+    "source_xpaths": [
+      "/article/body/sec[2]/p[2]/sup[3]/xref"
+    ],
+    "raw_marker": "27",
+    "explicit_rids": [
+      "CR27"
+    ],
+    "target_xml_ids": [
+      "CR27"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR27"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A Drosophila holidic diet optimized for growth and development — Sorge et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0023",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[1]/xref"
+    ],
+    "raw_marker": "28",
+    "explicit_rids": [
+      "CR28"
+    ],
+    "target_xml_ids": [
+      "CR28"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR28"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Role of insulin-like signalling in Drosophila lifespan — Giannakou et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0024",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[2]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Juvenile diet restriction and the aging and reproduction of adult Drosophila melanogaster — Tu et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0025",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[3]/xref"
+    ],
+    "raw_marker": "29",
+    "explicit_rids": [
+      "CR29"
+    ],
+    "target_xml_ids": [
+      "CR29"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR29"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Juvenile hormone regulation of Drosophila aging — Yamamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0026",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[4]/xref[1]"
+    ],
+    "raw_marker": "30",
+    "explicit_rids": [
+      "CR30"
+    ],
+    "target_xml_ids": [
+      "CR30"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR30"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Drosophila FIT is a protein-specific satiety hormone essential for feeding control — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0027",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[4]/xref[2]"
+    ],
+    "raw_marker": "31",
+    "explicit_rids": [
+      "CR31"
+    ],
+    "target_xml_ids": [
+      "CR31"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR31"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Context-dependent impact of the dietary non-essential amino acid tyrosine on Drosophila physiology and longevity — Kosakamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0028",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[5]/xref"
+    ],
+    "raw_marker": "32",
+    "explicit_rids": [
+      "CR32"
+    ],
+    "target_xml_ids": [
+      "CR32"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR32"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Sensing of the non-essential amino acid tyrosine governs the response to protein restriction in Drosophila — Kosakamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0029",
+    "source_xpaths": [
+      "/article/body/sec[3]/p/sup[7]/xref"
+    ],
+    "raw_marker": "33",
+    "explicit_rids": [
+      "CR33"
+    ],
+    "target_xml_ids": [
+      "CR33"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR33"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]4E-BP is a target of the GCN2–ATF4 pathway during Drosophila development and aging — Kang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0030",
+    "source_xpaths": [
+      "/article/body/sec[4]/p[1]/sup[5]/xref[1]"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "CR34"
+    ],
+    "target_xml_ids": [
+      "CR34"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Resource allocation to reproduction and soma in Drosophila: a stable isotope analysis of carbon from dietary sugar — Min et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0031",
+    "source_xpaths": [
+      "/article/body/sec[4]/p[1]/sup[5]/xref[2]"
+    ],
+    "raw_marker": "35",
+    "explicit_rids": [
+      "CR35"
+    ],
+    "target_xml_ids": [
+      "CR35"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR35"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Use of stable isotopes to examine how dietary restriction extends Drosophila lifespan — O’Brien et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0032",
+    "source_xpaths": [
+      "/article/body/sec[4]/p[3]/sup/xref[1]"
+    ],
+    "raw_marker": "36",
+    "explicit_rids": [
+      "CR36"
+    ],
+    "target_xml_ids": [
+      "CR36"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR36"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Turnover atlas of proteome and phosphoproteome across mouse tissues and brain regions — Li et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0033",
+    "source_xpaths": [
+      "/article/body/sec[4]/p[3]/sup/xref[2]"
+    ],
+    "raw_marker": "37",
+    "explicit_rids": [
+      "CR37"
+    ],
+    "target_xml_ids": [
+      "CR37"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR37"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Identification of long-lived proteins reveals exceptional stability of essential cellular structures — Toyama et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0034",
+    "source_xpaths": [
+      "/article/body/sec[4]/p[4]/sup/xref"
+    ],
+    "raw_marker": "38",
+    "explicit_rids": [
+      "CR38"
+    ],
+    "target_xml_ids": [
+      "CR38"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR38"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Global quantification of mammalian gene expression control — Schwanhäusser et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0035",
+    "source_xpaths": [
+      "/article/body/sec[5]/p[6]/sup/xref"
+    ],
+    "raw_marker": "39",
+    "explicit_rids": [
+      "CR39"
+    ],
+    "target_xml_ids": [
+      "CR39"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR39"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]SUnSET, a nonradioactive method to monitor protein synthesis — Schmidt et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0036",
+    "source_xpaths": [
+      "/article/body/sec[5]/p[7]/sup/xref"
+    ],
+    "raw_marker": "40",
+    "explicit_rids": [
+      "CR40"
+    ],
+    "target_xml_ids": [
+      "CR40"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR40"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Early-adulthood spike in protein translation drives aging via juvenile hormone/germline signaling — Kim et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0037",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "41",
+    "explicit_rids": [
+      "CR41"
+    ],
+    "target_xml_ids": [
+      "CR41"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR41"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Insect storage proteins: gene families and receptors — Haunerland[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0038",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "42",
+    "explicit_rids": [
+      "CR42"
+    ],
+    "target_xml_ids": [
+      "CR42"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR42"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The function and evolution of insect storage hexamers — Telfer et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0039",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[2]/xref"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila — Valzania et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0040",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[3]/xref"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila — Valzania et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0041",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[4]/xref"
+    ],
+    "raw_marker": "44",
+    "explicit_rids": [
+      "CR44"
+    ],
+    "target_xml_ids": [
+      "CR44"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR44"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Adult expression of the Drosophila Lsp-2 gene — Benes et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0042",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[5]/xref"
+    ],
+    "raw_marker": "40",
+    "explicit_rids": [
+      "CR40"
+    ],
+    "target_xml_ids": [
+      "CR40"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR40"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Early-adulthood spike in protein translation drives aging via juvenile hormone/germline signaling — Kim et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0043",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[6]/xref[1]"
+    ],
+    "raw_marker": "45",
+    "explicit_rids": [
+      "CR45"
+    ],
+    "target_xml_ids": [
+      "CR45"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR45"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ecdysone-regulation of synthesis and processing of fat body protein 1, the larval serum protein receptor of Drosophila melanogaster — Burmester et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0044",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[1]/sup[6]/xref[2]"
+    ],
+    "raw_marker": "46",
+    "explicit_rids": [
+      "CR46"
+    ],
+    "target_xml_ids": [
+      "CR46"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR46"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Adipocyte-derived amino acid storage proteins are required for germline stem cell maintenance in adult Drosophila females — Zike et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0045",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[5]/sup[2]/xref"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila — Valzania et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0046",
+    "source_xpaths": [
+      "/article/body/sec[6]/p[5]/sup[3]/xref"
+    ],
+    "raw_marker": "47",
+    "explicit_rids": [
+      "CR47"
+    ],
+    "target_xml_ids": [
+      "CR47"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR47"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Lsp2 links mTORC1 to TOP mRNA translation and lifespan in Drosophila — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0047",
+    "source_xpaths": [
+      "/article/body/sec[7]/p[2]/sup/xref"
+    ],
+    "raw_marker": "47",
+    "explicit_rids": [
+      "CR47"
+    ],
+    "target_xml_ids": [
+      "CR47"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR47"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Lsp2 links mTORC1 to TOP mRNA translation and lifespan in Drosophila — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0048",
+    "source_xpaths": [
+      "/article/body/sec[7]/p[4]/sup[5]/xref"
+    ],
+    "raw_marker": "48",
+    "explicit_rids": [
+      "CR48"
+    ],
+    "target_xml_ids": [
+      "CR48"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR48"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Necrosis-driven systemic immune response alters SAM metabolism through the FOXO–GNMT axis — Obata et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0049",
+    "source_xpaths": [
+      "/article/body/sec[8]/p[1]/sup/xref"
+    ],
+    "raw_marker": "25",
+    "explicit_rids": [
+      "CR25"
+    ],
+    "target_xml_ids": [
+      "CR25"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR25"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Matching dietary amino acid balance to the in silico-translated exome optimizes growth and reproduction without cost to lifespan — Piper et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0050",
+    "source_xpaths": [
+      "/article/body/sec[8]/p[2]/sup/xref[1]"
+    ],
+    "raw_marker": "32",
+    "explicit_rids": [
+      "CR32"
+    ],
+    "target_xml_ids": [
+      "CR32"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR32"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Sensing of the non-essential amino acid tyrosine governs the response to protein restriction in Drosophila — Kosakamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0051",
+    "source_xpaths": [
+      "/article/body/sec[8]/p[2]/sup/xref[2]"
+    ],
+    "raw_marker": "49",
+    "explicit_rids": [
+      "CR49"
+    ],
+    "target_xml_ids": [
+      "CR49"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR49"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Epidermal tyrosine catabolism is crucial for metabolic homeostasis and survival against high-protein diets in Drosophila — Kosakamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0052",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[2]/sup/xref"
+    ],
+    "raw_marker": "47",
+    "explicit_rids": [
+      "CR47"
+    ],
+    "target_xml_ids": [
+      "CR47"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR47"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Lsp2 links mTORC1 to TOP mRNA translation and lifespan in Drosophila — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0053",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[3]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "50",
+    "explicit_rids": [
+      "CR50"
+    ],
+    "target_xml_ids": [
+      "CR50"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR50"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The biology of developmental plasticity and the predictive adaptive response hypothesis: developmental plasticity and the PAR response — Bateson et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0054",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[3]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "51",
+    "explicit_rids": [
+      "CR51"
+    ],
+    "target_xml_ids": [
+      "CR51"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR51"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Predictive adaptive responses and human evolution — Gluckman et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0055",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[3]/sup[2]/xref"
+    ],
+    "raw_marker": "52",
+    "explicit_rids": [
+      "CR52"
+    ],
+    "target_xml_ids": [
+      "CR52"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR52"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]GCN2 mediates access to stored amino acids for somatic maintenance during Drosophila aging — Johnstone et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0056",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[4]/sup[1]/xref"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila — Valzania et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0057",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[4]/sup[2]/xref"
+    ],
+    "raw_marker": "47",
+    "explicit_rids": [
+      "CR47"
+    ],
+    "target_xml_ids": [
+      "CR47"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR47"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Lsp2 links mTORC1 to TOP mRNA translation and lifespan in Drosophila — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0058",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[4]/sup[3]/xref[1]"
+    ],
+    "raw_marker": "53",
+    "explicit_rids": [
+      "CR53"
+    ],
+    "target_xml_ids": [
+      "CR53"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR53"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Interspecies differences in proteome turnover kinetics are correlated with lifespans and energetic demands — Swovick et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0059",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[4]/sup[3]/xref[2]"
+    ],
+    "raw_marker": "54",
+    "explicit_rids": [
+      "CR54"
+    ],
+    "target_xml_ids": [
+      "CR54"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR54"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Slowed protein turnover in aging Drosophila reflects a shift in cellular priorities — Vincow et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0060",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[5]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila — Valzania et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0061",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[5]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "45",
+    "explicit_rids": [
+      "CR45"
+    ],
+    "target_xml_ids": [
+      "CR45"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR45"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ecdysone-regulation of synthesis and processing of fat body protein 1, the larval serum protein receptor of Drosophila melanogaster — Burmester et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0062",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[5]/sup[1]/xref[3]"
+    ],
+    "raw_marker": "55",
+    "explicit_rids": [
+      "CR55"
+    ],
+    "target_xml_ids": [
+      "CR55"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR55"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Conservation of hexamerin endocytosis in Diptera — Burmester et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0063",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[5]/sup[2]/xref[1]"
+    ],
+    "raw_marker": "56",
+    "explicit_rids": [
+      "CR56"
+    ],
+    "target_xml_ids": [
+      "CR56"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR56"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Long-lasting geroprotection from brief rapamycin treatment in early adulthood by persistently increased intestinal autophagy — Juricic et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0064",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[5]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "57",
+    "explicit_rids": [
+      "CR57"
+    ],
+    "target_xml_ids": [
+      "CR57"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR57"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Transient rapamycin treatment during developmental stage extends lifespan in Mus musculus and Drosophila melanogaster — Aiello et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0065",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[6]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "14",
+    "explicit_rids": [
+      "CR14"
+    ],
+    "target_xml_ids": [
+      "CR14"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR14"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Metabolic programming in early life in humans — Fall et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0066",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[6]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "16",
+    "explicit_rids": [
+      "CR16"
+    ],
+    "target_xml_ids": [
+      "CR16"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR16"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Developmental origins of metabolic diseases — Hoffman et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0067",
+    "source_xpaths": [
+      "/article/body/sec[9]/p[6]/sup[2]/xref"
+    ],
+    "raw_marker": "58",
+    "explicit_rids": [
+      "CR58"
+    ],
+    "target_xml_ids": [
+      "CR58"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR58"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Human serum albumin homeostasis: a new look at the roles of synthesis, catabolism, renal and gastrointestinal excretion, and the clinical value of serum albumin measurements — Levitt et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0068",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[1]/p[2]/sup[4]/xref"
+    ],
+    "raw_marker": "33",
+    "explicit_rids": [
+      "CR33"
+    ],
+    "target_xml_ids": [
+      "CR33"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR33"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]4E-BP is a target of the GCN2–ATF4 pathway during Drosophila development and aging — Kang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0069",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[1]/p[2]/sup[7]/xref"
+    ],
+    "raw_marker": "30",
+    "explicit_rids": [
+      "CR30"
+    ],
+    "target_xml_ids": [
+      "CR30"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR30"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Drosophila FIT is a protein-specific satiety hormone essential for feeding control — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0070",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[1]/p[2]/sup[9]/xref"
+    ],
+    "raw_marker": "59",
+    "explicit_rids": [
+      "CR59"
+    ],
+    "target_xml_ids": [
+      "CR59"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR59"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A screen of apoptosis and senescence regulatory genes for life span effects when over-expressed in Drosophila — Shen et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0071",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[1]/p[2]/sup[14]/xref"
+    ],
+    "raw_marker": "60",
+    "explicit_rids": [
+      "CR60"
+    ],
+    "target_xml_ids": [
+      "CR60"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR60"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Activation of innate immunity during development induces unresolved dysbiotic inflammatory gut and shortens lifespan — Yamashita et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0072",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[1]/p[3]/sup[1]/xref"
+    ],
+    "raw_marker": "61",
+    "explicit_rids": [
+      "CR61"
+    ],
+    "target_xml_ids": [
+      "CR61"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR61"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Rapid and efficient generation of GFP-knocked-in Drosophila by the CRISPR–Cas9-mediated genome editing — Kina et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0073",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[1]/p[3]/sup[2]/xref"
+    ],
+    "raw_marker": "62",
+    "explicit_rids": [
+      "CR62"
+    ],
+    "target_xml_ids": [
+      "CR62"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR62"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Highly specific and efficient CRISPR/Cas9-catalyzed homology-directed repair in Drosophila — Gratz et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0074",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[2]/p[2]/sup[1]/xref"
+    ],
+    "raw_marker": "24",
+    "explicit_rids": [
+      "CR24"
+    ],
+    "target_xml_ids": [
+      "CR24"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR24"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A holidic medium for Drosophila melanogaster — Piper et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0075",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[2]/p[2]/sup[2]/xref"
+    ],
+    "raw_marker": "27",
+    "explicit_rids": [
+      "CR27"
+    ],
+    "target_xml_ids": [
+      "CR27"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR27"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A Drosophila holidic diet optimized for growth and development — Sorge et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0076",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[2]/p[2]/sup[3]/xref"
+    ],
+    "raw_marker": "25",
+    "explicit_rids": [
+      "CR25"
+    ],
+    "target_xml_ids": [
+      "CR25"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR25"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Matching dietary amino acid balance to the in silico-translated exome optimizes growth and reproduction without cost to lifespan — Piper et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0077",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[2]/p[2]/sup[4]/xref"
+    ],
+    "raw_marker": "32",
+    "explicit_rids": [
+      "CR32"
+    ],
+    "target_xml_ids": [
+      "CR32"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR32"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Sensing of the non-essential amino acid tyrosine governs the response to protein restriction in Drosophila — Kosakamoto et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0078",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[4]/p/sup[2]/xref"
+    ],
+    "raw_marker": "63",
+    "explicit_rids": [
+      "CR63"
+    ],
+    "target_xml_ids": [
+      "CR63"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR63"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OASIS 2: online application for survival analysis 2 with features for the analysis of maximal lifespan and healthspan in aging research — Han et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0079",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[4]/p/sup[3]/xref"
+    ],
+    "raw_marker": "64",
+    "explicit_rids": [
+      "CR64"
+    ],
+    "target_xml_ids": [
+      "CR64"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR64"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A Package for Survival Analysis in R — Therneau[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0080",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[6]/p/sup/xref"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A temporal allocation of amino acid resources ensures fitness and body allometry in Drosophila — Valzania et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0081",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[7]/p/sup/xref"
+    ],
+    "raw_marker": "65",
+    "explicit_rids": [
+      "CR65"
+    ],
+    "target_xml_ids": [
+      "CR65"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR65"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Investigation of protein synthesis in Drosophila larvae using puromycin labelling — Deliu et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0082",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[8]/p[1]/sup[1]/xref"
+    ],
+    "raw_marker": "66",
+    "explicit_rids": [
+      "CR66"
+    ],
+    "target_xml_ids": [
+      "CR66"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR66"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]FastQC: a quality control tool for high throughput sequence data — Andrews[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0083",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[8]/p[1]/sup[2]/xref"
+    ],
+    "raw_marker": "67",
+    "explicit_rids": [
+      "CR67"
+    ],
+    "target_xml_ids": [
+      "CR67"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR67"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]MultiQC: summarize analysis results for multiple tools and samples in a single report — Ewels et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0084",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[8]/p[1]/sup[3]/xref"
+    ],
+    "raw_marker": "68",
+    "explicit_rids": [
+      "CR68"
+    ],
+    "target_xml_ids": [
+      "CR68"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR68"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]TrimGalore: a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data — Krueger[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0085",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[8]/p[1]/sup[4]/xref"
+    ],
+    "raw_marker": "69",
+    "explicit_rids": [
+      "CR69"
+    ],
+    "target_xml_ids": [
+      "CR69"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR69"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Graph-based genome alignment and genotyping with HISAT2 and HISAT-genotype — Kim et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0086",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[8]/p[1]/sup[5]/xref"
+    ],
+    "raw_marker": "70",
+    "explicit_rids": [
+      "CR70"
+    ],
+    "target_xml_ids": [
+      "CR70"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR70"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]StringTie enables improved reconstruction of a transcriptome from RNA-seq reads — Pertea et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0087",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[8]/p[1]/sup[6]/xref"
+    ],
+    "raw_marker": "71",
+    "explicit_rids": [
+      "CR71"
+    ],
+    "target_xml_ids": [
+      "CR71"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR71"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]K. edgeR: a Bioconductor package for differential expression analysis of digital gene expression data — Robinson et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0088",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[9]/p/sup[1]/xref"
+    ],
+    "raw_marker": "72",
+    "explicit_rids": [
+      "CR72"
+    ],
+    "target_xml_ids": [
+      "CR72"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR72"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Fiji: an open-source platform for biological-image analysis — Schindelin et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0089",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[9]/p/sup[2]/xref"
+    ],
+    "raw_marker": "72",
+    "explicit_rids": [
+      "CR72"
+    ],
+    "target_xml_ids": [
+      "CR72"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR72"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Fiji: an open-source platform for biological-image analysis — Schindelin et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0090",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[10]/p/sup/xref"
+    ],
+    "raw_marker": "73",
+    "explicit_rids": [
+      "CR73"
+    ],
+    "target_xml_ids": [
+      "CR73"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR73"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Amino acid analysis of sub-picomolar amounts of proteins by precolumn fluorescence derivatization with 6-aminoquinolyl-N-hydroxysuccinimidyl carbamate — Masuda et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0091",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[1]/sup[1]/xref"
+    ],
+    "raw_marker": "27",
+    "explicit_rids": [
+      "CR27"
+    ],
+    "target_xml_ids": [
+      "CR27"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR27"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A Drosophila holidic diet optimized for growth and development — Sorge et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0092",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[1]/sup[6]/xref"
+    ],
+    "raw_marker": "24",
+    "explicit_rids": [
+      "CR24"
+    ],
+    "target_xml_ids": [
+      "CR24"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR24"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A holidic medium for Drosophila melanogaster — Piper et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0093",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[1]/sup[7]/xref"
+    ],
+    "raw_marker": "25",
+    "explicit_rids": [
+      "CR25"
+    ],
+    "target_xml_ids": [
+      "CR25"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR25"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Matching dietary amino acid balance to the in silico-translated exome optimizes growth and reproduction without cost to lifespan — Piper et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0094",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[1]/sup[9]/xref"
+    ],
+    "raw_marker": "74",
+    "explicit_rids": [
+      "CR74"
+    ],
+    "target_xml_ids": [
+      "CR74"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR74"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A method for the quantitative recovery of protein in dilute solution in the presence of detergents and lipids — Wessel et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0095",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[1]/sup[10]/xref"
+    ],
+    "raw_marker": "75",
+    "explicit_rids": [
+      "CR75"
+    ],
+    "target_xml_ids": [
+      "CR75"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR75"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Protocol for micro-purification, enrichment, pre-fractionation and storage of peptides for proteomics using StageTips — Rappsilber et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0096",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[3]/sup[1]/xref"
+    ],
+    "raw_marker": "76",
+    "explicit_rids": [
+      "CR76"
+    ],
+    "target_xml_ids": [
+      "CR76"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR76"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]DIA-NN: neural networks and interference correction enable deep proteome coverage in high throughput — Demichev et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0097",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[3]/sup[2]/xref"
+    ],
+    "raw_marker": "38",
+    "explicit_rids": [
+      "CR38"
+    ],
+    "target_xml_ids": [
+      "CR38"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR38"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Global quantification of mammalian gene expression control — Schwanhäusser et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0098",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[11]/p[3]/sup[3]/xref"
+    ],
+    "raw_marker": "38",
+    "explicit_rids": [
+      "CR38"
+    ],
+    "target_xml_ids": [
+      "CR38"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR38"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Global quantification of mammalian gene expression control — Schwanhäusser et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0099",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[12]/p[1]/sup/xref[1]"
+    ],
+    "raw_marker": "77",
+    "explicit_rids": [
+      "CR77"
+    ],
+    "target_xml_ids": [
+      "CR77"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR77"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Phase transfer surfactant-aided trypsin digestion for membrane proteome analysis — Masuda et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0100",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[12]/p[1]/sup/xref[2]"
+    ],
+    "raw_marker": "78",
+    "explicit_rids": [
+      "CR78"
+    ],
+    "target_xml_ids": [
+      "CR78"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR78"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Unbiased quantitation of Escherichia coli membrane proteome using phase transfer surfactants — Masuda et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0101",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[12]/p[2]/sup[3]/xref"
+    ],
+    "raw_marker": "76",
+    "explicit_rids": [
+      "CR76"
+    ],
+    "target_xml_ids": [
+      "CR76"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR76"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]DIA-NN: neural networks and interference correction enable deep proteome coverage in high throughput — Demichev et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0102",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[13]/p/sup[1]/xref"
+    ],
+    "raw_marker": "63",
+    "explicit_rids": [
+      "CR63"
+    ],
+    "target_xml_ids": [
+      "CR63"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR63"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]OASIS 2: online application for survival analysis 2 with features for the analysis of maximal lifespan and healthspan in aging research — Han et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0103",
+    "source_xpaths": [
+      "/article/body/sec[10]/sec[13]/p/sup[2]/xref"
+    ],
+    "raw_marker": "79",
+    "explicit_rids": [
+      "CR79"
+    ],
+    "target_xml_ids": [
+      "CR79"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR79"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Proteome-wide identification of ubiquitin interactions using UbIA-MS — Zhang et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  },
+  {
+    "id": "PMC13645648:citation0104",
+    "source_xpaths": [
+      "/article/back/notes[4]/p/sup/xref"
+    ],
+    "raw_marker": "80",
+    "explicit_rids": [
+      "CR80"
+    ],
+    "target_xml_ids": [
+      "CR80"
+    ],
+    "reference_ids": [
+      "PMC13645648:ref:CR80"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]jPOST environment accelerates the reuse and reanalysis of public proteome mass spectrometry data — Okuda et al.[/bib_ref]",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320"
+  }
+]

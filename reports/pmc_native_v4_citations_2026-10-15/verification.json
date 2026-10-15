@@ -1,0 +1,16 @@
+{
+  "kind": "source preservation and structural consistency; not scientific correctness",
+  "checked_papers": 3,
+  "checked_source_citation_markers": 322,
+  "unchanged_main_source_cells": 218,
+  "original_figure_hashes_verified": 25,
+  "complete_spreadsheet_sheets": 9,
+  "spreadsheet_rows_roundtripped": 35468,
+  "spreadsheet_populated_cells": 184530,
+  "source_date_typed_cells_flagged": 12,
+  "local_links_valid": true,
+  "regression_tests_passed": 10,
+  "model_training": false,
+  "teacher_generation": false,
+  "citation_policy_comparison": false
+}

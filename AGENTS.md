@@ -85,3 +85,13 @@ project's Git commits. Use repository-local configuration on this shared host.
 Track code, configuration and small reports. Keep papers, model weights,
 environments, caches and bulk extraction artifacts on RustFS under the existing
 ignore rules.
+
+## Biological research production scope
+
+The user selected citation title/author expansion directly, without a policy
+comparison. Preserve full source titles and all supplied authors as metadata;
+render title plus first author/et al. in training text. Preserve prior outputs.
+Prioritize real biological literature, source figures/tables/supplements and
+biological databases before synthetic augmentation. Clinical notes are outside
+this project's research scope. Include reusable corpora such as Dolma and
+peS2o in source planning; distinguish corpus versions from processing toolkits.

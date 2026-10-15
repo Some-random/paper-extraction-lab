@@ -17,6 +17,68 @@ def tokenizer():
 
 
 class ScientificSourceChecks(unittest.TestCase):
+    def test_cited_titles_authors_ranges_and_source_typography(self):
+        source = b'''<article><front><article-meta><title-group><article-title>Test</article-title></title-group></article-meta></front><body>
+        <p>Evidence<sup><xref ref-type="bibr" rid="R1">1</xref>&#8211;<xref ref-type="bibr" rid="R3">3</xref></sup>; P = 10<sup>-10</sup>.</p>
+        <fig id="F1"><caption><p>Caption <xref ref-type="bibr" rid="R2">2</xref>.</p></caption></fig>
+        <table-wrap id="T1"><caption><p>Table caption.</p></caption><table><tbody><tr><td>ACGT</td><td><xref ref-type="bibr" rid="R2">2</xref></td></tr></tbody></table></table-wrap>
+        </body><back><ref-list>
+        <ref id="R1"><label>1</label><element-citation><person-group person-group-type="author"><name><surname>Hsu</surname><given-names>Y.</given-names></name><name><surname>Fuchs</surname></name></person-group><article-title>Building skin</article-title><year>2022</year><pub-id pub-id-type="doi">10.test/skin</pub-id></element-citation></ref>
+        <ref id="R2"><label>2</label><citation-alternatives><element-citation><person-group><name><surname>Jones</surname></name></person-group><article-title>Protein mechanisms</article-title></element-citation><mixed-citation>DUPLICATE TITLE</mixed-citation></citation-alternatives></ref>
+        <ref id="R3"><label>3</label><element-citation><person-group><collab>Genome Consortium</collab></person-group><article-title>Genome study</article-title></element-citation></ref>
+        </ref-list></back></article>'''
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'source.xml'
+            path.write_bytes(source)
+            doc = parse_jats(path, 'PAPER', tokenizer())
+            paragraph = next(b for b in doc['blocks'] if b['kind'] == 'paragraph')
+            self.assertIn('1', paragraph['text'])
+            self.assertIn('Building skin — Hsu et al.', paragraph['training_text'])
+            self.assertIn('Protein mechanisms — Jones', paragraph['training_text'])
+            self.assertIn('Genome study — Genome Consortium', paragraph['training_text'])
+            self.assertEqual(paragraph['training_text'].count('[bib_ref]'), 3)
+            self.assertNotIn('^([bib_ref]', paragraph['training_text'])
+            self.assertIn('10^(-10)', paragraph['training_text'])
+            self.assertNotIn('DUPLICATE TITLE', paragraph['training_text'])
+            self.assertEqual(doc['citation_mentions'][0]['target_xml_ids'], ['R1', 'R2', 'R3'])
+            self.assertEqual(doc['bibliography'][0]['identifiers']['doi'], '10.test/skin')
+            self.assertEqual(len(doc['bibliography'][0]['authors']), 2)
+            figure = next(v for v in doc['visuals'] if v['kind'] == 'figure')
+            self.assertIn('Protein mechanisms — Jones', figure['caption_training_text'])
+            table = next(v for v in doc['visuals'] if v['kind'] == 'table')
+            self.assertIn('Protein mechanisms — Jones', table['table']['text_tsv'])
+            self.assertEqual(table['table']['cells'][1]['text'], '2')
+            self.assertEqual(path.read_bytes(), source)
+
+    def test_missing_citation_metadata_is_preserved_and_unknown_targets_are_explicit(self):
+        source = b'''<article><front><article-meta><title-group><article-title>Test</article-title></title-group></article-meta></front><body><p>See <xref ref-type="bibr" rid="R1 MISSING">1, 2</xref>.</p></body><back><ref-list><ref id="R1"><label>1</label><mixed-citation>Unstructured source citation.</mixed-citation></ref></ref-list></back></article>'''
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'source.xml'
+            path.write_bytes(source)
+            doc = parse_jats(path, 'PAPER', tokenizer())
+            self.assertIn('[bib_ref]Unstructured source citation.[/bib_ref]', doc['blocks'][0]['training_text'])
+            self.assertIn('PAPER:MISSING', doc['blocks'][0]['training_text'])
+            self.assertEqual(doc['unresolved_citations'][0]['unresolved_target_ids'], ['MISSING'])
+
+    def test_reference_segmentation_requires_source_evidence(self):
+        source = b'''<article><front><article-meta><title-group><article-title>Test</article-title></title-group></article-meta></front><body><p>Text.</p></body><back><ref-list><ref id="R1"><mixed-citation>Actual source.</mixed-citation></ref></ref-list></back></article>'''
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'source.xml'
+            path.write_bytes(source)
+            with self.assertRaisesRegex(ValueError, 'lacks source evidence'):
+                parse_jats(path, 'PAPER', tokenizer(), citation_overrides={'R1': {
+                    'title': 'Invented title', 'required_source_literals': ['Invented title']}})
+
+    def test_table_without_caption_is_retained(self):
+        source = b'''<article><front><article-meta><title-group><article-title>Test</article-title></title-group></article-meta></front><body><table-wrap id="T1"><label>Table 1</label><table><tbody><tr><td>ACGTACGT</td><td>0.00000000012</td></tr></tbody></table></table-wrap></body></article>'''
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'source.xml'
+            path.write_bytes(source)
+            doc = parse_jats(path, 'PAPER', tokenizer())
+            self.assertEqual(len(doc['blocks']), 1)
+            self.assertEqual(doc['blocks'][0]['kind'], 'table')
+            self.assertIn('ACGTACGT\t0.00000000012', doc['blocks'][0]['training_text'])
+
     def test_formula_alternatives_and_exponents_are_not_flattened_twice(self):
         root = etree.fromstring(b'<p>P &lt; 1.2 x 10<sup>-10</sup>; '
             b'<alternatives><tex-math>x^2</tex-math><math><msup><mi>x</mi><mn>2</mn></msup></math></alternatives></p>')

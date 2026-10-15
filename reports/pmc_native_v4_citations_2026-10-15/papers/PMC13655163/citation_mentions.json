@@ -1,0 +1,2362 @@
+[
+  {
+    "id": "PMC13655163:citation0000",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[1]/xref"
+    ],
+    "raw_marker": "1",
+    "explicit_rids": [
+      "CR1"
+    ],
+    "target_xml_ids": [
+      "CR1"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR1"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The human plasma proteome: history, character, and diagnostic prospects — Anderson et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0001",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[2]/xref"
+    ],
+    "raw_marker": "2",
+    "explicit_rids": [
+      "CR2"
+    ],
+    "target_xml_ids": [
+      "CR2"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR2"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Cardiac troponin T and I: back to basics — Mingels et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0002",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[3]/xref"
+    ],
+    "raw_marker": "3",
+    "explicit_rids": [
+      "CR3"
+    ],
+    "target_xml_ids": [
+      "CR3"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR3"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Cystatin C as a biomarker of chronic kidney disease: latest developments — Benoit et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0003",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[4]/xref"
+    ],
+    "raw_marker": "4",
+    "explicit_rids": [
+      "CR4"
+    ],
+    "target_xml_ids": [
+      "CR4"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR4"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Acute-Phase Proteins and Other Systemic Responses to Inflammation — Cem et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0004",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[5]/xref"
+    ],
+    "raw_marker": "5",
+    "explicit_rids": [
+      "CR5"
+    ],
+    "target_xml_ids": [
+      "CR5"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR5"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Prostate-specific antigen and prostate cancer: prediction, detection and monitoring — Lilja et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0005",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[1]/sup[6]/xref"
+    ],
+    "raw_marker": "6",
+    "explicit_rids": [
+      "CR6"
+    ],
+    "target_xml_ids": [
+      "CR6"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR6"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genetics meets proteomics: perspectives for large population-based studies — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0006",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[1]/xref[1]",
+      "/article/body/sec[1]/p[2]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "7–9",
+    "explicit_rids": [
+      "CR7",
+      "CR9"
+    ],
+    "target_xml_ids": [
+      "CR7",
+      "CR8",
+      "CR9"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR7",
+      "PMC13655163:ref:CR8",
+      "PMC13655163:ref:CR9"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Homogenous 96-plex PEA immunoassay exhibiting high sensitivity, specificity, and excellent scalability — Assarsson et al.[/bib_ref] [bib_ref]Aptamer-based multiplexed proteomic technology for biomarker discovery — Gold et al.[/bib_ref] [bib_ref]Plasma proteome variation and its genetic determinants in children and adolescents — Niu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0007",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[2]/xref[1]",
+      "/article/body/sec[1]/p[2]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "10–13",
+    "explicit_rids": [
+      "CR10",
+      "CR13"
+    ],
+    "target_xml_ids": [
+      "CR10",
+      "CR11",
+      "CR12",
+      "CR13"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10",
+      "PMC13655163:ref:CR11",
+      "PMC13655163:ref:CR12",
+      "PMC13655163:ref:CR13"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref] [bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref] [bib_ref]Mapping the proteo-genomic convergence of human diseases — Pietzner et al.[/bib_ref] [bib_ref]Genetics of circulating inflammatory proteins identifies drivers of immune-mediated disease risk and therapeutic targets — Zhao et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0008",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[3]/xref"
+    ],
+    "raw_marker": "14",
+    "explicit_rids": [
+      "CR14"
+    ],
+    "target_xml_ids": [
+      "CR14"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR14"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Multiplexed protein measurement: technologies and applications of protein and antibody arrays — Kingsmore[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0009",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[4]/xref"
+    ],
+    "raw_marker": "15",
+    "explicit_rids": [
+      "CR15"
+    ],
+    "target_xml_ids": [
+      "CR15"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR15"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Mass spectrometry-based high-throughput proteomics and its role in biomedical studies and systems biology — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0010",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[5]/xref"
+    ],
+    "raw_marker": "16",
+    "explicit_rids": [
+      "CR16"
+    ],
+    "target_xml_ids": [
+      "CR16"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR16"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Comparison of proteomic assessment methods in multiple cohort studies — Raffield et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0011",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[6]/xref[1]"
+    ],
+    "raw_marker": "9",
+    "explicit_rids": [
+      "CR9"
+    ],
+    "target_xml_ids": [
+      "CR9"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR9"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteome variation and its genetic determinants in children and adolescents — Niu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0012",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[6]/xref[2]"
+    ],
+    "raw_marker": "17",
+    "explicit_rids": [
+      "CR17"
+    ],
+    "target_xml_ids": [
+      "CR17"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genome-wide genotype-serum proteome mapping provides insights into the cross-ancestry differences in cardiometabolic disease susceptibility — Xu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0013",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[2]/sup[6]/xref[3]"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0014",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[3]/sup[1]/xref"
+    ],
+    "raw_marker": "19",
+    "explicit_rids": [
+      "CR19"
+    ],
+    "target_xml_ids": [
+      "CR19"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR19"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ultra-fast proteomics with Scanning SWATH — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0015",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[3]/sup[2]/xref"
+    ],
+    "raw_marker": "6",
+    "explicit_rids": [
+      "CR6"
+    ],
+    "target_xml_ids": [
+      "CR6"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR6"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genetics meets proteomics: perspectives for large population-based studies — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0016",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[4]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "9",
+    "explicit_rids": [
+      "CR9"
+    ],
+    "target_xml_ids": [
+      "CR9"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR9"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteome variation and its genetic determinants in children and adolescents — Niu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0017",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[4]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "17",
+    "explicit_rids": [
+      "CR17"
+    ],
+    "target_xml_ids": [
+      "CR17"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR17"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genome-wide genotype-serum proteome mapping provides insights into the cross-ancestry differences in cardiometabolic disease susceptibility — Xu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0018",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[4]/sup[1]/xref[3]"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0019",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[4]/sup[2]/xref[1]"
+    ],
+    "raw_marker": "20",
+    "explicit_rids": [
+      "CR20"
+    ],
+    "target_xml_ids": [
+      "CR20"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR20"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]On the use of variance per genotype as a tool to identify quantitative trait interaction effects: a report from the Women’s Genome Health Study — Paré et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0020",
+    "source_xpaths": [
+      "/article/body/sec[1]/p[4]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "21",
+    "explicit_rids": [
+      "CR21"
+    ],
+    "target_xml_ids": [
+      "CR21"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR21"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genotype-by-environment interactions inferred from genetic effects on phenotypic variability in the UK Biobank — Wang et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0021",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[1]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0022",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[2]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0023",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[3]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0024",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[4]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0025",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[5]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0026",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[6]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0027",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[7]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0028",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[8]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0029",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/sup[9]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0030",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/fig/caption/p/sup[1]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0031",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/fig/caption/p/sup[2]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0032",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/fig/caption/p/sup[3]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0033",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/table-wrap/table/thead/tr/th[2]/sup/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0034",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/table-wrap/table/thead/tr/th[3]/sup/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0035",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/table-wrap/table/thead/tr/th[4]/sup/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0036",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/table-wrap/table-wrap-foot/p[1]/sup[1]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0037",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/table-wrap/table-wrap-foot/p[1]/sup[2]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0038",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[2]/p/table-wrap/table-wrap-foot/p[1]/sup[3]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0039",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[3]/p/sup[1]/xref[1]"
+    ],
+    "raw_marker": "22",
+    "explicit_rids": [
+      "CR22"
+    ],
+    "target_xml_ids": [
+      "CR22"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR22"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]From target discovery to clinical drug development with human genetics — Trajanoska et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0040",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[3]/p/sup[1]/xref[2]"
+    ],
+    "raw_marker": "23",
+    "explicit_rids": [
+      "CR23"
+    ],
+    "target_xml_ids": [
+      "CR23"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR23"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Refining the impact of genetic evidence on clinical success — Minikel et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0041",
+    "source_xpaths": [
+      "/article/body/sec[2]/sec[3]/p/sup[8]/xref"
+    ],
+    "raw_marker": "24",
+    "explicit_rids": [
+      "CR24"
+    ],
+    "target_xml_ids": [
+      "CR24"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR24"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The STRING database in 2023: protein–protein association networks and functional enrichment analyses for any sequenced genome of interest — Szklarczyk et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0042",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[2]/sup/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0043",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/sup[1]/xref"
+    ],
+    "raw_marker": "25",
+    "explicit_rids": [
+      "CR25"
+    ],
+    "target_xml_ids": [
+      "CR25"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR25"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The discovery of α1-antitrypsin and its role in health and disease — Janciauskiene et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0044",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/sup[2]/xref"
+    ],
+    "raw_marker": "26",
+    "explicit_rids": [
+      "CR26"
+    ],
+    "target_xml_ids": [
+      "CR26"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR26"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A review of alpha-1 antitrypsin binding partners for immune regulation and potential therapeutic application — O’Brien et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0045",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/sup[3]/xref[1]"
+    ],
+    "raw_marker": "25",
+    "explicit_rids": [
+      "CR25"
+    ],
+    "target_xml_ids": [
+      "CR25"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR25"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The discovery of α1-antitrypsin and its role in health and disease — Janciauskiene et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0046",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[3]/sup[3]/xref[2]"
+    ],
+    "raw_marker": "27",
+    "explicit_rids": [
+      "CR27"
+    ],
+    "target_xml_ids": [
+      "CR27"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR27"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Alpha1-antitrypsin deficiency — Strnad et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0047",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[5]/sup[1]/xref"
+    ],
+    "raw_marker": "28",
+    "explicit_rids": [
+      "CR28"
+    ],
+    "target_xml_ids": [
+      "CR28"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR28"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Apolipoprotein B and cardiovascular disease: biomarker and potential therapeutic target — Behbodikhah et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0048",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[5]/sup[2]/xref"
+    ],
+    "raw_marker": "29",
+    "explicit_rids": [
+      "CR29"
+    ],
+    "target_xml_ids": [
+      "CR29"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR29"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The association of apolipoprotein-E (APOE) gene polymorphisms with coronary artery disease: a systematic review and meta-analysis. Egypt — Ashiq et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0049",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[1]/xref[1]"
+    ],
+    "raw_marker": "30",
+    "explicit_rids": [
+      "CR30"
+    ],
+    "target_xml_ids": [
+      "CR30"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR30"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Innate immune dysfunction and neuroinflammation in autism spectrum disorder (ASD) — Hughes et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0050",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[1]/xref[2]"
+    ],
+    "raw_marker": "31",
+    "explicit_rids": [
+      "CR31"
+    ],
+    "target_xml_ids": [
+      "CR31"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR31"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genetic evidence for causal effects of immune dysfunction in psychiatric disorders: where are we? — Iakunchykova et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0051",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[2]/xref"
+    ],
+    "raw_marker": "32",
+    "explicit_rids": [
+      "CR32"
+    ],
+    "target_xml_ids": [
+      "CR32"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR32"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The inter-α-trypsin inhibitor family: versatile molecules in biology and pathology — Lord et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0052",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[3]/xref"
+    ],
+    "raw_marker": "33",
+    "explicit_rids": [
+      "CR33"
+    ],
+    "target_xml_ids": [
+      "CR33"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR33"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Alpha-1 antitrypsin therapy for autoimmune disorders — Song[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0053",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[4]/xref"
+    ],
+    "raw_marker": "24",
+    "explicit_rids": [
+      "CR24"
+    ],
+    "target_xml_ids": [
+      "CR24"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR24"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The STRING database in 2023: protein–protein association networks and functional enrichment analyses for any sequenced genome of interest — Szklarczyk et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0054",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[5]/xref"
+    ],
+    "raw_marker": "34",
+    "explicit_rids": [
+      "CR34"
+    ],
+    "target_xml_ids": [
+      "CR34"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR34"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Brain structure, function, and neurochemistry in schizophrenia and bipolar disorder—a systematic review of the magnetic resonance neuroimaging literature — Birur et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0055",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[6]/xref"
+    ],
+    "raw_marker": "35",
+    "explicit_rids": [
+      "CR35"
+    ],
+    "target_xml_ids": [
+      "CR35"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR35"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Neuroimaging in autism spectrum disorder: brain structure and function across the lifespan — Ecker et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0056",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[7]/xref"
+    ],
+    "raw_marker": "36",
+    "explicit_rids": [
+      "CR36"
+    ],
+    "target_xml_ids": [
+      "CR36"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR36"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genomic findings in schizophrenia and their implications — Owen et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0057",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[8]/xref[1]",
+      "/article/body/sec[3]/p[6]/sup[8]/xref[2]"
+    ],
+    "raw_marker": "37–39",
+    "explicit_rids": [
+      "CR37",
+      "CR39"
+    ],
+    "target_xml_ids": [
+      "CR37",
+      "CR38",
+      "CR39"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR37",
+      "PMC13655163:ref:CR38",
+      "PMC13655163:ref:CR39"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_numeric_range_with_complete_source_labels",
+    "training_replacement": "[bib_ref]Genome-wide association analysis identifies 13 new risk loci for schizophrenia — Ripke et al.[/bib_ref] [bib_ref]Genome-wide significant associations in schizophrenia to ITIH3/4, CACNA1C and SDCCAG8, and extensive replication of associations reported by the Schizophrenia PGC — Hamshere et al.[/bib_ref] [bib_ref]Biological insights from 108 schizophrenia-associated genetic loci — Ripke et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0058",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[9]/xref"
+    ],
+    "raw_marker": "40",
+    "explicit_rids": [
+      "CR40"
+    ],
+    "target_xml_ids": [
+      "CR40"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR40"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Identification of common genetic risk variants for autism spectrum disorder — Grove et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0059",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[6]/sup[10]/xref"
+    ],
+    "raw_marker": "41",
+    "explicit_rids": [
+      "CR41"
+    ],
+    "target_xml_ids": [
+      "CR41"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR41"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Integrative analysis of genome-wide association studies identifies novel loci associated with neuropsychiatric disorders — Yao et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0060",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[7]/sup[1]/xref"
+    ],
+    "raw_marker": "42",
+    "explicit_rids": [
+      "CR42"
+    ],
+    "target_xml_ids": [
+      "CR42"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR42"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Expression and oxidative modifications of plasma proteins in autism spectrum disorders: Interplay between inflammatory response and lipid peroxidation — Cortelazzo et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0061",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[7]/sup[2]/xref"
+    ],
+    "raw_marker": "43",
+    "explicit_rids": [
+      "CR43"
+    ],
+    "target_xml_ids": [
+      "CR43"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR43"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]iTRAQ-based proteomic analysis reveals protein profile in plasma from children with autism — Shen et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0062",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[7]/sup[3]/xref"
+    ],
+    "raw_marker": "44",
+    "explicit_rids": [
+      "CR44"
+    ],
+    "target_xml_ids": [
+      "CR44"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR44"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Associations between SNPs and immune-related circulating proteins in schizophrenia — Chan et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0063",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[8]/sup/xref"
+    ],
+    "raw_marker": "33",
+    "explicit_rids": [
+      "CR33"
+    ],
+    "target_xml_ids": [
+      "CR33"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR33"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Alpha-1 antitrypsin therapy for autoimmune disorders — Song[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0064",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[1]/xref"
+    ],
+    "raw_marker": "45",
+    "explicit_rids": [
+      "CR45"
+    ],
+    "target_xml_ids": [
+      "CR45"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR45"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Interferons: a molecular switch between damage and repair in ageing and Alzheimer’s disease — Gorlé et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0065",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[2]/xref[1]"
+    ],
+    "raw_marker": "46",
+    "explicit_rids": [
+      "CR46"
+    ],
+    "target_xml_ids": [
+      "CR46"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR46"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The role of the immune system in Alzheimer’s disease — Wu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0066",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[2]/xref[2]"
+    ],
+    "raw_marker": "47",
+    "explicit_rids": [
+      "CR47"
+    ],
+    "target_xml_ids": [
+      "CR47"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR47"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Immune attack: the role of inflammation in Alzheimer disease — Heppner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0067",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[3]/xref[1]"
+    ],
+    "raw_marker": "48",
+    "explicit_rids": [
+      "CR48"
+    ],
+    "target_xml_ids": [
+      "CR48"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR48"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]IgM response against amyloid-beta in aging: a potential peripheral protective mechanism — Agrawal et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0068",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[3]/xref[2]"
+    ],
+    "raw_marker": "49",
+    "explicit_rids": [
+      "CR49"
+    ],
+    "target_xml_ids": [
+      "CR49"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR49"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Reduced levels of IgM autoantibodies against N-truncated pyroglutamate Aβ in plasma of patients with Alzheimer’s disease — Marcello et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0069",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[4]/xref"
+    ],
+    "raw_marker": "50",
+    "explicit_rids": [
+      "CR50"
+    ],
+    "target_xml_ids": [
+      "CR50"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR50"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Serum protein-based profiles for the diagnostic model of Alzheimer’s disease — Yang et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0070",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[5]/xref[1]"
+    ],
+    "raw_marker": "50",
+    "explicit_rids": [
+      "CR50"
+    ],
+    "target_xml_ids": [
+      "CR50"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR50"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Serum protein-based profiles for the diagnostic model of Alzheimer’s disease — Yang et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0071",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[9]/sup[5]/xref[2]"
+    ],
+    "raw_marker": "51",
+    "explicit_rids": [
+      "CR51"
+    ],
+    "target_xml_ids": [
+      "CR51"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR51"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Altered abundances of human immunoglobulin M and immunoglobulin G subclasses in Alzheimer’s disease frontal cortex — Lekhraj et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0072",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[1]/xref"
+    ],
+    "raw_marker": "52",
+    "explicit_rids": [
+      "CR52"
+    ],
+    "target_xml_ids": [
+      "CR52"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR52"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]MS-based proteomics of body fluids: the end of the beginning — Bader et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0073",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[2]/xref"
+    ],
+    "raw_marker": "15",
+    "explicit_rids": [
+      "CR15"
+    ],
+    "target_xml_ids": [
+      "CR15"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR15"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Mass spectrometry-based high-throughput proteomics and its role in biomedical studies and systems biology — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0074",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[3]/xref[1]"
+    ],
+    "raw_marker": "14",
+    "explicit_rids": [
+      "CR14"
+    ],
+    "target_xml_ids": [
+      "CR14"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR14"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Multiplexed protein measurement: technologies and applications of protein and antibody arrays — Kingsmore[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0075",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[3]/xref[2]"
+    ],
+    "raw_marker": "53",
+    "explicit_rids": [
+      "CR53"
+    ],
+    "target_xml_ids": [
+      "CR53"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR53"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Synergistic insights into human health from aptamer- and antibody-based proteomic profiling — Pietzner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0076",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[4]/xref"
+    ],
+    "raw_marker": "54",
+    "explicit_rids": [
+      "CR54"
+    ],
+    "target_xml_ids": [
+      "CR54"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR54"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Nanoparticle enrichment mass-spectrometry proteomics identifies protein-altering variants for precise pQTL mapping — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0077",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[5]/xref"
+    ],
+    "raw_marker": "55",
+    "explicit_rids": [
+      "CR55"
+    ],
+    "target_xml_ids": [
+      "CR55"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR55"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Integrating Mass Spectrometry and Affinity-Based Proteomics — author not supplied[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0078",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[6]/xref"
+    ],
+    "raw_marker": "56",
+    "explicit_rids": [
+      "CR56"
+    ],
+    "target_xml_ids": [
+      "CR56"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR56"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]On the development of plasma protein biomarkers — Surinova et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0079",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[7]/xref"
+    ],
+    "raw_marker": "57",
+    "explicit_rids": [
+      "CR57"
+    ],
+    "target_xml_ids": [
+      "CR57"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR57"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Revisiting biomarker discovery by plasma proteomics — Geyer et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0080",
+    "source_xpaths": [
+      "/article/body/sec[3]/p[10]/sup[8]/xref"
+    ],
+    "raw_marker": "58",
+    "explicit_rids": [
+      "CR58"
+    ],
+    "target_xml_ids": [
+      "CR58"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR58"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]How low can you go? A current perspective on low-abundance proteomics — da Costa et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0081",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[2]/p[1]/sup/xref"
+    ],
+    "raw_marker": "59",
+    "explicit_rids": [
+      "CR59"
+    ],
+    "target_xml_ids": [
+      "CR59"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR59"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Cohort Profile: Generation Scotland: Scottish Family Health Study (GS:SFHS). The study, its participants and their potential for genetic research on health and illness — Smith et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0082",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p[1]/sup/xref[1]"
+    ],
+    "raw_marker": "60",
+    "explicit_rids": [
+      "CR60"
+    ],
+    "target_xml_ids": [
+      "CR60"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR60"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Pedigree and genotyping quality analyses of over 10,000 DNA samples from the Generation Scotland: Scottish Family Health Study — Kerr et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0083",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p[1]/sup/xref[2]"
+    ],
+    "raw_marker": "61",
+    "explicit_rids": [
+      "CR61"
+    ],
+    "target_xml_ids": [
+      "CR61"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR61"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Exploration of haplotype research consortium imputation for genome-wide association studies in 20,032 Generation Scotland participants — Nagy et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0084",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p[2]/sup[1]/xref"
+    ],
+    "raw_marker": "61",
+    "explicit_rids": [
+      "CR61"
+    ],
+    "target_xml_ids": [
+      "CR61"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR61"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Exploration of haplotype research consortium imputation for genome-wide association studies in 20,032 Generation Scotland participants — Nagy et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0085",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p[2]/sup[3]/xref"
+    ],
+    "raw_marker": "62",
+    "explicit_rids": [
+      "CR62"
+    ],
+    "target_xml_ids": [
+      "CR62"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR62"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A map of human genome variation from population-scale sequencing — Durbin et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0086",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p[2]/sup[4]/xref"
+    ],
+    "raw_marker": "63",
+    "explicit_rids": [
+      "CR63"
+    ],
+    "target_xml_ids": [
+      "CR63"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR63"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Recent genomic heritage in Scotland — Amador et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0087",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[3]/p[2]/sup[5]/xref"
+    ],
+    "raw_marker": "64",
+    "explicit_rids": [
+      "CR64"
+    ],
+    "target_xml_ids": [
+      "CR64"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR64"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A reference panel of 64,976 haplotypes for genotype imputation — McCarthy et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0088",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[1]/sup/xref[1]"
+    ],
+    "raw_marker": "65",
+    "explicit_rids": [
+      "CR65"
+    ],
+    "target_xml_ids": [
+      "CR65"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR65"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ultra-high-throughput clinical proteomics reveals classifiers of COVID-19 infection — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0089",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[1]/sup/xref[2]"
+    ],
+    "raw_marker": "66",
+    "explicit_rids": [
+      "CR66"
+    ],
+    "target_xml_ids": [
+      "CR66"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR66"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The impact of acute nutritional interventions on the plasma proteome — Vernardis et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0090",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[3]/sup/xref"
+    ],
+    "raw_marker": "19",
+    "explicit_rids": [
+      "CR19"
+    ],
+    "target_xml_ids": [
+      "CR19"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR19"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ultra-fast proteomics with Scanning SWATH — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0091",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[4]/sup/xref"
+    ],
+    "raw_marker": "19",
+    "explicit_rids": [
+      "CR19"
+    ],
+    "target_xml_ids": [
+      "CR19"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR19"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ultra-fast proteomics with Scanning SWATH — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0092",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[5]/sup[1]/xref"
+    ],
+    "raw_marker": "67",
+    "explicit_rids": [
+      "CR67"
+    ],
+    "target_xml_ids": [
+      "CR67"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR67"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]DIA-NN: neural networks and interference correction enable deep proteome coverage in high throughput — Demichev et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0093",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[5]/sup[2]/xref"
+    ],
+    "raw_marker": "68",
+    "explicit_rids": [
+      "CR68"
+    ],
+    "target_xml_ids": [
+      "CR68"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR68"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Analysis of 1508 plasma samples by capillary-flow data-independent acquisition profiles proteomics of weight loss and maintenance — Bruderer et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0094",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[5]/sup[3]/xref"
+    ],
+    "raw_marker": "65",
+    "explicit_rids": [
+      "CR65"
+    ],
+    "target_xml_ids": [
+      "CR65"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR65"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Ultra-high-throughput clinical proteomics reveals classifiers of COVID-19 infection — Messner et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0095",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[5]/sup[4]/xref"
+    ],
+    "raw_marker": "69",
+    "explicit_rids": [
+      "CR69"
+    ],
+    "target_xml_ids": [
+      "CR69"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR69"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A batch correction method for liquid chromatography–mass spectrometry data that does not depend on quality control samples — Rusilowicz et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0096",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[4]/p[5]/sup[5]/xref"
+    ],
+    "raw_marker": "70",
+    "explicit_rids": [
+      "CR70"
+    ],
+    "target_xml_ids": [
+      "CR70"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR70"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]limma powers differential expression analyses for RNA-sequencing and microarray studies — Ritchie et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0097",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[5]/sec/p/sup[1]/xref"
+    ],
+    "raw_marker": "71",
+    "explicit_rids": [
+      "CR71"
+    ],
+    "target_xml_ids": [
+      "CR71"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR71"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]GCTA: a tool for genome-wide complex trait analysis — Yang et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0098",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[5]/sec/p/sup[4]/xref[1]"
+    ],
+    "raw_marker": "71",
+    "explicit_rids": [
+      "CR71"
+    ],
+    "target_xml_ids": [
+      "CR71"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR71"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]GCTA: a tool for genome-wide complex trait analysis — Yang et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0099",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[5]/sec/p/sup[4]/xref[2]"
+    ],
+    "raw_marker": "72",
+    "explicit_rids": [
+      "CR72"
+    ],
+    "target_xml_ids": [
+      "CR72"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR72"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Conditional and joint multiple-SNP analysis of GWAS summary statistics identifies additional variants influencing complex traits — Yang et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0100",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[5]/sec/p/sup[7]/xref"
+    ],
+    "raw_marker": "64",
+    "explicit_rids": [
+      "CR64"
+    ],
+    "target_xml_ids": [
+      "CR64"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR64"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A reference panel of 64,976 haplotypes for genotype imputation — McCarthy et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0101",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[6]/p/sup[1]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0102",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[6]/p/sup[2]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0103",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[6]/p/sup[3]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0104",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[7]/p/sup[1]/xref"
+    ],
+    "raw_marker": "73",
+    "explicit_rids": [
+      "CR73"
+    ],
+    "target_xml_ids": [
+      "CR73"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR73"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Sex differences in genetic architecture in the UK Biobank — Bernabeu et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0105",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[7]/p/sup[2]/xref"
+    ],
+    "raw_marker": "74",
+    "explicit_rids": [
+      "CR74"
+    ],
+    "target_xml_ids": [
+      "CR74"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR74"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Extensive modulation of the circulating blood proteome by hormonal contraceptive use across two population studies — Dordevic et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0106",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[7]/p/sup[3]/xref"
+    ],
+    "raw_marker": "75",
+    "explicit_rids": [
+      "CR75"
+    ],
+    "target_xml_ids": [
+      "CR75"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR75"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A fast and powerful linear mixed model approach for genotype-environment interaction tests in large-scale GWAS — Zhong et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0107",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[8]/p[1]/sup[1]/xref"
+    ],
+    "raw_marker": "76",
+    "explicit_rids": [
+      "CR76"
+    ],
+    "target_xml_ids": [
+      "CR76"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR76"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]The MR-Base platform supports systematic causal inference across the human phenome — Hemani et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0108",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[8]/p[1]/sup[2]/xref"
+    ],
+    "raw_marker": "77",
+    "explicit_rids": [
+      "CR77"
+    ],
+    "target_xml_ids": [
+      "CR77"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR77"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of serum proteins reveals shared loci with common diseases — Gudjonsson et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0109",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[8]/p[1]/sup[3]/xref"
+    ],
+    "raw_marker": "78",
+    "explicit_rids": [
+      "CR78"
+    ],
+    "target_xml_ids": [
+      "CR78"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR78"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]GWAS and meta-analysis identifies 49 genetic variants underlying critical COVID-19 — Pairo-Castineira et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0110",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[8]/p[1]/sup[4]/xref"
+    ],
+    "raw_marker": "79",
+    "explicit_rids": [
+      "CR79"
+    ],
+    "target_xml_ids": [
+      "CR79"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR79"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Orienting the causal relationship between imprecisely measured traits using GWAS summary data — Hemani et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0111",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[8]/p[2]/sup/xref"
+    ],
+    "raw_marker": "80",
+    "explicit_rids": [
+      "CR80"
+    ],
+    "target_xml_ids": [
+      "CR80"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR80"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Bayesian test for colocalisation between pairs of genetic association studies using summary statistics — Giambartolomei et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0112",
+    "source_xpaths": [
+      "/article/body/sec[4]/sec[9]/p[1]/sup[1]/xref"
+    ],
+    "raw_marker": "81",
+    "explicit_rids": [
+      "CR81"
+    ],
+    "target_xml_ids": [
+      "CR81"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR81"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Functional mapping and annotation of genetic associations with FUMA — Watanabe et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0113",
+    "source_xpaths": [
+      "/article/back/notes[4]/p/sup[1]/xref"
+    ],
+    "raw_marker": "10",
+    "explicit_rids": [
+      "CR10"
+    ],
+    "target_xml_ids": [
+      "CR10"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR10"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Large-scale plasma proteomics comparisons through genetics and disease associations — Eldjarn et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0114",
+    "source_xpaths": [
+      "/article/back/notes[4]/p/sup[2]/xref"
+    ],
+    "raw_marker": "11",
+    "explicit_rids": [
+      "CR11"
+    ],
+    "target_xml_ids": [
+      "CR11"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR11"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Plasma proteomic associations with genetics and health in the UK Biobank — Sun et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0115",
+    "source_xpaths": [
+      "/article/back/notes[4]/p/sup[3]/xref"
+    ],
+    "raw_marker": "18",
+    "explicit_rids": [
+      "CR18"
+    ],
+    "target_xml_ids": [
+      "CR18"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR18"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]A genome-wide association study of mass spectrometry proteomics using a nanoparticle enrichment platform — Suhre et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  },
+  {
+    "id": "PMC13655163:citation0116",
+    "source_xpaths": [
+      "/article/back/notes[5]/p/sup/xref"
+    ],
+    "raw_marker": "82",
+    "explicit_rids": [
+      "CR82"
+    ],
+    "target_xml_ids": [
+      "CR82"
+    ],
+    "reference_ids": [
+      "PMC13655163:ref:CR82"
+    ],
+    "unresolved_target_ids": [],
+    "resolution_method": "explicit_rid",
+    "training_replacement": "[bib_ref]Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals — Richmond et al.[/bib_ref]",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784"
+  }
+]

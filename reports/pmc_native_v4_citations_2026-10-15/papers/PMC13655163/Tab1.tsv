@@ -1,0 +1,9 @@
+Comparator GWAS study	Sun et al.^(11)	Eldjarn et al.^(10)	Suhre et al.^(18)
+Cohort	UK Biobank	Decode	Tarkin
+Sample size	54,219	35,892	1260
+Proteomics platform	Olink	SomaScan	Seer
+N proteins tested	2923	4719	1980
+Overlap of proteins*	58	75	114
+Overlap of proteins with significant associations*	51	69	22
+N significant associations with overlapping proteins in comparator study	199	275	25
+Replicated pQTLs (%)*	46 (23.1%)	64 (23.3%)	10 (40%)

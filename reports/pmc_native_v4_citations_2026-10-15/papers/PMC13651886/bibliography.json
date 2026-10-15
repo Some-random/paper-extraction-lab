@@ -1,0 +1,4765 @@
+[
+  {
+    "id": "PMC13651886:ref:R1",
+    "xml_id": "R1",
+    "label": "1",
+    "title": "Building and maintaining the skin",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "Y. C. Hsu",
+        "surname": "Hsu",
+        "given_names": "Y. C.",
+        "collective": false
+      },
+      {
+        "name": "E. Fuchs",
+        "surname": "Fuchs",
+        "given_names": "E.",
+        "collective": false
+      }
+    ],
+    "year": "2022",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1101/cshperspect.a040840",
+      "pmcid": "PMC8977401",
+      "pmid": "34607830"
+    },
+    "raw_reference_text": "Y. C. Hsu, E. Fuchs, Building and maintaining the skin. Cold Spring Harb. Perspect. Biol. 14, a040840 (2022).10.1101/cshperspect.a040840PMC897740134607830",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[1]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1101/cshperspect.a040840",
+      "pmcid": "PMC8977401",
+      "pmid": "34607830"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R2",
+    "xml_id": "R2",
+    "label": "2",
+    "title": "Mechanisms regulating skin immunity and inflammation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "I. Haase",
+        "surname": "Haase",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "F. O. Nestle",
+        "surname": "Nestle",
+        "given_names": "F. O.",
+        "collective": false
+      }
+    ],
+    "year": "2014",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nri3646",
+      "pmid": "24722477"
+    },
+    "raw_reference_text": "M. Pasparakis, I. Haase, F. O. Nestle, Mechanisms regulating skin immunity and inflammation. Nat. Rev. Immunol. 14, 289–301 (2014).10.1038/nri364624722477",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[2]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nri3646",
+      "pmid": "24722477"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R3",
+    "xml_id": "R3",
+    "label": "3",
+    "title": "Recruitment of the linear ubiquitin chain assembly complex stabilizes the TNF-R1 signaling complex and is required for TNF-mediated gene induction",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "T. L. Haas",
+        "surname": "Haas",
+        "given_names": "T. L.",
+        "collective": false
+      },
+      {
+        "name": "C. H. Emmerich",
+        "surname": "Emmerich",
+        "given_names": "C. H.",
+        "collective": false
+      },
+      {
+        "name": "B. Gerlach",
+        "surname": "Gerlach",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "A. C. Schmukle",
+        "surname": "Schmukle",
+        "given_names": "A. C.",
+        "collective": false
+      },
+      {
+        "name": "S. M. Cordier",
+        "surname": "Cordier",
+        "given_names": "S. M.",
+        "collective": false
+      },
+      {
+        "name": "E. Rieser",
+        "surname": "Rieser",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "R. Feltham",
+        "surname": "Feltham",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "J. Vince",
+        "surname": "Vince",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "U. Warnken",
+        "surname": "Warnken",
+        "given_names": "U.",
+        "collective": false
+      },
+      {
+        "name": "T. Wenger",
+        "surname": "Wenger",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "R. Koschny",
+        "surname": "Koschny",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "D. Komander",
+        "surname": "Komander",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "J. Silke",
+        "surname": "Silke",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "H. Walczak",
+        "surname": "Walczak",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.molcel.2009.10.013",
+      "pmid": "20005846"
+    },
+    "raw_reference_text": "T. L. Haas, C. H. Emmerich, B. Gerlach, A. C. Schmukle, S. M. Cordier, E. Rieser, R. Feltham, J. Vince, U. Warnken, T. Wenger, R. Koschny, D. Komander, J. Silke, H. Walczak, Recruitment of the linear ubiquitin chain assembly complex stabilizes the TNF-R1 signaling complex and is required for TNF-mediated gene induction. Mol. Cell 36, 831–844 (2009).10.1016/j.molcel.2009.10.01320005846",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[3]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.molcel.2009.10.013",
+      "pmid": "20005846"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R4",
+    "xml_id": "R4",
+    "label": "4",
+    "title": "Involvement of linear polyubiquitylation of NEMO in NF-kappaB activation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "F. Tokunaga",
+        "surname": "Tokunaga",
+        "given_names": "F.",
+        "collective": false
+      },
+      {
+        "name": "S. Sakata",
+        "surname": "Sakata",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "Y. Saeki",
+        "surname": "Saeki",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "Y. Satomi",
+        "surname": "Satomi",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "T. Kirisako",
+        "surname": "Kirisako",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "K. Kamei",
+        "surname": "Kamei",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "T. Nakagawa",
+        "surname": "Nakagawa",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "M. Kato",
+        "surname": "Kato",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "S. Murata",
+        "surname": "Murata",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "S. Yamaoka",
+        "surname": "Yamaoka",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "M. Yamamoto",
+        "surname": "Yamamoto",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "S. Akira",
+        "surname": "Akira",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "T. Takao",
+        "surname": "Takao",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "K. Tanaka",
+        "surname": "Tanaka",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "K. Iwai",
+        "surname": "Iwai",
+        "given_names": "K.",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/ncb1821",
+      "pmid": "19136968"
+    },
+    "raw_reference_text": "F. Tokunaga, S. Sakata, Y. Saeki, Y. Satomi, T. Kirisako, K. Kamei, T. Nakagawa, M. Kato, S. Murata, S. Yamaoka, M. Yamamoto, S. Akira, T. Takao, K. Tanaka, K. Iwai, Involvement of linear polyubiquitylation of NEMO in NF-kappaB activation. Nat. Cell Biol. 11, 123–132 (2009).10.1038/ncb182119136968",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[4]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/ncb1821",
+      "pmid": "19136968"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R5",
+    "xml_id": "R5",
+    "label": "5",
+    "title": "LUBAC is essential for embryogenesis by preventing cell death and enabling haematopoiesis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "N. Peltzer",
+        "surname": "Peltzer",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "M. Darding",
+        "surname": "Darding",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "A. Montinaro",
+        "surname": "Montinaro",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "P. Draber",
+        "surname": "Draber",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "H. Draberova",
+        "surname": "Draberova",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "S. Kupka",
+        "surname": "Kupka",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "E. Rieser",
+        "surname": "Rieser",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "A. Fisher",
+        "surname": "Fisher",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "C. Hutchinson",
+        "surname": "Hutchinson",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "L. Taraborrelli",
+        "surname": "Taraborrelli",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "T. Hartwig",
+        "surname": "Hartwig",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "E. Lafont",
+        "surname": "Lafont",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "T. L. Haas",
+        "surname": "Haas",
+        "given_names": "T. L.",
+        "collective": false
+      },
+      {
+        "name": "Y. Shimizu",
+        "surname": "Shimizu",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "C. Böiers",
+        "surname": "Böiers",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "A. Sarr",
+        "surname": "Sarr",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "J. Rickard",
+        "surname": "Rickard",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "S. Alvarez-Diaz",
+        "surname": "Alvarez-Diaz",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "M. T. Ashworth",
+        "surname": "Ashworth",
+        "given_names": "M. T.",
+        "collective": false
+      },
+      {
+        "name": "A. Beal",
+        "surname": "Beal",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "T. Enver",
+        "surname": "Enver",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "J. Bertin",
+        "surname": "Bertin",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "W. Kaiser",
+        "surname": "Kaiser",
+        "given_names": "W.",
+        "collective": false
+      },
+      {
+        "name": "A. Strasser",
+        "surname": "Strasser",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "J. Silke",
+        "surname": "Silke",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "P. Bouillet",
+        "surname": "Bouillet",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "H. Walczak",
+        "surname": "Walczak",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41586-018-0064-8",
+      "pmcid": "PMC5947819",
+      "pmid": "29695863"
+    },
+    "raw_reference_text": "N. Peltzer, M. Darding, A. Montinaro, P. Draber, H. Draberova, S. Kupka, E. Rieser, A. Fisher, C. Hutchinson, L. Taraborrelli, T. Hartwig, E. Lafont, T. L. Haas, Y. Shimizu, C. Böiers, A. Sarr, J. Rickard, S. Alvarez-Diaz, M. T. Ashworth, A. Beal, T. Enver, J. Bertin, W. Kaiser, A. Strasser, J. Silke, P. Bouillet, H. Walczak, LUBAC is essential for embryogenesis by preventing cell death and enabling haematopoiesis. Nature 557, 112–117 (2018).10.1038/s41586-018-0064-8PMC594781929695863",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[5]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-018-0064-8",
+      "pmcid": "PMC5947819",
+      "pmid": "29695863"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R6",
+    "xml_id": "R6",
+    "label": "6",
+    "title": "LUBAC deficiency perturbs TLR3 signaling to cause immunodeficiency and autoinflammation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J. Zinngrebe",
+        "surname": "Zinngrebe",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "E. Rieser",
+        "surname": "Rieser",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "L. Taraborrelli",
+        "surname": "Taraborrelli",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "N. Peltzer",
+        "surname": "Peltzer",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "T. Hartwig",
+        "surname": "Hartwig",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "H. Ren",
+        "surname": "Ren",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "I. Kovacs",
+        "surname": "Kovacs",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "C. Endres",
+        "surname": "Endres",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "P. Draber",
+        "surname": "Draber",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "M. Darding",
+        "surname": "Darding",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "S. von Karstedt",
+        "surname": "von Karstedt",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "J. Lemke",
+        "surname": "Lemke",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "B. Dome",
+        "surname": "Dome",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "M. Bergmann",
+        "surname": "Bergmann",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "B. J. Ferguson",
+        "surname": "Ferguson",
+        "given_names": "B. J.",
+        "collective": false
+      },
+      {
+        "name": "H. Walczak",
+        "surname": "Walczak",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1084/jem.20160041",
+      "pmcid": "PMC5110014",
+      "pmid": "27810922"
+    },
+    "raw_reference_text": "J. Zinngrebe, E. Rieser, L. Taraborrelli, N. Peltzer, T. Hartwig, H. Ren, I. Kovacs, C. Endres, P. Draber, M. Darding, S. von Karstedt, J. Lemke, B. Dome, M. Bergmann, B. J. Ferguson, H. Walczak, LUBAC deficiency perturbs TLR3 signaling to cause immunodeficiency and autoinflammation. J. Exp. Med. 213, 2671–2689 (2016).10.1084/jem.20160041PMC511001427810922",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[6]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1084/jem.20160041",
+      "pmcid": "PMC5110014",
+      "pmid": "27810922"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R7",
+    "xml_id": "R7",
+    "label": "7",
+    "title": "Linear ubiquitination prevents inflammation and regulates immune signalling",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "B. Gerlach",
+        "surname": "Gerlach",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "S. M. Cordier",
+        "surname": "Cordier",
+        "given_names": "S. M.",
+        "collective": false
+      },
+      {
+        "name": "A. C. Schmukle",
+        "surname": "Schmukle",
+        "given_names": "A. C.",
+        "collective": false
+      },
+      {
+        "name": "C. H. Emmerich",
+        "surname": "Emmerich",
+        "given_names": "C. H.",
+        "collective": false
+      },
+      {
+        "name": "E. Rieser",
+        "surname": "Rieser",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "T. L. Haas",
+        "surname": "Haas",
+        "given_names": "T. L.",
+        "collective": false
+      },
+      {
+        "name": "A. I. Webb",
+        "surname": "Webb",
+        "given_names": "A. I.",
+        "collective": false
+      },
+      {
+        "name": "J. A. Rickard",
+        "surname": "Rickard",
+        "given_names": "J. A.",
+        "collective": false
+      },
+      {
+        "name": "H. Anderton",
+        "surname": "Anderton",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "W. W. Wong",
+        "surname": "Wong",
+        "given_names": "W. W.",
+        "collective": false
+      },
+      {
+        "name": "U. Nachbur",
+        "surname": "Nachbur",
+        "given_names": "U.",
+        "collective": false
+      },
+      {
+        "name": "L. Gangoda",
+        "surname": "Gangoda",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "U. Warnken",
+        "surname": "Warnken",
+        "given_names": "U.",
+        "collective": false
+      },
+      {
+        "name": "A. W. Purcell",
+        "surname": "Purcell",
+        "given_names": "A. W.",
+        "collective": false
+      },
+      {
+        "name": "J. Silke",
+        "surname": "Silke",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "H. Walczak",
+        "surname": "Walczak",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nature09816",
+      "pmid": "21455173"
+    },
+    "raw_reference_text": "B. Gerlach, S. M. Cordier, A. C. Schmukle, C. H. Emmerich, E. Rieser, T. L. Haas, A. I. Webb, J. A. Rickard, H. Anderton, W. W. Wong, U. Nachbur, L. Gangoda, U. Warnken, A. W. Purcell, J. Silke, H. Walczak, Linear ubiquitination prevents inflammation and regulates immune signalling. Nature 471, 591–596 (2011).10.1038/nature0981621455173",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[7]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature09816",
+      "pmid": "21455173"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R8",
+    "xml_id": "R8",
+    "label": "8",
+    "title": "Molecular discrimination of structurally equivalent Lys 63-linked and linear polyubiquitin chains",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "D. Komander",
+        "surname": "Komander",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "F. Reyes-Turcu",
+        "surname": "Reyes-Turcu",
+        "given_names": "F.",
+        "collective": false
+      },
+      {
+        "name": "J. D. Licchesi",
+        "surname": "Licchesi",
+        "given_names": "J. D.",
+        "collective": false
+      },
+      {
+        "name": "P. Odenwaelder",
+        "surname": "Odenwaelder",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "K. D. Wilkinson",
+        "surname": "Wilkinson",
+        "given_names": "K. D.",
+        "collective": false
+      },
+      {
+        "name": "D. Barford",
+        "surname": "Barford",
+        "given_names": "D.",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/embor.2009.55",
+      "pmcid": "PMC2680876",
+      "pmid": "19373254"
+    },
+    "raw_reference_text": "D. Komander, F. Reyes-Turcu, J. D. Licchesi, P. Odenwaelder, K. D. Wilkinson, D. Barford, Molecular discrimination of structurally equivalent Lys 63-linked and linear polyubiquitin chains. EMBO Rep. 10, 466–473 (2009).10.1038/embor.2009.55PMC268087619373254",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[8]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/embor.2009.55",
+      "pmcid": "PMC2680876",
+      "pmid": "19373254"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R9",
+    "xml_id": "R9",
+    "label": "9",
+    "title": "Structures of CYLD USP with Met1- or Lys63-linked diubiquitin reveal mechanisms for dual specificity",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "Y. Sato",
+        "surname": "Sato",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "E. Goto",
+        "surname": "Goto",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "Y. Shibata",
+        "surname": "Shibata",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "Y. Kubota",
+        "surname": "Kubota",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "A. Yamagata",
+        "surname": "Yamagata",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "S. Goto-Ito",
+        "surname": "Goto-Ito",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "K. Kubota",
+        "surname": "Kubota",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "J. Inoue",
+        "surname": "Inoue",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "M. Takekawa",
+        "surname": "Takekawa",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "F. Tokunaga",
+        "surname": "Tokunaga",
+        "given_names": "F.",
+        "collective": false
+      },
+      {
+        "name": "S. Fukai",
+        "surname": "Fukai",
+        "given_names": "S.",
+        "collective": false
+      }
+    ],
+    "year": "2015",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nsmb.2970",
+      "pmid": "25686088"
+    },
+    "raw_reference_text": "Y. Sato, E. Goto, Y. Shibata, Y. Kubota, A. Yamagata, S. Goto-Ito, K. Kubota, J. Inoue, M. Takekawa, F. Tokunaga, S. Fukai, Structures of CYLD USP with Met1- or Lys63-linked diubiquitin reveal mechanisms for dual specificity. Nat. Struct. Mol. Biol. 22, 222–229 (2015).10.1038/nsmb.297025686088",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[9]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nsmb.2970",
+      "pmid": "25686088"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R10",
+    "xml_id": "R10",
+    "label": "10",
+    "title": "OTULIN antagonizes LUBAC signaling by specifically hydrolyzing Met1-linked polyubiquitin",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K. Keusekotten",
+        "surname": "Keusekotten",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "P. R. Elliott",
+        "surname": "Elliott",
+        "given_names": "P. R.",
+        "collective": false
+      },
+      {
+        "name": "L. Glockner",
+        "surname": "Glockner",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "B. K. Fiil",
+        "surname": "Fiil",
+        "given_names": "B. K.",
+        "collective": false
+      },
+      {
+        "name": "R. B. Damgaard",
+        "surname": "Damgaard",
+        "given_names": "R. B.",
+        "collective": false
+      },
+      {
+        "name": "Y. Kulathu",
+        "surname": "Kulathu",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "T. Wauer",
+        "surname": "Wauer",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "M. K. Hospenthal",
+        "surname": "Hospenthal",
+        "given_names": "M. K.",
+        "collective": false
+      },
+      {
+        "name": "M. Gyrd-Hansen",
+        "surname": "Gyrd-Hansen",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "D. Krappmann",
+        "surname": "Krappmann",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "K. Hofmann",
+        "surname": "Hofmann",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "D. Komander",
+        "surname": "Komander",
+        "given_names": "D.",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2013.05.014",
+      "pmcid": "PMC3690481",
+      "pmid": "23746843"
+    },
+    "raw_reference_text": "K. Keusekotten, P. R. Elliott, L. Glockner, B. K. Fiil, R. B. Damgaard, Y. Kulathu, T. Wauer, M. K. Hospenthal, M. Gyrd-Hansen, D. Krappmann, K. Hofmann, D. Komander, OTULIN antagonizes LUBAC signaling by specifically hydrolyzing Met1-linked polyubiquitin. Cell 153, 1312–1326 (2013).10.1016/j.cell.2013.05.014PMC369048123746843",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[10]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2013.05.014",
+      "pmcid": "PMC3690481",
+      "pmid": "23746843"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R11",
+    "xml_id": "R11",
+    "label": "11",
+    "title": "The deubiquitinase OTULIN is an essential negative regulator of inflammation and autoimmunity",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R. B. Damgaard",
+        "surname": "Damgaard",
+        "given_names": "R. B.",
+        "collective": false
+      },
+      {
+        "name": "J. A. Walker",
+        "surname": "Walker",
+        "given_names": "J. A.",
+        "collective": false
+      },
+      {
+        "name": "P. Marco-Casanova",
+        "surname": "Marco-Casanova",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "N. V. Morgan",
+        "surname": "Morgan",
+        "given_names": "N. V.",
+        "collective": false
+      },
+      {
+        "name": "H. L. Titheradge",
+        "surname": "Titheradge",
+        "given_names": "H. L.",
+        "collective": false
+      },
+      {
+        "name": "P. R. Elliott",
+        "surname": "Elliott",
+        "given_names": "P. R.",
+        "collective": false
+      },
+      {
+        "name": "D. McHale",
+        "surname": "McHale",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "E. R. Maher",
+        "surname": "Maher",
+        "given_names": "E. R.",
+        "collective": false
+      },
+      {
+        "name": "A. N. J. McKenzie",
+        "surname": "McKenzie",
+        "given_names": "A. N. J.",
+        "collective": false
+      },
+      {
+        "name": "D. Komander",
+        "surname": "Komander",
+        "given_names": "D.",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2016.07.019",
+      "pmcid": "PMC5002269",
+      "pmid": "27523608"
+    },
+    "raw_reference_text": "R. B. Damgaard, J. A. Walker, P. Marco-Casanova, N. V. Morgan, H. L. Titheradge, P. R. Elliott, D. McHale, E. R. Maher, A. N. J. McKenzie, D. Komander, The deubiquitinase OTULIN is an essential negative regulator of inflammation and autoimmunity. Cell 166, 1215–1230.e20 (2016).10.1016/j.cell.2016.07.019PMC500226927523608",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[11]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2016.07.019",
+      "pmcid": "PMC5002269",
+      "pmid": "27523608"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R12",
+    "xml_id": "R12",
+    "label": "12",
+    "title": "OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "E. Hoste",
+        "surname": "Hoste",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "K. Lecomte",
+        "surname": "Lecomte",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "K. Annusver",
+        "surname": "Annusver",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "N. Vandamme",
+        "surname": "Vandamme",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "J. Roels",
+        "surname": "Roels",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "S. Maschalidi",
+        "surname": "Maschalidi",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "L. Verboom",
+        "surname": "Verboom",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "H. K. Vikkula",
+        "surname": "Vikkula",
+        "given_names": "H. K.",
+        "collective": false
+      },
+      {
+        "name": "M. Sze",
+        "surname": "Sze",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "L. Van Hove",
+        "surname": "Van Hove",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "K. Verstaen",
+        "surname": "Verstaen",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "A. Martens",
+        "surname": "Martens",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "T. Hochepied",
+        "surname": "Hochepied",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "Y. Saeys",
+        "surname": "Saeys",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "K. Ravichandran",
+        "surname": "Ravichandran",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "M. Kasper",
+        "surname": "Kasper",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "G. van Loo",
+        "surname": "van Loo",
+        "given_names": "G.",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41467-021-25944-2",
+      "pmcid": "PMC8501048",
+      "pmid": "34625556"
+    },
+    "raw_reference_text": "E. Hoste, K. Lecomte, K. Annusver, N. Vandamme, J. Roels, S. Maschalidi, L. Verboom, H. K. Vikkula, M. Sze, L. Van Hove, K. Verstaen, A. Martens, T. Hochepied, Y. Saeys, K. Ravichandran, M. Kasper, G. van Loo, OTULIN maintains skin homeostasis by controlling keratinocyte death and stem cell identity. Nat. Commun. 12, 5913 (2021).10.1038/s41467-021-25944-2PMC850104834625556",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[12]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-021-25944-2",
+      "pmcid": "PMC8501048",
+      "pmid": "34625556"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R13",
+    "xml_id": "R13",
+    "label": "13",
+    "title": "OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H. Schunke",
+        "surname": "Schunke",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "U. Gobel",
+        "surname": "Gobel",
+        "given_names": "U.",
+        "collective": false
+      },
+      {
+        "name": "I. Dikic",
+        "surname": "Dikic",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41467-021-25945-1",
+      "pmcid": "PMC8501112",
+      "pmid": "34625557"
+    },
+    "raw_reference_text": "H. Schunke, U. Gobel, I. Dikic, M. Pasparakis, OTULIN inhibits RIPK1-mediated keratinocyte necroptosis to prevent skin inflammation in mice. Nat. Commun. 12, 5912 (2021).10.1038/s41467-021-25945-1PMC850111234625557",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[13]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-021-25945-1",
+      "pmcid": "PMC8501112",
+      "pmid": "34625557"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R14",
+    "xml_id": "R14",
+    "label": "14",
+    "title": "OTULIN limits cell death and inflammation by deubiquitinating LUBAC",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K. Heger",
+        "surname": "Heger",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "K. E. Wickliffe",
+        "surname": "Wickliffe",
+        "given_names": "K. E.",
+        "collective": false
+      },
+      {
+        "name": "A. Ndoja",
+        "surname": "Ndoja",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "J. Zhang",
+        "surname": "Zhang",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "A. Murthy",
+        "surname": "Murthy",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "D. L. Dugger",
+        "surname": "Dugger",
+        "given_names": "D. L.",
+        "collective": false
+      },
+      {
+        "name": "A. Maltzman",
+        "surname": "Maltzman",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "E. M. F. de Sousa",
+        "surname": "de Sousa",
+        "given_names": "E. M. F.",
+        "collective": false
+      },
+      {
+        "name": "J. Hung",
+        "surname": "Hung",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "Y. Zeng",
+        "surname": "Zeng",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "E. Verschueren",
+        "surname": "Verschueren",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "D. S. Kirkpatrick",
+        "surname": "Kirkpatrick",
+        "given_names": "D. S.",
+        "collective": false
+      },
+      {
+        "name": "D. Vucic",
+        "surname": "Vucic",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "W. P. Lee",
+        "surname": "Lee",
+        "given_names": "W. P.",
+        "collective": false
+      },
+      {
+        "name": "M. Roose-Girma",
+        "surname": "Roose-Girma",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "R. J. Newman",
+        "surname": "Newman",
+        "given_names": "R. J.",
+        "collective": false
+      },
+      {
+        "name": "S. Warming",
+        "surname": "Warming",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "Y. C. Hsiao",
+        "surname": "Hsiao",
+        "given_names": "Y. C.",
+        "collective": false
+      },
+      {
+        "name": "L. G. Kőműves",
+        "surname": "Kőműves",
+        "given_names": "L. G.",
+        "collective": false
+      },
+      {
+        "name": "J. D. Webster",
+        "surname": "Webster",
+        "given_names": "J. D.",
+        "collective": false
+      },
+      {
+        "name": "K. Newton",
+        "surname": "Newton",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "V. M. Dixit",
+        "surname": "Dixit",
+        "given_names": "V. M.",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41586-018-0256-2",
+      "pmid": "29950720"
+    },
+    "raw_reference_text": "K. Heger, K. E. Wickliffe, A. Ndoja, J. Zhang, A. Murthy, D. L. Dugger, A. Maltzman, E. M. F. de Sousa, J. Hung, Y. Zeng, E. Verschueren, D. S. Kirkpatrick, D. Vucic, W. P. Lee, M. Roose-Girma, R. J. Newman, S. Warming, Y. C. Hsiao, L. G. Kőműves, J. D. Webster, K. Newton, V. M. Dixit, OTULIN limits cell death and inflammation by deubiquitinating LUBAC. Nature 559, 120–124 (2018).10.1038/s41586-018-0256-229950720",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[14]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41586-018-0256-2",
+      "pmid": "29950720"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R15",
+    "xml_id": "R15",
+    "label": "15",
+    "title": "LUBAC prevents lethal dermatitis by inhibiting cell death induced by TNF, TRAIL and CD95L",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L. Taraborrelli",
+        "surname": "Taraborrelli",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "N. Peltzer",
+        "surname": "Peltzer",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "A. Montinaro",
+        "surname": "Montinaro",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "S. Kupka",
+        "surname": "Kupka",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "E. Rieser",
+        "surname": "Rieser",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "T. Hartwig",
+        "surname": "Hartwig",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "A. Sarr",
+        "surname": "Sarr",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "M. Darding",
+        "surname": "Darding",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "P. Draber",
+        "surname": "Draber",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "T. L. Haas",
+        "surname": "Haas",
+        "given_names": "T. L.",
+        "collective": false
+      },
+      {
+        "name": "A. Akarca",
+        "surname": "Akarca",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "T. Marafioti",
+        "surname": "Marafioti",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. Bertin",
+        "surname": "Bertin",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "P. J. Gough",
+        "surname": "Gough",
+        "given_names": "P. J.",
+        "collective": false
+      },
+      {
+        "name": "P. Bouillet",
+        "surname": "Bouillet",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "A. Strasser",
+        "surname": "Strasser",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "M. Leverkus",
+        "surname": "Leverkus",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. Silke",
+        "surname": "Silke",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "H. Walczak",
+        "surname": "Walczak",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41467-018-06155-8",
+      "pmcid": "PMC6156229",
+      "pmid": "30254289"
+    },
+    "raw_reference_text": "L. Taraborrelli, N. Peltzer, A. Montinaro, S. Kupka, E. Rieser, T. Hartwig, A. Sarr, M. Darding, P. Draber, T. L. Haas, A. Akarca, T. Marafioti, M. Pasparakis, J. Bertin, P. J. Gough, P. Bouillet, A. Strasser, M. Leverkus, J. Silke, H. Walczak, LUBAC prevents lethal dermatitis by inhibiting cell death induced by TNF, TRAIL and CD95L. Nat. Commun. 9, 3910 (2018).10.1038/s41467-018-06155-8PMC615622930254289",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[15]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-018-06155-8",
+      "pmcid": "PMC6156229",
+      "pmid": "30254289"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R16",
+    "xml_id": "R16",
+    "label": "16",
+    "title": "Biallelic hypomorphic mutations in a linear deubiquitinase define otulipenia, an early-onset autoinflammatory disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "Q. Zhou",
+        "surname": "Zhou",
+        "given_names": "Q.",
+        "collective": false
+      },
+      {
+        "name": "X. Yu",
+        "surname": "Yu",
+        "given_names": "X.",
+        "collective": false
+      },
+      {
+        "name": "E. Demirkaya",
+        "surname": "Demirkaya",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "N. Deuitch",
+        "surname": "Deuitch",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "D. Stone",
+        "surname": "Stone",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "W. L. Tsai",
+        "surname": "Tsai",
+        "given_names": "W. L.",
+        "collective": false
+      },
+      {
+        "name": "H. S. Kuehn",
+        "surname": "Kuehn",
+        "given_names": "H. S.",
+        "collective": false
+      },
+      {
+        "name": "H. Wang",
+        "surname": "Wang",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "D. Yang",
+        "surname": "Yang",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "Y. H. Park",
+        "surname": "Park",
+        "given_names": "Y. H.",
+        "collective": false
+      },
+      {
+        "name": "A. K. Ombrello",
+        "surname": "Ombrello",
+        "given_names": "A. K.",
+        "collective": false
+      },
+      {
+        "name": "M. Blake",
+        "surname": "Blake",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "T. Romeo",
+        "surname": "Romeo",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "E. F. Remmers",
+        "surname": "Remmers",
+        "given_names": "E. F.",
+        "collective": false
+      },
+      {
+        "name": "J. J. Chae",
+        "surname": "Chae",
+        "given_names": "J. J.",
+        "collective": false
+      },
+      {
+        "name": "J. C. Mullikin",
+        "surname": "Mullikin",
+        "given_names": "J. C.",
+        "collective": false
+      },
+      {
+        "name": "F. Güzel",
+        "surname": "Güzel",
+        "given_names": "F.",
+        "collective": false
+      },
+      {
+        "name": "J. D. Milner",
+        "surname": "Milner",
+        "given_names": "J. D.",
+        "collective": false
+      },
+      {
+        "name": "M. Boehm",
+        "surname": "Boehm",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "S. D. Rosenzweig",
+        "surname": "Rosenzweig",
+        "given_names": "S. D.",
+        "collective": false
+      },
+      {
+        "name": "M. Gadina",
+        "surname": "Gadina",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "S. B. Welch",
+        "surname": "Welch",
+        "given_names": "S. B.",
+        "collective": false
+      },
+      {
+        "name": "S. Özen",
+        "surname": "Özen",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "R. Topaloglu",
+        "surname": "Topaloglu",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "M. Abinun",
+        "surname": "Abinun",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "D. L. Kastner",
+        "surname": "Kastner",
+        "given_names": "D. L.",
+        "collective": false
+      },
+      {
+        "name": "I. Aksentijevich",
+        "surname": "Aksentijevich",
+        "given_names": "I.",
+        "collective": false
+      }
+    ],
+    "year": "2016",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1073/pnas.1612594113",
+      "pmcid": "PMC5018768",
+      "pmid": "27559085"
+    },
+    "raw_reference_text": "Q. Zhou, X. Yu, E. Demirkaya, N. Deuitch, D. Stone, W. L. Tsai, H. S. Kuehn, H. Wang, D. Yang, Y. H. Park, A. K. Ombrello, M. Blake, T. Romeo, E. F. Remmers, J. J. Chae, J. C. Mullikin, F. Güzel, J. D. Milner, M. Boehm, S. D. Rosenzweig, M. Gadina, S. B. Welch, S. Özen, R. Topaloglu, M. Abinun, D. L. Kastner, I. Aksentijevich, Biallelic hypomorphic mutations in a linear deubiquitinase define otulipenia, an early-onset autoinflammatory disease. Proc. Natl. Acad. Sci. U.S.A. 113, 10127–10132 (2016).10.1073/pnas.1612594113PMC501876827559085",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[16]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1073/pnas.1612594113",
+      "pmcid": "PMC5018768",
+      "pmid": "27559085"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R17",
+    "xml_id": "R17",
+    "label": "17",
+    "title": "The linear ubiquitin-specific deubiquitinase gumby regulates angiogenesis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "E. Rivkin",
+        "surname": "Rivkin",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "S. M. Almeida",
+        "surname": "Almeida",
+        "given_names": "S. M.",
+        "collective": false
+      },
+      {
+        "name": "D. F. Ceccarelli",
+        "surname": "Ceccarelli",
+        "given_names": "D. F.",
+        "collective": false
+      },
+      {
+        "name": "Y. C. Juang",
+        "surname": "Juang",
+        "given_names": "Y. C.",
+        "collective": false
+      },
+      {
+        "name": "T. A. MacLean",
+        "surname": "MacLean",
+        "given_names": "T. A.",
+        "collective": false
+      },
+      {
+        "name": "T. Srikumar",
+        "surname": "Srikumar",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "H. Huang",
+        "surname": "Huang",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "W. H. Dunham",
+        "surname": "Dunham",
+        "given_names": "W. H.",
+        "collective": false
+      },
+      {
+        "name": "R. Fukumura",
+        "surname": "Fukumura",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "G. Xie",
+        "surname": "Xie",
+        "given_names": "G.",
+        "collective": false
+      },
+      {
+        "name": "Y. Gondo",
+        "surname": "Gondo",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "B. Raught",
+        "surname": "Raught",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "A. C. Gingras",
+        "surname": "Gingras",
+        "given_names": "A. C.",
+        "collective": false
+      },
+      {
+        "name": "F. Sicheri",
+        "surname": "Sicheri",
+        "given_names": "F.",
+        "collective": false
+      },
+      {
+        "name": "S. P. Cordes",
+        "surname": "Cordes",
+        "given_names": "S. P.",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nature12296",
+      "pmcid": "PMC4931916",
+      "pmid": "23708998"
+    },
+    "raw_reference_text": "E. Rivkin, S. M. Almeida, D. F. Ceccarelli, Y. C. Juang, T. A. MacLean, T. Srikumar, H. Huang, W. H. Dunham, R. Fukumura, G. Xie, Y. Gondo, B. Raught, A. C. Gingras, F. Sicheri, S. P. Cordes, The linear ubiquitin-specific deubiquitinase gumby regulates angiogenesis. Nature 498, 318–324 (2013).10.1038/nature12296PMC493191623708998",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[17]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature12296",
+      "pmcid": "PMC4931916",
+      "pmid": "23708998"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R18",
+    "xml_id": "R18",
+    "label": "18",
+    "title": "The Wnt signaling pathway in development and disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "C. Y. Logan",
+        "surname": "Logan",
+        "given_names": "C. Y.",
+        "collective": false
+      },
+      {
+        "name": "R. Nusse",
+        "surname": "Nusse",
+        "given_names": "R.",
+        "collective": false
+      }
+    ],
+    "year": "2004",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1146/annurev.cellbio.20.010403.113126",
+      "pmid": "15473860"
+    },
+    "raw_reference_text": "C. Y. Logan, R. Nusse, The Wnt signaling pathway in development and disease. Annu. Rev. Cell Dev. Biol. 20, 781–810 (2004).10.1146/annurev.cellbio.20.010403.11312615473860",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[18]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1146/annurev.cellbio.20.010403.113126",
+      "pmid": "15473860"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R19",
+    "xml_id": "R19",
+    "label": "19",
+    "title": "Distinct functions for Wnt/β-catenin in hair follicle stem cell proliferation and survival and interfollicular epidermal homeostasis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "Y. S. Choi",
+        "surname": "Choi",
+        "given_names": "Y. S.",
+        "collective": false
+      },
+      {
+        "name": "Y. Zhang",
+        "surname": "Zhang",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "M. Xu",
+        "surname": "Xu",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "Y. Yang",
+        "surname": "Yang",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "M. Ito",
+        "surname": "Ito",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "T. Peng",
+        "surname": "Peng",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "Z. Cui",
+        "surname": "Cui",
+        "given_names": "Z.",
+        "collective": false
+      },
+      {
+        "name": "A. Nagy",
+        "surname": "Nagy",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "A. K. Hadjantonakis",
+        "surname": "Hadjantonakis",
+        "given_names": "A. K.",
+        "collective": false
+      },
+      {
+        "name": "R. A. Lang",
+        "surname": "Lang",
+        "given_names": "R. A.",
+        "collective": false
+      },
+      {
+        "name": "G. Cotsarelis",
+        "surname": "Cotsarelis",
+        "given_names": "G.",
+        "collective": false
+      },
+      {
+        "name": "T. Andl",
+        "surname": "Andl",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "E. E. Morrisey",
+        "surname": "Morrisey",
+        "given_names": "E. E.",
+        "collective": false
+      },
+      {
+        "name": "S. E. Millar",
+        "surname": "Millar",
+        "given_names": "S. E.",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.stem.2013.10.003",
+      "pmcid": "PMC3900235",
+      "pmid": "24315444"
+    },
+    "raw_reference_text": "Y. S. Choi, Y. Zhang, M. Xu, Y. Yang, M. Ito, T. Peng, Z. Cui, A. Nagy, A. K. Hadjantonakis, R. A. Lang, G. Cotsarelis, T. Andl, E. E. Morrisey, S. E. Millar, Distinct functions for Wnt/β-catenin in hair follicle stem cell proliferation and survival and interfollicular epidermal homeostasis. Cell Stem Cell 13, 720–733 (2013).10.1016/j.stem.2013.10.003PMC390023524315444",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[19]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.stem.2013.10.003",
+      "pmcid": "PMC3900235",
+      "pmid": "24315444"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R20",
+    "xml_id": "R20",
+    "label": "20",
+    "title": "Wnt signaling in skin development, homeostasis, and disease",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "X. Lim",
+        "surname": "Lim",
+        "given_names": "X.",
+        "collective": false
+      },
+      {
+        "name": "R. Nusse",
+        "surname": "Nusse",
+        "given_names": "R.",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1101/cshperspect.a008029",
+      "pmcid": "PMC3552514",
+      "pmid": "23209129"
+    },
+    "raw_reference_text": "X. Lim, R. Nusse, Wnt signaling in skin development, homeostasis, and disease. Cold Spring Harb. Perspect. Biol. 5, a008029 (2013).10.1101/cshperspect.a008029PMC355251423209129",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[20]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1101/cshperspect.a008029",
+      "pmcid": "PMC3552514",
+      "pmid": "23209129"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R21",
+    "xml_id": "R21",
+    "label": "21",
+    "title": "The F-box protein beta-TrCP associates with phosphorylated beta-catenin and regulates its activity in the cell",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. Hart",
+        "surname": "Hart",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. P. Concordet",
+        "surname": "Concordet",
+        "given_names": "J. P.",
+        "collective": false
+      },
+      {
+        "name": "I. Lassot",
+        "surname": "Lassot",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "I. Albert",
+        "surname": "Albert",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "R. del los Santos",
+        "surname": "del los Santos",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "H. Durand",
+        "surname": "Durand",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "C. Perret",
+        "surname": "Perret",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "B. Rubinfeld",
+        "surname": "Rubinfeld",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "F. Margottin",
+        "surname": "Margottin",
+        "given_names": "F.",
+        "collective": false
+      },
+      {
+        "name": "R. Benarous",
+        "surname": "Benarous",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "P. Polakis",
+        "surname": "Polakis",
+        "given_names": "P.",
+        "collective": false
+      }
+    ],
+    "year": "1999",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/s0960-9822(99)80091-8",
+      "pmid": "10074433"
+    },
+    "raw_reference_text": "M. Hart, J. P. Concordet, I. Lassot, I. Albert, R. del los Santos, H. Durand, C. Perret, B. Rubinfeld, F. Margottin, R. Benarous, P. Polakis, The F-box protein beta-TrCP associates with phosphorylated beta-catenin and regulates its activity in the cell. Curr. Biol. 9, 207–211 (1999).10.1016/s0960-9822(99)80091-810074433",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[21]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0960-9822(99)80091-8",
+      "pmid": "10074433"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R22",
+    "xml_id": "R22",
+    "label": "22",
+    "title": "Wnt/β-catenin signaling, disease, and emerging therapeutic modalities",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R. Nusse",
+        "surname": "Nusse",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "H. Clevers",
+        "surname": "Clevers",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2017",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2017.05.016",
+      "pmid": "28575679"
+    },
+    "raw_reference_text": "R. Nusse, H. Clevers, Wnt/β-catenin signaling, disease, and emerging therapeutic modalities. Cell 169, 985–999 (2017).10.1016/j.cell.2017.05.01628575679",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[22]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2017.05.016",
+      "pmid": "28575679"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R23",
+    "xml_id": "R23",
+    "label": "23",
+    "title": "ZNRF3 promotes Wnt receptor turnover in an R-spondin-sensitive manner",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H. X. Hao",
+        "surname": "Hao",
+        "given_names": "H. X.",
+        "collective": false
+      },
+      {
+        "name": "Y. Xie",
+        "surname": "Xie",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "Y. Zhang",
+        "surname": "Zhang",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "O. Charlat",
+        "surname": "Charlat",
+        "given_names": "O.",
+        "collective": false
+      },
+      {
+        "name": "E. Oster",
+        "surname": "Oster",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "M. Avello",
+        "surname": "Avello",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "H. Lei",
+        "surname": "Lei",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "C. Mickanin",
+        "surname": "Mickanin",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "D. Liu",
+        "surname": "Liu",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "H. Ruffner",
+        "surname": "Ruffner",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "X. Mao",
+        "surname": "Mao",
+        "given_names": "X.",
+        "collective": false
+      },
+      {
+        "name": "Q. Ma",
+        "surname": "Ma",
+        "given_names": "Q.",
+        "collective": false
+      },
+      {
+        "name": "R. Zamponi",
+        "surname": "Zamponi",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "T. Bouwmeester",
+        "surname": "Bouwmeester",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "P. M. Finan",
+        "surname": "Finan",
+        "given_names": "P. M.",
+        "collective": false
+      },
+      {
+        "name": "M. W. Kirschner",
+        "surname": "Kirschner",
+        "given_names": "M. W.",
+        "collective": false
+      },
+      {
+        "name": "J. A. Porter",
+        "surname": "Porter",
+        "given_names": "J. A.",
+        "collective": false
+      },
+      {
+        "name": "F. C. Serluca",
+        "surname": "Serluca",
+        "given_names": "F. C.",
+        "collective": false
+      },
+      {
+        "name": "F. Cong",
+        "surname": "Cong",
+        "given_names": "F.",
+        "collective": false
+      }
+    ],
+    "year": "2012",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nature11019",
+      "pmid": "22575959"
+    },
+    "raw_reference_text": "H. X. Hao, Y. Xie, Y. Zhang, O. Charlat, E. Oster, M. Avello, H. Lei, C. Mickanin, D. Liu, H. Ruffner, X. Mao, Q. Ma, R. Zamponi, T. Bouwmeester, P. M. Finan, M. W. Kirschner, J. A. Porter, F. C. Serluca, F. Cong, ZNRF3 promotes Wnt receptor turnover in an R-spondin-sensitive manner. Nature 485, 195–200 (2012).10.1038/nature1101922575959",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[23]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature11019",
+      "pmid": "22575959"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R24",
+    "xml_id": "R24",
+    "label": "24",
+    "title": "Tumour suppressor RNF43 is a stem-cell E3 ligase that induces endocytosis of Wnt receptors",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "B. K. Koo",
+        "surname": "Koo",
+        "given_names": "B. K.",
+        "collective": false
+      },
+      {
+        "name": "M. Spit",
+        "surname": "Spit",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "I. Jordens",
+        "surname": "Jordens",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "T. Y. Low",
+        "surname": "Low",
+        "given_names": "T. Y.",
+        "collective": false
+      },
+      {
+        "name": "D. E. Stange",
+        "surname": "Stange",
+        "given_names": "D. E.",
+        "collective": false
+      },
+      {
+        "name": "M. van de Wetering",
+        "surname": "van de Wetering",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. H. van Es",
+        "surname": "van Es",
+        "given_names": "J. H.",
+        "collective": false
+      },
+      {
+        "name": "S. Mohammed",
+        "surname": "Mohammed",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "A. J. Heck",
+        "surname": "Heck",
+        "given_names": "A. J.",
+        "collective": false
+      },
+      {
+        "name": "M. M. Maurice",
+        "surname": "Maurice",
+        "given_names": "M. M.",
+        "collective": false
+      },
+      {
+        "name": "H. Clevers",
+        "surname": "Clevers",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2012",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nature11308",
+      "pmid": "22895187"
+    },
+    "raw_reference_text": "B. K. Koo, M. Spit, I. Jordens, T. Y. Low, D. E. Stange, M. van de Wetering, J. H. van Es, S. Mohammed, A. J. Heck, M. M. Maurice, H. Clevers, Tumour suppressor RNF43 is a stem-cell E3 ligase that induces endocytosis of Wnt receptors. Nature 488, 665–669 (2012).10.1038/nature1130822895187",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[24]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nature11308",
+      "pmid": "22895187"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R25",
+    "xml_id": "R25",
+    "label": "25",
+    "title": "The SCFbeta-TRCP-ubiquitin ligase complex associates specifically with phosphorylated destruction motifs in IkappaBalpha and beta-catenin and stimulates IkappaBalpha ubiquitination in vitro",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J. T. Winston",
+        "surname": "Winston",
+        "given_names": "J. T.",
+        "collective": false
+      },
+      {
+        "name": "P. Strack",
+        "surname": "Strack",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "P. Beer-Romero",
+        "surname": "Beer-Romero",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "C. Y. Chu",
+        "surname": "Chu",
+        "given_names": "C. Y.",
+        "collective": false
+      },
+      {
+        "name": "S. J. Elledge",
+        "surname": "Elledge",
+        "given_names": "S. J.",
+        "collective": false
+      },
+      {
+        "name": "J. W. Harper",
+        "surname": "Harper",
+        "given_names": "J. W.",
+        "collective": false
+      }
+    ],
+    "year": "1999",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1101/gad.13.3.270",
+      "pmcid": "PMC316433",
+      "pmid": "9990852"
+    },
+    "raw_reference_text": "J. T. Winston, P. Strack, P. Beer-Romero, C. Y. Chu, S. J. Elledge, J. W. Harper, The SCFbeta-TRCP-ubiquitin ligase complex associates specifically with phosphorylated destruction motifs in IkappaBalpha and beta-catenin and stimulates IkappaBalpha ubiquitination in vitro. Genes Dev. 13, 270–283 (1999).10.1101/gad.13.3.270PMC3164339990852",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[25]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1101/gad.13.3.270",
+      "pmcid": "PMC316433",
+      "pmid": "9990852"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R26",
+    "xml_id": "R26",
+    "label": "26",
+    "title": "ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "W. Wang",
+        "surname": "Wang",
+        "given_names": "W.",
+        "collective": false
+      },
+      {
+        "name": "M. Li",
+        "surname": "Li",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "S. Ponnusamy",
+        "surname": "Ponnusamy",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "Y. Chi",
+        "surname": "Chi",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "J. Xue",
+        "surname": "Xue",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "B. Fahmy",
+        "surname": "Fahmy",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "M. Fan",
+        "surname": "Fan",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "G. A. Miranda-Carboni",
+        "surname": "Miranda-Carboni",
+        "given_names": "G. A.",
+        "collective": false
+      },
+      {
+        "name": "R. Narayanan",
+        "surname": "Narayanan",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "J. Wu",
+        "surname": "Wu",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "Z. H. Wu",
+        "surname": "Wu",
+        "given_names": "Z. H.",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41467-020-17770-9",
+      "pmcid": "PMC7414915",
+      "pmid": "32770022"
+    },
+    "raw_reference_text": "W. Wang, M. Li, S. Ponnusamy, Y. Chi, J. Xue, B. Fahmy, M. Fan, G. A. Miranda-Carboni, R. Narayanan, J. Wu, Z. H. Wu, ABL1-dependent OTULIN phosphorylation promotes genotoxic Wnt/beta-catenin activation to enhance drug resistance in breast cancers. Nat. Commun. 11, 3965 (2020).10.1038/s41467-020-17770-9PMC741491532770022",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[26]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41467-020-17770-9",
+      "pmcid": "PMC7414915",
+      "pmid": "32770022"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R27",
+    "xml_id": "R27",
+    "label": "27",
+    "title": "De novo hair follicle morphogenesis and hair tumors in mice expressing a truncated beta-catenin in skin",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "U. Gat",
+        "surname": "Gat",
+        "given_names": "U.",
+        "collective": false
+      },
+      {
+        "name": "R. DasGupta",
+        "surname": "DasGupta",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "L. Degenstein",
+        "surname": "Degenstein",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "E. Fuchs",
+        "surname": "Fuchs",
+        "given_names": "E.",
+        "collective": false
+      }
+    ],
+    "year": "1998",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/s0092-8674(00)81631-1",
+      "pmid": "9845363"
+    },
+    "raw_reference_text": "U. Gat, R. DasGupta, L. Degenstein, E. Fuchs, De novo hair follicle morphogenesis and hair tumors in mice expressing a truncated beta-catenin in skin. Cell 95, 605–614 (1998).10.1016/s0092-8674(00)81631-19845363",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[27]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0092-8674(00)81631-1",
+      "pmid": "9845363"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R28",
+    "xml_id": "R28",
+    "label": "28",
+    "title": "SHARPIN stabilizes β-catenin through a linear ubiquitination-independent manner to support gastric tumorigenesis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L. Zhang",
+        "surname": "Zhang",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "Q. Liu",
+        "surname": "Liu",
+        "given_names": "Q.",
+        "collective": false
+      },
+      {
+        "name": "K. W. Liu",
+        "surname": "Liu",
+        "given_names": "K. W.",
+        "collective": false
+      },
+      {
+        "name": "Z. Y. Qin",
+        "surname": "Qin",
+        "given_names": "Z. Y.",
+        "collective": false
+      },
+      {
+        "name": "G. X. Zhu",
+        "surname": "Zhu",
+        "given_names": "G. X.",
+        "collective": false
+      },
+      {
+        "name": "L. T. Shen",
+        "surname": "Shen",
+        "given_names": "L. T.",
+        "collective": false
+      },
+      {
+        "name": "N. Zhang",
+        "surname": "Zhang",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "B. Y. Liu",
+        "surname": "Liu",
+        "given_names": "B. Y.",
+        "collective": false
+      },
+      {
+        "name": "L. R. Che",
+        "surname": "Che",
+        "given_names": "L. R.",
+        "collective": false
+      },
+      {
+        "name": "J. Y. Li",
+        "surname": "Li",
+        "given_names": "J. Y.",
+        "collective": false
+      },
+      {
+        "name": "T. Wang",
+        "surname": "Wang",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "L. Z. Wen",
+        "surname": "Wen",
+        "given_names": "L. Z.",
+        "collective": false
+      },
+      {
+        "name": "K. J. Liu",
+        "surname": "Liu",
+        "given_names": "K. J.",
+        "collective": false
+      },
+      {
+        "name": "Y. Guo",
+        "surname": "Guo",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "X. R. Yin",
+        "surname": "Yin",
+        "given_names": "X. R.",
+        "collective": false
+      },
+      {
+        "name": "X. W. Wang",
+        "surname": "Wang",
+        "given_names": "X. W.",
+        "collective": false
+      },
+      {
+        "name": "Z. H. Zhou",
+        "surname": "Zhou",
+        "given_names": "Z. H.",
+        "collective": false
+      },
+      {
+        "name": "H. L. Xiao",
+        "surname": "Xiao",
+        "given_names": "H. L.",
+        "collective": false
+      },
+      {
+        "name": "Y. H. Cui",
+        "surname": "Cui",
+        "given_names": "Y. H.",
+        "collective": false
+      },
+      {
+        "name": "X. W. Bian",
+        "surname": "Bian",
+        "given_names": "X. W.",
+        "collective": false
+      },
+      {
+        "name": "C. H. Lan",
+        "surname": "Lan",
+        "given_names": "C. H.",
+        "collective": false
+      },
+      {
+        "name": "D. Chen",
+        "surname": "Chen",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "B. Wang",
+        "surname": "Wang",
+        "given_names": "B.",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1007/s10120-020-01138-5",
+      "pmid": "33159601"
+    },
+    "raw_reference_text": "L. Zhang, Q. Liu, K. W. Liu, Z. Y. Qin, G. X. Zhu, L. T. Shen, N. Zhang, B. Y. Liu, L. R. Che, J. Y. Li, T. Wang, L. Z. Wen, K. J. Liu, Y. Guo, X. R. Yin, X. W. Wang, Z. H. Zhou, H. L. Xiao, Y. H. Cui, X. W. Bian, C. H. Lan, D. Chen, B. Wang, SHARPIN stabilizes β-catenin through a linear ubiquitination-independent manner to support gastric tumorigenesis. Gastric Cancer 24, 402–416 (2021).10.1007/s10120-020-01138-533159601",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[28]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1007/s10120-020-01138-5",
+      "pmid": "33159601"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R29",
+    "xml_id": "R29",
+    "label": "29",
+    "title": "Mechanical force-driven adherens junction remodeling and epithelial dynamics",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "D. Pinheiro",
+        "surname": "Pinheiro",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "Y. Bellaiche",
+        "surname": "Bellaiche",
+        "given_names": "Y.",
+        "collective": false
+      }
+    ],
+    "year": "2018",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.devcel.2018.09.014",
+      "pmid": "30300588"
+    },
+    "raw_reference_text": "D. Pinheiro, Y. Bellaiche, Mechanical force-driven adherens junction remodeling and epithelial dynamics. Dev. Cell 47, 3–19 (2018).10.1016/j.devcel.2018.09.01430300588",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[29]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.devcel.2018.09.014",
+      "pmid": "30300588"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R30",
+    "xml_id": "R30",
+    "label": "30",
+    "title": "Transient activation of beta-catenin signalling in adult mouse epidermis is sufficient to induce new hair follicles but continuous activation is required to maintain hair follicle tumours",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "C. Lo Celso",
+        "surname": "Lo Celso",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "D. M. Prowse",
+        "surname": "Prowse",
+        "given_names": "D. M.",
+        "collective": false
+      },
+      {
+        "name": "F. M. Watt",
+        "surname": "Watt",
+        "given_names": "F. M.",
+        "collective": false
+      }
+    ],
+    "year": "2004",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1242/dev.01052",
+      "pmid": "15084463"
+    },
+    "raw_reference_text": "C. Lo Celso, D. M. Prowse, F. M. Watt, Transient activation of beta-catenin signalling in adult mouse epidermis is sufficient to induce new hair follicles but continuous activation is required to maintain hair follicle tumours. Development 131, 1787–1799 (2004).10.1242/dev.0105215084463",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[30]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1242/dev.01052",
+      "pmid": "15084463"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R31",
+    "xml_id": "R31",
+    "label": "31",
+    "title": "β-Catenin stabilization dysregulates mesenchymal cell proliferation, motility, and invasiveness and causes aggressive fibromatosis and hyperplastic cutaneous wounds",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S. S. Cheon",
+        "surname": "Cheon",
+        "given_names": "S. S.",
+        "collective": false
+      },
+      {
+        "name": "A. Y. Cheah",
+        "surname": "Cheah",
+        "given_names": "A. Y.",
+        "collective": false
+      },
+      {
+        "name": "S. Turley",
+        "surname": "Turley",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "P. Nadesan",
+        "surname": "Nadesan",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "R. Poon",
+        "surname": "Poon",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "H. Clevers",
+        "surname": "Clevers",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "B. A. Alman",
+        "surname": "Alman",
+        "given_names": "B. A.",
+        "collective": false
+      }
+    ],
+    "year": "2002",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1073/pnas.102657399",
+      "pmcid": "PMC124513",
+      "pmid": "11983872"
+    },
+    "raw_reference_text": "S. S. Cheon, A. Y. Cheah, S. Turley, P. Nadesan, R. Poon, H. Clevers, B. A. Alman, β-Catenin stabilization dysregulates mesenchymal cell proliferation, motility, and invasiveness and causes aggressive fibromatosis and hyperplastic cutaneous wounds. Proc. Natl. Acad. Sci. U.S.A. 99, 6973–6978 (2002).10.1073/pnas.102657399PMC12451311983872",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[31]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1073/pnas.102657399",
+      "pmcid": "PMC124513",
+      "pmid": "11983872"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R32",
+    "xml_id": "R32",
+    "label": "32",
+    "title": "β-catenin regulates wound size and mediates the effect of TGF-beta in cutaneous healing",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "S. S. Cheon",
+        "surname": "Cheon",
+        "given_names": "S. S.",
+        "collective": false
+      },
+      {
+        "name": "Q. Wei",
+        "surname": "Wei",
+        "given_names": "Q.",
+        "collective": false
+      },
+      {
+        "name": "A. Gurung",
+        "surname": "Gurung",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "A. Youn",
+        "surname": "Youn",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "T. Bright",
+        "surname": "Bright",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "R. Poon",
+        "surname": "Poon",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "H. Whetstone",
+        "surname": "Whetstone",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "A. Guha",
+        "surname": "Guha",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "B. A. Alman",
+        "surname": "Alman",
+        "given_names": "B. A.",
+        "collective": false
+      }
+    ],
+    "year": "2006",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1096/fj.05-4759com",
+      "pmid": "16581977"
+    },
+    "raw_reference_text": "S. S. Cheon, Q. Wei, A. Gurung, A. Youn, T. Bright, R. Poon, H. Whetstone, A. Guha, B. A. Alman, β-catenin regulates wound size and mediates the effect of TGF-beta in cutaneous healing. FASEB J. 20, 692–701 (2006).10.1096/fj.05-4759com16581977",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[32]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1096/fj.05-4759com",
+      "pmid": "16581977"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R33",
+    "xml_id": "R33",
+    "label": "33",
+    "title": "Sensing of endogenous nucleic acids by ZBP1 induces keratinocyte necroptosis and skin inflammation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. Devos",
+        "surname": "Devos",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "G. Tanghe",
+        "surname": "Tanghe",
+        "given_names": "G.",
+        "collective": false
+      },
+      {
+        "name": "B. Gilbert",
+        "surname": "Gilbert",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "E. Dierick",
+        "surname": "Dierick",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "M. Verheirstraeten",
+        "surname": "Verheirstraeten",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. Nemegeer",
+        "surname": "Nemegeer",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "R. de Reuver",
+        "surname": "de Reuver",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "S. Lefebvre",
+        "surname": "Lefebvre",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "J. De Munck",
+        "surname": "De Munck",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "J. Rehwinkel",
+        "surname": "Rehwinkel",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "P. Vandenabeele",
+        "surname": "Vandenabeele",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "W. Declercq",
+        "surname": "Declercq",
+        "given_names": "W.",
+        "collective": false
+      },
+      {
+        "name": "J. Maelfait",
+        "surname": "Maelfait",
+        "given_names": "J.",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1084/jem.20191913",
+      "pmcid": "PMC7336309",
+      "pmid": "32315377"
+    },
+    "raw_reference_text": "M. Devos, G. Tanghe, B. Gilbert, E. Dierick, M. Verheirstraeten, J. Nemegeer, R. de Reuver, S. Lefebvre, J. De Munck, J. Rehwinkel, P. Vandenabeele, W. Declercq, J. Maelfait, Sensing of endogenous nucleic acids by ZBP1 induces keratinocyte necroptosis and skin inflammation. J. Exp. Med. 217, e20191913 (2020).10.1084/jem.20191913PMC733630932315377",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[33]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1084/jem.20191913",
+      "pmcid": "PMC7336309",
+      "pmid": "32315377"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R34",
+    "xml_id": "R34",
+    "label": "34",
+    "title": "Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H. Nguyen",
+        "surname": "Nguyen",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "B. J. Merrill",
+        "surname": "Merrill",
+        "given_names": "B. J.",
+        "collective": false
+      },
+      {
+        "name": "L. Polak",
+        "surname": "Polak",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "M. Nikolova",
+        "surname": "Nikolova",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "M. Rendl",
+        "surname": "Rendl",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "T. M. Shaver",
+        "surname": "Shaver",
+        "given_names": "T. M.",
+        "collective": false
+      },
+      {
+        "name": "H. A. Pasolli",
+        "surname": "Pasolli",
+        "given_names": "H. A.",
+        "collective": false
+      },
+      {
+        "name": "E. Fuchs",
+        "surname": "Fuchs",
+        "given_names": "E.",
+        "collective": false
+      }
+    ],
+    "year": "2009",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/ng.431",
+      "pmcid": "PMC2792754",
+      "pmid": "19718027"
+    },
+    "raw_reference_text": "H. Nguyen, B. J. Merrill, L. Polak, M. Nikolova, M. Rendl, T. M. Shaver, H. A. Pasolli, E. Fuchs, Tcf3 and Tcf4 are essential for long-term homeostasis of skin epithelia. Nat. Genet. 41, 1068–1075 (2009).10.1038/ng.431PMC279275419718027",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[34]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/ng.431",
+      "pmcid": "PMC2792754",
+      "pmid": "19718027"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R35",
+    "xml_id": "R35",
+    "label": "35",
+    "title": "Armadillo coactivates transcription driven by the product of the Drosophila segment polarity gene dTCF",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. van de Wetering",
+        "surname": "van de Wetering",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "R. Cavallo",
+        "surname": "Cavallo",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "D. Dooijes",
+        "surname": "Dooijes",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "M. van Beest",
+        "surname": "van Beest",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. van Es",
+        "surname": "van Es",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "J. Loureiro",
+        "surname": "Loureiro",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "A. Ypma",
+        "surname": "Ypma",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "D. Hursh",
+        "surname": "Hursh",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "T. Jones",
+        "surname": "Jones",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "A. Bejsovec",
+        "surname": "Bejsovec",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "M. Peifer",
+        "surname": "Peifer",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "M. Mortin",
+        "surname": "Mortin",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "H. Clevers",
+        "surname": "Clevers",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "1997",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/s0092-8674(00)81925-x",
+      "pmid": "9118222"
+    },
+    "raw_reference_text": "M. van de Wetering, R. Cavallo, D. Dooijes, M. van Beest, J. van Es, J. Loureiro, A. Ypma, D. Hursh, T. Jones, A. Bejsovec, M. Peifer, M. Mortin, H. Clevers, Armadillo coactivates transcription driven by the product of the Drosophila segment polarity gene dTCF. Cell 88, 789–799 (1997).10.1016/s0092-8674(00)81925-x9118222",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[35]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0092-8674(00)81925-x",
+      "pmid": "9118222"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R36",
+    "xml_id": "R36",
+    "label": "36",
+    "title": "Tcf3 governs stem cell features and represses cell fate determination in skin",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "H. Nguyen",
+        "surname": "Nguyen",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "M. Rendl",
+        "surname": "Rendl",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "E. Fuchs",
+        "surname": "Fuchs",
+        "given_names": "E.",
+        "collective": false
+      }
+    ],
+    "year": "2006",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2006.07.036",
+      "pmid": "17018284"
+    },
+    "raw_reference_text": "H. Nguyen, M. Rendl, E. Fuchs, Tcf3 governs stem cell features and represses cell fate determination in skin. Cell 127, 171–183 (2006).10.1016/j.cell.2006.07.03617018284",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[36]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2006.07.036",
+      "pmid": "17018284"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R37",
+    "xml_id": "R37",
+    "label": "37",
+    "title": "The beta-catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. van de Wetering",
+        "surname": "van de Wetering",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "E. Sancho",
+        "surname": "Sancho",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "C. Verweij",
+        "surname": "Verweij",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "W. de Lau",
+        "surname": "de Lau",
+        "given_names": "W.",
+        "collective": false
+      },
+      {
+        "name": "I. Oving",
+        "surname": "Oving",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "A. Hurlstone",
+        "surname": "Hurlstone",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "K. van der Horn",
+        "surname": "van der Horn",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "E. Batlle",
+        "surname": "Batlle",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "D. Coudreuse",
+        "surname": "Coudreuse",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "A. P. Haramis",
+        "surname": "Haramis",
+        "given_names": "A. P.",
+        "collective": false
+      },
+      {
+        "name": "M. Tjon-Pon-Fong",
+        "surname": "Tjon-Pon-Fong",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "P. Moerer",
+        "surname": "Moerer",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "M. van den Born",
+        "surname": "van den Born",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "G. Soete",
+        "surname": "Soete",
+        "given_names": "G.",
+        "collective": false
+      },
+      {
+        "name": "S. Pals",
+        "surname": "Pals",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "M. Eilers",
+        "surname": "Eilers",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "R. Medema",
+        "surname": "Medema",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "H. Clevers",
+        "surname": "Clevers",
+        "given_names": "H.",
+        "collective": false
+      }
+    ],
+    "year": "2002",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/s0092-8674(02)01014-0",
+      "pmid": "12408868"
+    },
+    "raw_reference_text": "M. van de Wetering, E. Sancho, C. Verweij, W. de Lau, I. Oving, A. Hurlstone, K. van der Horn, E. Batlle, D. Coudreuse, A. P. Haramis, M. Tjon-Pon-Fong, P. Moerer, M. van den Born, G. Soete, S. Pals, M. Eilers, R. Medema, H. Clevers, The beta-catenin/TCF-4 complex imposes a crypt progenitor phenotype on colorectal cancer cells. Cell 111, 241–250 (2002).10.1016/s0092-8674(02)01014-012408868",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[37]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0092-8674(02)01014-0",
+      "pmid": "12408868"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R38",
+    "xml_id": "R38",
+    "label": "38",
+    "title": "Lessons from hereditary colorectal cancer",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K. W. Kinzler",
+        "surname": "Kinzler",
+        "given_names": "K. W.",
+        "collective": false
+      },
+      {
+        "name": "B. Vogelstein",
+        "surname": "Vogelstein",
+        "given_names": "B.",
+        "collective": false
+      }
+    ],
+    "year": "1996",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/s0092-8674(00)81333-1",
+      "pmid": "8861899"
+    },
+    "raw_reference_text": "K. W. Kinzler, B. Vogelstein, Lessons from hereditary colorectal cancer. Cell 87, 159–170 (1996).10.1016/s0092-8674(00)81333-18861899",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[38]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/s0092-8674(00)81333-1",
+      "pmid": "8861899"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R39",
+    "xml_id": "R39",
+    "label": "39",
+    "title": "Spatially organized multicellular immune hubs in human colorectal cancer",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K. Pelka",
+        "surname": "Pelka",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "M. Hofree",
+        "surname": "Hofree",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. H. Chen",
+        "surname": "Chen",
+        "given_names": "J. H.",
+        "collective": false
+      },
+      {
+        "name": "S. Sarkizova",
+        "surname": "Sarkizova",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "J. D. Pirl",
+        "surname": "Pirl",
+        "given_names": "J. D.",
+        "collective": false
+      },
+      {
+        "name": "V. Jorgji",
+        "surname": "Jorgji",
+        "given_names": "V.",
+        "collective": false
+      },
+      {
+        "name": "A. Bejnood",
+        "surname": "Bejnood",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "D. Dionne",
+        "surname": "Dionne",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "W. H. Ge",
+        "surname": "Ge",
+        "given_names": "W. H.",
+        "collective": false
+      },
+      {
+        "name": "K. H. Xu",
+        "surname": "Xu",
+        "given_names": "K. H.",
+        "collective": false
+      },
+      {
+        "name": "S. X. Chao",
+        "surname": "Chao",
+        "given_names": "S. X.",
+        "collective": false
+      },
+      {
+        "name": "D. R. Zollinger",
+        "surname": "Zollinger",
+        "given_names": "D. R.",
+        "collective": false
+      },
+      {
+        "name": "D. J. Lieb",
+        "surname": "Lieb",
+        "given_names": "D. J.",
+        "collective": false
+      },
+      {
+        "name": "J. W. Reeves",
+        "surname": "Reeves",
+        "given_names": "J. W.",
+        "collective": false
+      },
+      {
+        "name": "C. A. Fuhrman",
+        "surname": "Fuhrman",
+        "given_names": "C. A.",
+        "collective": false
+      },
+      {
+        "name": "M. L. Hoang",
+        "surname": "Hoang",
+        "given_names": "M. L.",
+        "collective": false
+      },
+      {
+        "name": "T. Delorey",
+        "surname": "Delorey",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "L. T. Nguyen",
+        "surname": "Nguyen",
+        "given_names": "L. T.",
+        "collective": false
+      },
+      {
+        "name": "J. Waldman",
+        "surname": "Waldman",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "M. Klapholz",
+        "surname": "Klapholz",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "I. Wakiro",
+        "surname": "Wakiro",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "O. Cohen",
+        "surname": "Cohen",
+        "given_names": "O.",
+        "collective": false
+      },
+      {
+        "name": "J. Albers",
+        "surname": "Albers",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "C. S. Smillie",
+        "surname": "Smillie",
+        "given_names": "C. S.",
+        "collective": false
+      },
+      {
+        "name": "M. S. Cuoco",
+        "surname": "Cuoco",
+        "given_names": "M. S.",
+        "collective": false
+      },
+      {
+        "name": "J. Wu",
+        "surname": "Wu",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "M. J. Su",
+        "surname": "Su",
+        "given_names": "M. J.",
+        "collective": false
+      },
+      {
+        "name": "J. Yeung",
+        "surname": "Yeung",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "B. Vijaykumar",
+        "surname": "Vijaykumar",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "A. M. Magnuson",
+        "surname": "Magnuson",
+        "given_names": "A. M.",
+        "collective": false
+      },
+      {
+        "name": "N. Asinovski",
+        "surname": "Asinovski",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "T. Moll",
+        "surname": "Moll",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "M. N. Goder-Reiser",
+        "surname": "Goder-Reiser",
+        "given_names": "M. N.",
+        "collective": false
+      },
+      {
+        "name": "A. S. Applebaum",
+        "surname": "Applebaum",
+        "given_names": "A. S.",
+        "collective": false
+      },
+      {
+        "name": "L. K. Brais",
+        "surname": "Brais",
+        "given_names": "L. K.",
+        "collective": false
+      },
+      {
+        "name": "L. K. DelloStritto",
+        "surname": "DelloStritto",
+        "given_names": "L. K.",
+        "collective": false
+      },
+      {
+        "name": "S. L. Denning",
+        "surname": "Denning",
+        "given_names": "S. L.",
+        "collective": false
+      },
+      {
+        "name": "S. T. Phillips",
+        "surname": "Phillips",
+        "given_names": "S. T.",
+        "collective": false
+      },
+      {
+        "name": "E. K. Hill",
+        "surname": "Hill",
+        "given_names": "E. K.",
+        "collective": false
+      },
+      {
+        "name": "J. K. Meehan",
+        "surname": "Meehan",
+        "given_names": "J. K.",
+        "collective": false
+      },
+      {
+        "name": "D. T. Frederick",
+        "surname": "Frederick",
+        "given_names": "D. T.",
+        "collective": false
+      },
+      {
+        "name": "T. Sharova",
+        "surname": "Sharova",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "A. Kanodia",
+        "surname": "Kanodia",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "E. Z. Todres",
+        "surname": "Todres",
+        "given_names": "E. Z.",
+        "collective": false
+      },
+      {
+        "name": "J. Jané-Valbuena",
+        "surname": "Jané-Valbuena",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "M. Biton",
+        "surname": "Biton",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "B. Izar",
+        "surname": "Izar",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "C. D. Lambden",
+        "surname": "Lambden",
+        "given_names": "C. D.",
+        "collective": false
+      },
+      {
+        "name": "T. E. Clancy",
+        "surname": "Clancy",
+        "given_names": "T. E.",
+        "collective": false
+      },
+      {
+        "name": "R. Bleday",
+        "surname": "Bleday",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "N. Melnitchouk",
+        "surname": "Melnitchouk",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "J. Irani",
+        "surname": "Irani",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "H. Kunitake",
+        "surname": "Kunitake",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "D. L. Berger",
+        "surname": "Berger",
+        "given_names": "D. L.",
+        "collective": false
+      },
+      {
+        "name": "A. Srivastava",
+        "surname": "Srivastava",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "J. L. Hornick",
+        "surname": "Hornick",
+        "given_names": "J. L.",
+        "collective": false
+      },
+      {
+        "name": "S. Ogino",
+        "surname": "Ogino",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "A. Rotem",
+        "surname": "Rotem",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "S. Vigneau",
+        "surname": "Vigneau",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "B. E. Johnson",
+        "surname": "Johnson",
+        "given_names": "B. E.",
+        "collective": false
+      },
+      {
+        "name": "R. B. Corcoran",
+        "surname": "Corcoran",
+        "given_names": "R. B.",
+        "collective": false
+      },
+      {
+        "name": "A. H. Sharpe",
+        "surname": "Sharpe",
+        "given_names": "A. H.",
+        "collective": false
+      },
+      {
+        "name": "V. K. Kuchroo",
+        "surname": "Kuchroo",
+        "given_names": "V. K.",
+        "collective": false
+      },
+      {
+        "name": "K. Ng",
+        "surname": "Ng",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "M. Giannakis",
+        "surname": "Giannakis",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "L. T. Nieman",
+        "surname": "Nieman",
+        "given_names": "L. T.",
+        "collective": false
+      },
+      {
+        "name": "G. M. Boland",
+        "surname": "Boland",
+        "given_names": "G. M.",
+        "collective": false
+      },
+      {
+        "name": "A. J. Aguirre",
+        "surname": "Aguirre",
+        "given_names": "A. J.",
+        "collective": false
+      },
+      {
+        "name": "A. C. Anderson",
+        "surname": "Anderson",
+        "given_names": "A. C.",
+        "collective": false
+      },
+      {
+        "name": "O. Rozenblatt-Rosen",
+        "surname": "Rozenblatt-Rosen",
+        "given_names": "O.",
+        "collective": false
+      },
+      {
+        "name": "A. Regev",
+        "surname": "Regev",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "N. Hacohen",
+        "surname": "Hacohen",
+        "given_names": "N.",
+        "collective": false
+      }
+    ],
+    "year": "2021",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.cell.2021.08.003",
+      "pmcid": "PMC8772395",
+      "pmid": "34450029"
+    },
+    "raw_reference_text": "K. Pelka, M. Hofree, J. H. Chen, S. Sarkizova, J. D. Pirl, V. Jorgji, A. Bejnood, D. Dionne, W. H. Ge, K. H. Xu, S. X. Chao, D. R. Zollinger, D. J. Lieb, J. W. Reeves, C. A. Fuhrman, M. L. Hoang, T. Delorey, L. T. Nguyen, J. Waldman, M. Klapholz, I. Wakiro, O. Cohen, J. Albers, C. S. Smillie, M. S. Cuoco, J. Wu, M. J. Su, J. Yeung, B. Vijaykumar, A. M. Magnuson, N. Asinovski, T. Moll, M. N. Goder-Reiser, A. S. Applebaum, L. K. Brais, L. K. DelloStritto, S. L. Denning, S. T. Phillips, E. K. Hill, J. K. Meehan, D. T. Frederick, T. Sharova, A. Kanodia, E. Z. Todres, J. Jané-Valbuena, M. Biton, B. Izar, C. D. Lambden, T. E. Clancy, R. Bleday, N. Melnitchouk, J. Irani, H. Kunitake, D. L. Berger, A. Srivastava, J. L. Hornick, S. Ogino, A. Rotem, S. Vigneau, B. E. Johnson, R. B. Corcoran, A. H. Sharpe, V. K. Kuchroo, K. Ng, M. Giannakis, L. T. Nieman, G. M. Boland, A. J. Aguirre, A. C. Anderson, O. Rozenblatt-Rosen, A. Regev, N. Hacohen, Spatially organized multicellular immune hubs in human colorectal cancer. Cell 184, 4734–4752.e20 (2021).10.1016/j.cell.2021.08.003PMC877239534450029",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[39]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.cell.2021.08.003",
+      "pmcid": "PMC8772395",
+      "pmid": "34450029"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R40",
+    "xml_id": "R40",
+    "label": "40",
+    "title": "Cell death as an architect of adult skin stem cell niches",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K. Lecomte",
+        "surname": "Lecomte",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "A. Toniolo",
+        "surname": "Toniolo",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "E. Hoste",
+        "surname": "Hoste",
+        "given_names": "E.",
+        "collective": false
+      }
+    ],
+    "year": "2024",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/s41418-024-01297-3",
+      "pmcid": "PMC11303411",
+      "pmid": "38649745"
+    },
+    "raw_reference_text": "K. Lecomte, A. Toniolo, E. Hoste, Cell death as an architect of adult skin stem cell niches. Cell Death Differ. 31, 957–969 (2024).10.1038/s41418-024-01297-3PMC1130341138649745",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[40]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/s41418-024-01297-3",
+      "pmcid": "PMC11303411",
+      "pmid": "38649745"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R41",
+    "xml_id": "R41",
+    "label": "41",
+    "title": "The adaptor protein FADD protects epidermal keratinocytes from necroptosis in vivo and prevents skin inflammation",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. C. Bonnet",
+        "surname": "Bonnet",
+        "given_names": "M. C.",
+        "collective": false
+      },
+      {
+        "name": "D. Preukschat",
+        "surname": "Preukschat",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "P. S. Welz",
+        "surname": "Welz",
+        "given_names": "P. S.",
+        "collective": false
+      },
+      {
+        "name": "G. van Loo",
+        "surname": "van Loo",
+        "given_names": "G.",
+        "collective": false
+      },
+      {
+        "name": "M. A. Ermolaeva",
+        "surname": "Ermolaeva",
+        "given_names": "M. A.",
+        "collective": false
+      },
+      {
+        "name": "W. Bloch",
+        "surname": "Bloch",
+        "given_names": "W.",
+        "collective": false
+      },
+      {
+        "name": "I. Haase",
+        "surname": "Haase",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      }
+    ],
+    "year": "2011",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.immuni.2011.08.014",
+      "pmid": "22000287"
+    },
+    "raw_reference_text": "M. C. Bonnet, D. Preukschat, P. S. Welz, G. van Loo, M. A. Ermolaeva, W. Bloch, I. Haase, M. Pasparakis, The adaptor protein FADD protects epidermal keratinocytes from necroptosis in vivo and prevents skin inflammation. Immunity 35, 572–582 (2011).10.1016/j.immuni.2011.08.01422000287",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[41]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.immuni.2011.08.014",
+      "pmid": "22000287"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R42",
+    "xml_id": "R42",
+    "label": "42",
+    "title": "Cell death checkpoints in the TNF pathway",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J. Huyghe",
+        "surname": "Huyghe",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "D. Priem",
+        "surname": "Priem",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "M. J. M. Bertrand",
+        "surname": "Bertrand",
+        "given_names": "M. J. M.",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.it.2023.05.007",
+      "pmid": "37357102"
+    },
+    "raw_reference_text": "J. Huyghe, D. Priem, M. J. M. Bertrand, Cell death checkpoints in the TNF pathway. Trends Immunol. 44, 628–643 (2023).10.1016/j.it.2023.05.00737357102",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[42]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.it.2023.05.007",
+      "pmid": "37357102"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R43",
+    "xml_id": "R43",
+    "label": "43",
+    "title": "A bio-orthogonal linear ubiquitin probe identifies STAT3 as a direct substrate of OTULIN in glioblastoma",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "X. Du",
+        "surname": "Du",
+        "given_names": "X.",
+        "collective": false
+      },
+      {
+        "name": "J. Pang",
+        "surname": "Pang",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "B. Gu",
+        "surname": "Gu",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "T. Si",
+        "surname": "Si",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "Y. Chang",
+        "surname": "Chang",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "T. Li",
+        "surname": "Li",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "M. Wu",
+        "surname": "Wu",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "Z. Wang",
+        "surname": "Wang",
+        "given_names": "Z.",
+        "collective": false
+      },
+      {
+        "name": "Y. Wang",
+        "surname": "Wang",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "J. Feng",
+        "surname": "Feng",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "N. Wu",
+        "surname": "Wu",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "J. Man",
+        "surname": "Man",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "H. Li",
+        "surname": "Li",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "A. Li",
+        "surname": "Li",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "T. Zhang",
+        "surname": "Zhang",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "B. Wang",
+        "surname": "Wang",
+        "given_names": "B.",
+        "collective": false
+      },
+      {
+        "name": "X. Duan",
+        "surname": "Duan",
+        "given_names": "X.",
+        "collective": false
+      }
+    ],
+    "year": "2023",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1093/nar/gkad002",
+      "pmcid": "PMC9943648",
+      "pmid": "36660824"
+    },
+    "raw_reference_text": "X. Du, J. Pang, B. Gu, T. Si, Y. Chang, T. Li, M. Wu, Z. Wang, Y. Wang, J. Feng, N. Wu, J. Man, H. Li, A. Li, T. Zhang, B. Wang, X. Duan, A bio-orthogonal linear ubiquitin probe identifies STAT3 as a direct substrate of OTULIN in glioblastoma. Nucleic Acids Res. 51, 1050–1066 (2023).10.1093/nar/gkad002PMC994364836660824",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[43]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1093/nar/gkad002",
+      "pmcid": "PMC9943648",
+      "pmid": "36660824"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R44",
+    "xml_id": "R44",
+    "label": "44",
+    "title": "OTULIN prevents liver inflammation and hepatocellular carcinoma by inhibiting FADD- and RIPK1 kinase-mediated hepatocyte apoptosis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "L. Verboom",
+        "surname": "Verboom",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "A. Martens",
+        "surname": "Martens",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "D. Priem",
+        "surname": "Priem",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "E. Hoste",
+        "surname": "Hoste",
+        "given_names": "E.",
+        "collective": false
+      },
+      {
+        "name": "M. Sze",
+        "surname": "Sze",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "H. Vikkula",
+        "surname": "Vikkula",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "L. Van Hove",
+        "surname": "Van Hove",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "S. Voet",
+        "surname": "Voet",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "J. Roels",
+        "surname": "Roels",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "J. Maelfait",
+        "surname": "Maelfait",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "L. Bongiovanni",
+        "surname": "Bongiovanni",
+        "given_names": "L.",
+        "collective": false
+      },
+      {
+        "name": "A. de Bruin",
+        "surname": "de Bruin",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "C. L. Scott",
+        "surname": "Scott",
+        "given_names": "C. L.",
+        "collective": false
+      },
+      {
+        "name": "Y. Saeys",
+        "surname": "Saeys",
+        "given_names": "Y.",
+        "collective": false
+      },
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "M. J. M. Bertrand",
+        "surname": "Bertrand",
+        "given_names": "M. J. M.",
+        "collective": false
+      },
+      {
+        "name": "G. van Loo",
+        "surname": "van Loo",
+        "given_names": "G.",
+        "collective": false
+      }
+    ],
+    "year": "2020",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.celrep.2020.01.028",
+      "pmid": "32075762"
+    },
+    "raw_reference_text": "L. Verboom, A. Martens, D. Priem, E. Hoste, M. Sze, H. Vikkula, L. Van Hove, S. Voet, J. Roels, J. Maelfait, L. Bongiovanni, A. de Bruin, C. L. Scott, Y. Saeys, M. Pasparakis, M. J. M. Bertrand, G. van Loo, OTULIN prevents liver inflammation and hepatocellular carcinoma by inhibiting FADD- and RIPK1 kinase-mediated hepatocyte apoptosis. Cell Rep. 30, 2237–2247.e6 (2020).10.1016/j.celrep.2020.01.02832075762",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[44]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.celrep.2020.01.028",
+      "pmid": "32075762"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R45",
+    "xml_id": "R45",
+    "label": "45",
+    "title": "Keratin 14 Cre transgenic mice authenticate keratin 14 as an oocyte-expressed protein",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "M. Hafner",
+        "surname": "Hafner",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "J. Wenk",
+        "surname": "Wenk",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "A. Nenci",
+        "surname": "Nenci",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "K. Scharffetter-Kochanek",
+        "surname": "Scharffetter-Kochanek",
+        "given_names": "K.",
+        "collective": false
+      },
+      {
+        "name": "N. Smyth",
+        "surname": "Smyth",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "T. Peters",
+        "surname": "Peters",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "D. Kess",
+        "surname": "Kess",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "O. Holtkotter",
+        "surname": "Holtkotter",
+        "given_names": "O.",
+        "collective": false
+      },
+      {
+        "name": "P. Shephard",
+        "surname": "Shephard",
+        "given_names": "P.",
+        "collective": false
+      },
+      {
+        "name": "J. E. Kudlow",
+        "surname": "Kudlow",
+        "given_names": "J. E.",
+        "collective": false
+      },
+      {
+        "name": "H. Smola",
+        "surname": "Smola",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "I. Haase",
+        "surname": "Haase",
+        "given_names": "I.",
+        "collective": false
+      },
+      {
+        "name": "A. Schippers",
+        "surname": "Schippers",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "T. Krieg",
+        "surname": "Krieg",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "W. Müller",
+        "surname": "Müller",
+        "given_names": "W.",
+        "collective": false
+      }
+    ],
+    "year": "2004",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1002/gene.20016",
+      "pmid": "15083518"
+    },
+    "raw_reference_text": "M. Hafner, J. Wenk, A. Nenci, M. Pasparakis, K. Scharffetter-Kochanek, N. Smyth, T. Peters, D. Kess, O. Holtkotter, P. Shephard, J. E. Kudlow, H. Smola, I. Haase, A. Schippers, T. Krieg, W. Müller, Keratin 14 Cre transgenic mice authenticate keratin 14 as an oocyte-expressed protein. Genesis 38, 176–181 (2004).10.1002/gene.2001615083518",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[45]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1002/gene.20016",
+      "pmid": "15083518"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R46",
+    "xml_id": "R46",
+    "label": "46",
+    "title": "Oligodendrocyte-specific FADD deletion protects mice from autoimmune-mediated demyelination",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "C. Mc Guire",
+        "surname": "Mc Guire",
+        "given_names": "C.",
+        "collective": false
+      },
+      {
+        "name": "T. Volckaert",
+        "surname": "Volckaert",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "U. Wolke",
+        "surname": "Wolke",
+        "given_names": "U.",
+        "collective": false
+      },
+      {
+        "name": "M. Sze",
+        "surname": "Sze",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "R. de Rycke",
+        "surname": "de Rycke",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "A. Waisman",
+        "surname": "Waisman",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "M. Prinz",
+        "surname": "Prinz",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "R. Beyaert",
+        "surname": "Beyaert",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "M. Pasparakis",
+        "surname": "Pasparakis",
+        "given_names": "M.",
+        "collective": false
+      },
+      {
+        "name": "G. van Loo",
+        "surname": "van Loo",
+        "given_names": "G.",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.4049/jimmunol.1000930",
+      "pmid": "21068410"
+    },
+    "raw_reference_text": "C. Mc Guire, T. Volckaert, U. Wolke, M. Sze, R. de Rycke, A. Waisman, M. Prinz, R. Beyaert, M. Pasparakis, G. van Loo, Oligodendrocyte-specific FADD deletion protects mice from autoimmune-mediated demyelination. J. Immunol. 185, 7646–7653 (2010).10.4049/jimmunol.100093021068410",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[46]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.4049/jimmunol.1000930",
+      "pmid": "21068410"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R47",
+    "xml_id": "R47",
+    "label": "47",
+    "title": "The pseudokinase MLKL mediates necroptosis via a molecular switch mechanism",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "J. M. Murphy",
+        "surname": "Murphy",
+        "given_names": "J. M.",
+        "collective": false
+      },
+      {
+        "name": "P. E. Czabotar",
+        "surname": "Czabotar",
+        "given_names": "P. E.",
+        "collective": false
+      },
+      {
+        "name": "J. M. Hildebrand",
+        "surname": "Hildebrand",
+        "given_names": "J. M.",
+        "collective": false
+      },
+      {
+        "name": "I. S. Lucet",
+        "surname": "Lucet",
+        "given_names": "I. S.",
+        "collective": false
+      },
+      {
+        "name": "J. G. Zhang",
+        "surname": "Zhang",
+        "given_names": "J. G.",
+        "collective": false
+      },
+      {
+        "name": "S. Alvarez-Diaz",
+        "surname": "Alvarez-Diaz",
+        "given_names": "S.",
+        "collective": false
+      },
+      {
+        "name": "R. Lewis",
+        "surname": "Lewis",
+        "given_names": "R.",
+        "collective": false
+      },
+      {
+        "name": "N. Lalaoui",
+        "surname": "Lalaoui",
+        "given_names": "N.",
+        "collective": false
+      },
+      {
+        "name": "D. Metcalf",
+        "surname": "Metcalf",
+        "given_names": "D.",
+        "collective": false
+      },
+      {
+        "name": "A. I. Webb",
+        "surname": "Webb",
+        "given_names": "A. I.",
+        "collective": false
+      },
+      {
+        "name": "S. N. Young",
+        "surname": "Young",
+        "given_names": "S. N.",
+        "collective": false
+      },
+      {
+        "name": "L. N. Varghese",
+        "surname": "Varghese",
+        "given_names": "L. N.",
+        "collective": false
+      },
+      {
+        "name": "G. M. Tannahill",
+        "surname": "Tannahill",
+        "given_names": "G. M.",
+        "collective": false
+      },
+      {
+        "name": "E. C. Hatchell",
+        "surname": "Hatchell",
+        "given_names": "E. C.",
+        "collective": false
+      },
+      {
+        "name": "I. J. Majewski",
+        "surname": "Majewski",
+        "given_names": "I. J.",
+        "collective": false
+      },
+      {
+        "name": "T. Okamoto",
+        "surname": "Okamoto",
+        "given_names": "T.",
+        "collective": false
+      },
+      {
+        "name": "R. C. Dobson",
+        "surname": "Dobson",
+        "given_names": "R. C.",
+        "collective": false
+      },
+      {
+        "name": "D. J. Hilton",
+        "surname": "Hilton",
+        "given_names": "D. J.",
+        "collective": false
+      },
+      {
+        "name": "J. J. Babon",
+        "surname": "Babon",
+        "given_names": "J. J.",
+        "collective": false
+      },
+      {
+        "name": "N. A. Nicola",
+        "surname": "Nicola",
+        "given_names": "N. A.",
+        "collective": false
+      },
+      {
+        "name": "A. Strasser",
+        "surname": "Strasser",
+        "given_names": "A.",
+        "collective": false
+      },
+      {
+        "name": "J. Silke",
+        "surname": "Silke",
+        "given_names": "J.",
+        "collective": false
+      },
+      {
+        "name": "W. S. Alexander",
+        "surname": "Alexander",
+        "given_names": "W. S.",
+        "collective": false
+      }
+    ],
+    "year": "2013",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1016/j.immuni.2013.06.018",
+      "pmid": "24012422"
+    },
+    "raw_reference_text": "J. M. Murphy, P. E. Czabotar, J. M. Hildebrand, I. S. Lucet, J. G. Zhang, S. Alvarez-Diaz, R. Lewis, N. Lalaoui, D. Metcalf, A. I. Webb, S. N. Young, L. N. Varghese, G. M. Tannahill, E. C. Hatchell, I. J. Majewski, T. Okamoto, R. C. Dobson, D. J. Hilton, J. J. Babon, N. A. Nicola, A. Strasser, J. Silke, W. S. Alexander, The pseudokinase MLKL mediates necroptosis via a molecular switch mechanism. Immunity 39, 443–453 (2013).10.1016/j.immuni.2013.06.01824012422",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[47]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1016/j.immuni.2013.06.018",
+      "pmid": "24012422"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R48",
+    "xml_id": "R48",
+    "label": "48",
+    "title": "Spontaneous mutations in the mouse Sharpin gene result in multiorgan inflammation, immune system dysregulation and dermatitis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "R. E. Seymour",
+        "surname": "Seymour",
+        "given_names": "R. E.",
+        "collective": false
+      },
+      {
+        "name": "M. G. Hasham",
+        "surname": "Hasham",
+        "given_names": "M. G.",
+        "collective": false
+      },
+      {
+        "name": "G. A. Cox",
+        "surname": "Cox",
+        "given_names": "G. A.",
+        "collective": false
+      },
+      {
+        "name": "L. D. Shultz",
+        "surname": "Shultz",
+        "given_names": "L. D.",
+        "collective": false
+      },
+      {
+        "name": "H. Hogenesch",
+        "surname": "Hogenesch",
+        "given_names": "H.",
+        "collective": false
+      },
+      {
+        "name": "D. C. Roopenian",
+        "surname": "Roopenian",
+        "given_names": "D. C.",
+        "collective": false
+      },
+      {
+        "name": "J. P. Sundberg",
+        "surname": "Sundberg",
+        "given_names": "J. P.",
+        "collective": false
+      }
+    ],
+    "year": "2007",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/sj.gene.6364403",
+      "pmid": "17538631"
+    },
+    "raw_reference_text": "R. E. Seymour, M. G. Hasham, G. A. Cox, L. D. Shultz, H. Hogenesch, D. C. Roopenian, J. P. Sundberg, Spontaneous mutations in the mouse Sharpin gene result in multiorgan inflammation, immune system dysregulation and dermatitis. Genes Immun. 8, 416–421 (2007).10.1038/sj.gene.636440317538631",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[48]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/sj.gene.6364403",
+      "pmid": "17538631"
+    }
+  },
+  {
+    "id": "PMC13651886:ref:R49",
+    "xml_id": "R49",
+    "label": "49",
+    "title": "Assaying proliferation and differentiation capacity of stem cells using disaggregated adult mouse epidermis",
+    "title_kind": "article-title",
+    "authors": [
+      {
+        "name": "K. B. Jensen",
+        "surname": "Jensen",
+        "given_names": "K. B.",
+        "collective": false
+      },
+      {
+        "name": "R. R. Driskell",
+        "surname": "Driskell",
+        "given_names": "R. R.",
+        "collective": false
+      },
+      {
+        "name": "F. M. Watt",
+        "surname": "Watt",
+        "given_names": "F. M.",
+        "collective": false
+      }
+    ],
+    "year": "2010",
+    "source_author_list_has_et_al": false,
+    "identifiers": {
+      "doi": "10.1038/nprot.2010.39",
+      "pmid": "20431535"
+    },
+    "raw_reference_text": "K. B. Jensen, R. R. Driskell, F. M. Watt, Assaying proliferation and differentiation capacity of stem cells using disaggregated adult mouse epidermis. Nat. Protoc. 5, 898–911 (2010).10.1038/nprot.2010.3920431535",
+    "metadata_status": "structured_source_metadata",
+    "source_xpath": "/article/back/ref-list/ref[49]",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "normalized_identifiers": {
+      "doi": "10.1038/nprot.2010.39",
+      "pmid": "20431535"
+    }
+  }
+]

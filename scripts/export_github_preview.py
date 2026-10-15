@@ -12,7 +12,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT = 'pmc_native_v3_preview_2026-10-15'
+DEFAULT = 'pmc_native_v4_citations_2026-10-15'
 
 
 def load(path):
@@ -51,10 +51,10 @@ def visual_markdown(visual, doc, blockmap, include_context=True):
         lines.append('![' + (visual['label'] or visual['xml_id']) + ' — original publisher figure](assets/' + asset['source_filename'] + ')')
     if visual.get('table_html'):
         # GitHub supports HTML tables; preserve the actual rowspan/colspan.
-        lines.append(visual['table_html'])
-    lines.append('**Source caption:** ' + visual['caption'])
+        lines.append(visual.get('table_training_html') or visual['table_html'])
+    lines.append('**Source caption, with cited titles/authors:** ' + visual['caption_training_text'])
     if visual.get('notes'):
-        lines.append('**Source table notes:** ' + visual['notes'])
+        lines.append('**Source table notes:** ' + visual.get('notes_training_text', visual['notes']))
     if include_context:
         lines.append('### Article paragraphs explicitly referring to this ' + visual['kind'])
         if not visual['referring_paragraphs']:
@@ -62,7 +62,7 @@ def visual_markdown(visual, doc, blockmap, include_context=True):
         for bid in visual['referring_paragraphs']:
             block = blockmap[bid]
             lines.append('**' + (' / '.join(block['section_path']) or 'Article body') + '**')
-            lines.append(quote(block['text']))
+            lines.append(quote(block['training_text']))
             lines.append(source_details(block['source_xpath'], doc['source_xml_sha256']))
     lines.append(source_details(visual['source_xpath'], doc['source_xml_sha256']))
     return '\n\n'.join(lines)
@@ -89,7 +89,8 @@ def portable_extraction(value):
         return [portable_extraction(item) for item in value]
     if isinstance(value, dict):
         result = {k: portable_extraction(v) for k, v in value.items()
-                  if k not in {'raw_xml', 'html', 'table_html', 'caption_html', 'review_examples'}}
+                  if k not in {'raw_xml', 'html', 'training_html', 'table_html', 'table_training_html',
+                               'caption_html', 'caption_training_html', 'review_examples'}}
         if 'source_filename' in result and 'path' in result:
             result['path'] = 'assets/' + result['source_filename']
         return result
@@ -121,6 +122,8 @@ def export_paper(doc, source, report):
         '**[Read all extracted figures, captions and context](figures.md)**',
         '## Extracted outputs',
         '- [Full research text, in section order](article.md)\n'
+        '- [Original-marker source text](source_article.md)\n'
+        '- [Cited titles/authors and complete bibliography](references.md)\n'
         '- [All original figure images, extracted captions and explicitly referring paragraphs](figures.md)\n' +
         ('- [All source tables, preserving merged cells and notes](tables.md)\n' if s['tables'] else '') +
         '- [Complete structured extraction: paragraphs, figures, tables, links and provenance](extracted.json)\n'
@@ -134,7 +137,9 @@ def export_paper(doc, source, report):
         'These results use publisher XML and original figure files. Earlier PDF-only '
         'olmOCR output remains available [here](../../../pmc_cns_biology_2026-10-14/samples/' + pid + '/fullpaper_olmocr.md). '
         'The [earlier native extraction including references](../../../pmc_cns_biology_2026-10-14/samples/' + pid + '/fullpaper_native.md) is also retained. '
-        'The updated research-text view routes bibliography and administrative material outside the text stream. '
+        'The updated text replaces bibliography markers with full cited titles and first author/et al.; '
+        'all source-supplied authors and identifiers are retained in the bibliography. '
+        'Bibliography and administrative material stay outside the text-training stream. '
         'No new OCR inference or model training was performed.',
         '## Featured original figure and source context',
         visual_markdown(featured, doc, blockmap),
@@ -158,19 +163,49 @@ def export_paper(doc, source, report):
         '[Paper overview](README.md) · [Figures](figures.md) · [Original article](' + doc['pmc_url'] + ')',
         'Ordered source-derived article text. Bibliographies and administrative sections are routed '
         'outside this research-text view. The original XML/PDF retain the complete source. '
-        'Scientific superscripts/subscripts and the original table spans are preserved.']
+        'Scientific superscripts/subscripts and original table spans are preserved. '
+        'Literature citations are expanded to source titles and first author/et al.; '
+        '[original-marker text](source_article.md) and [full bibliography](references.md) are retained.']
+    source_article = ['# ' + doc['title'], '[Title/author training view](article.md)',
+                      'Source-derived research text with the original citation markers.']
     current = None
     tablemap = {v['id']: v for v in doc['visuals'] if v['kind'] == 'table'}
     for block in doc['blocks']:
         if current != block['section_path']:
             current = block['section_path']
             article.append('## ' + (' / '.join(current) or 'Article body'))
+            source_article.append('## ' + (' / '.join(current) or 'Article body'))
         if block['kind'] == 'table':
-            article.append(tablemap[block['visual_id']]['table_html'])
+            visual = tablemap[block['visual_id']]
+            article.append(visual.get('table_training_html') or visual['table_html'])
+            source_article.append(visual['table_html'])
         else:
-            article.append(block['html'] or block['text'])
+            article.append(block.get('training_html') or block['training_text'])
+            source_article.append(block['html'] or block['text'])
     article += ['## Attribution', attribution(doc)]
     write(directory / 'article.md', '\n\n'.join(article))
+    source_article += ['## Attribution', attribution(doc)]
+    write(directory / 'source_article.md', '\n\n'.join(source_article))
+
+    references = ['# Cited titles and authors', '[Paper overview](README.md)',
+        'Full source titles and first author/et al. replace inline markers in the training view. '
+        'The records below preserve all authors supplied by the source; truncated author lists '
+        'and missing author metadata remain explicit. Numeric citation ranges are expanded only '
+        'when the complete sequence of publisher reference labels exists. No citation-policy '
+        'comparison or generated scientific summary is involved.']
+    for entry in doc.get('bibliography', []):
+        authors = ', '.join(a['name'] for a in entry['authors']) or 'Author not supplied by source'
+        if entry['source_author_list_has_et_al']:
+            authors += ' [source author list includes et al.]'
+        references += ['## ' + (entry['label'] or entry['xml_id']) + ' ' + (entry['title'] or 'Unstructured source reference'),
+            authors + (' · ' + entry['year'] if entry['year'] else ''),
+            'Metadata: `' + entry['metadata_status'] + '`; title type: `' + str(entry['title_kind']) + '`.',
+            'Identifiers: ' + json.dumps(entry['identifiers'], ensure_ascii=False),
+            '**Source reference:** ' + entry['raw_reference_text'],
+            source_details(entry['source_xpath'], doc['source_xml_sha256'])]
+    write(directory / 'references.md', '\n\n'.join(references))
+    write(directory / 'bibliography.json', json.dumps(doc.get('bibliography', []), ensure_ascii=False, indent=2))
+    write(directory / 'citation_mentions.json', json.dumps(doc.get('citation_mentions', []), ensure_ascii=False, indent=2))
 
     figures = ['# Original figures and explicitly referring text', '[Paper overview](README.md)',
         'Every image is a byte-identical copy of the publisher asset, matched through the XML '
@@ -184,6 +219,12 @@ def export_paper(doc, source, report):
             'Original cell spans are retained in the rendered tables. A shared group total is not '
             'repeated as independent row counts. Source notes and referring paragraphs follow each table.']
         tables += [visual_markdown(v, doc, blockmap) for v in tablemap.values()]
+        for visual in tablemap.values():
+            grid = visual['table']
+            write(directory / (visual['xml_id'] + '.tsv'), grid['source_text_tsv'])
+            tables += ['Full source table `' + visual['xml_id'] + '`: **' + str(grid['nrows']) + ' rows × ' +
+                       str(grid['ncols']) + ' columns**, including header rows; **' + str(grid['source_cell_count']) +
+                       ' physical cells**. [Complete TSV](' + visual['xml_id'] + '.tsv).']
         tables += ['## Attribution', attribution(doc)]
         write(directory / 'tables.md', '\n\n'.join(tables))
 
@@ -265,10 +306,16 @@ def export_review(source, report):
         '## Output counts and paper overviews',
         '| Paper | Research paragraphs | Figures | Tables | Text chunks |\n'
         '| --- | ---: | ---: | ---: | ---: |\n' + '\n'.join(rows),
-        '**Totals:** 140 research paragraphs, 25 original figure images, four source tables, '
-        '30 text chunks, 23 figure/table–context records, and nine source-checked examples.',
+        '**Totals:** ' + str(sum(d['summary']['retained_paragraphs'] for d in documents)) + ' research paragraphs, ' +
+        str(sum(d['summary']['figures'] for d in documents)) + ' original figure images, ' +
+        str(sum(d['summary']['tables'] for d in documents)) + ' full main-article tables, ' +
+        str(sum(d['summary']['text_chunks'] for d in documents)) + ' text chunks, ' +
+        str(sum(len(d.get('bibliography', [])) for d in documents)) + ' bibliography records, and ' +
+        str(sum(d['checks'].get('source_citation_markers_verified', 0) for d in documents)) + ' source citation-marker elements checked.',
         '## What changed',
         '- Figures/tables nested in publisher paragraphs are separated from the prose.\n'
+        '- Inline literature citations become full cited titles plus first author/et al., including explicit numeric ranges.\n'
+        '- Complete bibliography metadata and original-marker article views remain available.\n'
         '- Merged table cells, scientific notation, captions and notes are retained.\n'
         '- Context comes from explicit article figure/table references.\n'
         '- Bibliography and administrative material are routed outside the text-training stream.\n'
@@ -276,17 +323,21 @@ def export_review(source, report):
         '## What was checked',
         'All 25 images match their source media checksums. The pipeline checked 179 figure/table-reference '
         'edges against raw XML and retained XPath provenance for 218 physical source table cells. '
-        'All nine examples have source excerpts and PDF text-literal corroboration. Five scientific '
-        'content/provenance regression tests passed.',
+        'All nine examples have source excerpts and PDF text-literal corroboration. '
+        'Citation source nodes, bibliography IDs and complete packed-block reconstruction were checked. '
+        'The regression suite covers citation ranges, title/author expansion, source preservation, '
+        'scientific notation, merged cells and unresolved metadata.',
         'These are **source preservation and consistency checks**, not an independent OCR-accuracy '
         'benchmark. Figure interpretations and model-training benefit remain untested. This preview '
         'used one CPU worker and no new OCR inference, teacher API, or model training.',
         '## Inspect the machine-readable results',
         '- [Summary](summary.json)\n- [Nine source-checked examples](examples.json)\n'
-        '- [Validation counts](validation.json)\n- [Pipeline configuration](../../config/pmc_native_v3_preview.json)\n'
+        '- [Validation counts](validation.json)\n- [Source-value and spreadsheet verification](verification.json)\n'
+        '- [Pipeline configuration](../../config/pmc_native_v4_citations.json)\n'
         '- [Parser and record construction](../../src/native_training.py)\n'
         '- [Source-content regression checks](../../tests/test_native_training.py)',
         '## Related reading',
+        '[Supplementary-file inventory and larger biological tables](supplements/README.md).',
         '[How biomedical foundation models construct their training data](../bio_foundation_review_2026-10-15/README.md).',
         'Original PDFs/XML, model weights and bulk experiment files remain on RustFS. '
         'This GitHub export contains review text, original figure assets with attribution, and small reports.']
@@ -322,11 +373,13 @@ def export_foundation_review(directory):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--experiment', default=DEFAULT)
+    parser.add_argument('--export-foundation-review', action='store_true')
     args = parser.parse_args()
     source = ROOT / 'experiments' / args.experiment
     report = ROOT / 'reports' / args.experiment
     documents = export_review(source, report)
-    export_foundation_review(ROOT / 'reports/bio_foundation_review_2026-10-15')
+    if args.export_foundation_review:
+        export_foundation_review(ROOT / 'reports/bio_foundation_review_2026-10-15')
     files = [p for p in report.rglob('*') if p.is_file()]
     print(json.dumps(dict(papers=len(documents), review_files=len(files),
                          review_bytes=sum(p.stat().st_size for p in files)), indent=2))

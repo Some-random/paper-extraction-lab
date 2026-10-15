@@ -1,0 +1,24 @@
+{
+  "pipeline": "native_training_v4_cited_titles_authors",
+  "batch": "pmc_cns_biology_2026-10-14",
+  "destination": "experiments/pmc_native_v4_citations_2026-10-15",
+  "report_directory": "reports/pmc_native_v4_citations_2026-10-15",
+  "asset_cache_directory": "experiments/pmc_native_v3_preview_2026-10-15",
+  "citation_metadata_path": "config/pmc_citation_metadata.json",
+  "papers": [
+    {"pmcid": "PMC13651886", "featured_figure": "F1", "purpose": "Experimental biology, primers, antibodies and source-linked citations"},
+    {"pmcid": "PMC13655163", "featured_figure": "Fig1", "purpose": "Proteomics, full source tables and source-linked citations"},
+    {"pmcid": "PMC13645648", "featured_figure": "Fig4", "purpose": "Diet, translation, lifespan and source-linked citations"}
+  ],
+  "maximum_download_bytes": 25165824,
+  "maximum_asset_bytes": 2097152,
+  "maximum_artifact_bytes": 67108864,
+  "minimum_free_bytes": 34359738368,
+  "fetch_figure_assets": false,
+  "document_workers": 1,
+  "gpu_count": 0,
+  "maximum_text_chunk_tokens": 2048,
+  "tokenizer_path": "cache/huggingface/hub/models--allenai--olmOCR-2-7B-1025/snapshots/e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
+  "tokenizer_note": "Cached Qwen-family tokenizer, CPU packing only. Re-tokenize for the eventual training backbone; no OCR inference here.",
+  "policy": "Replace bibliography markers with full source titles and first author/et al.; retain all source-supplied authors and IDs in a structured bibliography. Preserve raw source text and prior outputs. No citation-policy comparison, teacher generation, clinical corpus or model training."
+}
