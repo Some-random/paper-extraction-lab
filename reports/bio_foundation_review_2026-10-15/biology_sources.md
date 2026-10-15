@@ -2,6 +2,8 @@
 
 This is the project's corrected focus: biological research literature, source figures, complete tables and supplements, reusable text corpora, and biological sequence/structure/assay databases. Clinical-note corpora are outside this scope. Published recipes below are source reviews, not experiments reproduced here.
 
+For source amounts and training mixtures, see the [per-model quantitative breakdown](dataset_breakdown.md). The [web acquisition guide](web_acquisition.md), [64KiB web-corpus probe](web_sample.md), and [figure-handling review](figure_handling.md) address the next acquisition and representation decisions.
+
 **What is already implemented**
 
 The [v4 three-paper pipeline](../pmc_native_v4_citations_2026-10-15/README.md) expands bibliography markers to full cited titles plus first author/et al. It preserves all source-supplied authors and identifiers in structured records. It checks all 322 source citation-marker elements, including 12 numeric ranges, across 211 bibliography entries. One web resource has no author supplied; the output says so rather than inventing one. The selected policy is implemented directly, without a comparison experiment.

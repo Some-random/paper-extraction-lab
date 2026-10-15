@@ -71,6 +71,13 @@ The [biology-focused source review](reports/bio_foundation_review_2026-10-15/bio
 prioritizes biological research models, reusable real-data corpora and biological
 databases. Clinical-note training is outside this project's scope.
 
+The [per-model dataset budgets](reports/bio_foundation_review_2026-10-15/dataset_breakdown.md)
+separate literature, web text, database data, corpus sizes and sampled training
+mixtures. The [web acquisition guide](reports/bio_foundation_review_2026-10-15/web_acquisition.md)
+includes an actual 64 KiB / eight-record corpus probe; the
+[figure review](reports/bio_foundation_review_2026-10-15/figure_handling.md)
+distinguishes original captions, image-based training and generated descriptions.
+
 ## Overnight download and full-paper extraction
 
 The October 14 batch finished at **04:14 PST**: **50 papers downloaded and parsed

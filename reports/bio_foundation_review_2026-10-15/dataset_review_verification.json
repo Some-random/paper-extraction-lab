@@ -1,0 +1,21 @@
+{
+  "checks": "report arithmetic, local links, raw prefix parsing/hash and published metadata; not model or scientific accuracy evaluation",
+  "passed": true,
+  "arithmetic": {
+    "biomatrix_category_sum_B": "304.4",
+    "biomatrix_text_sum_B": "105.3",
+    "biomatrix_protein_sum_B": "77.4",
+    "biomatrix_molecule_sum_B": "73.7",
+    "biomatrix_cross_entity_sum_B": "48.0",
+    "naturelm_rounded_category_sum_B": "143.82",
+    "naturelm_cross_domain_sum_B": "12.7",
+    "meditron_rounded_train_components_B": "46.707",
+    "pmc_intercpt_final_bucket_sum_B": "9.63",
+    "biogpt_scheduled_token_positions_B": "104.8576"
+  },
+  "probe_records": 8,
+  "prefix_bytes": 65536,
+  "http_range_status": 206,
+  "local_links_valid": true,
+  "new_training_or_inference": false
+}
