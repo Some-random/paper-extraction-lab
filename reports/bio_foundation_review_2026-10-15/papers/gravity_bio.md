@@ -1,18 +1,23 @@
 # TheBioCollection / Gravity-bio
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Gravity-16B-A3B, before annealing. [Initialization evidence](https://arxiv.org/html/2607.08803v1#S3.SS1)
+
+The overview shows lower bounds from two separate known corpus components. Neither their sum nor either component alone is the full annealing mixture or consumed training budget.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [TheBioCollection / Gravity-bio](#token-counts-by-acquisition-route)<br>Biological corpus component | Corpus · text + scientific sequences | 0 | 0 | 52.6B | 52.6B | [§2 / Fig. 2](https://arxiv.org/html/2607.08803v1) |
 | [TheBioCollection / Gravity-bio](#token-counts-by-acquisition-route)<br>Scientific-literature component | Corpus · text | ≈54B | 0 | 0 | ≈54B | [Table 4](https://arxiv.org/html/2607.08803v1) |
 | [TheBioCollection / Gravity-bio](#token-counts-by-acquisition-route)<br>Full annealing mixture | Training exposure · text | NR | NR | NR | NR | [§3.1](https://arxiv.org/html/2607.08803v1) |
+| [TheBioCollection / Gravity-bio](#token-counts-by-acquisition-route)<br>Known corpus components for biological annealing | Known corpus components · text + scientific sequences | ≥54B | NR | ≥52.6B | NR | [Table 4](https://arxiv.org/html/2607.08803v1) · [§2 / Fig. 2](https://arxiv.org/html/2607.08803v1) |
 
 **Biological corpus component — Corpus (text + scientific sequences):** This row covers TheBioCollection biological database-derived corpus, including its derived feature/task representations. It excludes the separate scientific-literature corpus and other replay material.
 
@@ -44,7 +49,19 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 - **Total: NR.** A tokenizer-token total is not established for this row.
 
+**Known corpus components for biological annealing — Known corpus components (text + scientific sequences):** Overview of separate, non-overlapping known literature and biological-database corpus components. Each amount is only a lower bound on its route in the full mixture; additional replay amounts and total consumed tokens are not disclosed.
+
+- **Online Papers: ≥54B.** The separately reported scientific-literature component is approximately 54B tokens; additional science-PDF replay is not quantified. The displayed lower bound retains the source rounding.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: ≥52.6B.** The biological-database corpus contributes 52.6B tokens; additional reused replay amounts are undisclosed.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Annealing / continued training
+
+**Backbone:** Gravity-16B-A3B, before annealing
 
 **Source material and units:** **54.0B scientific text**: PubMed **48.8B**, bioRxiv **4.6B**, medRxiv **0.58B**, with rounding; Biological corpus **52.6B**: molecules **28.2B**, proteins **14.5B**, genomic sequences **7.1B**, cells/pathways **2.8B**. Also uses olmOCR science PDFs, DCLM-CC and EAI-DCLM replay
 

@@ -1,14 +1,18 @@
 # BioBERT
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** BERT. [Initialization evidence](https://arxiv.org/pdf/1901.08746)
+
+The reviewed BioBERT models initialize from BERT trained on general text. The paper reports source words rather than a comparable token total.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioBERT](#token-counts-by-acquisition-route)<br>Encoder continued pretraining | Not reported · text | NR | NR | NR | NR | [Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC7703786/) |
 
@@ -23,6 +27,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: NR.** A tokenizer-token total is not established for this row.
 
 **Training stage:** Encoder continued pretraining
+
+**Backbone:** BERT
 
 **Source material and units:** PubMed abstracts and PMC full text
 

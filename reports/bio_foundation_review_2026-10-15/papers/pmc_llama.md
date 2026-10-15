@@ -1,16 +1,16 @@
 # PMC-LLaMA
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical/medical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
+Archived reference outside the current biological pretraining review.
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [PMC-LLaMA](#token-counts-by-acquisition-route)<br>Knowledge-injection CPT | Corpus · text | 0 | 0 | >75B | NR | [Dataset-I](https://arxiv.org/html/2304.14454v3) |
 

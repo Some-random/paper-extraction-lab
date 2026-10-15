@@ -1,14 +1,18 @@
 # PubMedBERT
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; BERT architecture. [Initialization evidence](https://arxiv.org/html/2007.15779v6)
+
+Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [PubMedBERT](#token-counts-by-acquisition-route)<br>Encoder pretraining from scratch | Not reported · text | NR | NR | NR | NR | [Paper](https://doi.org/10.1145/3458754) |
 
@@ -23,6 +27,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: NR.** A tokenizer-token total is not established for this row.
 
 **Training stage:** Encoder pretraining from scratch
+
+**Backbone:** Random weights; BERT architecture
 
 **Source material and units:** PubMed abstracts; additional PMC experiments
 

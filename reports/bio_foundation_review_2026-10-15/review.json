@@ -1,8 +1,8 @@
 {
-  "title": "How biomedical foundation models turn literature and other biological data into training corpora",
+  "title": "Biological continued pretraining: data sources and token budgets",
   "research_date_utc": "2026-10-15",
   "timestamp_policy": "Human-facing generation time is fixed PST (UTC-8). The directory date is the UTC research date.",
-  "scope": "31 model families, three training-data studies, three reusable corpora and four method references. Token counts are organized by direct online-paper acquisition, direct web acquisition and reused datasets, with original source units, count bases and disclosure gaps preserved.",
+  "scope": "Biological continued pretraining, including corpus-curation experiments, with explicitly separated from-scratch comparisons. Non-CPT methods and reusable corpora are supporting references; clinical-model references are archived outside the main review.",
   "method": "Targeted web searches, citation following, and reading primary papers, official technical reports, and author repositories. This is a broad targeted review, not an exhaustive systematic census or a common-protocol model leaderboard. Unknown details remain unknown.",
   "execution": "Literature review and small source snapshots only. No new OCR, model inference, training, paid teacher generation, GPU allocation, or bulk paper collection. Existing experiments and scores are unchanged.",
   "source_snapshot_manifest": "../../sources/bio_foundation_review_2026-10-15/manifest.json",
@@ -21,7 +21,7 @@
       "year": "2022",
       "category": "Biomedical text",
       "stage": "Pretraining from scratch; task-specific fine-tuning",
-      "base": "GPT-2-style decoder; original 347M model",
+      "base": "Random weights; GPT-2-style architecture",
       "corpus": "15M PubMed records with both title and abstract, updated before 2021.",
       "document_route": "Download PubMed records from the official FTP distribution; title-plus-abstract text, rather than full paper PDFs.",
       "curation": "Discard entries without an abstract. Learn an in-domain BPE vocabulary.",
@@ -78,7 +78,7 @@
           }
         }
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Pretraining from scratch",
       "token_budgets": [
         {
           "id": "pretraining_corpus",
@@ -164,7 +164,16 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "from_scratch",
+        "order": 1,
+        "starting_model": "Random weights; GPT-2-style architecture",
+        "budget_id": "pretraining_scheduled_token_positions",
+        "count_label": "Scheduled training token positions",
+        "initialization_source": "https://arxiv.org/pdf/2210.10341",
+        "note": "Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported."
+      }
     },
     {
       "id": "biomedlm",
@@ -172,7 +181,7 @@
       "year": "2024 report; 2022 model release",
       "category": "Biomedical text",
       "stage": "Pretraining from scratch; task-specific fine-tuning",
-      "base": "2.7B GPT-style decoder",
+      "base": "Random weights; 2.7B GPT-style decoder",
       "corpus": "The Pile's PubMed abstracts and full-article subsets: 34.6B corpus tokens. Training consumes 300B tokens, or 8.67 passes.",
       "document_route": "Uses an already assembled text corpus; no newly specified PDF/OCR workflow in the model report.",
       "curation": "Selection of biomedical Pile components and a biomedical BPE tokenizer.",
@@ -215,7 +224,7 @@
           }
         }
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Pretraining from scratch",
       "token_budgets": [
         {
           "id": "pretraining_corpus",
@@ -305,7 +314,16 @@
           },
           "partition_complete": true
         }
-      ]
+      ],
+      "presentation": {
+        "section": "from_scratch",
+        "order": 2,
+        "starting_model": "Random weights; 2.7B GPT-style decoder",
+        "budget_id": "pretraining_corpus",
+        "count_label": "Dataset size; 300B training tokens separately",
+        "initialization_source": "https://arxiv.org/html/2403.18421v1",
+        "note": "Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens."
+      }
     },
     {
       "id": "pmc_llama",
@@ -359,7 +377,7 @@
         "PMC-LLaMA defines one epoch as seeing the book tokens once and trains for five such epochs. It does not mean five passes over its >75B paper pool. I have not replaced the reported schedule with a falsely precise consumed-token estimate. [PMC-LLaMA, Combination / Knowledge Injection Training](https://arxiv.org/html/2304.14454v3)",
         "**PMC-LLaMA:** Samples textbook, paper and general-domain tokens at 15:4:1 for knowledge-injection CPT. Its UMLS prompts and generated QA explanations belong to the later instruction stage. [Dataset-I and Dataset-II](https://arxiv.org/html/2304.14454v3)"
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "knowledge_injection_cpt_corpus",
@@ -402,7 +420,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "biomistral",
@@ -429,7 +451,7 @@
           "url": "https://github.com/BioMistral/BioMistral"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "cpt_corpus",
@@ -474,7 +496,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "meditron",
@@ -534,7 +560,7 @@
           }
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "cpt_corpus_train_split",
@@ -581,7 +607,11 @@
           },
           "rounding_tolerance_tokens": 10000000
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "me_llama",
@@ -611,7 +641,7 @@
       "notes": [
         "**Me-LLaMA:** Mixes biomedical literature, credentialed-access MIMIC clinical notes and general-domain replay at 15:1:4 for CPT. Its instruction tuning is a separate stage. [Methods](https://www.nature.com/articles/s41746-025-01533-1)"
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "cpt_corpus",
@@ -656,7 +686,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "mmedlm",
@@ -683,7 +717,7 @@
           "url": "https://huggingface.co/datasets/Henrychur/MMedC/blob/main/README.md"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "cpt_corpus",
@@ -722,7 +756,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "biomedgpt",
@@ -730,7 +768,7 @@
       "year": "2023/2024",
       "category": "Biological multimodal language",
       "stage": "Literature CPT, then molecule/protein-text alignment",
-      "base": "Llama2-Chat-7B; BioMedGPT-10B adds biological encoders",
+      "base": "Llama2-Chat-7B",
       "corpus": "4.2M full-text S2ORC papers after filtering 5.5M biomedical candidates; over 26B text tokens.",
       "document_route": "S2ORC full text selected using PMC/PubMed IDs; no fresh PDF OCR implementation is specified.",
       "curation": "Remove missing full texts, duplicate IDs, author information, reference citations, and chart data.",
@@ -793,7 +831,7 @@
           }
         }
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "literature_cpt_corpus",
@@ -838,7 +876,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 2,
+        "starting_model": "Llama2-Chat-7B",
+        "budget_id": "literature_cpt_corpus",
+        "count_label": "Dataset size: literature text",
+        "initialization_source": "https://arxiv.org/html/2308.09442v2",
+        "note": "This row covers the literature CPT stage, before molecule/protein alignment.",
+        "name": "BioMedGPT-LM"
+      }
     },
     {
       "id": "biot5plus",
@@ -892,7 +940,7 @@
       "notes": [
         "BioT5+ does not publish enough information to convert its sampling scheme into “X billion paper tokens, Y billion web tokens.” Its text describes an addition of “28.8M full articles from PubMed”; I have not treated that ambiguous source description as a verified full-text count. This uncertainty does not affect the disclosed eight-task balancing scheme. [BioT5+, §3 / Appendix B](https://arxiv.org/html/2402.17810v2)"
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "related_project_notes": [
         {
           "title": "Evaluation project: published comparisons and native-protocol requirements",
@@ -935,7 +983,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "T5-style denoising and biomolecule/text translation; a different objective from causal decoder CPT."
+      }
     },
     {
       "id": "biomatrix",
@@ -943,7 +995,7 @@
       "year": "2026 preprint",
       "category": "Biological multimodal foundation",
       "stage": "Multimodal CPT, then multitask SFT",
-      "base": "Qwen3 1.7B/4B",
+      "base": "Qwen3-1.7B / 4B",
       "corpus": "304.4B mixed tokens: FineWeb-Edu; FineFineWeb biology/chemistry/medicine/health; PubMed text; molecules, proteins, structures, and interactions.",
       "document_route": "Article text and S2ORC/abstract/patent sources; the reviewed paper does not provide a reproducible PDF conversion recipe.",
       "curation": "BERN2 links literature entity mentions to molecule/protein representations. Database annotations and available sequence/structure views are serialized together.",
@@ -1013,7 +1065,7 @@
         "BioMatrix's scientific text uses FineFineWeb biology/chemistry/medicine/health and literature; its figure also names bioRxiv. No numeric paper/web split is supplied. Figure 3 subdivides protein tokens into **36.0B sequence / 38.5B structure / 2.9B other**; molecule tokens into **32.1B sequence / 17.6B structure / 24.0B other**; cross-entity tokens into **17.1B sequence / 11.4B structure / 19.5B other**. The “other” subdivisions should not be relabeled entirely as generated text. Sources include PubChem, UniRef/UniProt, PDB/AFDB, interaction datasets and GPT-generated MolTextNet descriptions; exact individual budgets remain NR. These modalities are biomolecular representations, not paper-figure pixels. [BioMatrix, Figure 3 and §3](https://arxiv.org/pdf/2606.22138v1#page=12)",
         "**BioMatrix:** Continues Qwen3 on 304.4B tokens spanning literature/web text, PubChem records, protein sequences and structures, interactions and interleaved text/entities. It includes GPT-generated MolTextNet descriptions and computational structures as well as experimental PDB structures. Its TrEMBL branch explicitly removes literature citations and evidence codes. These provenance differences should remain visible in a scientific corpus. [§3.1–3.2](https://arxiv.org/html/2606.22138v1)"
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "multimodal_cpt_corpus",
@@ -1054,7 +1106,16 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 3,
+        "starting_model": "Qwen3-1.7B / 4B",
+        "budget_id": "multimodal_cpt_corpus",
+        "count_label": "Dataset size: text, sequences and structures",
+        "initialization_source": "https://arxiv.org/html/2606.22138v1",
+        "note": "The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text."
+      }
     },
     {
       "id": "biomamba",
@@ -1062,7 +1123,7 @@
       "year": "2026 published report",
       "category": "Biomedical text",
       "stage": "CPT, then downstream SFT",
-      "base": "Mamba2, 130M through 2.7B",
+      "base": "Mamba2 checkpoints, 130M–2.7B",
       "corpus": "PubMed MEDLINE abstracts with C4 and English Wikipedia; approximately 508K packed 1,024-token sequences in the reported final corpus.",
       "document_route": "Abstract text; these are not 508K newly OCRed PDFs.",
       "curation": "Tokenization/filtering/shuffling; fixed held-out language-model sets and a separate small-model mixture pilot.",
@@ -1102,7 +1163,7 @@
       "notes": [
         "BioMamba's downstream clinical-note experiments are outside our data scope. The literature-CPT mixture is included because it directly addresses abstracts versus general replay. The 2026 published Mamba2 recipe should not be silently conflated with numbers from the earlier 2024 BioMamba preprint. The table retains the source's internal count/proportion discrepancy rather than repairing it. [Published report](https://spj.science.org/doi/10.34133/hds.0454)"
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "cpt_packed_token_positions",
@@ -1150,7 +1211,16 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 4,
+        "starting_model": "Mamba2 checkpoints, 130M–2.7B",
+        "budget_id": "cpt_packed_token_positions",
+        "count_label": "Packed token positions, including padding",
+        "initialization_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
+        "note": "Reported packed sequence counts imply positions, not measured non-padding tokens or unique corpus size."
+      }
     },
     {
       "id": "medfound",
@@ -1177,7 +1247,7 @@
           "url": "https://github.com/medfound/medfound"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "medical_pretraining_diagnostic_sft_preference_alignment_not_reported",
@@ -1214,7 +1284,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "medgemma",
@@ -1237,7 +1311,7 @@
           "url": "https://arxiv.org/html/2507.05201v3"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "vision_enhancement_pretraining_teacher_distillation_rl_not_reported",
@@ -1274,7 +1348,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "lingshu",
@@ -1301,7 +1379,7 @@
           "url": "https://huggingface.co/lingshu-medical-mllm"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "shallow_deep_alignment_sft_rl_not_reported",
@@ -1338,7 +1416,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "hulu_med",
@@ -1365,7 +1447,7 @@
           "url": "https://github.com/ZJUI-AI4H/Hulu-Med"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "alignment_medical_cpt_mixed_modality_sft_not_reported",
@@ -1402,7 +1484,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "infimed",
@@ -1425,7 +1511,7 @@
           "url": "https://arxiv.org/html/2509.22261v1"
         }
       ],
-      "scope_group": "Medical context retained from earlier review",
+      "scope_group": "Archived out-of-scope reference",
       "token_budgets": [
         {
           "id": "multimodal_pretraining_corpus",
@@ -1472,7 +1558,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "txgemma",
@@ -1517,7 +1607,7 @@
           }
         }
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "token_budgets": [
         {
           "id": "27b_predict_sft_training_exposure",
@@ -1562,7 +1652,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Task instruction tuning from Gemma 2; its 67B-token exposure is SFT, not CPT."
+      }
     },
     {
       "id": "biobert",
@@ -1606,7 +1700,7 @@
       ],
       "corpus": "PubMed abstracts and PMC full text",
       "document_route": "Continues BERT's masked-language-model training on biomedical literature. Relevant precedent for domain adaptation, with a different objective from a decoder LLM.",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "encoder_continued_pretraining_not_reported",
@@ -1643,7 +1737,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 5,
+        "starting_model": "BERT",
+        "budget_id": "encoder_continued_pretraining_not_reported",
+        "count_label": "Token counts not reported",
+        "initialization_source": "https://arxiv.org/pdf/1901.08746",
+        "note": "The reviewed BioBERT models initialize from BERT trained on general text. The paper reports source words rather than a comparable token total."
+      },
+      "base": "BERT"
     },
     {
       "id": "pubmedbert",
@@ -1687,7 +1791,7 @@
       ],
       "corpus": "PubMed abstracts; additional PMC experiments",
       "document_route": "Builds an in-domain vocabulary. The paper tests abstracts versus adding full texts; this is a literature-representation model, not a vision model.",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Pretraining from scratch",
       "token_budgets": [
         {
           "id": "encoder_pretraining_from_scratch_not_reported",
@@ -1724,7 +1828,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "from_scratch",
+        "order": 3,
+        "starting_model": "Random weights; BERT architecture",
+        "budget_id": "encoder_pretraining_from_scratch_not_reported",
+        "count_label": "Token counts not reported",
+        "initialization_source": "https://arxiv.org/html/2007.15779v6",
+        "note": "Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint."
+      },
+      "base": "Random weights; BERT architecture"
     },
     {
       "id": "biolinkbert",
@@ -1777,7 +1891,7 @@
       ],
       "corpus": "PubMed documents and citation links",
       "document_route": "Uses linked-document contexts plus masked-token and document-relation objectives. A source-relationship recipe, not a PDF extraction tool.",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Pretraining from scratch",
       "token_budgets": [
         {
           "id": "encoder_pretraining_from_scratch_not_reported",
@@ -1814,7 +1928,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "from_scratch",
+        "order": 4,
+        "starting_model": "Random weights; BERT architecture",
+        "budget_id": "encoder_pretraining_from_scratch_not_reported",
+        "count_label": "Token counts not reported",
+        "initialization_source": "https://arxiv.org/html/2203.15827#S6.SS1",
+        "note": "Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment."
+      },
+      "base": "Random weights; BERT architecture"
     },
     {
       "id": "naturelm",
@@ -1872,7 +1996,7 @@
       "notes": [
         "NatureLM's 12.7B cross-domain bucket consists of interleaved literature **4.0B**, text–SMILES **3.0B**, text–protein **1.4B**, text–material **0.2B**, and DNA–protein **4.1B**. Do not add these to the 143.8B total again. Its 1B model first receives **300B SlimPajama text tokens**; that is a separate initialization phase. Later instruction tuning uses **5.1M pairs**, not an additional reported CPT token budget. [NatureLM, §2 and Tables 1/S1](https://arxiv.org/html/2502.07527v2)"
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "related_project_notes": [
         {
           "title": "Evaluation project: published comparisons and native-protocol requirements",
@@ -1920,7 +2044,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 6,
+        "starting_model": "Llama 3 8B / Mixtral 8×7B",
+        "budget_id": "8b_8_7b_scientific_cpt_corpus",
+        "count_label": "Dataset size: text + scientific sequences",
+        "initialization_source": "https://arxiv.org/html/2502.07527v2#S2.SS3",
+        "note": "The 8B and 8×7B models continue from existing checkpoints. The separate 1B model first trains on 300B SlimPajama text tokens, then receives scientific training; it is not trained on biology alone from its first step."
+      },
+      "base": "Llama 3 8B / Mixtral 8×7B"
     },
     {
       "id": "galactica",
@@ -1976,7 +2110,7 @@
       "notes": [
         "Galactica explicitly discloses biological literature: **PMC 23B**, **PubMed abstracts 5B**, **bioRxiv 1B** tokens; these are components of the 88B literature bucket. Other listed literature: arXiv **35B**, Semantic Scholar full text **18B**, Semantic Scholar abstracts **4B**, plus smaller sources. Its biological knowledge bases include PubChem **1B**, UniProt **0.6B**, RefSeq **0.1B**, Ribosome **0.05B**, LIPID MAPS **0.03B**, Reactome **0.01B**. Biological material can also occur in broader sources, so this is not an exhaustive biological-total calculation. [Galactica, Tables 22/24](https://arxiv.org/pdf/2211.09085#page=42)"
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Pretraining from scratch",
       "token_budgets": [
         {
           "id": "scientific_pretraining_corpus",
@@ -2060,7 +2194,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "from_scratch",
+        "order": 5,
+        "starting_model": "Random weights; scientific decoder",
+        "budget_id": "scientific_pretraining_corpus",
+        "count_label": "Dataset size: text + scientific sequences",
+        "initialization_source": "https://arxiv.org/html/2211.09085v1",
+        "note": "A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities."
+      },
+      "base": "Random weights; scientific decoder"
     },
     {
       "id": "gravity_bio",
@@ -2093,7 +2237,7 @@
       "notes": [
         "TheBioCollection's Figure 2 also splits its 52.6B corpus into **33.8B free-text / 18.9B instruction stream**; rounded components sum to 52.7B. “Free-text” here includes rendered database records and tool-derived biological descriptions, not just journal articles or scraped webpages. Literature in Table 4 is counted separately. The inspected figure was read directly, not estimated from its arc sizes. [Primary report](https://arxiv.org/html/2607.08803v1)"
       ],
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "biological_corpus_component_corpus",
@@ -2215,8 +2359,61 @@
               "note": "A tokenizer-token total is not established for this row."
             }
           }
+        },
+        {
+          "id": "known_corpus_components",
+          "stage": "Known corpus components for biological annealing",
+          "basis": "Known corpus components",
+          "token_kind": "text + scientific sequences",
+          "note": "Overview of separate, non-overlapping known literature and biological-database corpus components. Each amount is only a lower bound on its route in the full mixture; additional replay amounts and total consumed tokens are not disclosed.",
+          "sources": [
+            {
+              "label": "Table 4",
+              "url": "https://arxiv.org/html/2607.08803v1"
+            },
+            {
+              "label": "§2 / Fig. 2",
+              "url": "https://arxiv.org/html/2607.08803v1"
+            }
+          ],
+          "counts": {
+            "online_papers": {
+              "status": "reported",
+              "tokens": 54000000000,
+              "unit": "tokens",
+              "relation": "at_least",
+              "note": "The separately reported scientific-literature component is approximately 54B tokens; additional science-PDF replay is not quantified. The displayed lower bound retains the source rounding."
+            },
+            "web_urls": {
+              "status": "not_reported",
+              "tokens": null,
+              "note": "No separate directly collected webpage token amount is established for this row."
+            },
+            "existing_datasets": {
+              "status": "reported",
+              "tokens": 52600000000,
+              "unit": "tokens",
+              "relation": "at_least",
+              "note": "The biological-database corpus contributes 52.6B tokens; additional reused replay amounts are undisclosed."
+            },
+            "total": {
+              "status": "not_reported",
+              "tokens": null,
+              "note": "A tokenizer-token total is not established for this row."
+            }
+          }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 7,
+        "starting_model": "Gravity-16B-A3B, before annealing",
+        "budget_id": "known_corpus_components",
+        "count_label": "Known dataset components; full mixture NR",
+        "initialization_source": "https://arxiv.org/html/2607.08803v1#S3.SS1",
+        "note": "The overview shows lower bounds from two separate known corpus components. Neither their sum nor either component alone is the full annealing mixture or consumed training budget."
+      },
+      "base": "Gravity-16B-A3B, before annealing"
     },
     {
       "id": "scireasoner",
@@ -2246,7 +2443,7 @@
       ],
       "corpus": "PubMed abstracts/scientific prose; exact literature-token share NR; Headline **206B**; prose gives proteins **55B**, chemistry **50B**, DNA **30B**, RNA **26B**, materials **5B**. Uses C4 general text. Later **40M SFT examples**, separate from CPT",
       "disclosure_gap": "Five listed scientific categories sum to **166B**, not 206B. C4/source-text allocation is not separately reconciled; do not invent a 40B web allocation from the difference",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "scientific_cpt_corpus",
@@ -2288,7 +2485,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 8,
+        "starting_model": "Qwen3-1.7B / 8B",
+        "budget_id": "scientific_cpt_corpus",
+        "count_label": "Dataset size: text + scientific sequences",
+        "initialization_source": "https://arxiv.org/html/2509.21320v1",
+        "note": "Science-wide corpus with biological data; the 206B total is not entirely biological literature."
+      },
+      "base": "Qwen3-1.7B / 8B"
     },
     {
       "id": "logos",
@@ -2318,7 +2525,7 @@
       ],
       "corpus": "No large paper-text acquisition stage described; **44.87B** scientific-sequence/interaction tokens reported across protein, antibody, molecule, reaction, material, pocket and complex modalities",
       "disclosure_gap": "Headline spans the described pre-/post-training data; exact stage-specific and paper/web splits NR. It is a structured-science recipe, not evidence of 44.87B extracted prose",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "scientific_pre_post_training_corpus_corpus",
@@ -2363,7 +2570,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 9,
+        "starting_model": "Qwen3-8B; Llama 3.2-1B / 3B variants",
+        "budget_id": "scientific_pre_post_training_corpus_corpus",
+        "count_label": "Combined pre-/post-training corpus; CPT-only NR",
+        "initialization_source": "https://arxiv.org/html/2606.16905v1#S2.SS3",
+        "note": "The model inherits pretrained backbone and embedding weights. The 44.87B source headline is a scientific corpus across pretraining and post-training; it must not be described as a disclosed CPT-only budget."
+      },
+      "base": "Qwen3-8B; Llama 3.2-1B / 3B variants"
     },
     {
       "id": "txllm",
@@ -2393,7 +2610,7 @@
       ],
       "corpus": "Manually written 2–3-sentence contexts informed by dataset descriptions and literature; TxT: **709 component datasets / 66 tasks**, derived from TDC",
       "disclosure_gap": "Paper/web token split NR. Dataset/task counts are not token counts; inherited PaLM-2 data are outside this adaptation-stage budget",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "token_budgets": [
         {
           "id": "instruction_tuning_not_reported",
@@ -2430,7 +2647,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Therapeutic task instruction tuning rather than a disclosed domain CPT stage."
+      }
     },
     {
       "id": "bioreason",
@@ -2460,7 +2681,7 @@
       ],
       "corpus": "Not a paper-corpus CPT experiment; Full task datasets before splitting: **1,449 KEGG reasoning records**, **50,083 coding variants**, **36,088 non-SNV variants**. Claude-generated reasoning; GPT-4o question paraphrases",
       "disclosure_gap": "These are not training-split counts or paper counts. Token budget NR. Structured biological evidence and generated rationales have different provenance",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "related_project_notes": [
         {
           "title": "Evaluation project: published comparisons and native-protocol requirements",
@@ -2503,7 +2724,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "DNA encoder alignment, supervised adaptation and selected reinforcement learning."
+      }
     },
     {
       "id": "biomedclip",
@@ -2541,7 +2766,7 @@
       ],
       "corpus": "**15,282,336 image–caption pairs**, collected from a 4.4M-article PMC snapshot",
       "document_route": "Pairs original PMC figures with author captions for contrastive training; not a requirement to recaption them with a teacher VLM",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "token_budgets": [
         {
           "id": "contrastive_image_text_pretraining_not_reported",
@@ -2578,7 +2803,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Contrastive image/text representation learning from paper figure-caption pairs."
+      }
     },
     {
       "id": "llava_med",
@@ -2616,7 +2845,7 @@
       ],
       "corpus": "**600K source image–caption pairs** for alignment; **60K instruction examples** in its larger instruction datasets",
       "document_route": "First aligns image features to original captions. Later GPT-4 conversations are generated from caption/context text and kept as instruction data; the original method does not require GPT-4 to inspect the pixels",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Archived out-of-scope reference",
       "related_project_notes": [
         {
           "title": "Evaluation project: published comparisons and native-protocol requirements",
@@ -2694,13 +2923,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "archive",
+        "note": "Retained source evidence outside the current biological CPT comparison."
+      }
     },
     {
       "id": "bioreason_pro",
       "name": "BioReason-Pro",
       "category": "Biological multimodal reasoning model",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "stage": "Supervised adaptation on synthetic reasoning, followed by reinforcement learning",
       "corpus": "UniProt-curated protein records with GO annotations, InterPro domains, STRING interactions and structural context; the author release describes 133,492 curated proteins, not full papers.",
       "document_route": "Structured biological records and protein representations; no paper-PDF extraction budget established in the imported source metadata.",
@@ -2760,13 +2993,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Supervised biological reasoning adaptation and reinforcement learning."
+      }
     },
     {
       "id": "protst",
       "name": "ProtST",
       "category": "Protein representation and text alignment",
-      "scope_group": "Biological research and science models",
+      "scope_group": "Other biological training approaches",
       "stage": "Protein/text representation learning; published supervised and zero-shot task evaluations",
       "document_route": "Imported evaluation references identify learned protein/text encoders and task-specific heads. A paper-extraction/CPT budget was not established in those notes.",
       "disclosure_gap": "Existing task metrics do not supply a paper/web/database training-token split. Training-data details require a separate source review.",
@@ -2818,7 +3055,11 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Protein/text representation alignment rather than autoregressive literature CPT."
+      }
     }
   ],
   "training_studies": [
@@ -2843,7 +3084,7 @@
           "url": "https://arxiv.org/html/2506.20331v1"
         }
       ],
-      "scope_group": "Training-data and curation studies",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "controlled_cpt_each_variant_training_exposure",
@@ -2888,7 +3129,16 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 1,
+        "starting_model": "OLMo2-7B-stage1",
+        "budget_id": "controlled_cpt_each_variant_training_exposure",
+        "count_label": "Tokens used in training, per variant",
+        "initialization_source": "https://arxiv.org/html/2506.20331v1",
+        "note": "Curation variants are compared at the same 33.6B-token CPT budget. Clinical filtering results are source findings, not a prescription for a biology corpus."
+      }
     },
     {
       "id": "pmc_intercpt",
@@ -2896,7 +3146,7 @@
       "year": "2026 preprint, v2",
       "category": "Multimodal CPT curation study",
       "stage": "CPT with a fixed downstream SFT stage",
-      "base": "Qwen3.5 2B/4B; cross-architecture validation",
+      "base": "Qwen3.5-2B / 4B-Base",
       "corpus": "PMC/BIOMEDICA figures, captions and article-native context; final 9.63B-token corpus.",
       "document_route": "Recover captions from PMC XML and attach body text only through article-native figure references.",
       "curation": "Repair disconnected context, deduplicate text, prune unsupported non-primary images; Gemini labels relevance/quality, distilled Qwen3-1.7B classifiers filter; benchmark decontamination.",
@@ -2936,7 +3186,7 @@
       "notes": [
         "PMC-InterCPT's **15.41B-token pre-sampling pool** has **7.18B text / 8.23B image tokens**. That split must not be applied unchanged to its differently resampled 9.63B final corpus. It recovers author captions from XML and attaches explicitly referring context. Its Gemini/Qwen quality classifiers label text; they do not produce replacement figure captions. [PMC-InterCPT, Source-Grounded Recovery, Quality Classification, Tables 8/9](https://arxiv.org/html/2606.01049v2)"
       ],
-      "scope_group": "Training-data and curation studies",
+      "scope_group": "Continued pretraining",
       "token_budgets": [
         {
           "id": "context_grounded_cpt_resampled_corpus",
@@ -2975,7 +3225,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 10,
+        "starting_model": "Qwen3.5-2B / 4B-Base",
+        "budget_id": "context_grounded_cpt_resampled_corpus",
+        "count_label": "Resampled dataset: text + image tokens",
+        "initialization_source": "https://arxiv.org/html/2606.01049v2",
+        "note": "Paper/figure curation study with a fixed downstream SFT stage. Its empirical target includes medical tasks; its clinical evidence priorities are not the biological research collection policy.",
+        "name": "PMC-InterCPT / Beyond Captions"
+      }
     },
     {
       "id": "bio_posttraining",
@@ -2983,7 +3243,7 @@
       "year": "2026 preprint",
       "category": "Biological CPT/SFT/RL study",
       "stage": "Stage-wise biological adaptation experiments",
-      "base": "Qwen3 1.7B/4B; additional backbone/biological encoder comparisons",
+      "base": "Qwen3-1.7B / 4B",
       "corpus": "FineFineWeb biology: first 200K documents train, next 5K evaluation; downstream DNA/RNA/protein reasoning data.",
       "document_route": "Biology web text for CPT, not a scientific-PDF OCR study.",
       "curation": "Inherits upstream web filtering; no additional benchmark-specific CPT decontamination.",
@@ -3002,7 +3262,7 @@
           "url": "https://github.com/mims-harvard/bio-posttrain"
         }
       ],
-      "scope_group": "Training-data and curation studies",
+      "scope_group": "Continued pretraining",
       "related_project_notes": [
         {
           "title": "Evaluation project: published comparisons and native-protocol requirements",
@@ -3012,10 +3272,10 @@
       "token_budgets": [
         {
           "id": "stage_wise_biological_adaptation_experiments_not_reported",
-          "stage": "Stage-wise biological adaptation experiments",
+          "stage": "Biological-web continued pretraining",
           "basis": "Not reported",
           "token_kind": "text",
-          "note": "The reported 200K training documents and 1,024-token maximum are not a realized token total. No multiplication by the maximum length is used.",
+          "note": "CPT uses 200K FineFineWeb biology documents and a 1,024-token maximum. Neither a realized token total nor acquisition-route token amounts are disclosed. Later encoder alignment, SFT and GRPO are separate stages.",
           "sources": [
             {
               "label": "Paper",
@@ -3045,7 +3305,17 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "cpt",
+        "order": 11,
+        "starting_model": "Qwen3-1.7B / 4B",
+        "budget_id": "stage_wise_biological_adaptation_experiments_not_reported",
+        "count_label": "CPT token counts not reported",
+        "initialization_source": "https://arxiv.org/html/2606.16517v1",
+        "note": "Only the biological-web CPT stage is relevant to this overview. Encoder alignment, SFT and reinforcement learning are distinct later stages.",
+        "name": "How Post-Training Shapes Biological Reasoning"
+      }
     }
   ],
   "recommended_experiments_not_executed": [
@@ -3249,7 +3519,12 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "methods",
+        "note": "General pretraining/midtraining recipe using olmOCR PDFs and web data; its full token pool is not a biology budget."
+      },
+      "scope_group": "Extraction and general training pipelines"
     },
     {
       "id": "unigenx",
@@ -3307,7 +3582,12 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Scientific sequence/coordinate generation; reviewed version and later repository capabilities differ."
+      },
+      "scope_group": "Other biological training approaches"
     },
     {
       "id": "ryze",
@@ -3401,7 +3681,12 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "methods",
+        "note": "Document extraction and synthetic SFT/RL data preparation; a processing reference, not a biological CPT run."
+      },
+      "scope_group": "Extraction and general training pipelines"
     },
     {
       "id": "stride",
@@ -3453,7 +3738,12 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "other",
+        "note": "Biological sequence instruction tuning and reinforcement learning."
+      },
+      "scope_group": "Other biological training approaches"
     }
   ],
   "corpora": [
@@ -3554,7 +3844,12 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "corpora",
+        "note": "Structured research text, metadata and citation links extracted from source papers."
+      },
+      "scope_group": "Reusable source corpora"
     },
     {
       "id": "pes2o",
@@ -3628,7 +3923,12 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "section": "corpora",
+        "note": "Cleaned text derived from S2ORC and Semantic Scholar; its reported token count uses whitespace tokenization."
+      },
+      "scope_group": "Reusable source corpora"
     },
     {
       "id": "dolma",
@@ -3700,13 +4000,18 @@
           },
           "rounding_tolerance_tokens": 500000000
         }
-      ]
+      ],
+      "presentation": {
+        "section": "corpora",
+        "note": "General text corpus and curation toolkit with an academic component, not a biology-only dataset."
+      },
+      "scope_group": "Reusable source corpora"
     }
   ],
-  "catalog_schema_version": 2,
+  "catalog_schema_version": 3,
   "consolidated_at_pst": "2026-10-15T12:05:51.135005-08:00",
   "catalog_home": "reports/bio_foundation_review_2026-10-15/README.md",
-  "catalog_policy": "One record per model family/study/corpus; all dataset budgets, figure and citation policies attach to that record. Preserve source versions, units and unknowns. This is an organization of existing evidence, not a fresh literature census.",
+  "catalog_policy": "One source record per model/study/corpus. The public overview merges CPT models and CPT data-curation studies, names the initialization and selects one sourced budget per entry. Full budgets and prior evidence remain in the same registry.",
   "migration": {
     "source_notes": [
       "README.md",
@@ -3741,5 +4046,14 @@
     "scope": "Route is assessed at the reviewed acquisition/curation pipeline, not merely the final model loading a corpus file. Source-specific token definitions remain explicit.",
     "evidence": "Numeric values retain primary source URLs and sections; new category sums record their arithmetic. Raw fetched primary sources and hashes are in the ignored audit directory."
   },
-  "token_budget_updated_at_pst": "2026-10-15T13:34:33.130278-08:00"
+  "token_budget_updated_at_pst": "2026-10-15T13:34:33.130278-08:00",
+  "evaluation_home": "https://github.com/Some-random/bio-evaluation",
+  "presentation_policy": {
+    "primary_scope": "biological continued pretraining",
+    "overview": "One selected budget per model/study; count label distinguishes retained corpus, training exposure and positions.",
+    "initialization": "Existing checkpoints for CPT; random weights for from-scratch comparisons. Architecture alone does not establish initialization.",
+    "excluded": "Instruction-only, representation-only, general-purpose and clinical-only models do not appear in the CPT overview.",
+    "evaluation": "Separate private repository; do not copy benchmark cases, labels or raw evaluation outputs into the extraction literature review."
+  },
+  "presentation_updated_at_pst": "2026-10-15T13:49:26.525384-08:00"
 }

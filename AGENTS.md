@@ -126,10 +126,11 @@ The user subsequently said to do downloading later and prioritize aggregating
 foundation-model papers and related information. The resumed download worker
 has stopped via its STOP file; leave it stopped. Consolidate literature in
 `reports/bio_foundation_review_2026-10-15/review.json`, with generated Markdown
-pages and CSV in that same directory. This is the shared literature home for
-paper-extraction-lab and bio-evaluation. Update existing model entries instead
-of starting separate coverage-update tables. Evaluation protocols and frozen
-source/run provenance stay in their original project and link to the catalog.
+pages and CSV in that same directory. This is the extraction project's
+literature home. Update existing model entries instead of starting separate
+coverage-update tables. Biological evaluation has a separate private home at
+`https://github.com/Some-random/bio-evaluation`; keep its protocols, benchmark
+cases, labels and raw runs there.
 
 ## Literature table token counts
 
@@ -148,3 +149,21 @@ study's acquisition/curation stage, and retain its original content description
 on the model page. A missing category split stays explicit even when the total
 is known. Source-reported totals may include generated or other unallocated
 material and need not equal the known category subtotals.
+
+## Presentation and continued-pretraining scope
+
+The user wants the main review ready to share and focused on biological CPT.
+Merge CPT curation studies (including Biomed-Enriched) with CPT models. Name
+each starting checkpoint and distinguish random-initialized models in a
+separate from-scratch comparison. Keep instruction-only training, representation
+learning and general extraction recipes in supporting references. Medical and
+clinical models from the earlier broad review remain archived, outside the
+main comparison; do not copy clinical filtering priorities into biology.
+
+Show one explicitly selected token budget per model/study in the main tables,
+with a plain-language label distinguishing dataset size, training consumption
+and scheduled/packed positions. Preserve all original budgets on study pages
+and in the registry. Do not put CSV/registry download links, verification logs,
+maintenance instructions or private evaluation navigation on the shared page.
+Keep them in maintenance documentation. These requirements change presentation
+and scope, not the pause on corpus acquisition or the prohibition on training.

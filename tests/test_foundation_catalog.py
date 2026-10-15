@@ -29,7 +29,10 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertIn('Online-paper tokens | Web-URL tokens | Existing-dataset tokens', table)
             self.assertNotIn('| Data summary |', table)
             self.assertIn('34.6B', table)
-            self.assertIn('300B', table)
+            self.assertEqual(table.count('[BioMedLM]('), 1)
+            detail = (directory / 'papers/biomedlm.md').read_text()
+            self.assertIn('34.6B', detail)
+            self.assertIn('300B', detail)
             with (directory / 'catalog.csv').open(newline='') as handle:
                 rows = list(csv.DictReader(handle))
             self.assertEqual(len(rows), 2)
@@ -41,6 +44,32 @@ class TokenAccountingChecks(unittest.TestCase):
             render(data, directory)
             self.assertEqual(snapshots, {p.relative_to(directory): p.read_bytes() for p in directory.rglob('*') if p.is_file()})
         self.assertEqual(data, before)
+
+    def test_overview_separates_cpt_initialization_and_preserves_archived_evidence(self):
+        data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
+        all_entries = [e for group in ('models', 'training_studies', 'method_references', 'corpora') for e in data[group]]
+        cpt = {e['id'] for e in all_entries if e['presentation']['section'] == 'cpt'}
+        scratch = {e['id'] for e in all_entries if e['presentation']['section'] == 'from_scratch'}
+        self.assertEqual(len(cpt), 11)
+        self.assertEqual(scratch, {'biogpt', 'biomedlm', 'pubmedbert', 'biolinkbert', 'galactica'})
+        self.assertTrue({'biomed_enriched', 'pmc_intercpt', 'bio_posttraining'} <= cpt)
+        self.assertTrue(cpt.isdisjoint({'txgemma', 'txllm', 'bioreason', 'meditron', 'olmo3', 'ryze'}))
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(data, directory)
+            overview = (directory / 'README.md').read_text()
+            for e in all_entries:
+                target = f"(papers/{e['id']}.md)"
+                self.assertEqual(overview.count(target), int(e['id'] in cpt | scratch))
+                self.assertTrue((directory / f"papers/{e['id']}.md").exists())
+            for hidden in ('catalog.csv', 'review.json', 'verification.json',
+                           'Training-data and curation studies', 'Method context',
+                           'Medical context', 'bio-evaluation'):
+                self.assertNotIn(hidden, overview)
+            gravity = next(e for e in all_entries if e['id'] == 'gravity_bio')
+            budget = next(b for b in gravity['token_budgets'] if b['id'] == gravity['presentation']['budget_id'])
+            self.assertEqual(budget['counts']['total']['status'], 'not_reported')
+            self.assertEqual(budget['counts']['web_urls']['status'], 'not_reported')
 
     def test_unknown_is_not_zero_and_bounds_are_visible(self):
         self.assertEqual(token_amount(dict(status='not_reported', tokens=None)), 'NR')

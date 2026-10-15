@@ -1,14 +1,18 @@
 # BioMatrix
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-1.7B / 4B. [Initialization evidence](https://arxiv.org/html/2606.22138v1)
+
+The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioMatrix](#token-counts-by-acquisition-route)<br>Multimodal CPT | Corpus · text + scientific sequences | NR | NR | ≥25.6B | 304.4B | [§3 / Fig. 3](https://arxiv.org/html/2606.22138v1) |
 
@@ -24,7 +28,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** Multimodal CPT, then multitask SFT
 
-**Backbone:** Qwen3 1.7B/4B
+**Backbone:** Qwen3-1.7B / 4B
 
 **Source material and units:** 304.4B mixed tokens: FineWeb-Edu; FineFineWeb biology/chemistry/medicine/health; PubMed text; molecules, proteins, structures, and interactions.
 

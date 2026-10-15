@@ -64,14 +64,19 @@ The text-packing demonstration uses the cached Qwen-family tokenizer on CPU;
 re-tokenize for the eventual training backbone. Multimodal records have explicit
 source-linked segments but have not been vision-tokenized for a particular VLM.
 
-The [shared biological foundation-model literature catalog](reports/bio_foundation_review_2026-10-15/README.md)
-is the literature home for this project and `bio-evaluation`. Each model or
-study has one page with its source papers, datasets and amounts, extraction,
-filtering, figures, citations and disclosure gaps. The older review, dataset
-breakdown and additional-coverage tables have been merged into this catalog.
-The catalog has 31 model-family entries, three training-data studies, three
-reusable corpora and four method references; ten model entries retain
-historical medical context. Clinical-note acquisition remains outside scope.
+The [biological continued-pretraining review](reports/bio_foundation_review_2026-10-15/README.md)
+compares 11 CPT models and studies, with five from-scratch comparisons.
+It reports token amounts from online papers, web URLs and existing datasets,
+names the starting checkpoints, and explains each count. Linked study pages
+retain extraction, filtering, figures, citations and source evidence.
+[Maintenance instructions](reports/bio_foundation_review_2026-10-15/maintenance.md)
+describe the underlying registry and generated files.
+
+Biological model evaluation has its own private repository:
+[bio-evaluation](https://github.com/Some-random/bio-evaluation).
+Benchmark protocols, cases, model runs and scores belong there. This repository
+holds paper extraction, data preparation and literature review; its extraction
+diagnostics are not biological model evaluations.
 
 The [web acquisition guide](reports/bio_foundation_review_2026-10-15/web_acquisition.md),
 [executed web probe](reports/bio_foundation_review_2026-10-15/web_sample.md) and

@@ -1,6 +1,6 @@
 # TxGemma
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Therapeutics multitask language model
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [TxGemma](#token-counts-by-acquisition-route)<br>27B-Predict SFT | Training exposure · text | 0 | 0 | 67B | 67B | [Model fine-tuning](https://arxiv.org/html/2504.06196v1) |
 

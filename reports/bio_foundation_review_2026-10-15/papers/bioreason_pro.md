@@ -1,6 +1,6 @@
 # BioReason-Pro
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological multimodal reasoning model
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioReason-Pro](#token-counts-by-acquisition-route)<br>Supervised adaptation on synthetic reasoning, followed by reinforcement learning | Not reported · text | NR | NR | NR | NR | [Paper](https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1) |
 
@@ -38,9 +38,5 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 - [Primary paper v1](https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1)
 - [Official repository](https://github.com/bowang-lab/BioReason-Pro)
-
-## Related evaluation notes
-
-- [Evaluation workspace and retained protocol provenance](https://github.com/Some-random/bio-evaluation)
 
 Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.

@@ -1,18 +1,22 @@
 # How Post-Training Shapes Biological Reasoning Models
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological CPT/SFT/RL study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-1.7B / 4B. [Initialization evidence](https://arxiv.org/html/2606.16517v1)
+
+Only the biological-web CPT stage is relevant to this overview. Encoder alignment, SFT and reinforcement learning are distinct later stages.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
-| [How Post-Training Shapes Biological Reasoning Models](#token-counts-by-acquisition-route)<br>Stage-wise biological adaptation experiments | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2606.16517v1) |
+| [How Post-Training Shapes Biological Reasoning Models](#token-counts-by-acquisition-route)<br>Biological-web continued pretraining | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2606.16517v1) |
 
-**Stage-wise biological adaptation experiments — Not reported (text):** The reported 200K training documents and 1,024-token maximum are not a realized token total. No multiplication by the maximum length is used.
+**Biological-web continued pretraining — Not reported (text):** CPT uses 200K FineFineWeb biology documents and a 1,024-token maximum. Neither a realized token total nor acquisition-route token amounts are disclosed. Later encoder alignment, SFT and GRPO are separate stages.
 
 - **Online Papers: NR.** No separate direct-paper token amount is established for this row.
 
@@ -24,7 +28,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** Stage-wise biological adaptation experiments
 
-**Backbone:** Qwen3 1.7B/4B; additional backbone/biological encoder comparisons
+**Backbone:** Qwen3-1.7B / 4B
 
 **Source material and units:** FineFineWeb biology: first 200K documents train, next 5K evaluation; downstream DNA/RNA/protein reasoning data.
 
@@ -46,9 +50,5 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 - [Biological post-training study](https://arxiv.org/html/2606.16517v1)
 - [Author repository](https://github.com/mims-harvard/bio-posttrain)
-
-## Related evaluation notes
-
-- [Evaluation project: published comparisons and native-protocol requirements](https://github.com/Some-random/bio-evaluation/blob/main/reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.md)
 
 Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.

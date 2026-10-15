@@ -1,14 +1,18 @@
 # LOGOS
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Scientific sequence and interaction model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-8B; Llama 3.2-1B / 3B variants. [Initialization evidence](https://arxiv.org/html/2606.16905v1#S2.SS3)
+
+The model inherits pretrained backbone and embedding weights. The 44.87B source headline is a scientific corpus across pretraining and post-training; it must not be described as a disclosed CPT-only budget.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [LOGOS](#token-counts-by-acquisition-route)<br>Scientific pre-/post-training corpus | Corpus · scientific sequences | 0 | 0 | 44.87B | 44.87B | [§2 / Appendix A](https://arxiv.org/html/2606.16905v1) |
 
@@ -23,6 +27,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: 44.87B.** Combined corpus headline; not a stage-specific exposure total.
 
 **Training stage:** Continued pretraining and post-training
+
+**Backbone:** Qwen3-8B; Llama 3.2-1B / 3B variants
 
 **Source material and units:** No large paper-text acquisition stage described; **44.87B** scientific-sequence/interaction tokens reported across protein, antibody, molecule, reaction, material, pocket and complex modalities
 

@@ -1,14 +1,18 @@
 # BioGPT
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; GPT-2-style architecture. [Initialization evidence](https://arxiv.org/pdf/2210.10341)
+
+Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioGPT](#token-counts-by-acquisition-route)<br>Pretraining | Corpus · text | NR | 0 | 0 | NR | [Pretraining](https://arxiv.org/pdf/2210.10341) |
 | [BioGPT](#token-counts-by-acquisition-route)<br>Pretraining | Scheduled token positions · token positions | 104.8576B | 0 | 0 | 104.8576B | [Pretraining](https://arxiv.org/pdf/2210.10341) |
@@ -35,7 +39,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** Pretraining from scratch; task-specific fine-tuning
 
-**Backbone:** GPT-2-style decoder; original 347M model
+**Backbone:** Random weights; GPT-2-style architecture
 
 **Source material and units:** 15M PubMed records with both title and abstract, updated before 2021.
 

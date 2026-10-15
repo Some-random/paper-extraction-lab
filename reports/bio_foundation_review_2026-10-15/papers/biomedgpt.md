@@ -1,14 +1,18 @@
 # BioMedGPT-LM / BioMedGPT (PharMolix)
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological multimodal language
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Llama2-Chat-7B. [Initialization evidence](https://arxiv.org/html/2308.09442v2)
+
+This row covers the literature CPT stage, before molecule/protein alignment.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioMedGPT-LM / BioMedGPT (PharMolix)](#token-counts-by-acquisition-route)<br>Literature CPT | Corpus · text | 0 | 0 | >26B | >26B | [§3.1](https://arxiv.org/html/2308.09442v2) |
 
@@ -24,7 +28,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** Literature CPT, then molecule/protein-text alignment
 
-**Backbone:** Llama2-Chat-7B; BioMedGPT-10B adds biological encoders
+**Backbone:** Llama2-Chat-7B
 
 **Source material and units:** 4.2M full-text S2ORC papers after filtering 5.5M biomedical candidates; over 26B text tokens.
 

@@ -1,14 +1,18 @@
 # Galactica
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Scientific model with disclosed biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; scientific decoder. [Initialization evidence](https://arxiv.org/html/2211.09085v1)
+
+A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [Galactica](#token-counts-by-acquisition-route)<br>Scientific pretraining | Corpus · text + scientific sequences | ≥64.926B | ≥700M | ≥23.87B | ≈106B | [Tables 1, 22–25](https://arxiv.org/html/2211.09085v1) |
 | [Galactica](#token-counts-by-acquisition-route)<br>Scientific pretraining | Training exposure · text + scientific sequences | NR | NR | NR | 450B | [§5.1](https://arxiv.org/html/2211.09085v1) |
@@ -34,6 +38,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: 450B.** Reported training exposure, §5.1.
 
 **Training stage:** Decoder pretraining from scratch
+
+**Backbone:** Random weights; scientific decoder
 
 **Source material and units:** Scientific papers plus biological/chemical records such as UniProt and PubChem
 

@@ -1,6 +1,6 @@
 # BioT5 / BioT5+
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological multimodal language
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioT5 / BioT5+](#token-counts-by-acquisition-route)<br>Multimodal denoising pretraining and multitask tuning | Not reported Â· text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2402.17810v2) |
 
@@ -70,9 +70,5 @@ BioT5+ does not publish enough information to convert its sampling scheme into â
 
 - [BioT5+ paper](https://arxiv.org/html/2402.17810v2)
 - [Author repository](https://github.com/QizhiPei/BioT5)
-
-## Related evaluation notes
-
-- [Evaluation project: published comparisons and native-protocol requirements](https://github.com/Some-random/bio-evaluation/blob/main/reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.md)
 
 Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.

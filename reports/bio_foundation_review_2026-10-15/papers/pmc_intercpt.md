@@ -1,14 +1,18 @@
 # PMC-InterCPT / Beyond Captions
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Multimodal CPT curation study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3.5-2B / 4B-Base. [Initialization evidence](https://arxiv.org/html/2606.01049v2)
+
+Paper/figure curation study with a fixed downstream SFT stage. Its empirical target includes medical tasks; its clinical evidence priorities are not the biological research collection policy.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [PMC-InterCPT / Beyond Captions](#token-counts-by-acquisition-route)<br>Context-grounded CPT | Resampled corpus · text + image | NR | NR | NR | 9.63B | [Tables 1, 8–9](https://arxiv.org/html/2606.01049v2) |
 
@@ -24,7 +28,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** CPT with a fixed downstream SFT stage
 
-**Backbone:** Qwen3.5 2B/4B; cross-architecture validation
+**Backbone:** Qwen3.5-2B / 4B-Base
 
 **Source material and units:** PMC/BIOMEDICA figures, captions and article-native context; final 9.63B-token corpus.
 

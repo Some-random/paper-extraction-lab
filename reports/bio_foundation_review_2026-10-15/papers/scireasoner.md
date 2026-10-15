@@ -1,14 +1,18 @@
 # SciReasoner
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Scientific model with biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-1.7B / 8B. [Initialization evidence](https://arxiv.org/html/2509.21320v1)
+
+Science-wide corpus with biological data; the 206B total is not entirely biological literature.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [SciReasoner](#token-counts-by-acquisition-route)<br>Scientific CPT | Corpus · text + scientific sequences | NR | NR | ≥166B | 206B | [§2 / Fig. 2](https://arxiv.org/html/2509.21320v1) |
 
@@ -23,6 +27,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: 206B.** Author-reported corpus headline; component discrepancy retained.
 
 **Training stage:** Continued pretraining, then SFT and reasoning/RL
+
+**Backbone:** Qwen3-1.7B / 8B
 
 **Source material and units:** PubMed abstracts/scientific prose; exact literature-token share NR; Headline **206B**; prose gives proteins **55B**, chemistry **50B**, DNA **30B**, RNA **26B**, materials **5B**. Uses C4 general text. Later **40M SFT examples**, separate from CPT
 

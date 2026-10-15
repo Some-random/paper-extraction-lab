@@ -1,16 +1,16 @@
 # Lingshu
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Medical vision-language generalist
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
+Archived reference outside the current biological pretraining review.
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [Lingshu](#token-counts-by-acquisition-route)<br>Shallow/deep alignment, SFT, RL | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2506.07044v1) |
 

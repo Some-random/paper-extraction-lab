@@ -1,18 +1,18 @@
 {
-  "checked_at_pst": "2026-10-15T13:35:00.090038-08:00",
-  "scope": "Typed token accounting, publication-source rechecks and generated-file consistency; not a new model run or independently measured tokenizer census.",
+  "checked_at_pst": "2026-10-15T13:50:12.689370-08:00",
+  "scope": "Typed token accounting, preservation of source allocations, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
-  "token_budget_rows": 51,
-  "generated_files_reproduced_byte_identically": 43,
-  "rows_with_positive_token_amounts": 31,
+  "token_budget_rows": 52,
+  "generated_files_reproduced_byte_identically": 46,
+  "rows_with_positive_token_amounts": 32,
   "rows_with_all_three_acquisition_amounts": 22,
   "positive_category_counts": {
-    "online_papers": 10,
+    "online_papers": 11,
     "web_urls": 6,
-    "existing_datasets": 20
+    "existing_datasets": 21
   },
   "original_41_entries_and_source_records_preserved": true,
-  "regression_tests_passed": 20,
+  "regression_tests_passed": 21,
   "known_rounding_discrepancies": [
     {
       "id": "meditron",
@@ -326,5 +326,17 @@
     "Scheduled/packed positions and author estimates retain explicit count bases; they are not substituted for unique corpus tokens.",
     "Lower bounds include only source components with established amounts; no residual is invented.",
     "Bioreason-Pro primary page returned HTTP 429 during this check; prior source metadata was retained and no token count was invented."
-  ]
+  ],
+  "source_snapshot_check_at_pst": "2026-10-15T13:35:00.090038-08:00",
+  "original_51_token_allocations_preserved": true,
+  "presentation_sections": {
+    "from_scratch": 5,
+    "archive": 11,
+    "cpt": 11,
+    "other": 9,
+    "methods": 2,
+    "corpora": 3
+  },
+  "overview_rows": 16,
+  "summary_budget_note": "One additional Gravity-bio overview record combines disclosed, non-overlapping component lower bounds. Web and total remain NR; original component and training-exposure records are unchanged."
 }

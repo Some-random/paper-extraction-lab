@@ -1,14 +1,18 @@
 # NatureLM
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological and scientific multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Llama 3 8B / Mixtral 8×7B. [Initialization evidence](https://arxiv.org/html/2502.07527v2#S2.SS3)
+
+The 8B and 8×7B models continue from existing checkpoints. The separate 1B model first trains on 300B SlimPajama text tokens, then receives scientific training; it is not trained on biology alone from its first step.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [NatureLM](#token-counts-by-acquisition-route)<br>8B / 8×7B scientific CPT | Corpus · text + scientific sequences | NR | NR | ≥116.72B | 143.8B | [§2 / Table S1](https://arxiv.org/html/2502.07527v2) |
 
@@ -23,6 +27,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: 143.8B.** Published Table S1 total; component rounding differs by 0.02B.
 
 **Training stage:** Scientific decoder continued pretraining for larger variants
+
+**Backbone:** Llama 3 8B / Mixtral 8×7B
 
 **Source material and units:** Literature, database descriptions, small molecules, proteins, DNA/RNA and cross-domain pairs
 
@@ -66,9 +72,5 @@ NatureLM's 12.7B cross-domain bucket consists of interleaved literature **4.0B**
 
 - [Primary source retained from the existing review](https://arxiv.org/html/2502.07527v2)
 - [Primary source retained from the existing review](https://arxiv.org/pdf/2606.22138v1)
-
-## Related evaluation notes
-
-- [Evaluation project: published comparisons and native-protocol requirements](https://github.com/Some-random/bio-evaluation/blob/main/reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.md)
 
 Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.

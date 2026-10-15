@@ -1,6 +1,6 @@
 # Ryze
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological document and training-data method reference
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [Ryze](#token-counts-by-acquisition-route)<br>SFT | Reported training-data budget · text | NR | NR | NR | 8.051591M | [§3.1](https://arxiv.org/html/2606.00902v1) |
 | [Ryze](#token-counts-by-acquisition-route)<br>GRPO | Reported training-data budget · text | NR | NR | NR | 1.584412M | [§3.1](https://arxiv.org/html/2606.00902v1) |

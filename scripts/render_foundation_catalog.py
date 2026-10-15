@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the one shared literature registry into GitHub Markdown and CSV."""
+"""Render the biological pretraining review and its supporting source records."""
 import csv
 import io
 import json
@@ -20,7 +20,7 @@ LABELS = [
 RECORD_LABELS = {'source_material': 'Source material', 'data_budget': 'Datasets and amounts',
                  'figures': 'Figure handling', 'citations': 'Citation handling'}
 TOKEN_FIELDS = ('online_papers', 'web_urls', 'existing_datasets', 'total')
-TOKEN_HEADER = '| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |'
+TOKEN_HEADER = '| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |'
 TOKEN_SEPARATOR = '|---|---|---:|---:|---:|---:|---|'
 TOKEN_RELATIONS = {'exact': '', 'approximate': '≈', 'greater_than': '>', 'at_least': '≥'}
 
@@ -94,6 +94,30 @@ def token_row(entry, budget):
     return '| ' + ' | '.join([name, basis] + amounts + [refs]) + ' |'
 
 
+def overview_budget(entry):
+    selected = entry['presentation']['budget_id']
+    return next(b for b in entry['token_budgets'] if b['id'] == selected)
+
+
+def overview_row(entry):
+    """One explicitly selected budget per study; never mix corpus and exposure."""
+    budget = overview_budget(entry)
+    view = entry['presentation']
+    name = f"[{cell(view.get('name', entry['name']))}](papers/{entry['id']}.md)"
+    name += '<br>' + cell(view['starting_model'])
+    amounts = [token_amount(budget['counts'][key]) for key in TOKEN_FIELDS]
+    refs = ' · '.join(f"[{cell(s['label'])}]({s['url']})" for s in budget['sources'])
+    return '| ' + ' | '.join([name] + amounts + [cell(view['count_label']), refs]) + ' |'
+
+
+def overview_table(entries):
+    return '\n'.join([
+        '| Model / starting checkpoint | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | What is counted | Source |',
+        '|---|---:|---:|---:|---:|---|---|',
+        *(overview_row(entry) for entry in entries),
+    ])
+
+
 def clean(value):
     return re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', value).replace('**', '').replace('`', '')
 
@@ -111,15 +135,30 @@ def render(data, directory=REPORT):
         if not re.fullmatch(r'[a-z0-9_]+', entry['id']) or not entry.get('sources'):
             raise ValueError('Invalid ID or missing source: ' + entry['id'])
         validate_token_budgets(entry)
+        view = entry.get('presentation')
+        if not view or view.get('section') not in {'cpt', 'from_scratch', 'other', 'methods', 'corpora', 'archive'}:
+            raise ValueError('Missing review scope: ' + entry['id'])
+        if view['section'] in {'cpt', 'from_scratch'}:
+            if not view.get('starting_model') or not view.get('count_label') or not view.get('initialization_source'):
+                raise ValueError('Missing pretraining classification evidence: ' + entry['id'])
+            if view.get('budget_id') not in {b['id'] for b in entry['token_budgets']}:
+                raise ValueError('Unknown overview budget: ' + entry['id'])
     pages = directory / 'papers'
     pages.mkdir(exist_ok=True)
     for kind, entry in all_entries:
         eid = entry['id']
-        body = [f"# {entry['name']}", '[Shared literature catalog](../README.md)',
+        body = [f"# {entry['name']}", '[Biological pretraining review](../README.md)',
                 entry.get('category', ''),
                 'This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.']
-        if entry.get('scope_group') == 'Medical context retained from earlier review':
-            body.append('Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.')
+        view = entry['presentation']
+        if view['section'] == 'archive':
+            body.append('Archived reference outside the current biological pretraining review.')
+        if view['section'] in {'cpt', 'from_scratch'}:
+            training = 'Continued pretraining' if view['section'] == 'cpt' else 'Pretraining from scratch'
+            body.append(f"**Training approach:** {training}. **Starting checkpoint:** {view['starting_model']}. "
+                        f"[Initialization evidence]({view['initialization_source']})")
+            if view.get('note'):
+                body.append(view['note'])
         body.append('## Token counts by acquisition route')
         lines = [TOKEN_HEADER, TOKEN_SEPARATOR]
         for budget in entry['token_budgets']:
@@ -152,88 +191,98 @@ def render(data, directory=REPORT):
             body.extend(entry['notes'])
         body.append('## Primary sources')
         body.append('\n'.join(f"- [{s['title']}]({s['url']})" for s in entry['sources']))
-        if entry.get('related_project_notes'):
-            body.append('## Related evaluation notes')
-            body.append('\n'.join(f"- [{s['title']}]({s['url']})" for s in entry['related_project_notes']))
         body.append('Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.')
         (pages / (eid + '.md')).write_text('\n\n'.join(body) + '\n')
 
-    groups = [
-        ('Biological research and science models', [(k,e) for k,e in all_entries if k == 'models' and e.get('scope_group') != 'Medical context retained from earlier review']),
-        ('Training-data and curation studies', [(k,e) for k,e in all_entries if k == 'training_studies']),
-        ('Reusable corpora', [(k,e) for k,e in all_entries if k == 'corpora']),
-        ('Method context', [(k,e) for k,e in all_entries if k == 'method_references']),
-        ('Medical context retained from earlier review', [(k,e) for k,e in all_entries if k == 'models' and e.get('scope_group') == 'Medical context retained from earlier review']),
-    ]
+    def selected(section):
+        return sorted((e for _, e in all_entries if e['presentation']['section'] == section),
+                      key=lambda e: e['presentation'].get('order', 100))
+
     intro = [
-        '# Shared biological foundation-model literature catalog',
-        'This is the shared literature home for **paper-extraction-lab** and **bio-evaluation**. '
-        'Each model or study has one page combining its paper links, datasets and amounts, '
-        'document processing, filtering, augmentation, figure/citation handling and known gaps.',
-        f"**{len(data['models'])} model-family entries, {len(data['training_studies'])} training-data studies, "
-        f"{len(data['corpora'])} reusable corpora and {len(data['method_references'])} method references.** "
-        'These are catalog entries, not a count of distinct publications or an exhaustive census.',
-        'The previous source review, dataset breakdown and additional-coverage table are merged here. '
-        'The entries below include TheBioCollection/Gravity-bio, NatureLM, BioMatrix, BioReason, '
-        'BioReason-Pro, SciReasoner, LOGOS and the earlier models.',
-        '[Download the catalog as CSV](catalog.csv) · [Structured source registry](review.json)',
-        '[Token-count verification](token_budget_verification.json)',
-        'The tables report **token amounts for each acquisition category**, with separate rows for corpus '
-        'size and training exposure where those are available. Extraction, filtering, original '
-        'paper/example counts and further qualifications are in each linked model page.',
-        '## Token-count legend',
-        '- **Online-paper tokens:** paper/abstract text acquired directly from publication repositories '
-        'or publishers, including their PDF, XML, LaTeX or bibliographic-text exports.\n'
-        '- **Web-URL tokens:** non-paper website content collected directly from live pages or raw web archives.\n'
-        '- **Existing-dataset tokens:** imported, already assembled corpora or datasets, including '
-        'literature/web corpora and biological databases. For example, paper text imported through '
-        'S2ORC or The Pile is counted here, not again under online papers. The route is assessed at '
-        'the reviewed study\'s acquisition/curation stage; releasing a new corpus does not itself make '
-        'all of its inputs existing-dataset tokens.\n'
-        '- **NR:** the category-specific token count is not disclosed or cannot be established from '
-        'the inspected evidence; it is **not zero**. A known source without a separable token budget '
-        'still receives NR.\n'
-        '- **0:** the described stage has no separate acquisition through that route. For example, '
-        'an exclusively reused paper dataset has zero direct-paper tokens, even though its content is literature.\n'
-        '- **K / M / B / T:** thousand / million / billion / trillion tokens. **≈** denotes an '
-        'approximate reported amount; **> / ≥** denotes a lower bound, not a complete category total.\n'
-        '- **Corpus** counts retained data; **training exposure** counts sampled tokens and may '
-        'include repeated passes. Planned schedules are labeled **scheduled token positions**, '
-        'not measured training exposure. **Text + image** totals remain labeled; image pairs, '
-        'words, bytes and documents are never converted into token counts.\n'
-        '- A total can include unallocated, generated, code, book or private-source tokens. Missing '
-        'category counts are not filled by subtracting known columns from the total. Counts '
-        'from different rows/stages/models must not be added. Source-specific tokenizers and rounding remain unchanged.',
+        '# Biological continued pretraining: data sources and token budgets',
+        'How biological foundation models turn research papers, web content and existing datasets '
+        'into training data. The main comparison focuses on **continued pretraining (CPT)**: '
+        'starting with a pretrained model and training it further on domain data. '
+        'Data-curation studies and released models appear together because both inform this choice.',
+        '## Continued pretraining',
+        'Each row names the starting checkpoint and reports one clearly identified token budget. '
+        'The linked study pages explain extraction, filtering, figures, citations and all reported counts.',
+        overview_table(selected('cpt')),
+        '### Reading the counts',
+        '- **Online papers:** text acquired directly from publishers or publication repositories, '
+        'including abstracts, XML, PDF and LaTeX.\n'
+        '- **Web URLs:** non-paper webpages acquired directly, including raw web archives.\n'
+        '- **Existing datasets:** reused corpora and biological databases. Paper text imported through '
+        'S2ORC or The Pile belongs here; it is not counted twice. These columns describe **how the study '
+        'obtained the data**, not just what the text discusses.\n'
+        '- **0** means the described data has no separate acquisition through that route. **NR** means '
+        'the token amount is not reported or cannot be established. Neither a known source name nor a '
+        'paper count supplies a missing token count.\n'
+        '- **Dataset size** counts the prepared corpus before training repeats. **Tokens used in training** '
+        'counts consumption, including repeated passes. For example, BioMedLM has a 34.6B-token corpus '
+        'and uses 300B tokens during training. The overview shows one selected count per study; both '
+        'remain on the study page.\n'
+        '- **M / B** mean million / billion; **≈** means approximate; **> / ≥** indicate a lower bound. '
+        'Tokenizers differ. Sequence/image tokens and planned token positions are labeled explicitly. '
+        'A total may include material without a disclosed category split.',
+        'Gravity-bio reports separate literature and biological-database components but not the full '
+        'training mixture. LOGOS reports a corpus spanning pretraining and post-training; its CPT-only '
+        'amount is not disclosed. BioMamba’s figure counts packed positions, including padding. '
+        'Biomed-Enriched’s 33.6B is the training budget **per experimental variant**. '
+        'PMC-InterCPT contributes a paper/figure curation method evaluated on medical and scientific tasks; '
+        'it is not evidence that clinical filtering is appropriate for all biology.',
+        '## Pretraining from scratch: comparison',
+        'These models begin with randomly initialized weights and biological or scientific data, '
+        'rather than adapting an existing checkpoint. They provide a comparison with CPT.',
+        overview_table(selected('from_scratch')),
+        'BioGPT’s 104.8576B is calculated from its scheduled steps and batch size, not a measured unique '
+        'corpus size. Galactica includes broad scientific material as well as biology. '
+        'NatureLM’s 8B and 8×7B versions belong in the CPT table; its separate 1B model first undergoes '
+        'general-text pretraining on SlimPajama before scientific training.',
+        '## Data preparation',
+        'See the guides to [biological sources](source_planning.md), '
+        '[web and reusable corpora](web_acquisition.md), [original figures and context](figure_handling.md), '
+        'and [citation handling](citations_and_cpt_sources.md). '
+        '[Supporting literature](background.md) covers source corpora, extraction pipelines, '
+        'instruction tuning and representation learning.',
     ]
-    for title, values in groups:
-        intro.append('## ' + title)
-        if title.startswith('Medical context'):
-            intro.append('Retained as historical references. Clinical-note acquisition is outside this project’s biological research scope.')
-        if title.startswith('Method context'):
-            intro.append('General recipes are identified separately; their whole PDF/token pools are not treated as biological-literature budgets.')
-        lines = [TOKEN_HEADER, TOKEN_SEPARATOR]
-        for _, e in values:
-            lines.extend(token_row(e, budget) for budget in e['token_budgets'])
-        intro.append('\n'.join(lines))
-    intro.extend([
-        '## Acquisition and representation guides',
-        '- [Biological source planning and provenance](source_planning.md)\n'
-        '- [Web acquisition and reusable web corpora](web_acquisition.md)\n'
-        '- [Executed eight-record web-corpus probe](web_sample.md)\n'
-        '- [Original figures, captions and context](figure_handling.md)\n'
-        '- [Citation provenance and the historical three-paper audit](citations_and_cpt_sources.md)\n'
-        '- [Current three-paper extraction outputs](../pmc_native_v4_citations_2026-10-15/README.md)\n'
-        '- [Paused 500-paper acquisition batch](../pmc_native_500_2026-10-15/README.md)',
-        '## Maintenance',
-        'Update the existing entry in [review.json](review.json), then run '
-        '` .venv/bin/python scripts/render_foundation_catalog.py ` from the project root. '
-        'The Markdown pages and CSV are generated views of that one registry. '
-        'Add source versions and disclosure gaps to the same entry instead of creating another “coverage update” table. '
-        'Evaluation protocols and raw runs retain their original project provenance and link here for literature notes.',
-    ])
     (directory / 'README.md').write_text('\n\n'.join(intro) + '\n')
+
+    background = ['# Supporting literature', '[Biological pretraining review](README.md)',
+                  'These references inform data preparation or other training objectives. '
+                  'Their budgets are not biological CPT budgets.']
+    for title, section in [('Reusable source corpora', 'corpora'),
+                           ('Extraction and general training pipelines', 'methods'),
+                           ('Other biological training approaches', 'other')]:
+        background.append('## ' + title)
+        background.append('\n'.join(f"- [{e['name']}](papers/{e['id']}.md): {e['presentation']['note']}"
+                                    for e in selected(section)))
+    (directory / 'background.md').write_text('\n\n'.join(background) + '\n')
+    archived = ['# Archived references', '[Biological pretraining review](README.md)',
+                'Medical and clinical-model references retained from the earlier broader review. '
+                'They are outside the current review scope and do not appear in the main comparison.']
+    archived.append('\n'.join(f"- [{e['name']}](papers/{e['id']}.md)" for e in selected('archive')))
+    (directory / 'archive.md').write_text('\n\n'.join(archived) + '\n')
+
+    maintenance = ['# Maintaining the literature review',
+                   'Edit [review.json](review.json), then run `python3 scripts/render_foundation_catalog.py` '
+                   'from the repository root. This produces the review, supporting pages, study pages '
+                   'and [numeric CSV](catalog.csv) from one registry.',
+                   'The `presentation` record selects the review section, starting checkpoint and one '
+                   'overview budget. It must cite initialization evidence. Keep every original budget '
+                   'in `token_budgets`; selecting an overview row never changes a reported amount. '
+                   'CPT studies belong with CPT models regardless of publication type. '
+                   'Do not classify instruction tuning, contrastive learning or random initialization as CPT.',
+                   'The [token audit](token_budget_verification.json) records numerical checks and '
+                   'source snapshots. [Archived references](archive.md) preserve earlier out-of-scope material.',
+                   'Evaluation protocols, benchmark cases and runs live in the separate private '
+                   '[bio-evaluation repository](https://github.com/Some-random/bio-evaluation). '
+                   'This repository holds extraction work and public literature notes. '
+                   'Private evaluation links remain in the registry as provenance, not public review navigation.']
+    (directory / 'maintenance.md').write_text('\n\n'.join(maintenance) + '\n')
     stream = io.StringIO()
-    fields = ['id', 'budget_id', 'name', 'kind', 'scope', 'stage', 'count_basis', 'token_kind']
+    fields = ['id', 'budget_id', 'name', 'kind', 'scope', 'review_section', 'overview_selected',
+              'starting_model', 'stage', 'count_basis', 'token_kind']
     for key in TOKEN_FIELDS:
         fields.extend([key + '_tokens', key + '_relation', key + '_status'])
     fields.extend(['details', 'primary_sources', 'qualification'])
@@ -243,6 +292,9 @@ def render(data, directory=REPORT):
         for budget in e['token_budgets']:
             row = {'id':e['id'], 'budget_id':budget['id'], 'name':e['name'], 'kind':kind,
                 'scope':e.get('scope_group',e.get('category','')), 'stage':budget['stage'],
+                'review_section':e['presentation']['section'],
+                'overview_selected':budget['id'] == e['presentation'].get('budget_id'),
+                'starting_model':e['presentation'].get('starting_model', ''),
                 'count_basis':budget['basis'], 'token_kind':budget['token_kind'],
                 'details':f"papers/{e['id']}.md#token-counts-by-acquisition-route",
                 'primary_sources':' ; '.join(s['url'] for s in budget['sources']), 'qualification':budget['note']}

@@ -1,6 +1,6 @@
 # ProtST
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Protein representation and text alignment
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [ProtST](#token-counts-by-acquisition-route)<br>Protein/text representation learning; published supervised and zero-shot task evaluations | Not reported · text | NR | NR | NR | NR | [Paper](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
@@ -31,9 +31,5 @@ This page consolidates existing reviewed sources. Author-reported results have n
 ## Primary sources
 
 - [ProtST primary paper](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf)
-
-## Related evaluation notes
-
-- [Existing published benchmark comparison audit](https://github.com/Some-random/bio-evaluation/blob/main/reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.md)
 
 Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.

@@ -1,6 +1,6 @@
 # OLMo 3
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 General foundation-model method reference
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [OLMo 3](#token-counts-by-acquisition-route)<br>Pretraining: available 9T pool | Corpus pool · text | 993.4B | 8.14T | 174.79B | ≈9.31T | [Table 4](https://arxiv.org/html/2512.13961v2) |
 | [OLMo 3](#token-counts-by-acquisition-route)<br>Pretraining: final 6T mix | Sampled training mix · text | 855.8B | 4.51T | 563.51B | ≈5.93T | [Table 4](https://arxiv.org/html/2512.13961v2) |

@@ -1,6 +1,6 @@
 # BioReason
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological multimodal reasoning model
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioReason](#token-counts-by-acquisition-route)<br>DNA-encoder/LLM supervised adaptation; selected GRPO | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2505.23579v2) |
 
@@ -42,9 +42,5 @@ This page consolidates existing reviewed sources. Author-reported results have n
 ## Primary sources
 
 - [Primary source retained from the existing review](https://arxiv.org/html/2505.23579v2)
-
-## Related evaluation notes
-
-- [Evaluation project: published comparisons and native-protocol requirements](https://github.com/Some-random/bio-evaluation/blob/main/reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.md)
 
 Corpus tokens, consumed training tokens, words, examples, papers and image tokens are different units. NR means not reported, not zero. Source versions and unresolved discrepancies are retained.

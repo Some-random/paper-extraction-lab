@@ -1,6 +1,6 @@
 # Tx-LLM
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Therapeutics multitask language model
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [Tx-LLM](#token-counts-by-acquisition-route)<br>Instruction tuning | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2406.06316v1) |
 

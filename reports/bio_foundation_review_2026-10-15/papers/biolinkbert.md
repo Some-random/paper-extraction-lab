@@ -1,14 +1,18 @@
 # BioLinkBERT
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; BERT architecture. [Initialization evidence](https://arxiv.org/html/2203.15827#S6.SS1)
+
+Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioLinkBERT](#token-counts-by-acquisition-route)<br>Encoder pretraining from scratch | Not reported · text | NR | NR | NR | NR | [Paper](https://aclanthology.org/2022.acl-long.551/) |
 
@@ -23,6 +27,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 - **Total: NR.** A tokenizer-token total is not established for this row.
 
 **Training stage:** Encoder pretraining from scratch
+
+**Backbone:** Random weights; BERT architecture
 
 **Source material and units:** PubMed documents and citation links
 

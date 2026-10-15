@@ -1,6 +1,6 @@
 # peS2o
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Reusable academic text corpus
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [peS2o](#token-counts-by-acquisition-route)<br>v2 corpus curation | Corpus · whitespace tokens | 0 | 0 | ≈42.01B | ≈42.01B | [v2 key facts](https://github.com/allenai/pes2o) |
 

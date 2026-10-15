@@ -1,14 +1,18 @@
 # BioMedLM
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; 2.7B GPT-style decoder. [Initialization evidence](https://arxiv.org/html/2403.18421v1)
+
+Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioMedLM](#token-counts-by-acquisition-route)<br>Pretraining | Corpus · text | 0 | 0 | 34.6B | 34.6B | [§3.3](https://arxiv.org/html/2403.18421v1) |
 | [BioMedLM](#token-counts-by-acquisition-route)<br>Pretraining | Training exposure · text | 0 | 0 | 300B | 300B | [§3.3](https://arxiv.org/html/2403.18421v1) |
@@ -35,7 +39,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** Pretraining from scratch; task-specific fine-tuning
 
-**Backbone:** 2.7B GPT-style decoder
+**Backbone:** Random weights; 2.7B GPT-style decoder
 
 **Source material and units:** The Pile's PubMed abstracts and full-article subsets: 34.6B corpus tokens. Training consumes 300B tokens, or 8.67 passes.
 

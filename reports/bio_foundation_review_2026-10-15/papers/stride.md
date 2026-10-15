@@ -1,6 +1,6 @@
 # STRIDE
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biological sequence post-training method reference
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [STRIDE](#token-counts-by-acquisition-route)<br>Supervised fine-tuning followed by reinforcement learning | Not reported · text | NR | NR | NR | NR | [Paper](https://github.com/daiheng-zhang/STRIDE) |
 

@@ -1,6 +1,6 @@
 # S2ORC
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Reusable academic corpus
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [S2ORC](#token-counts-by-acquisition-route)<br>S2ORC-SciBERT filtered subset | Corpus · source-reported tokens | 16.4B | 0 | 0 | 16.4B | [§5](https://aclanthology.org/2020.acl-main.447.pdf) |
 | [S2ORC](#token-counts-by-acquisition-route)<br>Full archive | Author-estimated corpus · source-reported tokens | NR | NR | NR | ≈40B | [Appendix E](https://aclanthology.org/2020.acl-main.447.pdf) |

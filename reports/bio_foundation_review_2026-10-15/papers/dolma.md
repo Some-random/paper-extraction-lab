@@ -1,6 +1,6 @@
 # Dolma
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Reusable general text corpus
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [Dolma](#token-counts-by-acquisition-route)<br>Original corpus construction | Corpus · text | 0 | 2.281T | 778.3B | ≈3.059T | [Table 1 / §3](https://arxiv.org/html/2402.00159v1) |
 

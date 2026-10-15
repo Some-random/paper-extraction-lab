@@ -1,14 +1,18 @@
 # BioMamba
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Training approach:** Continued pretraining. **Starting checkpoint:** Mamba2 checkpoints, 130M–2.7B. [Initialization evidence](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/)
+
+Reported packed sequence counts imply positions, not measured non-padding tokens or unique corpus size.
+
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BioMamba](#token-counts-by-acquisition-route)<br>CPT | Packed token positions · token positions | ≈434.176M | 0 | ≈86.016M | ≈520.192M | [Table 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/) |
 
@@ -24,7 +28,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 **Training stage:** CPT, then downstream SFT
 
-**Backbone:** Mamba2, 130M through 2.7B
+**Backbone:** Mamba2 checkpoints, 130M–2.7B
 
 **Source material and units:** PubMed MEDLINE abstracts with C4 and English Wikipedia; approximately 508K packed 1,024-token sequences in the reported final corpus.
 

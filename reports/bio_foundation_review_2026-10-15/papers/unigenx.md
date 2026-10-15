@@ -1,6 +1,6 @@
 # UniGenX
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Scientific structural-generation context
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [UniGenX](#token-counts-by-acquisition-route)<br>Scientific sequence/coordinate generation | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2503.06687v1) |
 

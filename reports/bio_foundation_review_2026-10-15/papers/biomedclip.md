@@ -1,6 +1,6 @@
 # BiomedCLIP / PMC-15M
 
-[Shared literature catalog](../README.md)
+[Biological pretraining review](../README.md)
 
 Biomedical image-text model
 
@@ -8,7 +8,7 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 ## Token counts by acquisition route
 
-| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
 |---|---|---:|---:|---:|---:|---|
 | [BiomedCLIP / PMC-15M](#token-counts-by-acquisition-route)<br>Contrastive image-text pretraining | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2303.00915) |
 
