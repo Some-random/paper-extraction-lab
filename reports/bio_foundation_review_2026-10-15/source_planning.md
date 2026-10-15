@@ -2,6 +2,11 @@
 
 [Shared literature catalog](README.md)
 
+The [shared data preparation pipeline](data_pipeline.md) specifies how paper,
+web and reused-dataset routes converge, where biological selection and
+deduplication happen, and how retained biological tokens are counted. It also
+identifies the components not yet implemented.
+
 Generated training material often reformats source documents, database facts, problems or simulations. It is derived material and should not displace the original evidence. Reformatting a publisher table or serializing a database entry is also different from asking a model to invent an explanation. Keep observed measurements, curated annotations, computed predictions and teacher-written text distinct.
 
 For this project, the practical source order is:

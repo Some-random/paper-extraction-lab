@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported.
 
+**Data included in the overview amounts:** Biomedical abstracts. PubMed abstracts are biomedical literature, not a separately measured nonclinical biology subset. The displayed number counts scheduled positions, not unique corpus tokens.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

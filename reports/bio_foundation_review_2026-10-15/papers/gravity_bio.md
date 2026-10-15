@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 The overview shows lower bounds from two separate known corpus components. Neither their sum nor either component alone is the full annealing mixture or consumed training budget.
 
+**Data included in the overview amounts:** Biological records + biomedical papers; replay extra. The displayed components are 52.6B biological database-derived tokens and approximately 54B biomedical literature tokens. Additional science/web replay is not quantified; the literature amount is not split into research biology versus clinical medicine.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

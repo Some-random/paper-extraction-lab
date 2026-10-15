@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Only the biological-web CPT stage is relevant to this overview. Encoder alignment, SFT and reinforcement learning are distinct later stages.
 
+**Data included in the overview amounts:** Biology-labeled web subset. CPT uses a FineFineWeb biology subset, but the realized token total is not reported. A source topic label alone does not establish research quality or exclusion of clinical material.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

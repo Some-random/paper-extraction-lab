@@ -105,14 +105,18 @@ def overview_row(entry):
     view = entry['presentation']
     name = f"[{cell(view.get('name', entry['name']))}](papers/{entry['id']}.md)"
     name += '<br>' + cell(view['starting_model'])
+    if view['quantity_type'] == 'training':
+        name += '<br>**Training tokens†**'
+    elif view['quantity_type'] == 'positions':
+        name += '<br>**Token positions‡**'
     amounts = [token_amount(budget['counts'][key]) for key in TOKEN_FIELDS]
     refs = ' · '.join(f"[{cell(s['label'])}]({s['url']})" for s in budget['sources'])
-    return '| ' + ' | '.join([name] + amounts + [cell(view['count_label']), refs]) + ' |'
+    return '| ' + ' | '.join([name] + amounts + [cell(view['data_scope']), refs]) + ' |'
 
 
 def overview_table(entries):
     return '\n'.join([
-        '| Model / starting checkpoint | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | What is counted | Source |',
+        '| Model / starting checkpoint | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Data included | Source |',
         '|---|---:|---:|---:|---:|---|---|',
         *(overview_row(entry) for entry in entries),
     ])
@@ -143,6 +147,8 @@ def render(data, directory=REPORT):
                 raise ValueError('Missing pretraining classification evidence: ' + entry['id'])
             if view.get('budget_id') not in {b['id'] for b in entry['token_budgets']}:
                 raise ValueError('Unknown overview budget: ' + entry['id'])
+            if not view.get('data_scope') or view.get('quantity_type') not in {'dataset', 'training', 'positions', 'unknown'}:
+                raise ValueError('Missing content scope or quantity type: ' + entry['id'])
     pages = directory / 'papers'
     pages.mkdir(exist_ok=True)
     for kind, entry in all_entries:
@@ -159,6 +165,8 @@ def render(data, directory=REPORT):
                         f"[Initialization evidence]({view['initialization_source']})")
             if view.get('note'):
                 body.append(view['note'])
+            body.append(f"**Data included in the overview amounts:** {view['data_scope']}. "
+                        + view['biology_scope_note'])
         body.append('## Token counts by acquisition route')
         lines = [TOKEN_HEADER, TOKEN_SEPARATOR]
         for budget in entry['token_budgets']:
@@ -204,9 +212,15 @@ def render(data, directory=REPORT):
         'into training data. The main comparison focuses on **continued pretraining (CPT)**: '
         'starting with a pretrained model and training it further on domain data. '
         'Data-curation studies and released models appear together because both inform this choice.',
+        '**These are reported source budgets, not uniformly biology-only token counts.** '
+        'Some include clinical literature, general text, other sciences or non-text modalities. '
+        'The “Data included” column identifies that scope. A paper’s full training total cannot be '
+        'treated as a biology-only amount when that subset is not separately reported.',
         '## Continued pretraining',
         'Each row names the starting checkpoint and reports one clearly identified token budget. '
-        'The linked study pages explain extraction, filtering, figures, citations and all reported counts.',
+        'Unmarked rows show **dataset tokens before training repeats**. '
+        '**† Training tokens** include repeated passes; **‡ token positions** can include padding or '
+        'a planned schedule. The linked study pages retain the full counts and source qualifications.',
         overview_table(selected('cpt')),
         '### Reading the counts',
         '- **Online papers:** text acquired directly from publishers or publication repositories, '
@@ -219,12 +233,16 @@ def render(data, directory=REPORT):
         'the token amount is not reported or cannot be established. Neither a known source name nor a '
         'paper count supplies a missing token count.\n'
         '- **Dataset size** counts the prepared corpus before training repeats. **Tokens used in training** '
-        'counts consumption, including repeated passes. For example, BioMedLM has a 34.6B-token corpus '
-        'and uses 300B tokens during training. The overview shows one selected count per study; both '
-        'remain on the study page.\n'
+        'counts consumption, including repeated passes: a 10B-token dataset read three times gives '
+        '30B training tokens, not 30B of distinct data. The former measures data volume; the latter '
+        'measures how much training read it. For BioMedLM these figures are 34.6B and 300B.\n'
         '- **M / B** mean million / billion; **≈** means approximate; **> / ≥** indicate a lower bound. '
         'Tokenizers differ. Sequence/image tokens and planned token positions are labeled explicitly. '
         'A total may include material without a disclosed category split.',
+        '**Scope examples:** BioMatrix’s 304.4B covers biological modalities and general text; '
+        'the ≥25.6B identified in its existing-dataset column is FineWeb-Edu **general text**. '
+        'BioMamba’s existing-dataset component is general replay. NatureLM and SciReasoner also '
+        'cover sciences beyond biology. None of those whole-row totals is a verified biology-only budget.',
         'Gravity-bio reports separate literature and biological-database components but not the full '
         'training mixture. LOGOS reports a corpus spanning pretraining and post-training; its CPT-only '
         'amount is not disclosed. BioMamba’s figure counts packed positions, including padding. '
@@ -240,7 +258,10 @@ def render(data, directory=REPORT):
         'NatureLM’s 8B and 8×7B versions belong in the CPT table; its separate 1B model first undergoes '
         'general-text pretraining on SlimPajama before scientific training.',
         '## Data preparation',
-        'See the guides to [biological sources](source_planning.md), '
+        'The [data preparation pipeline](data_pipeline.md) brings paper, web and reused-dataset inputs '
+        'into the same source-linked records, then applies content selection, deduplication and token counting. '
+        'It distinguishes existing implementation from proposed web-processing work. '
+        'See also the guides to [biological sources](source_planning.md), '
         '[web and reusable corpora](web_acquisition.md), [original figures and context](figure_handling.md), '
         'and [citation handling](citations_and_cpt_sources.md). '
         '[Supporting literature](background.md) covers source corpora, extraction pipelines, '
@@ -269,7 +290,8 @@ def render(data, directory=REPORT):
                    'from the repository root. This produces the review, supporting pages, study pages '
                    'and [numeric CSV](catalog.csv) from one registry.',
                    'The `presentation` record selects the review section, starting checkpoint and one '
-                   'overview budget. It must cite initialization evidence. Keep every original budget '
+                   'overview budget, with explicit content scope and quantity type. It must cite '
+                   'initialization evidence. Keep every original budget '
                    'in `token_budgets`; selecting an overview row never changes a reported amount. '
                    'CPT studies belong with CPT models regardless of publication type. '
                    'Do not classify instruction tuning, contrastive learning or random initialization as CPT.',
@@ -282,7 +304,7 @@ def render(data, directory=REPORT):
     (directory / 'maintenance.md').write_text('\n\n'.join(maintenance) + '\n')
     stream = io.StringIO()
     fields = ['id', 'budget_id', 'name', 'kind', 'scope', 'review_section', 'overview_selected',
-              'starting_model', 'stage', 'count_basis', 'token_kind']
+              'starting_model', 'data_scope', 'quantity_type', 'stage', 'count_basis', 'token_kind']
     for key in TOKEN_FIELDS:
         fields.extend([key + '_tokens', key + '_relation', key + '_status'])
     fields.extend(['details', 'primary_sources', 'qualification'])
@@ -295,6 +317,8 @@ def render(data, directory=REPORT):
                 'review_section':e['presentation']['section'],
                 'overview_selected':budget['id'] == e['presentation'].get('budget_id'),
                 'starting_model':e['presentation'].get('starting_model', ''),
+                'data_scope':e['presentation'].get('data_scope', ''),
+                'quantity_type':e['presentation'].get('quantity_type', ''),
                 'count_basis':budget['basis'], 'token_kind':budget['token_kind'],
                 'details':f"papers/{e['id']}.md#token-counts-by-acquisition-route",
                 'primary_sources':' ; '.join(s['url'] for s in budget['sources']), 'qualification':budget['note']}

@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T13:50:12.689370-08:00",
+  "checked_at_pst": "2026-10-15T14:00:12.267037-08:00",
   "scope": "Typed token accounting, preservation of source allocations, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -12,7 +12,7 @@
     "existing_datasets": 21
   },
   "original_41_entries_and_source_records_preserved": true,
-  "regression_tests_passed": 21,
+  "regression_tests_passed": 22,
   "known_rounding_discrepancies": [
     {
       "id": "meditron",
@@ -338,5 +338,7 @@
     "corpora": 3
   },
   "overview_rows": 16,
-  "summary_budget_note": "One additional Gravity-bio overview record combines disclosed, non-overlapping component lower bounds. Web and total remain NR; original component and training-exposure records are unchanged."
+  "summary_budget_note": "One additional Gravity-bio overview record combines disclosed, non-overlapping component lower bounds. Web and total remain NR; original component and training-exposure records are unchanged.",
+  "content_scope_verification": "All 16 overview entries disclose content scope and quantity type. Mixed/general source budgets are not labeled biology-only. All 52 previously recorded token budgets and their primary sources are unchanged.",
+  "pipeline_documentation": "data_pipeline.md specifies shared processing and separates implemented paper work from proposed web extraction, cross-route deduplication and final biological accounting."
 }

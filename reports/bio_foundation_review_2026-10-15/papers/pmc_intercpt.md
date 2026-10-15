@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Paper/figure curation study with a fixed downstream SFT stage. Its empirical target includes medical tasks; its clinical evidence priorities are not the biological research collection policy.
 
+**Data included in the overview amounts:** Biomedical paper text + image tokens. The 9.63B amount includes text and image tokens and is curated for medical/scientific tasks. A biology-only text fraction is not separately disclosed.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

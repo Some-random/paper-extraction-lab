@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities.
 
+**Data included in the overview amounts:** Broad scientific corpus + general material. The headline includes several sciences, reference material and other text. Its entire dataset or training exposure must not be labeled biological tokens.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 The reviewed BioBERT models initialize from BERT trained on general text. The paper reports source words rather than a comparable token total.
 
+**Data included in the overview amounts:** Biomedical paper text. The additional domain data is PubMed/PMC literature. The source does not supply a token count or a separate research-biology/clinical split.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

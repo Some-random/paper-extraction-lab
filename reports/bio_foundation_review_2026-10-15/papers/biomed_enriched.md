@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Curation variants are compared at the same 33.6B-token CPT budget. Clinical filtering results are source findings, not a prescription for a biology corpus.
 
+**Data included in the overview amounts:** Biomedical paper text. PMC literature and its biomedical/clinical curation variants; this does not establish a research-biology-only token count.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Science-wide corpus with biological data; the 206B total is not entirely biological literature.
 
+**Data included in the overview amounts:** Biology, chemistry, materials + other text. The 206B total and 166B named-dataset subtotal cover multiple sciences, not biology alone. The paper leaves 40B outside its enumerated components.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

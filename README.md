@@ -69,6 +69,9 @@ compares 11 CPT models and studies, with five from-scratch comparisons.
 It reports token amounts from online papers, web URLs and existing datasets,
 names the starting checkpoints, and explains each count. Linked study pages
 retain extraction, filtering, figures, citations and source evidence.
+The [paper and web data pipeline](reports/bio_foundation_review_2026-10-15/data_pipeline.md)
+defines shared processing and final biology-only accounting; proposed components
+are distinguished from completed extraction work.
 [Maintenance instructions](reports/bio_foundation_review_2026-10-15/maintenance.md)
 describe the underlying registry and generated files.
 

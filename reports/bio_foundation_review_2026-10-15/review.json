@@ -172,7 +172,10 @@
         "budget_id": "pretraining_scheduled_token_positions",
         "count_label": "Scheduled training token positions",
         "initialization_source": "https://arxiv.org/pdf/2210.10341",
-        "note": "Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported."
+        "note": "Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported.",
+        "data_scope": "Biomedical abstracts",
+        "biology_scope_note": "PubMed abstracts are biomedical literature, not a separately measured nonclinical biology subset. The displayed number counts scheduled positions, not unique corpus tokens.",
+        "quantity_type": "positions"
       }
     },
     {
@@ -322,7 +325,10 @@
         "budget_id": "pretraining_corpus",
         "count_label": "Dataset size; 300B training tokens separately",
         "initialization_source": "https://arxiv.org/html/2403.18421v1",
-        "note": "Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens."
+        "note": "Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens.",
+        "data_scope": "Biomedical papers",
+        "biology_scope_note": "The corpus consists of The Pile PubMed Abstracts/PubMed Central components. This is a biomedical-literature count; it does not isolate nonclinical biological research.",
+        "quantity_type": "dataset"
       }
     },
     {
@@ -885,7 +891,10 @@
         "count_label": "Dataset size: literature text",
         "initialization_source": "https://arxiv.org/html/2308.09442v2",
         "note": "This row covers the literature CPT stage, before molecule/protein alignment.",
-        "name": "BioMedGPT-LM"
+        "name": "BioMedGPT-LM",
+        "data_scope": "Biomedical paper text",
+        "biology_scope_note": "The literature CPT amount covers the selected biomedical S2ORC text, not a separately labeled nonclinical biology subset.",
+        "quantity_type": "dataset"
       }
     },
     {
@@ -1114,7 +1123,10 @@
         "budget_id": "multimodal_cpt_corpus",
         "count_label": "Dataset size: text, sequences and structures",
         "initialization_source": "https://arxiv.org/html/2606.22138v1",
-        "note": "The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text."
+        "note": "The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text.",
+        "data_scope": "Biological modalities + general text",
+        "biology_scope_note": "The 304.4B headline mixes text, molecules, proteins and cross-modal data. The 25.6B separately identified FineWeb-Edu component is general text, so that existing-dataset lower bound is not a biology-only number.",
+        "quantity_type": "dataset"
       }
     },
     {
@@ -1219,7 +1231,10 @@
         "budget_id": "cpt_packed_token_positions",
         "count_label": "Packed token positions, including padding",
         "initialization_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
-        "note": "Reported packed sequence counts imply positions, not measured non-padding tokens or unique corpus size."
+        "note": "Reported packed sequence counts imply positions, not measured non-padding tokens or unique corpus size.",
+        "data_scope": "Biomedical papers + general replay",
+        "biology_scope_note": "The paper-derived stream is PubMed text. The existing-dataset component is C4 and Wikipedia general replay; all reported amounts here are inferred packed positions.",
+        "quantity_type": "positions"
       }
     },
     {
@@ -1745,7 +1760,10 @@
         "budget_id": "encoder_continued_pretraining_not_reported",
         "count_label": "Token counts not reported",
         "initialization_source": "https://arxiv.org/pdf/1901.08746",
-        "note": "The reviewed BioBERT models initialize from BERT trained on general text. The paper reports source words rather than a comparable token total."
+        "note": "The reviewed BioBERT models initialize from BERT trained on general text. The paper reports source words rather than a comparable token total.",
+        "data_scope": "Biomedical paper text",
+        "biology_scope_note": "The additional domain data is PubMed/PMC literature. The source does not supply a token count or a separate research-biology/clinical split.",
+        "quantity_type": "unknown"
       },
       "base": "BERT"
     },
@@ -1836,7 +1854,10 @@
         "budget_id": "encoder_pretraining_from_scratch_not_reported",
         "count_label": "Token counts not reported",
         "initialization_source": "https://arxiv.org/html/2007.15779v6",
-        "note": "Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint."
+        "note": "Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint.",
+        "data_scope": "Biomedical paper text",
+        "biology_scope_note": "The reviewed PubMed/PMC sources are biomedical. Neither a comparable token total nor a nonclinical research-biology split is established here.",
+        "quantity_type": "unknown"
       },
       "base": "Random weights; BERT architecture"
     },
@@ -1936,7 +1957,10 @@
         "budget_id": "encoder_pretraining_from_scratch_not_reported",
         "count_label": "Token counts not reported",
         "initialization_source": "https://arxiv.org/html/2203.15827#S6.SS1",
-        "note": "Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment."
+        "note": "Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment.",
+        "data_scope": "Biomedical abstracts",
+        "biology_scope_note": "The training corpus is PubMed abstracts and their citation links. No comparable token total or nonclinical biology split is disclosed.",
+        "quantity_type": "unknown"
       },
       "base": "Random weights; BERT architecture"
     },
@@ -2052,7 +2076,10 @@
         "budget_id": "8b_8_7b_scientific_cpt_corpus",
         "count_label": "Dataset size: text + scientific sequences",
         "initialization_source": "https://arxiv.org/html/2502.07527v2#S2.SS3",
-        "note": "The 8B and 8×7B models continue from existing checkpoints. The separate 1B model first trains on 300B SlimPajama text tokens, then receives scientific training; it is not trained on biology alone from its first step."
+        "note": "The 8B and 8×7B models continue from existing checkpoints. The separate 1B model first trains on 300B SlimPajama text tokens, then receives scientific training; it is not trained on biology alone from its first step.",
+        "data_scope": "Biology, chemistry, materials + general text",
+        "biology_scope_note": "The complete 143.8B corpus is not biology-only. It includes 14.4B general text, several scientific modalities and cross-domain data; the existing-dataset lower bound also includes nonbiological materials.",
+        "quantity_type": "dataset"
       },
       "base": "Llama 3 8B / Mixtral 8×7B"
     },
@@ -2202,7 +2229,10 @@
         "budget_id": "scientific_pretraining_corpus",
         "count_label": "Dataset size: text + scientific sequences",
         "initialization_source": "https://arxiv.org/html/2211.09085v1",
-        "note": "A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities."
+        "note": "A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities.",
+        "data_scope": "Broad scientific corpus + general material",
+        "biology_scope_note": "The headline includes several sciences, reference material and other text. Its entire dataset or training exposure must not be labeled biological tokens.",
+        "quantity_type": "dataset"
       },
       "base": "Random weights; scientific decoder"
     },
@@ -2411,7 +2441,10 @@
         "budget_id": "known_corpus_components",
         "count_label": "Known dataset components; full mixture NR",
         "initialization_source": "https://arxiv.org/html/2607.08803v1#S3.SS1",
-        "note": "The overview shows lower bounds from two separate known corpus components. Neither their sum nor either component alone is the full annealing mixture or consumed training budget."
+        "note": "The overview shows lower bounds from two separate known corpus components. Neither their sum nor either component alone is the full annealing mixture or consumed training budget.",
+        "data_scope": "Biological records + biomedical papers; replay extra",
+        "biology_scope_note": "The displayed components are 52.6B biological database-derived tokens and approximately 54B biomedical literature tokens. Additional science/web replay is not quantified; the literature amount is not split into research biology versus clinical medicine.",
+        "quantity_type": "dataset"
       },
       "base": "Gravity-16B-A3B, before annealing"
     },
@@ -2493,7 +2526,10 @@
         "budget_id": "scientific_cpt_corpus",
         "count_label": "Dataset size: text + scientific sequences",
         "initialization_source": "https://arxiv.org/html/2509.21320v1",
-        "note": "Science-wide corpus with biological data; the 206B total is not entirely biological literature."
+        "note": "Science-wide corpus with biological data; the 206B total is not entirely biological literature.",
+        "data_scope": "Biology, chemistry, materials + other text",
+        "biology_scope_note": "The 206B total and 166B named-dataset subtotal cover multiple sciences, not biology alone. The paper leaves 40B outside its enumerated components.",
+        "quantity_type": "dataset"
       },
       "base": "Qwen3-1.7B / 8B"
     },
@@ -2578,7 +2614,10 @@
         "budget_id": "scientific_pre_post_training_corpus_corpus",
         "count_label": "Combined pre-/post-training corpus; CPT-only NR",
         "initialization_source": "https://arxiv.org/html/2606.16905v1#S2.SS3",
-        "note": "The model inherits pretrained backbone and embedding weights. The 44.87B source headline is a scientific corpus across pretraining and post-training; it must not be described as a disclosed CPT-only budget."
+        "note": "The model inherits pretrained backbone and embedding weights. The 44.87B source headline is a scientific corpus across pretraining and post-training; it must not be described as a disclosed CPT-only budget.",
+        "data_scope": "Biological, chemical and materials sequences",
+        "biology_scope_note": "The 44.87B corpus includes scientific modalities beyond biology and spans pretraining/post-training; it is neither a biology-only prose count nor a disclosed CPT-only exposure.",
+        "quantity_type": "dataset"
       },
       "base": "Qwen3-8B; Llama 3.2-1B / 3B variants"
     },
@@ -3137,7 +3176,10 @@
         "budget_id": "controlled_cpt_each_variant_training_exposure",
         "count_label": "Tokens used in training, per variant",
         "initialization_source": "https://arxiv.org/html/2506.20331v1",
-        "note": "Curation variants are compared at the same 33.6B-token CPT budget. Clinical filtering results are source findings, not a prescription for a biology corpus."
+        "note": "Curation variants are compared at the same 33.6B-token CPT budget. Clinical filtering results are source findings, not a prescription for a biology corpus.",
+        "data_scope": "Biomedical paper text",
+        "biology_scope_note": "PMC literature and its biomedical/clinical curation variants; this does not establish a research-biology-only token count.",
+        "quantity_type": "training"
       }
     },
     {
@@ -3234,7 +3276,10 @@
         "count_label": "Resampled dataset: text + image tokens",
         "initialization_source": "https://arxiv.org/html/2606.01049v2",
         "note": "Paper/figure curation study with a fixed downstream SFT stage. Its empirical target includes medical tasks; its clinical evidence priorities are not the biological research collection policy.",
-        "name": "PMC-InterCPT / Beyond Captions"
+        "name": "PMC-InterCPT / Beyond Captions",
+        "data_scope": "Biomedical paper text + image tokens",
+        "biology_scope_note": "The 9.63B amount includes text and image tokens and is curated for medical/scientific tasks. A biology-only text fraction is not separately disclosed.",
+        "quantity_type": "dataset"
       }
     },
     {
@@ -3314,7 +3359,10 @@
         "count_label": "CPT token counts not reported",
         "initialization_source": "https://arxiv.org/html/2606.16517v1",
         "note": "Only the biological-web CPT stage is relevant to this overview. Encoder alignment, SFT and reinforcement learning are distinct later stages.",
-        "name": "How Post-Training Shapes Biological Reasoning"
+        "name": "How Post-Training Shapes Biological Reasoning",
+        "data_scope": "Biology-labeled web subset",
+        "biology_scope_note": "CPT uses a FineFineWeb biology subset, but the realized token total is not reported. A source topic label alone does not establish research quality or exclusion of clinical material.",
+        "quantity_type": "unknown"
       }
     }
   ],
@@ -4053,7 +4101,8 @@
     "overview": "One selected budget per model/study; count label distinguishes retained corpus, training exposure and positions.",
     "initialization": "Existing checkpoints for CPT; random weights for from-scratch comparisons. Architecture alone does not establish initialization.",
     "excluded": "Instruction-only, representation-only, general-purpose and clinical-only models do not appear in the CPT overview.",
-    "evaluation": "Separate private repository; do not copy benchmark cases, labels or raw evaluation outputs into the extraction literature review."
+    "evaluation": "Separate private repository; do not copy benchmark cases, labels or raw evaluation outputs into the extraction literature review.",
+    "content_scope": "Acquisition route and biological content are separate axes. General replay, other science, clinical literature and non-text tokens must be explicit. A mixed headline is never a biology-only token estimate."
   },
-  "presentation_updated_at_pst": "2026-10-15T13:49:26.525384-08:00"
+  "presentation_updated_at_pst": "2026-10-15T13:59:32.548271-08:00"
 }

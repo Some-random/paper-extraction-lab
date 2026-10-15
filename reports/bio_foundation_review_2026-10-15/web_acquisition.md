@@ -1,5 +1,10 @@
 **How to obtain biological web text**
 
+Follow the [shared paper/web pipeline](data_pipeline.md) after acquisition:
+extract main content, retain source structure, select biological research,
+deduplicate across all routes, then tokenize. The HTML adapter is a proposed
+component; the small dataset probe below does not implement that pipeline.
+
 There are three practical routes. For this storage-limited project, start with small selections from existing corpora and use a focused crawl to fill specific gaps. These are acquisition instructions; only the [64KiB FineFineWeb probe](web_sample.md) was executed in this update.
 
 | Route | How we obtain the URLs/text | Useful when |

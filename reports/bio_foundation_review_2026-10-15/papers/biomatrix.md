@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text.
 
+**Data included in the overview amounts:** Biological modalities + general text. The 304.4B headline mixes text, molecules, proteins and cross-modal data. The 25.6B separately identified FineWeb-Edu component is general text, so that existing-dataset lower bound is not a biology-only number.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

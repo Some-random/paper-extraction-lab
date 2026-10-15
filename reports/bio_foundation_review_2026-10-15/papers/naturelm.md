@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 The 8B and 8×7B models continue from existing checkpoints. The separate 1B model first trains on 300B SlimPajama text tokens, then receives scientific training; it is not trained on biology alone from its first step.
 
+**Data included in the overview amounts:** Biology, chemistry, materials + general text. The complete 143.8B corpus is not biology-only. It includes 14.4B general text, several scientific modalities and cross-domain data; the existing-dataset lower bound also includes nonbiological materials.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

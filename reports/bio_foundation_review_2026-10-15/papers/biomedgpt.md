@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 This row covers the literature CPT stage, before molecule/protein alignment.
 
+**Data included in the overview amounts:** Biomedical paper text. The literature CPT amount covers the selected biomedical S2ORC text, not a separately labeled nonclinical biology subset.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

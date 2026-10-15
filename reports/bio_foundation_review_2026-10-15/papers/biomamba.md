@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Reported packed sequence counts imply positions, not measured non-padding tokens or unique corpus size.
 
+**Data included in the overview amounts:** Biomedical papers + general replay. The paper-derived stream is PubMed text. The existing-dataset component is C4 and Wikipedia general replay; all reported amounts here are inferred packed positions.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

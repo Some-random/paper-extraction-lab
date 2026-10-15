@@ -167,3 +167,16 @@ and in the registry. Do not put CSV/registry download links, verification logs,
 maintenance instructions or private evaluation navigation on the shared page.
 Keep them in maintenance documentation. These requirements change presentation
 and scope, not the pause on corpus acquisition or the prohibition on training.
+
+The user also clarified that acquisition-route counts must not be mistaken for
+biology-only counts. Label general replay, clinical literature, other sciences
+and non-text modalities explicitly. Preserve reported totals, but do not call a
+mixed total biological tokens without a supported subset calculation. Remove
+the vague main-table "What is counted" column; label exceptional training
+exposure and token-position rows directly, with content scope visible.
+
+The shared paper/web/dataset processing design is documented in
+`reports/bio_foundation_review_2026-10-15/data_pipeline.md`. It is a design that
+builds on implemented native-paper work; the web adapter, calibrated filters and
+global cross-route deduplication are not claimed as already implemented. Keep
+those statuses explicit and keep acquisition paused until the user resumes it.

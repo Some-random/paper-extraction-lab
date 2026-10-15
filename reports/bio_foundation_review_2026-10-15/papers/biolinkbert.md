@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment.
 
+**Data included in the overview amounts:** Biomedical abstracts. The training corpus is PubMed abstracts and their citation links. No comparable token total or nonclinical biology split is disclosed.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

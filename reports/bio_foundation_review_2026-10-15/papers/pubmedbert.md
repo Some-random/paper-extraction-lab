@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint.
 
+**Data included in the overview amounts:** Biomedical paper text. The reviewed PubMed/PMC sources are biomedical. Neither a comparable token total nor a nonclinical research-biology split is established here.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

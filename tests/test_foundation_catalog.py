@@ -64,12 +64,29 @@ class TokenAccountingChecks(unittest.TestCase):
                 self.assertTrue((directory / f"papers/{e['id']}.md").exists())
             for hidden in ('catalog.csv', 'review.json', 'verification.json',
                            'Training-data and curation studies', 'Method context',
-                           'Medical context', 'bio-evaluation'):
+                           'Medical context', 'bio-evaluation', 'What is counted'):
                 self.assertNotIn(hidden, overview)
             gravity = next(e for e in all_entries if e['id'] == 'gravity_bio')
             budget = next(b for b in gravity['token_budgets'] if b['id'] == gravity['presentation']['budget_id'])
             self.assertEqual(budget['counts']['total']['status'], 'not_reported')
             self.assertEqual(budget['counts']['web_urls']['status'], 'not_reported')
+
+    def test_mixed_data_requires_explicit_scope_and_quantity_type(self):
+        data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
+        model = copy.deepcopy(next(e for e in data['models'] if e['id'] == 'biomatrix'))
+        self.assertIn('general', model['presentation']['data_scope'])
+        self.assertIn('FineWeb-Edu', model['presentation']['biology_scope_note'])
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
+            render(single, directory)
+            with (directory / 'catalog.csv').open(newline='') as handle:
+                row = next(csv.DictReader(handle))
+            self.assertEqual(row['quantity_type'], 'dataset')
+            self.assertIn('general', row['data_scope'])
+            del model['presentation']['data_scope']
+            with self.assertRaises(ValueError):
+                render(single, directory)
 
     def test_unknown_is_not_zero_and_bounds_are_visible(self):
         self.assertEqual(token_amount(dict(status='not_reported', tokens=None)), 'NR')

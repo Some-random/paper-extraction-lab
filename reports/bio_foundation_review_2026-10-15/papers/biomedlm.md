@@ -10,6 +10,8 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens.
 
+**Data included in the overview amounts:** Biomedical papers. The corpus consists of The Pile PubMed Abstracts/PubMed Central components. This is a biomedical-literature count; it does not isolate nonclinical biological research.
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
