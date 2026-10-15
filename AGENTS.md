@@ -180,3 +180,17 @@ The shared paper/web/dataset processing design is documented in
 builds on implemented native-paper work; the web adapter, calibrated filters and
 global cross-route deduplication are not claimed as already implemented. Keep
 those statuses explicit and keep acquisition paused until the user resumes it.
+
+## Fresh 500-paper acquisition
+
+The user subsequently asked to start crawling all 500 papers after the review
+update, without counting earlier acquisition work. This supersedes the pause
+for this new run only. Use `config/pmc_native_fresh_500_2026-10-15.json`, with
+separate output/report directories and no prior source or asset seeding. Earlier
+batches remain preserved. Count 500 accepted, within-run unique papers using
+the same ten-journal scope, 50 per journal. The new bounded allowance is ten
+hours, 5 GiB response bodies and 8 GiB artifacts; enforce the configured fixed
+cutoff and 32 GiB free-space floor. Run one serial document worker on two CPU
+threads and zero GPUs. Retain PDFs/XML, native text, source figures/tables and
+citations; no new OCR, inference, training or separate supplement acquisition.
+Publish compact progress/final manifests, with bulk artifacts kept locally.

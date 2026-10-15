@@ -24,6 +24,16 @@ def worker():
 
 
 class NativeRecoveryChecks(unittest.TestCase):
+    def test_fresh_run_does_not_open_or_seed_any_prior_batch(self):
+        run = worker()
+        run.config.update(reuse_existing_sources=False,
+                          reuse_state="missing-prior-run/state.json")
+        run.seed_cached()
+        self.assertEqual(run.state['papers'], [])
+        self.assertTrue(run.state['cache_seed_complete'])
+        self.assertIn('Fresh acquisition', run.state['cache_policy'])
+        run.persist.assert_called_once()
+
     def test_outage_retries_same_request_and_keeps_cumulative_accounting(self):
         run = worker()
         with patch.object(Batch, "request", side_effect=[URLError("refused"), b"source"]) as fetch:

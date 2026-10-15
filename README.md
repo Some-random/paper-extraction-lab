@@ -89,8 +89,14 @@ remain topic guides linked from that catalog.
 The user-confirmed [500-paper native-source expansion](reports/pmc_native_500_2026-10-15/README.md)
 retains original figures, full captions, referring paragraphs and source tables,
 with no new OCR or model training. The [storage/time estimate and firm limits](reports/pmc_native_500_2026-10-15/scaling_estimate.md)
-precede the run. Acquisition is paused at the user's request while literature
-is consolidated; the batch's STOP file remains in place.
+precede the earlier run, which remains stopped with its outputs preserved.
+
+The [fresh 500-paper collection](reports/pmc_native_fresh_500_2026-10-15/README.md)
+starts independently at the user's request, with no prior papers or assets
+counting toward its target. It freshly acquires 50 papers from each of the same
+ten journals, subject to the [new run's limits](config/pmc_native_fresh_500_2026-10-15.json).
+It retains source PDFs/XML, original figures, tables and citation context;
+there is no new OCR or model training.
 
 ## Overnight download and full-paper extraction
 

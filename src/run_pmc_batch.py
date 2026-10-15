@@ -233,7 +233,7 @@ class Batch:
         self.persist()
 
     def request(self, url, maximum, output=None):
-        if self.config.get('http_backend') == 'python310_bridge':
+        if self.config.get('http_backend') in ('python310_bridge', 'python_bridge'):
             return self.bridge_request(url, maximum, output)
         return self.direct_request(url, maximum, output)
 
@@ -249,7 +249,8 @@ class Batch:
                 if network_left <= 0:
                     raise LimitReached('Network payload cap reached')
                 admitted = min(maximum, network_left)
-                child = subprocess.Popen([str(ROOT / '.venv/bin/python'), str(ROOT / 'src/pmc_http_fetch.py'), public_url(url), str(admitted)],
+                python = ROOT / self.config.get('http_python', '.venv/bin/python')
+                child = subprocess.Popen([str(python), str(ROOT / 'src/pmc_http_fetch.py'), public_url(url), str(admitted)],
                     stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 header = json.loads(child.stdout.readline())
                 expected = int(header.get('content_length', 0))
@@ -473,6 +474,9 @@ class Batch:
                     markers = [key for key, pattern in BIO.items() if re.search(pattern, bio_text, re.I)]
                     if len(markers) < 2 or not any(m != 'cell' for m in markers):
                         raise Rejected('Insufficient biology title/abstract markers: ' + ','.join(markers))
+                    required = self.config.get('required_biology_marker_groups', [])
+                    if required and not any(m in required for m in markers):
+                        raise Rejected('No required research-biology marker: ' + ','.join(markers))
                     raw_pdf = self.download(meta['pdf_url'], out / 'source.pdf', self.config['maximum_pdf_bytes'])
                     if not raw_pdf.startswith(b'%PDF-'):
                         raise ValueError('Source object is not a PDF')

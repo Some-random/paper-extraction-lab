@@ -127,6 +127,11 @@ class NativeScale(Batch):
     def seed_cached(self):
         if self.state.get("cache_seed_complete"):
             return
+        if not self.config.get("reuse_existing_sources", True):
+            self.state["cache_seed_complete"] = True
+            self.state["cache_policy"] = "Fresh acquisition; no prior batch sources or assets reused"
+            self.persist()
+            return
         prior = json.loads((ROOT / self.config["reuse_state"]).read_text())
         known = {p["pmcid"] for p in self.state["papers"]}
         for old in prior["papers"]:
@@ -216,9 +221,10 @@ class NativeScale(Batch):
                                      "reason": "no exact source-manifest filename"})
                     continue
                 target = assets / filename
-                cache = ROOT / self.config["reuse_assets"] / paper["pmcid"] / "assets" / filename
+                cache_root = self.config.get("reuse_assets") if self.config.get("reuse_existing_sources", True) else None
+                cache = ROOT / cache_root / paper["pmcid"] / "assets" / filename if cache_root else None
                 try:
-                    if not target.exists() and cache.exists():
+                    if not target.exists() and cache is not None and cache.exists():
                         os.link(cache, target)
                     raw = self.download(url, target, self.config["maximum_asset_bytes"])
                     expected = parse_qs(urlsplit(url).query).get("md5", [""])[0]
@@ -302,6 +308,8 @@ class NativeScale(Batch):
             "network_outage": self.state.get("network_outage"),
             "maximum_download_bytes": self.config["maximum_download_bytes"],
             "maximum_artifact_bytes": self.config["maximum_artifact_bytes"],
+            "fresh_acquisition": not self.config.get("reuse_existing_sources", True),
+            "tokenizer_path": self.config["tokenizer_path"],
             "historical_connection_refused_attempts": sum("Connection refused" in r.get("reason", "") for r in self.state["rejected"]),
             "scope": "native XML text/full source tables and original figure assets; separate supplements not downloaded",
             "limitations": ["Topic-selected convenience sample, not representative sampling.",
@@ -314,8 +322,16 @@ class NativeScale(Batch):
                   "text_tokens", "text_chunks", "full_source_table_cells", "license_code", "source_directory"]
         with (out / "papers.csv").open("w", newline="") as f:
             w = csv.DictWriter(f, fields, extrasaction="ignore");w.writeheader();w.writerows(papers)
+        if summary["fresh_acquisition"]:
+            run_note = ("This is a fresh, independent 500-paper acquisition. No documents or assets are "
+                        "seeded from prior batches, and prior progress does not count toward this target. "
+                        "Duplicates are removed within this run. Original prior outputs remain unchanged.\n\n")
+        else:
+            run_note = ("The first run stopped at 295 papers after connection failures. The user authorized continuing "
+                        "on October 15; existing papers and cumulative response-byte/storage counters are retained. "
+                        "The earlier candidate-pool status did not establish exhaustion of eligible PMC papers.\n\n")
         (out / "README.md").write_text(
-            "**500-paper biological source batch**\n\n"
+            "# " + self.config.get("report_title", "500-paper biological source batch") + "\n\n"
             f"Status: **{summary['status']}**; {len(papers)}/{self.config['target_papers']} papers ready. "
             f"Updated {summary['updated_at_pst']} (fixed PST).\n\n"
             f"Original figure assets retained: **{summary['figure_assets_retained']}**. "
@@ -323,15 +339,12 @@ class NativeScale(Batch):
             f"Extracted text: **{summary['total_text_tokens']:,} tokens** in {summary['total_text_chunks']:,} chunks; "
             f"main-article tables: **{summary['total_main_article_tables']:,}**.\n\n"
             "[Paper manifest](papers.csv) · [Exact summary and limits](summary.json)\n\n"
-            "The first run stopped at 295 papers after connection failures. The user authorized continuing "
-            "on October 15; the recorded continuation cutoff is "
-            f"**{summary['stop_at_pst']}** (fixed PST). Existing papers and cumulative response-byte/storage "
-            "counters are retained. Transient failures now wait with backoff and retry the same request. "
-            "The first run's `candidate_pool_exhausted` status did not establish exhaustion of eligible PMC papers.\n\n"
-            f"Cumulative downloaded response bodies: **{summary['downloaded_response_bytes'] / 2**30:.2f} GiB / 5 GiB**; "
-            f"logical artifacts: **{summary['logical_artifact_bytes'] / 2**30:.2f} GiB / 8 GiB**.\n\n"
+            + run_note
+            + f"Run cutoff: **{summary['stop_at_pst']}** (fixed PST). Transient failures retry the same request with backoff.\n\n"
+            f"Cumulative downloaded response bodies: **{summary['downloaded_response_bytes'] / 2**30:.2f} GiB / {self.config['maximum_download_bytes'] / 2**30:g} GiB**; "
+            f"logical artifacts: **{summary['logical_artifact_bytes'] / 2**30:.2f} GiB / {self.config['maximum_artifact_bytes'] / 2**30:g} GiB**.\n\n"
             "Full PDF/XML, source images, extracted text, source-table TSVs and structured citation/context "
-            "records stay on RustFS in the source_directory listed in the manifest. "
+            "records stay in the run's source_directory listed in the manifest. "
             "This batch runs one serial CPU/network worker, no OCR, no recaptioning and no training. "
             "Separate supplementary files are not downloaded. Prior outputs remain unchanged.\n")
 

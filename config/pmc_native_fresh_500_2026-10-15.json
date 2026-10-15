@@ -1,0 +1,150 @@
+{
+  "batch_id": "pmc_native_fresh_500_2026-10-15",
+  "destination": "experiments/pmc_native_fresh_500_2026-10-15",
+  "target_papers": 500,
+  "papers_per_journal": 50,
+  "candidate_ids_per_journal": 500,
+  "maximum_ocr_pages": 0,
+  "maximum_pdf_pages_per_paper": 60,
+  "maximum_pdf_bytes": 20971520,
+  "maximum_xml_bytes": 5242880,
+  "maximum_download_bytes": 5368709120,
+  "maximum_artifact_bytes": 8589934592,
+  "finalization_margin_bytes": 8388608,
+  "minimum_free_bytes": 34359738368,
+  "maximum_runtime_hours": 10,
+  "stop_before_pst": "2026-10-16T00:01:25.735300-08:00",
+  "maximum_page_inference_seconds": 120,
+  "document_workers": 1,
+  "gpu_index": null,
+  "cpu_threads": 2,
+  "http_backend": "python_bridge",
+  "model": null,
+  "model_revision": null,
+  "reference_xml_in_model_prompt": false,
+  "accepted_article_types": [
+    "research-article",
+    "brief-report",
+    "methods-article"
+  ],
+  "biology_query_terms": [
+    "gene",
+    "protein",
+    "cells",
+    "biology",
+    "cancer",
+    "immune",
+    "mouse",
+    "human",
+    "genome",
+    "microbiome",
+    "RNA",
+    "DNA"
+  ],
+  "journals": [
+    {
+      "name": "Cell",
+      "query_names": [
+        "0092-8674",
+        "1097-4172",
+        "Cell"
+      ]
+    },
+    {
+      "name": "Nature",
+      "query_names": [
+        "0028-0836",
+        "1476-4687",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Science",
+      "query_names": [
+        "0036-8075",
+        "1095-9203",
+        "Science"
+      ]
+    },
+    {
+      "name": "Nature Communications",
+      "query_names": [
+        "2041-1723",
+        "Nature Communications"
+      ]
+    },
+    {
+      "name": "Cell Reports",
+      "query_names": [
+        "2211-1247",
+        "Cell Reports"
+      ]
+    },
+    {
+      "name": "Science Advances",
+      "query_names": [
+        "2375-2548",
+        "Science Advances"
+      ]
+    },
+    {
+      "name": "Nature Medicine",
+      "query_names": [
+        "Nature Medicine"
+      ]
+    },
+    {
+      "name": "Nature Methods",
+      "query_names": [
+        "Nature Methods"
+      ]
+    },
+    {
+      "name": "Molecular Cell",
+      "query_names": [
+        "Molecular Cell"
+      ]
+    },
+    {
+      "name": "Cell Host & Microbe",
+      "query_names": [
+        "Cell Host Microbe"
+      ]
+    }
+  ],
+  "notes": [
+    "Fresh independent 500-paper run explicitly authorized by the user; previously acquired papers may recur but are freshly fetched. No prior batch sources or assets are seeded.",
+    "Same ten journals and 50 accepted papers per journal; query up to 500 recent candidates per journal. Convenience sample, not a census.",
+    "Native XML text, source tables, original figures and cited titles/authors; PDF/XML originals retained. No OCR, model inference, training or separate supplementary-file downloads.",
+    "Require at least two biological marker groups including gene, protein or organism; patient/clinical and disease words alone are insufficient.",
+    "One serial worker, two CPU threads, zero GPUs. New run limits: 5 GiB response bodies, 8 GiB artifacts, ten hours, 32 GiB filesystem free-space floor.",
+    "Deduplication applies within this run by PMCID/DOI/normalized title/PDF/XML hashes. Earlier run outputs remain untouched.",
+    "Token counts use the pinned olmOCR Qwen-family tokenizer as an extraction diagnostic; they are not a final training-backbone or biology-purity certification."
+  ],
+  "report_directory": "reports/pmc_native_fresh_500_2026-10-15",
+  "maximum_asset_bytes": 8388608,
+  "maximum_table_rows": 2000,
+  "gpu_count": 0,
+  "tokenizer_path": "cache/tokenizers/olmocr2-e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
+  "citation_metadata_path": "config/pmc_citation_metadata.json",
+  "maximum_text_chunk_tokens": 2048,
+  "excluded_method_title_pattern": "large language|foundation model|explainable AI decision support|evaluation of multimodal models|document extraction|optical character recognition",
+  "network_retry_initial_seconds": 30,
+  "network_retry_maximum_seconds": 300,
+  "network_outage_budget_seconds": 1800,
+  "report_title": "Fresh 500-paper biological source collection",
+  "reuse_existing_sources": false,
+  "http_python": ".review-venv/bin/python",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "required_biology_marker_groups": [
+    "gene",
+    "protein",
+    "organism"
+  ],
+  "authorization": {
+    "authorized_at_pst": "2026-10-15T14:01:25.735300-08:00",
+    "user_instruction": "after you're done, let's start crawling all of the 500 papers, don't mind the other exsiting work that might have crawled some of those paeprs",
+    "fresh_target_papers": 500,
+    "prior_progress_counts_toward_target": false
+  }
+}
