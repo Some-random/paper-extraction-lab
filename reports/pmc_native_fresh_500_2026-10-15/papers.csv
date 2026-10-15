@@ -1,1 +1,2 @@
 pmcid,journal,title,doi,native_v4_status,reused_from_batch,pdf_pages,figures,tables,figure_assets_retained,figures_without_assets,text_tokens,text_chunks,full_source_table_cells,license_code,source_directory
+PMC7619535,Cell,A postnatal molecular switch drives activity-dependent maturation of parvalbumin interneurons,10.1016/j.cell.2025.06.029,completed,,57,8,1,8,0,38570,21,240,CC BY,experiments/pmc_native_fresh_500_2026-10-15/papers/PMC7619535
