@@ -6,6 +6,22 @@ Scientific model with biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [SciReasoner](#token-counts-by-acquisition-route)<br>Scientific CPT | Corpus · text + scientific sequences | NR | NR | ≥166B | 206B | [§2 / Fig. 2](https://arxiv.org/html/2509.21320v1) |
+
+**Scientific CPT — Corpus (text + scientific sequences):** The headline is 206B tokens. The five enumerated scientific-source components add to 166B; the source does not reconcile the remaining 40B. No residual is invented as a web or paper count.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: ≥166B.** Enumerated protein, chemistry, DNA, RNA and material dataset components only. Calculation: (55 + 50 + 30 + 26 + 5) × 1000000000.
+
+- **Total: 206B.** Author-reported corpus headline; component discrepancy retained.
+
 **Training stage:** Continued pretraining, then SFT and reasoning/RL
 
 **Source material and units:** PubMed abstracts/scientific prose; exact literature-token share NR; Headline **206B**; prose gives proteins **55B**, chemistry **50B**, DNA **30B**, RNA **26B**, materials **5B**. Uses C4 general text. Later **40M SFT examples**, separate from CPT

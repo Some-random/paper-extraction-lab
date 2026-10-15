@@ -6,6 +6,44 @@ General foundation-model method reference
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [OLMo 3](#token-counts-by-acquisition-route)<br>Pretraining: available 9T pool | Corpus pool · text | 993.4B | 8.14T | 174.79B | ≈9.31T | [Table 4](https://arxiv.org/html/2512.13961v2) |
+| [OLMo 3](#token-counts-by-acquisition-route)<br>Pretraining: final 6T mix | Sampled training mix · text | 855.8B | 4.51T | 563.51B | ≈5.93T | [Table 4](https://arxiv.org/html/2512.13961v2) |
+| [OLMo 3](#token-counts-by-acquisition-route)<br>Midtraining | Sampled training mix · text | 4.99B | 27.39B | ≥10B | 99.95B | [Table 5](https://arxiv.org/html/2512.13961v2) |
+
+**Pretraining: available 9T pool — Corpus pool (text):** General-science/model data, not a biological-only budget. The paper-building and raw Common Crawl pipelines are direct acquisition. Stack-Edu, FineMath and encyclopedia source corpora are reused inputs. Totals preserve published rounding.
+
+- **Online Papers: 993.4B.** olmOCR science PDFs and arXiv. Calculation: (972 + 21.4) × 1000000000.
+
+- **Web Urls: 8.14T.** Raw Common Crawl input after curation.
+
+- **Existing Datasets: 174.79B.** Stack-Edu, FineMath and Wikipedia/Wikibooks. Calculation: (137 + 34.1 + 3.69) × 1000000000.
+
+- **Total: ≈9.31T.** Rounded 9T pool total.
+
+**Pretraining: final 6T mix — Sampled training mix (text):** General-science/model tokens, not biological-paper tokens. Repetition/upsampling is already reflected in the 6T mix; do not add this row to the available pool.
+
+- **Online Papers: 855.8B.** Sampled science PDFs and arXiv. Calculation: (805 + 50.8) × 1000000000.
+
+- **Web Urls: 4.51T.** Sampled Common Crawl webpage tokens.
+
+- **Existing Datasets: 563.51B.** Sampled Stack-Edu, FineMath and Wikipedia/Wikibooks. Calculation: (409 + 152 + 2.51) × 1000000000.
+
+- **Total: ≈5.93T.** Rounded published 6T-mix total.
+
+**Midtraining — Sampled training mix (text):** The total includes generated math, code and instruction material. Only the clearly separated direct PDF/web streams and the 10B reused StackEdu-FIM component are allocated here; other reused inputs add to the existing-dataset lower bound.
+
+- **Online Papers: 4.99B.** High-quality science PDF component.
+
+- **Web Urls: 27.39B.** High-quality Common Crawl plus STEM-heavy crawl. Calculation: (22.4 + 4.99) × 1000000000.
+
+- **Existing Datasets: ≥10B.** StackEdu-FIM component alone; this is not the complete reused-source budget.
+
+- **Total: 99.95B.** Published complete midtraining mix.
+
 **Training stage:** Pretraining and midtraining
 
 **Source material and units:** General model data: 5.93T sampled tokens in the reported stage-1 mix and 99.95B in stage-2 midtraining. Biological-paper allocation is not separately reported.

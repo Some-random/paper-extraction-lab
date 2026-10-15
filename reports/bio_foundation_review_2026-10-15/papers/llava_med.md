@@ -6,6 +6,33 @@ Biomedical vision-language model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [LLaVA-Med](#token-counts-by-acquisition-route)<br>Figure-caption alignment | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2306.00890) |
+| [LLaVA-Med](#token-counts-by-acquisition-route)<br>Instruction tuning | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2306.00890) |
+
+**Figure-caption alignment — Not reported (text):** The reported 600K alignment pairs and 60K instruction samples are not token counts. The two stages remain separate rows.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
+**Instruction tuning — Not reported (text):** The reported 600K alignment pairs and 60K instruction samples are not token counts. The two stages remain separate rows.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Image-caption alignment, then instruction tuning
 
 **Source material and units:** **600K source image–caption pairs** for alignment; **60K instruction examples** in its larger instruction datasets

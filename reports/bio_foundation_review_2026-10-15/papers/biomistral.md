@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioMistral](#token-counts-by-acquisition-route)<br>CPT | Corpus · text | 3B | 0 | 0 | 3B | [§3.1](https://arxiv.org/html/2402.10373v3) |
+
+**CPT — Corpus (text):** The paper selects 3B tokens of raw PMC-OA article text. Its target of 1.5 epochs is not substituted for a measured consumed-token count.
+
+- **Online Papers: 3B.** PMC-OA source articles; the source does not specify a reproducible PDF-versus-XML converter.
+
+- **Web Urls: 0.** The reported adaptation corpus is the selected PMC-OA article text.
+
+- **Existing Datasets: 0.** PMC-OA source acquisition is assigned to online papers; no separately curated imported training corpus is described.
+
+- **Total: 3B.** Selected corpus, §3.1.
+
 **Training stage:** CPT; evaluation with few-shot prompts and SFT
 
 **Backbone:** Mistral-7B-Instruct-v0.1

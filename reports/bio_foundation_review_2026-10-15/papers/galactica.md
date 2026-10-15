@@ -6,6 +6,33 @@ Scientific model with disclosed biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [Galactica](#token-counts-by-acquisition-route)<br>Scientific pretraining | Corpus · text + scientific sequences | ≥64.926B | ≥700M | ≥23.87B | ≈106B | [Tables 1, 22–25](https://arxiv.org/html/2211.09085v1) |
+| [Galactica](#token-counts-by-acquisition-route)<br>Scientific pretraining | Training exposure · text + scientific sequences | NR | NR | NR | 450B | [§5.1](https://arxiv.org/html/2211.09085v1) |
+
+**Scientific pretraining — Corpus (text + scientific sequences):** These are lower bounds from explicitly separable sources, summed at the published rounded precision. Direct repository sources are separated from Semantic Scholar imports. The 88B literature headline includes both routes and is not counted twice. Other reference, code and prompt material remains unallocated.
+
+- **Online Papers: ≥64.926B.** arXiv, PMC, PubMed abstracts, bioRxiv, OSF, medRxiv, ACL, PubAg abstracts and ChemRxiv; Table 22. Additional academic PDFs from Common Crawl are not included in this lower bound. Calculation: (35 + 23 + 5 + 1 + 0.428 + 0.176 + 0.150 + 0.105 + 0.067) × 1000000000.
+
+- **Web Urls: ≥700M.** ScientificCC webpages, Table 25, only. Other reference websites do not have a fully verified route allocation here.
+
+- **Existing Datasets: ≥23.87B.** Semantic Scholar full texts/abstracts plus the individual knowledge-base rows; further reused inputs are not assigned here. Calculation: (18 + 4 + 1 + 0.6 + 0.1 + 0.07 + 0.05 + 0.03 + 0.01 + 0.01) × 1000000000.
+
+- **Total: ≈106B.** Rounded published complete-corpus headline.
+
+**Scientific pretraining — Training exposure (text + scientific sequences):** The paper reports 450B training tokens. No acquisition-route exposure split is reported; multiplying rounded corpus shares by 4.25 would create unreported values.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: 450B.** Reported training exposure, §5.1.
+
 **Training stage:** Decoder pretraining from scratch
 
 **Source material and units:** Scientific papers plus biological/chemical records such as UniProt and PubChem

@@ -6,6 +6,22 @@ Biological multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioMatrix](#token-counts-by-acquisition-route)<br>Multimodal CPT | Corpus · text + scientific sequences | NR | NR | ≥25.6B | 304.4B | [§3 / Fig. 3](https://arxiv.org/html/2606.22138v1) |
+
+**Multimodal CPT — Corpus (text + scientific sequences):** 304.4B covers text, molecules, proteins and interleaved material. The 79.7B scientific-text bucket mixes direct literature with FineFineWeb, so it cannot be assigned wholly to either route. FineWeb-Edu alone establishes a reused-dataset lower bound; the exact route split is NR.
+
+- **Online Papers: NR.** Direct PubMed full articles are used, but their separate token count is NR.
+
+- **Web Urls: NR.** Web-origin text comes through FineWeb-Edu/FineFineWeb; no separate direct-crawl token budget is established.
+
+- **Existing Datasets: ≥25.6B.** FineWeb-Edu component alone; FineFineWeb and biological datasets add an unseparated amount.
+
+- **Total: 304.4B.** Total corpus in §3 / Figure 3.
+
 **Training stage:** Multimodal CPT, then multitask SFT
 
 **Backbone:** Qwen3 1.7B/4B

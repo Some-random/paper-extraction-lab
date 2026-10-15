@@ -6,6 +6,22 @@ Therapeutics multitask language model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [TxGemma](#token-counts-by-acquisition-route)<br>27B-Predict SFT | Training exposure · text | 0 | 0 | 67B | 67B | [Model fine-tuning](https://arxiv.org/html/2504.06196v1) |
+
+**27B-Predict SFT — Training exposure (text):** The 67B figure is consumed fine-tuning tokens over 12 epochs of the TDC-derived predictive task set; it is not 67B unique paper tokens. It does not describe the separate Chat model mixture.
+
+- **Online Papers: 0.** Short task context does not constitute a separately acquired paper corpus.
+
+- **Web Urls: 0.** No directly collected webpage stream in the reported Predict task set.
+
+- **Existing Datasets: 67B.** TDC-derived task examples after instruction formatting, including repeated exposure.
+
+- **Total: 67B.** Reported predictive-model fine-tuning exposure.
+
 **Training stage:** Task instruction tuning; conversational variants add general instructions
 
 **Backbone:** Gemma 2, 2B/9B/27B

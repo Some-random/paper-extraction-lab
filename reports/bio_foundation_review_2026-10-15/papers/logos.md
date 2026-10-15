@@ -6,6 +6,22 @@ Scientific sequence and interaction model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [LOGOS](#token-counts-by-acquisition-route)<br>Scientific pre-/post-training corpus | Corpus · scientific sequences | 0 | 0 | 44.87B | 44.87B | [§2 / Appendix A](https://arxiv.org/html/2606.16905v1) |
+
+**Scientific pre-/post-training corpus — Corpus (scientific sequences):** The 44.87B corpus comprises serialized scientific sequences and interaction records drawn from named datasets; the source does not split this headline into separate pretraining and post-training budgets.
+
+- **Online Papers: 0.** The described corpus comprises structured scientific dataset records, not a paper-text stream.
+
+- **Web Urls: 0.** No direct webpage stream is included in this described corpus.
+
+- **Existing Datasets: 44.87B.** Scientific sequence/interaction datasets serialized with the proposed grammar.
+
+- **Total: 44.87B.** Combined corpus headline; not a stage-specific exposure total.
+
 **Training stage:** Continued pretraining and post-training
 
 **Source material and units:** No large paper-text acquisition stage described; **44.87B** scientific-sequence/interaction tokens reported across protein, antibody, molecule, reaction, material, pocket and complex modalities

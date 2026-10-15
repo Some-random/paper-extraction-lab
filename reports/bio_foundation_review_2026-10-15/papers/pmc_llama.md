@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [PMC-LLaMA](#token-counts-by-acquisition-route)<br>Knowledge-injection CPT | Corpus · text | 0 | 0 | >75B | NR | [Dataset-I](https://arxiv.org/html/2304.14454v3) |
+
+**Knowledge-injection CPT — Corpus (text):** Papers arrive through S2ORC. The separate approximately 4B textbook tokens are outside the three requested routes and are not mislabeled as paper tokens. RedPajama token amount is NR, so the full reused-dataset amount is only lower-bounded.
+
+- **Online Papers: 0.** Reported scientific papers were selected from the existing S2ORC corpus.
+
+- **Web Urls: 0.** No direct webpage collection is described for this stage.
+
+- **Existing Datasets: >75B.** S2ORC alone exceeds 75B tokens; RedPajama adds an undisclosed amount.
+
+- **Total: NR.** No complete distinct-corpus token total including the selected RedPajama corpus is disclosed.
+
 **Training stage:** CPT knowledge injection, then SFT
 
 **Backbone:** LLaMA; final report includes 13B model

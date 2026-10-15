@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [Me-LLaMA](#token-counts-by-acquisition-route)<br>CPT | Corpus · text | 0 | 0 | 129B | 129B | [Methods](https://www.nature.com/articles/s41746-025-01533-1) |
+
+**CPT — Corpus (text):** The published recipe imports Pile biomedical text, MIMIC clinical datasets and RedPajama general text. The entire 129B mixture is therefore reused-dataset material under the acquisition-route definition; its content is mixed.
+
+- **Online Papers: 0.** Literature is imported from The Pile rather than separately counted as direct acquisition.
+
+- **Web Urls: 0.** General content arrives through RedPajama rather than a newly reported crawl.
+
+- **Existing Datasets: 129B.** Pile + MIMIC + RedPajama combined corpus.
+
+- **Total: 129B.** Published pretraining dataset total.
+
 **Training stage:** CPT, general medical SFT, optional task SFT
 
 **Backbone:** Llama-2 13B/70B

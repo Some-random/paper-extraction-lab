@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [InfiMed-Foundation](#token-counts-by-acquisition-route)<br>Multimodal pretraining | Corpus · text + image | 0 | 0 | ≈30B | ≈30B | [§3.1 / Pretraining](https://arxiv.org/html/2509.22261v1) |
+
+**Multimodal pretraining — Corpus (text + image):** Section 3.1 imports public medical datasets and general multimodal datasets including DataComp, CCS, OBELICS and MMC4. The approximately 25B general and 5B medical tokens therefore belong to reused datasets; these content domains are not additional acquisition routes.
+
+- **Online Papers: 0.** The described pretraining corpus imports datasets rather than a separate direct-paper collection.
+
+- **Web Urls: 0.** Web-origin images/text arrive through named existing datasets, not a new direct crawl.
+
+- **Existing Datasets: ≈30B.** General multimodal and medical datasets together. Calculation: 25000000000 + 5000000000.
+
+- **Total: ≈30B.** Sum of the two reported approximate corpus amounts. Calculation: 25000000000 + 5000000000.
+
 **Training stage:** Multimodal CPT and three-stage SFT
 
 **Backbone:** 1.7B/4B foundation-model variants

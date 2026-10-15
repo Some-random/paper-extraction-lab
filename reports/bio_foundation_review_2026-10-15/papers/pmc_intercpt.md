@@ -6,6 +6,22 @@ Multimodal CPT curation study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [PMC-InterCPT / Beyond Captions](#token-counts-by-acquisition-route)<br>Context-grounded CPT | Resampled corpus · text + image | NR | NR | NR | 9.63B | [Tables 1, 8–9](https://arxiv.org/html/2606.01049v2) |
+
+**Context-grounded CPT — Resampled corpus (text + image):** The 9.63B total combines text and image tokens after resampling. Existing BIOMEDICA material is repaired with article-native context; the contribution of direct XML versus imported material is not separately tokenized in the paper.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: 9.63B.** Combined text-and-image token count; not 9.63B text tokens.
+
 **Training stage:** CPT with a fixed downstream SFT stage
 
 **Backbone:** Qwen3.5 2B/4B; cross-architecture validation

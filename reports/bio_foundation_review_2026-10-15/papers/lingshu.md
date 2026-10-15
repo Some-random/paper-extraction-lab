@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [Lingshu](#token-counts-by-acquisition-route)<br>Shallow/deep alignment, SFT, RL | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2506.07044v1) |
+
+**Shallow/deep alignment, SFT, RL — Not reported (text):** Counts of image-caption, QA and reasoning examples cannot be converted to tokenizer tokens without the actual sequences.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Shallow/deep alignment, SFT, RL
 
 **Backbone:** Qwen2.5-VL 7B/32B

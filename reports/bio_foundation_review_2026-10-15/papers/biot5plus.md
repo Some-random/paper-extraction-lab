@@ -6,6 +6,22 @@ Biological multimodal language
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioT5 / BioT5+](#token-counts-by-acquisition-route)<br>Multimodal denoising pretraining and multitask tuning | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2402.17810v2) |
+
+**Multimodal denoising pretraining and multitask tuning — Not reported (text):** The source reports task/example counts and maximum lengths, not realized token amounts by acquisition category. Maximum sequence length is not average realized length.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Multimodal denoising pretraining and multitask tuning
 
 **Backbone:** T5-family encoder-decoder; smaller than 7B-scale LLMs

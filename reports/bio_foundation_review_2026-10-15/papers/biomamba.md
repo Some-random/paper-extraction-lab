@@ -6,6 +6,22 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioMamba](#token-counts-by-acquisition-route)<br>CPT | Packed token positions · token positions | ≈434.176M | 0 | ≈86.016M | ≈520.192M | [Table 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/) |
+
+**CPT — Packed token positions (token positions):** Derived from approximately 424K PubMed, 42K C4 and 42K Wikipedia sequences of length 1024. These are packed positions, not a measured count of non-padding content tokens. The source sequence proportions conflict with its nominal 80/10/10 mixture; the discrepancy is retained.
+
+- **Online Papers: ≈434.176M.** PubMed packed positions; approximate source sequence count. Calculation: 424000 × 1024.
+
+- **Web Urls: 0.** C4 and Wikipedia are named source corpora, not a newly described live crawl.
+
+- **Existing Datasets: ≈86.016M.** C4 and Wikipedia packed positions. Calculation: (42000 + 42000) × 1024.
+
+- **Total: ≈520.192M.** Total packed positions from the table, before any repeated epochs. Calculation: 508000 × 1024.
+
 **Training stage:** CPT, then downstream SFT
 
 **Backbone:** Mamba2, 130M through 2.7B

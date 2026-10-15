@@ -6,6 +6,22 @@ Biological CPT/SFT/RL study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [How Post-Training Shapes Biological Reasoning Models](#token-counts-by-acquisition-route)<br>Stage-wise biological adaptation experiments | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2606.16517v1) |
+
+**Stage-wise biological adaptation experiments — Not reported (text):** The reported 200K training documents and 1,024-token maximum are not a realized token total. No multiplication by the maximum length is used.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Stage-wise biological adaptation experiments
 
 **Backbone:** Qwen3 1.7B/4B; additional backbone/biological encoder comparisons

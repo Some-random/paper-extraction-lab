@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [MedGemma](#token-counts-by-acquisition-route)<br>Vision enhancement, pretraining, teacher distillation, RL | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2507.05201v3) |
+
+**Vision enhancement, pretraining, teacher distillation, RL — Not reported (text):** The source reports image/sample counts, including PMC figure-caption samples; these are not token counts. The medical/general token split is not disclosed here.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Vision enhancement, pretraining, teacher distillation, RL
 
 **Backbone:** Gemma 3 family

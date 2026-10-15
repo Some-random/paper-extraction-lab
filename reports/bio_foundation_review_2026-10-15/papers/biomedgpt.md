@@ -6,6 +6,22 @@ Biological multimodal language
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioMedGPT-LM / BioMedGPT (PharMolix)](#token-counts-by-acquisition-route)<br>Literature CPT | Corpus · text | 0 | 0 | >26B | >26B | [§3.1](https://arxiv.org/html/2308.09442v2) |
+
+**Literature CPT — Corpus (text):** This row covers BioMedGPT-LM literature CPT only. Later molecule/protein alignment is not folded into the literature count.
+
+- **Online Papers: 0.** The 4.2M papers are selected from S2ORC, not independently downloaded for this recipe.
+
+- **Web Urls: 0.** The literature-CPT stage describes S2ORC paper text only.
+
+- **Existing Datasets: >26B.** Biomedical S2ORC subset.
+
+- **Total: >26B.** Reported literature corpus lower bound.
+
 **Training stage:** Literature CPT, then molecule/protein-text alignment
 
 **Backbone:** Llama2-Chat-7B; BioMedGPT-10B adds biological encoders

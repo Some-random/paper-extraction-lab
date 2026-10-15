@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [MedFound](#token-counts-by-acquisition-route)<br>Medical pretraining, diagnostic SFT, preference alignment | Not reported · text | NR | NR | NR | NR | [Paper](https://www.nature.com/articles/s41591-024-03416-6) |
+
+**Medical pretraining, diagnostic SFT, preference alignment — Not reported (text):** Available source notes do not establish a source-category token split. Clinical/private material is not silently assigned to a public acquisition route.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Medical pretraining, diagnostic SFT, preference alignment
 
 **Backbone:** Released 7B and 176B variants

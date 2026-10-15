@@ -6,6 +6,22 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioLinkBERT](#token-counts-by-acquisition-route)<br>Encoder pretraining from scratch | Not reported · text | NR | NR | NR | NR | [Paper](https://aclanthology.org/2022.acl-long.551/) |
+
+**Encoder pretraining from scratch — Not reported (text):** The 21GB PubMed corpus and proportions of training-instance types do not establish token counts or acquisition-category shares.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Encoder pretraining from scratch
 
 **Source material and units:** PubMed documents and citation links

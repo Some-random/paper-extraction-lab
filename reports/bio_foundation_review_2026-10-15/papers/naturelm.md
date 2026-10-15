@@ -6,6 +6,22 @@ Biological and scientific multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [NatureLM](#token-counts-by-acquisition-route)<br>8B / 8×7B scientific CPT | Corpus · text + scientific sequences | NR | NR | ≥116.72B | 143.8B | [§2 / Table S1](https://arxiv.org/html/2502.07527v2) |
+
+**8B / 8×7B scientific CPT — Corpus (text + scientific sequences):** Table S1 is a 143.8B scientific corpus, not a paper-only budget. Separate molecule/protein/DNA/RNA/material source datasets establish a reused-data lower bound. The 14.4B general-text and 12.7B interleaved buckets are not assigned to a route without evidence. The 4.0B interleaved-literature count is not assumed to be directly acquired paper tokens.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: ≥116.72B.** Known molecule, protein, DNA, RNA and materials components only. Calculation: (4.2 + 65.2 + 19.8 + 27.5 + 0.02) × 1000000000.
+
+- **Total: 143.8B.** Published Table S1 total; component rounding differs by 0.02B.
+
 **Training stage:** Scientific decoder continued pretraining for larger variants
 
 **Source material and units:** Literature, database descriptions, small molecules, proteins, DNA/RNA and cross-domain pairs

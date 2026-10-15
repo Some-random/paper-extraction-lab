@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [MEDITRON](#token-counts-by-acquisition-route)<br>CPT | Corpus: train split · text | 0 | 107M | 46.6B | ≈46.7B | [§2 / Table 1](https://arxiv.org/html/2311.16079v1) |
+
+**CPT — Corpus: train split (text):** Table 1 reports the train split of the corpus, not an independently measured training-exposure total. Both papers and abstracts come from S2ORC. Reused-source total is the sum of the three named source amounts; rounded component totals differ slightly from the rounded headline.
+
+- **Online Papers: 0.** The paper explicitly obtains full texts and abstracts through S2ORC, not a second direct collection.
+
+- **Web Urls: 107M.** Directly gathered medical guidelines, Table 1.
+
+- **Existing Datasets: 46.6B.** S2ORC full papers and abstracts plus RedPajama replay. Calculation: 40700000000 + 5480000000 + 420000000.
+
+- **Total: ≈46.7B.** Rounded published train-split total, Table 1.
+
 **Training stage:** CPT, then task-specific SFT
 
 **Backbone:** Llama-2 7B/70B

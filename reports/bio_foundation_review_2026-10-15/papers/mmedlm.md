@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [MMedLM / MMed-Llama 3](#token-counts-by-acquisition-route)<br>CPT | Corpus · text | NR | NR | NR | ≈25.5B | [Data construction](https://www.nature.com/articles/s41467-024-52417-z) |
+
+**CPT — Corpus (text):** MMedC combines textbooks, websites and reused datasets. No route-specific token allocation is established. Books are not silently counted as papers or webpages.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: ≈25.5B.** MMedC corpus total; route split is not disclosed.
+
 **Training stage:** CPT, then QA/rationale tuning
 
 **Backbone:** InternLM, InternLM2, Llama 3 variants

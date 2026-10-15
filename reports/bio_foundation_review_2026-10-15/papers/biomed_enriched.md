@@ -6,6 +6,22 @@ Text CPT curation study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [Biomed-Enriched](#token-counts-by-acquisition-route)<br>Controlled CPT: each variant | Training exposure · text | 33.6B | 0 | 0 | 33.6B | [§3–4 / Table 2](https://arxiv.org/html/2506.20331v1) |
+
+**Controlled CPT: each variant — Training exposure (text):** Each controlled variant receives 33.6B tokens from processed PMC-OA XML. This is per variant, not a sum over variants or the size of 4.5M original articles.
+
+- **Online Papers: 33.6B.** Source-native PMC-OA article text, after the variant-specific curation.
+
+- **Web Urls: 0.** The described controlled domain stream is PMC-OA article text.
+
+- **Existing Datasets: 0.** The reviewed study parses source PMC-OA XML rather than importing a separately curated text corpus.
+
+- **Total: 33.6B.** Fixed per-run training exposure.
+
 **Training stage:** Controlled OLMo2-7B-stage1 CPT
 
 **Backbone:** OLMo2-7B-stage1

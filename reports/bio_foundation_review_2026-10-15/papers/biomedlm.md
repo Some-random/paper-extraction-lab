@@ -6,6 +6,33 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioMedLM](#token-counts-by-acquisition-route)<br>Pretraining | Corpus · text | 0 | 0 | 34.6B | 34.6B | [§3.3](https://arxiv.org/html/2403.18421v1) |
+| [BioMedLM](#token-counts-by-acquisition-route)<br>Pretraining | Training exposure · text | 0 | 0 | 300B | 300B | [§3.3](https://arxiv.org/html/2403.18421v1) |
+
+**Pretraining — Corpus (text):** The Pile PubMed subsets are reused datasets; their literature content is not counted again as directly acquired papers. Corpus and repeated training exposure are separate.
+
+- **Online Papers: 0.** No direct acquisition: the reported data are imported from The Pile.
+
+- **Web Urls: 0.** The source says training uses exclusively the biomedical Pile subsets.
+
+- **Existing Datasets: 34.6B.** The Pile PubMed abstracts and full articles, corpus.
+
+- **Total: 34.6B.** Reported in §3.3; 34.6B available and 300B consumed are different quantities.
+
+**Pretraining — Training exposure (text):** The Pile PubMed subsets are reused datasets; their literature content is not counted again as directly acquired papers. Corpus and repeated training exposure are separate.
+
+- **Online Papers: 0.** No direct acquisition: the reported data are imported from The Pile.
+
+- **Web Urls: 0.** The source says training uses exclusively the biomedical Pile subsets.
+
+- **Existing Datasets: 300B.** The Pile PubMed abstracts and full articles, training exposure.
+
+- **Total: 300B.** Reported in §3.3; 34.6B available and 300B consumed are different quantities.
+
 **Training stage:** Pretraining from scratch; task-specific fine-tuning
 
 **Backbone:** 2.7B GPT-style decoder

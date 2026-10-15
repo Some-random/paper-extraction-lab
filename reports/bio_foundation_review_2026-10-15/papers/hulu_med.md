@@ -8,6 +8,22 @@ This page consolidates existing reviewed sources. Author-reported results have n
 
 Historical medical context. Clinical-note acquisition is outside the biological research corpus scope.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [Hulu-Med](#token-counts-by-acquisition-route)<br>Alignment, medical CPT, mixed-modality SFT | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2510.08668v1) |
+
+**Alignment, medical CPT, mixed-modality SFT — Not reported (text):** The 16.7M figure is a sample count, not a token budget; the sample mixture is not a token mixture.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Alignment, medical CPT, mixed-modality SFT
 
 **Backbone:** Open LLM decoder with patch-based vision encoder

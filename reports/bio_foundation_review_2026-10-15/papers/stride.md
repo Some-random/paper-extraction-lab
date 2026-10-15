@@ -6,6 +6,22 @@ Biological sequence post-training method reference
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [STRIDE](#token-counts-by-acquisition-route)<br>Supervised fine-tuning followed by reinforcement learning | Not reported · text | NR | NR | NR | NR | [Paper](https://github.com/daiheng-zhang/STRIDE) |
+
+**Supervised fine-tuning followed by reinforcement learning — Not reported (text):** The source describes task datasets and edit trajectories, not a tokenizer-token budget by paper/web/reused-dataset route.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Supervised fine-tuning followed by reinforcement learning
 
 **Source material and units:** The retained author README describes GFP and SMILES task data with explicit edit trajectories; these are task datasets rather than a full-paper literature corpus.

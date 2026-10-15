@@ -6,6 +6,22 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioBERT](#token-counts-by-acquisition-route)<br>Encoder continued pretraining | Not reported · text | NR | NR | NR | NR | [Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC7703786/) |
+
+**Encoder continued pretraining — Not reported (text):** The source reports words and training steps for different variants. Word counts are not tokenizer-token counts; no word-to-token multiplier is applied.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Encoder continued pretraining
 
 **Source material and units:** PubMed abstracts and PMC full text

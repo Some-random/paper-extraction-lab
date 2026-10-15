@@ -6,6 +6,22 @@ Biomedical image-text model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BiomedCLIP / PMC-15M](#token-counts-by-acquisition-route)<br>Contrastive image-text pretraining | Not reported · text | NR | NR | NR | NR | [Paper](https://arxiv.org/html/2303.00915) |
+
+**Contrastive image-text pretraining — Not reported (text):** The reported 15,282,336 image-caption pairs and 4.4M-article snapshot do not give text or image-token amounts.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Contrastive image-text pretraining
 
 **Source material and units:** **15,282,336 image–caption pairs**, collected from a 4.4M-article PMC snapshot

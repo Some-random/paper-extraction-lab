@@ -6,6 +6,33 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioGPT](#token-counts-by-acquisition-route)<br>Pretraining | Corpus · text | NR | 0 | 0 | NR | [Pretraining](https://arxiv.org/pdf/2210.10341) |
+| [BioGPT](#token-counts-by-acquisition-route)<br>Pretraining | Scheduled token positions · token positions | 104.8576B | 0 | 0 | 104.8576B | [Pretraining](https://arxiv.org/pdf/2210.10341) |
+
+**Pretraining — Corpus (text):** The source reports 15M PubMed title/abstract records, not a unique-corpus tokenizer-token count. The training schedule is shown separately.
+
+- **Online Papers: NR.** 15M directly acquired PubMed records are reported; their corpus-token amount is NR.
+
+- **Web Urls: 0.** The described pretraining corpus consists exclusively of PubMed title/abstract records.
+
+- **Existing Datasets: 0.** PubMed source records are direct literature acquisition under this catalog policy; no separate curated training dataset is reported.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
+**Pretraining — Scheduled token positions (token positions):** Derived from the reported training schedule, not a unique corpus size or an independent run log.
+
+- **Online Papers: 104.8576B.** PubMed-only pretraining schedule. Calculation: 200000 steps × 524288 token positions per step.
+
+- **Web Urls: 0.** No non-paper web source in the described PubMed-only schedule.
+
+- **Existing Datasets: 0.** No separately imported curated corpus in the described schedule.
+
+- **Total: 104.8576B.** Scheduled positions include repeated corpus exposure. Calculation: 200000 × 524288.
+
 **Training stage:** Pretraining from scratch; task-specific fine-tuning
 
 **Backbone:** GPT-2-style decoder; original 347M model

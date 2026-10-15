@@ -6,6 +6,22 @@ Biological multimodal reasoning model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+## Token counts by acquisition route
+
+| Model / stage | Count basis | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
+|---|---|---:|---:|---:|---:|---|
+| [BioReason-Pro](#token-counts-by-acquisition-route)<br>Supervised adaptation on synthetic reasoning, followed by reinforcement learning | Not reported · text | NR | NR | NR | NR | [Paper](https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1) |
+
+**Supervised adaptation on synthetic reasoning, followed by reinforcement learning — Not reported (text):** The reported 133,492 protein records are not tokens. Source records, synthetic reasoning and training exposure have no established token split in the inspected notes.
+
+- **Online Papers: NR.** No separate direct-paper token amount is established for this row.
+
+- **Web Urls: NR.** No separate directly collected webpage token amount is established for this row.
+
+- **Existing Datasets: NR.** No separate reused-dataset token amount is established for this row.
+
+- **Total: NR.** A tokenizer-token total is not established for this row.
+
 **Training stage:** Supervised adaptation on synthetic reasoning, followed by reinforcement learning
 
 **Source material and units:** UniProt-curated protein records with GO annotations, InterPro domains, STRING interactions and structural context; the author release describes 133,492 curated proteins, not full papers.

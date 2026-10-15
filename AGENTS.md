@@ -130,3 +130,21 @@ pages and CSV in that same directory. This is the shared literature home for
 paper-extraction-lab and bio-evaluation. Update existing model entries instead
 of starting separate coverage-update tables. Evaluation protocols and frozen
 source/run provenance stay in their original project and link to the catalog.
+
+## Literature table token counts
+
+The user explicitly requires numeric token amounts for three acquisition
+categories in the main catalog: online papers, web URLs, and existing datasets.
+Do not replace token amounts with paper/example counts, dataset names, or a
+combined "processing and reported amounts" column. Keep processing details on
+the model pages. `review.json` stores `token_budgets`; the renderer generates
+the main tables, detailed allocation notes and numeric CSV from those records.
+Separate corpus amounts, sampled/consumed training exposure and scheduled or
+packed token positions. Preserve tokenizer/modality definitions, primary-source
+citations, calculation notes and lower bounds. `NR` is not zero. Do not turn
+word/document counts or maximum sequence lengths into invented token totals.
+Avoid counting imported paper/web text twice: classify it at the reviewed
+study's acquisition/curation stage, and retain its original content description
+on the model page. A missing category split stays explicit even when the total
+is known. Source-reported totals may include generated or other unallocated
+material and need not equal the known category subtotals.

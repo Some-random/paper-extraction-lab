@@ -1,0 +1,330 @@
+{
+  "checked_at_pst": "2026-10-15T13:35:00.090038-08:00",
+  "scope": "Typed token accounting, publication-source rechecks and generated-file consistency; not a new model run or independently measured tokenizer census.",
+  "catalog_entries": 41,
+  "token_budget_rows": 51,
+  "generated_files_reproduced_byte_identically": 43,
+  "rows_with_positive_token_amounts": 31,
+  "rows_with_all_three_acquisition_amounts": 22,
+  "positive_category_counts": {
+    "online_papers": 10,
+    "web_urls": 6,
+    "existing_datasets": 20
+  },
+  "original_41_entries_and_source_records_preserved": true,
+  "regression_tests_passed": 20,
+  "known_rounding_discrepancies": [
+    {
+      "id": "meditron",
+      "known_subtotal": 46707000000,
+      "reported_total": 46700000000,
+      "difference": 7000000,
+      "note": "Published source rounding; not silently repaired."
+    },
+    {
+      "id": "dolma",
+      "known_subtotal": 3059300000000,
+      "reported_total": 3059000000000,
+      "difference": 300000000,
+      "note": "Published source rounding; not silently repaired."
+    }
+  ],
+  "source_snapshots": [
+    {
+      "entry": "biogpt",
+      "url": "https://arxiv.org/pdf/2210.10341",
+      "sha256": "31c27ef4b66b3feb00f01cb238c7d105536fc1164794f9a7930554421f7a378f",
+      "bytes": 917891,
+      "text_characters": 86646
+    },
+    {
+      "entry": "biomedlm",
+      "url": "https://arxiv.org/html/2403.18421v1",
+      "sha256": "641a6bc3991b31324bd905b090417d042179f0e462b7ebdde823e2d045aaeb70",
+      "bytes": 198031,
+      "text_characters": 75588
+    },
+    {
+      "entry": "pmc_llama",
+      "url": "https://arxiv.org/html/2304.14454v3",
+      "sha256": "b7a612f9805df8def02e5e0dbd935f8d34fa11f27b0125a9d127f1e8c23675c9",
+      "bytes": 141355,
+      "text_characters": 44625
+    },
+    {
+      "entry": "biomistral",
+      "url": "https://arxiv.org/html/2402.10373v3",
+      "sha256": "71d452a665dedd5e58bd08d620f8fc32d0ca61d28f4e8a22b89288a42dede170",
+      "bytes": 644866,
+      "text_characters": 104160
+    },
+    {
+      "entry": "meditron",
+      "url": "https://arxiv.org/html/2311.16079v1",
+      "sha256": "fc664767f14e4b857aa0f8528323ad1c9ade8f53974a869be2c0e6268e3255f3",
+      "bytes": 525327,
+      "text_characters": 156992
+    },
+    {
+      "entry": "me_llama",
+      "url": "https://www.nature.com/articles/s41746-025-01533-1",
+      "sha256": "bddac5b50e472659cb5f895e20ba591b8bfa89c6117e628beba0b42938331e40",
+      "bytes": 378334,
+      "text_characters": 56667
+    },
+    {
+      "entry": "mmedlm",
+      "url": "https://www.nature.com/articles/s41467-024-52417-z",
+      "sha256": "96525ba3a2a4933620d208093ceeb4506dd82d57c9d797de0345c55a1c24f0b3",
+      "bytes": 403605,
+      "text_characters": 86255
+    },
+    {
+      "entry": "biomedgpt",
+      "url": "https://arxiv.org/html/2308.09442v2",
+      "sha256": "6d782bd640a9af6c804a65faf469fa62c31a960b31b3e602daf1401ff0ef86b0",
+      "bytes": 132139,
+      "text_characters": 48862
+    },
+    {
+      "entry": "biomatrix",
+      "url": "https://arxiv.org/html/2606.22138v1",
+      "sha256": "dda9b580ffac8b2144af940a8340f90ac59c8a08155fb497a504beae8e6f4894",
+      "bytes": 1218624,
+      "text_characters": 243080
+    },
+    {
+      "entry": "biomamba",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
+      "sha256": "e87aa13f0b92b26886041ceffca622ce9c98228bc9e9af593e0a170daad376ed",
+      "bytes": 273151,
+      "text_characters": 93345
+    },
+    {
+      "entry": "infimed",
+      "url": "https://arxiv.org/html/2509.22261v1",
+      "sha256": "b277207ffe0ad82617bed2ef1d739043a1812374f33143b387fedcbda8c3a79c",
+      "bytes": 187459,
+      "text_characters": 67808
+    },
+    {
+      "entry": "txgemma",
+      "url": "https://arxiv.org/html/2504.06196v1",
+      "sha256": "52aeb2653e85ee8c12444e626580d1137f6341535ef6e0b7ed684955d1235a2f",
+      "bytes": 1308793,
+      "text_characters": 228915
+    },
+    {
+      "entry": "naturelm",
+      "url": "https://arxiv.org/html/2502.07527v2",
+      "sha256": "ba2cb8c7446b17f66d7c43e2a6d1ba2704c41f3c54741f17ee234ccbb6180639",
+      "bytes": 611438,
+      "text_characters": 176179
+    },
+    {
+      "entry": "galactica",
+      "url": "https://arxiv.org/html/2211.09085v1",
+      "sha256": "b964530ee8318409b5594d30439634fe29b0d14ff0b03aff8c544e9c7bdf4379",
+      "bytes": 714070,
+      "text_characters": 195239
+    },
+    {
+      "entry": "gravity_bio",
+      "url": "https://arxiv.org/html/2607.08803v1",
+      "sha256": "00ac064dc26fc071917279d956c1b82abbac17153652aff7bede5cccf1468c94",
+      "bytes": 532178,
+      "text_characters": 112518
+    },
+    {
+      "entry": "scireasoner",
+      "url": "https://arxiv.org/html/2509.21320v1",
+      "sha256": "8229407db40db42a41ed74195cc82355c4d48612419e07d72d3b1c53514e11c4",
+      "bytes": 1247361,
+      "text_characters": 245287
+    },
+    {
+      "entry": "logos",
+      "url": "https://arxiv.org/html/2606.16905v1",
+      "sha256": "e88eb3422f06044c2ba2b0ebd2092c456211b36ce39e2a948a999e75709a1d8a",
+      "bytes": 474342,
+      "text_characters": 151853
+    },
+    {
+      "entry": "biomed_enriched",
+      "url": "https://arxiv.org/html/2506.20331v1",
+      "sha256": "dc3c4d544cf0b7c3af28cbe2e79eba4accf056437fc3845a791971bd9aef3390",
+      "bytes": 271213,
+      "text_characters": 41285
+    },
+    {
+      "entry": "pmc_intercpt",
+      "url": "https://arxiv.org/html/2606.01049v2",
+      "sha256": "bbb7d0083232b5b7d27f2ee6c5d6cc05d340e61cc0ea06f4fa9efad9cca2f8d1",
+      "bytes": 410122,
+      "text_characters": 83324
+    },
+    {
+      "entry": "olmo3",
+      "url": "https://arxiv.org/html/2512.13961v2",
+      "sha256": "6eaf1dd4259861710792c764f35aa5143cd9c6d1ef2d5a2541ad2ed22ae1532e",
+      "bytes": 2938113,
+      "text_characters": 493139
+    },
+    {
+      "entry": "ryze",
+      "url": "https://arxiv.org/html/2606.00902v1",
+      "sha256": "520b07dd6c20b82e11ee5fe862d7c8e2c5175b2501ce5404a74f7443aab865e0",
+      "bytes": 117449,
+      "text_characters": 36131
+    },
+    {
+      "entry": "dolma",
+      "url": "https://arxiv.org/html/2402.00159v1",
+      "sha256": "acd87ff93ad6d5ba6eefc71243240aeb1c727f390555dd7a9bda28f4fcb657b2",
+      "bytes": 878208,
+      "text_characters": 272694
+    },
+    {
+      "entry": "pes2o",
+      "url": "https://raw.githubusercontent.com/allenai/peS2o/main/README.md",
+      "sha256": "0e8c374dd1c340c43d6897cee00bc4f5a1603ca04eca8b503d5e8907b18676a4",
+      "bytes": 6773,
+      "text_characters": 6773
+    },
+    {
+      "entry": "biot5plus",
+      "url": "https://arxiv.org/html/2402.17810v2",
+      "sha256": "e9d2f3e59f9c8a7670b835823cf52e6259c6e7bf03abb0678c6f104da732a05b",
+      "bytes": 507280,
+      "text_characters": 125310
+    },
+    {
+      "entry": "medfound",
+      "url": "https://www.nature.com/articles/s41591-024-03416-6",
+      "sha256": "f5ffa75216b5abeb552a8f312de272bd0e82fac0710a206224bc9c72715899c9",
+      "bytes": 443142,
+      "text_characters": 40879
+    },
+    {
+      "entry": "medgemma",
+      "url": "https://arxiv.org/html/2507.05201v3",
+      "sha256": "4995fa72ee20c31caffd309beb9d09d576725c6b8d5d8caea92a7173c6a36519",
+      "bytes": 687122,
+      "text_characters": 161612
+    },
+    {
+      "entry": "lingshu",
+      "url": "https://arxiv.org/html/2506.07044v1",
+      "sha256": "8787ca2417355799509c2a0fa6e9bb1148d84ba6c4dfde61cf9422556ad7d33f",
+      "bytes": 696490,
+      "text_characters": 208346
+    },
+    {
+      "entry": "hulu_med",
+      "url": "https://arxiv.org/html/2510.08668v1",
+      "sha256": "641decc1dd79ec53ed70c4f6df792f3af9c0467f49ee43418964f5e347a3aa83",
+      "bytes": 576538,
+      "text_characters": 119387
+    },
+    {
+      "entry": "biobert",
+      "url": "https://arxiv.org/pdf/1901.08746",
+      "sha256": "ca36358bf3bb2ad4bccc27fa045d43053a9b68a991a52455dc4416685e266345",
+      "bytes": 1403854,
+      "text_characters": 40252
+    },
+    {
+      "entry": "pubmedbert",
+      "url": "https://arxiv.org/html/2007.15779v6",
+      "sha256": "179355c5c79e3ff37124420008f372e8824b6525de7158855f7e855fd62bee11",
+      "bytes": 296328,
+      "text_characters": 96111
+    },
+    {
+      "entry": "biolinkbert",
+      "url": "https://arxiv.org/html/2203.15827",
+      "sha256": "1853614529a4a4cd7c07b81a50b77ef4c260acd94e502dace90fee6753345554",
+      "bytes": 248653,
+      "text_characters": 75846
+    },
+    {
+      "entry": "txllm",
+      "url": "https://arxiv.org/html/2406.06316v1",
+      "sha256": "e1ffa1e1604d2ae390805f9141de50f85e3c1393a71570759ef18dde7fb71a49",
+      "bytes": 172353,
+      "text_characters": 76821
+    },
+    {
+      "entry": "bioreason",
+      "url": "https://arxiv.org/html/2505.23579v2",
+      "sha256": "95acd9a4b95ad5fa64323c43972905c1bfc7ba1e0bd259f9aac3f398ed24bc4f",
+      "bytes": 317096,
+      "text_characters": 102639
+    },
+    {
+      "entry": "biomedclip",
+      "url": "https://arxiv.org/html/2303.00915",
+      "sha256": "d4e4eec53942973d740202194522de16d04c89d43dacf55da723181a35403fc6",
+      "bytes": 229054,
+      "text_characters": 74135
+    },
+    {
+      "entry": "llava_med",
+      "url": "https://arxiv.org/html/2306.00890",
+      "sha256": "072cb097f783495ebf65adeff751c10d58006c200c8d96d06829b3171aaed7e6",
+      "bytes": 281638,
+      "text_characters": 61997
+    },
+    {
+      "entry": "bioreason_pro",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "entry": "protst",
+      "url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "sha256": "0254f9715d93787cd2be4a3c33d04100618f6121501376e71f271733f3c1fa70",
+      "bytes": 3047258,
+      "text_characters": 84908
+    },
+    {
+      "entry": "bio_posttraining",
+      "url": "https://arxiv.org/html/2606.16517v1",
+      "sha256": "229a744fd38fb3273da95fa32b24f205e07f40628a49e3750bc51274ebd23a91",
+      "bytes": 498700,
+      "text_characters": 124412
+    },
+    {
+      "entry": "unigenx",
+      "url": "https://arxiv.org/html/2503.06687v1",
+      "sha256": "2d42ad10bf4067399a663ef2285759549938d2995a20000e2e221b53a9a8c3a5",
+      "bytes": 533469,
+      "text_characters": 126858
+    },
+    {
+      "entry": "s2orc",
+      "url": "https://aclanthology.org/2020.acl-main.447.pdf",
+      "sha256": "f83d85b272d5efd7acb01016732d6577260b3b40fa894da16f2d82efc8597ff7",
+      "bytes": 2151239,
+      "text_characters": 58440
+    },
+    {
+      "entry": "biomatrix_figure3",
+      "url": "https://arxiv.org/html/2606.22138v1/biomatrix_cpt_data_v5.svg",
+      "sha256": "0634755abd61ceafd1fb8daab7b7a3ecbfbe1d9a3211e981c5584f142abea5b4",
+      "bytes": 261976
+    },
+    {
+      "entry": "biomatrix_pdf",
+      "url": "https://arxiv.org/pdf/2606.22138v1",
+      "sha256": "e9a5bb6aba5328787b8c90de47910244485c3da1e280d353ffd3d1631cd62f2e",
+      "bytes": 4417981
+    }
+  ],
+  "limitations": [
+    "NR includes undisclosed or unestablished category splits; it does not mean zero.",
+    "Scheduled/packed positions and author estimates retain explicit count bases; they are not substituted for unique corpus tokens.",
+    "Lower bounds include only source components with established amounts; no residual is invented.",
+    "Bioreason-Pro primary page returned HTTP 429 during this check; prior source metadata was retained and no token count was invented."
+  ]
+}
