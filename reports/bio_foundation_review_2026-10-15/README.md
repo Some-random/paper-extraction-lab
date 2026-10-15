@@ -6,6 +6,8 @@ Targeted web searches, citation following, and reading primary papers, official 
 
 This is a source review. Published model results below were not reproduced by our extraction experiment.
 
+[Citation handling and CPT data sources](citations_and_cpt_sources.md) adds an audit of the three extracted biology samples, published citation-processing choices, and examples of native, structured, clinical and synthetic CPT data. [Audit counts and source hashes](citation_audit.json) are available separately.
+
 ## How to interpret the numbers
 
 - Corpus tokens, training tokens consumed, distinct papers, abstracts, packed sequences, and image-caption pairs are different units. Counts across models overlap and must not be added.

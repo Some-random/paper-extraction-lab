@@ -1,0 +1,71 @@
+{
+  "audit_date_pst": "2026-10-14",
+  "scope": "Read-only source/export audit of the three previously published native-XML previews. This does not add literature-citation resolution to the production pipeline.",
+  "counting_notes": [
+    "Bibliography entries are per-document records, not deduplicated cited works.",
+    "bibr_xref_element_count_entire_xml counts XML marker elements in all regions, not distinct cited works or only CPT-retained paragraphs.",
+    "RID tokens can reference multiple bibliography records; markers and citation edges are different units.",
+    "Exported reference types here are counted only in retained blocks."
+  ],
+  "papers": [
+    {
+      "pmcid": "PMC13651886",
+      "title": "Canonical Wnt induction by OTULIN prevents keratinocyte death and skin inflammation",
+      "source_xml": "experiments/pmc_cns_biology_2026-10-14/papers/PMC13651886/source.xml",
+      "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+      "bibliography_entry_count": 49,
+      "bibr_xref_element_count_entire_xml": 92,
+      "bibr_rid_token_count_entire_xml": 92,
+      "unresolved_document_local_bibr_rids": [],
+      "exported_excluded_bibliography_block_count": 49,
+      "exported_retained_block_reference_types": {
+        "fig": 41,
+        "table": 4
+      }
+    },
+    {
+      "pmcid": "PMC13655163",
+      "title": "Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals",
+      "source_xml": "experiments/pmc_cns_biology_2026-10-14/papers/PMC13655163/source.xml",
+      "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+      "bibliography_entry_count": 82,
+      "bibr_xref_element_count_entire_xml": 120,
+      "bibr_rid_token_count_entire_xml": 120,
+      "unresolved_document_local_bibr_rids": [],
+      "exported_excluded_bibliography_block_count": 82,
+      "exported_retained_block_reference_types": {
+        "fig": 10,
+        "table": 2
+      }
+    },
+    {
+      "pmcid": "PMC13645648",
+      "title": "Lsp2 links early-life diet to adult translation and lifespan in Drosophila",
+      "source_xml": "experiments/pmc_cns_biology_2026-10-14/papers/PMC13645648/source.xml",
+      "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+      "bibliography_entry_count": 80,
+      "bibr_xref_element_count_entire_xml": 110,
+      "bibr_rid_token_count_entire_xml": 110,
+      "unresolved_document_local_bibr_rids": [],
+      "exported_excluded_bibliography_block_count": 80,
+      "exported_retained_block_reference_types": {
+        "fig": 122
+      }
+    }
+  ],
+  "totals": {
+    "bibliography_entries": 211,
+    "bibr_xref_elements_entire_xml": 322,
+    "exported_retained_visual_reference_edges": 179
+  },
+  "source_example": {
+    "citing_pmcid": "PMC13651886",
+    "document_local_reference_id": "R1",
+    "cited_title": "Building and maintaining the skin",
+    "cited_identifiers": {
+      "doi": "10.1101/cshperspect.a040840",
+      "pmcid": "PMC8977401",
+      "pmid": "34607830"
+    }
+  }
+}
