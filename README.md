@@ -11,8 +11,10 @@ GPU, no subagents, and no new SSH connections.
 ## Updated native-source preview: three papers
 
 Read the [three-paper results directly on GitHub](reports/pmc_native_v3_preview_2026-10-15/README.md).
-Each paper has readable examples, original figures with captions and referring
-paragraphs, source tables, the cleaned article, and training-record previews.
+The first table links the full extracted research text, original figures with
+captions and referring paragraphs, source tables, and complete structured JSON.
+Each paper also includes every text chunk and figure/table–context record;
+Q&A examples appear as optional derivatives below the extracted outputs.
 It includes 140 research paragraphs, 25 original figure images, four source
 tables, 30 text chunks of at most 2,048 tokens, 23 figure/table–context records,
 and nine source-checked reading/lookup examples. The tracked

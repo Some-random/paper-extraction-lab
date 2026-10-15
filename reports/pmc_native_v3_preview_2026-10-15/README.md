@@ -1,8 +1,20 @@
 # Three biology papers: updated extraction results
 
-Read the results directly on GitHub. Each paper has examples, original figures with their captions and referring paragraphs, source tables, the cleaned article, and actual training-record previews.
+The actual extracted content is linked directly below: full research text, original figure images with extracted captions and referring paragraphs, source tables, and complete structured data. The Q&A examples are optional derivatives of these outputs.
 
 Results generated **2026-10-14T20:42:29.106737-08:00** (fixed PST, UTC-8).
+
+## Read the extracted results
+
+| Paper | Extracted research text | Figures + captions + context | Tables | Structured data |
+| --- | --- | --- | --- | --- |
+| Science Advances: Canonical Wnt induction by OTULIN prevents keratinocyte death and skin inflammation | [Read extracted text](papers/PMC13651886/article.md) | [Figures and context](papers/PMC13651886/figures.md) | [Tables](papers/PMC13651886/tables.md) | [Full structured extraction](papers/PMC13651886/extracted.json) |
+| Nature Communications: Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals | [Read extracted text](papers/PMC13655163/article.md) | [Figures and context](papers/PMC13655163/figures.md) | [Tables](papers/PMC13655163/tables.md) | [Full structured extraction](papers/PMC13655163/extracted.json) |
+| Nature: Lsp2 links early-life diet to adult translation and lifespan in Drosophila | [Read extracted text](papers/PMC13645648/article.md) | [Figures and context](papers/PMC13645648/figures.md) | No source tables | [Full structured extraction](papers/PMC13645648/extracted.json) |
+
+The research-text view includes the abstract, main sections and methods; bibliography and administrative material are retained separately in the structured extraction. Each paper overview also links the earlier native output and the unchanged PDF-only olmOCR transcript.
+
+## Output counts and paper overviews
 
 | Paper | Research paragraphs | Figures | Tables | Text chunks |
 | --- | ---: | ---: | ---: | ---: |

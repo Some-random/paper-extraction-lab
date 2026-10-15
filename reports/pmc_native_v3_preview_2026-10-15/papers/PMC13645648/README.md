@@ -2,76 +2,22 @@
 
 Nature · **PMC13645648** · CC BY
 
-[Back to all three papers](../../README.md) · [Cleaned article](article.md) · [All figures and their context](figures.md) · [Training-record examples](training_samples.md)
+**[Read the full extracted research text](article.md)** · **[Read all extracted figures, captions and context](figures.md)**
+
+## Extracted outputs
+
+- [Full research text, in section order](article.md)
+- [All original figure images, extracted captions and explicitly referring paragraphs](figures.md)
+- [Complete structured extraction: paragraphs, figures, tables, links and provenance](extracted.json)
+- [All text chunks](text_chunks.jsonl)
+- [All figure/table–context records](interleaved.jsonl)
+- [One readable training-record preview](training_samples.md)
+
+[Back to all three papers](../../README.md)
 
 65 research paragraphs · 14 figures · 0 tables · 14 text chunks · 8 figure/table–context records.
 
-These results use publisher XML and original figure files. Earlier PDF-only olmOCR output remains available [here](../../../pmc_cns_biology_2026-10-14/samples/PMC13645648/fullpaper_olmocr.md). No new OCR inference or model training was performed.
-
-## Source-checked examples
-
-### What median lifespans were reported for lifelong versus early-adult Lsp2 knockdown in the 8% condition?
-
-**Answer:** 67 days for lifelong knockdown and 63 days for early-adult knockdown; the authors state that their difference was not statistically significant.
-
-**Source excerpt:**
-
-> There was no statistical significance between adult-lifelong Lsp2 knockdown (8% RU) and early-adult-specific Lsp2 knockdown (8% 1 week RU), although median lifespan for the 8% RU condition (67 days) was greater than that for the 8%-1-week-RU condition (63 days) (Fig. 4r).
-
-PDF page(s) containing all checked text literals: **7**.
-
-Validation: assistant source check; not independent human adjudication or generated chain of thought. PDF checking is a text-presence check, not an independent answer-quality score.
-
-<details>
-<summary>Source XML provenance</summary>
-
-`/article/body/sec[7]/p[5]`
-
-XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
-
-</details>
-
-### Did combining early-life protein restriction with transient early-adult Lsp2 knockdown always extend lifespan?
-
-**Answer:** No. The authors report shortened lifespan for that combination.
-
-**Source excerpt:**
-
-> By contrast, when ePR was combined with early-adult-specific Lsp2 knockdown, lifespan was shortened (Fig. 4r; 1% ethanol versus 1% 1 week RU).
-
-PDF page(s) containing all checked text literals: **9**.
-
-Validation: assistant source check; not independent human adjudication or generated chain of thought. PDF checking is a text-presence check, not an independent answer-quality score.
-
-<details>
-<summary>Source XML provenance</summary>
-
-`/article/body/sec[7]/p[5]`
-
-XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
-
-</details>
-
-### What did the abstract report after genetic silencing of Lsp2?
-
-**Answer:** Reduced ribosomal-protein abundance and translation in early adulthood, with extended lifespan.
-
-**Source excerpt:**
-
-> Genetic silencing of Lsp2 phenocopies ePR, attenuating ribosomal-protein abundance and translational activity in early adulthood, and extending lifespan.
-
-PDF page(s) containing all checked text literals: **1**.
-
-Validation: assistant source check; not independent human adjudication or generated chain of thought. PDF checking is a text-presence check, not an independent answer-quality score.
-
-<details>
-<summary>Source XML provenance</summary>
-
-`/article/front/article-meta/abstract[1]`
-
-XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
-
-</details>
+These results use publisher XML and original figure files. Earlier PDF-only olmOCR output remains available [here](../../../pmc_cns_biology_2026-10-14/samples/PMC13645648/fullpaper_olmocr.md). The [earlier native extraction including references](../../../pmc_cns_biology_2026-10-14/samples/PMC13645648/fullpaper_native.md) is also retained. The updated research-text view routes bibliography and administrative material outside the text stream. No new OCR inference or model training was performed.
 
 ## Featured original figure and source context
 
@@ -139,6 +85,73 @@ XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
 <summary>Source XML provenance</summary>
 
 `/article/body/sec[7]/p[1]/fig`
+
+XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
+
+</details>
+
+## Optional source-checked Q&A examples
+
+These examples are derived from the extracted content linked above.
+
+### What median lifespans were reported for lifelong versus early-adult Lsp2 knockdown in the 8% condition?
+
+**Answer:** 67 days for lifelong knockdown and 63 days for early-adult knockdown; the authors state that their difference was not statistically significant.
+
+**Source excerpt:**
+
+> There was no statistical significance between adult-lifelong Lsp2 knockdown (8% RU) and early-adult-specific Lsp2 knockdown (8% 1 week RU), although median lifespan for the 8% RU condition (67 days) was greater than that for the 8%-1-week-RU condition (63 days) (Fig. 4r).
+
+PDF page(s) containing all checked text literals: **7**.
+
+Validation: assistant source check; not independent human adjudication or generated chain of thought. PDF checking is a text-presence check, not an independent answer-quality score.
+
+<details>
+<summary>Source XML provenance</summary>
+
+`/article/body/sec[7]/p[5]`
+
+XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
+
+</details>
+
+### Did combining early-life protein restriction with transient early-adult Lsp2 knockdown always extend lifespan?
+
+**Answer:** No. The authors report shortened lifespan for that combination.
+
+**Source excerpt:**
+
+> By contrast, when ePR was combined with early-adult-specific Lsp2 knockdown, lifespan was shortened (Fig. 4r; 1% ethanol versus 1% 1 week RU).
+
+PDF page(s) containing all checked text literals: **9**.
+
+Validation: assistant source check; not independent human adjudication or generated chain of thought. PDF checking is a text-presence check, not an independent answer-quality score.
+
+<details>
+<summary>Source XML provenance</summary>
+
+`/article/body/sec[7]/p[5]`
+
+XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
+
+</details>
+
+### What did the abstract report after genetic silencing of Lsp2?
+
+**Answer:** Reduced ribosomal-protein abundance and translation in early adulthood, with extended lifespan.
+
+**Source excerpt:**
+
+> Genetic silencing of Lsp2 phenocopies ePR, attenuating ribosomal-protein abundance and translational activity in early adulthood, and extending lifespan.
+
+PDF page(s) containing all checked text literals: **1**.
+
+Validation: assistant source check; not independent human adjudication or generated chain of thought. PDF checking is a text-presence check, not an independent answer-quality score.
+
+<details>
+<summary>Source XML provenance</summary>
+
+`/article/front/article-meta/abstract[1]`
 
 XML SHA-256: `592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320`
 

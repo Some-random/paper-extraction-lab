@@ -83,6 +83,19 @@ def example_markdown(example):
     return '\n\n'.join(lines)
 
 
+def portable_extraction(value):
+    """Export all extracted content without duplicate markup or derived Q&A."""
+    if isinstance(value, list):
+        return [portable_extraction(item) for item in value]
+    if isinstance(value, dict):
+        result = {k: portable_extraction(v) for k, v in value.items()
+                  if k not in {'raw_xml', 'html', 'table_html', 'caption_html', 'review_examples'}}
+        if 'source_filename' in result and 'path' in result:
+            result['path'] = 'assets/' + result['source_filename']
+        return result
+    return value
+
+
 def export_paper(doc, source, report):
     pid = doc['pmcid']
     directory = report / 'papers' / pid
@@ -104,21 +117,33 @@ def export_paper(doc, source, report):
                                repository_path=str(target.relative_to(ROOT))))
     s = doc['summary']
     intro = ['# ' + doc['title'], doc['journal'] + ' · **' + pid + '** · ' + doc['license_code'],
-        '[Back to all three papers](../../README.md) · [Cleaned article](article.md) · '
-        '[All figures and their context](figures.md) · [Training-record examples](training_samples.md)',
+        '**[Read the full extracted research text](article.md)** · '
+        '**[Read all extracted figures, captions and context](figures.md)**',
+        '## Extracted outputs',
+        '- [Full research text, in section order](article.md)\n'
+        '- [All original figure images, extracted captions and explicitly referring paragraphs](figures.md)\n' +
+        ('- [All source tables, preserving merged cells and notes](tables.md)\n' if s['tables'] else '') +
+        '- [Complete structured extraction: paragraphs, figures, tables, links and provenance](extracted.json)\n'
+        '- [All text chunks](text_chunks.jsonl)\n'
+        '- [All figure/table–context records](interleaved.jsonl)\n'
+        '- [One readable training-record preview](training_samples.md)',
+        '[Back to all three papers](../../README.md)',
         f"{s['retained_paragraphs']} research paragraphs · {s['figures']} figures · "
         f"{s['tables']} tables · {s['text_chunks']} text chunks · "
         f"{s['interleaved_records']} figure/table–context records.",
         'These results use publisher XML and original figure files. Earlier PDF-only '
         'olmOCR output remains available [here](../../../pmc_cns_biology_2026-10-14/samples/' + pid + '/fullpaper_olmocr.md). '
+        'The [earlier native extraction including references](../../../pmc_cns_biology_2026-10-14/samples/' + pid + '/fullpaper_native.md) is also retained. '
+        'The updated research-text view routes bibliography and administrative material outside the text stream. '
         'No new OCR inference or model training was performed.',
-        '## Source-checked examples',
-        *[example_markdown(e) for e in doc['review_examples']],
         '## Featured original figure and source context',
         visual_markdown(featured, doc, blockmap),
     ]
     if s['tables']:
         intro += ['## Source tables', '[Read all source tables with merged cells and notes](tables.md).']
+    intro += ['## Optional source-checked Q&A examples',
+              'These examples are derived from the extracted content linked above.',
+              *[example_markdown(e) for e in doc['review_examples']]]
     intro += ['## Checks and limitations',
         f"Source links checked: {s['checks']['context_edges_verified_against_raw_xml']} figure/table-reference edges. "
         f"Table cells with source XPaths: {s['checks']['table_cells_with_resolving_xpaths']}. "
@@ -164,6 +189,9 @@ def export_paper(doc, source, report):
 
     chunks = [json.loads(l) for l in (source / pid / 'text_chunks.jsonl').read_text().splitlines()]
     groups = [json.loads(l) for l in (source / pid / 'interleaved.jsonl').read_text().splitlines()]
+    write(directory / 'extracted.json', json.dumps(portable_extraction(doc), ensure_ascii=False, indent=2))
+    write(directory / 'text_chunks.jsonl', '\n'.join(json.dumps(c, ensure_ascii=False) for c in chunks))
+    write(directory / 'interleaved.jsonl', '\n'.join(json.dumps(portable_extraction(g), ensure_ascii=False) for g in groups))
     preferred = set(featured['referring_paragraphs'])
     chunk = next((c for c in chunks if any(f['block_id'] in preferred for f in c['fragments'])), chunks[0])
     record = next((g for g in groups if featured['id'] in g['visual_ids']), groups[0])
@@ -212,14 +240,29 @@ def export_review(source, report):
             raise ValueError('This review export is scoped to the three selected CC BY papers')
         export_paper(doc, source, report)
     rows = []
+    output_rows = []
     for doc in documents:
         s = doc['summary']
         rows.append('| [' + doc['journal'] + ': ' + doc['title'] + '](papers/' + doc['pmcid'] + '/README.md) | ' +
                     ' | '.join(str(s[k]) for k in ['retained_paragraphs', 'figures', 'tables', 'text_chunks']) + ' |')
+        directory = 'papers/' + doc['pmcid'] + '/'
+        output_rows.append('| ' + doc['journal'] + ': ' + doc['title'] + ' | '
+            '[Read extracted text](' + directory + 'article.md) | '
+            '[Figures and context](' + directory + 'figures.md) | ' +
+            ('[Tables](' + directory + 'tables.md)' if s['tables'] else 'No source tables') + ' | '
+            '[Full structured extraction](' + directory + 'extracted.json) |')
     overview = ['# Three biology papers: updated extraction results',
-        'Read the results directly on GitHub. Each paper has examples, original figures with '
-        'their captions and referring paragraphs, source tables, the cleaned article, and actual training-record previews.',
+        'The actual extracted content is linked directly below: full research text, original figure '
+        'images with extracted captions and referring paragraphs, source tables, and complete structured data. '
+        'The Q&A examples are optional derivatives of these outputs.',
         'Results generated **' + summary['created_at_pst'] + '** (fixed PST, UTC-8).',
+        '## Read the extracted results',
+        '| Paper | Extracted research text | Figures + captions + context | Tables | Structured data |\n'
+        '| --- | --- | --- | --- | --- |\n' + '\n'.join(output_rows),
+        'The research-text view includes the abstract, main sections and methods; bibliography and '
+        'administrative material are retained separately in the structured extraction. Each paper '
+        'overview also links the earlier native output and the unchanged PDF-only olmOCR transcript.',
+        '## Output counts and paper overviews',
         '| Paper | Research paragraphs | Figures | Tables | Text chunks |\n'
         '| --- | ---: | ---: | ---: | ---: |\n' + '\n'.join(rows),
         '**Totals:** 140 research paragraphs, 25 original figure images, four source tables, '
