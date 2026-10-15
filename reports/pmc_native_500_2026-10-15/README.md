@@ -1,8 +1,8 @@
 **500-paper biological source batch**
 
-Status: **running**; 15/500 papers ready. Updated 2026-10-14T23:32:26.159832-08:00 (fixed PST).
+Status: **candidate_pool_exhausted**; 295/500 papers ready. Updated 2026-10-15T03:53:44.018826-08:00 (fixed PST).
 
-Original figure assets retained: **117**. Figure records without assets: **0**.
+Original figure assets retained: **2058**. Figure records without assets: **0**.
 
 [Paper manifest](papers.csv) · [Exact summary and limits](summary.json)
 
