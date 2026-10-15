@@ -128,13 +128,15 @@ def inline_html(node):
     ) + closing
 
 
-def table_grid(table, tree, paths=None, normalize=None):
+def table_grid(table, tree, paths=None, normalize=None, *, maximum_rows=150):
     """Physical cells and span-expanded occupancy; no inferred cell values."""
     occupied = {}
     cells = []
     rows = table.xpath('.//*[local-name()="tr"]')
-    if len(rows) > 150:
-        raise ValueError("Preview limit: more than 150 source table rows")
+    if not 1 <= maximum_rows <= 10000:
+        raise ValueError("Source table row budget must be between 1 and 10000")
+    if len(rows) > maximum_rows:
+        raise ValueError(f"Source table exceeds the configured {maximum_rows}-row budget")
     for ri, row in enumerate(rows):
         ci = 0
         for cell in row:
@@ -191,7 +193,7 @@ def table_grid(table, tree, paths=None, normalize=None):
                 source_text_tsv=source_tsv)
 
 
-def parse_jats(source: Path, pmcid: str, tokenizer, *, citation_overrides=None):
+def parse_jats(source: Path, pmcid: str, tokenizer, *, citation_overrides=None, maximum_table_rows=150):
     tree = etree.parse(str(source), etree.XMLParser(resolve_entities=False, no_network=True))
     # Strip names only in the working copy; retain unmodified source XPaths.
     paths = {n: tree.getpath(n) for n in tree.iter() if isinstance(n.tag, str)}
@@ -210,7 +212,8 @@ def parse_jats(source: Path, pmcid: str, tokenizer, *, citation_overrides=None):
         vid = v.get('id') or f"unidentified-{index}"
         table = v.find('.//table')
         normalized = citations.normalized_copy(v)
-        grid = table_grid(table, tree, paths, citations.normalized_copy) if table is not None else None
+        grid = table_grid(table, tree, paths, citations.normalized_copy,
+                          maximum_rows=maximum_table_rows) if table is not None else None
         visuals.append(dict(id=pmcid + ':' + vid, xml_id=vid,
             kind='figure' if v.tag == 'fig' else 'table', label=text(v.find('label')),
             caption=text(v.find('caption')), caption_html=inline_html(v.find('caption')),

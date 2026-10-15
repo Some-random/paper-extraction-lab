@@ -1,6 +1,6 @@
 **Published data budgets: biological literature, web text and biological databases**
 
-This covers the ten biology/science model families in the preceding [source review](biology_sources.md), with two additional literature-CPT recipes and three figure-training examples. Sources are model reports and author documentation. The quantitative review, the [bounded web-corpus sample](web_sample.md), and our previously executed paper extraction are separate results.
+This covers the ten biology/science model families in the preceding [source review](biology_sources.md), with two additional literature-CPT recipes and three figure-training examples. A subsequent [coverage check](coverage_update.md) adds seven new or expanded biological training recipes, including TheBioCollection, SciReasoner, LOGOS and TxGemma. Sources are model reports and author documentation. The quantitative review, the [bounded web-corpus sample](web_sample.md), and our previously executed paper extraction are separate results.
 
 B means billion and M means million. **NR means not separately reported in the inspected source, not zero.** Corpus tokens count an assembled corpus once; training tokens can count repeated exposures. Words, records, image tokens and text tokens are kept distinct. These are each author's tokenizer counts, not a common-tokenizer comparison. A paper downloaded inside an existing dataset is still paper-origin data: the acquisition route and content origin overlap.
 

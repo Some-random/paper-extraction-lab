@@ -1,0 +1,38 @@
+{
+  "batch_id": "pmc_native_500_2026-10-15",
+  "updated_at_pst": "2026-10-14T23:32:26.159832-08:00",
+  "status": "running",
+  "stage": "initializing",
+  "target_papers": 500,
+  "ready_papers": 15,
+  "reused_papers": 15,
+  "figure_assets_retained": 117,
+  "figures_without_assets": 0,
+  "downloaded_response_bytes": 23832214,
+  "logical_artifact_bytes": 162511842,
+  "journal_counts": {
+    "Molecular Cell": 2,
+    "Cell Host & Microbe": 1,
+    "Cell": 2,
+    "Nature": 1,
+    "Science": 2,
+    "Cell Reports": 2,
+    "Science Advances": 2,
+    "Nature Communications": 1,
+    "Nature Medicine": 1,
+    "Nature Methods": 1
+  },
+  "gpu_count": 0,
+  "model_inference": false,
+  "model_training": false,
+  "stop_at_pst": "2026-10-15T09:27:20.013651-08:00",
+  "limit_reason": null,
+  "error": null,
+  "scope": "native XML text/full source tables and original figure assets; separate supplements not downloaded",
+  "limitations": [
+    "Topic-selected convenience sample, not representative sampling.",
+    "Source checks do not validate biological figure interpretation.",
+    "Unresolved/oversized/failed media remain explicitly listed.",
+    "Prior outputs and model caches are retained; this batch runs no new OCR."
+  ]
+}

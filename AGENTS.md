@@ -95,3 +95,18 @@ Prioritize real biological literature, source figures/tables/supplements and
 biological databases before synthetic augmentation. Clinical notes are outside
 this project's research scope. Include reusable corpora such as Dolma and
 peS2o in source planning; distinguish corpus versions from processing toolkits.
+
+## Authorized native-source expansion
+
+The user explicitly confirmed retaining original figures, no model training,
+and expanded the target to 500 papers total. The new native-only batch is
+configured in `config/pmc_native_500_2026-10-15.json`: reuse eligible cached
+PDF/XML, retain source images/captions/referring paragraphs and full article
+tables, with cited titles/authors. No new OCR, VLM inference, synthetic captions,
+teacher API, training, web crawl or separate supplementary-file download.
+Use one serial document/network worker, two CPU threads and zero GPUs. Stop
+at 500 papers, 5 GiB response-body downloads, 8 GiB logical artifacts, ten
+cumulative hours or a 32 GiB shared-filesystem free-space floor. Preserve the
+old batch and its expired budget. The new batch has its own lock/state/STOP
+file; resuming does not reset its runtime allowance. Publish compact reports
+and manifests to GitHub; bulk source and extraction artifacts stay on RustFS.

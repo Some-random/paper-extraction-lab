@@ -78,6 +78,12 @@ includes an actual 64 KiB / eight-record corpus probe; the
 [figure review](reports/bio_foundation_review_2026-10-15/figure_handling.md)
 distinguishes original captions, image-based training and generated descriptions.
 
+The user-confirmed [500-paper native-source expansion](reports/pmc_native_500_2026-10-15/README.md)
+retains original figures, full captions, referring paragraphs and source tables,
+with no new OCR or model training. The [storage/time estimate and firm limits](reports/pmc_native_500_2026-10-15/scaling_estimate.md)
+precede the run. The [additional model coverage table](reports/bio_foundation_review_2026-10-15/coverage_update.md)
+adds TheBioCollection, SciReasoner, LOGOS, TxGemma and other relevant recipes.
+
 ## Overnight download and full-paper extraction
 
 The October 14 batch finished at **04:14 PST**: **50 papers downloaded and parsed

@@ -1,0 +1,66 @@
+{
+  "target_papers": 500,
+  "expected_cached_eligible": 49,
+  "source_measurements": {
+    "papers": 50,
+    "source_pdf_xml_bytes": 307818707,
+    "source_figures": 382,
+    "source_pdf_pages": 1582,
+    "download_and_native_minutes_including_debugging": 38.20307951666667,
+    "ocr_seconds_per_page": 12.090324,
+    "figure_sample_assets": 25,
+    "figure_sample_bytes": 4023282,
+    "derived_sample_papers": 3,
+    "derived_sample_bytes_excluding_images": 5617103,
+    "cached_50_native_parse_seconds": 11.556
+  },
+  "projection_500": {
+    "source_pdf_xml_bytes": 3078187070,
+    "figure_assets": 3820,
+    "figure_bytes": 614757489.6,
+    "derived_bytes_excluding_images": 936183833.3333334,
+    "linear_download_native_hours_from_scratch": 6.367179919444444,
+    "all_pages_ocr_inference_hours_if_requested": 53.13025713333334
+  },
+  "planning_ranges": {
+    "500_total_additional_storage_gib": [
+      5,
+      8
+    ],
+    "500_total_serial_hours": [
+      6,
+      10
+    ],
+    "100_total_additional_storage_gib": [
+      0.5,
+      1
+    ],
+    "100_total_serial_minutes": [
+      45,
+      90
+    ]
+  },
+  "hard_limits": {
+    "download_response_bytes": 5368709120,
+    "logical_artifact_bytes": 8589934592,
+    "runtime_hours": 10,
+    "minimum_filesystem_free_bytes": 34359738368,
+    "workers": 1,
+    "cpu_threads": 2,
+    "gpu_count": 0
+  },
+  "duplicates": {
+    "pmcid": [],
+    "doi": [],
+    "title": [],
+    "pdf_sha256": [],
+    "xml_sha256": []
+  },
+  "cached_source_hashes_verified": 100,
+  "notes": [
+    "Linear baseline is a projection, not a measured 500-paper result.",
+    "Prior 38.2-minute acquisition figure includes debugging; image-acquisition latency is not measured by the 3.666-second cached preview.",
+    "Physical incremental usage is smaller than logical hardlink accounting; source sizes vary and unresolved assets remain explicit.",
+    "No new OCR or model/teacher training; no supplementary-file download."
+  ]
+}

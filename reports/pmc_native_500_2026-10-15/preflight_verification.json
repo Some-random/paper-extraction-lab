@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "existing_regression_tests_passed": 10,
+  "cached_50_source_xml_parses_passed": 50,
+  "cached_50_parse_seconds": 11.556,
+  "larger_source_tables_no_longer_blocked": 5,
+  "configured_table_row_budget": 2000,
+  "cached_full_pipeline_smoke": {
+    "batch_id": "native_scale_preflight",
+    "updated_at_pst": "2026-10-14T23:20:51.462731-08:00",
+    "status": "completed",
+    "stage": "finished",
+    "target_papers": 3,
+    "ready_papers": 3,
+    "reused_papers": 3,
+    "figure_assets_retained": 25,
+    "figures_without_assets": 0,
+    "downloaded_response_bytes": 0,
+    "logical_artifact_bytes": 37532548,
+    "journal_counts": {
+      "Nature": 1,
+      "Nature Communications": 1,
+      "Science Advances": 1
+    },
+    "gpu_count": 0,
+    "model_inference": false,
+    "model_training": false,
+    "stop_at_pst": "2026-10-14T23:35:49.873812-08:00",
+    "limit_reason": null,
+    "error": null,
+    "scope": "native XML text/full source tables and original figure assets; supplements inventoried only",
+    "limitations": [
+      "Topic-selected convenience sample, not representative sampling.",
+      "Source checks do not validate biological figure interpretation.",
+      "Unresolved/oversized/failed media remain explicitly listed.",
+      "Prior outputs and model caches are retained; this batch runs no new OCR."
+    ]
+  },
+  "verified_original_pdf_xml_hashes": 100,
+  "exact_duplicate_groups": 0,
+  "note": "Pipeline, source-byte and structural checks; not independent scientific accuracy evaluation."
+}

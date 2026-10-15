@@ -10,6 +10,8 @@ This is a source review. Published model results below were not reproduced by ou
 
 The newer [quantitative dataset breakdown](dataset_breakdown.md) gives per-source budgets, units, training-stage distinctions and disclosure gaps for that biological scope. See also [web acquisition](web_acquisition.md), the [executed eight-record web probe](web_sample.md), and [published figure-training recipes](figure_handling.md).
 
+The subsequent [coverage update](coverage_update.md) adds seven new or expanded training recipes after another primary-source check, including TheBioCollection, SciReasoner, LOGOS and TxGemma. It flags unresolved source-count discrepancies rather than converting them into exact token allocations.
+
 [Citation handling and CPT data sources](citations_and_cpt_sources.md) adds an audit of the three extracted biology samples, published citation-processing choices, and examples of native, structured, clinical and synthetic CPT data. [Audit counts and source hashes](citation_audit.json) are available separately.
 
 ## How to interpret the numbers
