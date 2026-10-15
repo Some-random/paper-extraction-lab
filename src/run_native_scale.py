@@ -15,8 +15,9 @@ import re
 import shutil
 import time
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.error import URLError
 from urllib.parse import parse_qs, unquote, urlsplit
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
@@ -35,6 +36,22 @@ def title_key(value):
     return re.sub(r"[^\w]+", "", value.casefold())
 
 
+class NetworkUnavailable(LimitReached):
+    """Stop on a persistent outage without consuming the candidate list."""
+
+
+def continuation_deadline(config, original_end, current):
+    continuation = config.get("authorized_continuation")
+    if not continuation:
+        return original_end
+    if not continuation.get("user_instruction") or not continuation.get("authorized_at_pst"):
+        raise ValueError("Continuation requires an explicit recorded user instruction")
+    cutoff = datetime.fromisoformat(continuation["stop_before_pst"])
+    if cutoff.tzinfo is None:
+        raise ValueError("Continuation cutoff must include its timezone")
+    return min(cutoff, current + timedelta(hours=continuation["maximum_session_hours"]))
+
+
 class NativeScale(Batch):
     def __init__(self, config):
         self.tokenizer = Tokenizer.from_file(str(ROOT / config["tokenizer_path"]))
@@ -43,10 +60,54 @@ class NativeScale(Batch):
         self.pdf_hashes = set()
         self.xml_hashes = set()
         super().__init__(config)
+        self.end = continuation_deadline(config, self.end, datetime.now(PST))
+        self.state["stop_at_pst"] = self.end.isoformat()
+        if config.get("authorized_continuation"):
+            self.state["authorized_continuation"] = config["authorized_continuation"]
+        # A prior outage is historical; the new request will set live wait state.
+        self.state.pop("network_outage", None)
         for p in self.state["papers"]:
             self.titles.add(title_key(p["title"]))
             self.pdf_hashes.add(p["pdf_sha256"])
             self.xml_hashes.add(p["xml_sha256"])
+        self.persist()
+
+    def wait_for_network(self, seconds):
+        until = time.monotonic() + seconds
+        while time.monotonic() < until:
+            self.guard()
+            time.sleep(min(5, max(0, until - time.monotonic())))
+
+    def request(self, url, maximum, output=None):
+        started = time.monotonic()
+        wait = self.config.get("network_retry_initial_seconds", 30)
+        maximum_wait = self.config.get("network_outage_budget_seconds", 1800)
+        attempt = 0
+        while True:
+            self.guard()
+            try:
+                raw = super().request(url, maximum, output)
+            except (URLError, TimeoutError) as exc:
+                attempt += 1
+                remaining = maximum_wait - (time.monotonic() - started)
+                self.state["network_outage"] = {
+                    "last_error": str(exc)[:240], "attempt": attempt,
+                    "last_failure_at_pst": now(), "source_url": public_url(url),
+                }
+                if remaining <= 0:
+                    raise NetworkUnavailable("Network outage recovery budget exhausted; pending candidate retained") from exc
+                delay = min(wait, remaining)
+                self.state["network_outage"]["retry_after_seconds"] = delay
+                previous_stage = self.state.get("stage", "download_and_native_parse")
+                self.state["stage"] = "waiting_for_network"
+                self.event(f"NETWORK WAIT attempt={attempt} seconds={delay:.1f}; retrying the same request")
+                self.wait_for_network(delay)
+                self.state["stage"] = previous_stage
+                wait = min(wait * 2, self.config.get("network_retry_maximum_seconds", 300))
+            else:
+                if self.state.pop("network_outage", None):
+                    self.event("NETWORK RECOVERED; continuing the pending request")
+                return raw
 
     def metadata(self, pmcid):
         meta, raw, url = super().metadata(pmcid)
@@ -221,15 +282,27 @@ class NativeScale(Batch):
         summary = {"batch_id": self.config["batch_id"], "updated_at_pst": now(),
             "status": self.state["status"], "stage": self.state.get("stage"),
             "target_papers": self.config["target_papers"], "ready_papers": len(papers),
+            "target_reached": len(papers) >= self.config["target_papers"],
+            "remaining_papers": max(0, self.config["target_papers"] - len(papers)),
             "reused_papers": sum(bool(p.get("reused_from_batch")) for p in papers),
             "figure_assets_retained": sum(p.get("figure_assets_retained", 0) for p in papers),
             "figures_without_assets": sum(p.get("figures_without_assets", 0) for p in papers),
+            "media_failures": sum(len(p.get("media_failures", [])) for p in papers),
+            "total_text_tokens": sum(p.get("text_tokens", 0) for p in papers),
+            "total_text_chunks": sum(p.get("text_chunks", 0) for p in papers),
+            "total_main_article_tables": sum(p.get("tables", 0) for p in papers),
+            "total_source_table_cells": sum(p.get("full_source_table_cells", 0) for p in papers),
             "downloaded_response_bytes": self.state["downloaded_response_bytes"],
             "logical_artifact_bytes": self.state.get("artifact_bytes", 0),
             "journal_counts": dict(Counter(p["journal"] for p in papers)),
             "gpu_count": 0, "model_inference": False, "model_training": False,
             "stop_at_pst": self.state.get("stop_at_pst"),
             "limit_reason": self.state.get("limit_reason"), "error": self.state.get("error"),
+            "authorized_continuation": self.state.get("authorized_continuation"),
+            "network_outage": self.state.get("network_outage"),
+            "maximum_download_bytes": self.config["maximum_download_bytes"],
+            "maximum_artifact_bytes": self.config["maximum_artifact_bytes"],
+            "historical_connection_refused_attempts": sum("Connection refused" in r.get("reason", "") for r in self.state["rejected"]),
             "scope": "native XML text/full source tables and original figure assets; separate supplements not downloaded",
             "limitations": ["Topic-selected convenience sample, not representative sampling.",
                 "Source checks do not validate biological figure interpretation.",
@@ -247,7 +320,16 @@ class NativeScale(Batch):
             f"Updated {summary['updated_at_pst']} (fixed PST).\n\n"
             f"Original figure assets retained: **{summary['figure_assets_retained']}**. "
             f"Figure records without assets: **{summary['figures_without_assets']}**.\n\n"
+            f"Extracted text: **{summary['total_text_tokens']:,} tokens** in {summary['total_text_chunks']:,} chunks; "
+            f"main-article tables: **{summary['total_main_article_tables']:,}**.\n\n"
             "[Paper manifest](papers.csv) · [Exact summary and limits](summary.json)\n\n"
+            "The first run stopped at 295 papers after connection failures. The user authorized continuing "
+            "on October 15; the recorded continuation cutoff is "
+            f"**{summary['stop_at_pst']}** (fixed PST). Existing papers and cumulative response-byte/storage "
+            "counters are retained. Transient failures now wait with backoff and retry the same request. "
+            "The first run's `candidate_pool_exhausted` status did not establish exhaustion of eligible PMC papers.\n\n"
+            f"Cumulative downloaded response bodies: **{summary['downloaded_response_bytes'] / 2**30:.2f} GiB / 5 GiB**; "
+            f"logical artifacts: **{summary['logical_artifact_bytes'] / 2**30:.2f} GiB / 8 GiB**.\n\n"
             "Full PDF/XML, source images, extracted text, source-table TSVs and structured citation/context "
             "records stay on RustFS in the source_directory listed in the manifest. "
             "This batch runs one serial CPU/network worker, no OCR, no recaptioning and no training. "
@@ -262,6 +344,8 @@ class NativeScale(Batch):
             self.acquire()
             self.state.update(status="completed" if len(self.state["papers"]) >= self.config["target_papers"] else "candidate_pool_exhausted",
                               stage="finished", finished_at_pst=now())
+        except NetworkUnavailable as exc:
+            self.state.update(status="network_unavailable", stage="finished", error=str(exc), finished_at_pst=now())
         except LimitReached as exc:
             self.state.update(status="limited", stage="finished", limit_reason=str(exc), finished_at_pst=now())
         except Exception as exc:

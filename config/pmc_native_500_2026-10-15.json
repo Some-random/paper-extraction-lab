@@ -117,7 +117,8 @@
     "Native XML text, full article tables, cited titles/authors and source image assets only. No OCR, generated captions, inference, model training, or separate supplementary-file downloads.",
     "Reuse eligible cached sources by hardlink; exclude duplicate PMCID/DOI/title/PDF/XML hashes and model/extraction-method titles. Preserve previous batch.",
     "Topic-selected starter corpus, not a representative or exhaustive CNS sample. Stop at 500 papers, 5 GiB response payload, 8 GiB logical artifacts, 10 hours, or 32 GiB filesystem free space.",
-    "At most 8 MiB per figure asset, 20 MiB per PDF, 5 MiB per XML, 60 PDF pages; unresolved media remain explicit."
+    "At most 8 MiB per figure asset, 20 MiB per PDF, 5 MiB per XML, 60 PDF pages; unresolved media remain explicit.",
+    "October 15 user authorized continuing. SOCKS-compatible HTTPS client and in-place network backoff; retain cumulative storage/download counters and record a fixed continuation cutoff using unused original worker time."
   ],
   "report_directory": "reports/pmc_native_500_2026-10-15",
   "maximum_asset_bytes": 8388608,
@@ -128,5 +129,19 @@
   "tokenizer_path": "cache/huggingface/hub/models--allenai--olmOCR-2-7B-1025/snapshots/e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
   "citation_metadata_path": "config/pmc_citation_metadata.json",
   "maximum_text_chunk_tokens": 2048,
-  "excluded_method_title_pattern": "large language|foundation model|explainable AI decision support|evaluation of multimodal models|document extraction|optical character recognition"
+  "excluded_method_title_pattern": "large language|foundation model|explainable AI decision support|evaluation of multimodal models|document extraction|optical character recognition",
+  "authorized_continuation": {
+    "authorized_at_pst": "2026-10-15T11:57:37.264806-08:00",
+    "user_instruction": "so like there isn't anything problemitc in particular, and you can actually keep going, right?",
+    "papers_at_resume": 295,
+    "previous_stop_at_pst": "2026-10-15T09:27:20.013651-08:00",
+    "prior_worker_elapsed_seconds": 15983.836364,
+    "additional_runtime_seconds": 20016.163635999997,
+    "maximum_session_hours": 5.5600454544444435,
+    "stop_before_pst": "2026-10-15T17:31:13.428442-08:00",
+    "budget_note": "Use the unused portion of the original ten-hour worker allowance in this explicitly authorized continuation; original started_at and cumulative byte counters remain intact."
+  },
+  "network_retry_initial_seconds": 30,
+  "network_retry_maximum_seconds": 300,
+  "network_outage_budget_seconds": 1800
 }

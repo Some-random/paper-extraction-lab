@@ -1,25 +1,11 @@
-**Biological source batch: 295 of 500 papers ready**
+**Paper acquisition paused at the user's request: 295/500 ready**
 
-The 500-paper target is **not complete**. The serial worker stopped at **03:53 PST on October 15, 2026**, after repeated connection failures. Of the 295 completed papers, **49** reused eligible sources from the previous batch and **246** were newly acquired. No document worker is currently running.
+The download worker is stopped and its STOP file remains present. On October 15 the user asked to do downloading later and first consolidate foundation-model papers and related information. The shared literature home is the [foundation-model catalog](../bio_foundation_review_2026-10-15/README.md).
 
-The worker's recorded status is `candidate_pool_exhausted`: it exhausted the attempted candidate list, including **1,404 attempts that failed with Connection refused**. This does **not** mean that PMC has no more eligible papers. The original runtime deadline was **09:27 PST on October 15**; it has passed and was not reset. Status checked 2026-10-15T11:28:25.809225-08:00 (fixed PST, UTC-8).
+[Paper manifest](papers.csv) · [Exact summary and resource counters](summary.json)
 
-[All 295 papers: manifest](papers.csv) · [Exact counts, limits and diagnostics](summary.json) · [Original storage/time estimate](scaling_estimate.md)
+Retained completed papers: **295**, including **49** reused sources and **246** newly acquired papers. Their outputs include **2,058 original figure images**, **342 main-article tables**, and **6,932,658 text tokens**. This batch uses publisher XML parsing and source figure downloads, with zero GPUs and no new OCR or training.
 
-| Retained output | Count |
-|---|---:|
-| Papers with source PDF/XML and extraction files | 295 |
-| Source PDF pages | 9,274 |
-| Original figure image assets | 2,058 |
-| Figure records without assets | 0 |
-| Recorded media download failures | 0 |
-| Main-article tables | 342 |
-| Source table cells | 51,195 |
-| Extracted text tokens, using the configured tokenizer | 6,932,658 |
-| Text chunks, at most 2,048 tokens each | 3,976 |
+The first run stopped at 03:53 PST after connection failures; its candidate_pool_exhausted label did not establish exhaustion of available PMC papers. A short user-authorized continuation checked a SOCKS-compatible HTTPS client and was then stopped at the user's request before another paper was accepted. Partial source downloads remain preserved. See the [continuation record](resumption.md) and [checks](resumption_checks.json).
 
-The batch downloaded **1.95 GiB** of response bodies and recorded **2.80 GiB** of logical artifacts, below its 5 GiB / 8 GiB caps. Hardlinked cached inputs are included in logical artifact size. It used **zero GPUs** and ran no new OCR, model inference or training.
-
-All 295 papers have source PDF/XML/metadata, structured document and validation JSON, extracted article Markdown, original figures with captions, text chunks and interleaved records. Full main-article table TSVs and source citation/context records are retained. Required output files were checked locally. These are structural/provenance checks against publisher XML, not independent biological correctness or OCR accuracy evaluation. Source bibliography metadata is incomplete in some entries: 960 references lack titles and 725 lack authors; missing fields were not invented.
-
-Full PDFs/XML, source images and bulk extracted results remain on RustFS in each manifest row's `source_directory`. GitHub contains the compact report and manifest. Separate supplementary files were not downloaded.
+Cumulative response bodies: **1.95 GiB / 5 GiB**. Logical artifacts: **2.80 GiB / 8 GiB**. Bulk PDFs/XML, original images and extracted files remain on RustFS in each manifest row's source_directory. The original 50-paper experiment remains unchanged.

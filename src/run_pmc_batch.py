@@ -258,6 +258,8 @@ class Batch:
                         raise Rejected('Object exceeds per-file byte cap')
                     if expected > network_left:
                         raise LimitReached('Network payload cap reached')
+                    if header.get('http_status') and not header.get('retryable', True):
+                        raise Rejected('HTTP ' + str(header['http_status']) + ': source object unavailable')
                     raise urllib.error.URLError(header.get('error', 'HTTPS bridge failed'))
                 total = 0
                 chunks = []

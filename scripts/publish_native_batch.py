@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PST = timezone(timedelta(hours=-8))
-TERMINAL = {"completed", "limited", "failed", "candidate_pool_exhausted"}
+TERMINAL = {"completed", "limited", "failed", "candidate_pool_exhausted", "network_unavailable"}
 
 
 def command(*args):

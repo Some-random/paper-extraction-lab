@@ -1,0 +1,27 @@
+{
+  "checked_at_pst": "2026-10-15T11:57:37.264806-08:00",
+  "checks": [
+    {
+      "check": "s3_metadata_listing",
+      "header": {
+        "ok": true,
+        "content_length": 0
+      },
+      "received_bytes": 571,
+      "exit_code": 0
+    },
+    {
+      "check": "pmc_policy",
+      "header": {
+        "ok": true,
+        "content_length": 82989
+      },
+      "received_bytes": 82989,
+      "exit_code": 0
+    }
+  ],
+  "regression_tests_passed": 15,
+  "diagnosis": "urllib ProxyHandler does not support the supplied socks5h proxy; requests[socks] retrieved the same PMC S3 metadata listing successfully, with TLS verification enabled. This diagnoses the current connection problem; earlier connection-refused events do not prove their original cause.",
+  "remaining_runtime_seconds": 20016.163635999997,
+  "stop_at_pst": "2026-10-15T17:31:13.428442-08:00"
+}

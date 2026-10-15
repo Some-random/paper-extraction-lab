@@ -110,3 +110,23 @@ cumulative hours or a 32 GiB shared-filesystem free-space floor. Preserve the
 old batch and its expired budget. The new batch has its own lock/state/STOP
 file; resuming does not reset its runtime allowance. Publish compact reports
 and manifests to GitHub; bulk source and extraction artifacts stay on RustFS.
+
+On October 15, the user explicitly asked to keep going after the first run
+stopped at 295 papers during a network outage. The recorded continuation in
+the same config uses the unused 5h 33m 36s of the original ten-hour worker
+allowance, with a fixed cutoff of October 15 17:31:13 PST. Preserve original
+timestamps and cumulative 5 GiB download / 8 GiB artifact counters; do not
+extend this cutoff on another resume. `resumption_launch.json` records the
+new PID. The HTTPS bridge now uses existing requests[socks] for the supplied
+SOCKS proxy; bounded backoff retries the pending request before advancing.
+Persistent outages must be reported as network_unavailable, not candidate
+exhaustion. All other native-only, serial and zero-GPU constraints still apply.
+
+The user subsequently said to do downloading later and prioritize aggregating
+foundation-model papers and related information. The resumed download worker
+has stopped via its STOP file; leave it stopped. Consolidate literature in
+`reports/bio_foundation_review_2026-10-15/review.json`, with generated Markdown
+pages and CSV in that same directory. This is the shared literature home for
+paper-extraction-lab and bio-evaluation. Update existing model entries instead
+of starting separate coverage-update tables. Evaluation protocols and frozen
+source/run provenance stay in their original project and link to the catalog.
