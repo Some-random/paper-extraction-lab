@@ -1,0 +1,125 @@
+{
+  "pipeline": "native_training_v3_preview",
+  "created_at_pst": "2026-10-14T20:42:29.106737-08:00",
+  "papers": [
+    {
+      "pmcid": "PMC13651886",
+      "title": "Canonical Wnt induction by OTULIN prevents keratinocyte death and skin inflammation",
+      "journal": "Science Advances",
+      "retained_blocks": 43,
+      "retained_paragraphs": 33,
+      "excluded_blocks": 55,
+      "exclusion_reasons": {
+        "administrative_section": 6,
+        "bibliography": 49
+      },
+      "figures": 6,
+      "tables": 2,
+      "downloaded_figure_assets": 6,
+      "visuals_with_context": 8,
+      "text_chunks": 9,
+      "text_tokens": 14875,
+      "interleaved_records": 9,
+      "review_examples": 3,
+      "baseline_paragraphs": 38,
+      "checks": {
+        "kind": "structural/provenance checks, not independent accuracy",
+        "packed_blocks_reconstructed": 43,
+        "eligible_blocks": 43,
+        "context_edges_verified_against_raw_xml": 45,
+        "table_cells_with_resolving_xpaths": 146,
+        "unresolved_figure_table_refs": 0,
+        "duplicate_visual_ids": [],
+        "longest_text_chunk_tokens": 2004
+      },
+      "original_source_hashes_unchanged": true
+    },
+    {
+      "pmcid": "PMC13655163",
+      "title": "Genome-wide analysis of 439 mass spectrometry-based proteomic profiles in a population of 15,035 Scottish individuals",
+      "journal": "Nature Communications",
+      "retained_blocks": 51,
+      "retained_paragraphs": 42,
+      "excluded_blocks": 93,
+      "exclusion_reasons": {
+        "non_primary_abstract_web-summary": 1,
+        "administrative_section": 9,
+        "administrative_or_external_material": 1,
+        "bibliography": 82
+      },
+      "figures": 5,
+      "tables": 2,
+      "downloaded_figure_assets": 5,
+      "visuals_with_context": 7,
+      "text_chunks": 7,
+      "text_tokens": 11431,
+      "interleaved_records": 6,
+      "review_examples": 3,
+      "baseline_paragraphs": 69,
+      "checks": {
+        "kind": "structural/provenance checks, not independent accuracy",
+        "packed_blocks_reconstructed": 51,
+        "eligible_blocks": 51,
+        "context_edges_verified_against_raw_xml": 12,
+        "table_cells_with_resolving_xpaths": 72,
+        "unresolved_figure_table_refs": 0,
+        "duplicate_visual_ids": [],
+        "longest_text_chunk_tokens": 1996
+      },
+      "original_source_hashes_unchanged": true
+    },
+    {
+      "pmcid": "PMC13645648",
+      "title": "Lsp2 links early-life diet to adult translation and lifespan in Drosophila",
+      "journal": "Nature",
+      "retained_blocks": 79,
+      "retained_paragraphs": 65,
+      "excluded_blocks": 93,
+      "exclusion_reasons": {
+        "non_primary_abstract_web-summary": 1,
+        "administrative_section": 11,
+        "administrative_or_external_material": 1,
+        "bibliography": 80
+      },
+      "figures": 14,
+      "tables": 0,
+      "downloaded_figure_assets": 14,
+      "visuals_with_context": 14,
+      "text_chunks": 14,
+      "text_tokens": 24607,
+      "interleaved_records": 8,
+      "review_examples": 3,
+      "baseline_paragraphs": 108,
+      "checks": {
+        "kind": "structural/provenance checks, not independent accuracy",
+        "packed_blocks_reconstructed": 79,
+        "eligible_blocks": 79,
+        "context_edges_verified_against_raw_xml": 122,
+        "table_cells_with_resolving_xpaths": 0,
+        "unresolved_figure_table_refs": 0,
+        "duplicate_visual_ids": [],
+        "longest_text_chunk_tokens": 2043
+      },
+      "original_source_hashes_unchanged": true
+    }
+  ],
+  "document_workers": 1,
+  "gpu_count": 0,
+  "model_inference": false,
+  "model_training": false,
+  "teacher_generation": false,
+  "tokenizer": "Cached Qwen-family tokenizer from the pinned olmOCR checkpoint, used on CPU only to demonstrate text packing. Re-tokenize for the eventual training backbone. No OCR model is run for the XML branch.",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "maximum_text_chunk_tokens": 2048,
+  "asset_bytes": 4023282,
+  "new_download_bytes": 0,
+  "seconds": 3.399,
+  "timing_scope": "This invocation, including cache reuse. Figure acquisition may have occurred in an earlier invocation.",
+  "limitations": [
+    "Three selected papers; engineering diagnostics, not a representative benchmark.",
+    "XML is the production source here, not an independently human-adjudicated gold reference.",
+    "Exact source links and PDF text corroboration do not validate image interpretation or scientific claims.",
+    "No learned educational classifier, entity linker, synthetic teacher, training-value ablation or new OCR run was executed.",
+    "Interleaved records preserve source context but are not vision-tokenized or packed for a particular VLM."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "papers": 3,
+  "embedded_source_images": 25,
+  "source_tables": 4,
+  "caption_blocks": 29,
+  "source_linked_context_records": 23,
+  "source_supported_examples": 9,
+  "context_edges": 179,
+  "source_table_cells": 218,
+  "text_chunks": 30,
+  "text_tokens": 50913,
+  "maximum_chunk_tokens": 2043,
+  "retained_artifact_bytes": 21513758,
+  "media_bytes": 4023282,
+  "offline_html_bytes": 6189091,
+  "offline_zip_bytes": 4437572,
+  "tests": "5 scientific content/provenance regression tests passed",
+  "note": "Source preservation and consistency checks only; no independent gold accuracy or training benefit measured."
+}

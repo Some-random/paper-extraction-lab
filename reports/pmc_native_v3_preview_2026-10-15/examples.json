@@ -1,0 +1,269 @@
+[
+  {
+    "question": "What forward qPCR primer is listed for mouse Axin2?",
+    "answer": "CTCACCCATTTACCCAGGACC",
+    "type": "source_table_lookup",
+    "source_visual_id": "PMC13651886:T1",
+    "source_xpath": "/article/body/sec[2]/sec[1]/table-wrap[1]/table/tbody/tr[1]/td[1]",
+    "row_label": "Axin2",
+    "column_header_path": [
+      "Forward primer"
+    ],
+    "source_quote": "CTCACCCATTTACCCAGGACC",
+    "required_pdf_literals": [
+      "CTCACCCATTTACCCAGGACC"
+    ],
+    "validation": "exact source-cell lookup; not a reasoning benchmark",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "CTCACCCATTTACCCAGGACC",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13651886",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "source_pdf_sha256": "39d9334992c91e38f806860d15b8c4f67ec48b7d17fe02f7cfe8518072c885ef"
+  },
+  {
+    "question": "What reverse qPCR primer is listed for mouse Axin2?",
+    "answer": "GTTCCTGTCCCTCTGCTGAC",
+    "type": "source_table_lookup",
+    "source_visual_id": "PMC13651886:T1",
+    "source_xpath": "/article/body/sec[2]/sec[1]/table-wrap[1]/table/tbody/tr[1]/td[2]",
+    "row_label": "Axin2",
+    "column_header_path": [
+      "Reverse primer"
+    ],
+    "source_quote": "GTTCCTGTCCCTCTGCTGAC",
+    "required_pdf_literals": [
+      "GTTCCTGTCCCTCTGCTGAC"
+    ],
+    "validation": "exact source-cell lookup; not a reasoning benchmark",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "GTTCCTGTCCCTCTGCTGAC",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13651886",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "source_pdf_sha256": "39d9334992c91e38f806860d15b8c4f67ec48b7d17fe02f7cfe8518072c885ef"
+  },
+  {
+    "question": "What concentration is listed for the cleaved caspase-3 antibody?",
+    "answer": "1/500",
+    "type": "source_table_lookup",
+    "source_visual_id": "PMC13651886:T2",
+    "source_xpath": "/article/body/sec[2]/sec[1]/table-wrap[2]/table/tbody/tr[1]/td[1]",
+    "row_label": "Cleaved caspase-3",
+    "column_header_path": [
+      "Concentration"
+    ],
+    "source_quote": "1/500",
+    "required_pdf_literals": [
+      "1/500"
+    ],
+    "validation": "exact source-cell lookup; not a reasoning benchmark",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "1/500",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13651886",
+    "source_xml_sha256": "81379a62b9eb5611267e6ad9a97dd18da95946f8bd523c1f4d870d209334a014",
+    "source_pdf_sha256": "39d9334992c91e38f806860d15b8c4f67ec48b7d17fe02f7cfe8518072c885ef"
+  },
+  {
+    "question": "What sample size is listed for the Sun et al. comparator study?",
+    "answer": "54,219",
+    "type": "source_table_lookup",
+    "source_visual_id": "PMC13655163:Tab1",
+    "source_xpath": "/article/body/sec[2]/sec[2]/p/table-wrap/table/tbody/tr[2]/td[2]",
+    "row_label": "Sample size",
+    "column_header_path": [
+      "Sun et al.^(11)"
+    ],
+    "source_quote": "54,219",
+    "required_pdf_literals": [
+      "54,219"
+    ],
+    "validation": "exact source-cell lookup; not a reasoning benchmark",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "54,219",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13655163",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "source_pdf_sha256": "d2d0b9c2a0bb839aebf0e1326ea5f21e4906246fbc9385e4a42708f3c9dca75c"
+  },
+  {
+    "question": "What count is listed for Unique Proteins in Table 2?",
+    "answer": "133",
+    "type": "source_table_lookup",
+    "source_visual_id": "PMC13655163:Tab2",
+    "source_xpath": "/article/body/sec[4]/sec[4]/p[6]/table-wrap/table/tbody/tr[1]/td[2]",
+    "row_label": "Unique Proteins",
+    "column_header_path": [
+      "Count (n)"
+    ],
+    "source_quote": "133",
+    "required_pdf_literals": [
+      "133"
+    ],
+    "validation": "exact source-cell lookup; not a reasoning benchmark",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "133",
+        "pages": [
+          7,
+          8
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13655163",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "source_pdf_sha256": "d2d0b9c2a0bb839aebf0e1326ea5f21e4906246fbc9385e4a42708f3c9dca75c"
+  },
+  {
+    "question": "How does the abstract qualify its protein–outcome causal associations?",
+    "answer": "The authors report putative causal associations between 13 proteins and 17 outcomes.",
+    "type": "source_supported_reading_example",
+    "source_block_id": "PMC13655163:block0000",
+    "source_xpath": "/article/front/article-meta/abstract[1]",
+    "source_quote": "We report putative causal associations between 13 proteins and 17 outcomes",
+    "required_pdf_literals": [
+      "13 proteins and 17 outcomes"
+    ],
+    "validation": "assistant source check; not independent human adjudication or generated chain of thought",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "13 proteins and 17 outcomes",
+        "pages": [
+          1
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13655163",
+    "source_xml_sha256": "97e641a7dc4d071addad7783390ce524d62b1987d247f4508e3f9bd712d83784",
+    "source_pdf_sha256": "d2d0b9c2a0bb839aebf0e1326ea5f21e4906246fbc9385e4a42708f3c9dca75c"
+  },
+  {
+    "question": "What median lifespans were reported for lifelong versus early-adult Lsp2 knockdown in the 8% condition?",
+    "answer": "67 days for lifelong knockdown and 63 days for early-adult knockdown; the authors state that their difference was not statistically significant.",
+    "type": "source_supported_reading_example",
+    "source_block_id": "PMC13645648:block0035",
+    "source_xpath": "/article/body/sec[7]/p[5]",
+    "source_quote": "There was no statistical significance between adult-lifelong Lsp2 knockdown (8% RU) and early-adult-specific Lsp2 knockdown (8% 1 week RU), although median lifespan for the 8% RU condition (67 days) was greater than that for the 8%-1-week-RU condition (63 days) (Fig. 4r).",
+    "required_pdf_literals": [
+      "67",
+      "63",
+      "no statistical significance"
+    ],
+    "validation": "assistant source check; not independent human adjudication or generated chain of thought",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "67",
+        "pages": [
+          2,
+          6,
+          7,
+          8,
+          9,
+          11,
+          13,
+          15,
+          16,
+          31
+        ]
+      },
+      {
+        "literal": "63",
+        "pages": [
+          4,
+          7,
+          11,
+          12,
+          15,
+          16,
+          31,
+          32
+        ]
+      },
+      {
+        "literal": "no statistical significance",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13645648",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "source_pdf_sha256": "9db59ec317ba5505c37b0db9547fac47abef19d05498e1bdfff6f055f8d0cc98"
+  },
+  {
+    "question": "Did combining early-life protein restriction with transient early-adult Lsp2 knockdown always extend lifespan?",
+    "answer": "No. The authors report shortened lifespan for that combination.",
+    "type": "source_supported_reading_example",
+    "source_block_id": "PMC13645648:block0035",
+    "source_xpath": "/article/body/sec[7]/p[5]",
+    "source_quote": "By contrast, when ePR was combined with early-adult-specific Lsp2 knockdown, lifespan was shortened (Fig. 4r; 1% ethanol versus 1% 1 week RU).",
+    "required_pdf_literals": [
+      "lifespan was shortened"
+    ],
+    "validation": "assistant source check; not independent human adjudication or generated chain of thought",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "lifespan was shortened",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13645648",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "source_pdf_sha256": "9db59ec317ba5505c37b0db9547fac47abef19d05498e1bdfff6f055f8d0cc98"
+  },
+  {
+    "question": "What did the abstract report after genetic silencing of Lsp2?",
+    "answer": "Reduced ribosomal-protein abundance and translation in early adulthood, with extended lifespan.",
+    "type": "source_supported_reading_example",
+    "source_block_id": "PMC13645648:block0000",
+    "source_xpath": "/article/front/article-meta/abstract[1]",
+    "source_quote": "Genetic silencing of Lsp2 phenocopies ePR, attenuating ribosomal-protein abundance and translational activity in early adulthood, and extending lifespan.",
+    "required_pdf_literals": [
+      "Genetic silencing of Lsp2 phenocopies ePR"
+    ],
+    "validation": "assistant source check; not independent human adjudication or generated chain of thought",
+    "pdf_text_literal_checks": [
+      {
+        "literal": "Genetic silencing of Lsp2 phenocopies ePR",
+        "pages": [
+          1
+        ]
+      }
+    ],
+    "pdf_text_corroboration": true,
+    "pmcid": "PMC13645648",
+    "source_xml_sha256": "592a9c913492a9d1cf3b650b8b3c68347bc691966831d0257b8dfb4837c8f320",
+    "source_pdf_sha256": "9db59ec317ba5505c37b0db9547fac47abef19d05498e1bdfff6f055f8d0cc98"
+  }
+]

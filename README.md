@@ -1,12 +1,56 @@
 # Biology paper extraction lab
 
-The active experiment applies Ryze-style evidence binding to **actual experimental
-biology papers** and compares extraction tools on the same source pages. Ryze
-and OLMo are method references, not extraction targets.
+The project converts **experimental biology papers** into source-linked text,
+tables, figures, and training-data candidates. Foundation-model reports inform
+the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 Everything is stored in `/data/rustfs1/dongweij/paper-extraction-lab`.
 Experiments run sequentially with one document/inference worker, at most one
 GPU, no subagents, and no new SSH connections.
+
+## Updated native-source preview: three papers
+
+Read the [three-paper results directly on GitHub](reports/pmc_native_v3_preview_2026-10-15/README.md).
+Each paper has readable examples, original figures with captions and referring
+paragraphs, source tables, the cleaned article, and training-record previews.
+It includes 140 research paragraphs, 25 original figure images, four source
+tables, 30 text chunks of at most 2,048 tokens, 23 figure/table–context records,
+and nine source-checked reading/lookup examples. The tracked
+[summary](reports/pmc_native_v3_preview_2026-10-15/summary.json) and
+[examples](reports/pmc_native_v3_preview_2026-10-15/examples.json) include provenance.
+
+The preview uses the same CC BY OTULIN/Wnt, population-proteomics, and Lsp2
+papers already cached in the October 14 batch. It parses publisher XML, retains
+paragraph/section boundaries and scientific notation, separates figures/tables
+nested inside publisher paragraphs, preserves merged cells, and connects
+context only through explicit figure/table references. Merged table values are
+not repeated as independent counts in the text representation. Bibliographies
+and administrative sections are routed outside the training-text stream;
+their sources and exclusion reasons remain available.
+
+Original figure files are matched by XML filename and checked against the
+official media-manifest checksum. The GitHub documents include all 25 figure
+images and link to the unchanged earlier olmOCR text. The source PDFs/XML remain
+on RustFS. This run uses one CPU worker and no GPU, teacher API, new OCR
+inference, or training. Quality checks are structural/provenance diagnostics,
+not an independent scientific or OCR-accuracy benchmark. No learned educational
+classifier or biological entity linker has been run.
+
+```bash
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 \
+  TOKENIZERS_PARALLELISM=false .venv/bin/python src/run_native_preview.py
+.venv/bin/python scripts/export_github_preview.py
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+Configuration is in [config/pmc_native_v3_preview.json](config/pmc_native_v3_preview.json).
+The text-packing demonstration uses the cached Qwen-family tokenizer on CPU;
+re-tokenize for the eventual training backbone. Multimodal records have explicit
+source-linked segments but have not been vision-tokenized for a particular VLM.
+
+The [foundation-model training-data review](reports/bio_foundation_review_2026-10-15/README.md)
+is also readable directly on GitHub, with primary sources and disclosure gaps
+for 17 model families and three training-data studies.
 
 ## Overnight download and full-paper extraction
 

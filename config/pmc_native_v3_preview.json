@@ -1,0 +1,21 @@
+{
+  "batch": "pmc_cns_biology_2026-10-14",
+  "destination": "experiments/pmc_native_v3_preview_2026-10-15",
+  "report_directory": "reports/pmc_native_v3_preview_2026-10-15",
+  "papers": [
+    {"pmcid": "PMC13651886", "featured_figure": "F1", "purpose": "Primer sequences, merged antibody-table cells, and experimental figure context"},
+    {"pmcid": "PMC13655163", "featured_figure": "Fig1", "purpose": "Quantitative cohort comparisons, protein annotations, and numerical notation"},
+    {"pmcid": "PMC13645648", "featured_figure": "Fig4", "purpose": "Figure-heavy experimental biology and developmental versus adult intervention context"}
+  ],
+  "maximum_download_bytes": 25165824,
+  "maximum_asset_bytes": 2097152,
+  "maximum_artifact_bytes": 67108864,
+  "minimum_free_bytes": 34359738368,
+  "fetch_figure_assets": true,
+  "document_workers": 1,
+  "gpu_count": 0,
+  "maximum_text_chunk_tokens": 2048,
+  "tokenizer_path": "cache/huggingface/hub/models--allenai--olmOCR-2-7B-1025/snapshots/e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
+  "tokenizer_note": "Cached Qwen-family tokenizer from the pinned olmOCR checkpoint, used on CPU only to demonstrate text packing. Re-tokenize for the eventual training backbone. No OCR model is run for the XML branch.",
+  "policy": "Preserve all source PDFs/XML and prior outputs. Keep research text, captions, source tables and explicit references. Route bibliography/administrative material outside the CPT stream. Heuristic flags are not learned quality scores. No teacher generation or model training."
+}
