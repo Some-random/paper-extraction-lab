@@ -4,7 +4,7 @@ The comparison below focuses on **continued pretraining (CPT)**: starting with a
 
 Counts follow each paper’s reported budget and may include general text, other sciences and biological sequences. The **Source** column links to the paper and detailed notes.
 
-[Processing diagram](data_pipeline.md#processing-diagram).
+[Processing recipe](data_pipeline.md).
 
 ## Continued pretraining
 

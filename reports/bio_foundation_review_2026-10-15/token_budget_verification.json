@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T20:57:19.913830-08:00",
+  "checked_at_pst": "2026-10-15T21:00:46.678320-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -404,26 +404,19 @@
     "detailed_count_definitions_preserved": true
   },
   "scientific_registry_fields_preserved_from_commit": "5b1f4d91e0a28ae282c2d246ad8d357ec4a888de",
-  "processing_diagram": {
-    "page": "data_pipeline.md#processing-diagram",
-    "format": "Two SVG figures",
-    "assets": [
-      "assets/corpus_preparation.svg",
-      "assets/scoring_and_mixing.svg"
-    ],
-    "paper_names_inside_figure": true,
-    "numeric_reference_markers": false,
-    "details_below_figures": false,
-    "implementation_status_labels": false,
+  "processing_recipe": {
+    "page": "data_pipeline.md",
+    "format": "Prose walkthrough with seven steps",
+    "inline_figures": false,
+    "named_references_beside_relevant_steps": true,
+    "source_links": 10,
+    "metadata_distinguished_from_model_visible_tags": true,
+    "explicit_cleaning_and_cross_source_deduplication": true,
     "reviewed_labels_and_held_out_scorer_validation": true,
     "non_text_validation_separate_from_prose_scoring": true,
-    "openthoughts3_controlled_source_filter_teacher_comparisons": true,
     "openthoughts3_sft_not_assumed_to_transfer_to_cpt": true,
-    "mixtures_selected_by_training_comparisons": true,
+    "mixtures_selected_by_controlled_training_comparisons": true,
     "conceptual_recipe_not_execution_report": true,
-    "source_links_in_svg": 19,
-    "distinct_source_pages": 10,
-    "visual_inspection": "Both SVGs rendered locally and inspected; paper labels and arrowheads visible.",
     "new_extraction_or_training_run_launched": false,
     "references": [
       {

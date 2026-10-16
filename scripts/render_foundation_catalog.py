@@ -413,7 +413,7 @@ def render(data, directory=REPORT):
         'Data-curation studies and released models appear together because both inform this choice.',
         'Counts follow each paper’s reported budget and may include general text, other sciences and '
         'biological sequences. The **Source** column links to the paper and detailed notes.',
-        '[Processing diagram](data_pipeline.md#processing-diagram).',
+        '[Processing recipe](data_pipeline.md).',
         '## Continued pretraining',
         'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
         overview_table(selected('cpt')),
@@ -480,7 +480,7 @@ def render(data, directory=REPORT):
                    'Keep overview links in the Source column (one Paper link and one Notes link). '
                    'Use a dash for unavailable category amounts and plain language for an unknown total. '
                    'Keep detailed counting definitions on study pages, without dagger markers in the overview. '
-                   'Keep the processing diagram, implementation actions and supporting papers in '
+                   'Keep the processing recipe, concrete actions and supporting papers in '
                    '`data_pipeline.md`; the catalog overview links to that page. '
                    'A venue or institution name is not an overall-quality measurement. '
                    'Record numerical allocation corrections explicitly in the token audit.',

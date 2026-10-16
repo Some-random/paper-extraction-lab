@@ -6,7 +6,6 @@ import re
 import sys
 import tempfile
 import unittest
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -318,7 +317,7 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertEqual(unknown_row['online_papers_status'], 'not_reported')
             self.assertEqual(unknown_row['online_papers_tokens'], '')
 
-    def test_processing_actions_and_papers_belong_with_the_diagram(self):
+    def test_processing_recipe_stays_separate_from_the_catalog(self):
         data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
         self.assertNotIn('extraction_plan', data)
         with tempfile.TemporaryDirectory() as temporary:
@@ -328,28 +327,15 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertNotIn('## What we need to do', overview)
             self.assertNotIn('Next implementation:', overview)
             self.assertNotIn('Build main-content', overview)
-            self.assertEqual(overview.count('(data_pipeline.md#processing-diagram)'), 1)
+            self.assertEqual(overview.count('[Processing recipe](data_pipeline.md)'), 1)
         pipeline = (ROOT / 'reports/bio_foundation_review_2026-10-15/data_pipeline.md').read_text()
-        figures = re.findall(r'!\[[^\]]+\]\((assets/[^)]+\.svg)\)', pipeline)
-        self.assertEqual(len(figures), 2)
-        namespace = {'svg': 'http://www.w3.org/2000/svg'}
-        labels = []
-        for relative in figures:
-            path = ROOT / 'reports/bio_foundation_review_2026-10-15' / relative
-            svg = ET.parse(path).getroot()
-            self.assertEqual(svg.tag, '{http://www.w3.org/2000/svg}svg')
-            self.assertIsNotNone(svg.find('svg:title', namespace))
-            self.assertIsNotNone(svg.find('svg:desc', namespace))
-            self.assertIsNone(svg.find('.//svg:script', namespace))
-            labels.extend(''.join(node.itertext()) for node in svg.findall('.//svg:text', namespace))
-            references = svg.findall('.//svg:a', namespace)
-            self.assertTrue(references)
-            self.assertTrue(all(node.attrib['href'].startswith('https://') for node in references))
-        text = '\n'.join(labels)
-        self.assertIn('OpenThoughts3', text)
-        self.assertIn('reasoning SFT', text)
-        self.assertNotRegex(text, r'Ryze|XLM-RoBERTa|\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')
-        self.assertEqual(pipeline.split(figures[-1] + ')', 1)[1].strip(), '')
+        self.assertNotIn('```mermaid', pipeline)
+        self.assertNotRegex(pipeline, r'!\[[^\]]*\]\(')
+        references = re.findall(r'\[([^\]]+)\]\((https://[^)]+)\)', pipeline)
+        self.assertIn('OpenThoughts3', [name for name, _ in references])
+        self.assertIn('OLMo 3', [name for name, _ in references])
+        self.assertIn('reasoning supervised fine-tuning (SFT)', pipeline)
+        self.assertNotRegex(pipeline, r'Ryze|XLM-RoBERTa|\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

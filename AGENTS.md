@@ -269,3 +269,12 @@ question difficulty, answer sampling and answer filtering results do not prove
 benefits for raw-paper CPT. Keep model selection empirical, use reviewed labels
 and held-out checks for scoring, and choose mixes by controlled training gains.
 This is documentation of a proposed recipe, not authorization to run training.
+
+The user then requested text instead of flowcharts, with more explanation so
+the recipe is readable. This supersedes the figure-only and two-SVG presentation
+instructions above. Keep a concise prose walkthrough in `data_pipeline.md`,
+with the relevant named papers beside each step. Explain extraction, metadata
+versus model-visible tags, citation expansion, explicit cleaning and duplicate
+checks, scorer labeling/training/validation, mixing experiments and token
+accounting. Preserve the OpenThoughts3 reasoning-SFT versus biological-CPT
+distinction. The catalog should link to it as the "Processing recipe".
