@@ -155,6 +155,7 @@
     ],
     "recommended_initial_capacity_tib": 4,
     "additional_million_papers_pdf_figure_bytes_proxy": 7899962537444.935,
+    "one_trillion_uint32_token_ids_bytes": 4000000000000,
     "shared_scratch_free_tib_snapshot": 1.4,
     "shared_scratch_snapshot_date_pst": "2026-10-16"
   },
@@ -166,6 +167,28 @@
     "broader_biological_yield": "unmeasured",
     "note": "The subset is included in the broader inventory, not additive. Counts are metadata candidates, not verified downloads. The 49.1B central forecast covers only the quantified subset plus the two imported datasets."
   },
+  "larger_source_inventory": [
+    {
+      "id": "olmo3_science_pdfs",
+      "name": "OLMo 3 / olmOCR science PDFs",
+      "amount": 972000000000,
+      "unit": "source_tokenizer_text_tokens",
+      "scope": "Academic documents across subjects; biological share not yet measured.",
+      "source": "https://arxiv.org/html/2512.13961v2#S3.SS4",
+      "release": "https://github.com/allenai/dolma3/blob/main/datasets/dolma3_mix/pools/9T/README.md",
+      "included_in_starter_forecast": false
+    },
+    {
+      "id": "opengenome2",
+      "name": "OpenGenome2 / Evo 2",
+      "amount": 8800000000000,
+      "unit": "nucleotide_positions_rounded",
+      "scope": "Biological sequence corpus; not a count in the local Qwen tokenizer or a cross-source deduplicated total.",
+      "source": "https://www.nature.com/articles/s41586-026-10176-5",
+      "release": "https://huggingface.co/datasets/arcinstitute/opengenome2",
+      "included_in_starter_forecast": false
+    }
+  ],
   "limitations": [
     "Low/high are sensitivity scenarios, not confidence intervals or measured retention rates.",
     "Research selection fractions (especially web 5/15/25%) and additional dedup retention are explicit assumptions.",

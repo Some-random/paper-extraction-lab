@@ -342,3 +342,10 @@ only the initial subset and two datasets, not the whole PMC inventory. Briefly
 explain TheBioCollection as biological database records, including sequences,
 molecular representations and annotations. Present a combined storage budget
 for the initial corpus, with assumptions and expansion costs in source planning.
+
+The user now wants other-modality counts before total tokens in both overview
+tables. The small starter forecast must not stand in for the full available
+source inventory: distinguish larger released scientific-text and genomic
+pools, their native counting units and unmeasured overlaps. BioReason's CPT
+classification was a question only; do not move it into the CPT table on that
+basis. Its reviewed DNA-LLM experiments use SFT and selected GRPO.

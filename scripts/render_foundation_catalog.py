@@ -210,14 +210,14 @@ def overview_row(entry):
     modalities = modality_overview(entry)
     refs = f"[Paper]({budget['sources'][0]['url']})<br>[Notes](papers/{entry['id']}.md)"
     # The overview omits direct-web counts; detailed pages and exports retain them.
-    visible_amounts = [amounts[0], amounts[2], amounts[3]]
-    return '| ' + ' | '.join([name] + visible_amounts + [modalities, assessment, authors, refs]) + ' |'
+    return '| ' + ' | '.join([name, amounts[0], amounts[2], modalities, amounts[3],
+                             assessment, authors, refs]) + ' |'
 
 
 def overview_table(entries, *, from_scratch=False):
     model_label = 'architecture' if from_scratch else 'starting checkpoint'
     return '\n'.join([
-        f'| Model /<br>{model_label} | Paper tokens /<br>origin | Dataset tokens /<br>sources | Total<br>tokens | Other modalities /<br>tokens | Paper<br>assessment | Authors /<br>institutions | Source |',
+        f'| Model /<br>{model_label} | Paper tokens /<br>origin | Dataset tokens /<br>sources | Other modalities /<br>tokens | Total<br>tokens | Paper<br>assessment | Authors /<br>institutions | Source |',
         '|:---|:---|:---|:---|:---|:---|:---|:---|',
         *(overview_row(entry) for entry in entries),
     ])
@@ -244,6 +244,8 @@ def starter_conclusion(estimate):
     reserve_tib = storage['recommended_initial_capacity_tib']
     additional_tib = storage['additional_million_papers_pdf_figure_bytes_proxy'] / 2**40
     modality = estimate['central_modality_tokens_conditional_on_prefix_representativeness']
+    larger = {source['id']: source for source in estimate['larger_source_inventory']}
+    pdfs, genomes = larger['olmo3_science_pdfs'], larger['opengenome2']
     return '\n\n'.join([
         '## Available data and overall storage',
         f"**The broader PMC inventory contains {availability['broader_xml_candidates'] / 1e6:.2f} million paper candidates.** "
@@ -251,7 +253,13 @@ def starter_conclusion(estimate):
         f"**{availability['journal_subset_xml_candidates']:,} candidate papers**. "
         'The journal list is an initial subset, not a limit on collection. '
         'The broader inventory includes clinical and other material; its research-biology yield is still unmeasured.',
-        f"**About {billion(central['research_starter_total_tokens'])} retained tokens; roughly {low}–{high}B across sensitivity scenarios.** "
+        '**Available sources extend well beyond 50B; that estimate covers only a first subset.** '
+        f"[OLMo 3’s scientific PDF pool]({pdfs['source']}) reports **{pdfs['amount'] / 1e9:g}B text tokens** across subjects. "
+        f"[OpenGenome2]({genomes['release']}) provides **{genomes['amount'] / 1e12:.1f}T nucleotide positions** of biological sequence. "
+        'A 1T-token corpus is therefore a plausible target when sequences are included. '
+        'A deduplicated biology-only total in our tokenizer still needs to be measured; '
+        'these published amounts use different units and overlap other sources.',
+        f"**First quantified subset: about {billion(central['research_starter_total_tokens'])} retained tokens; roughly {low}–{high}B across sensitivity scenarios.** "
         'This estimate covers the quantified journal subset and the two datasets below, not the whole PMC inventory. '
         'It is a forecast, not an already downloaded or processed corpus. '
         f"Deduplication alone leaves about **{billion(central['dedup_only_total_tokens'])}**; "
@@ -271,11 +279,13 @@ def starter_conclusion(estimate):
         f"{billion(modality['smiles_inchi_spans'])} SMILES/InChI tokens** within this same pool. "
         'These modality projections are less certain than source inventories and must not be added to the total. '
         'General-text replay is additional; available-pool proportions do not prescribe training weights.',
-        f'**Overall storage: reserve about {reserve_tib}TiB for this initial corpus.** '
+        f'**Overall storage: reserve about {reserve_tib}TiB for the first quantified subset.** '
         f'The combined estimate is **{overall_tib}TiB**, including retained paper PDFs/figures, XML, '
         'dataset text, token IDs, metadata, indexes and working space. '
         f'Each additional million retained papers adds roughly **{additional_tib:.1f}TiB** for PDFs and figures alone; '
-        'a larger paper collection needs a larger storage allocation. These projections exclude separate supplements '
+        'a larger paper collection needs a larger storage allocation. '
+        f"At 1T retained tokens, four-byte token IDs alone occupy {storage['one_trillion_uint32_token_ids_bytes'] / 2**40:.2f}TiB, "
+        'before text, originals and indexes. These projections exclude separate supplements '
         'and model/training files. [Inventories and storage assumptions](source_planning.md).',
     ])
 

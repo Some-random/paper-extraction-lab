@@ -110,6 +110,11 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertIn('9.32 million paper candidates', overview)
             self.assertIn('552,024 candidate papers', overview)
             self.assertIn('records from UniProt, PubChem', overview)
+            self.assertIn('972B text tokens', overview)
+            self.assertIn('8.8T nucleotide positions', overview)
+            self.assertIn('3.64TiB', overview)
+            self.assertTrue(all(not source['included_in_starter_forecast']
+                                for source in estimate['larger_source_inventory']))
             for removed in ('GPU-hours', '**Processing:**', 'Direct web tokens'):
                 self.assertNotIn(removed, overview)
             with (directory / 'catalog.csv').open(newline='') as handle:
@@ -229,7 +234,7 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(single, directory)
             overview = (directory / 'README.md').read_text()
-            self.assertIn('| Other modalities /<br>tokens | Paper<br>assessment |', overview)
+            self.assertIn('| Other modalities /<br>tokens | Total<br>tokens | Paper<br>assessment |', overview)
             self.assertIn('Text-only CPT; molecule/protein encoders used later', overview)
             self.assertIn('already included in the acquisition columns', overview)
             self.assertIn('Protein: 77.4B (1D 36B; 3D 38.5B; other 2.9B)', overview)
@@ -281,6 +286,7 @@ class TokenAccountingChecks(unittest.TestCase):
             header = next(line for line in overview.splitlines() if line.startswith('| Model /'))
             self.assertGreater(header.index('Authors /<br>institutions'), header.index('Paper<br>assessment'))
             self.assertGreater(header.index('Authors /<br>institutions'), header.index('Total<br>tokens'))
+            self.assertLess(header.index('Other modalities /<br>tokens'), header.index('Total<br>tokens'))
 
     def test_biomatrix_full_composition_reconciles_without_adding_routes_twice(self):
         model = entry('biomatrix')
@@ -354,7 +360,7 @@ class TokenAccountingChecks(unittest.TestCase):
                 self.assertEqual([label for label, _ in links], ['Paper', 'Notes'])
                 self.assertEqual(len({url for _, url in links}), 2)
             unknown = next(row for row in rows if row.startswith('| BioBERT<br>'))
-            self.assertIn('| —<br>PubMed abstracts; PMC full text | — | Not reported |', unknown)
+            self.assertIn('| —<br>PubMed abstracts; PMC full text | — | Text only | Not reported |', unknown)
             known_zero = next(row for row in rows if row.startswith('| BioMedLM<br>'))
             self.assertIn('| 0<br>via The Pile PubMed components (reused) | 34.6B', known_zero)
             self.assertIn('Figure images: not reported', overview)
