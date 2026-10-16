@@ -232,47 +232,87 @@ def cell(value):
 
 
 def starter_conclusion(estimate):
-    """Show source inventories and collection priorities, not an unmeasured retained total."""
-    availability = estimate['paper_availability']
-    volume = estimate['paper_text_scenarios']
-    inventory = estimate['current_web_and_record_inventory']
-    storage = estimate['storage']
-    larger = {source['id']: source for source in estimate['larger_source_inventory']}
-    pdfs, genomes = larger['olmo3_science_pdfs'], larger['opengenome2']
-    paper_low, paper_high = volume['gross_text_tokens'][0] / 1e9, volume['gross_text_tokens'][-1] / 1e9
+    """Present the calculable subtotal without implying that unresolved sources are zero."""
+    summary = estimate['aggregation']
+    components = {row['group']: row for row in summary['components']}
+    billions = lambda value: f'{value / 1e9:.1f}B'
+    low, high = summary['quantified_candidate_subtotal_low'], summary['quantified_candidate_subtotal_high']
+    rows = [
+        '| Source category | Quantified candidate tokens |', '|:---|---:|',
+        f"| Paper text | {billions(components['papers']['low'])}–{billions(components['papers']['high'])} |",
+        f"| Biology web text | {billions(components['web']['low'])} |",
+        f"| Biological database records | {billions(components['records']['low'])} |",
+        f"| **Quantified subtotal** | **{billions(low)}–{billions(high)}** |",
+        '| Additional unique contributions from other sources | Not yet quantified |',
+    ]
     return '\n\n'.join([
-        '## Available data and collection priorities',
-        f"**PMC contains about {availability['archive_article_records_rounded'] / 1e6:g} million archived articles.** "
-        f"Our broader inventory identifies **{availability['broader_xml_candidates'] / 1e6:.2f}M text-mining candidates**; "
-        f"the earlier **{availability['journal_subset_xml_candidates']:,} papers from "
-        f"{availability['journal_subset_count']} journals** are only a nested subset. "
-        f"We plan around the broader inventory. [PMC archive]({availability['archive_source']}).",
-        '| Source group | Available amount | Collection priority |\n'
-        '|:---|:---|:---|\n'
-        f"| Paper text | {availability['broader_xml_candidates'] / 1e6:.2f}M PMC candidates; additional overlapping paper collections | First: select research biology |\n"
-        f"| Biology-labelled web text | FineFineWeb biology alone: **{inventory['web_source_tokens'] / 1e9:.2f}B source tokens** | First: assess relevance and quality |\n"
-        f"| Annotated biological database records | TheBioCollection free text: **{inventory['record_source_tokens'] / 1e9:.1f}B source tokens** | First: preserve descriptions and linked representations |\n"
-        f"| Raw sequences and structures, grouped | OpenGenome2: **{genomes['amount'] / 1e12:.1f}T nucleotide positions**; other raw resources not yet counted together | Secondary for this project |",
-        f"**Paper-volume scenario:** the full {availability['broader_xml_candidates'] / 1e6:.2f}M-candidate PMC inventory "
-        f"would contain roughly **{paper_low:.0f}–{paper_high:.0f}B text tokens** at an assumed 8,000–23,334 tokens per paper, "
-        'before biological scope selection and deduplication. This is a size scenario, not a measured biology-only yield. '
-        f"[OLMo 3’s PDF pool]({pdfs['source']}) adds another collection to examine, but its "
-        f"{pdfs['amount'] / 1e9:g}B mixed-subject tokens cannot be counted wholesale as biology or added without checking overlap.",
-        '**[TheBioCollection](https://huggingface.co/datasets/trillionlabs/TheBioCollection)** combines biological '
-        'database records with descriptions, annotations, sequences and molecular representations. '
-        'We prioritize records that connect entities to functions, organisms, properties or observations for our text-based CPT objective. '
-        'Raw sequence/structure resources remain one secondary collection group; this is our project priority, '
-        'not evidence that they are inherently less useful.',
-        '**Available source amounts are not final retained amounts.** The web and database figures use their '
-        'authors’ tokenizers. We have no measured basis for keeping only 15% of the biology web text, '
-        'so that earlier assumption no longer drives the overview. A combined retained biology total requires '
-        'a common tokenizer and measured selection/overlap. Raw nucleotide, protein and structure counts are not added to text tokens.',
-        f"**Storage scales with the selected corpus:** 1T tokens stored as four-byte IDs require "
-        f"**{storage['one_trillion_uint32_token_ids_bytes'] / 2**40:.2f}TiB** before text, indexes and source files. "
-        f"At the measured paper-file sizes, PDFs and figures add approximately "
-        f"**{storage['additional_million_papers_pdf_figure_bytes_proxy'] / 2**40:.1f}TiB per million retained papers**. "
-        '[Source inventories, scope and storage assumptions](source_planning.md).',
+        '## Available training data',
+        f"**Currently quantified: approximately {low / 1e9:.0f}–{high / 1e9:.0f}B candidate text/record tokens.** "
+        '**The complete biological-corpus total is not yet established.** The table gives the supported subtotal; '
+        'unmeasured contributions from other sources remain additional.',
+        '\n'.join(rows),
+        'These are approximate amounts in a common tokenizer, before biological scope filtering and '
+        'cross-source deduplication. The paper estimate includes candidate material that may be excluded. '
+        'Published training budgets cannot be added together because the studies reuse sources.',
+        f"**Raw sequences and structures are tracked separately, at secondary priority.** "
+        f"The genomic pool alone contains {summary['raw_sequence_nucleotide_positions'] / 1e12:.1f}T reported nucleotide positions. "
+        'Nucleotides, protein residues and structural records are not added to the text-token subtotal.',
+        f"The [complete source inventory](source_inventory.md) consolidates **{summary['family_count']} source families**, "
+        'including the datasets underlying released collections, with their source papers and overlap qualifications. '
+        '[Counting assumptions](source_planning.md).',
     ])
+
+
+def render_source_inventory(data, estimate, directory):
+    summary = estimate['aggregation']
+    names = {e['id']: e['name'] for kind in GROUPS for e in data.get(kind, [])}
+    components = {row['id']: row for row in summary['components']}
+    groups = [('papers', 'Paper sources'), ('web', 'Web sources'),
+              ('records', 'Biological database and task records'),
+              ('raw', 'Raw sequences and structures'), ('general', 'General replay and other sciences')]
+    body = ['# Complete source inventory', '[Biological pretraining review](README.md)',
+            f"This register consolidates {summary['family_count']} source families named in the biological review "
+            'and the documented inputs of TheBioCollection and OpenGenome2. Aliases and overlapping releases '
+            'are grouped. It is a complete register of the named inputs in scope, not a claim that all their '
+            'token amounts or unique contributions have been measured.',
+            '**— means the additional token contribution is unmeasured, not zero.** '
+            'The overview subtotal counts only the three components with a common-tokenizer estimate. '
+            'A source appearing inside TheBioCollection is not evidence that the whole external database '
+            'has been included or that importing it separately would add nothing.']
+    for group, title in groups:
+        body.append('## ' + title)
+        lines = ['| Source family | Counted amount / role | Referencing studies or collection | Source |',
+                 '|:---|:---|:---|:---|']
+        for row in sorted((r for r in summary['families'] if r['group'] == group), key=lambda r:r['name'].casefold()):
+            if row['id'] in components:
+                component = components[row['id']]
+                amount = f"{component['low']/1e9:.1f}B"
+                if component['low'] != component['high']:
+                    amount += f"–{component['high']/1e9:.1f}B"
+            elif row['id'] == 'opengenome2':
+                amount = '8.8T nucleotide positions; separate from text subtotal'
+            elif row['id'] == 'olmo_pdfs':
+                amount = '972B across all subjects; biology-only amount —'
+            elif 'biocollection' in row['upstream_of']:
+                amount = 'Represented in TheBioCollection; additional coverage —'
+            elif 'opengenome2' in row['upstream_of']:
+                amount = 'Represented in OpenGenome2; additional coverage —'
+            else:
+                amount = '—'
+            use = [names.get(eid, 'Evo 2' if eid == 'evo2_reference' else eid) for eid in row['used_by']]
+            use.extend('Input to ' + {'biocollection':'TheBioCollection', 'opengenome2':'OpenGenome2'}[parent]
+                       for parent in row['upstream_of'])
+            evidence = sorted(row['evidence'], key=lambda url: ('huggingface.co' not in url, url))[:2]
+            sources = ' · '.join(f"[{'Repository' if 'github.com' in url else 'Paper' if 'arxiv.org' in url or 'mlr.press' in url else 'Source'}]({url})"
+                                 for url in evidence)
+            lines.append('| ' + ' | '.join([cell(row['name']), cell(amount + '. ' + row['treatment']),
+                                            cell('; '.join(use)), sources]) + ' |')
+        body.append('\n'.join(lines))
+    if summary['unresolved_study_source_details']:
+        body.append('## Remaining source-identification gaps')
+        body.append(', '.join(names[eid] for eid in summary['unresolved_study_source_details']))
+    body.append('[Aggregate calculation and definitions](source_planning.md).')
+    (directory / 'source_inventory.md').write_text('\n\n'.join(body) + '\n')
 
 
 def render(data, directory=REPORT, *, starter_estimate=None):
@@ -507,6 +547,8 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         overview_table(selected('from_scratch'), from_scratch=True),
     ]
     (directory / 'README.md').write_text('\n\n'.join(intro) + '\n')
+    if starter_estimate is not None:
+        render_source_inventory(data, starter_estimate, directory)
 
     background = ['# Supporting literature', '[Biological pretraining review](README.md)',
                   'These references inform data preparation or other training objectives. '
@@ -533,6 +575,10 @@ def render(data, directory=REPORT, *, starter_estimate=None):
                    'before rerendering. Keep current inventory amounts separate from the superseded '
                    'subset scenarios; the old 15% web retention assumption is not the current estimate. '
                    'Document scope, collection priorities and storage scaling in `source_planning.md`.',
+                   'The complete source register is generated in `source_inventory.md` from '
+                   '`scripts/source_inventory.py` and the named inputs in the review. Add mappings '
+                   'for new sources; the estimator rejects unmapped labels. Keep unresolved token '
+                   'amounts explicit and do not call the quantified subtotal a complete corpus total.',
                    'The `presentation` record selects the review section, starting checkpoint and one '
                    'overview budget, with explicit content scope and quantity type. It must cite '
                    'initialization evidence. Keep every original budget '

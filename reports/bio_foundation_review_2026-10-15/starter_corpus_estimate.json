@@ -233,5 +233,1888 @@
     "Modality projections count tagged spans in imported database records only; untagged sequence strings in paper/web prose are not separately identified.",
     "Dedup across datasets uses identity/content checks; dedup within protein/molecule records must preserve distinct annotations and relations.",
     "No full corpus, trained scorer, global dedup index or learned mixture was produced for this estimate."
-  ]
+  ],
+  "aggregation": {
+    "status": "complete_named_source_census_incomplete_token_measurement",
+    "scope": "All non-archived biological studies and source corpora in the review, plus documented upstream inputs of TheBioCollection and OpenGenome2.",
+    "families": [
+      {
+        "id": "pmc",
+        "group": "papers",
+        "name": "PubMed Central",
+        "treatment": "Count the current PMC scenario once; older PMC imports overlap.",
+        "aliases": [
+          "PMC",
+          "PMC full text",
+          "PMC-OA XML",
+          "The Pile: PubMed Central"
+        ],
+        "used_by": [
+          "biobert",
+          "biomed_enriched",
+          "biomedclip",
+          "biomedlm",
+          "biot5plus",
+          "galactica",
+          "pmc_intercpt",
+          "pubmedbert"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2007.15779v6",
+          "https://arxiv.org/html/2303.00915",
+          "https://arxiv.org/html/2402.17810v2",
+          "https://arxiv.org/html/2403.18421v1",
+          "https://arxiv.org/html/2506.20331v1",
+          "https://arxiv.org/html/2606.01049v2",
+          "https://arxiv.org/pdf/1901.08746",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42",
+          "https://doi.org/10.1145/3458754",
+          "https://github.com/QizhiPei/BioT5",
+          "https://huggingface.co/stanford-crfm/BioMedLM",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7703786/"
+        ],
+        "upstream_of": [],
+        "counted_component": "pmc",
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pubmed",
+        "group": "papers",
+        "name": "PubMed / MEDLINE abstracts",
+        "treatment": "Abstracts overlap PMC and multiple imported corpora; incremental amount unmeasured.",
+        "aliases": [
+          "PubMed",
+          "PubMed abstracts",
+          "PubMed titles/abstracts",
+          "PubMed/MEDLINE",
+          "The Pile: PubMed Abstracts"
+        ],
+        "used_by": [
+          "biobert",
+          "biogpt",
+          "biolinkbert",
+          "biomamba",
+          "biomatrix",
+          "biomedlm",
+          "biot5plus",
+          "galactica",
+          "gravity_bio",
+          "pubmedbert",
+          "scireasoner"
+        ],
+        "evidence": [
+          "https://academic.oup.com/bib/article/23/6/bbac409/6713511",
+          "https://aclanthology.org/2022.acl-long.551/",
+          "https://arxiv.org/html/2007.15779v6",
+          "https://arxiv.org/html/2203.15827",
+          "https://arxiv.org/html/2402.17810v2",
+          "https://arxiv.org/html/2403.18421v1",
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2509.21320v1",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/pdf/1901.08746",
+          "https://arxiv.org/pdf/2210.10341",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://doi.org/10.1145/3458754",
+          "https://github.com/QizhiPei/BioMatrix",
+          "https://github.com/QizhiPei/BioT5",
+          "https://github.com/lingyue404/BioMamba",
+          "https://github.com/microsoft/BioGPT",
+          "https://huggingface.co/stanford-crfm/BioMedLM",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7703786/",
+          "https://spj.science.org/doi/10.34133/hds.0454"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pile_pubmed",
+        "group": "papers",
+        "name": "The Pile PubMed components",
+        "treatment": "Older repackaging of PMC and PubMed; not an additional copy of the corpus.",
+        "aliases": [
+          "The Pile PubMed components"
+        ],
+        "used_by": [
+          "biomedlm"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2403.18421v1",
+          "https://huggingface.co/stanford-crfm/BioMedLM"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "biorxiv",
+        "group": "papers",
+        "name": "bioRxiv",
+        "treatment": "Partly overlaps published versions and imported scientific corpora; incremental amount unmeasured.",
+        "aliases": [
+          "bioRxiv"
+        ],
+        "used_by": [
+          "biomatrix",
+          "biot5plus",
+          "galactica",
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2402.17810v2",
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix",
+          "https://github.com/QizhiPei/BioT5"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "medrxiv",
+        "group": "papers",
+        "name": "medRxiv",
+        "treatment": "Research-biology subset and incremental overlap unresolved.",
+        "aliases": [
+          "medRxiv"
+        ],
+        "used_by": [
+          "galactica",
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "arxiv",
+        "group": "papers",
+        "name": "arXiv",
+        "treatment": "Biological subset and overlap with paper imports unresolved.",
+        "aliases": [
+          "arXiv"
+        ],
+        "used_by": [
+          "galactica"
+        ],
+        "evidence": [
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "chemrxiv",
+        "group": "papers",
+        "name": "ChemRxiv",
+        "treatment": "Biologically relevant subset and overlap unresolved.",
+        "aliases": [
+          "ChemRxiv"
+        ],
+        "used_by": [
+          "galactica"
+        ],
+        "evidence": [
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "osf",
+        "group": "papers",
+        "name": "OSF",
+        "treatment": "Biologically relevant subset and overlap unresolved.",
+        "aliases": [
+          "OSF"
+        ],
+        "used_by": [
+          "galactica"
+        ],
+        "evidence": [
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "acl",
+        "group": "papers",
+        "name": "ACL Anthology",
+        "treatment": "Biological subset unresolved; mostly other research fields.",
+        "aliases": [
+          "ACL"
+        ],
+        "used_by": [
+          "galactica"
+        ],
+        "evidence": [
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pubag",
+        "group": "papers",
+        "name": "PubAg",
+        "treatment": "Agricultural research; incremental overlap unresolved.",
+        "aliases": [
+          "PubAg abstracts"
+        ],
+        "used_by": [
+          "galactica"
+        ],
+        "evidence": [
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "s2orc",
+        "group": "papers",
+        "name": "S2ORC / Semantic Scholar",
+        "treatment": "Overlaps PMC, preprints, peS2o and the OLMo PDF collection.",
+        "aliases": [
+          "S2ORC",
+          "Semantic Scholar full text",
+          "Semantic Scholar abstracts"
+        ],
+        "used_by": [
+          "biomatrix",
+          "biomedgpt",
+          "galactica",
+          "s2orc"
+        ],
+        "evidence": [
+          "https://aclanthology.org/2020.acl-main.447/",
+          "https://arxiv.org/html/2308.09442v2",
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/PharMolix/OpenBioMed",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pes2o",
+        "group": "papers",
+        "name": "peS2o",
+        "treatment": "Derived from Semantic Scholar/S2ORC; not additive to its full parent corpus.",
+        "aliases": [
+          "peS2o"
+        ],
+        "used_by": [
+          "pes2o"
+        ],
+        "evidence": [
+          "https://github.com/allenai/pes2o"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "biomedica",
+        "group": "papers",
+        "name": "BIOMEDICA",
+        "treatment": "PMC-derived text and image-caption records; text overlaps PMC.",
+        "aliases": [
+          "BIOMEDICA"
+        ],
+        "used_by": [
+          "pmc_intercpt"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2606.01049v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "olmo_pdfs",
+        "group": "papers",
+        "name": "OLMo 3 / olmOCR science PDFs",
+        "treatment": "972B total across subjects; biology-only and incremental tokens unmeasured.",
+        "aliases": [
+          "OLMo 3 PDF pool"
+        ],
+        "used_by": [
+          "olmo3"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2512.13961v2#S3.SS4"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "patents",
+        "group": "papers",
+        "name": "USPTO patent applications",
+        "treatment": "Biological subset unresolved; reaction datasets below are derived records.",
+        "aliases": [
+          "USPTO-Applications"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "finefineweb",
+        "group": "web",
+        "name": "FineFineWeb biology",
+        "treatment": "Count the biology-labelled collection once; do not add its parent FineWeb again.",
+        "aliases": [
+          "FineFineWeb"
+        ],
+        "used_by": [
+          "bio_posttraining",
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.16517v1",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix",
+          "https://github.com/mims-harvard/bio-posttrain",
+          "https://huggingface.co/datasets/m-a-p/FineFineWeb"
+        ],
+        "upstream_of": [],
+        "counted_component": "finefineweb",
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "biocollection",
+        "group": "records",
+        "name": "TheBioCollection free-text stream",
+        "treatment": "Count the free-text release once, excluding its separate instruction stream.",
+        "aliases": [
+          "TheBioCollection"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://huggingface.co/datasets/trillionlabs/TheBioCollection"
+        ],
+        "upstream_of": [],
+        "counted_component": "biocollection",
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pubchem",
+        "group": "records",
+        "name": "PubChem",
+        "treatment": "Contributes to TheBioCollection and many model corpora; extra coverage beyond the bundle unmeasured.",
+        "aliases": [
+          "PubChem"
+        ],
+        "used_by": [
+          "biomatrix",
+          "biot5plus",
+          "galactica",
+          "gravity_bio",
+          "naturelm"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2402.17810v2",
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix",
+          "https://github.com/QizhiPei/BioT5"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "uniprot",
+        "group": "records",
+        "name": "UniProt / UniRef",
+        "treatment": "Swiss-Prot, TrEMBL and UniRef clusterings overlap; contributes to TheBioCollection.",
+        "aliases": [
+          "UniProt",
+          "UniProt/Swiss-Prot",
+          "UniProt/TrEMBL",
+          "UniRef50",
+          "UniRef90",
+          "UniRef50/90"
+        ],
+        "used_by": [
+          "biomatrix",
+          "bioreason_pro",
+          "biot5plus",
+          "galactica",
+          "gravity_bio",
+          "logos",
+          "naturelm",
+          "protst",
+          "scireasoner"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2402.17810v2",
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2509.21320v1",
+          "https://arxiv.org/html/2606.16905v1",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix",
+          "https://github.com/QizhiPei/BioT5",
+          "https://github.com/bowang-lab/BioReason-Pro",
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pdb",
+        "group": "records",
+        "name": "Protein Data Bank",
+        "treatment": "PDB/RCSB are the same source family; contributes to TheBioCollection.",
+        "aliases": [
+          "PDB",
+          "RCSB PDB"
+        ],
+        "used_by": [
+          "biomatrix",
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "alphafold",
+        "group": "records",
+        "name": "AlphaFold DB",
+        "treatment": "Contributes to TheBioCollection; predicted structures overlap UniProt entities.",
+        "aliases": [
+          "AlphaFold DB"
+        ],
+        "used_by": [
+          "biomatrix",
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "bindingdb",
+        "group": "records",
+        "name": "BindingDB",
+        "treatment": "Contributes to TheBioCollection; extra coverage beyond the bundle unmeasured.",
+        "aliases": [
+          "BindingDB"
+        ],
+        "used_by": [
+          "biomatrix",
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "drugbank",
+        "group": "records",
+        "name": "DrugBank",
+        "treatment": "Contributes to TheBioCollection; access and reusable subset may differ.",
+        "aliases": [
+          "DrugBank"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "chembl",
+        "group": "records",
+        "name": "ChEMBL",
+        "treatment": "Contributes to TheBioCollection; overlaps other molecular sources.",
+        "aliases": [
+          "ChEMBL"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "uspto50k",
+        "group": "records",
+        "name": "USPTO-50K reactions",
+        "treatment": "Contributes to TheBioCollection; derived from patents.",
+        "aliases": [
+          "USPTO-50K"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "gencode",
+        "group": "records",
+        "name": "GENCODE",
+        "treatment": "Contributes to TheBioCollection; annotations are distinct from raw genome strings.",
+        "aliases": [
+          "GENCODE"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "encode",
+        "group": "records",
+        "name": "ENCODE",
+        "treatment": "Contributes to TheBioCollection; assay records may overlap other resources.",
+        "aliases": [
+          "ENCODE"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1",
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "rnacentral",
+        "group": "records",
+        "name": "RNAcentral",
+        "treatment": "Contributes to TheBioCollection and OpenGenome2; avoid counting both complete exports.",
+        "aliases": [
+          "RNAcentral"
+        ],
+        "used_by": [
+          "scireasoner"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2509.21320v1",
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "biocollection",
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "rfam",
+        "group": "records",
+        "name": "Rfam",
+        "treatment": "Contributes to TheBioCollection and OpenGenome2.",
+        "aliases": [
+          "Rfam"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "biocollection",
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "l1000",
+        "group": "records",
+        "name": "LINCS L1000",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "L1000"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "hpa",
+        "group": "records",
+        "name": "Human Protein Atlas",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "Human Protein Atlas"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "generif",
+        "group": "records",
+        "name": "GeneRIF",
+        "treatment": "Contributes to TheBioCollection; linked to NCBI Gene.",
+        "aliases": [
+          "GeneRIF"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "ncbi_gene",
+        "group": "records",
+        "name": "NCBI Gene",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "NCBI Gene"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "go",
+        "group": "records",
+        "name": "Gene Ontology / GOA",
+        "treatment": "Contributes to TheBioCollection and protein annotation corpora.",
+        "aliases": [
+          "Gene Ontology",
+          "GOA"
+        ],
+        "used_by": [
+          "bioreason_pro"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://github.com/bowang-lab/BioReason-Pro",
+          "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "cell_ontology",
+        "group": "records",
+        "name": "Cell Ontology",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "Cell Ontology"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "cellxgene",
+        "group": "records",
+        "name": "CELLxGENE",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "CELLxGENE"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "jump",
+        "group": "records",
+        "name": "JUMP Cell Painting",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "JUMP Cell Painting"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "hubmap",
+        "group": "records",
+        "name": "HuBMAP",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "HuBMAP"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "hetionet",
+        "group": "records",
+        "name": "Hetionet",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "Hetionet"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "drkg",
+        "group": "records",
+        "name": "DRKG",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "DRKG"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "dgidb",
+        "group": "records",
+        "name": "DGIdb",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "DGIdb"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "string",
+        "group": "records",
+        "name": "STRING",
+        "treatment": "Contributes to TheBioCollection and BioReason-Pro.",
+        "aliases": [
+          "STRING"
+        ],
+        "used_by": [
+          "bioreason_pro"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2",
+          "https://github.com/bowang-lab/BioReason-Pro",
+          "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "omnipath",
+        "group": "records",
+        "name": "OmniPath",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "OmniPath"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "reactome",
+        "group": "records",
+        "name": "Reactome",
+        "treatment": "Contributes to TheBioCollection.",
+        "aliases": [
+          "Reactome"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1#S2"
+        ],
+        "upstream_of": [
+          "biocollection"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "moltextnet",
+        "group": "records",
+        "name": "MolTextNet",
+        "treatment": "Molecule-description pairs; overlap with PubChem unresolved.",
+        "aliases": [
+          "MolTextNet"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pcqm4mv2",
+        "group": "records",
+        "name": "PCQM4Mv2",
+        "treatment": "Molecular-property records; PubChem-derived entities and additional labels.",
+        "aliases": [
+          "PCQM4Mv2"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "pubchemqc",
+        "group": "records",
+        "name": "PubChemQC",
+        "treatment": "PubChem-derived quantum-chemistry records; extra coverage unmeasured.",
+        "aliases": [
+          "PubChemQC"
+        ],
+        "used_by": [
+          "biomatrix",
+          "logos"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.16905v1",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "stitch",
+        "group": "records",
+        "name": "STITCH",
+        "treatment": "Interaction records; overlap with other interaction sources unresolved.",
+        "aliases": [
+          "STITCH"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "glaser",
+        "group": "records",
+        "name": "J. Glaser binding-affinity dataset",
+        "treatment": "Binding records; overlap with BindingDB and structural sources unresolved.",
+        "aliases": [
+          "jglaser binding affinity"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "crossdocked",
+        "group": "records",
+        "name": "CrossDocked2020",
+        "treatment": "Protein-ligand complex records; relation to PDB-based sources unresolved.",
+        "aliases": [
+          "CrossDocked2020"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "alphaseq",
+        "group": "records",
+        "name": "Open-AlphaSeq",
+        "treatment": "Protein interaction measurements; incremental token count unmeasured.",
+        "aliases": [
+          "AlphaSeq"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "ppiref",
+        "group": "records",
+        "name": "PPIRef",
+        "treatment": "Protein-interface records; overlaps PDB entities.",
+        "aliases": [
+          "PPIRef"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "ncbi_unspecified",
+        "group": "records",
+        "name": "Other NCBI resources",
+        "treatment": "The model report does not enumerate a precise reusable release.",
+        "aliases": [
+          "NCBI resources"
+        ],
+        "used_by": [
+          "naturelm"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/pdf/2606.22138v1"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "zinc",
+        "group": "records",
+        "name": "ZINC20",
+        "treatment": "Molecule records used in BioT5; overlap with other molecular sources unresolved.",
+        "aliases": [
+          "ZINC20"
+        ],
+        "used_by": [
+          "biot5plus"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2402.17810v2",
+          "https://github.com/QizhiPei/BioT5"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "kegg",
+        "group": "records",
+        "name": "KEGG",
+        "treatment": "Pathway records used in BioReason; reusable subset and token count unresolved.",
+        "aliases": [
+          "KEGG"
+        ],
+        "used_by": [
+          "bioreason"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2505.23579v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "clinvar",
+        "group": "records",
+        "name": "ClinVar",
+        "treatment": "Variant records used in BioReason; scope and overlap unresolved.",
+        "aliases": [
+          "ClinVar"
+        ],
+        "used_by": [
+          "bioreason"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2505.23579v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "omim",
+        "group": "records",
+        "name": "OMIM",
+        "treatment": "Variant/gene records used in BioReason; reusable subset and token count unresolved.",
+        "aliases": [
+          "OMIM"
+        ],
+        "used_by": [
+          "bioreason"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2505.23579v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "dbsnp",
+        "group": "records",
+        "name": "dbSNP",
+        "treatment": "Variant records used in BioReason.",
+        "aliases": [
+          "dbSNP"
+        ],
+        "used_by": [
+          "bioreason"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2505.23579v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "cosmic",
+        "group": "records",
+        "name": "COSMIC",
+        "treatment": "Variant records used in BioReason; reusable subset and token count unresolved.",
+        "aliases": [
+          "COSMIC"
+        ],
+        "used_by": [
+          "bioreason"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2505.23579v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "gnomad",
+        "group": "records",
+        "name": "gnomAD",
+        "treatment": "Variant-frequency records used in BioReason.",
+        "aliases": [
+          "gnomAD"
+        ],
+        "used_by": [
+          "bioreason"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2505.23579v2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "interpro",
+        "group": "records",
+        "name": "InterPro",
+        "treatment": "Protein-domain annotations used in BioReason-Pro.",
+        "aliases": [
+          "InterPro"
+        ],
+        "used_by": [
+          "bioreason_pro"
+        ],
+        "evidence": [
+          "https://github.com/bowang-lab/BioReason-Pro",
+          "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "protdescribe",
+        "group": "records",
+        "name": "ProtDescribe",
+        "treatment": "Swiss-Prot-derived protein descriptions used in ProtST; overlaps UniProt.",
+        "aliases": [
+          "ProtDescribe"
+        ],
+        "used_by": [
+          "protst"
+        ],
+        "evidence": [
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "tdc",
+        "group": "records",
+        "name": "Therapeutics Data Commons",
+        "treatment": "Task collections used in Tx-LLM/TxGemma; repeated training tokens are not source size.",
+        "aliases": [
+          "Therapeutics Data Commons"
+        ],
+        "used_by": [
+          "txgemma",
+          "txllm"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2406.06316v1",
+          "https://arxiv.org/html/2504.06196v1",
+          "https://deepmind.google/models/gemma/txgemma/",
+          "https://storage.googleapis.com/research-media/txgemma/txgemma-report.pdf"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "qm9",
+        "group": "records",
+        "name": "QM9 / GEOM-QM9",
+        "treatment": "Molecular conformers and properties; QM9 and its GEOM views overlap.",
+        "aliases": [
+          "QM9",
+          "GEOM-QM9"
+        ],
+        "used_by": [
+          "unigenx"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2503.06687v1",
+          "https://github.com/UniGenX-Team/UniGenX"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "geomdrugs",
+        "group": "records",
+        "name": "GEOM-Drugs",
+        "treatment": "Molecular conformers; do not count each representation as a new molecule.",
+        "aliases": [
+          "GEOM-Drugs"
+        ],
+        "used_by": [
+          "unigenx"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2503.06687v1",
+          "https://github.com/UniGenX-Team/UniGenX"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "misato",
+        "group": "records",
+        "name": "MISATO",
+        "treatment": "Molecular-dynamics and protein-ligand records in later UniGenX repository support.",
+        "aliases": [
+          "MISATO"
+        ],
+        "used_by": [
+          "unigenx"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2503.06687v1",
+          "https://github.com/UniGenX-Team/UniGenX"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "gfp",
+        "group": "records",
+        "name": "TAPE GFP fluorescence",
+        "treatment": "Sequence/function measurements used by STRIDE.",
+        "aliases": [
+          "TAPE GFP"
+        ],
+        "used_by": [
+          "stride"
+        ],
+        "evidence": [
+          "https://github.com/daiheng-zhang/STRIDE"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "moledit",
+        "group": "records",
+        "name": "Mega-MolEdit",
+        "treatment": "Molecular-edit training examples used by STRIDE; derivative task data.",
+        "aliases": [
+          "Mega-MolEdit"
+        ],
+        "used_by": [
+          "stride"
+        ],
+        "evidence": [
+          "https://github.com/daiheng-zhang/STRIDE"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "molopt",
+        "group": "records",
+        "name": "MolOpt-Instructions",
+        "treatment": "Test reference in STRIDE; excluded from the training inventory total.",
+        "aliases": [
+          "MolOpt-Instructions"
+        ],
+        "used_by": [
+          "stride"
+        ],
+        "evidence": [
+          "https://github.com/daiheng-zhang/STRIDE"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "opengenome2",
+        "group": "raw",
+        "name": "OpenGenome2",
+        "treatment": "8.8T biological nucleotide positions; not a count in the text tokenizer.",
+        "aliases": [
+          "OpenGenome2"
+        ],
+        "used_by": [
+          "evo2_reference"
+        ],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "gtdb",
+        "group": "raw",
+        "name": "GTDB",
+        "treatment": "An upstream component of OpenGenome2; not additive to its complete release.",
+        "aliases": [
+          "GTDB"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "imgpr",
+        "group": "raw",
+        "name": "IMG/PR",
+        "treatment": "An upstream component of OpenGenome2.",
+        "aliases": [
+          "IMG/PR"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "imgvr",
+        "group": "raw",
+        "name": "IMG/VR",
+        "treatment": "An upstream component of OpenGenome2.",
+        "aliases": [
+          "IMG/VR"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "mgddb",
+        "group": "raw",
+        "name": "MGD metagenomes",
+        "treatment": "An upstream component of OpenGenome2.",
+        "aliases": [
+          "MGD DB"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "ncbi_genomes",
+        "group": "raw",
+        "name": "NCBI genome assemblies",
+        "treatment": "An upstream component of OpenGenome2.",
+        "aliases": [
+          "NCBI genome assemblies"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "ensembl",
+        "group": "raw",
+        "name": "Ensembl",
+        "treatment": "An upstream component of OpenGenome2.",
+        "aliases": [
+          "Ensembl"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "epd",
+        "group": "raw",
+        "name": "EPDnew",
+        "treatment": "An upstream component of OpenGenome2.",
+        "aliases": [
+          "EPDnew"
+        ],
+        "used_by": [],
+        "evidence": [
+          "https://huggingface.co/datasets/arcinstitute/opengenome2"
+        ],
+        "upstream_of": [
+          "opengenome2"
+        ],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "oas",
+        "group": "raw",
+        "name": "Observed Antibody Space",
+        "treatment": "Antibody sequence pool; no common-tokenizer total established.",
+        "aliases": [
+          "OAS"
+        ],
+        "used_by": [
+          "logos"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2606.16905v1"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "c4",
+        "group": "general",
+        "name": "C4",
+        "treatment": "General web replay; the biological fraction is unmeasured.",
+        "aliases": [
+          "C4"
+        ],
+        "used_by": [
+          "biomamba",
+          "biot5plus",
+          "scireasoner"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2402.17810v2",
+          "https://arxiv.org/html/2509.21320v1",
+          "https://github.com/QizhiPei/BioT5",
+          "https://github.com/lingyue404/BioMamba",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
+          "https://spj.science.org/doi/10.34133/hds.0454"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "finewebedu",
+        "group": "general",
+        "name": "FineWeb-Edu",
+        "treatment": "General educational text, overlapping the parent FineWeb collection.",
+        "aliases": [
+          "FineWeb-Edu"
+        ],
+        "used_by": [
+          "biomatrix"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/html/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1",
+          "https://arxiv.org/pdf/2606.22138v1#page=12",
+          "https://github.com/QizhiPei/BioMatrix"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "wikipedia",
+        "group": "general",
+        "name": "English Wikipedia",
+        "treatment": "General replay; biological subset unmeasured.",
+        "aliases": [
+          "English Wikipedia"
+        ],
+        "used_by": [
+          "biomamba"
+        ],
+        "evidence": [
+          "https://github.com/lingyue404/BioMamba",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
+          "https://spj.science.org/doi/10.34133/hds.0454"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "dclmcc",
+        "group": "general",
+        "name": "DCLM-CC",
+        "treatment": "General web replay, overlapping other Common Crawl derivatives.",
+        "aliases": [
+          "DCLM-CC"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "eaidclm",
+        "group": "general",
+        "name": "EAI-DCLM",
+        "treatment": "General web replay; biological fraction unmeasured.",
+        "aliases": [
+          "EAI-DCLM"
+        ],
+        "used_by": [
+          "gravity_bio"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2607.08803v1"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "dolma",
+        "group": "general",
+        "name": "Dolma",
+        "treatment": "Mixed-domain corpus; academic component overlaps peS2o.",
+        "aliases": [
+          "Dolma"
+        ],
+        "used_by": [
+          "dolma"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2402.00159",
+          "https://arxiv.org/html/2512.13961v2",
+          "https://github.com/allenai/dolma"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "materials",
+        "group": "general",
+        "name": "Materials Project",
+        "treatment": "Materials science outside the biological corpus.",
+        "aliases": [
+          "Materials Project"
+        ],
+        "used_by": [
+          "naturelm"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2502.07527v2",
+          "https://arxiv.org/pdf/2606.22138v1"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "crystals",
+        "group": "general",
+        "name": "MP-20 / Carbon-24 / MPTS-52",
+        "treatment": "Crystal/materials tasks in UniGenX; outside the biological total.",
+        "aliases": [
+          "MP-20",
+          "Carbon-24",
+          "MPTS-52"
+        ],
+        "used_by": [
+          "unigenx"
+        ],
+        "evidence": [
+          "https://arxiv.org/html/2503.06687v1",
+          "https://github.com/UniGenX-Team/UniGenX"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      },
+      {
+        "id": "paperswithcode",
+        "group": "general",
+        "name": "Papers with Code",
+        "treatment": "General ML resource; biological subset unmeasured.",
+        "aliases": [
+          "Papers with Code"
+        ],
+        "used_by": [
+          "galactica"
+        ],
+        "evidence": [
+          "https://arxiv.org/pdf/2211.09085",
+          "https://arxiv.org/pdf/2211.09085#page=42"
+        ],
+        "upstream_of": [],
+        "counted_component": null,
+        "additional_unique_tokens": null
+      }
+    ],
+    "family_count": 87,
+    "named_labels_mapped": 81,
+    "unresolved_study_source_details": [],
+    "components": [
+      {
+        "id": "pmc",
+        "group": "papers",
+        "low": 74599112000,
+        "high": 217586959926,
+        "status": "scenario_before_biology_filter",
+        "note": "All candidate PMC text; not a biology-only amount."
+      },
+      {
+        "id": "finefineweb",
+        "group": "web",
+        "low": 85742810220.64186,
+        "high": 85742810220.64186,
+        "status": "tokenizer_conversion_proxy",
+        "note": "Biology-labelled web source, before research selection and additional deduplication."
+      },
+      {
+        "id": "biocollection",
+        "group": "records",
+        "low": 37035151776.92887,
+        "high": 37035151776.92887,
+        "status": "tokenizer_conversion_proxy",
+        "note": "Free-text stream only, including sequence and molecular representations."
+      }
+    ],
+    "quantified_candidate_subtotal_low": 197377073997.5707,
+    "quantified_candidate_subtotal_high": 340364921923.57074,
+    "complete_biology_only_unique_total": null,
+    "subtotal_definition": "Gross candidate text/record token equivalents for three measurable source families; not a full unique biological total. Other families have unresolved additional contributions.",
+    "raw_sequence_nucleotide_positions": 8800000000000
+  }
 }

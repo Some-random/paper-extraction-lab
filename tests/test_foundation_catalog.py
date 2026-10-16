@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from render_foundation_catalog import TOKEN_FIELDS, render, token_amount, validate_token_budgets
+from source_inventory import build_source_inventory
 
 
 def entry(name='biomedlm'):
@@ -110,18 +111,20 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(data, directory, starter_estimate=estimate)
             overview = (directory / 'README.md').read_text()
-            self.assertLess(overview.index('## Available data and collection priorities'), overview.index('## Continued pretraining'))
+            self.assertLess(overview.index('## Available training data'), overview.index('## Continued pretraining'))
             self.assertNotIn('49.1B', overview)
             self.assertNotIn('reserve about 4TiB', overview)
-            self.assertIn('12.5 million archived articles', overview)
-            self.assertIn('9.32M text-mining candidates', overview)
-            self.assertIn('75–218B text tokens', overview)
-            self.assertIn('86.99B source tokens', overview)
-            self.assertIn('33.8B source tokens', overview)
-            self.assertIn('Secondary for this project', overview)
-            self.assertIn('972B mixed-subject tokens', overview)
-            self.assertIn('8.8T nucleotide positions', overview)
-            self.assertIn('3.64TiB', overview)
+            self.assertNotIn('12.5 million', overview)
+            self.assertNotIn('552,024', overview)
+            self.assertIn('197–340B candidate', overview)
+            self.assertIn('complete biological-corpus total is not yet established', overview)
+            self.assertIn('85.7B', overview)
+            self.assertIn('37.0B', overview)
+            self.assertIn('8.8T reported nucleotide positions', overview)
+            self.assertIn('87 source families', overview)
+            inventory_page = (directory / 'source_inventory.md').read_text()
+            for family in estimate['aggregation']['families']:
+                self.assertIn(family['name'], inventory_page)
             self.assertTrue(all(not source['included_in_starter_forecast']
                                 for source in estimate['larger_source_inventory']))
             for removed in ('GPU-hours', '**Processing:**', 'Direct web tokens'):
@@ -137,6 +140,25 @@ class TokenAccountingChecks(unittest.TestCase):
                             tokens = budget['counts'][route].get('tokens')
                             self.assertEqual(exported[route + '_tokens'], '' if tokens is None else str(tokens))
         self.assertEqual((data, estimate), before)
+
+    def test_full_source_register_does_not_add_aliases_or_invent_missing_counts(self):
+        report = ROOT / 'reports/bio_foundation_review_2026-10-15'
+        data = json.loads((report / 'review.json').read_text())
+        estimate = json.loads((report / 'starter_corpus_estimate.json').read_text())
+        registry = build_source_inventory(data, estimate)
+        self.assertIsNone(registry['complete_biology_only_unique_total'])
+        self.assertEqual(registry['unresolved_study_source_details'], [])
+        self.assertEqual(len([row for row in registry['families'] if row['id'] == 'uniprot']), 1)
+        self.assertEqual({row['id'] for row in registry['components']}, {'pmc','finefineweb','biocollection'})
+        self.assertAlmostEqual(registry['quantified_candidate_subtotal_low'],
+                               sum(row['low'] for row in registry['components']))
+        matrix = next(e for e in data['models'] if e['id'] == 'biomatrix')
+        matrix['dataset_sources']['names'].append('UniProt')
+        repeated = build_source_inventory(data, estimate)
+        self.assertEqual(registry['quantified_candidate_subtotal_high'], repeated['quantified_candidate_subtotal_high'])
+        matrix['dataset_sources']['names'].append('A new unregistered source')
+        with self.assertRaisesRegex(ValueError, 'Unmapped named source'):
+            build_source_inventory(data, estimate)
 
     def test_mixed_data_requires_explicit_scope_and_quantity_type(self):
         data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())

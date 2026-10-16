@@ -4,6 +4,8 @@ Edit [review.json](review.json), then run `python3 scripts/render_foundation_cat
 
 The source-inventory summary is separate from author-reported budgets. Its figures come from `starter_corpus_estimate.json`; reproduce those with `scripts/estimate_starter_budget.py` before rerendering. Keep current inventory amounts separate from the superseded subset scenarios; the old 15% web retention assumption is not the current estimate. Document scope, collection priorities and storage scaling in `source_planning.md`.
 
+The complete source register is generated in `source_inventory.md` from `scripts/source_inventory.py` and the named inputs in the review. Add mappings for new sources; the estimator rejects unmapped labels. Keep unresolved token amounts explicit and do not call the quantified subtotal a complete corpus total.
+
 The `presentation` record selects the review section, starting checkpoint and one overview budget, with explicit content scope and quantity type. It must cite initialization evidence. Keep every original budget in `token_budgets`; selecting an overview row never changes a reported amount. CPT studies belong with CPT models regardless of publication type. Do not classify instruction tuning, contrastive learning or random initialization as CPT.
 
 The `publication` record stores the first public paper/preprint year and its source. Show that year beside the model name; keep checkpoint-release dates and later journal versions distinct in the detailed notes.

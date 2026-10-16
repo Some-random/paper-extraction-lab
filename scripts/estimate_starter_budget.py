@@ -2,6 +2,7 @@
 """Reproduce assumption-driven starter forecasts from checked-in probe counts."""
 import json
 from pathlib import Path
+from source_inventory import build_source_inventory
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "reports/bio_foundation_review_2026-10-15"
@@ -169,6 +170,7 @@ report = {
                     "Dedup across datasets uses identity/content checks; dedup within protein/molecule records must preserve distinct annotations and relations.",
                     "No full corpus, trained scorer, global dedup index or learned mixture was produced for this estimate."]
 }
+report['aggregation'] = build_source_inventory(json.loads((REPORT / 'review.json').read_text()), report)
 (REPORT / "starter_corpus_estimate.json").write_text(json.dumps(report, indent=2) + "\n")
 print("PMC archive records", archive["archive_records_rounded"], "text-mining candidates", broader_pmc)
 print("Full-PMC gross text scenarios, B", [round(v / 1e9, 1) for v in paper_text_scenarios["gross_text_tokens"]])

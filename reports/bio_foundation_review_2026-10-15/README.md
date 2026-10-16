@@ -6,24 +6,23 @@ Counts follow each paper’s reported budget and may include general text, other
 
 [Processing recipe](data_pipeline.md).
 
-## Available data and collection priorities
+## Available training data
 
-**PMC contains about 12.5 million archived articles.** Our broader inventory identifies **9.32M text-mining candidates**; the earlier **552,024 papers from 55 journals** are only a nested subset. We plan around the broader inventory. [PMC archive](https://pmc.ncbi.nlm.nih.gov/).
+**Currently quantified: approximately 197–340B candidate text/record tokens.** **The complete biological-corpus total is not yet established.** The table gives the supported subtotal; unmeasured contributions from other sources remain additional.
 
-| Source group | Available amount | Collection priority |
-|:---|:---|:---|
-| Paper text | 9.32M PMC candidates; additional overlapping paper collections | First: select research biology |
-| Biology-labelled web text | FineFineWeb biology alone: **86.99B source tokens** | First: assess relevance and quality |
-| Annotated biological database records | TheBioCollection free text: **33.8B source tokens** | First: preserve descriptions and linked representations |
-| Raw sequences and structures, grouped | OpenGenome2: **8.8T nucleotide positions**; other raw resources not yet counted together | Secondary for this project |
+| Source category | Quantified candidate tokens |
+|:---|---:|
+| Paper text | 74.6B–217.6B |
+| Biology web text | 85.7B |
+| Biological database records | 37.0B |
+| **Quantified subtotal** | **197.4B–340.4B** |
+| Additional unique contributions from other sources | Not yet quantified |
 
-**Paper-volume scenario:** the full 9.32M-candidate PMC inventory would contain roughly **75–218B text tokens** at an assumed 8,000–23,334 tokens per paper, before biological scope selection and deduplication. This is a size scenario, not a measured biology-only yield. [OLMo 3’s PDF pool](https://arxiv.org/html/2512.13961v2#S3.SS4) adds another collection to examine, but its 972B mixed-subject tokens cannot be counted wholesale as biology or added without checking overlap.
+These are approximate amounts in a common tokenizer, before biological scope filtering and cross-source deduplication. The paper estimate includes candidate material that may be excluded. Published training budgets cannot be added together because the studies reuse sources.
 
-**[TheBioCollection](https://huggingface.co/datasets/trillionlabs/TheBioCollection)** combines biological database records with descriptions, annotations, sequences and molecular representations. We prioritize records that connect entities to functions, organisms, properties or observations for our text-based CPT objective. Raw sequence/structure resources remain one secondary collection group; this is our project priority, not evidence that they are inherently less useful.
+**Raw sequences and structures are tracked separately, at secondary priority.** The genomic pool alone contains 8.8T reported nucleotide positions. Nucleotides, protein residues and structural records are not added to the text-token subtotal.
 
-**Available source amounts are not final retained amounts.** The web and database figures use their authors’ tokenizers. We have no measured basis for keeping only 15% of the biology web text, so that earlier assumption no longer drives the overview. A combined retained biology total requires a common tokenizer and measured selection/overlap. Raw nucleotide, protein and structure counts are not added to text tokens.
-
-**Storage scales with the selected corpus:** 1T tokens stored as four-byte IDs require **3.64TiB** before text, indexes and source files. At the measured paper-file sizes, PDFs and figures add approximately **7.2TiB per million retained papers**. [Source inventories, scope and storage assumptions](source_planning.md).
+The [complete source inventory](source_inventory.md) consolidates **87 source families**, including the datasets underlying released collections, with their source papers and overlap qualifications. [Counting assumptions](source_planning.md).
 
 ## Continued pretraining
 

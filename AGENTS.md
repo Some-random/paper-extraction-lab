@@ -360,3 +360,10 @@ old 50B/15%-web-retention scenario as the overview forecast. Show the broader
 PMC archive (about 12.5M records), the 9.32M text-mining candidates and the
 552,024-paper journal subset distinctly. Treat full-PMC token extrapolations
 as pre-filtering scenarios, not measured retained biological counts.
+
+The user rejected the public overview's archive-count and journal-subset
+bookkeeping paragraph. Remove that narrative from the shared page. They want
+an aggregation across all sources rather than a few examples. Maintain the
+complete named-source register and aggregate table, preserving overlap and
+unit distinctions. Do not label a subtotal from measurable families as the
+complete biological-corpus total while other contributions remain unmeasured.
