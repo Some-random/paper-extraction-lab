@@ -111,7 +111,7 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(data, directory, starter_estimate=estimate)
             overview = (directory / 'README.md').read_text()
-            self.assertLess(overview.index('## Available training data'), overview.index('## Continued pretraining'))
+            self.assertEqual(overview.rsplit('\n## ', 1)[1].splitlines()[0], 'Available training data')
             self.assertNotIn('49.1B', overview)
             self.assertNotIn('reserve about 4TiB', overview)
             self.assertNotIn('12.5 million', overview)

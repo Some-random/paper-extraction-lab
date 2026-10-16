@@ -6,24 +6,6 @@ Counts follow each paper’s reported budget and may include general text, other
 
 [Processing recipe](data_pipeline.md).
 
-## Available training data
-
-**Currently quantified: approximately 197–340B candidate text/record tokens.** **The complete biological-corpus total is not yet established.** The table gives the supported subtotal; unmeasured contributions from other sources remain additional.
-
-| Source category | Quantified candidate tokens |
-|:---|---:|
-| Paper text | 74.6B–217.6B |
-| Biology web text | 85.7B |
-| Biological database records | 37.0B |
-| **Quantified subtotal** | **197.4B–340.4B** |
-| Additional unique contributions from other sources | Not yet quantified |
-
-These are approximate amounts in a common tokenizer, before biological scope filtering and cross-source deduplication. The paper estimate includes candidate material that may be excluded. Published training budgets cannot be added together because the studies reuse sources.
-
-**Raw sequences and structures are tracked separately, at secondary priority.** The genomic pool alone contains 8.8T reported nucleotide positions. Nucleotides, protein residues and structural records are not added to the text-token subtotal.
-
-The [complete source inventory](source_inventory.md) consolidates **87 source families**, including the datasets underlying released collections, with their source papers and overlap qualifications. [Counting assumptions](source_planning.md).
-
 ## Continued pretraining
 
 Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating. Years indicate the first public paper or preprint; notes may review a later version.
@@ -67,3 +49,21 @@ These models begin with randomly initialized weights and biological or scientifi
 | BioGPT (2022)<br>GPT-2-style architecture | 104.8576B<br>PubMed titles/abstracts | 0 | Text only | 104.8576B | **Solid**<br>Useful early decoder study; conventional method | R. Luo et al.<br>Microsoft Research; Peking | [Paper](https://arxiv.org/pdf/2210.10341)<br>[Notes](papers/biogpt.md) |
 | BioMedLM (2024)<br>2.7B GPT-style decoder | 0<br>via The Pile PubMed components (reused) | 34.6B<br>The Pile: PubMed Central<br>The Pile: PubMed Abstracts | Text only | 34.6B | **Solid**<br>Transparent resource; limited methodological novelty | E. Bolton et al.<br>Stanford; Databricks | [Paper](https://arxiv.org/html/2403.18421v1)<br>[Notes](papers/biomedlm.md) |
 | Galactica (2022)<br>scientific decoder | ≥64.926B<br>arXiv; PMC; PubMed abstracts (+6) | ≥23.87B<br>UniProt<br>PubChem<br>Papers with Code | Protein records: ≈600M<br>Molecule records: ≈1B<br>Genome records: ≈100M<br>Record totals include text; pure sequence/SMILES shares not reported. | ≈106B | **Mixed**<br>Substantial scientific LM; reliability claims weak | R. Taylor et al.<br>Meta AI | [Paper](https://arxiv.org/html/2211.09085v1)<br>[Notes](papers/galactica.md) |
+
+## Available training data
+
+**Currently quantified: approximately 197–340B candidate text/record tokens.** **The complete biological-corpus total is not yet established.** The table gives the supported subtotal; unmeasured contributions from other sources remain additional.
+
+| Source category | Quantified candidate tokens |
+|:---|---:|
+| Paper text | 74.6B–217.6B |
+| Biology web text | 85.7B |
+| Biological database records | 37.0B |
+| **Quantified subtotal** | **197.4B–340.4B** |
+| Additional unique contributions from other sources | Not yet quantified |
+
+These are approximate amounts in a common tokenizer, before biological scope filtering and cross-source deduplication. The paper estimate includes candidate material that may be excluded. Published training budgets cannot be added together because the studies reuse sources.
+
+**Raw sequences and structures are tracked separately, at secondary priority.** The genomic pool alone contains 8.8T reported nucleotide positions. Nucleotides, protein residues and structural records are not added to the text-token subtotal.
+
+The [complete source inventory](source_inventory.md) consolidates **87 source families**, including the datasets underlying released collections, with their source papers and overlap qualifications. [Counting assumptions](source_planning.md).

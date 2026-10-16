@@ -518,7 +518,6 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         'Counts follow each paper’s reported budget and may include general text, other sciences and '
         'biological sequences. The **Source** column links to the paper and detailed notes.',
         '[Processing recipe](data_pipeline.md).',
-        *([starter_conclusion(starter_estimate)] if starter_estimate is not None else []),
         '## Continued pretraining',
         'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating. '
         'Years indicate the first public paper or preprint; notes may review a later version.',
@@ -545,6 +544,7 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         'These models begin with randomly initialized weights and biological or scientific data, '
         'rather than adapting an existing checkpoint. They provide a comparison with CPT.',
         overview_table(selected('from_scratch'), from_scratch=True),
+        *([starter_conclusion(starter_estimate)] if starter_estimate is not None else []),
     ]
     (directory / 'README.md').write_text('\n\n'.join(intro) + '\n')
     if starter_estimate is not None:

@@ -367,3 +367,7 @@ an aggregation across all sources rather than a few examples. Maintain the
 complete named-source register and aggregate table, preserving overlap and
 unit distinctions. Do not label a subtotal from measurable families as the
 complete biological-corpus total while other contributions remain unmeasured.
+
+Place the available-training-data summary last in the overview, after both the
+continued-pretraining and from-scratch comparisons. Present what existing papers
+did first, then conclude with the overall available-data picture.
