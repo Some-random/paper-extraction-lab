@@ -1,0 +1,162 @@
+{
+  "date_pst": "2026-10-16",
+  "status": "planning_scenarios_not_measured_corpus_yield",
+  "scope": "Selected 55-journal PMC XML candidates; FineFineWeb biology; TheBioCollection free-text stream only.",
+  "scope_exclusions": [
+    "TheBioCollection instruction stream",
+    "general replay",
+    "new generated training data",
+    "additional raw UniRef/PubChem/RNAcentral copies",
+    "unmeasured incremental peS2o/S2ORC/Dolma additions",
+    "whole-PMC expansion beyond selected journals"
+  ],
+  "counting": "One retained exposure in the pinned local Qwen-family extraction tokenizer; no repeated training passes. External counts converted using convenience-probe ratios.",
+  "published_input_counts": {
+    "selected_pmc_xml_candidates": 552024,
+    "finefineweb_biology_source_tokens": 86990000000.0,
+    "biocollection_free_text_gravity_tokens": 33800000000.0
+  },
+  "sources": {
+    "pmc_inventory": "../pmc_cns_availability_2026-10-13/availability.json",
+    "finefineweb": "https://huggingface.co/datasets/m-a-p/FineFineWeb",
+    "biocollection": "https://huggingface.co/datasets/trillionlabs/TheBioCollection",
+    "biocollection_paper": "https://arxiv.org/html/2607.08803v1"
+  },
+  "scenarios": {
+    "low": {
+      "assumptions": {
+        "paper_tokens_each": 8000,
+        "paper_research_fraction": 0.5,
+        "paper_dedup_retention": 0.8,
+        "web_research_fraction": 0.05,
+        "web_dedup_retention": 0.85,
+        "record_dedup_retention": 0.8
+      },
+      "dedup_only_tokens": {
+        "papers": 3532953600.0,
+        "web_origin": 72881388687.54558,
+        "biological_records": 29628121421.5431
+      },
+      "dedup_only_total_tokens": 106042463709.08868,
+      "research_starter_content_tokens": {
+        "direct_paper_text": 1766476800.0,
+        "imported_web_origin_text": 3644069434.3772793,
+        "imported_biological_records": 29628121421.5431
+      },
+      "research_starter_total_tokens": 35038667655.92038,
+      "acquisition_route_tokens": {
+        "online_papers": 1766476800.0,
+        "direct_web_urls": 0,
+        "existing_datasets": 33272190855.92038
+      },
+      "content_percentages": {
+        "direct_paper_text": 5.0415067643176315,
+        "imported_web_origin_text": 10.400136986263378,
+        "imported_biological_records": 84.55835624941899
+      }
+    },
+    "central": {
+      "assumptions": {
+        "paper_tokens_each": 12000,
+        "paper_research_fraction": 0.7,
+        "paper_dedup_retention": 0.9,
+        "web_research_fraction": 0.15,
+        "web_dedup_retention": 0.9,
+        "record_dedup_retention": 0.9
+      },
+      "dedup_only_tokens": {
+        "papers": 5961859200.0,
+        "web_origin": 77168529198.57768,
+        "biological_records": 33331636599.235985
+      },
+      "dedup_only_total_tokens": 116462024997.81366,
+      "research_starter_content_tokens": {
+        "direct_paper_text": 4173301439.9999995,
+        "imported_web_origin_text": 11575279379.786652,
+        "imported_biological_records": 33331636599.235985
+      },
+      "research_starter_total_tokens": 49080217419.02264,
+      "acquisition_route_tokens": {
+        "online_papers": 4173301439.9999995,
+        "direct_web_urls": 0,
+        "existing_datasets": 44906915979.02264
+      },
+      "content_percentages": {
+        "direct_paper_text": 8.503021501250522,
+        "imported_web_origin_text": 23.584409337396853,
+        "imported_biological_records": 67.91256916135262
+      }
+    },
+    "high": {
+      "assumptions": {
+        "paper_tokens_each": 23334,
+        "paper_research_fraction": 0.9,
+        "paper_dedup_retention": 0.95,
+        "web_research_fraction": 0.25,
+        "web_dedup_retention": 0.95,
+        "record_dedup_retention": 0.95
+      },
+      "dedup_only_tokens": {
+        "papers": 12236881615.199999,
+        "web_origin": 81455669709.60977,
+        "biological_records": 35183394188.08243
+      },
+      "dedup_only_total_tokens": 128875945512.8922,
+      "research_starter_content_tokens": {
+        "direct_paper_text": 11013193453.679998,
+        "imported_web_origin_text": 20363917427.402443,
+        "imported_biological_records": 35183394188.08243
+      },
+      "research_starter_total_tokens": 66560505069.16487,
+      "acquisition_route_tokens": {
+        "online_papers": 11013193453.679998,
+        "direct_web_urls": 0,
+        "existing_datasets": 55547311615.48487
+      },
+      "content_percentages": {
+        "direct_paper_text": 16.546138648190666,
+        "imported_web_origin_text": 30.594595708433598,
+        "imported_biological_records": 52.85926564337573
+      }
+    }
+  },
+  "central_modality_tokens_conditional_on_prefix_representativeness": {
+    "protein_sequence_spans": 1466893397.1932995,
+    "dna_rna_sequence_spans": 250090775.86842966,
+    "smiles_inchi_spans": 5012497416.213415,
+    "other_text_including_annotations_and_tag_boundaries": 42350735829.74749
+  },
+  "storage": {
+    "available_source_download_bytes": {
+      "all_finefineweb_biology_jsonl": 433883986250,
+      "biocollection_free_text_zstd": 15931042772
+    },
+    "central_text_utf8_bytes_proxy": 153974508722.51343,
+    "central_uint32_token_ids_bytes": 196320869676.09055,
+    "central_scope_selected_paper_count_before_training_dedup_proxy": 386416.8,
+    "central_paper_pdf_figure_bytes_proxy": 3052678243839.3516,
+    "central_paper_xml_bytes_proxy": 83804089878.28546,
+    "central_paper_current_export_layout_bytes_proxy": 3943880751356.8013,
+    "text_sequence_processing_allowance_GiB": [
+      500,
+      800
+    ],
+    "notes": [
+      "500-800 GiB is an engineering allowance for selected raw inputs, canonical text, token IDs, indexes and bounded scratch; not a measured peak.",
+      "The full FineFineWeb biology download is not needed simultaneously if shards are processed serially.",
+      "The text/sequence allowance excludes paper PDFs/figures, supplementary raw experiments, model weights, environments and checkpoints.",
+      "Training deduplication earns no automatic storage saving: selected originals remain preserved, and token retention is not a document-retention measurement.",
+      "Retaining all paper originals/figures is a separate multi-TiB budget. The current export layout contains several text/JSON views."
+    ]
+  },
+  "limitations": [
+    "Low/high are sensitivity scenarios, not confidence intervals or measured retention rates.",
+    "Research selection fractions (especially web 5/15/25%) and additional dedup retention are explicit assumptions.",
+    "Prefixes are not a probability sample; modality and tokenizer ratios may shift after wider sampling.",
+    "The 454-paper sample is journal-balanced and length-capped, not representative of the 552,024-candidate inventory.",
+    "A biological database-domain count includes descriptions/annotations and is not a pure sequence count.",
+    "Modality projections count tagged spans in imported database records only; untagged sequence strings in paper/web prose are not separately identified.",
+    "Dedup across datasets uses identity/content checks; dedup within protein/molecule records must preserve distinct annotations and relations.",
+    "No full corpus, trained scorer, global dedup index or learned mixture was produced for this estimate."
+  ]
+}
