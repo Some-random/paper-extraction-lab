@@ -278,3 +278,15 @@ versus model-visible tags, citation expansion, explicit cleaning and duplicate
 checks, scorer labeling/training/validation, mixing experiments and token
 accounting. Preserve the OpenThoughts3 reasoning-SFT versus biological-CPT
 distinction. The catalog should link to it as the "Processing recipe".
+
+The user further requested bold "References:" labels and a link for every
+paper named in each reference paragraph, including repeated olmOCR 2 mentions.
+Include concrete linked examples for paper, web and existing-dataset inputs.
+Distinguish FineWeb-Edu's teacher-generated training/validation labels from
+DCLM's separate human-annotation study; our human audit is an optional addition.
+Describe OpenThoughts3 through its useful staged curation experiments without
+repeated limitation or training-stage caveats. Make the mixing experiments
+concrete, with explicitly illustrative budgets, fixed controls and decisions.
+Finish the pipeline at stage 6; fold packaging and token accounting into that
+stage instead of keeping a separate stage 7. Explain mixing in the chat as well
+as updating the page. These are documentation changes, not training permission.

@@ -334,7 +334,9 @@ class TokenAccountingChecks(unittest.TestCase):
         references = re.findall(r'\[([^\]]+)\]\((https://[^)]+)\)', pipeline)
         self.assertIn('OpenThoughts3', [name for name, _ in references])
         self.assertIn('OLMo 3', [name for name, _ in references])
-        self.assertIn('reasoning supervised fine-tuning (SFT)', pipeline)
+        self.assertEqual(pipeline.count('**References:**'), 6)
+        self.assertNotIn('Method basis:', pipeline)
+        self.assertNotIn('**7.', pipeline)
         self.assertNotRegex(pipeline, r'Ryze|XLM-RoBERTa|\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):

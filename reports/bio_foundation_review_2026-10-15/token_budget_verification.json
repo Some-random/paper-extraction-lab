@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T21:00:46.678320-08:00",
+  "checked_at_pst": "2026-10-15T21:28:21.536954-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -406,15 +406,13 @@
   "scientific_registry_fields_preserved_from_commit": "5b1f4d91e0a28ae282c2d246ad8d357ec4a888de",
   "processing_recipe": {
     "page": "data_pipeline.md",
-    "format": "Prose walkthrough with seven steps",
+    "format": "Prose walkthrough with six stages and concrete examples",
     "inline_figures": false,
     "named_references_beside_relevant_steps": true,
-    "source_links": 10,
+    "source_links": 15,
     "metadata_distinguished_from_model_visible_tags": true,
     "explicit_cleaning_and_cross_source_deduplication": true,
-    "reviewed_labels_and_held_out_scorer_validation": true,
     "non_text_validation_separate_from_prose_scoring": true,
-    "openthoughts3_sft_not_assumed_to_transfer_to_cpt": true,
     "mixtures_selected_by_controlled_training_comparisons": true,
     "conceptual_recipe_not_execution_report": true,
     "new_extraction_or_training_run_launched": false,
@@ -429,7 +427,7 @@
       },
       {
         "paper": "FineWeb / FineWeb-Edu",
-        "borrowed": "HTML main-content extraction; LLM-labeled examples for a trained quality scorer.",
+        "borrowed": "HTML main-content extraction; LLM-generated training and validation labels for a trained quality scorer.",
         "adaptation": "Biological information value replaces the school-level educational rubric."
       },
       {
@@ -453,13 +451,25 @@
       },
       {
         "paper": "OpenThoughts3",
-        "borrowed": "Controlled experiments over sources, filtering and teachers; test whether adding sources or filtering helps.",
-        "adaptation": "Reasoning-SFT findings do not establish a raw-paper CPT recipe; no reasoning synthesis run authorized."
+        "borrowed": "Staged experiments across source selection, mixing, filtering, deduplication, answer sampling and teacher choice.",
+        "adaptation": "Compare components and then their combined recipe on our biological development tasks."
       },
       {
         "paper": "DCLM",
-        "borrowed": "Assess data-curation choices through controlled downstream training comparisons."
+        "borrowed": "Controlled downstream comparisons; distinguish main proxy-label training from the separate 499-document human-annotation study."
       }
-    ]
+    ],
+    "bold_reference_labels": true,
+    "linked_input_examples": [
+      "AlphaFold paper",
+      "Addgene CRISPR guide",
+      "UniProtKB P69905 record"
+    ],
+    "teacher_labels_and_held_out_scorer_validation": true,
+    "human_audit_is_optional": true,
+    "human_annotation_sources_clarified": true,
+    "openthoughts3_staged_experiments_attributed": true,
+    "illustrative_mixture_budgets_checked": true,
+    "accounting_in_final_mixing_stage": true
   }
 }

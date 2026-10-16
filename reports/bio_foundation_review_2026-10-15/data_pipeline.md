@@ -6,13 +6,13 @@ The goal is to turn papers, web pages and existing datasets into a useful biolog
 
 **1. Extract useful content while preserving the original.**
 
-- **Papers:** use publisher XML when available; use olmOCR 2 for PDFs. Keep sections in reading order, equations, tables, original figures, captions and the paragraphs referring to them. Preserve numbers, units and links to the source locations.
-- **Web pages:** extract the main article, tables and relevant images from HTML. Separate navigation, advertisements and cookie notices from the actual content.
-- **Existing datasets:** import records in their native structure. Keep descriptions alongside protein/DNA/RNA sequences, molecular representations and structures, with dataset versions and source IDs.
+- **Papers:** use publisher XML when available; use olmOCR 2 for PDFs. Keep sections in reading order, equations, tables, original figures, captions and the paragraphs referring to them. Preserve numbers, units and links to the source locations. **Example:** [Highly accurate protein structure prediction with AlphaFold](https://pmc.ncbi.nlm.nih.gov/articles/PMC8371605/): retain the methods and results, with each figure linked to its caption and discussion.
+- **Web pages:** extract the main article, tables and relevant images from HTML. Separate navigation, advertisements and cookie notices from the actual content. **Example:** [Addgene's CRISPR guide](https://www.addgene.org/guides/crispr/): retain explanations of Cas enzymes and guide RNAs, diagrams and glossary entries; remove site menus and shopping links.
+- **Existing datasets:** import records in their native structure. Keep descriptions alongside protein/DNA/RNA sequences, molecular representations and structures, with dataset versions and source IDs. **Example:** a UniProtKB/Swiss-Prot release, including [P69905, hemoglobin subunit alpha](https://rest.uniprot.org/uniprotkb/P69905.json): retain the amino-acid sequence, function, organism and accession. This is a database import even when retrieved through an API.
 
 Keep raw files alongside extracted records. Extraction should recover the content, rather than replace a paper with an LLM summary. Figure pixels remain separate assets linked to their captions and surrounding text.
 
-Method basis: [olmOCR 2](https://arxiv.org/html/2510.19817v1) for PDF extraction; [S2ORC](https://aclanthology.org/2020.acl-main.447/) for structured papers and citation/figure/table links; [FineWeb](https://arxiv.org/html/2406.17557v1#S3.SS2) for extracting useful text from raw HTML. Retaining the original assets and preferring available XML are our source-preservation choices.
+**References:** [olmOCR 2](https://arxiv.org/html/2510.19817v1) for PDF extraction; [S2ORC](https://aclanthology.org/2020.acl-main.447/) for structured papers and citation/figure/table links; [FineWeb](https://arxiv.org/html/2406.17557v1#S3.SS2) for extracting useful text from raw HTML. Retaining the original assets and preferring available XML are our source-preservation choices.
 
 **2. Use consistent metadata, meaningful boundaries and readable citations.**
 
@@ -22,7 +22,7 @@ In training content, preserve section boundaries and clearly mark where a protei
 
 For papers, replace opaque citation markers such as `[12]` with the **cited title plus first author/et al.** when the bibliography resolves them. Keep the original marker and full bibliography in metadata. Leave unresolved citations identifiable instead of inventing a title. This makes a passage more interpretable when it is separated from its bibliography.
 
-Method basis: [Galactica](https://arxiv.org/html/2211.09085v1#S3.SS1.SSS2) compared title-based citation identifiers with opaque IDs; [NatureLM](https://arxiv.org/html/2502.07527v2#S2.SS1) uses explicit boundaries for scientific representations. Title-plus-first-author rendering is our chosen adaptation, not a proven optimal CPT format.
+**References:** [Galactica](https://arxiv.org/html/2211.09085v1#S3.SS1.SSS2) compared title-based citation identifiers with opaque IDs; [NatureLM](https://arxiv.org/html/2502.07527v2#S2.SS1) uses explicit boundaries for scientific representations. We use title-plus-first-author rendering for this corpus.
 
 **3. Detect broken records and boilerplate with explicit checks.**
 
@@ -30,7 +30,7 @@ Method basis: [Galactica](https://arxiv.org/html/2211.09085v1#S3.SS1.SSS2) compa
 - **Boilerplate:** identify recurring navigation, cookie notices, publisher headers and footers using HTML structure, page position and repeated text. Remove those spans from training content.
 - **Valid technical material:** equations, dense tables and biological sequences need their own checks. Symbol-heavy text is not automatically broken. Validate sequence alphabets, molecular syntax and table structure separately.
 
-Method basis: [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) supplies explicit filtering and repetition checks; olmOCR 2 supplies source-based extraction tests. We would adapt the rules to biological content rather than copy general-web thresholds unchanged.
+**References:** [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) supplies explicit filtering and repetition checks; [olmOCR 2](https://arxiv.org/html/2510.19817v1) supplies source-based extraction tests. We adapt the rules to biological content, including separate handling of tables and sequences.
 
 **4. Deduplicate across all three acquisition routes.**
 
@@ -38,30 +38,36 @@ First match document identities, such as DOI and source IDs. Then compare exact 
 
 Use modality-specific identities for biological records. Similar proteins are not automatically duplicates, and a shared methods paragraph does not make two whole papers identical. Preserve meaningful sequence variants and publication-version differences.
 
-Method basis: Dolma's document- and paragraph-level deduplication. The cross-source identity matching and biological exceptions are adaptations for this corpus.
+**References:** [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) for document- and paragraph-level deduplication. Cross-source identity matching and preservation of biological variants adapt these techniques to this corpus.
 
 **5. Build a scorer whose labels have a clear meaning.**
 
 Separate **biology relevance** from **information value**. Relevance asks whether a passage concerns the research biology we want. Information value asks whether it contains useful methods, results, mechanisms or explanations, with enough context to understand them. Neither score establishes that the science is correct.
 
-Start with a representative sample from all three sources. A capable LLM can label it through prompting, without new training. Have humans review examples and disagreements, then hold out an independently reviewed set to measure errors. Include difficult cases such as technical methods, short captions and material near the biology/clinical boundary.
+Start with a representative sample from all three sources. A capable LLM can label it through prompting, without new training. Use those labels to train a cheaper scorer, checking its predictions on a held-out set of teacher-labeled examples. Compare it with direct LLM scoring before choosing the large-scale approach.
 
-For larger-scale scoring, compare direct LLM labeling with a smaller model trained on the reviewed labels. Select the scorer by measured accuracy and cost; do not prescribe an architecture in advance. Store a short supporting passage or source offset so reviewers can inspect a decision. **That evidence is an audit trail, not an extra score or automatically generated training content.**
+A small human audit can check whether the labels mean what we intended, especially for technical methods, captions and borderline topics. This is an additional check we can use for biology, not a requirement of the FineWeb-Edu recipe. Store a short supporting passage or source offset so reviewers can inspect a decision. **That evidence is an audit trail, not an extra score.** Whether the filter actually improves learning is tested in stage 6.
 
-Method basis: [FineWeb-Edu](https://arxiv.org/html/2406.17557v1#S4) demonstrates LLM annotations followed by a trained scorer. Its school-level educational rubric would need replacement for research biology. [DCLM](https://arxiv.org/html/2406.11794v3) compares filtering approaches through downstream training results, rather than assuming an LLM judge is best.
+**References:** [FineWeb-Edu, §4](https://arxiv.org/html/2406.17557v1#S4) used Llama-3-70B-Instruct to label 460,000 examples, with 410,000 for scorer training and 50,000 for validation; both sets used model-generated labels. [DCLM, §4.4 and Appendix M](https://arxiv.org/html/2406.11794v3) trained filters using labels derived from selected reference corpora versus web samples. It separately collected three human judgments per document for 499 documents from 16 annotators. That study found that agreement with human judgments did not reliably predict downstream training performance.
 
-**6. Choose filters and mixing ratios through controlled experiments.**
+**6. Test the recipe, choose the mixture and produce the final corpus.**
 
-Group the retained data by source, biological topic and modality. Compare candidate source combinations, filtering thresholds and token sampling ratios. Keep the starting checkpoint, training-token budget and other training settings fixed so that differences can be attributed to the data choice. Measure biological capabilities on development tasks and monitor general-capability retention; reserve final tests until the recipe is fixed.
+Keep records tagged by **source** (papers, web or imported datasets), **topic** (for example, genomics or cell biology) and **modality** (text, protein sequence or structure). This lets us change how much of each kind the model sees and identify where a gain comes from.
 
-[OLMo 3](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4) provides the main precedent for controlled source/topic mixing and quality-aware sampling. [OpenThoughts3](https://arxiv.org/html/2506.04178v2#S4) adds a useful experimental pattern across source selection, filtering and teacher choice: test each ingredient, retain improvements, and check their combination. Its results also show that more sources or more filtering need not help.
+Run experiments in stages: compare candidate sources; compare filtering choices while holding the mixture fixed; then compare mixing ratios with the selected filters. Keep the starting checkpoint, tokenizer, optimizer settings and total training-token budget the same within each comparison. Test the combined recipe after selecting the individual components.
 
-OpenThoughts3 studies **reasoning supervised fine-tuning (SFT)**. We can borrow that experimental discipline across our pipeline, but its question-difficulty filters, multiple generated answers and answer-filtering results do not establish what works for raw-paper CPT. Those techniques belong in a separately evaluated reasoning-data recipe if we use them.
+**Example: a text-CPT mixing experiment.** These are illustrative budgets, not measured corpus sizes or a selected training budget. Existing-dataset text could come from a biological subset of peS2o; sequence records would be tested as a separate modality component.
 
-**7. Freeze the recipe, package the records and count the tokens.**
+| Trial | Paper text | Web text | Existing-dataset text | General-text replay | Total |
+|---|---:|---:|---:|---:|---:|
+| A: paper-heavy baseline | 600M | 100M | 100M | 200M | 1B |
+| B: more web text | 400M | 300M | 100M | 200M | 1B |
+| C: more imported text | 400M | 100M | 300M | 200M | 1B |
 
-Once the comparisons support a recipe, fix the extraction settings, filters, scorer, source weights and training tokenizer. Package records with clear document boundaries and preserved context.
+Trial B asks whether replacing 200M paper tokens with web tokens helps; C asks the same about imported text. Evaluate all three on the same biological development tasks, and check whether general capabilities deteriorate. Repeat promising comparisons across seeds, then choose the mixture with the best supported tradeoff. Keep a separate final test set untouched during selection.
 
-Report retained tokens separately for **online papers, web URLs and existing datasets**, assigning each retained record to one acquisition route. Report modality breakdowns over that same corpus, without adding them again. Keep general-text replay separate from biological data. Also record tokens actually consumed during training, since repeating a record increases training exposure without increasing the unique retained corpus.
+Use the same logic for filtering: for example, compare retaining all eligible biological text with retaining the top 80% or top 50% by a candidate score, while holding the source mixture and training budget fixed. Record any repeated sampling so a smaller retained pool is not mistaken for more unique data.
 
-This accounting follows the distinction between available data pools and sampled training mixtures in OLMo 3. It makes the final question concrete: how much usable biological data comes from each source, and how much of it does the model actually see?
+At the end of this stage, fix the recipe and package the corpus. Report retained tokens and training exposure separately for **online papers, web URLs and existing datasets**, plus modality breakdowns over the same records. Keep general-text replay separate. These counts accompany the finalized corpus.
+
+**References:** [OLMo 3](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4) for source/topic mixing, quality-aware sampling and token budgets; [OpenThoughts3](https://arxiv.org/html/2506.04178v2#S4) for its staged experiments over source selection, mixing, filtering, deduplication, answer sampling and teacher selection. We take its approach of testing components, selecting useful choices and evaluating their combined recipe.
