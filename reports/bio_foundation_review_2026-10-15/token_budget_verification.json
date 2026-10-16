@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T20:19:24.614242-08:00",
+  "checked_at_pst": "2026-10-15T20:57:19.913830-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -406,15 +406,67 @@
   "scientific_registry_fields_preserved_from_commit": "5b1f4d91e0a28ae282c2d246ad8d357ec4a888de",
   "processing_diagram": {
     "page": "data_pipeline.md#processing-diagram",
+    "format": "Two SVG figures",
+    "assets": [
+      "assets/corpus_preparation.svg",
+      "assets/scoring_and_mixing.svg"
+    ],
     "paper_names_inside_figure": true,
     "numeric_reference_markers": false,
-    "details_below_figure": false,
+    "details_below_figures": false,
     "implementation_status_labels": false,
-    "teacher_and_student_scoring_chain_explained": true,
-    "threshold_is_labeled_as_biomed_enriched_example": true,
+    "reviewed_labels_and_held_out_scorer_validation": true,
     "non_text_validation_separate_from_prose_scoring": true,
+    "openthoughts3_controlled_source_filter_teacher_comparisons": true,
+    "openthoughts3_sft_not_assumed_to_transfer_to_cpt": true,
+    "mixtures_selected_by_training_comparisons": true,
     "conceptual_recipe_not_execution_report": true,
-    "source_click_links": 7,
-    "new_extraction_or_training_run_launched": false
+    "source_links_in_svg": 19,
+    "distinct_source_pages": 10,
+    "visual_inspection": "Both SVGs rendered locally and inspected; paper labels and arrowheads visible.",
+    "new_extraction_or_training_run_launched": false,
+    "references": [
+      {
+        "paper": "olmOCR 2",
+        "borrowed": "PDF extraction and source-grounded fidelity checks."
+      },
+      {
+        "paper": "S2ORC",
+        "borrowed": "Structured scientific records and links among text, citations, figures and tables."
+      },
+      {
+        "paper": "FineWeb / FineWeb-Edu",
+        "borrowed": "HTML main-content extraction; LLM-labeled examples for a trained quality scorer.",
+        "adaptation": "Biological information value replaces the school-level educational rubric."
+      },
+      {
+        "paper": "Dolma",
+        "borrowed": "Source-aware records, heuristic cleanup and multi-granularity deduplication.",
+        "adaptation": "Biological tables and sequences require typed validation instead of generic prose thresholds."
+      },
+      {
+        "paper": "Galactica",
+        "borrowed": "Title-based citation representation.",
+        "adaptation": "The first-author rendering follows this project preference, not a measured CPT result."
+      },
+      {
+        "paper": "NatureLM",
+        "borrowed": "Explicit boundaries for biological and other scientific representations."
+      },
+      {
+        "paper": "OLMo 3",
+        "borrowed": "Separate topic/quality selection, controlled source mixing, and explicit sampled token budgets.",
+        "adaptation": "Compare choices using the selected biological CPT checkpoint and development tasks."
+      },
+      {
+        "paper": "OpenThoughts3",
+        "borrowed": "Controlled experiments over sources, filtering and teachers; test whether adding sources or filtering helps.",
+        "adaptation": "Reasoning-SFT findings do not establish a raw-paper CPT recipe; no reasoning synthesis run authorized."
+      },
+      {
+        "paper": "DCLM",
+        "borrowed": "Assess data-curation choices through controlled downstream training comparisons."
+      }
+    ]
   }
 }

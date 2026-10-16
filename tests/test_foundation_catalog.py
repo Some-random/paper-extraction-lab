@@ -6,6 +6,7 @@ import re
 import sys
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -329,25 +330,26 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertNotIn('Build main-content', overview)
             self.assertEqual(overview.count('(data_pipeline.md#processing-diagram)'), 1)
         pipeline = (ROOT / 'reports/bio_foundation_review_2026-10-15/data_pipeline.md').read_text()
-        diagram = re.search(r'```mermaid\n(.*?)\n```', pipeline, re.S).group(1)
-        for action in ('parse sections and equations', 'Keep original figures and table cells',
-                       'Extract main HTML content', 'Import text and biological records',
-                       'Common records', 'mechanical checks', 'deduplicate across all three sources',
-                       'Count retained biology'):
-            self.assertIn(action, diagram)
-        for name in ('olmOCR 2', 'Beyond Captions', 'Ryze', 'FineWeb', 'S2ORC',
-                     'peS2o', 'Biomed-Enriched', 'Dolma', 'OLMo 3'):
-            self.assertIn(name, diagram)
-        for scoring_detail in ('Llama-3.1-70B-Instruct labels 400k PMC paragraphs',
-                               'Train XLM-RoBERTa-base', 'Apply the trained scorer',
-                               'Educational value: 1 to 5', 'score ≥ 3/5'):
-            self.assertIn(scoring_detail, diagram)
-        self.assertIn('TEACHER --> TRAIN', diagram)
-        self.assertIn('TRAIN -.->|Trained scoring model| SCORES', diagram)
-        self.assertIn('RECORDS -->|Sequences, structures, images| MODALITY', diagram)
-        self.assertNotRegex(diagram, r'\[\d+(?:,\d+)*\]')
-        self.assertNotRegex(diagram, r'\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')
-        self.assertEqual(pipeline.split('```', 2)[2].strip(), '')
+        figures = re.findall(r'!\[[^\]]+\]\((assets/[^)]+\.svg)\)', pipeline)
+        self.assertEqual(len(figures), 2)
+        namespace = {'svg': 'http://www.w3.org/2000/svg'}
+        labels = []
+        for relative in figures:
+            path = ROOT / 'reports/bio_foundation_review_2026-10-15' / relative
+            svg = ET.parse(path).getroot()
+            self.assertEqual(svg.tag, '{http://www.w3.org/2000/svg}svg')
+            self.assertIsNotNone(svg.find('svg:title', namespace))
+            self.assertIsNotNone(svg.find('svg:desc', namespace))
+            self.assertIsNone(svg.find('.//svg:script', namespace))
+            labels.extend(''.join(node.itertext()) for node in svg.findall('.//svg:text', namespace))
+            references = svg.findall('.//svg:a', namespace)
+            self.assertTrue(references)
+            self.assertTrue(all(node.attrib['href'].startswith('https://') for node in references))
+        text = '\n'.join(labels)
+        self.assertIn('OpenThoughts3', text)
+        self.assertIn('reasoning SFT', text)
+        self.assertNotRegex(text, r'Ryze|XLM-RoBERTa|\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')
+        self.assertEqual(pipeline.split(figures[-1] + ')', 1)[1].strip(), '')
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

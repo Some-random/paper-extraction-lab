@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="842" viewBox="0 0 1120 842" role="img" aria-labelledby="title desc">
+<title id="title">Prepare the biological corpus</title><desc id="desc">Proposed biological continued-pretraining recipe. References identify source techniques; biology-specific adaptations are proposed here.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#8292a6"/></marker></defs>
+<rect width="1120" height="842" rx="18" fill="#f8fafc"/>
+<text x="32" y="49" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#24354a" font-weight="700">Prepare the biological corpus</text>
+<text x="32" y="82" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#53657b">Extract → preserve meaning → clean → deduplicate</text>
+<rect x="32" y="112" width="336" height="164" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="56" y="149" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#24354a" font-weight="700">Papers</text>
+<text x="56" y="184" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">XML first; olmOCR 2 for PDFs</text>
+<text x="56" y="214" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Text, tables, figures + context</text>
+<text x="56" y="252" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">olmOCR 2</text><a href="https://arxiv.org/html/2510.19817v1"><rect x="54" y="234" width="83.339" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<text x="143.33899992704391" y="252" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">·</text>
+<text x="157.33899992704391" y="252" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">S2ORC</text><a href="https://aclanthology.org/2020.acl-main.447/"><rect x="155.339" y="234" width="62.565" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<rect x="392" y="112" width="336" height="164" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="416" y="149" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#24354a" font-weight="700">Web URLs</text>
+<text x="416" y="184" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Main HTML, tables + images</text>
+<text x="416" y="214" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Remove menus and ads</text>
+<text x="416" y="252" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">FineWeb</text><a href="https://arxiv.org/html/2406.17557v1"><rect x="414" y="234" width="72.017" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<rect x="752" y="112" width="336" height="164" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="776" y="149" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#24354a" font-weight="700">Existing datasets</text>
+<text x="776" y="184" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Native records + annotations</text>
+<text x="776" y="214" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Keep versions and source IDs</text>
+<text x="776" y="252" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">Dolma</text><a href="https://arxiv.org/html/2402.00159v1"><rect x="774" y="234" width="53.113" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<path d="M200 276V301H560" fill="none" stroke="#8292a6" stroke-width="2"/>
+<path d="M920 276V301H560" fill="none" stroke="#8292a6" stroke-width="2"/>
+<path d="M560 276V324" fill="none" stroke="#8292a6" stroke-width="2"/><polygon points="560,324 555,315 565,315" fill="#8292a6"/>
+<rect x="32" y="326" width="1056" height="178" rx="12" fill="#eaf1fa" stroke="#b9cce5" stroke-width="1.5"/>
+<text x="56" y="363" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#24354a" font-weight="700">Preserve meaning in a common format</text>
+<text x="56" y="398" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Metadata: source, version, topic, modality and original location</text>
+<text x="56" y="428" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Training text: section / modality markers; citations → title + first author</text>
+<text x="56" y="458" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Keep original files, figure–caption links, table cells and typed sequences</text>
+<text x="56" y="480" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">S2ORC</text><a href="https://aclanthology.org/2020.acl-main.447/"><rect x="54" y="462" width="62.565" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<text x="122.56499987840652" y="480" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">·</text>
+<text x="136.56499987840652" y="480" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">Galactica</text><a href="https://arxiv.org/html/2211.09085v1#S3.SS1.SSS2"><rect x="134.565" y="462" width="74.856" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<text x="215.42099958658218" y="480" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">·</text>
+<text x="229.42099958658218" y="480" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">NatureLM</text><a href="https://arxiv.org/html/2502.07527v2"><rect x="227.421" y="462" width="78.63" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<path d="M560 504V528H286V548" fill="none" stroke="#8292a6" stroke-width="2"/><polygon points="286,548 281,539 291,539" fill="#8292a6"/>
+<rect x="32" y="550" width="508" height="206" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="56" y="587" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#24354a" font-weight="700">Clean and validate</text>
+<text x="56" y="622" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Flag empty / truncated / garbled output</text>
+<text x="56" y="652" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Strip recurring navigation / headers</text>
+<text x="56" y="682" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Validate numbers, tables and sequence syntax</text>
+<text x="56" y="732" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">Dolma</text><a href="https://arxiv.org/html/2402.00159v1"><rect x="54" y="714" width="53.113" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<text x="113.1129999756813" y="732" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">·</text>
+<text x="127.1129999756813" y="732" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">olmOCR 2</text><a href="https://arxiv.org/html/2510.19817v1"><rect x="125.113" y="714" width="83.339" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<path d="M540 652H578" fill="none" stroke="#8292a6" stroke-width="2"/><polygon points="578,652 569,647 569,657" fill="#8292a6"/>
+<rect x="580" y="550" width="508" height="206" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="604" y="587" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#24354a" font-weight="700">Deduplicate across all sources</text>
+<text x="604" y="622" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">IDs → exact hashes → near-duplicate text</text>
+<text x="604" y="652" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Keep best copy + all source locations</text>
+<text x="604" y="682" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a">Preserve biological sequence variation</text>
+<text x="604" y="732" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">Dolma</text><a href="https://arxiv.org/html/2402.00159v1"><rect x="602" y="714" width="53.113" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<text x="661.1129999756813" y="732" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">·</text>
+<text x="675.1129999756813" y="732" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#315f97">OLMo 3</text><a href="https://arxiv.org/html/2512.13961v2#S3.SS4"><rect x="673.113" y="714" width="64.469" height="23" fill="#ffffff" fill-opacity="0"/></a>
+<path d="M834 756V790H560" fill="none" stroke="#8292a6" stroke-width="2"/>
+<path d="M560 790V805" fill="none" stroke="#8292a6" stroke-width="2"/><polygon points="560,805 555,796 565,796" fill="#8292a6"/>
+<text x="560" y="830" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#24354a" text-anchor="middle">Clean records → scoring and mixing</text>
+</svg>

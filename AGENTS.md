@@ -257,3 +257,15 @@ recipe, not a report of executed work. Preserve actual execution state in the
 existing experiment reports. Attribute the 400k teacher-labeling example and
 the educational-score threshold to Biomed-Enriched; do not present educational
 value as a scientific-validity score or apply prose scoring to non-text data.
+
+The user subsequently rejected the dense diagram, hard-coded XLM-RoBERTa
+choice and emphasis on Ryze. After requesting a text outline first, the user
+authorized a shorter diagram version and asked to draw on OpenThoughts3 across
+the recipe. Use two readable SVG figures on the processing page, with paper
+names inside the relevant blocks. Preserve the distinction between directly
+supported source techniques and our biological-CPT adaptations. OpenThoughts3
+supports controlled source/filter/teacher comparisons; its reasoning-SFT
+question difficulty, answer sampling and answer filtering results do not prove
+benefits for raw-paper CPT. Keep model selection empirical, use reviewed labels
+and held-out checks for scoring, and choose mixes by controlled training gains.
+This is documentation of a proposed recipe, not authorization to run training.
