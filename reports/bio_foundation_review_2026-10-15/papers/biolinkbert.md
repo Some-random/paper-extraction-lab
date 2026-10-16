@@ -6,6 +6,8 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2022. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2203.15827).
+
 **Training approach:** Pretraining from scratch. **Architecture:** BERT architecture. [Initialization evidence](https://arxiv.org/html/2203.15827#S6.SS1)
 
 Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment.

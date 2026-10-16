@@ -6,6 +6,8 @@ Scientific sequence and interaction model
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2026. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2606.16905).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-8B; Llama 3.2-1B / 3B variants. [Initialization evidence](https://arxiv.org/html/2606.16905v1#S2.SS3)
 
 The model inherits pretrained backbone and embedding weights. The 44.87B source headline is a scientific corpus across pretraining and post-training; it must not be described as a disclosed CPT-only budget.

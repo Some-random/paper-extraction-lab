@@ -1,123 +1,74 @@
-# Available corpus and overall storage
+# Biological source inventory and collection priorities
 
 [Literature catalog](README.md) · [Processing recipe](data_pipeline.md)
 
-**A 1T-token collection is a plausible target when biological sequences are included. The earlier 50B estimate describes only three selected inputs, not the complete available corpus.** It leaves out large released collections and applies an assumed 15% research-retention rate to FineFineWeb biology. That rate has not been measured.
+**The collection scope is the broader biological literature and its supporting databases. The earlier 50B scenario covered only a narrow subset and no longer serves as our overall estimate.** Prioritize research papers, biology web text and annotated database records. Group raw sequences and structures into one secondary pool for now.
 
-## Larger source pools
+## How large is the paper inventory?
 
-These are source-reported inventories, checked October 16, 2026. The rows have different units and overlapping content; they are not a sum of unique biological training tokens.
+| Inventory | Article records / candidates | Meaning |
+|:---|---:|:---|
+| [PMC archive](https://pmc.ncbi.nlm.nih.gov/) | **About 12.5M** | Current rounded archive total, checked October 16, 2026. Biomedical and life-science literature; not all records belong to the bulk text-mining subsets. |
+| [Broader PMC text-mining inventory](../pmc_global_availability_2026-10-14.json) | **9,324,889** | October 14 metadata-query candidates from open-access and author-manuscript collections, excluding embargoes. Object availability and biological scope still need checking. |
+| [Initial 55-journal subset](../pmc_cns_availability_2026-10-13/availability.json) | **552,024** | A selected subset of the above, not the total number of papers we can collect. |
 
-| Available source | Published amount | Scope and relationship to the starter |
-|:---|:---|:---|
-| [OLMo 3 / olmOCR science PDFs](https://arxiv.org/html/2512.13961v2#S3.SS4) | **972B text tokens**, about **101M documents** in the paper's pool | Scientific and other academic documents across subjects. The biological subset is not quantified here. [Released pool documentation](https://github.com/allenai/dolma3/blob/main/datasets/dolma3_mix/pools/9T/README.md). Omitted from the 50B forecast. |
-| [OpenGenome2 / Evo 2](https://huggingface.co/datasets/arcinstitute/opengenome2) | **8.8T nucleotide positions** | Genomes, metagenomes and functional sequence collections, released as FASTA and processed JSONL. Biological sequence, not prose. Omitted from the 50B forecast. |
-| [FineFineWeb biology and chemistry](https://huggingface.co/datasets/m-a-p/FineFineWeb) | **86.99B + 28.52B = 115.51B source-counted text tokens** | Before our biological research selection. The starter includes biology only; chemistry includes material outside biology. The entire 4.425T FineFineWeb corpus spans many other topics and is not a biological-token total. |
-| [TheBioCollection free text](https://huggingface.co/datasets/trillionlabs/TheBioCollection) | **33.8B source-counted tokens** | Included in the starter before tokenizer conversion and further deduplication. Contains database descriptions, sequences and molecular records; the instruction stream is separate. |
-| [PMC](../pmc_global_availability_2026-10-14.json), [S2ORC](https://aclanthology.org/2020.acl-main.447/) and [peS2o](https://github.com/allenai/pes2o) | **9.32M candidate PMC papers**; no combined token total established | Different overlapping routes into the literature. peS2o is derived from S2ORC, and the OLMo PDF pool can contain the same works. The starter currently quantifies only 552,024 PMC candidates. |
+These inventories are nested; do not add them. The planned scope is not capped at 55 journals. Research-biology selection will distinguish the material relevant to this project from clinical and other content.
 
-The [Evo 2 paper](https://www.nature.com/articles/s41586-026-10176-5) distinguishes its **more than 8.8T-nucleotide dataset** from **9.3T consumed training tokens** for the 40B model. We use the dataset amount above. OpenGenome2's functional windows and different sequence representations also require overlap-aware accounting; its headline is not a measured number of unique genomic positions under our deduplication rules.
+Using the **full 9.32M-candidate inventory** gives the following gross-text scenarios:
 
-For our corpus, **1T biological training tokens is a target, not an established deduplicated yield**. A collection with substantial genomic sequence can reach a very different scale from a collection dominated by research prose. Tokenize the selected representations with the target tokenizer before adding text, protein and nucleotide amounts. The 972B scientific-text figure does not establish 972B biological tokens, and the 8.8T-base figure must not simply be added to Qwen-token counts.
+| Assumed tokens per paper | Candidate text volume |
+|---:|---:|
+| 8,000 | **74.6B** |
+| 12,000 | **111.9B** |
+| 23,334 | **217.6B** |
 
-Other named inputs in the reviewed papers—UniProt/UniRef50/UniRef90, OAS, RNAcentral, PDB/AlphaFold, PubChem, BindingDB and related resources—also belong in a full source inventory. Several already contribute records to TheBioCollection or overlap one another. They have not all been individually sized here; adding the BioMatrix, NatureLM and SciReasoner training budgets would count reused material more than once and would not establish download availability.
+These are input-volume scenarios before scope filtering and deduplication, not retained biology counts. The 23,334 figure is the mean of our 454-paper, journal-balanced and length-capped sample; it is not representative of the whole archive. The other lengths are assumptions. This supports planning around tens to hundreds of billions of candidate paper tokens, rather than extrapolating only the 552k subset.
 
-## First quantified subset
+Other paper collections can add coverage. [OLMo 3's PDF pool](https://arxiv.org/html/2512.13961v2#S3.SS4) reports **972B tokens across subjects**, and [S2ORC](https://aclanthology.org/2020.acl-main.447/) and [peS2o](https://github.com/allenai/pes2o) supply overlapping literature. Their incremental research-biology contribution is unmeasured. OLMo's released topic groups, such as Health and Science/Math/Technology, do not provide an exact biology-only total. The whole 972B cannot be assigned to biology.
 
-**About 50B tokens, with a 35–70B sensitivity range**, is the retained forecast for the three starter inputs below. Deduplication alone leaves roughly **110–130B** in this same subset, before research selection. These are planning scenarios, not measured corpus yields or confidence intervals.
+## Web text and annotated database records
 
-## Paper coverage and dataset scope
+| Source | Published source amount | Local-tokenizer proxy, before our filtering/deduplication |
+|:---|---:|---:|
+| [FineFineWeb biology](https://huggingface.co/datasets/m-a-p/FineFineWeb) | **86.99B tokens** | **85.7B** |
+| [TheBioCollection free-text stream](https://huggingface.co/datasets/trillionlabs/TheBioCollection) | **33.8B tokens** | **37.0B** |
 
-**55 is the number of journals, not papers.** That initial journal inventory contains **552,024 candidate papers**. The broader [PMC inventory](../pmc_global_availability_2026-10-14.json), checked on October 14, contains **9,324,889 XML/text-mining candidates**. The journal subset is contained in this larger pool. We can collect beyond those journals; there is no 55-journal cap on the planned corpus.
+The source amounts use different tokenizers. The local proxies use the pinned Qwen-family extraction tokenizer and small convenience-sample conversion ratios: 0.9857 for web text and 1.0957 for database records. Their combined proxy is about **122.8B tokens before our additional filtering and cross-source deduplication**. It is not a measured retained corpus.
 
-The 49.1B central estimate below quantifies the initial journal subset plus two imported datasets. The additional research-biology yield from wider PMC coverage remains unmeasured; the inventory also includes clinical material and other subjects. Candidate counts do not certify that every object is downloadable. Other paper collections, including peS2o and S2ORC, can extend coverage, with their additional contribution counted after overlap is measured.
+The previous **15% research-retention assumption for FineFineWeb biology was unmeasured**. It has been retired from the current overview rather than replaced with another arbitrary percentage. Biology labels establish a candidate subject area; representative review must establish research relevance and quality. FineFineWeb already applies upstream exact/MinHash deduplication, so our additional removal should account for that.
 
-**FineFineWeb biology** is the biology portion of a released web-text dataset. **TheBioCollection** is a released collection of biological database records drawn from sources such as UniProt and PubChem, containing sequences, molecular representations, descriptions and annotations. Here we use its free-text stream, not its separate instruction stream.
+The 86.99B figure is one released biology-labelled collection, not a ceiling on all biological web text. The same source card lists **14.26B agronomy tokens** and **28.52B chemistry tokens** as additional candidate slices; their relevant biological portions and overlap still need measurement. We do not count those whole slices as biology automatically.
 
-General-text replay, instruction data and unmeasured additions from other corpora are excluded from the quantified estimate.
+TheBioCollection contains records from UniProt, PubChem and other biological databases: descriptions and annotations linked to sequences, molecular representations and other fields. Its free-text stream is separate from its instruction stream. **The full 33.8B is not annotation-only text or pure sequence.** Prioritizing it means retaining the useful linked records, not relabelling all its tokens as prose.
 
-## Source inventory and expected retention
+## Raw sequences and structures: grouped, secondary priority
 
-Forecast columns use the existing pinned **Qwen-family extraction tokenizer**, with sample-based conversions for external token definitions. These are retained corpus tokens seen once, before training repetition.
+Group standalone genomic, protein and structure exports under **raw biological representations** for collection planning. For example, [OpenGenome2](https://huggingface.co/datasets/arcinstitute/opengenome2) contains approximately **8.8T biological nucleotide positions**, available as FASTA and processed JSONL. Protein and structure resources such as UniRef and PDB belong to this group when imported without accompanying descriptive records.
 
-| Source block | Available inventory | After rough<br>deduplication | After research<br>selection + deduplication | Research-pool<br>range |
-|:---|:---|---:|---:|---:|
-| Direct paper text | **552,024 XML candidates** in the selected journal union | **6.0B** | **4.2B** | **1.8–11.0B** |
-| Web-origin text imported from FineFineWeb | **86.99B source-counted tokens**; about **85.7B** after tokenizer conversion | **77.2B** | **11.6B** | **3.6–20.4B** |
-| Database records imported from TheBioCollection | **33.8B Gravity-tokenizer free-text tokens**; about **37.0B** after conversion | **33.3B** | **33.3B** | **29.6–35.2B** |
-| **Total** | | **116.5B** | **49.1B** | **35.0–66.6B** |
+Keep native sequence/residue/structure units in provenance, but do not invent a combined language-model-token total from incompatible units. OpenGenome2's biological content can support a very large sequence corpus; it does not establish an equally large biological-prose corpus. Sequence windows and different representations can overlap.
 
-The [October 13 PMC inventory](../pmc_cns_availability_2026-10-13/availability.json) precedes biology/article-type filtering and object verification. The [whole-PMC inventory](../pmc_global_availability_2026-10-14.json) contains 9.32M XML candidates; it is an expansion option containing this journal subset, not a separate additive pool.
+**This is our project priority, not a claim that raw sequences are inherently less valuable.** For the immediate text-based CPT objective, papers and annotated records directly provide mechanisms, functions, experimental observations and entity-to-description links. The effect of adding more raw sequence is a training-mixture question. We retain the option to use it later.
 
-FineFineWeb's [author card](https://huggingface.co/datasets/m-a-p/FineFineWeb) supplies its biology total and describes upstream exact/MinHash deduplication. We assume only **additional** removal within our inputs and across routes. TheBioCollection's [author card](https://huggingface.co/datasets/trillionlabs/TheBioCollection) distinguishes **33.8B free-text tokens** from **18.9B instruction tokens**. The free-text stream contains sequences, molecular representations, database annotations and tool-computed descriptions; its full size is not a pure sequence count.
+The same source can contribute to both forms: an annotated UniProt record can contain a protein sequence. Its sequence does not become extra corpus material just because it is also available in a raw sequence export. Likewise, do not add the complete BioMatrix, NatureLM and SciReasoner training budgets; they reuse many underlying sources.
 
-## Assumptions behind the forecast
+## Storage for the broader collection
 
-| Quantity | Low | Central | High |
-|---|---:|---:|---:|
-| Tokens per paper | 8,000 | 12,000 | 23,334 |
-| Paper tokens retained after research-scope selection | 50% | 70% | 90% |
-| Paper tokens retained after additional deduplication | 80% | 90% | 95% |
-| FineFineWeb biology tokens retained after research-scope selection | 5% | 15% | 25% |
-| Web tokens retained after additional deduplication | 85% | 90% | 95% |
-| Database-record tokens retained after additional deduplication | 80% | 90% | 95% |
+Storage must follow the selected papers and token volume. The former **4TiB** allowance applied only to the small starter scenario; it is not a budget for the broader inventory.
 
-**Selection and deduplication percentages are assumptions, not observed success rates.** In particular, no representative measurement establishes that 15% of FineFineWeb biology is suitable research content. The wide range exposes that uncertainty. Our web probe calibrates tokenization only; it does not establish research yield. Database records are assumed within research scope for this estimate; further validity/provenance filtering reduces that row.
-
-The 454-paper batch averages 23,334 extracted tokens per paper. Those journal-balanced, length-capped, citation-expanded papers are not representative of the full inventory. We therefore use an assumed 12,000 tokens centrally rather than extrapolating their mean universally.
-
-Central calculations:
-
-- **Papers:** 552,024 × 12,000 × 70% scope retention × 90% dedup retention = **4.17B**.
-- **Web:** 86.99B × 0.9857 tokenizer conversion × 15% scope retention × 90% dedup retention = **11.58B**.
-- **Database records:** 33.8B × 1.0957 tokenizer conversion × 90% dedup retention = **33.33B**.
-
-## Acquisition categories and actual modalities
-
-In the central research case, direct paper acquisition supplies **4.2B tokens (8.5%)**. Existing datasets supply **44.9B (91.5%)**: **11.6B web-origin text** plus **33.3B database records**. New direct web crawling supplies **0 tokens** in this initial plan. Imported webpage text retains its web origin while remaining an existing-dataset acquisition.
-
-A bounded probe inspected **2,048 free-text records across prefixes of all 32 TheBioCollection shards** and **108 FineFineWeb records across eight shard prefixes**. Both Gravity and the pinned local tokenizer counted the database records; the web comparison used stored token counts. Input reads totaled about **25MB**, including a tokenizer file. No full shard, model weights, model inference or training was run.
-
-**Prefixes are convenience samples.** They establish neither population proportions nor whole-corpus duplicate rates. This modality projection is conditional on their token proportions being representative and retention affecting those portions similarly:
-
-| What the model reads | Central token projection | Share of the same 49.1B pool |
-|---|---:|---:|
-| Paper/web prose, database descriptions, annotations and remaining text | **42.4B** | **86.3%** |
-| Tagged protein sequences | **1.5B** | **3.0%** |
-| Tagged DNA/RNA sequences | **0.25B** | **0.5%** |
-| Tagged SMILES/InChI | **5.0B** | **10.2%** |
-
-These are the same records as the source table; do not add modality counts to source counts. Untagged sequence strings in paper/web prose are not separately identified. The database probe found protein sequences at 4.4% and DNA/RNA sequences at 0.75% of its token positions. Protein-domain records contain substantial additional annotations. Different sampling or additional raw UniRef/RNAcentral would change this mix. Available-pool shares do not prescribe training sampling weights.
-
-## Preventing double counting
-
-- PMC, S2ORC, peS2o and Dolma academic text can contain the same works. The estimate grants **zero unmeasured incremental tokens** to the latter three. Count their new contributions only after identifier/content matching.
-- TheBioCollection already uses UniProt, PubChem and other databases. Do not add their complete raw exports again. Distinct new sequences, measurements and annotations can contribute after representation-aware comparison.
-- NatureLM/BioMatrix training budgets do not establish an equally sized downloadable corpus available to us.
-- Resolve web publication mirrors to the literature identity index. Similar entities with different useful annotations or relations are not generic duplicate text.
-
-## Overall storage
-
-**Reserve approximately 4TiB for the quantified initial corpus, including preserved paper PDFs and figures.** Its combined working estimate is **3.3–3.6TiB**. This is a capacity estimate for the initial subset and two datasets; extending paper coverage requires more space.
-
-| Included material | Basis of the estimate |
+| Storage component | Scaling basis |
 |:---|:---|
-| Original paper PDFs and figures | Approximately 2.8TiB for the central scope-selected paper set, extrapolated from 454 local papers. |
-| XML, dataset text, token IDs, metadata, indexes and bounded working files | 500–800GiB allowance, including about 183GiB of token IDs and 143GiB of canonical text. |
-| **Combined working estimate** | **3.3–3.6TiB; round up to a 4TiB initial allocation.** |
+| Token IDs | **373GiB per 100B tokens**, or **3.64TiB per 1T tokens**, using uint32 IDs. |
+| Original paper PDFs and figures | Approximately **7.2TiB per million retained papers**, extrapolated from the measured 454-paper sample. |
+| Canonical text, XML, metadata, indexes and temporary files | Additional to token IDs and paper assets; depends on representations, retention and which intermediate files are kept. |
 
-The two components are included in the combined total, not additional to it. The estimate excludes separately downloaded supplements, model weights, environments and training checkpoints. It assumes serial dataset-shard processing rather than keeping every unfiltered shard and every intermediate representation at once.
+If all 9.32M candidates had the sample's average PDF/figure footprint, those assets alone would occupy about **67TiB**. This is a whole-candidate-pool storage scenario, not a recommendation to download all papers or a measured biological-corpus size. Scope selection can reduce the number of retained papers substantially.
 
-**The 4TiB allocation does not cover a 1T-token expansion.** One trillion token IDs stored as uint32 occupy **4TB decimal, or 3.64TiB**, before canonical text, source files, metadata, indexes and temporary files. An overall allocation for that expanded corpus depends on its mix of compact sequence records and original paper assets; it cannot be inferred by multiplying the starter's storage per token.
+The currently inventoried downloads include **433.88GB** for FineFineWeb biology JSONL and **15.93GB compressed** for TheBioCollection free text. Serial shard processing avoids keeping all unfiltered input and every intermediate representation at once. Shared scratch had about **1.4TiB free on October 16, 2026 (PST)**. Separate supplements, model weights and training files are outside the text/source estimates above.
 
-**For expansion, budget roughly 7.2TiB of PDFs and figures per additional million retained papers**, before their XML, extracted text and indexes. This scales the measured file sizes, not the biological yield of the broader 9.32M-candidate inventory. File sizes can vary by journal and article type. Training-text deduplication does not remove the obligation to preserve originals.
+## Evidence and reproducibility
 
-For reproducibility, the source inventories contain **15.93GB compressed** of TheBioCollection free-text files and **433.88GB** of FineFineWeb biology JSONL. Keeping the current redundant multi-view paper export layout would use more space than the canonical-text design assumed above. Shared scratch had approximately **1.4TiB free on October 16, 2026 (PST)**, below the proposed 4TiB initial allocation.
+[Source counts and scenario calculations](starter_corpus_estimate.json) · [PMC homepage snapshot](pmc_archive_snapshot.json) · [Tokenizer-probe counts, versions and hashes](starter_corpus_probe.json)
 
-## Reproduction and refinement
+The probe inspected 2,048 TheBioCollection records from prefixes of 32 shards and 108 FineFineWeb records from eight shard prefixes. These are convenience samples, not a probability sample or a measurement of whole-corpus duplicate rates. They calibrate tokenization only.
 
-[Scenario calculations](starter_corpus_estimate.json) · [Probe counts, versions and hashes](starter_corpus_probe.json)
-
-Run `scripts/estimate_starter_budget.py` to reproduce the arithmetic offline from checked-in counts. `scripts/probe_starter_corpus.py` reproduces the bounded probe using `requests`, `tokenizers` and `zstandard`: one serial network/CPU worker, at most 64MiB of response bodies, with originals retained in ignored experiment storage. Cached inputs reproduce counts without network transfers.
-
-A representative, token-weighted research-scope audit across web hosts and journals, followed by cross-source identity/hash/verified-overlap measurement, will replace the assumed retention percentages. Final counts require actual whole-corpus tokenization. This forecast is not a completed ingestion, deduplication run or learned mixture.
+Run `scripts/estimate_starter_budget.py` to reproduce the arithmetic. Its old 35–70B subset scenarios remain explicitly marked as superseded for provenance; they do not determine the new overview. Final retained counts require biological-scope review, cross-source identity/content matching and tokenization over the selected records.

@@ -6,6 +6,8 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2024. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2403.18421). Technical report in 2024; the model was first released in 2022.
+
 **Training approach:** Pretraining from scratch. **Architecture:** 2.7B GPT-style decoder. [Initialization evidence](https://arxiv.org/html/2403.18421v1)
 
 Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens.

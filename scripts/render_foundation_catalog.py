@@ -3,7 +3,6 @@
 import csv
 import io
 import json
-import math
 import re
 from decimal import Decimal
 from pathlib import Path
@@ -179,6 +178,7 @@ def overview_row(entry):
     budget = overview_budget(entry)
     view = entry['presentation']
     name = cell(view.get('name', entry['name']))
+    name += f" ({entry['publication']['year']})"
     name += '<br>' + cell(model_description(entry, view['starting_model']))
     amounts = [overview_amount(budget['counts'][key], total=key == 'total') for key in TOKEN_FIELDS]
     origins = entry['paper_text_origins']
@@ -232,61 +232,46 @@ def cell(value):
 
 
 def starter_conclusion(estimate):
-    """Keep our availability forecast distinct from published model-training budgets."""
-    central = estimate['scenarios']['central']
-    content = central['research_starter_content_tokens']
-    billion = lambda value: f'{value / 1e9:.1f}B'
-    low = math.floor(estimate['scenarios']['low']['research_starter_total_tokens'] / 5e9) * 5
-    high = math.ceil(estimate['scenarios']['high']['research_starter_total_tokens'] / 5e9) * 5
+    """Show source inventories and collection priorities, not an unmeasured retained total."""
     availability = estimate['paper_availability']
+    volume = estimate['paper_text_scenarios']
+    inventory = estimate['current_web_and_record_inventory']
     storage = estimate['storage']
-    overall_tib = '–'.join(f'{value / 2**40:.1f}' for value in storage['central_overall_working_bytes'])
-    reserve_tib = storage['recommended_initial_capacity_tib']
-    additional_tib = storage['additional_million_papers_pdf_figure_bytes_proxy'] / 2**40
-    modality = estimate['central_modality_tokens_conditional_on_prefix_representativeness']
     larger = {source['id']: source for source in estimate['larger_source_inventory']}
     pdfs, genomes = larger['olmo3_science_pdfs'], larger['opengenome2']
+    paper_low, paper_high = volume['gross_text_tokens'][0] / 1e9, volume['gross_text_tokens'][-1] / 1e9
     return '\n\n'.join([
-        '## Available data and overall storage',
-        f"**The broader PMC inventory contains {availability['broader_xml_candidates'] / 1e6:.2f} million paper candidates.** "
-        f"The {availability['journal_subset_count']}-journal inventory already contains "
-        f"**{availability['journal_subset_xml_candidates']:,} candidate papers**. "
-        'The journal list is an initial subset, not a limit on collection. '
-        'The broader inventory includes clinical and other material; its research-biology yield is still unmeasured.',
-        '**Available sources extend well beyond 50B; that estimate covers only a first subset.** '
-        f"[OLMo 3’s scientific PDF pool]({pdfs['source']}) reports **{pdfs['amount'] / 1e9:g}B text tokens** across subjects. "
-        f"[OpenGenome2]({genomes['release']}) provides **{genomes['amount'] / 1e12:.1f}T nucleotide positions** of biological sequence. "
-        'A 1T-token corpus is therefore a plausible target when sequences are included. '
-        'A deduplicated biology-only total in our tokenizer still needs to be measured; '
-        'these published amounts use different units and overlap other sources.',
-        f"**First quantified subset: about {billion(central['research_starter_total_tokens'])} retained tokens; roughly {low}–{high}B across sensitivity scenarios.** "
-        'This estimate covers the quantified journal subset and the two datasets below, not the whole PMC inventory. '
-        'It is a forecast, not an already downloaded or processed corpus. '
-        f"Deduplication alone leaves about **{billion(central['dedup_only_total_tokens'])}**; "
-        'the smaller research pool assumes further selection, especially retaining 15% of FineFineWeb biology text.',
-        '| Source content | Estimated tokens |\n|:---|---:|\n'
-        f"| Papers: {availability['journal_subset_xml_candidates']:,} candidates in the initial journal subset | {billion(content['direct_paper_text'])} |\n"
-        f"| Web text imported from FineFineWeb biology | {billion(content['imported_web_origin_text'])} |\n"
-        f"| Biological database records imported from TheBioCollection | {billion(content['imported_biological_records'])} |\n"
-        f"| **Total** | **{billion(central['research_starter_total_tokens'])}** |",
-        '**[TheBioCollection](https://huggingface.co/datasets/trillionlabs/TheBioCollection)** '
-        'is a released collection of records from UniProt, PubChem and other biological '
-        'databases: protein/DNA/RNA sequences, molecular representations, descriptions and annotations. '
-        'This estimate uses its free-text stream, excluding its separate instruction dataset.',
-        'A small prefix probe projects '
-        f"**{billion(modality['protein_sequence_spans'])} protein-sequence tokens, "
-        f"{modality['dna_rna_sequence_spans'] / 1e9:.2f}B DNA/RNA tokens and "
-        f"{billion(modality['smiles_inchi_spans'])} SMILES/InChI tokens** within this same pool. "
-        'These modality projections are less certain than source inventories and must not be added to the total. '
-        'General-text replay is additional; available-pool proportions do not prescribe training weights.',
-        f'**Overall storage: reserve about {reserve_tib}TiB for the first quantified subset.** '
-        f'The combined estimate is **{overall_tib}TiB**, including retained paper PDFs/figures, XML, '
-        'dataset text, token IDs, metadata, indexes and working space. '
-        f'Each additional million retained papers adds roughly **{additional_tib:.1f}TiB** for PDFs and figures alone; '
-        'a larger paper collection needs a larger storage allocation. '
-        f"At 1T retained tokens, four-byte token IDs alone occupy {storage['one_trillion_uint32_token_ids_bytes'] / 2**40:.2f}TiB, "
-        'before text, originals and indexes. These projections exclude separate supplements '
-        'and model/training files. [Inventories and storage assumptions](source_planning.md).',
+        '## Available data and collection priorities',
+        f"**PMC contains about {availability['archive_article_records_rounded'] / 1e6:g} million archived articles.** "
+        f"Our broader inventory identifies **{availability['broader_xml_candidates'] / 1e6:.2f}M text-mining candidates**; "
+        f"the earlier **{availability['journal_subset_xml_candidates']:,} papers from "
+        f"{availability['journal_subset_count']} journals** are only a nested subset. "
+        f"We plan around the broader inventory. [PMC archive]({availability['archive_source']}).",
+        '| Source group | Available amount | Collection priority |\n'
+        '|:---|:---|:---|\n'
+        f"| Paper text | {availability['broader_xml_candidates'] / 1e6:.2f}M PMC candidates; additional overlapping paper collections | First: select research biology |\n"
+        f"| Biology-labelled web text | FineFineWeb biology alone: **{inventory['web_source_tokens'] / 1e9:.2f}B source tokens** | First: assess relevance and quality |\n"
+        f"| Annotated biological database records | TheBioCollection free text: **{inventory['record_source_tokens'] / 1e9:.1f}B source tokens** | First: preserve descriptions and linked representations |\n"
+        f"| Raw sequences and structures, grouped | OpenGenome2: **{genomes['amount'] / 1e12:.1f}T nucleotide positions**; other raw resources not yet counted together | Secondary for this project |",
+        f"**Paper-volume scenario:** the full {availability['broader_xml_candidates'] / 1e6:.2f}M-candidate PMC inventory "
+        f"would contain roughly **{paper_low:.0f}–{paper_high:.0f}B text tokens** at an assumed 8,000–23,334 tokens per paper, "
+        'before biological scope selection and deduplication. This is a size scenario, not a measured biology-only yield. '
+        f"[OLMo 3’s PDF pool]({pdfs['source']}) adds another collection to examine, but its "
+        f"{pdfs['amount'] / 1e9:g}B mixed-subject tokens cannot be counted wholesale as biology or added without checking overlap.",
+        '**[TheBioCollection](https://huggingface.co/datasets/trillionlabs/TheBioCollection)** combines biological '
+        'database records with descriptions, annotations, sequences and molecular representations. '
+        'We prioritize records that connect entities to functions, organisms, properties or observations for our text-based CPT objective. '
+        'Raw sequence/structure resources remain one secondary collection group; this is our project priority, '
+        'not evidence that they are inherently less useful.',
+        '**Available source amounts are not final retained amounts.** The web and database figures use their '
+        'authors’ tokenizers. We have no measured basis for keeping only 15% of the biology web text, '
+        'so that earlier assumption no longer drives the overview. A combined retained biology total requires '
+        'a common tokenizer and measured selection/overlap. Raw nucleotide, protein and structure counts are not added to text tokens.',
+        f"**Storage scales with the selected corpus:** 1T tokens stored as four-byte IDs require "
+        f"**{storage['one_trillion_uint32_token_ids_bytes'] / 2**40:.2f}TiB** before text, indexes and source files. "
+        f"At the measured paper-file sizes, PDFs and figures add approximately "
+        f"**{storage['additional_million_papers_pdf_figure_bytes_proxy'] / 2**40:.1f}TiB per million retained papers**. "
+        '[Source inventories, scope and storage assumptions](source_planning.md).',
     ])
 
 
@@ -303,6 +288,10 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         if not view or view.get('section') not in {'cpt', 'from_scratch', 'other', 'methods', 'corpora', 'archive'}:
             raise ValueError('Missing review scope: ' + entry['id'])
         if view['section'] in {'cpt', 'from_scratch'}:
+            publication = entry.get('publication', {})
+            if (type(publication.get('year')) is not int or not 1900 <= publication['year'] <= 2100
+                    or not publication.get('basis') or not publication.get('source', '').startswith('https://')):
+                raise ValueError('Missing publication year or provenance: ' + entry['id'])
             if not view.get('starting_model') or not view.get('count_label') or not view.get('initialization_source'):
                 raise ValueError('Missing pretraining classification evidence: ' + entry['id'])
             if view.get('budget_id') not in {b['id'] for b in entry['token_budgets']}:
@@ -379,6 +368,9 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         if view['section'] == 'archive':
             body.append('Archived reference outside the current biological pretraining review.')
         if view['section'] in {'cpt', 'from_scratch'}:
+            publication = entry['publication']
+            body.append((f"**Paper year:** {publication['year']}. {publication['basis']} "
+                         f"[Publication date]({publication['source']}). " + publication.get('note', '')).rstrip())
             training = 'Continued pretraining' if view['section'] == 'cpt' else 'Pretraining from scratch'
             model_label = 'Architecture' if view['section'] == 'from_scratch' else 'Starting checkpoint'
             body.append(f"**Training approach:** {training}. **{model_label}:** {model_description(entry, view['starting_model'])}. "
@@ -488,7 +480,8 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         '[Processing recipe](data_pipeline.md).',
         *([starter_conclusion(starter_estimate)] if starter_estimate is not None else []),
         '## Continued pretraining',
-        'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
+        'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating. '
+        'Years indicate the first public paper or preprint; notes may review a later version.',
         overview_table(selected('cpt')),
         '**Quality** considers contribution, technical soundness, evaluation, reproducibility and clarity. '
         'Strong = convincing contribution; Solid = worthwhile with limits; Mixed = substantial strengths '
@@ -535,16 +528,20 @@ def render(data, directory=REPORT, *, starter_estimate=None):
                    'Edit [review.json](review.json), then run `python3 scripts/render_foundation_catalog.py` '
                    'from the repository root. This produces the review, supporting pages, study pages '
                    'and [numeric CSV](catalog.csv) from one registry.',
-                   'The starter conclusion is separate from author-reported budgets. Its figures come from '
+                   'The source-inventory summary is separate from author-reported budgets. Its figures come from '
                    '`starter_corpus_estimate.json`; reproduce those with `scripts/estimate_starter_budget.py` '
-                   'before rerendering. Keep the broader paper inventory, the quantified subset and storage '
-                   'assumptions explicit in `source_planning.md`.',
+                   'before rerendering. Keep current inventory amounts separate from the superseded '
+                   'subset scenarios; the old 15% web retention assumption is not the current estimate. '
+                   'Document scope, collection priorities and storage scaling in `source_planning.md`.',
                    'The `presentation` record selects the review section, starting checkpoint and one '
                    'overview budget, with explicit content scope and quantity type. It must cite '
                    'initialization evidence. Keep every original budget '
                    'in `token_budgets`; selecting an overview row never changes a reported amount. '
                    'CPT studies belong with CPT models regardless of publication type. '
                    'Do not classify instruction tuning, contrastive learning or random initialization as CPT.',
+                   'The `publication` record stores the first public paper/preprint year and its source. '
+                   'Show that year beside the model name; keep checkpoint-release dates and later '
+                   'journal versions distinct in the detailed notes.',
                    'Overview entries also require `author_institutions`, `dataset_sources`, '
                    '`paper_text_origins`, `modality_profile` and `paper_quality`. Preserve attribution '
                    'sources and named inputs. Overall quality reviews cover contribution, soundness, '
@@ -572,6 +569,7 @@ def render(data, directory=REPORT, *, starter_estimate=None):
     (directory / 'maintenance.md').write_text('\n\n'.join(maintenance) + '\n')
     stream = io.StringIO()
     fields = ['id', 'budget_id', 'name', 'kind', 'scope', 'review_section', 'overview_selected',
+              'paper_year', 'paper_year_basis', 'paper_year_source',
               'starting_model', 'data_scope', 'quantity_type', 'authors', 'institutions',
               'existing_dataset_names', 'direct_paper_sources', 'reused_paper_sources', 'other_modalities',
               'overall_paper_quality', 'overall_review_summary',
@@ -586,6 +584,9 @@ def render(data, directory=REPORT, *, starter_estimate=None):
             row = {'id':e['id'], 'budget_id':budget['id'], 'name':e['name'], 'kind':kind,
                 'scope':e.get('scope_group',e.get('category','')), 'stage':budget['stage'],
                 'review_section':e['presentation']['section'],
+                'paper_year': e.get('publication', {}).get('year', ''),
+                'paper_year_basis': e.get('publication', {}).get('basis', ''),
+                'paper_year_source': e.get('publication', {}).get('source', ''),
                 'overview_selected':budget['id'] == e['presentation'].get('budget_id'),
                 'starting_model':e['presentation'].get('starting_model', ''),
                 'data_scope':e['presentation'].get('data_scope', ''),

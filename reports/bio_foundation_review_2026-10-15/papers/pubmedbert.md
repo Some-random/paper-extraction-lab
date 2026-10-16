@@ -6,6 +6,8 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2020. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2007.15779).
+
 **Training approach:** Pretraining from scratch. **Architecture:** BERT architecture. [Initialization evidence](https://arxiv.org/html/2007.15779v6)
 
 Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint.

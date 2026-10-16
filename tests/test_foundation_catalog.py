@@ -32,7 +32,7 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertNotIn('Direct web tokens', table)
             self.assertNotIn('| Data summary |', table)
             self.assertIn('34.6B', table)
-            self.assertEqual(table.count('| BioMedLM<br>'), 1)
+            self.assertEqual(table.count('| BioMedLM (2024)<br>'), 1)
             detail = (directory / 'papers/biomedlm.md').read_text()
             self.assertIn('34.6B', detail)
             self.assertIn('300B', detail)
@@ -43,6 +43,8 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertEqual(rows[1]['existing_datasets_tokens'], '300000000000')
             self.assertEqual(rows[0]['count_basis'], 'Corpus')
             self.assertEqual(rows[1]['count_basis'], 'Training exposure')
+            self.assertEqual(rows[0]['paper_year'], '2024')
+            self.assertIn('arxiv.org/abs/2403.18421', rows[0]['paper_year_source'])
             snapshots = {p.relative_to(directory): p.read_bytes() for p in directory.rglob('*') if p.is_file()}
             render(data, directory)
             self.assertEqual(snapshots, {p.relative_to(directory): p.read_bytes() for p in directory.rglob('*') if p.is_file()})
@@ -80,7 +82,7 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertEqual(budget['counts']['total']['status'], 'not_reported')
             self.assertEqual(budget['counts']['web_urls']['status'], 'not_reported')
 
-    def test_starter_forecast_is_separate_from_published_token_budgets(self):
+    def test_source_inventory_keeps_legacy_scenarios_separate_from_current_amounts(self):
         report = ROOT / 'reports/bio_foundation_review_2026-10-15'
         data = json.loads((report / 'review.json').read_text())
         estimate = json.loads((report / 'starter_corpus_estimate.json').read_text())
@@ -98,19 +100,26 @@ class TokenAccountingChecks(unittest.TestCase):
                                 max(storage['central_overall_working_bytes']))
         self.assertGreater(estimate['paper_availability']['broader_xml_candidates'],
                            estimate['paper_availability']['journal_subset_xml_candidates'])
+        self.assertGreater(estimate['paper_availability']['archive_article_records_rounded'],
+                           estimate['paper_availability']['broader_xml_candidates'])
+        volume = estimate['paper_text_scenarios']
+        self.assertEqual(volume['gross_text_tokens'],
+                         [volume['candidate_papers'] * n for n in volume['assumed_tokens_per_paper']])
+        self.assertIsNone(estimate['current_web_and_record_inventory']['web_research_retention'])
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             render(data, directory, starter_estimate=estimate)
             overview = (directory / 'README.md').read_text()
-            self.assertLess(overview.index('## Available data and overall storage'), overview.index('## Continued pretraining'))
-            self.assertIn('49.1B', overview)
-            self.assertIn('not an already downloaded or processed corpus', overview)
-            self.assertIn('3.3–3.6TiB', overview)
-            self.assertIn('reserve about 4TiB', overview)
-            self.assertIn('9.32 million paper candidates', overview)
-            self.assertIn('552,024 candidate papers', overview)
-            self.assertIn('records from UniProt, PubChem', overview)
-            self.assertIn('972B text tokens', overview)
+            self.assertLess(overview.index('## Available data and collection priorities'), overview.index('## Continued pretraining'))
+            self.assertNotIn('49.1B', overview)
+            self.assertNotIn('reserve about 4TiB', overview)
+            self.assertIn('12.5 million archived articles', overview)
+            self.assertIn('9.32M text-mining candidates', overview)
+            self.assertIn('75–218B text tokens', overview)
+            self.assertIn('86.99B source tokens', overview)
+            self.assertIn('33.8B source tokens', overview)
+            self.assertIn('Secondary for this project', overview)
+            self.assertIn('972B mixed-subject tokens', overview)
             self.assertIn('8.8T nucleotide positions', overview)
             self.assertIn('3.64TiB', overview)
             self.assertTrue(all(not source['included_in_starter_forecast']
@@ -359,9 +368,9 @@ class TokenAccountingChecks(unittest.TestCase):
                 links = re.findall(r'\[([^]]+)\]\(([^)]+)\)', columns[-1])
                 self.assertEqual([label for label, _ in links], ['Paper', 'Notes'])
                 self.assertEqual(len({url for _, url in links}), 2)
-            unknown = next(row for row in rows if row.startswith('| BioBERT<br>'))
+            unknown = next(row for row in rows if row.startswith('| BioBERT (2019)<br>'))
             self.assertIn('| —<br>PubMed abstracts; PMC full text | — | Text only | Not reported |', unknown)
-            known_zero = next(row for row in rows if row.startswith('| BioMedLM<br>'))
+            known_zero = next(row for row in rows if row.startswith('| BioMedLM (2024)<br>'))
             self.assertIn('| 0<br>via The Pile PubMed components (reused) | 34.6B', known_zero)
             self.assertIn('Figure images: not reported', overview)
             # Detailed pages and numeric exports retain all original accounting distinctions.

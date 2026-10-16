@@ -8,6 +8,7 @@ REPORT = ROOT / "reports/bio_foundation_review_2026-10-15"
 probe = json.loads((REPORT / "starter_corpus_probe.json").read_text())
 availability = json.loads((ROOT / "reports/pmc_cns_availability_2026-10-13/availability.json").read_text())
 global_availability = json.loads((ROOT / "reports/pmc_global_availability_2026-10-14.json").read_text())
+archive = json.loads((REPORT / "pmc_archive_snapshot.json").read_text())
 pmc = next(r["xml_text_mining_candidates"] for r in availability["rows"]
            if r["scope"] == "curated_related_union")
 web_raw = 86.99e9 * probe["finefineweb_target_per_reported_token"]
@@ -97,18 +98,29 @@ storage.update({
     "shared_scratch_snapshot_date_pst": "2026-10-16",
 })
 paper_availability = {
+    "archive_article_records_rounded": archive["archive_records_rounded"],
+    "archive_source": archive["source"],
+    "archive_checked_date_pst": archive["checked_date_pst"],
     "journal_subset_count": 55,
     "journal_subset_xml_candidates": pmc,
     "broader_xml_candidates": global_availability["queries"]["xml_text_mining_candidates"]["count"],
     "broader_inventory_date_pst": global_availability["checked_date_pst"],
     "broader_biological_yield": "unmeasured",
-    "note": "The subset is included in the broader inventory, not additive. Counts are metadata candidates, not verified downloads. The 49.1B central forecast covers only the quantified subset plus the two imported datasets.",
+    "note": "Archive total, bulk text-mining candidates and the journal subset are nested, not additive. Counts are not a measured nonclinical-biology corpus. The legacy 49.1B forecast is superseded as an overall estimate.",
+}
+broader_pmc = paper_availability["broader_xml_candidates"]
+paper_text_scenarios = {
+    "status": "gross_text_volume_scenarios_not_retained_biology_counts",
+    "candidate_papers": broader_pmc,
+    "assumed_tokens_per_paper": [8000, 12000, 23334],
+    "gross_text_tokens": [broader_pmc * n for n in (8000, 12000, 23334)],
+    "note": "Uses the full text-mining candidate inventory, before biological scope selection and deduplication. Per-paper lengths are assumptions, not a representative measured distribution.",
 }
 report = {
-    "date_pst": "2026-10-16", "status": "planning_scenarios_not_measured_corpus_yield",
-    "scope": "Selected 55-journal PMC XML candidates; FineFineWeb biology; TheBioCollection free-text stream only.",
-    "scope_exclusions": ["TheBioCollection instruction stream", "general replay", "new generated training data", "additional raw UniRef/PubChem/RNAcentral copies", "unmeasured incremental peS2o/S2ORC/Dolma additions", "whole-PMC expansion beyond selected journals"],
-    "counting": "One retained exposure in the pinned local Qwen-family extraction tokenizer; no repeated training passes. External counts converted using convenience-probe ratios.",
+    "date_pst": "2026-10-16", "status": "broad_source_inventory_with_legacy_subset_scenarios",
+    "scope": "Full PMC text-mining candidate inventory, other scientific-paper pools, biology-labelled web text, annotated biological database records; raw biomolecule pools grouped as secondary priority.",
+    "scope_exclusions": ["TheBioCollection instruction stream from the free-text amount", "general replay from the biological inventory", "unmeasured incremental counts assigned to overlapping sources"],
+    "counting": "Current inventories retain author-native units; gross paper scenarios use assumed per-paper lengths. Legacy retained-token scenarios use the pinned Qwen-family tokenizer and convenience-probe ratios.",
     "published_input_counts": {"selected_pmc_xml_candidates": pmc, "finefineweb_biology_source_tokens": 86.99e9,
                                "biocollection_free_text_gravity_tokens": 33.8e9},
     "sources": {"pmc_inventory": "../pmc_cns_availability_2026-10-13/availability.json",
@@ -117,6 +129,20 @@ report = {
                 "biocollection": "https://huggingface.co/datasets/trillionlabs/TheBioCollection",
                 "biocollection_paper": "https://arxiv.org/html/2607.08803v1"},
     "scenarios": scenarios,
+    "legacy_scenarios_status": "Superseded as an overall corpus forecast. Retained for provenance; the 15% central web research-retention assumption is unmeasured and is not the current planning estimate.",
+    "collection_priorities": {
+        "primary": ["research_papers", "biology_web_text", "annotated_biological_database_records"],
+        "secondary": ["raw_sequence_and_structure_exports"],
+        "basis": "Project priority for text-centred biological CPT: prefer content connecting entities to functions, mechanisms and observations. This is not an experimentally established ranking of training usefulness.",
+    },
+    "paper_text_scenarios": paper_text_scenarios,
+    "current_web_and_record_inventory": {
+        "web_source_tokens": 86.99e9, "record_source_tokens": 33.8e9,
+        "web_tokens_local_tokenizer_proxy": web_raw,
+        "record_tokens_local_tokenizer_proxy": records_raw,
+        "web_research_retention": None,
+        "note": "Published source amounts before our filtering and cross-source deduplication. Local-tokenizer conversions use convenience samples. No point estimate of retained web tokens is supported yet.",
+    },
     "central_modality_tokens_conditional_on_prefix_representativeness": modality,
     "storage": storage,
     "paper_availability": paper_availability,
@@ -144,9 +170,7 @@ report = {
                     "No full corpus, trained scorer, global dedup index or learned mixture was produced for this estimate."]
 }
 (REPORT / "starter_corpus_estimate.json").write_text(json.dumps(report, indent=2) + "\n")
-for key, value in scenarios.items():
-    print(key, "dedup-only B", round(value["dedup_only_total_tokens"] / 1e9, 2),
-          "research B", round(value["research_starter_total_tokens"] / 1e9, 2),
-          {k: round(v / 1e9, 3) for k, v in value["research_starter_content_tokens"].items()})
-print("central modality B", {k: round(v / 1e9, 3) for k, v in modality.items()})
-print("storage GiB", {k: round(v / 2**30, 1) for k, v in storage.items() if isinstance(v, (float, int)) and "bytes" in k})
+print("PMC archive records", archive["archive_records_rounded"], "text-mining candidates", broader_pmc)
+print("Full-PMC gross text scenarios, B", [round(v / 1e9, 1) for v in paper_text_scenarios["gross_text_tokens"]])
+print("Source-native tokens, B", {"biology_web": 86.99, "annotated_database_records": 33.8})
+print("Earlier 35-70B subset scenarios retained as superseded provenance; not a current corpus total.")

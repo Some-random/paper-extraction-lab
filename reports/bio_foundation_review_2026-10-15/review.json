@@ -257,6 +257,12 @@
             "url": "https://arxiv.org/pdf/2210.10341"
           }
         ]
+      },
+      "publication": {
+        "year": 2022,
+        "date": "2022-10-19",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2210.10341"
       }
     },
     {
@@ -498,6 +504,13 @@
             "url": "https://arxiv.org/html/2403.18421v1"
           }
         ]
+      },
+      "publication": {
+        "year": 2024,
+        "date": "2024-03-27",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2403.18421",
+        "note": "Technical report in 2024; the model was first released in 2022."
       }
     },
     {
@@ -1155,6 +1168,12 @@
           }
         ],
         "overview_note": "0 in literature CPT; encoders enter later alignment."
+      },
+      "publication": {
+        "year": 2023,
+        "date": "2023-08-18",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2308.09442"
       }
     },
     {
@@ -1650,6 +1669,12 @@
           }
         ],
         "note": "These four disjoint content groups sum to the full corpus. They describe the same tokens as the acquisition-route columns. The protein, molecule and cross-entity groups include associated text, so their totals are not pure sequence-token counts."
+      },
+      "publication": {
+        "year": 2026,
+        "date": "2026-06-20",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2606.22138"
       }
     },
     {
@@ -1854,6 +1879,13 @@
             "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/"
           }
         ]
+      },
+      "publication": {
+        "year": 2024,
+        "date": "2024-08-05",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2408.02600",
+        "note": "Initial preprint in 2024; the reviewed published report is from 2026."
       }
     },
     {
@@ -2466,6 +2498,12 @@
             "url": "https://arxiv.org/pdf/1901.08746"
           }
         ]
+      },
+      "publication": {
+        "year": 2019,
+        "date": "2019-01-25",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/1901.08746"
       }
     },
     {
@@ -2642,6 +2680,12 @@
             "url": "https://arxiv.org/html/2007.15779v6"
           }
         ]
+      },
+      "publication": {
+        "year": 2020,
+        "date": "2020-07-31",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2007.15779"
       }
     },
     {
@@ -2820,6 +2864,12 @@
             "url": "https://arxiv.org/html/2203.15827#S6.SS1"
           }
         ]
+      },
+      "publication": {
+        "year": 2022,
+        "date": "2022-03-29",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2203.15827"
       }
     },
     {
@@ -3059,6 +3109,12 @@
           }
         ],
         "overview_note": "Domain totals include associated text."
+      },
+      "publication": {
+        "year": 2025,
+        "date": "2025-02-11",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2502.07527"
       }
     },
     {
@@ -3369,6 +3425,12 @@
           }
         ],
         "overview_note": "Record totals include text; pure sequence/SMILES shares NR."
+      },
+      "publication": {
+        "year": 2022,
+        "date": "2022-11-16",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2211.09085"
       }
     },
     {
@@ -3711,6 +3773,12 @@
           }
         ],
         "overview_note": "Domain totals include associated text and records."
+      },
+      "publication": {
+        "year": 2026,
+        "date": "2026-07-09",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2607.08803"
       }
     },
     {
@@ -3948,6 +4016,12 @@
           }
         ],
         "overview_note": "Domain totals; include associated text."
+      },
+      "publication": {
+        "year": 2025,
+        "date": "2025-09-25",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2509.21320"
       }
     },
     {
@@ -4126,6 +4200,12 @@
           }
         ],
         "overview_note": "Combined pre/post-training corpus; per-modality split NR."
+      },
+      "publication": {
+        "year": 2026,
+        "date": "2026-06-15",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2606.16905"
       }
     },
     {
@@ -4764,6 +4844,12 @@
             "url": "https://arxiv.org/html/2506.20331v1"
           }
         ]
+      },
+      "publication": {
+        "year": 2025,
+        "date": "2025-06-25",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2506.20331"
       }
     },
     {
@@ -4966,6 +5052,12 @@
           }
         ],
         "overview_note": "9.63B total combines text and images; image share NR."
+      },
+      "publication": {
+        "year": 2026,
+        "date": "2026-05-31",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2606.01049"
       }
     },
     {
@@ -5140,6 +5232,12 @@
           }
         ],
         "overview_note": "0 in CPT; encoders enter later stages."
+      },
+      "publication": {
+        "year": 2026,
+        "date": "2026-06-15",
+        "basis": "First public paper/preprint release; not the checkpoint release or latest revision.",
+        "source": "https://arxiv.org/abs/2606.16517"
       }
     }
   ],

@@ -6,6 +6,8 @@ Biological multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2026. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2607.08803).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Gravity-16B-A3B, before annealing. [Initialization evidence](https://arxiv.org/html/2607.08803v1#S3.SS1)
 
 The overview shows lower bounds from two separate known corpus components. Neither their sum nor either component alone is the full annealing mixture or consumed training budget.

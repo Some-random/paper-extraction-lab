@@ -6,6 +6,8 @@ Scientific model with disclosed biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2022. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2211.09085).
+
 **Training approach:** Pretraining from scratch. **Architecture:** scientific decoder. [Initialization evidence](https://arxiv.org/html/2211.09085v1)
 
 A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities.

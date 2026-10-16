@@ -349,3 +349,14 @@ source inventory: distinguish larger released scientific-text and genomic
 pools, their native counting units and unmeasured overlaps. BioReason's CPT
 classification was a question only; do not move it into the CPT table on that
 basis. Its reviewed DNA-LLM experiments use SFT and selected GRPO.
+
+The user requests paper years beside model names. Use sourced first-public
+paper/preprint years in `publication`, retaining later-version and checkpoint
+release distinctions in the notes. Group raw sequences and structures as a
+secondary collection priority; prioritize papers, biological web text and
+annotated database records for this text-based CPT project. This is a project
+choice, not an established ranking of intrinsic training value. Retire the
+old 50B/15%-web-retention scenario as the overview forecast. Show the broader
+PMC archive (about 12.5M records), the 9.32M text-mining candidates and the
+552,024-paper journal subset distinctly. Treat full-PMC token extrapolations
+as pre-filtering scenarios, not measured retained biological counts.

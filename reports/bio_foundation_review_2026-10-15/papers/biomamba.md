@@ -6,6 +6,8 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2024. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2408.02600). Initial preprint in 2024; the reviewed published report is from 2026.
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Mamba2 checkpoints, 130M–2.7B. [Initialization evidence](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/)
 
 Reported packed sequence counts imply positions, not measured non-padding tokens or unique corpus size.

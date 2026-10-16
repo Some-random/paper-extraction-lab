@@ -6,6 +6,8 @@ Biological multimodal language
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2023. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2308.09442).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Llama2-Chat-7B. [Initialization evidence](https://arxiv.org/html/2308.09442v2)
 
 This row covers the literature CPT stage, before molecule/protein alignment.

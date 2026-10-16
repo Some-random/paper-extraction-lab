@@ -6,6 +6,8 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2019. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/1901.08746).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** BERT. [Initialization evidence](https://arxiv.org/pdf/1901.08746)
 
 The reviewed BioBERT models initialize from BERT trained on general text. The paper reports source words rather than a comparable token total.

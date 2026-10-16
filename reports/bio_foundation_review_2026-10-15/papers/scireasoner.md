@@ -6,6 +6,8 @@ Scientific model with biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2025. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2509.21320).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-1.7B / 8B. [Initialization evidence](https://arxiv.org/html/2509.21320v1)
 
 Science-wide corpus with biological data; the 206B total is not entirely biological literature.

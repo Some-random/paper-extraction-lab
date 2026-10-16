@@ -6,6 +6,8 @@ Text CPT curation study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2025. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2506.20331).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** OLMo2-7B-stage1. [Initialization evidence](https://arxiv.org/html/2506.20331v1)
 
 Curation variants are compared at the same 33.6B-token CPT budget. Clinical filtering results are source findings, not a prescription for a biology corpus.

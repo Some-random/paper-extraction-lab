@@ -6,6 +6,8 @@ Biological multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2026. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2606.22138).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3-1.7B / 4B. [Initialization evidence](https://arxiv.org/html/2606.22138v1)
 
 The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text.

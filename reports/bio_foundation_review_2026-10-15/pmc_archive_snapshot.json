@@ -1,0 +1,7 @@
+{
+  "checked_date_pst": "2026-10-16",
+  "source": "https://pmc.ncbi.nlm.nih.gov/",
+  "archive_records_rounded": 12500000,
+  "unit": "article_records",
+  "note": "Rounded homepage archive total. Includes records outside bulk text-mining subsets; not a count of biology-only reusable documents."
+}

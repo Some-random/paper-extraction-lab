@@ -6,6 +6,8 @@ Multimodal CPT curation study
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2026. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2606.01049).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Qwen3.5-2B / 4B-Base. [Initialization evidence](https://arxiv.org/html/2606.01049v2)
 
 Paper/figure curation study with a fixed downstream SFT stage. Its empirical target includes medical tasks; its clinical evidence priorities are not the biological research collection policy.

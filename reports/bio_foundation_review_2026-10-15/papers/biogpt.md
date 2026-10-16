@@ -6,6 +6,8 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2022. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2210.10341).
+
 **Training approach:** Pretraining from scratch. **Architecture:** GPT-2-style architecture. [Initialization evidence](https://arxiv.org/pdf/2210.10341)
 
 Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported.

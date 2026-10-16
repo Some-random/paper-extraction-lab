@@ -6,6 +6,8 @@ Biological and scientific multimodal foundation
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
+**Paper year:** 2025. First public paper/preprint release; not the checkpoint release or latest revision. [Publication date](https://arxiv.org/abs/2502.07527).
+
 **Training approach:** Continued pretraining. **Starting checkpoint:** Llama 3 8B / Mixtral 8×7B. [Initialization evidence](https://arxiv.org/html/2502.07527v2#S2.SS3)
 
 The 8B and 8×7B models continue from existing checkpoints. The separate 1B model first trains on 300B SlimPajama text tokens, then receives scientific training; it is not trained on biology alone from its first step.
