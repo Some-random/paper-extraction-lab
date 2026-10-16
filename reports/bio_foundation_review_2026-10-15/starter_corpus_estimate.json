@@ -18,6 +18,7 @@
   },
   "sources": {
     "pmc_inventory": "../pmc_cns_availability_2026-10-13/availability.json",
+    "broader_pmc_inventory": "../pmc_global_availability_2026-10-14.json",
     "finefineweb": "https://huggingface.co/datasets/m-a-p/FineFineWeb",
     "biocollection": "https://huggingface.co/datasets/trillionlabs/TheBioCollection",
     "biocollection_paper": "https://arxiv.org/html/2607.08803v1"
@@ -147,150 +148,23 @@
       "The text/sequence allowance excludes paper PDFs/figures, supplementary raw experiments, model weights, environments and checkpoints.",
       "Training deduplication earns no automatic storage saving: selected originals remain preserved, and token retention is not a document-retention measurement.",
       "Retaining all paper originals/figures is a separate multi-TiB budget. The current export layout contains several text/JSON views."
-    ]
+    ],
+    "central_overall_working_bytes": [
+      3589549155839.3516,
+      3911671703039.3516
+    ],
+    "recommended_initial_capacity_tib": 4,
+    "additional_million_papers_pdf_figure_bytes_proxy": 7899962537444.935,
+    "shared_scratch_free_tib_snapshot": 1.4,
+    "shared_scratch_snapshot_date_pst": "2026-10-16"
   },
-  "resource_plan": {
-    "status": "unbenchmarked_execution_scenarios_not_jobs_or_reservations",
-    "cluster_reference": {
-      "date_pst": "2026-10-16",
-      "a100_80gb": 71,
-      "b200_180gb": 8,
-      "shared_scratch_free_tib_rounded": 1.5,
-      "note": "Installed/shared capacity, not an allocation. B200 speedup is not assumed."
-    },
-    "acquisition": {
-      "candidate_xml_objects": 552024,
-      "selected_source_bytes": 569535157419.5507,
-      "assumed_transfer_bytes_per_second": [
-        20000000.0,
-        100000000.0
-      ],
-      "assumed_xml_request_overhead_seconds": [
-        0.2,
-        1.0
-      ],
-      "calculated_hours": [
-        32.250042103943194,
-        161.25021051971598
-      ],
-      "planning_days": [
-        2,
-        7
-      ],
-      "note": "One serial fetcher; dataset shards transfer in hours, but individual XML requests add latency. PDFs/figures excluded."
-    },
-    "normalization_cleaning_dedup": {
-      "candidate_tokens": 129402249997.57074,
-      "assumed_token_passes": 4,
-      "assumed_aggregate_tokens_per_second": [
-        1000000.0,
-        3000000.0
-      ],
-      "cpu_cores": 16,
-      "ram_gib": [
-        128,
-        256
-      ],
-      "calculated_pass_hours": [
-        47.92675925835953,
-        143.78027777507862
-      ],
-      "planning_days": [
-        3,
-        10
-      ],
-      "note": "Throughput is assumed for a compact implementation; extra time covers sorting, I/O and checks. The current two-thread runner is not this allocation."
-    },
-    "scoring_and_review": {
-      "paper_web_candidate_tokens": 83130388398.57768,
-      "assumed_compact_scorer_tokens_per_second_per_a100": [
-        50000,
-        200000
-      ],
-      "teacher_label_passages": 20000,
-      "teacher_prompt_tokens_each": 2048,
-      "teacher_output_tokens_each": 256,
-      "assumed_teacher_prefill_tokens_per_second": [
-        500,
-        2000
-      ],
-      "assumed_teacher_decode_tokens_per_second": [
-        20,
-        80
-      ],
-      "teacher_gpu_hours": [
-        23.466666666666665,
-        93.86666666666666
-      ],
-      "application_gpu_hours": [
-        115.45887277580233,
-        461.83549110320934
-      ],
-      "student_training_gpu_hours": [
-        4,
-        12
-      ],
-      "calculated_a100_gpu_hours": [
-        142.925539442469,
-        567.702157769876
-      ],
-      "planning_a100_gpu_hours": [
-        150,
-        600
-      ],
-      "human_review_person_hours": [
-        32,
-        64
-      ],
-      "human_review_design": "400 passages, two independent reviewers, 2-4 minutes each plus adjudication.",
-      "note": "Score candidate paper/web text before research rejection. Validate sequence/chemical records with representation-specific checks. Compact-scorer and teacher throughput are assumptions."
-    },
-    "mixture_experiments": {
-      "proxy_runs": 30,
-      "proxy_groups": 6,
-      "proxy_parameters": 30000000,
-      "proxy_training_tokens_each": 3000000000,
-      "assumed_proxy_effective_a100_tflops": [
-        20,
-        75
-      ],
-      "target_runs": 3,
-      "target_design": "One baseline and two shortlisted recipes, one seed each.",
-      "target_parameters": 7000000000,
-      "target_training_tokens_each": 1000000000,
-      "assumed_target_effective_a100_tflops": [
-        50,
-        125
-      ],
-      "overhead_fraction": 0.25,
-      "calculated_a100_gpu_hours": [
-        425.0,
-        1156.25
-      ],
-      "planning_a100_gpu_hours": [
-        400,
-        1200
-      ],
-      "proposed_gpus": [
-        4,
-        8
-      ],
-      "planning_days_at_proposed_allocation": [
-        2,
-        13
-      ],
-      "note": "An illustrative 7B CPT campaign, not a requirement to train 49B tokens or run three seeds. A 27B target costs about 27/7 times as much for target runs, excluding proxy costs.",
-      "references": [
-        "https://arxiv.org/html/2512.13961v2#S3.SS4",
-        "https://arxiv.org/html/2406.11794v3"
-      ]
-    },
-    "boundaries": [
-      "Runtimes exclude implementation work, scheduler wait, major outages and full-paper OCR.",
-      "These larger allocations are scenarios only; current paper-project limits remain two CPU threads and at most one GPU, with no training authorized.",
-      "With one A100, scoring alone is roughly 6-25 days. Full-parameter 7B confirmation needs sharding across GPUs.",
-      "Several stages can overlap, but no end-to-end completion date is guaranteed."
-    ]
+  "paper_availability": {
+    "journal_subset_count": 55,
+    "journal_subset_xml_candidates": 552024,
+    "broader_xml_candidates": 9324889,
+    "broader_inventory_date_pst": "2026-10-14",
+    "broader_biological_yield": "unmeasured",
+    "note": "The subset is included in the broader inventory, not additive. Counts are metadata candidates, not verified downloads. The 49.1B central forecast covers only the quantified subset plus the two imported datasets."
   },
   "limitations": [
     "Low/high are sensitivity scenarios, not confidence intervals or measured retention rates.",

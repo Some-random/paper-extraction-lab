@@ -4,7 +4,7 @@
 
 The goal is to turn papers, web pages and existing datasets into a useful biological training corpus. This is a proposed recipe: the references explain which techniques we are borrowing, and the biological adaptations explain how we would use them here.
 
-**1. Extract useful content while preserving the original.**
+## 1. Extract useful content while preserving the original.
 
 - **Papers:** use publisher XML when available; use olmOCR 2 for PDFs. Keep sections in reading order, equations, tables, original figures, captions and the paragraphs referring to them. Preserve numbers, units and links to the source locations. **Example:** [Highly accurate protein structure prediction with AlphaFold](https://pmc.ncbi.nlm.nih.gov/articles/PMC8371605/): retain the methods and results, with each figure linked to its caption and discussion.
 - **Web pages:** extract the main article, tables and relevant images from HTML. Separate navigation, advertisements and cookie notices from the actual content. **Example:** [Addgene's CRISPR guide](https://www.addgene.org/guides/crispr/): retain explanations of Cas enzymes and guide RNAs, diagrams and glossary entries; remove site menus and shopping links.
@@ -14,7 +14,7 @@ Keep raw files alongside extracted records. Extraction should recover the conten
 
 **References:** [olmOCR 2](https://arxiv.org/html/2510.19817v1) for PDF extraction; [S2ORC](https://aclanthology.org/2020.acl-main.447/) for structured papers and citation/figure/table links; [FineWeb](https://arxiv.org/html/2406.17557v1#S3.SS2) for extracting useful text from raw HTML. Retaining the original assets and preferring available XML are our source-preservation choices.
 
-**2. Use consistent metadata, meaningful boundaries and readable citations.**
+## 2. Use consistent metadata, meaningful boundaries and readable citations.
 
 Keep **source, dataset/version, document ID, topic, modality and original location** as metadata on every record. These tags let us filter, mix and count the corpus. They do not all need to appear in the text the model reads.
 
@@ -24,7 +24,7 @@ For papers, replace opaque citation markers such as `[12]` with the **cited titl
 
 **References:** [Galactica](https://arxiv.org/html/2211.09085v1#S3.SS1.SSS2) compared title-based citation identifiers with opaque IDs; [NatureLM](https://arxiv.org/html/2502.07527v2#S2.SS1) uses explicit boundaries for scientific representations. We use title-plus-first-author rendering for this corpus.
 
-**3. Detect broken records and boilerplate with explicit checks.**
+## 3. Detect broken records and boilerplate with explicit checks.
 
 - **Broken extraction:** flag empty output, failed pages, abnormal character corruption, repeated OCR loops, or missing content visible in the original. Compare sampled text, numbers and table cells with the source. Retry extraction or exclude the damaged portion while retaining the original and the reason.
 - **Boilerplate:** identify recurring navigation, cookie notices, publisher headers and footers using HTML structure, page position and repeated text. Remove those spans from training content.
@@ -32,7 +32,7 @@ For papers, replace opaque citation markers such as `[12]` with the **cited titl
 
 **References:** [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) supplies explicit filtering and repetition checks; [olmOCR 2](https://arxiv.org/html/2510.19817v1) supplies source-based extraction tests. We adapt the rules to biological content, including separate handling of tables and sequences.
 
-**4. Deduplicate across all three acquisition routes.**
+## 4. Deduplicate across all three acquisition routes.
 
 Run one duplicate index across papers, web pages and imported datasets. Comparing each source only with itself would miss a paper that also appears in a reused corpus.
 
@@ -48,7 +48,7 @@ Set overlap thresholds using reviewed duplicate and non-duplicate examples, incl
 
 **References:** [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) for document/paragraph deduplication; [DCLM, Appendix K](https://arxiv.org/html/2406.11794v3) for comparisons of MinHash, suffix arrays and Bloom-filter approaches; [OLMo 3](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS1) for a concrete exact-hash, MinHash/Jaccard and repeated-substring pipeline. The identity checks, containment checks and version-preservation policy adapt these techniques to this corpus.
 
-**5. Build a scorer whose labels have a clear meaning.**
+## 5. Build a scorer whose labels have a clear meaning.
 
 > [!IMPORTANT]
 > **Human annotation: bulk labels can be automated; human review is part of our validation plan.**
@@ -66,17 +66,17 @@ Store a short supporting passage or source offset with each decision so a review
 
 **References:** [FineWeb-Edu, §4](https://arxiv.org/html/2406.17557v1#S4) used model-generated labels for both scorer training and validation; validation therefore measured agreement with its teacher. [DCLM, §4.4 and Appendix M](https://arxiv.org/html/2406.11794v3) used reference-corpus versus web-sample labels for its main classifiers and separately studied human judgments on 499 documents. Human agreement did not reliably predict training gains; this does not establish that human checks of biological correctness or extraction fidelity are dispensable.
 
-**6. Test data choices and learn the sampling weights.**
+## 6. Test data choices and learn the sampling weights.
 
 The studies below answer different parts of the mixing problem. Their experiment counts cover the reported research programs, not just mixture-weight trials.
 
-**DCLM — compare processing recipes and test whether additional sources help.**
+### DCLM — compare processing recipes and test whether additional sources help.
 
 - **What changes:** extraction, deduplication, quality filters and source composition. Its 416 baseline experiments span several compute scales, with training settings fixed within each scale.
 - **Actual mixing comparison:** train on filtered Common Crawl alone, then compare a mixture of 67% Common Crawl and 33% Wikipedia, books, Stack Exchange, arXiv and GitHub. Repeat this for several Common Crawl variants. Appendix L also applies the quality filter to the added sources.
 - **How choices are judged:** downstream task scores. The added sources help some weaker web corpora but do not improve DCLM-baseline. This directly tests the value of adding those sources rather than assuming curated additions will help.
 
-**OpenThoughts3 — rank sources, then compare combinations and later processing choices.**
+### OpenThoughts3 — rank sources, then compare combinations and later processing choices.
 
 - **Source screening:** test 27 code, 21 math and 14 science question sources. Main comparisons use 31,600 examples per configuration and fine-tune the same Qwen2.5-7B-Instruct starting model.
 - **Actual mixing search:** rank sources from those experiments. For each domain, choose the top N sources, with N = 1, 2, 4, 8 or 16; sample 31,600/N questions from each. Total example count stays fixed, and sources within a candidate mixture have equal shares.
@@ -95,7 +95,7 @@ Its construction selects **75,000 question entries** and generates **16 response
 
 The paper states that this cross-domain allocation follows the earlier OpenThoughts2 mixture. The source-selection experiments determine which question sources to use within those domains. The final rows are combined to train OpenThinker3-7B; the released records retain their source, domain and question–response conversation. **The output is an actual mixed training dataset.** These proportions count examples, so they do not imply the same proportions of tokens when response lengths differ.
 
-**OLMo 3 — learn continuous mixture weights from proxy training runs.**
+### OLMo 3 — learn continuous mixture weights from proxy training runs.
 
 - **What receives weights:** source collections and topic partitions, including 24 web topics. Within-topic quality upsampling is handled separately from source/topic mixing.
 - **Actual search:** sample many weight vectors around the natural data proportions. Train a 30M-parameter proxy model for 3B tokens on each mixture, then fit a regression for each task predicting loss from the weights.
@@ -116,7 +116,7 @@ For a concrete output, OLMo 3's published **6T pretraining mixture** contains th
 
 Across that training stream, roughly 76 of every 100 tokens come from Common Crawl and 14 from science PDFs. The model still reads ordinary text sequences; the mixture controls where those sequences come from and how often they recur. For example, Stack-Edu supplies 409B training tokens from a 137B-token pool, which involves repeated exposure. **The output of mixing is this concrete sampling policy and the resulting training stream.**
 
-**Marin / Datakit, September 2026 — jointly weight topic and quality buckets.**
+### Marin / Datakit, September 2026 — jointly weight topic and quality buckets.
 
 - **What receives weights:** documents from different sources are grouped into 40 topics and five quality bands, making 200 buckets. Quality scores organize the pool rather than immediately discarding its lower-scoring portion; band thresholds depend on content type.
 - **Actual search:** the report describes over 1,000 small proxy experiments, followed by regression from bucket weights to evaluation performance. Both proxy training budgets and bucket sizes are scaled so repeated exposure resembles the intended large run.

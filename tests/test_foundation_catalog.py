@@ -28,7 +28,8 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             self.assertEqual(render(data, directory), 1)
             table = (directory / 'README.md').read_text()
-            self.assertIn('Online-paper tokens / origin | Direct web tokens | Existing-dataset tokens', table)
+            self.assertIn('Paper tokens /<br>origin | Dataset tokens /<br>sources', table)
+            self.assertNotIn('Direct web tokens', table)
             self.assertNotIn('| Data summary |', table)
             self.assertIn('34.6B', table)
             self.assertEqual(table.count('| BioMedLM<br>'), 1)
@@ -61,7 +62,7 @@ class TokenAccountingChecks(unittest.TestCase):
             render(data, directory)
             overview = (directory / 'README.md').read_text()
             self.assertNotIn('Random weights;', overview)
-            self.assertIn('| Model / architecture |', overview)
+            self.assertIn('| Model /<br>architecture |', overview)
             for eid in scratch:
                 page = (directory / f'papers/{eid}.md').read_text()
                 self.assertIn('**Architecture:**', page)
@@ -89,29 +90,28 @@ class TokenAccountingChecks(unittest.TestCase):
                                central['research_starter_total_tokens'])
         self.assertAlmostEqual(sum(central['acquisition_route_tokens'].values()),
                                central['research_starter_total_tokens'])
-        resources = estimate['resource_plan']
-        mixture = resources['mixture_experiments']
-        for index, throughput in enumerate(reversed(mixture['assumed_target_effective_a100_tflops'])):
-            target_hours = (mixture['target_runs'] * 6 * mixture['target_parameters']
-                            * mixture['target_training_tokens_each'] / (throughput * 1e12) / 3600)
-            proxy_throughput = list(reversed(mixture['assumed_proxy_effective_a100_tflops']))[index]
-            proxy_hours = (mixture['proxy_runs'] * 6 * mixture['proxy_parameters']
-                           * mixture['proxy_training_tokens_each'] / (proxy_throughput * 1e12) / 3600)
-            self.assertAlmostEqual(mixture['calculated_a100_gpu_hours'][index],
-                                   (target_hours + proxy_hours) * (1 + mixture['overhead_fraction']))
-        self.assertLessEqual(mixture['planning_a100_gpu_hours'][0], mixture['calculated_a100_gpu_hours'][0])
-        self.assertGreaterEqual(mixture['planning_a100_gpu_hours'][1], mixture['calculated_a100_gpu_hours'][1])
+        storage = estimate['storage']
+        for total, allowance in zip(storage['central_overall_working_bytes'],
+                                    storage['text_sequence_processing_allowance_GiB']):
+            self.assertAlmostEqual(total, storage['central_paper_pdf_figure_bytes_proxy'] + allowance * 2**30)
+        self.assertGreaterEqual(storage['recommended_initial_capacity_tib'] * 2**40,
+                                max(storage['central_overall_working_bytes']))
+        self.assertGreater(estimate['paper_availability']['broader_xml_candidates'],
+                           estimate['paper_availability']['journal_subset_xml_candidates'])
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             render(data, directory, starter_estimate=estimate)
             overview = (directory / 'README.md').read_text()
-            self.assertLess(overview.index('## Starter corpus:'), overview.index('## Continued pretraining'))
+            self.assertLess(overview.index('## Available data and overall storage'), overview.index('## Continued pretraining'))
             self.assertIn('49.1B', overview)
             self.assertIn('not an already downloaded or processed corpus', overview)
-            self.assertIn('500–800GiB', overview)
-            self.assertIn('400–1,200 A100 GPU-hours', overview)
-            self.assertIn('2.8TiB', overview)
-            self.assertIn('FineWeb, C4 or FineFineWeb', overview)
+            self.assertIn('3.3–3.6TiB', overview)
+            self.assertIn('reserve about 4TiB', overview)
+            self.assertIn('9.32 million paper candidates', overview)
+            self.assertIn('552,024 candidate papers', overview)
+            self.assertIn('records from UniProt, PubChem', overview)
+            for removed in ('GPU-hours', '**Processing:**', 'Direct web tokens'):
+                self.assertNotIn(removed, overview)
             with (directory / 'catalog.csv').open(newline='') as handle:
                 rows = list(csv.DictReader(handle))
             for group in ('models', 'training_studies', 'method_references', 'corpora'):
@@ -229,7 +229,7 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(single, directory)
             overview = (directory / 'README.md').read_text()
-            self.assertIn('| Other modalities / tokens | Overall paper assessment |', overview)
+            self.assertIn('| Other modalities /<br>tokens | Paper<br>assessment |', overview)
             self.assertIn('Text-only CPT; molecule/protein encoders used later', overview)
             self.assertIn('already included in the acquisition columns', overview)
             self.assertIn('Protein: 77.4B (1D 36B; 3D 38.5B; other 2.9B)', overview)
@@ -279,8 +279,8 @@ class TokenAccountingChecks(unittest.TestCase):
                     key=lambda e: (quality_order[e['paper_quality']['overall']], e['name'].casefold()))]
                 self.assertEqual(actual, expected)
             header = next(line for line in overview.splitlines() if line.startswith('| Model /'))
-            self.assertGreater(header.index('Authors / institutions'), header.index('Overall paper assessment'))
-            self.assertGreater(header.index('Authors / institutions'), header.index('Total reported tokens'))
+            self.assertGreater(header.index('Authors /<br>institutions'), header.index('Paper<br>assessment'))
+            self.assertGreater(header.index('Authors /<br>institutions'), header.index('Total<br>tokens'))
 
     def test_biomatrix_full_composition_reconciles_without_adding_routes_twice(self):
         model = entry('biomatrix')
@@ -348,15 +348,15 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertEqual(len(rows), 16)
             for row in rows:
                 columns = [c.strip() for c in row.strip('|').split('|')]
-                self.assertEqual(len(columns), 9)
+                self.assertEqual(len(columns), 8)
                 self.assertTrue(all('](' not in c for c in columns[:-1]))
                 links = re.findall(r'\[([^]]+)\]\(([^)]+)\)', columns[-1])
                 self.assertEqual([label for label, _ in links], ['Paper', 'Notes'])
                 self.assertEqual(len({url for _, url in links}), 2)
             unknown = next(row for row in rows if row.startswith('| BioBERT<br>'))
-            self.assertIn('| —<br>PubMed abstracts; PMC full text | — | — | Not reported |', unknown)
+            self.assertIn('| —<br>PubMed abstracts; PMC full text | — | Not reported |', unknown)
             known_zero = next(row for row in rows if row.startswith('| BioMedLM<br>'))
-            self.assertIn('| 0<br>via The Pile PubMed components (reused) | 0 | 34.6B', known_zero)
+            self.assertIn('| 0<br>via The Pile PubMed components (reused) | 34.6B', known_zero)
             self.assertIn('Figure images: not reported', overview)
             # Detailed pages and numeric exports retain all original accounting distinctions.
             detail = (directory / 'papers/biomedlm.md').read_text()
@@ -389,6 +389,7 @@ class TokenAccountingChecks(unittest.TestCase):
                             for _, url in references))
         self.assertIn('> [!IMPORTANT]', pipeline)
         self.assertEqual(pipeline.count('**References:**'), 6)
+        self.assertEqual(re.findall(r'^## ([1-6])\.', pipeline, flags=re.M), list('123456'))
         self.assertNotIn('Method basis:', pipeline)
         self.assertNotIn('**7.', pipeline)
         self.assertNotRegex(pipeline, r'Ryze|XLM-RoBERTa|\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')

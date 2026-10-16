@@ -1,17 +1,25 @@
-# Starter corpus: availability, retained tokens and storage
+# Available corpus and overall storage
 
 [Literature catalog](README.md) · [Processing recipe](data_pipeline.md)
 
 **Working estimate: about 50B tokens in a research-focused starter pool, with a 35–70B sensitivity range.** Removing duplicates alone leaves a much broader **roughly 110–130B-token pool**, including consumer-health and clinical web text. Research selection and duplicate removal are different operations. These are explicit planning scenarios, not measured corpus yields or confidence intervals.
 
-The starter covers three concrete blocks: the selected 55-journal PMC inventory, FineFineWeb biology, and TheBioCollection free text. General replay, instruction data, and unmeasured additions from other corpora are excluded.
+## Paper coverage and dataset scope
+
+**55 is the number of journals, not papers.** That initial journal inventory contains **552,024 candidate papers**. The broader [PMC inventory](../pmc_global_availability_2026-10-14.json), checked on October 14, contains **9,324,889 XML/text-mining candidates**. The journal subset is contained in this larger pool. We can collect beyond those journals; there is no 55-journal cap on the planned corpus.
+
+The 49.1B central estimate below quantifies the initial journal subset plus two imported datasets. The additional research-biology yield from wider PMC coverage remains unmeasured; the inventory also includes clinical material and other subjects. Candidate counts do not certify that every object is downloadable. Other paper collections, including peS2o and S2ORC, can extend coverage, with their additional contribution counted after overlap is measured.
+
+**FineFineWeb biology** is the biology portion of a released web-text dataset. **TheBioCollection** is a released collection of biological database records drawn from sources such as UniProt and PubChem, containing sequences, molecular representations, descriptions and annotations. Here we use its free-text stream, not its separate instruction stream.
+
+General-text replay, instruction data and unmeasured additions from other corpora are excluded from the quantified estimate.
 
 ## Source inventory and expected retention
 
 Forecast columns use the existing pinned **Qwen-family extraction tokenizer**, with sample-based conversions for external token definitions. These are retained corpus tokens seen once, before training repetition.
 
-| Source block | Source inventory | After rough deduplication, central case | After research selection and deduplication, central case | Research-pool sensitivity range |
-|---|---|---:|---:|---:|
+| Source block | Available inventory | After rough<br>deduplication | After research<br>selection + deduplication | Research-pool<br>range |
+|:---|:---|---:|---:|---:|
 | Direct paper text | **552,024 XML candidates** in the selected journal union | **6.0B** | **4.2B** | **1.8–11.0B** |
 | Web-origin text imported from FineFineWeb | **86.99B source-counted tokens**; about **85.7B** after tokenizer conversion | **77.2B** | **11.6B** | **3.6–20.4B** |
 | Database records imported from TheBioCollection | **33.8B Gravity-tokenizer free-text tokens**; about **37.0B** after conversion | **33.3B** | **33.3B** | **29.6–35.2B** |
@@ -66,38 +74,21 @@ These are the same records as the source table; do not add modality counts to so
 - NatureLM/BioMatrix training budgets do not establish an equally sized downloadable corpus available to us.
 - Resolve web publication mirrors to the literature identity index. Similar entities with different useful annotations or relations are not generic duplicate text.
 
-## Storage implied by this starter
+## Overall storage
 
-Pinned source inventories show **15.93GB compressed** for TheBioCollection free-text files and **433.88GB** for the full FineFineWeb biology JSONL collection. These are current data-file sums, not repository-history storage. Serial shard processing avoids keeping the whole unfiltered web collection simultaneously.
+**Reserve approximately 4TiB for the quantified initial corpus, including preserved paper PDFs and figures.** Its combined working estimate is **3.3–3.6TiB**. This is a capacity estimate for the initial subset and two datasets; extending paper coverage requires more space.
 
-The central 49.1B case needs **196GB / 183GiB as four-byte token IDs**. Probe-based UTF-8 estimates give about **143GiB of text**. Allow **500–800GiB** for selected raw inputs, canonical text, token IDs, metadata, deduplication indexes and bounded temporary outputs. This is an engineering allowance, not a measured peak; it excludes PDFs/figures, separate supplements, environments/model weights and training checkpoints.
+| Included material | Basis of the estimate |
+|:---|:---|
+| Original paper PDFs and figures | Approximately 2.8TiB for the central scope-selected paper set, extrapolated from 454 local papers. |
+| XML, dataset text, token IDs, metadata, indexes and bounded working files | 500–800GiB allowance, including about 183GiB of token IDs and 143GiB of canonical text. |
+| **Combined working estimate** | **3.3–3.6TiB; round up to a 4TiB initial allocation.** |
 
-**Preserving every paper PDF and figure needs a separate multi-TiB budget.** At the central scope-selected paper count, extrapolating the measured 454-paper sizes gives about **2.8TiB for PDFs and figures**, before XML and processed outputs. The current multi-view export layout projects to **3.6TiB for those papers alone**. Shared scratch had approximately **1.5TiB free on October 16, 2026 (PST)**. That snapshot supports a bounded text/sequence starter, but not every original asset in this larger scenario. Training deduplication does not authorize deleting preserved originals or automatically save their storage.
+The two components are included in the combined total, not additional to it. The estimate excludes separately downloaded supplements, model weights, environments and training checkpoints. It assumes serial dataset-shard processing rather than keeping every unfiltered shard and every intermediate representation at once.
 
-## Processing time and resource assumptions
+**For expansion, budget roughly 7.2TiB of PDFs and figures per additional million retained papers**, before their XML, extracted text and indexes. This scales the measured file sizes, not the biological yield of the broader 9.32M-candidate inventory. File sizes can vary by journal and article type. Training-text deduplication does not remove the obligation to preserve originals.
 
-**These are workload calculations with assumed throughput, not measured completion times.** The Slurm inventory lists 71 A100 80GB GPUs and eight B200 180GB GPUs; these are installed shared resources, not an allocation to this project. The CPU host has 144 logical CPUs and about 2TiB RAM. The current paper runner remains limited to two CPU threads and at most one GPU; native acquisition uses no GPU. The larger allocations below describe a possible processing campaign. No B200 speedup is assumed.
-
-| Work | Input and calculation | Planning allowance |
-|---|---|---|
-| Native acquisition | About **450GB** of dataset shards plus **120GB** of candidate XML. At 20–100MB/s, transfer takes about **1.6–7.9 hours**. A serial fetcher requesting **552,024** XML objects adds **31–153 hours** if request overhead averages 0.2–1 second per object. | **2–7 days**, one serial network worker; no PDFs/figures in this timing. |
-| Normalize, clean, deduplicate and tokenize | About **129B candidate tokens**, four token-equivalent passes, at an assumed aggregate **1–3M tokens/second** on **16 CPU cores**: approximately **48–144 hours**, before additional sorting/I/O/checks. | **3–10 days**, **128–256GiB RAM**, with disk-backed indexes and bounded intermediate files. The current two-thread runner is not this allocation. |
-| Score paper/web candidates | About **83B candidate tokens after rough deduplication**, including text later rejected. A compact scorer at **50k–200k tokens/second/A100** costs **115–462 GPU-hours**. Database sequences and chemical records use representation-specific validity checks. | Included in the scoring allowance below. |
-| Label examples and train the compact scorer | **20,000 passages × (2,048 input + 256 output tokens)**. Assuming **500–2,000 input tokens/second** and **20–80 generated tokens/second** costs **23–94 A100 GPU-hours**, plus **4–12 GPU-hours** for scorer training. Teacher size and batching must be benchmarked. | Combined labeling, scorer training and application: **150–600 A100 GPU-hours**, about **6–25 days on one GPU**. |
-| Human review | **400 passages**, two independent reviewers, **2–4 minutes** per judgment, plus adjudication. Include rejected text and suspected extraction/deduplication errors. | **32–64 person-hours**. This is reviewer effort, not GPU runtime or a claim that all text is manually checked. |
-| Initial mixture experiment campaign | **30 proxy runs** at 30M parameters and 3B training tokens each; then **three 7B CPT runs**, each for 1B training tokens: one baseline and two shortlisted recipes, one seed each. | Approximately **400–1,200 A100 GPU-hours** including a 25% allowance; **2–13 days with 4–8 GPUs**, excluding scheduler waits. |
-
-Acquisition need not perform OCR when native XML is available. Dataset shard downloads take hours under these rates; the large number of serial XML requests drives the multi-day allowance. Bulk XML transfer or already cached objects could shorten it. PDF retrieval, figure preservation and OCR of papers without usable native text require a separate inventory and measured throughput before they can be added to this budget.
-
-The mixture budget uses the approximate training-work formula **6 × parameters × training tokens**, divided by assumed effective A100 throughput. Small proxy runs assume **20–75 TFLOP/s per GPU**; sharded 7B runs assume **50–125 TFLOP/s per GPU**:
-
-- Proxies: `30 × 6 × 30M × 3B` gives **60–225 A100 GPU-hours**.
-- Target CPT comparisons: `3 × 6 × 7B × 1B` gives **280–700 A100 GPU-hours**.
-- Combined, with 25% for evaluation, checkpoints and contingency: **425–1,156 GPU-hours**, rounded to **400–1,200** for planning.
-
-The **30-run count and six candidate source/topic groups are our illustrative starting budget**. The 30M/3B proxy scale follows [OLMo 3's mixture search](https://arxiv.org/html/2512.13961v2#S3.SS4); [DCLM](https://arxiv.org/html/2406.11794v3) supports matched comparisons of processing recipes. Neither paper establishes the assumed cluster throughput or guarantees that this campaign is enough to select our final mixture. Close results require further runs or seeds, outside this initial allowance. Three target runs compare three recipes; they are not three seeds of the same recipe. Moving the target from 7B to 27B multiplies the target-run component by roughly 27/7; it does not multiply the proxy component.
-
-The output of these experiments is a tested source/topic sampling policy, not a requirement to train once on all 49.1B retained tokens. Source-pool size, sampled training exposure and experiment budget are different quantities. Stages can overlap; implementation work, queue time, outages and the additional paper-asset/OCR workload prevent a defensible fixed end-to-end date at this point.
+For reproducibility, the source inventories contain **15.93GB compressed** of TheBioCollection free-text files and **433.88GB** of FineFineWeb biology JSONL. Keeping the current redundant multi-view paper export layout would use more space than the canonical-text design assumed above. Shared scratch had approximately **1.4TiB free on October 16, 2026 (PST)**, below the proposed 4TiB initial allocation.
 
 ## Reproduction and refinement
 

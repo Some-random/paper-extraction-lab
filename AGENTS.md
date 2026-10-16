@@ -324,3 +324,21 @@ composition, and the 75k selected question entries with 16 teacher responses
 per entry. Distinguish training examples from unique questions and tokens.
 Attribute the domain allocation to the earlier OpenThoughts2 mixture, as stated
 in the paper, rather than presenting it as learned token weights.
+
+## Latest overview presentation
+
+The user now wants the sparse direct-web column and its explanation removed
+from the shared overview. Preserve those counts in the registry, detailed
+study pages and numeric export. Use shorter wrapped table headers, consistent
+left alignment for mixed text/count cells and separate lines for dataset names.
+Make the processing page's six stages level-two headings, with method profiles
+under stage 6 at level three. Keep processing explanations on that page; the
+overview links to it without repeating the recipe or model runtime estimates.
+
+Make paper availability explicit: 55 means journals, containing 552,024 paper
+candidates; the broader PMC inventory has 9,324,889 candidates. The journal list
+does not limit future collection. The 49.1B-token central forecast quantifies
+only the initial subset and two datasets, not the whole PMC inventory. Briefly
+explain TheBioCollection as biological database records, including sequences,
+molecular representations and annotations. Present a combined storage budget
+for the initial corpus, with assumptions and expansion costs in source planning.

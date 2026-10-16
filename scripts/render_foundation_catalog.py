@@ -194,7 +194,7 @@ def overview_row(entry):
     amounts[0] += '<br>' + cell(origin_text)
     datasets = entry['dataset_sources']['names']
     if datasets:
-        preview = '; '.join(datasets[:3])
+        preview = '<br>'.join(datasets[:3])
         if len(datasets) > 3:
             preview += f" (+{len(datasets) - 3})"
         amounts[2] += '<br>' + cell(preview)
@@ -208,15 +208,17 @@ def overview_row(entry):
     review = entry['paper_quality']
     assessment = f"**{QUALITY_LABELS[review['overall']]}**<br>{cell(review['headline'])}"
     modalities = modality_overview(entry)
-    refs = f"[Paper]({budget['sources'][0]['url']}) · [Notes](papers/{entry['id']}.md)"
-    return '| ' + ' | '.join([name] + amounts + [modalities, assessment, authors, refs]) + ' |'
+    refs = f"[Paper]({budget['sources'][0]['url']})<br>[Notes](papers/{entry['id']}.md)"
+    # The overview omits direct-web counts; detailed pages and exports retain them.
+    visible_amounts = [amounts[0], amounts[2], amounts[3]]
+    return '| ' + ' | '.join([name] + visible_amounts + [modalities, assessment, authors, refs]) + ' |'
 
 
 def overview_table(entries, *, from_scratch=False):
     model_label = 'architecture' if from_scratch else 'starting checkpoint'
     return '\n'.join([
-        f'| Model / {model_label} | Online-paper tokens / origin | Direct web tokens | Existing-dataset tokens | Total reported tokens | Other modalities / tokens | Overall paper assessment | Authors / institutions | Source |',
-        '|---|---:|---:|---:|---:|---|---|---|---|',
+        f'| Model /<br>{model_label} | Paper tokens /<br>origin | Dataset tokens /<br>sources | Total<br>tokens | Other modalities /<br>tokens | Paper<br>assessment | Authors /<br>institutions | Source |',
+        '|:---|:---|:---|:---|:---|:---|:---|:---|',
         *(overview_row(entry) for entry in entries),
     ])
 
@@ -236,50 +238,45 @@ def starter_conclusion(estimate):
     billion = lambda value: f'{value / 1e9:.1f}B'
     low = math.floor(estimate['scenarios']['low']['research_starter_total_tokens'] / 5e9) * 5
     high = math.ceil(estimate['scenarios']['high']['research_starter_total_tokens'] / 5e9) * 5
-    resources = estimate['resource_plan']
-    days = lambda stage: '–'.join(str(v) for v in resources[stage]['planning_days'])
-    hours = lambda stage: '–'.join(f'{v:,}' for v in resources[stage]['planning_a100_gpu_hours'])
-    review_hours = '–'.join(str(v) for v in resources['scoring_and_review']['human_review_person_hours'])
-    scoring_days = '–'.join(str(round(v / 24)) for v in resources['scoring_and_review']['planning_a100_gpu_hours'])
-    mixture_days = '–'.join(str(v) for v in resources['mixture_experiments']['planning_days_at_proposed_allocation'])
-    mixture_gpus = '–'.join(str(v) for v in resources['mixture_experiments']['proposed_gpus'])
-    cpu = resources['normalization_cleaning_dedup']
-    ram = '–'.join(str(v) for v in cpu['ram_gib'])
-    storage = '–'.join(str(v) for v in estimate['storage']['text_sequence_processing_allowance_GiB'])
-    asset_tib = estimate['storage']['central_paper_pdf_figure_bytes_proxy'] / 2**40
+    availability = estimate['paper_availability']
+    storage = estimate['storage']
+    overall_tib = '–'.join(f'{value / 2**40:.1f}' for value in storage['central_overall_working_bytes'])
+    reserve_tib = storage['recommended_initial_capacity_tib']
+    additional_tib = storage['additional_million_papers_pdf_figure_bytes_proxy'] / 2**40
     modality = estimate['central_modality_tokens_conditional_on_prefix_representativeness']
     return '\n\n'.join([
-        '## Starter corpus: expected data and resources',
+        '## Available data and overall storage',
+        f"**The broader PMC inventory contains {availability['broader_xml_candidates'] / 1e6:.2f} million paper candidates.** "
+        f"The {availability['journal_subset_count']}-journal inventory already contains "
+        f"**{availability['journal_subset_xml_candidates']:,} candidate papers**. "
+        'The journal list is an initial subset, not a limit on collection. '
+        'The broader inventory includes clinical and other material; its research-biology yield is still unmeasured.',
         f"**About {billion(central['research_starter_total_tokens'])} retained tokens; roughly {low}–{high}B across sensitivity scenarios.** "
-        'This forecasts what the available source inventories could yield after research selection and rough deduplication. '
-        'It is not an already downloaded or processed corpus. '
+        'This estimate covers the quantified journal subset and the two datasets below, not the whole PMC inventory. '
+        'It is a forecast, not an already downloaded or processed corpus. '
         f"Deduplication alone leaves about **{billion(central['dedup_only_total_tokens'])}**; "
         'the smaller research pool assumes further selection, especially retaining 15% of FineFineWeb biology text.',
-        '| Source content | Central retained-token estimate |\n|---|---:|\n'
-        f"| Papers: selected 55-journal PMC inventory | {billion(content['direct_paper_text'])} |\n"
+        '| Source content | Estimated tokens |\n|:---|---:|\n'
+        f"| Papers: {availability['journal_subset_xml_candidates']:,} candidates in the initial journal subset | {billion(content['direct_paper_text'])} |\n"
         f"| Web text imported from FineFineWeb biology | {billion(content['imported_web_origin_text'])} |\n"
         f"| Biological database records imported from TheBioCollection | {billion(content['imported_biological_records'])} |\n"
         f"| **Total** | **{billion(central['research_starter_total_tokens'])}** |",
-        'The database row includes descriptions and annotations. A small prefix probe projects '
+        '**[TheBioCollection](https://huggingface.co/datasets/trillionlabs/TheBioCollection)** '
+        'is a released collection of records from UniProt, PubChem and other biological '
+        'databases: protein/DNA/RNA sequences, molecular representations, descriptions and annotations. '
+        'This estimate uses its free-text stream, excluding its separate instruction dataset.',
+        'A small prefix probe projects '
         f"**{billion(modality['protein_sequence_spans'])} protein-sequence tokens, "
         f"{modality['dna_rna_sequence_spans'] / 1e9:.2f}B DNA/RNA tokens and "
         f"{billion(modality['smiles_inchi_spans'])} SMILES/InChI tokens** within this same pool. "
         'These modality projections are less certain than source inventories and must not be added to the total. '
         'General-text replay is additional; available-pool proportions do not prescribe training weights.',
-        '**Processing:** download native XML and dataset shards; extract text with source IDs and citation metadata; '
-        'remove broken records and boilerplate; match paper identities, exact duplicates and verified near-duplicates; '
-        'apply research/quality filters with human review, plus sequence/chemical validity checks; '
-        'tokenize the retained pools and test sampling mixtures. PDFs needing OCR form a separate workload.',
-        '| Work | Planning time / resources |\n|---|---|\n'
-        f"| Native acquisition | {days('acquisition')} days, one serial fetcher; about 552k XML objects plus dataset shards |\n"
-        f"| Normalize, clean and deduplicate | {days('normalization_cleaning_dedup')} days on {cpu['cpu_cores']} CPU cores, {ram}GiB RAM |\n"
-        f"| Train/apply scorers and review | {hours('scoring_and_review')} A100 GPU-hours; {scoring_days} days on one GPU, plus {review_hours} person-hours |\n"
-        f"| Illustrative 7B mixture experiments | {hours('mixture_experiments')} A100 GPU-hours; {mixture_days} days with {mixture_gpus} GPUs |",
-        f'**Storage:** allow **{storage}GiB** for text/sequence processing. Retaining the projected paper PDFs and '
-        f'figures adds approximately **{asset_tib:.1f}TiB**, beyond that allowance. The current paper runner uses two CPU threads; '
-        'the larger allocations above are planning scenarios. Rates are unbenchmarked, stages can overlap, and '
-        'times exclude implementation, scheduler waits and full-paper OCR. '
-        '[Source counts, retention assumptions and cost calculations](source_planning.md).',
+        f'**Overall storage: reserve about {reserve_tib}TiB for this initial corpus.** '
+        f'The combined estimate is **{overall_tib}TiB**, including retained paper PDFs/figures, XML, '
+        'dataset text, token IDs, metadata, indexes and working space. '
+        f'Each additional million retained papers adds roughly **{additional_tib:.1f}TiB** for PDFs and figures alone; '
+        'a larger paper collection needs a larger storage allocation. These projections exclude separate supplements '
+        'and model/training files. [Inventories and storage assumptions](source_planning.md).',
     ])
 
 
@@ -478,11 +475,6 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         'Data-curation studies and released models appear together because both inform this choice.',
         'Counts follow each paper’s reported budget and may include general text, other sciences and '
         'biological sequences. The **Source** column links to the paper and detailed notes.',
-        '**Direct web tokens** measures text from webpages or crawls collected directly by the reviewed study. '
-        'Web text imported through FineWeb, C4 or FineFineWeb goes under **Existing-dataset tokens**. '
-        'This is why direct-web counts are often 0 or unavailable even when web-origin text is used. '
-        'Galactica is an exception with **≥700M** direct-web tokens from ScientificCC. '
-        '**0** means no data through that route; **—** means the amount or split was not reported.',
         '[Processing recipe](data_pipeline.md).',
         *([starter_conclusion(starter_estimate)] if starter_estimate is not None else []),
         '## Continued pretraining',
@@ -492,8 +484,7 @@ def render(data, directory=REPORT, *, starter_estimate=None):
         'Strong = convincing contribution; Solid = worthwhile with limits; Mixed = substantial strengths '
         'and weaknesses; Weak = fundamental problems. These are provisional judgments explained in the notes.',
         '### Reading the counts',
-        '- **Sources:** online papers are acquired directly from publication repositories; direct web '
-        'tokens come from other directly collected webpages or crawls; existing datasets are imported corpora or databases. '
+        '- **Sources:** paper tokens come from publication repositories; dataset tokens come from imported corpora or databases. '
         'Paper text imported through S2ORC or The Pile belongs in existing datasets.\n'
         '- **—** means an amount is unavailable or cannot be separated; **0** means no data through that '
         'route. Named sources can still have an unknown token count.\n'
@@ -536,8 +527,8 @@ def render(data, directory=REPORT, *, starter_estimate=None):
                    'and [numeric CSV](catalog.csv) from one registry.',
                    'The starter conclusion is separate from author-reported budgets. Its figures come from '
                    '`starter_corpus_estimate.json`; reproduce those with `scripts/estimate_starter_budget.py` '
-                   'before rerendering. Keep inventory measurements, assumed retention and unbenchmarked '
-                   'runtime scenarios explicit in `source_planning.md`.',
+                   'before rerendering. Keep the broader paper inventory, the quantified subset and storage '
+                   'assumptions explicit in `source_planning.md`.',
                    'The `presentation` record selects the review section, starting checkpoint and one '
                    'overview budget, with explicit content scope and quantity type. It must cite '
                    'initialization evidence. Keep every original budget '
@@ -553,6 +544,9 @@ def render(data, directory=REPORT, *, starter_estimate=None):
                    'ties. Optional modality display groups sum only disjoint, known component amounts; '
                    'corpus composition records must reconcile with the selected total. '
                    'Keep overview links in the Source column (one Paper link and one Notes link). '
+                   'Direct-web counts remain in the registry, numeric export and detailed pages; omit that '
+                   'sparse column from the overview. Use short wrapped headers, left-aligned text and one '
+                   'dataset name per line so GitHub can size columns to their content. '
                    'Use a dash for unavailable category amounts and plain language for an unknown total. '
                    'Keep detailed counting definitions on study pages, without dagger markers in the overview. '
                    'Keep the processing recipe, concrete actions and supporting papers in '
