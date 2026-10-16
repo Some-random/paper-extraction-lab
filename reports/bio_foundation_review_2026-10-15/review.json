@@ -1144,7 +1144,8 @@
             "name": "Later molecule/protein encoder features",
             "tokens": null,
             "note": "Later-stage features, not token counts in the literature CPT row.",
-            "measurement": "presence"
+            "measurement": "presence",
+            "short_label": "Later molecule/protein encoders"
           }
         ],
         "sources": [
@@ -1152,7 +1153,8 @@
             "label": "Reviewed paper: data and representations",
             "url": "https://arxiv.org/html/2308.09442v2"
           }
-        ]
+        ],
+        "overview_note": "0 in literature CPT; encoders enter later alignment."
       }
     },
     {
@@ -1520,55 +1522,64 @@
             "name": "Protein 1D sequences",
             "tokens": 36000000000,
             "note": "Figure 3 protein 1D bucket.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "1D"
           },
           {
             "name": "Molecule 1D sequences",
             "tokens": 32100000000,
             "note": "SMILES/SELFIES representation bucket in Figure 3.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "1D"
           },
           {
             "name": "Cross-entity 1D representations",
             "tokens": 17100000000,
             "note": "Figure 3 cross-entity 1D bucket; not exclusively protein sequence tokens.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "1D"
           },
           {
             "name": "Protein 3D structures",
             "tokens": 38500000000,
             "note": "Figure 3 protein structure-token bucket.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "3D"
           },
           {
             "name": "Molecule 3D structures",
             "tokens": 17600000000,
             "note": "Figure 3 molecule structure-token bucket.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "3D"
           },
           {
             "name": "Cross-entity 3D representations",
             "tokens": 11400000000,
             "note": "Figure 3 cross-entity 3D bucket.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "3D"
           },
           {
             "name": "Other protein representations",
             "tokens": 2900000000,
             "note": "Other protein-domain content; not assumed to be sequence tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "other"
           },
           {
             "name": "Other molecule representations",
             "tokens": 24000000000,
             "note": "Other molecule-domain content, including descriptions; not assumed to be sequence tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "other"
           },
           {
             "name": "Other cross-entity representations",
             "tokens": 19500000000,
             "note": "Other cross-entity content; not assumed to be pure sequence or structure tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "other"
           }
         ],
         "sources": [
@@ -1576,7 +1587,69 @@
             "label": "Figure 3 / §3.1",
             "url": "https://arxiv.org/pdf/2606.22138v1#page=12"
           }
-        ]
+        ],
+        "overview_groups": [
+          {
+            "label": "Protein",
+            "members": [
+              "Protein 1D sequences",
+              "Protein 3D structures",
+              "Other protein representations"
+            ],
+            "show_parts": true
+          },
+          {
+            "label": "Molecule",
+            "members": [
+              "Molecule 1D sequences",
+              "Molecule 3D structures",
+              "Other molecule representations"
+            ],
+            "show_parts": true
+          },
+          {
+            "label": "Cross-entity",
+            "members": [
+              "Cross-entity 1D representations",
+              "Cross-entity 3D representations",
+              "Other cross-entity representations"
+            ],
+            "show_parts": true
+          }
+        ],
+        "overview_note": "Domain totals include associated text; 1D = sequence, 3D = structure."
+      },
+      "corpus_composition": {
+        "budget_id": "multimodal_cpt_corpus",
+        "components": [
+          {
+            "label": "Text",
+            "tokens": 105300000000,
+            "note": "25.6B general text + 79.7B scientific text."
+          },
+          {
+            "label": "Protein data",
+            "tokens": 77400000000,
+            "note": "36B 1D + 38.5B 3D + 2.9B other representations."
+          },
+          {
+            "label": "Molecule data",
+            "tokens": 73700000000,
+            "note": "32.1B 1D + 17.6B 3D + 24B other representations."
+          },
+          {
+            "label": "Cross-entity data",
+            "tokens": 48000000000,
+            "note": "17.1B 1D + 11.4B 3D + 19.5B other representations."
+          }
+        ],
+        "sources": [
+          {
+            "label": "Figure 3",
+            "url": "https://arxiv.org/pdf/2606.22138v1#page=12"
+          }
+        ],
+        "note": "These four disjoint content groups sum to the full corpus. They describe the same tokens as the acquisition-route columns. The protein, molecule and cross-entity groups include associated text, so their totals are not pure sequence-token counts."
       }
     },
     {
@@ -2940,37 +3013,43 @@
             "name": "Protein domain",
             "tokens": 65200000000,
             "note": "Table S1 protein-domain tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Protein"
           },
           {
             "name": "DNA domain",
             "tokens": 19800000000,
             "note": "Table S1 DNA-domain tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "DNA"
           },
           {
             "name": "RNA domain",
             "tokens": 27500000000,
             "note": "Table S1 RNA-domain tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "RNA"
           },
           {
             "name": "Small-molecule domain",
             "tokens": 4200000000,
             "note": "Table S1 small-molecule domain; uses molecular string representations.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Molecules"
           },
           {
             "name": "Material domain",
             "tokens": 20000000,
             "note": "Table S1 material-domain tokens.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Materials"
           },
           {
             "name": "Cross-domain text/sequence examples",
             "tokens": 12700000000,
             "note": "Mixed text and scientific representations; not a pure non-text total.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Cross-domain"
           }
         ],
         "sources": [
@@ -2978,7 +3057,8 @@
             "label": "Table S1 / §2.1",
             "url": "https://arxiv.org/html/2502.07527v2"
           }
-        ]
+        ],
+        "overview_note": "Domain totals include associated text."
       }
     },
     {
@@ -3220,7 +3300,7 @@
       },
       "modality_profile": {
         "summary": "Protein/DNA sequences; molecular SMILES",
-        "note": "Table 1 and the scientific-data descriptions include amino-acid sequences, DNA and SMILES. Exact modality-token shares are not separately established in this review.",
+        "note": "The paper describes protein, DNA and SMILES tokenization. Table 24 gives rounded record-level source budgets for UniProt, PubChem and RefSeq, including associated text and metadata. These are not pure modality-token counts; those shares remain NR. All are already included in the acquisition-route totals.",
         "items": [
           {
             "name": "Protein sequences",
@@ -3239,14 +3319,56 @@
             "tokens": null,
             "note": "Present; separate modality-token total NR.",
             "measurement": "modality"
+          },
+          {
+            "name": "UniProt protein records",
+            "tokens": 600000000,
+            "measurement": "domain_bucket",
+            "relation": "approximate",
+            "note": "Table 24 source-record total, including annotations and text; not a pure protein-sequence count."
+          },
+          {
+            "name": "PubChem molecule records",
+            "tokens": 1000000000,
+            "measurement": "domain_bucket",
+            "relation": "approximate",
+            "note": "Table 24 source-record total, including text and properties; not a pure SMILES count."
+          },
+          {
+            "name": "RefSeq genome records",
+            "tokens": 100000000,
+            "measurement": "domain_bucket",
+            "relation": "approximate",
+            "note": "Table 24 RefSeq Genome source-record total; not an independently separated DNA-only amount."
           }
         ],
         "sources": [
           {
-            "label": "Reviewed paper: data and representations",
+            "label": "§2.1 / Table 24",
             "url": "https://arxiv.org/html/2211.09085v1"
           }
-        ]
+        ],
+        "overview_groups": [
+          {
+            "label": "Protein records",
+            "members": [
+              "UniProt protein records"
+            ]
+          },
+          {
+            "label": "Molecule records",
+            "members": [
+              "PubChem molecule records"
+            ]
+          },
+          {
+            "label": "Genome records",
+            "members": [
+              "RefSeq genome records"
+            ]
+          }
+        ],
+        "overview_note": "Record totals include text; pure sequence/SMILES shares NR."
       }
     },
     {
@@ -3558,19 +3680,22 @@
             "name": "Molecule-domain records",
             "tokens": 28200000000,
             "note": "Domain bucket includes molecular representations and associated derived content.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Molecules"
           },
           {
             "name": "Protein-domain records",
             "tokens": 14500000000,
             "note": "Domain bucket includes sequences, structures/annotations and derived content.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Proteins"
           },
           {
             "name": "Genomic-domain records",
             "tokens": 7100000000,
             "note": "Domain bucket includes sequences and feature/task representations.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Genomics"
           },
           {
             "name": "Cells/pathways",
@@ -3584,7 +3709,8 @@
             "label": "Reviewed paper: data and representations",
             "url": "https://arxiv.org/html/2607.08803v1#S3.SS1"
           }
-        ]
+        ],
+        "overview_note": "Domain totals include associated text and records."
       }
     },
     {
@@ -3783,31 +3909,36 @@
             "name": "Protein domain",
             "tokens": 55000000000,
             "note": "Reported category volume; not a separately measured pure-sequence total.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Protein"
           },
           {
             "name": "Chemistry domain",
             "tokens": 50000000000,
             "note": "Includes molecular strings/representations and associated content.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Chemistry"
           },
           {
             "name": "DNA domain",
             "tokens": 30000000000,
             "note": "Reported domain bucket.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "DNA"
           },
           {
             "name": "RNA domain",
             "tokens": 26000000000,
             "note": "Reported domain bucket.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "RNA"
           },
           {
             "name": "Materials domain",
             "tokens": 5000000000,
             "note": "Reported domain bucket.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Materials"
           }
         ],
         "sources": [
@@ -3815,7 +3946,8 @@
             "label": "Reviewed paper: data and representations",
             "url": "https://arxiv.org/html/2509.21320v1"
           }
-        ]
+        ],
+        "overview_note": "Domain totals; include associated text."
       }
     },
     {
@@ -3983,7 +4115,8 @@
             "name": "Scientific sequences and interaction grammar",
             "tokens": 44870000000,
             "note": "Combined seven-modality corpus, not a pure protein or CPT-only amount.",
-            "measurement": "domain_bucket"
+            "measurement": "domain_bucket",
+            "short_label": "Seven-modality corpus"
           }
         ],
         "sources": [
@@ -3991,7 +4124,8 @@
             "label": "Reviewed paper: data and representations",
             "url": "https://arxiv.org/html/2606.16905v1#S2.SS3"
           }
-        ]
+        ],
+        "overview_note": "Combined pre/post-training corpus; per-modality split NR."
       }
     },
     {
@@ -4821,7 +4955,8 @@
             "name": "Figure-image tokens",
             "tokens": null,
             "note": "Included in the mixed 9.63B-token corpus; separate image-token amount not established.",
-            "measurement": "modality"
+            "measurement": "modality",
+            "short_label": "Figure images"
           }
         ],
         "sources": [
@@ -4829,7 +4964,8 @@
             "label": "Reviewed paper: data and representations",
             "url": "https://arxiv.org/html/2606.01049v2"
           }
-        ]
+        ],
+        "overview_note": "9.63B total combines text and images; image share NR."
       }
     },
     {
@@ -4993,7 +5129,8 @@
             "name": "Later DNA/RNA/protein encoder features",
             "tokens": null,
             "note": "Later-stage inputs; not included in a disclosed CPT token count.",
-            "measurement": "presence"
+            "measurement": "presence",
+            "short_label": "Later DNA/RNA/protein encoders"
           }
         ],
         "sources": [
@@ -5001,7 +5138,8 @@
             "label": "Reviewed paper: data and representations",
             "url": "https://arxiv.org/html/2606.16517v1"
           }
-        ]
+        ],
+        "overview_note": "0 in CPT; encoders enter later stages."
       }
     }
   ],
@@ -5777,5 +5915,6 @@
     "status": "Provisional editorial judgment; not an official reviewer rating, venue ranking or independent replication."
   },
   "modality_policy": "Acquisition route and representation are orthogonal. Modality counts are included in source budgets and must never be added on top. Distinguish pure modality-token counts, domain buckets with mixed representations, and later-stage encoder features.",
-  "quality_reviewed_at_pst": "2026-10-15T16:33:15.186299-08:00"
+  "quality_reviewed_at_pst": "2026-10-15T16:33:15.186299-08:00",
+  "overview_sort": "Within CPT and from-scratch sections: Strong, Solid, Mixed, Weak; alphabetical within each rating."
 }

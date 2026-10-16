@@ -221,3 +221,12 @@ where supported. Modality describes the same data as acquisition route: never
 add these amounts again. Distinguish pure sequence tokens from domain buckets
 that include annotations, and distinguish counted CPT inputs from later encoder
 or instruction-tuning inputs.
+
+The user wants authors/institutions near the end of the overview table, after
+data quantities and quality. Sort both CPT and from-scratch tables by overall
+paper quality, with alphabetical ties rather than an implied ranking within a
+rating. Show numeric modality counts directly in the overview, retain NR for
+unknowns, and distinguish source-record/domain amounts from pure sequence
+amounts. Make BioMatrix's complete 304.4B corpus composition and its 127.7B
+unresolved acquisition-route allocation visible; modality counts overlap the
+source-route counts and must never be added to them.

@@ -2,6 +2,7 @@
 import copy
 import csv
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -177,9 +178,14 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(single, directory)
             overview = (directory / 'README.md').read_text()
-            self.assertIn('| Other modalities | Overall paper assessment |', overview)
-            self.assertIn('None in literature CPT; later biological encoders', overview)
+            self.assertIn('| Other modalities / tokens | Overall paper assessment |', overview)
+            self.assertIn('0 in literature CPT; encoders enter later alignment', overview)
             self.assertIn('already included in the acquisition columns', overview)
+            self.assertIn('Protein: 77.4B (1D 36B; 3D 38.5B; other 2.9B)', overview)
+            self.assertIn('Molecule: 73.7B (1D 32.1B; 3D 17.6B; other 24B)', overview)
+            self.assertIn('Cross-entity: 48B (1D 17.1B; 3D 11.4B; other 19.5B)', overview)
+            self.assertIn('DNA: 19.8B', overview)
+            self.assertIn('RNA: 27.5B', overview)
             with (directory / 'catalog.csv').open(newline='') as handle:
                 rows = list(csv.DictReader(handle))
             matrix_row = next(row for row in rows if row['id'] == 'biomatrix')
@@ -203,6 +209,79 @@ class TokenAccountingChecks(unittest.TestCase):
                 single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
                 with self.assertRaises(ValueError):
                     render(single, Path(temporary))
+
+    def test_quality_sort_with_alphabetical_ties_and_later_author_column(self):
+        data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
+        all_entries = [e for group in ('models', 'training_studies', 'method_references', 'corpora')
+                       for e in data[group]]
+        quality_order = {'strong': 0, 'solid': 1, 'mixed': 2, 'weak': 3}
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(data, directory)
+            overview = (directory / 'README.md').read_text()
+            for title, section in (('Continued pretraining', 'cpt'),
+                                   ('Pretraining from scratch: comparison', 'from_scratch')):
+                part = overview.split('## ' + title + '\n', 1)[1].split('\n## ', 1)[0]
+                actual = re.findall(r'^\| \[[^]]+\]\(papers/([a-z0-9_]+)\.md\)', part, flags=re.M)
+                expected = [e['id'] for e in sorted(
+                    (e for e in all_entries if e['presentation']['section'] == section),
+                    key=lambda e: (quality_order[e['paper_quality']['overall']], e['name'].casefold()))]
+                self.assertEqual(actual, expected)
+            header = next(line for line in overview.splitlines() if line.startswith('| Model /'))
+            self.assertGreater(header.index('Authors / institutions'), header.index('Overall paper assessment'))
+            self.assertGreater(header.index('Authors / institutions'), header.index('Total reported tokens'))
+
+    def test_biomatrix_full_composition_reconciles_without_adding_routes_twice(self):
+        model = entry('biomatrix')
+        components = {c['label']: c['tokens'] for c in model['corpus_composition']['components']}
+        self.assertEqual(components, {'Text': 105_300_000_000, 'Protein data': 77_400_000_000,
+                                      'Molecule data': 73_700_000_000, 'Cross-entity data': 48_000_000_000})
+        self.assertEqual(sum(components.values()), model['token_budgets'][0]['counts']['total']['tokens'])
+        self.assertEqual(sum(i['tokens'] for i in model['modality_profile']['items']), 199_100_000_000)
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
+            render(single, directory)
+            overview = (directory / 'README.md').read_text()
+            self.assertIn('105.3B text + 77.4B protein data + 73.7B molecule data + 48B cross-entity data = 304.4B', overview)
+            self.assertIn('127.7B route split NR', overview)
+            detail = (directory / 'papers/biomatrix.md').read_text()
+            self.assertIn('## Full corpus composition', detail)
+            model['corpus_composition']['components'][0]['tokens'] += 1
+            with self.assertRaisesRegex(ValueError, 'does not reconcile'):
+                render(single, directory)
+
+    def test_modality_overview_cannot_double_count_or_sum_unknowns(self):
+        for mutation in ('overlap', 'unknown_member', 'unknown_count'):
+            model = entry('biomatrix')
+            profile = model['modality_profile']
+            if mutation == 'overlap':
+                profile['overview_groups'][1]['members'].append('Protein 1D sequences')
+            elif mutation == 'unknown_member':
+                profile['overview_groups'][0]['members'][0] = 'Invented sequence bucket'
+            else:
+                profile['items'][0]['tokens'] = None
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as temporary:
+                single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
+                with self.assertRaises(ValueError):
+                    render(single, Path(temporary))
+
+    def test_galactica_record_totals_do_not_replace_unknown_sequence_counts(self):
+        model = entry('galactica')
+        items = {i['name']: i for i in model['modality_profile']['items']}
+        self.assertEqual(items['UniProt protein records']['tokens'], 600_000_000)
+        self.assertEqual(items['PubChem molecule records']['tokens'], 1_000_000_000)
+        self.assertEqual(items['RefSeq genome records']['tokens'], 100_000_000)
+        self.assertIsNone(items['Protein sequences']['tokens'])
+        self.assertIsNone(items['Molecular SMILES']['tokens'])
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
+            render(single, directory)
+            overview = (directory / 'README.md').read_text()
+            self.assertIn('Protein records: ≈600M', overview)
+            self.assertIn('Molecule records: ≈1B', overview)
+            self.assertIn('pure sequence/SMILES shares NR', overview)
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

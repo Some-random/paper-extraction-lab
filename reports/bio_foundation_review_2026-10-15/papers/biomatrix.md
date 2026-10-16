@@ -46,6 +46,24 @@ Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/26
 
 Direct PubMed text and PubMed/bioRxiv abstracts are combined with reused S2ORC and patent records. Source-specific token shares are not disclosed; PMC availability or a PDF extraction method is not inferred. [Source](https://arxiv.org/html/2606.22138v1)
 
+## Full corpus composition
+
+**BioMatrix’s full corpus adds up: 105.3B text + 77.4B protein data + 73.7B molecule data + 48B cross-entity data = 304.4B.** [Figure 3](https://arxiv.org/pdf/2606.22138v1#page=12)
+
+| Corpus component | Tokens | What it includes |
+|---|---:|---|
+| Text | 105.3B | 25.6B general text + 79.7B scientific text. |
+| Protein data | 77.4B | 36B 1D + 38.5B 3D + 2.9B other representations. |
+| Molecule data | 73.7B | 32.1B 1D + 17.6B 3D + 24B other representations. |
+| Cross-entity data | 48B | 17.1B 1D + 11.4B 3D + 19.5B other representations. |
+| **Total** | **304.4B** | Sum of the four components above. |
+
+These four disjoint content groups sum to the full corpus. They describe the same tokens as the acquisition-route columns. The protein, molecule and cross-entity groups include associated text, so their totals are not pure sequence-token counts.
+
+The acquisition-route table assigns **≥176.7B** to existing datasets. The **127.7B** remaining in mixed-source buckets has no disclosed paper/web/dataset split. This is an allocation gap, not missing corpus content. Adding modality counts to the existing-dataset column would count the same data twice.
+
+Sources: [Figure 3](https://arxiv.org/pdf/2606.22138v1#page=12)
+
 ## Other modalities
 
 These modalities occur in the counted CPT corpus. Figure 3 separates 1D, 3D and other representations. The token counts are another view of the same corpus, not additional acquisition-route tokens. The protein/molecule domain totals include more than pure sequences.

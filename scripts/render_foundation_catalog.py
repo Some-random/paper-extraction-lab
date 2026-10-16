@@ -25,6 +25,7 @@ TOKEN_HEADER = '| Model / stage | What is counted | Online-paper tokens | Web-UR
 TOKEN_SEPARATOR = '|---|---|---:|---:|---:|---:|---|'
 TOKEN_RELATIONS = {'exact': '', 'approximate': '≈', 'greater_than': '>', 'at_least': '≥'}
 QUALITY_LABELS = {'strong': 'Strong', 'solid': 'Solid', 'mixed': 'Mixed', 'weak': 'Weak'}
+QUALITY_ORDER = {rating: rank for rank, rating in enumerate(QUALITY_LABELS)}
 QUALITY_DIMENSIONS = {'contribution': 'Contribution and originality',
                       'technical_soundness': 'Technical soundness', 'evaluation': 'Evaluation',
                       'reproducibility': 'Reproducibility', 'clarity': 'Clarity and limitations'}
@@ -104,6 +105,55 @@ def overview_budget(entry):
     return next(b for b in entry['token_budgets'] if b['id'] == selected)
 
 
+def modality_amount(item):
+    if item['tokens'] is None:
+        return 'NR'
+    return token_amount(dict(status='reported', tokens=item['tokens'],
+                             relation=item.get('relation', 'exact')))
+
+
+def modality_groups(profile):
+    """Resolve display groups from their source items without copying token counts."""
+    by_name = {item['name']: item for item in profile['items']}
+    groups = profile.get('overview_groups') or [
+        {'label': item.get('short_label', item['name']), 'members': [item['name']]}
+        for item in profile['items']]
+    return [(group, [by_name[name] for name in group['members']]) for group in groups]
+
+
+def modality_group_amount(items):
+    if len(items) == 1:
+        return modality_amount(items[0])
+    relation = 'approximate' if any(i.get('relation') == 'approximate' for i in items) else 'exact'
+    return token_amount(dict(status='reported', tokens=sum(i['tokens'] for i in items), relation=relation))
+
+
+def modality_overview(entry):
+    profile = entry['modality_profile']
+    target = f"papers/{entry['id']}.md#other-modalities"
+    lines = []
+    for group, items in modality_groups(profile):
+        label = f"{group['label']}: {modality_group_amount(items)}"
+        if group.get('show_parts'):
+            parts = '; '.join(f"{item.get('short_label', item['name'])} {modality_amount(item)}"
+                              for item in items)
+            label += ' (' + parts + ')'
+        lines.append(f'[{cell(label)}]({target})')
+    if not lines:
+        lines.append(f'[0 — text only]({target})')
+    if profile.get('overview_note'):
+        lines.append(cell(profile['overview_note']))
+    return '<br>'.join(lines)
+
+
+def composition_summary(entry):
+    composition = entry['corpus_composition']
+    terms = ' + '.join(f"{modality_amount(item)} {item['label'].lower()}" for item in composition['components'])
+    total = token_amount(overview_budget(entry)['counts']['total'])
+    refs = ' · '.join(f"[{source['label']}]({source['url']})" for source in composition['sources'])
+    return f"**{entry['name']}’s full corpus adds up: {terms} = {total}.** {refs}"
+
+
 def overview_row(entry):
     """One explicitly selected budget per study; never mix corpus and exposure."""
     budget = overview_budget(entry)
@@ -132,19 +182,25 @@ def overview_row(entry):
         if len(datasets) > 3:
             preview += f" (+{len(datasets) - 3})"
         amounts[2] += f"<br>[{cell(preview)}](papers/{entry['id']}.md#existing-dataset-sources)"
+    if entry.get('corpus_composition'):
+        counts = budget['counts']
+        remainder = counts['total']['tokens'] - sum(counts[key].get('tokens') or 0 for key in TOKEN_FIELDS[:-1])
+        remainder_label = modality_amount({'tokens': remainder})
+        amounts[3] += (f"<br>[{remainder_label} route split NR]"
+                       f"(papers/{entry['id']}.md#full-corpus-composition)")
     credits = entry['author_institutions']
     authors = cell(credits['authors_short']) + '<br>' + cell(credits['institutions_short'])
     review = entry['paper_quality']
     assessment = f"[{QUALITY_LABELS[review['overall']]}](papers/{entry['id']}.md#overall-paper-assessment)<br>{cell(review['headline'])}"
-    modalities = f"[{cell(entry['modality_profile']['summary'])}](papers/{entry['id']}.md#other-modalities)"
+    modalities = modality_overview(entry)
     refs = ' · '.join(f"[{cell(s['label'])}]({s['url']})" for s in budget['sources'])
-    return '| ' + ' | '.join([name, authors] + amounts + [modalities, assessment, refs]) + ' |'
+    return '| ' + ' | '.join([name] + amounts + [modalities, assessment, authors, refs]) + ' |'
 
 
 def overview_table(entries):
     return '\n'.join([
-        '| Model / starting checkpoint | Authors / institutions | Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Other modalities | Overall paper assessment | Source |',
-        '|---|---|---:|---:|---:|---:|---|---|---|',
+        '| Model / starting checkpoint | Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Other modalities / tokens | Overall paper assessment | Authors / institutions | Source |',
+        '|---|---:|---:|---:|---:|---|---|---|---|',
         *(overview_row(entry) for entry in entries),
     ])
 
@@ -209,6 +265,32 @@ def render(data, directory=REPORT):
                     raise ValueError('Unknown modality token relation: ' + entry['id'])
                 if value is not None and item['measurement'] == 'presence':
                     raise ValueError('Modality presence alone cannot establish token counts: ' + entry['id'])
+            names = [item['name'] for item in modalities['items']]
+            if len(set(names)) != len(names):
+                raise ValueError('Duplicate modality item: ' + entry['id'])
+            seen = set()
+            for group in modalities.get('overview_groups', []):
+                members = group.get('members', [])
+                if (not group.get('label') or not members or any(name not in names for name in members)
+                        or len(set(members)) != len(members) or seen.intersection(members)):
+                    raise ValueError('Overlapping or unknown modality display group: ' + entry['id'])
+                seen.update(members)
+            for _, members in modality_groups(modalities):
+                if len(members) > 1 and any(item['tokens'] is None or item.get('relation', 'exact') not in
+                                            {'exact', 'approximate'} for item in members):
+                    raise ValueError('Cannot sum unknown or bounded modality counts: ' + entry['id'])
+            if entry.get('corpus_composition'):
+                composition = entry['corpus_composition']
+                if (composition.get('budget_id') != view['budget_id'] or not composition.get('components')
+                        or not composition.get('note') or not composition.get('sources')
+                        or any(not source.get('url', '').startswith('https://') for source in composition.get('sources', []))):
+                    raise ValueError('Missing corpus composition provenance: ' + entry['id'])
+                for component in composition['components']:
+                    if not component.get('label') or not component.get('note') or type(component.get('tokens')) is not int or component['tokens'] < 0:
+                        raise ValueError('Invalid corpus composition amount: ' + entry['id'])
+                total = overview_budget(entry)['counts']['total']
+                if total['status'] == 'not_reported' or sum(c['tokens'] for c in composition['components']) != total['tokens']:
+                    raise ValueError('Corpus composition does not reconcile with the total: ' + entry['id'])
     pages = directory / 'papers'
     pages.mkdir(exist_ok=True)
     for kind, entry in all_entries:
@@ -245,14 +327,30 @@ def render(data, directory=REPORT):
             body.append('**Direct paper sources:** ' + ('; '.join(origins['direct']) or 'No direct source established for this row')
                         + '.\n\n**Paper text via reused datasets:** ' + ('; '.join(origins['reused']) or 'No reused paper-text source established for this row')
                         + '.\n\n' + origins['note'] + f" [Source]({origins['source']})")
+            if entry.get('corpus_composition'):
+                composition = entry['corpus_composition']
+                body.append('## Full corpus composition')
+                body.append(composition_summary(entry))
+                lines = ['| Corpus component | Tokens | What it includes |', '|---|---:|---|']
+                lines.extend(f"| {cell(item['label'])} | {modality_amount(item)} | {cell(item['note'])} |"
+                             for item in composition['components'])
+                lines.append(f"| **Total** | **{token_amount(overview_budget(entry)['counts']['total'])}** | Sum of the four components above. |")
+                body.append('\n'.join(lines))
+                body.append(composition['note'])
+                counts = overview_budget(entry)['counts']
+                remainder = counts['total']['tokens'] - sum(counts[key].get('tokens') or 0 for key in TOKEN_FIELDS[:-1])
+                body.append(f"The acquisition-route table assigns **{token_amount(counts['existing_datasets'])}** to existing datasets. "
+                            f"The **{modality_amount({'tokens': remainder})}** remaining in mixed-source buckets has no disclosed "
+                            'paper/web/dataset split. This is an allocation gap, not missing corpus content. '
+                            'Adding modality counts to the existing-dataset column would count the same data twice.')
+                body.append('Sources: ' + ' · '.join(f"[{s['label']}]({s['url']})" for s in composition['sources']))
             profile = entry['modality_profile']
             body.append('## Other modalities')
             body.append(profile['note'])
             if profile['items']:
                 lines = ['| Representation / domain | Reported tokens | Count definition |', '|---|---:|---|']
                 for item in profile['items']:
-                    amount = 'NR' if item['tokens'] is None else token_amount(
-                        dict(status='reported', tokens=item['tokens'], relation=item.get('relation', 'exact')))
+                    amount = modality_amount(item)
                     lines.append(f"| {cell(item['name'])} | {amount} | {cell(item['note'])} |")
                 body.append('\n'.join(lines))
             body.append('Sources: ' + ' · '.join(f"[{s['label']}]({s['url']})" for s in profile['sources']))
@@ -296,8 +394,10 @@ def render(data, directory=REPORT):
         (pages / (eid + '.md')).write_text('\n\n'.join(body) + '\n')
 
     def selected(section):
-        return sorted((e for _, e in all_entries if e['presentation']['section'] == section),
-                      key=lambda e: e['presentation'].get('order', 100))
+        entries = [e for _, e in all_entries if e['presentation']['section'] == section]
+        if section in {'cpt', 'from_scratch'}:
+            return sorted(entries, key=lambda e: (QUALITY_ORDER[e['paper_quality']['overall']], e['name'].casefold()))
+        return sorted(entries, key=lambda e: e['presentation'].get('order', 100))
 
     intro = [
         '# Biological continued pretraining: data sources and token budgets',
@@ -313,7 +413,8 @@ def render(data, directory=REPORT):
         'Each row names the starting checkpoint and reports one clearly identified token budget. '
         'Unmarked rows show **dataset tokens before training repeats**. '
         '**† Training tokens** include repeated passes; **‡ token positions** can include padding or '
-        'a planned schedule. The linked study pages retain the full counts and source qualifications.',
+        'a planned schedule. The linked study pages retain the full counts and source qualifications. '
+        'Both comparison tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
         overview_table(selected('cpt')),
         'The authors/institutions column gives compact credits; the study pages retain the fuller lists. '
         'Dataset names appear below their token count; a “+N” link opens the longer source list. '
@@ -341,16 +442,21 @@ def render(data, directory=REPORT):
         '- **M / B** mean million / billion; **≈** means approximate; **> / ≥** indicate a lower bound. '
         'Tokenizers differ. Sequence/image tokens and planned token positions are labeled explicitly. '
         'A total may include material without a disclosed category split.',
-        '**Other modalities** describes data already included in the acquisition columns; it is not an '
-        'additional source category. Protein/DNA/RNA sequences, molecular strings, structure tokens and '
-        'figure images are distinguished on each study page, with counts where reported. A “protein data” '
-        'budget can include annotations and structures as well as sequence tokens. Later SFT/encoder '
-        'inputs are explicitly distinguished from the counted CPT stage.',
-        '**Why a category can be smaller than the total:** BioMatrix’s existing-dataset lower bound is '
+        '**Other modalities / tokens** shows reported token counts alongside the representations. '
+        'These are data already included in the acquisition columns; do not add them again. '
+        '**1D** means sequence representations; **3D** means structure tokens. Domain and record totals '
+        'include associated text and annotations, so they are not pure sequence counts. '
+        '**0 — text only** applies to the counted stage; later encoder inputs are labeled separately. '
+        '**NR** means the modality count was not established, not zero.',
+        '\n\n'.join(composition_summary(e) for _, e in all_entries if e.get('corpus_composition')),
+        '**Why the source columns do not sum to BioMatrix’s total:** its text component is '
+        '**105.3B = 25.6B general text + 79.7B scientific text**. The existing-dataset lower bound is '
         '**176.7B = 25.6B general text + 77.4B protein data + 73.7B molecule data**. '
         'The other **127.7B** comprises 79.7B scientific text and 48.0B cross-entity/interleaved data; '
         'their exact paper/web/dataset split is not disclosed. These are identified but unallocated '
-        'components, not missing training tokens. See [the source breakdown](papers/biomatrix.md#token-budget-breakdown). '
+        'components, not missing training tokens. The modality column overlaps these source columns; '
+        'adding them together would double-count data. See [the full composition](papers/biomatrix.md#full-corpus-composition) '
+        'and [source breakdown](papers/biomatrix.md#token-budget-breakdown). '
         'Elsewhere, “≥” likewise means a lower bound, and a dataset name without a token amount remains NR. '
         'BioMatrix’s 25.6B general-text slice is FineWeb-Edu; '
         'BioMamba’s existing-dataset component is general replay. NatureLM and SciReasoner also '
@@ -412,6 +518,9 @@ def render(data, directory=REPORT):
                    'sources and named inputs. Overall quality reviews cover contribution, soundness, '
                    'evaluation, reproducibility and clarity, with primary-source links. Keep historical '
                    '`evidence_assessment` records as provenance. Do not add modality totals to acquisition totals. '
+                   'The overview shows numeric modality counts and sorts by overall quality, with alphabetical '
+                   'ties. Optional modality display groups sum only disjoint, known component amounts; '
+                   'corpus composition records must reconcile with the selected total. '
                    'A venue or institution name is not an overall-quality measurement. '
                    'Record numerical allocation corrections explicitly in the token audit.',
                    'The [token audit](token_budget_verification.json) records numerical checks and '

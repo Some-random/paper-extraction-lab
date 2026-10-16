@@ -48,15 +48,18 @@ Table 22 identifies the paper sources. Semantic Scholar imports remain existing-
 
 ## Other modalities
 
-Table 1 and the scientific-data descriptions include amino-acid sequences, DNA and SMILES. Exact modality-token shares are not separately established in this review.
+The paper describes protein, DNA and SMILES tokenization. Table 24 gives rounded record-level source budgets for UniProt, PubChem and RefSeq, including associated text and metadata. These are not pure modality-token counts; those shares remain NR. All are already included in the acquisition-route totals.
 
 | Representation / domain | Reported tokens | Count definition |
 |---|---:|---|
 | Protein sequences | NR | Present; separate modality-token total NR. |
 | DNA sequences | NR | Present in the described tokenization; separate modality-token total NR. |
 | Molecular SMILES | NR | Present; separate modality-token total NR. |
+| UniProt protein records | ≈600M | Table 24 source-record total, including annotations and text; not a pure protein-sequence count. |
+| PubChem molecule records | ≈1B | Table 24 source-record total, including text and properties; not a pure SMILES count. |
+| RefSeq genome records | ≈100M | Table 24 RefSeq Genome source-record total; not an independently separated DNA-only amount. |
 
-Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2211.09085v1)
+Sources: [§2.1 / Table 24](https://arxiv.org/html/2211.09085v1)
 
 ## Existing-dataset sources
 
