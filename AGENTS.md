@@ -242,8 +242,18 @@ claim that the resulting unmarked amounts all represent unique corpus tokens.
 
 The user clarified that the requested update is to the processing diagram,
 not to the dataset/model explanation page. Keep the diagram, concrete actions,
-relevant papers and implementation status together at the top of
+relevant papers together in
 `reports/bio_foundation_review_2026-10-15/data_pipeline.md`. The catalog README
 remains the model/data comparison, with a single link to the processing page.
 Do not insert the extraction plan into the catalog or confuse planned steps
 with implemented extraction.
+
+The user wants this page to be the figure itself: put processing explanations,
+including how filtering scores are obtained and applied, inside the diagram.
+Use paper names in the nodes, not numbered reference markers. Remove detailed
+sections below the figure and remove implementation-status labels such as
+"next", "to build" and "pending" from the diagram. Present it as a processing
+recipe, not a report of executed work. Preserve actual execution state in the
+existing experiment reports. Attribute the 400k teacher-labeling example and
+the educational-score threshold to Biomed-Enriched; do not present educational
+value as a scientific-validity score or apply prose scoring to non-text data.

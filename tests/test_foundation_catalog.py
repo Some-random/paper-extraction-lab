@@ -329,18 +329,25 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertNotIn('Build main-content', overview)
             self.assertEqual(overview.count('(data_pipeline.md#processing-diagram)'), 1)
         pipeline = (ROOT / 'reports/bio_foundation_review_2026-10-15/data_pipeline.md').read_text()
-        self.assertLess(pipeline.index('## Processing diagram'), pipeline.index('## 1. Acquire'))
         diagram = re.search(r'```mermaid\n(.*?)\n```', pipeline, re.S).group(1)
-        for action in ('Extract ordered sections', 'Keep figures, tables', 'Build main-content',
-                       'Build typed dataset imports', 'Unify records', 'Calibrate biological selection',
-                       'Deduplicate across all three sources', 'count retained tokens'):
+        for action in ('parse sections and equations', 'Keep original figures and table cells',
+                       'Extract main HTML content', 'Import text and biological records',
+                       'Common records', 'mechanical checks', 'deduplicate across all three sources',
+                       'Count retained biology'):
             self.assertIn(action, diagram)
-        for status in ('WORKING', 'TO BUILD', 'FINAL ACCOUNTING PENDING'):
-            self.assertIn(status, diagram)
-        references = pipeline.split('```', 2)[2].split('## 1. Acquire')[0]
-        for name in ('olmOCR 2', 'Beyond Captions / PMC-InterCPT', 'Ryze', 'FineWeb', 'S2ORC',
-                     'peS2o documentation', 'Biomed-Enriched', 'Dolma', 'OLMo 3'):
-            self.assertIn('[' + name + '](', references)
+        for name in ('olmOCR 2', 'Beyond Captions', 'Ryze', 'FineWeb', 'S2ORC',
+                     'peS2o', 'Biomed-Enriched', 'Dolma', 'OLMo 3'):
+            self.assertIn(name, diagram)
+        for scoring_detail in ('Llama-3.1-70B-Instruct labels 400k PMC paragraphs',
+                               'Train XLM-RoBERTa-base', 'Apply the trained scorer',
+                               'Educational value: 1 to 5', 'score ≥ 3/5'):
+            self.assertIn(scoring_detail, diagram)
+        self.assertIn('TEACHER --> TRAIN', diagram)
+        self.assertIn('TRAIN -.->|Trained scoring model| SCORES', diagram)
+        self.assertIn('RECORDS -->|Sequences, structures, images| MODALITY', diagram)
+        self.assertNotRegex(diagram, r'\[\d+(?:,\d+)*\]')
+        self.assertNotRegex(diagram, r'\b(?:NEXT|WORKING|TO BUILD|PENDING)\b')
+        self.assertEqual(pipeline.split('```', 2)[2].strip(), '')
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

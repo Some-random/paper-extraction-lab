@@ -413,7 +413,7 @@ def render(data, directory=REPORT):
         'Data-curation studies and released models appear together because both inform this choice.',
         'Counts follow each paper’s reported budget and may include general text, other sciences and '
         'biological sequences. The **Source** column links to the paper and detailed notes.',
-        '[Processing diagram and implementation plan](data_pipeline.md#processing-diagram).',
+        '[Processing diagram](data_pipeline.md#processing-diagram).',
         '## Continued pretraining',
         'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
         overview_table(selected('cpt')),

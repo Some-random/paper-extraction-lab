@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T20:09:22.487872-08:00",
+  "checked_at_pst": "2026-10-15T20:19:24.614242-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -339,7 +339,7 @@
   "overview_rows": 16,
   "summary_budget_note": "One additional Gravity-bio overview record combines disclosed, non-overlapping component lower bounds. Web and total remain NR; original component and training-exposure records are unchanged.",
   "content_scope_verification": "All 16 overview entries retain their original overall quality assessments, credits and source-route budgets. The main tables sort by quality, show numeric modality counts, and move authors after quality. BioMatrix composition reconciles to 304.4B; its 127.7B mixed-route component is explicitly labeled. New Galactica record totals preserve unknown pure-sequence amounts.",
-  "pipeline_documentation": "The processing diagram in data_pipeline.md now carries the three source routes, action labels, implementation status and numbered references. The model/dataset README contains only a link to it; no extraction-plan section remains there.",
+  "pipeline_documentation": "The processing page consists of the diagram. It embeds named papers, extraction/normalization actions, LLM teacher annotation and student scoring, selection, modality validation, deduplication and final token accounting. Execution status remains in the existing experiment reports.",
   "token_count_corrections": [
     {
       "entry": "biomatrix",
@@ -372,8 +372,8 @@
     "modality_profiles": 16,
     "modality_counts_added_to_acquisition_totals": false
   },
-  "local_links_and_anchors_checked": 144,
-  "all_52_token_budget_records_preserved_from_commit": "5ce2beb80a9fe665e14b9400a623db029d17670f",
+  "local_links_and_anchors_checked": 142,
+  "all_52_token_budget_records_preserved_from_commit": "5b1f4d91e0a28ae282c2d246ad8d357ec4a888de",
   "overview_sort": "Strong, Solid, Mixed, Weak; alphabetical ties within each CPT/from-scratch table",
   "author_column_after_quality": true,
   "modality_counts_visible_in_overview": true,
@@ -403,13 +403,18 @@
     "unknown_total_display": "Not reported",
     "detailed_count_definitions_preserved": true
   },
-  "scientific_registry_fields_preserved_from_commit": "5ce2beb80a9fe665e14b9400a623db029d17670f",
+  "scientific_registry_fields_preserved_from_commit": "5b1f4d91e0a28ae282c2d246ad8d357ec4a888de",
   "processing_diagram": {
     "page": "data_pipeline.md#processing-diagram",
-    "action_labels_in_diagram": true,
-    "references_immediately_below_diagram": 9,
-    "planned_and_implemented_steps_labeled": true,
-    "extraction_plan_removed_from_catalog": true,
+    "paper_names_inside_figure": true,
+    "numeric_reference_markers": false,
+    "details_below_figure": false,
+    "implementation_status_labels": false,
+    "teacher_and_student_scoring_chain_explained": true,
+    "threshold_is_labeled_as_biomed_enriched_example": true,
+    "non_text_validation_separate_from_prose_scoring": true,
+    "conceptual_recipe_not_execution_report": true,
+    "source_click_links": 7,
     "new_extraction_or_training_run_launched": false
   }
 }
