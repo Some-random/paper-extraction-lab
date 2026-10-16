@@ -309,3 +309,11 @@ selection procedure. Marin's September 2026 Datakit report is a primary method
 reference for topic-by-quality buckets, repetition-aware proxy experiments and
 validation against proportional sampling at larger scales. Attribute that
 report specifically rather than merging it with the earlier Marin 8B recipe.
+
+The user then rejected the leftover paragraph about finalizing, packaging and
+reporting counts at the end of stage 6. Remove that paragraph rather than moving
+or paraphrasing it again. Explain the output of mixing directly: source/topic
+sampling weights, within-topic quality upsampling rules and the resulting text
+stream consumed by training. Use OLMo 3's actual Table 4 mixture as a concrete
+example, not another hypothetical A/B/C experiment. Keep token-budget records
+in the catalog unchanged; this is an explanation of the published recipe.

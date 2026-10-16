@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T21:55:46.474503-08:00",
+  "checked_at_pst": "2026-10-15T22:03:31.856332-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -475,7 +475,6 @@
     "teacher_labels_and_held_out_scorer_validation": true,
     "human_annotation_sources_clarified": true,
     "openthoughts3_staged_experiments_attributed": true,
-    "accounting_in_final_mixing_stage": true,
     "deduplication_operations_explained": true,
     "proxy_model_mixture_search_explained": true,
     "reported_research_experiments_replace_toy_mixture": true,
@@ -519,6 +518,9 @@
       "OpenThoughts3",
       "OLMo 3",
       "Marin / Datakit, September 2026"
-    ]
+    ],
+    "leftover_packaging_paragraph_removed": true,
+    "mixing_output_explained": "Source/topic sampling weights, within-topic quality upsampling rules, and the sampled training stream",
+    "olmo3_table4_sampled_mix_reproduced": true
   }
 }

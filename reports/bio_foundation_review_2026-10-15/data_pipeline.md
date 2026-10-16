@@ -66,7 +66,7 @@ Store a short supporting passage or source offset with each decision so a review
 
 **References:** [FineWeb-Edu, §4](https://arxiv.org/html/2406.17557v1#S4) used model-generated labels for both scorer training and validation; validation therefore measured agreement with its teacher. [DCLM, §4.4 and Appendix M](https://arxiv.org/html/2406.11794v3) used reference-corpus versus web-sample labels for its main classifiers and separately studied human judgments on 499 documents. Human agreement did not reliably predict training gains; this does not establish that human checks of biological correctness or extraction fidelity are dispensable.
 
-**6. Test the recipe, choose the mixture and produce the final corpus.**
+**6. Test data choices and learn the sampling weights.**
 
 The studies below answer different parts of the mixing problem. Their experiment counts cover the reported research programs, not just mixture-weight trials.
 
@@ -88,6 +88,21 @@ The studies below answer different parts of the mixing problem. Their experiment
 - **Actual search:** sample many weight vectors around the natural data proportions. Train a 30M-parameter proxy model for 3B tokens on each mixture, then fit a regression for each task predicting loss from the weights.
 - **How weights are chosen:** optimize predicted average task loss under constraints on available tokens and repeated passes. Its conditional mixing procedure preserves an existing mixture's internal proportions while testing added or changed components, allowing late-arriving PDF data to be incorporated without rebuilding the entire search.
 
+**What comes out:** a sampling policy with a weight for each source/topic and an upsampling rule for quality levels within web topics. A weight determines the share of training tokens drawn from that pool. The quality rule determines which records within the pool are seen more often. Applying the policy produces the actual text stream used to train the model.
+
+For a concrete output, OLMo 3's published **6T pretraining mixture** contains the following sampled amounts. These are the rounded values in its Table 4, not hypothetical mixing trials:
+
+| Source | Sampled training tokens | Share |
+|---|---:|---:|
+| Common Crawl | 4.51T | 76.1% |
+| olmOCR science PDFs | 805B | 13.6% |
+| Stack-Edu code | 409B | 6.89% |
+| arXiv | 50.8B | 0.86% |
+| FineMath | 152B | 2.56% |
+| Wikipedia / Wikibooks | 2.51B | 0.04% |
+
+Across that training stream, roughly 76 of every 100 tokens come from Common Crawl and 14 from science PDFs. The model still reads ordinary text sequences; the mixture controls where those sequences come from and how often they recur. For example, Stack-Edu supplies 409B training tokens from a 137B-token pool, which involves repeated exposure. **The output of mixing is this concrete sampling policy and the resulting training stream.**
+
 **Marin / Datakit, September 2026 — jointly weight topic and quality buckets.**
 
 - **What receives weights:** documents from different sources are grouped into 40 topics and five quality bands, making 200 buckets. Quality scores organize the pool rather than immediately discarding its lower-scoring portion; band thresholds depend on content type.
@@ -103,6 +118,4 @@ For this corpus, apply that experimental structure as follows:
 
 Hold the model, tokenizer, optimizer settings and training budget fixed within each matched comparison. Track the actual sampled tokens, repeated exposure and retained corpus size so a gain cannot be explained simply by one run seeing more data. Smaller runs screen the search; target-checkpoint confirmation determines the final choice.
 
-At the end of this stage, fix the recipe and package the corpus. Report retained tokens and training exposure separately for **online papers, web URLs and existing datasets**, plus modality breakdowns over the same records. Keep general-text replay separate. These counts accompany the finalized corpus.
-
-**References:** [DCLM, §§3–4 and Appendix L](https://arxiv.org/html/2406.11794v3); [OpenThoughts3, §§4.1–4.6](https://arxiv.org/html/2506.04178v2#S4); [OLMo 3, §3.4.4](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4); [Marin / Datakit: Curating 25 Trillion Tokens for LLM Pretraining](https://openathena.ai/blog/marin-data-pipeline-overview/), published September 11, 2026. The corpus-specific search above combines these techniques; it is not a reproduction of any one study's full experiment schedule.
+**References:** [DCLM, §§3–4 and Appendix L](https://arxiv.org/html/2406.11794v3); [OpenThoughts3, §§4.1–4.6](https://arxiv.org/html/2506.04178v2#S4); [OLMo 3, §3.4.4 and Table 4](https://arxiv.org/html/2512.13961v2#S3.SS4); [Marin / Datakit: Curating 25 Trillion Tokens for LLM Pretraining](https://openathena.ai/blog/marin-data-pipeline-overview/), published September 11, 2026. The corpus-specific search above combines these techniques; it is not a reproduction of any one study's full experiment schedule.
