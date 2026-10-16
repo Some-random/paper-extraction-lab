@@ -12,6 +12,36 @@ Paper/figure curation study with a fixed downstream SFT stage. Its empirical tar
 
 **Data included in the overview amounts:** Biomedical paper text + image tokens. The 9.63B amount includes text and image tokens and is curated for medical/scientific tasks. A biology-only text fraction is not separately disclosed.
 
+## Authors and institutions
+
+**Authors:** Guanghao Zhu; Zeyu Liu; Zhitian Hou; Pengkai Wang; Zhijie Sang; Yang Yu; Minheng Ni; Wenjun Wang; Yanggan Gu; Shuo Cai; Congkai Xie; Jianmin Wu; Hongxia Yang.
+
+**Institutions:** The Hong Kong Polytechnic University; Sun Yat-sen University; InfiX.ai; PolyU-Daya Bay Technology and Innovation Research Institute.
+
+[Paper attribution](https://arxiv.org/html/2606.01049v2). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Stronger controls.** Matched controls; small SFT-only margin. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Compares token-matched raw CPT with fixed downstream SFT and includes grounding/curation ablations.
+- Tests more than one model size/architecture.
+
+**Limitations**
+
+- The general/scientific gain is +3.11 points over raw CPT but only +0.07 over SFT-only; comparator choice changes the practical conclusion.
+- The recipe targets medical/scientific tasks; clinical relevance labels should not be treated as a general biological quality metric.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.01049v2)
+
+## Existing-dataset sources
+
+BIOMEDICA.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2606.01049v2)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

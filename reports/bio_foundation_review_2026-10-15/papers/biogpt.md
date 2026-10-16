@@ -12,6 +12,35 @@ Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMe
 
 **Data included in the overview amounts:** Biomedical abstracts. PubMed abstracts are biomedical literature, not a separately measured nonclinical biology subset. The displayed number counts scheduled positions, not unique corpus tokens.
 
+## Authors and institutions
+
+**Authors:** Renqian Luo; Liai Sun; Yingce Xia; Tao Qin; Sheng Zhang; Hoifung Poon; Tie-Yan Liu.
+
+**Institutions:** Microsoft Research AI4Science; Microsoft Research; Peking University.
+
+[Paper attribution](https://arxiv.org/pdf/2210.10341). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Task comparisons; limited corpus isolation. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Evaluates six biomedical NLP tasks and ablates prompt/target formats with released implementation.
+
+**Limitations**
+
+- Task tuning and decoding choices affect the headline scores, so they are not a clean measurement of corpus/extraction quality.
+- Abstract-only, from-scratch training is less directly applicable to full-paper multimodal CPT.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/pdf/2210.10341)
+
+## Existing-dataset sources
+
+No separately reused dataset identified for this overview row.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/pdf/2210.10341)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

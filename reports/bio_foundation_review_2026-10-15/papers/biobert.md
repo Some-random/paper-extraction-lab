@@ -12,6 +12,36 @@ The reviewed BioBERT models initialize from BERT trained on general text. The pa
 
 **Data included in the overview amounts:** Biomedical paper text. The additional domain data is PubMed/PMC literature. The source does not supply a token count or a separate research-biology/clinical split.
 
+## Authors and institutions
+
+**Authors:** Jinhyuk Lee; Wonjin Yoon; Sungdong Kim; Donghyeon Kim; Sunkyu Kim; Chan Ho So; Jaewoo Kang.
+
+**Institutions:** Korea University; Clova AI Research, NAVER.
+
+[Paper attribution](https://arxiv.org/pdf/1901.08746). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Stronger controls.** Direct BERT/domain-corpus comparisons. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Initializes from BERT and compares added PubMed/PMC corpora across NER, relation extraction and QA.
+- Released models/code make the experimental recipe inspectable.
+
+**Limitations**
+
+- Encoder task results do not establish the same gains for modern generative multimodal CPT.
+- The reported source sizes use words/documents; they do not supply the token split required by this review.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/pdf/1901.08746)
+
+## Existing-dataset sources
+
+No separately reused dataset identified for this overview row.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/pdf/1901.08746)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

@@ -12,6 +12,35 @@ Only the biological-web CPT stage is relevant to this overview. Encoder alignmen
 
 **Data included in the overview amounts:** Biology-labeled web subset. CPT uses a FineFineWeb biology subset, but the realized token total is not reported. A source topic label alone does not establish research quality or exclusion of clinical material.
 
+## Authors and institutions
+
+**Authors:** Lukas Fesser; Hanlin Zhang; Michelle M. Li; Eric Wang; Bryan Perozzi; Shekoofeh Azizi; Sham M. Kakade; Marinka Zitnik.
+
+**Institutions:** Harvard University; Google DeepMind; Google Research.
+
+[Paper attribution](https://arxiv.org/html/2606.16517v1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Stage/OOD analysis; unequal compute. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Separates CPT, supervised adaptation and RL and examines biologically meaningful out-of-distribution splits.
+
+**Limitations**
+
+- Limited model/task families and stage allocations that are not fully FLOP-matched limit broad recommendations.
+- Answer accuracy does not verify the factual correctness of intermediate reasoning; broad web CPT is not strictly benchmark-decontaminated.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.16517v1)
+
+## Existing-dataset sources
+
+FineFineWeb.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2606.16517v1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

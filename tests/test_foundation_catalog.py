@@ -98,6 +98,36 @@ class TokenAccountingChecks(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_token_budgets(bad)
 
+    def test_biomatrix_bound_includes_all_identified_dataset_buckets(self):
+        data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
+        model = next(e for e in data['models'] if e['id'] == 'biomatrix')
+        counts = model['token_budgets'][0]['counts']
+        amount = counts['existing_datasets']
+        self.assertEqual(amount['tokens'], 176_700_000_000)
+        self.assertEqual(amount['tokens'], 25_600_000_000 + 77_400_000_000 + 73_700_000_000)
+        self.assertEqual(amount['status'], 'derived')
+        self.assertEqual(amount['relation'], 'at_least')
+        self.assertEqual(counts['total']['tokens'], 304_400_000_000)
+        self.assertEqual(counts['online_papers']['status'], 'not_reported')
+        self.assertEqual(counts['web_urls']['status'], 'not_reported')
+        validate_token_budgets(model)
+
+    def test_paper_assessment_requires_evidence_and_limitations(self):
+        model = entry()
+        single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
+        self.assertTrue(model['author_institutions']['authors'])
+        self.assertIn('The Pile: PubMed Central', model['dataset_sources']['names'])
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(single, directory)
+            page = (directory / 'papers/biomedlm.md').read_text()
+            self.assertIn('## Evidence assessment', page)
+            self.assertIn('## Authors and institutions', page)
+            self.assertIn('## Existing-dataset sources', page)
+            model['evidence_assessment']['limitations'] = []
+            with self.assertRaises(ValueError):
+                render(single, directory)
+
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()
         bad['token_budgets'][0]['counts']['existing_datasets']['unit'] = 'papers'

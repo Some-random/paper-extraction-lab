@@ -12,6 +12,36 @@ Curation variants are compared at the same 33.6B-token CPT budget. Clinical filt
 
 **Data included in the overview amounts:** Biomedical paper text. PMC literature and its biomedical/clinical curation variants; this does not establish a research-biology-only token count.
 
+## Authors and institutions
+
+**Authors:** Rian Touchent; Nathan Godey; Eric de la Clergerie.
+
+**Institutions:** Sorbonne Université; Inria Paris.
+
+[Paper attribution](https://arxiv.org/html/2506.20331v1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Stronger controls.** Matched CPT budgets; modest mean gain. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Same OLMo2 checkpoint and 33.6B-token budget across variants make the curation comparison more interpretable.
+- Reports multiple filtering/enrichment variants rather than only the best single score.
+
+**Limitations**
+
+- BE-All improves the reported mean by 0.67 percentage points; large task-specific gains are not universal gains.
+- Teacher-generated educational/clinical labels are not human-verified scientific truth; a clinical-biased filter may be unsuitable for research biology.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2506.20331v1)
+
+## Existing-dataset sources
+
+No separately reused dataset identified for this overview row.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2506.20331v1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

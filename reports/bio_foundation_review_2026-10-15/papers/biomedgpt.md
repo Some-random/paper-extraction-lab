@@ -12,6 +12,35 @@ This row covers the literature CPT stage, before molecule/protein alignment.
 
 **Data included in the overview amounts:** Biomedical paper text. The literature CPT amount covers the selected biomedical S2ORC text, not a separately labeled nonclinical biology subset.
 
+## Authors and institutions
+
+**Authors:** Yizhen Luo; Jiahuan Zhang; Siqi Fan; Kai Yang; Yushuai Wu; Mu Qiao; Zaiqing Nie.
+
+**Institutions:** Institute for AI Industry Research, Tsinghua University; PharMolix.
+
+[Paper attribution](https://arxiv.org/html/2308.09442v2). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Alignment controls; weak OOD evidence. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Compares aligned and unaligned biological inputs and describes literature CPT before multimodal alignment.
+
+**Limitations**
+
+- Random protein splits give weaker evidence of cross-family generalization than held-out families.
+- The final-model comparisons do not isolate the contribution of the literature CPT corpus from subsequent alignment.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2308.09442v2)
+
+## Existing-dataset sources
+
+S2ORC.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2308.09442v2)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

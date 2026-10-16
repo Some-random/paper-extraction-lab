@@ -12,6 +12,35 @@ The model inherits pretrained backbone and embedding weights. The 44.87B source 
 
 **Data included in the overview amounts:** Biological, chemical and materials sequences. The 44.87B corpus includes scientific modalities beyond biology and spans pretraining/post-training; it is neither a biology-only prose count nor a disclosed CPT-only exposure.
 
+## Authors and institutions
+
+**Authors:** Mingyang Li; Yurou Liu; Jieping Ye; Bing Su; Ji-Rong Wen; Zheng Wang.
+
+**Institutions:** Alibaba Group; Renmin University of China.
+
+[Paper attribution](https://arxiv.org/html/2606.16905v1#S2.SS3). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Grammar/init ablations; stage totals mixed. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Studies initialization, grammar components and cross-domain training rather than only reporting a final model.
+
+**Limitations**
+
+- The 44.87B corpus headline spans pretraining/post-training and is not a disclosed CPT-only exposure budget.
+- Strong results on selected scientific generation tasks do not establish improved biological literature reasoning.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.16905v1#S2.SS3)
+
+## Existing-dataset sources
+
+UniRef90; OAS; PubChemQC.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2606.16905v1#S2.SS3)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

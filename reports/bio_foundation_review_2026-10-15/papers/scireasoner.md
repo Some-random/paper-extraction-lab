@@ -12,6 +12,35 @@ Science-wide corpus with biological data; the 206B total is not entirely biologi
 
 **Data included in the overview amounts:** Biology, chemistry, materials + other text. The 206B total and 166B named-dataset subtotal cover multiple sciences, not biology alone. The paper leaves 40B outside its enumerated components.
 
+## Authors and institutions
+
+**Authors:** Yizhou Wang; Chen Tang; Han Deng; Jiabei Xiao; Jiaqi Liu; Jianyu Wu; Jun Yao; Pengze Li; Encheng Su; Lintao Wang; Guohang Zhuang; Yuchen Ren; Ben Fei; Ming Hu; Xin Chen; Dongzhan Zhou; Junjun He; Xiangyu Yue; Zhenfei Yin; Jiamin Wu; Qihao Zheng; Yuhao Zhou; Huihui Xu; Chenglong Ma; Yan Lu; Wenlong Zhang; Chunfeng Song; Philip Torr; Shixiang Tang; Xinzhu Ma; Wanli Ouyang; Lei Bai.
+
+**Institutions:** Shanghai Artificial Intelligence Laboratory; The University of Sydney; The Chinese University of Hong Kong; University of Oxford; University of Science and Technology of China; Beihang University; Fudan University; Shanghai Jiao Tong University.
+
+[Paper attribution](https://arxiv.org/html/2509.21320v1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** CPT ablation; unresolved token accounting. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Table 9 reports before/after pretraining results on ten tasks, beyond final-model leaderboard comparisons.
+
+**Limitations**
+
+- The five named source categories sum to 166B while the headline says 206B; the 40B difference is not reconciled.
+- Final reasoning results also depend on SFT/RL, so the CPT ablation should not be generalized to every headline task.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2509.21320v1)
+
+## Existing-dataset sources
+
+UniRef50/90; RNAcentral; C4.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2509.21320v1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

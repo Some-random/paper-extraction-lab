@@ -18,11 +18,14 @@ LABELS = [
     ('source_sections', 'Source sections'),
 ]
 RECORD_LABELS = {'source_material': 'Source material', 'data_budget': 'Datasets and amounts',
+                 'budget_breakdown': 'Token budget breakdown',
                  'figures': 'Figure handling', 'citations': 'Citation handling'}
 TOKEN_FIELDS = ('online_papers', 'web_urls', 'existing_datasets', 'total')
 TOKEN_HEADER = '| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |'
 TOKEN_SEPARATOR = '|---|---|---:|---:|---:|---:|---|'
 TOKEN_RELATIONS = {'exact': '', 'approximate': '≈', 'greater_than': '>', 'at_least': '≥'}
+ASSESSMENT_LABELS = {'stronger_controls': 'Stronger controls', 'useful_limited': 'Useful, limited',
+                     'limited': 'Limited', 'not_assessed': 'Not assessed'}
 
 
 def token_amount(amount):
@@ -110,14 +113,24 @@ def overview_row(entry):
     elif view['quantity_type'] == 'positions':
         name += '<br>**Token positions‡**'
     amounts = [token_amount(budget['counts'][key]) for key in TOKEN_FIELDS]
+    datasets = entry['dataset_sources']['names']
+    if datasets:
+        preview = '; '.join(datasets[:3])
+        if len(datasets) > 3:
+            preview += f" (+{len(datasets) - 3})"
+        amounts[2] += f"<br>[{cell(preview)}](papers/{entry['id']}.md#existing-dataset-sources)"
+    credits = entry['author_institutions']
+    authors = cell(credits['authors_short']) + '<br>' + cell(credits['institutions_short'])
+    review = entry['evidence_assessment']
+    assessment = f"[{ASSESSMENT_LABELS[review['level']]}](papers/{entry['id']}.md#evidence-assessment)<br>{cell(review['summary'])}"
     refs = ' · '.join(f"[{cell(s['label'])}]({s['url']})" for s in budget['sources'])
-    return '| ' + ' | '.join([name] + amounts + [cell(view['data_scope']), refs]) + ' |'
+    return '| ' + ' | '.join([name, authors] + amounts + [cell(view['data_scope']), assessment, refs]) + ' |'
 
 
 def overview_table(entries):
     return '\n'.join([
-        '| Model / starting checkpoint | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Data included | Source |',
-        '|---|---:|---:|---:|---:|---|---|',
+        '| Model / starting checkpoint | Authors / institutions | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Data included | Evidence assessment | Source |',
+        '|---|---|---:|---:|---:|---:|---|---|---|',
         *(overview_row(entry) for entry in entries),
     ])
 
@@ -149,6 +162,16 @@ def render(data, directory=REPORT):
                 raise ValueError('Unknown overview budget: ' + entry['id'])
             if not view.get('data_scope') or view.get('quantity_type') not in {'dataset', 'training', 'positions', 'unknown'}:
                 raise ValueError('Missing content scope or quantity type: ' + entry['id'])
+            credits = entry.get('author_institutions', {})
+            datasets = entry.get('dataset_sources', {})
+            review = entry.get('evidence_assessment', {})
+            if not all(credits.get(k) for k in ('authors_short', 'institutions_short', 'authors', 'institutions', 'source')):
+                raise ValueError('Missing paper attribution: ' + entry['id'])
+            if 'names' not in datasets or not datasets.get('source'):
+                raise ValueError('Missing dataset-name provenance: ' + entry['id'])
+            if (review.get('level') not in ASSESSMENT_LABELS or not review.get('summary')
+                    or not review.get('strengths') or not review.get('limitations') or not review.get('sources')):
+                raise ValueError('Missing evidence-assessment rationale: ' + entry['id'])
     pages = directory / 'papers'
     pages.mkdir(exist_ok=True)
     for kind, entry in all_entries:
@@ -167,6 +190,23 @@ def render(data, directory=REPORT):
                 body.append(view['note'])
             body.append(f"**Data included in the overview amounts:** {view['data_scope']}. "
                         + view['biology_scope_note'])
+            credits = entry['author_institutions']
+            body.append('## Authors and institutions')
+            body.append('**Authors:** ' + '; '.join(credits['authors']) + '.\n\n'
+                        '**Institutions:** ' + '; '.join(credits['institutions']) + '.\n\n'
+                        f"[Paper attribution]({credits['source']}). Names and affiliations follow the reviewed paper version.")
+            review = entry['evidence_assessment']
+            body.append('## Evidence assessment')
+            body.append(f"**Our assessment: {ASSESSMENT_LABELS[review['level']]}.** {review['summary']}. "
+                        'This judges the evidence for the training/data claims, not institutional reputation or model size. '
+                        'It is a source-based review, not an independent replication.')
+            body.append('**Strengths**\n\n' + '\n'.join('- ' + item for item in review['strengths']))
+            body.append('**Limitations**\n\n' + '\n'.join('- ' + item for item in review['limitations']))
+            body.append('Evidence: ' + ' · '.join(f"[{s['label']}]({s['url']})" for s in review['sources']))
+            datasets = entry['dataset_sources']
+            body.append('## Existing-dataset sources')
+            body.append(('; '.join(datasets['names']) + '.' if datasets['names'] else 'No separately reused dataset identified for this overview row.')
+                        + '\n\n' + datasets['note'] + f" [Source]({datasets['source']})")
         body.append('## Token counts by acquisition route')
         lines = [TOKEN_HEADER, TOKEN_SEPARATOR]
         for budget in entry['token_budgets']:
@@ -222,6 +262,13 @@ def render(data, directory=REPORT):
         '**† Training tokens** include repeated passes; **‡ token positions** can include padding or '
         'a planned schedule. The linked study pages retain the full counts and source qualifications.',
         overview_table(selected('cpt')),
+        'The authors/institutions column gives compact credits; the study pages retain the fuller lists. '
+        'Dataset names appear below their token count; a “+N” link opens the longer source list. '
+        '**Evidence assessment is our judgment of the reported experiments**, not an author-provided score. '
+        '**Stronger controls** means more direct comparisons or ablations for the claimed training effect; '
+        '**Useful, limited** means informative results with material gaps; **Limited** flags major barriers '
+        'to interpreting the central claim. We consider controls, held-out evaluation/overlap, '
+        'release/reproducibility and claim support. None of these ratings represents an independent replication.',
         '### Reading the counts',
         '- **Online papers:** text acquired directly from publishers or publication repositories, '
         'including abstracts, XML, PDF and LaTeX.\n'
@@ -239,8 +286,13 @@ def render(data, directory=REPORT):
         '- **M / B** mean million / billion; **≈** means approximate; **> / ≥** indicate a lower bound. '
         'Tokenizers differ. Sequence/image tokens and planned token positions are labeled explicitly. '
         'A total may include material without a disclosed category split.',
-        '**Scope examples:** BioMatrix’s 304.4B covers biological modalities and general text; '
-        'the ≥25.6B identified in its existing-dataset column is FineWeb-Edu **general text**. '
+        '**Why a category can be smaller than the total:** BioMatrix’s existing-dataset lower bound is '
+        '**176.7B = 25.6B general text + 77.4B protein data + 73.7B molecule data**. '
+        'The other **127.7B** comprises 79.7B scientific text and 48.0B cross-entity/interleaved data; '
+        'their exact paper/web/dataset split is not disclosed. These are identified but unallocated '
+        'components, not missing training tokens. See [the source breakdown](papers/biomatrix.md#token-budget-breakdown). '
+        'Elsewhere, “≥” likewise means a lower bound, and a dataset name without a token amount remains NR. '
+        'BioMatrix’s 25.6B general-text slice is FineWeb-Edu; '
         'BioMamba’s existing-dataset component is general replay. NatureLM and SciReasoner also '
         'cover sciences beyond biology. None of those whole-row totals is a verified biology-only budget.',
         'Gravity-bio reports separate literature and biological-database components but not the full '
@@ -295,6 +347,11 @@ def render(data, directory=REPORT):
                    'in `token_budgets`; selecting an overview row never changes a reported amount. '
                    'CPT studies belong with CPT models regardless of publication type. '
                    'Do not classify instruction tuning, contrastive learning or random initialization as CPT.',
+                   'Overview entries also require `author_institutions`, `dataset_sources` and '
+                   '`evidence_assessment`. Preserve attribution sources and named inputs. '
+                   'An assessment needs a concise summary, strengths, limitations and primary-source links. '
+                   'A venue or institution name is not an experimental-quality measurement. '
+                   'Record numerical allocation corrections explicitly in the token audit.',
                    'The [token audit](token_budget_verification.json) records numerical checks and '
                    'source snapshots. [Archived references](archive.md) preserve earlier out-of-scope material.',
                    'Evaluation protocols, benchmark cases and runs live in the separate private '
@@ -304,7 +361,9 @@ def render(data, directory=REPORT):
     (directory / 'maintenance.md').write_text('\n\n'.join(maintenance) + '\n')
     stream = io.StringIO()
     fields = ['id', 'budget_id', 'name', 'kind', 'scope', 'review_section', 'overview_selected',
-              'starting_model', 'data_scope', 'quantity_type', 'stage', 'count_basis', 'token_kind']
+              'starting_model', 'data_scope', 'quantity_type', 'authors', 'institutions',
+              'existing_dataset_names', 'evidence_assessment', 'assessment_summary',
+              'stage', 'count_basis', 'token_kind']
     for key in TOKEN_FIELDS:
         fields.extend([key + '_tokens', key + '_relation', key + '_status'])
     fields.extend(['details', 'primary_sources', 'qualification'])
@@ -319,6 +378,11 @@ def render(data, directory=REPORT):
                 'starting_model':e['presentation'].get('starting_model', ''),
                 'data_scope':e['presentation'].get('data_scope', ''),
                 'quantity_type':e['presentation'].get('quantity_type', ''),
+                'authors':'; '.join(e.get('author_institutions', {}).get('authors', [])),
+                'institutions':'; '.join(e.get('author_institutions', {}).get('institutions', [])),
+                'existing_dataset_names':'; '.join(e.get('dataset_sources', {}).get('names', [])),
+                'evidence_assessment':e.get('evidence_assessment', {}).get('level', ''),
+                'assessment_summary':e.get('evidence_assessment', {}).get('summary', ''),
                 'count_basis':budget['basis'], 'token_kind':budget['token_kind'],
                 'details':f"papers/{e['id']}.md#token-counts-by-acquisition-route",
                 'primary_sources':' ; '.join(s['url'] for s in budget['sources']), 'qualification':budget['note']}

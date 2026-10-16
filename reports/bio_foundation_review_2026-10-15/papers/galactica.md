@@ -12,6 +12,35 @@ A broad scientific model with disclosed biological sources, not a biology-only m
 
 **Data included in the overview amounts:** Broad scientific corpus + general material. The headline includes several sciences, reference material and other text. Its entire dataset or training exposure must not be labeled biological tokens.
 
+## Authors and institutions
+
+**Authors:** Ross Taylor; Marcin Kardas; Guillem Cucurull; Thomas Scialom; Anthony Hartshorn; Elvis Saravia; Andrew Poulton; Viktor Kerkez; Robert Stojnic.
+
+**Institutions:** Meta AI.
+
+[Paper attribution](https://arxiv.org/html/2211.09085v1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Scaling studies; corpus/prompt effects mixed. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Reports model-scale, repeated-token and citation-identifier analyses over diverse scientific tasks.
+
+**Limitations**
+
+- Prompt pretraining, scientific data and scale interact; the paper itself notes difficulties separating corpus and prompt effects.
+- Citation generation and fluent prose are not guarantees of factual reliability; the corpus is broad science, not biology alone.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2211.09085v1)
+
+## Existing-dataset sources
+
+UniProt; PubChem; Papers with Code.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2211.09085v1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

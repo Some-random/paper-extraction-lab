@@ -176,6 +176,48 @@
         "data_scope": "Biomedical abstracts",
         "biology_scope_note": "PubMed abstracts are biomedical literature, not a separately measured nonclinical biology subset. The displayed number counts scheduled positions, not unique corpus tokens.",
         "quantity_type": "positions"
+      },
+      "author_institutions": {
+        "authors_short": "R. Luo et al.",
+        "institutions_short": "Microsoft Research; Peking",
+        "authors": [
+          "Renqian Luo",
+          "Liai Sun",
+          "Yingce Xia",
+          "Tao Qin",
+          "Sheng Zhang",
+          "Hoifung Poon",
+          "Tie-Yan Liu"
+        ],
+        "institutions": [
+          "Microsoft Research AI4Science",
+          "Microsoft Research",
+          "Peking University"
+        ],
+        "source": "https://arxiv.org/pdf/2210.10341"
+      },
+      "dataset_sources": {
+        "names": [],
+        "source": "https://arxiv.org/pdf/2210.10341",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Task comparisons; limited corpus isolation",
+        "strengths": [
+          "Evaluates six biomedical NLP tasks and ablates prompt/target formats with released implementation."
+        ],
+        "limitations": [
+          "Task tuning and decoding choices affect the headline scores, so they are not a clean measurement of corpus/extraction quality.",
+          "Abstract-only, from-scratch training is less directly applicable to full-paper multimodal CPT."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/pdf/2210.10341"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -329,6 +371,55 @@
         "data_scope": "Biomedical papers",
         "biology_scope_note": "The corpus consists of The Pile PubMed Abstracts/PubMed Central components. This is a biomedical-literature count; it does not isolate nonclinical biological research.",
         "quantity_type": "dataset"
+      },
+      "author_institutions": {
+        "authors_short": "E. Bolton et al.",
+        "institutions_short": "Stanford; Databricks",
+        "authors": [
+          "Elliot Bolton",
+          "Abhinav Venigalla",
+          "Michihiro Yasunaga",
+          "David Hall",
+          "Betty Xiong",
+          "Tony Lee",
+          "Roxana Daneshjou",
+          "Jonathan Frankle",
+          "Percy Liang",
+          "Michael Carbin",
+          "Christopher D. Manning"
+        ],
+        "institutions": [
+          "Stanford University",
+          "Databricks"
+        ],
+        "source": "https://arxiv.org/html/2403.18421v1"
+      },
+      "dataset_sources": {
+        "names": [
+          "The Pile: PubMed Central",
+          "The Pile: PubMed Abstracts"
+        ],
+        "source": "https://arxiv.org/html/2403.18421v1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Reproducible budget; small tokenizer ablation",
+        "strengths": [
+          "Reports 34.6B corpus tokens and 300B consumed tokens, with an inspectable training recipe.",
+          "The controlled 125M tokenizer experiment reports five-seed results."
+        ],
+        "limitations": [
+          "The tokenizer ablation is smaller than the headline 2.7B model.",
+          "Most comparisons are after task-specific fine-tuning and do not isolate the effect of the biomedical corpus against a compute-matched general corpus."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2403.18421v1"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -895,6 +986,49 @@
         "data_scope": "Biomedical paper text",
         "biology_scope_note": "The literature CPT amount covers the selected biomedical S2ORC text, not a separately labeled nonclinical biology subset.",
         "quantity_type": "dataset"
+      },
+      "author_institutions": {
+        "authors_short": "Y. Luo et al.",
+        "institutions_short": "Tsinghua AIR; PharMolix",
+        "authors": [
+          "Yizhen Luo",
+          "Jiahuan Zhang",
+          "Siqi Fan",
+          "Kai Yang",
+          "Yushuai Wu",
+          "Mu Qiao",
+          "Zaiqing Nie"
+        ],
+        "institutions": [
+          "Institute for AI Industry Research, Tsinghua University",
+          "PharMolix"
+        ],
+        "source": "https://arxiv.org/html/2308.09442v2"
+      },
+      "dataset_sources": {
+        "names": [
+          "S2ORC"
+        ],
+        "source": "https://arxiv.org/html/2308.09442v2",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Alignment controls; weak OOD evidence",
+        "strengths": [
+          "Compares aligned and unaligned biological inputs and describes literature CPT before multimodal alignment."
+        ],
+        "limitations": [
+          "Random protein splits give weaker evidence of cross-family generalization than held-out families.",
+          "The final-model comparisons do not isolate the contribution of the literature CPT corpus from subsequent alignment."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2308.09442v2"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -1068,11 +1202,27 @@
             "Pixels used in training?": "Their disclosed biological modalities are sequences / structures / text",
             "Source captions / generated material": "“Multimodal” here does not establish paper-figure training. Molecule/protein “captioning” can mean generating a biological description from a molecular/protein representation"
           }
+        },
+        {
+          "kind": "budget_breakdown",
+          "source_model_label": "[BioMatrix Figure 3 and §3.1](https://arxiv.org/pdf/2606.22138v1#page=12)",
+          "fields": {
+            "General text": "25.6B — FineWeb-Edu; existing dataset.",
+            "Protein data": "77.4B — UniRef50, RCSB PDB, UniProt/Swiss-Prot, UniProt/TrEMBL and AlphaFold DB; existing datasets, including derived sequence/structure/text representations.",
+            "Molecule data": "73.7B — PubChem, PCQM4Mv2, PubChemQC and MolTextNet; existing datasets. MolTextNet includes generated descriptions supplied by that dataset.",
+            "Scientific text": "79.7B — FineFineWeb plus PubMed article text; exact source-route shares NR.",
+            "Cross-entity / interleaved": "48.0B — publication text, reused corpora and interaction datasets; exact route shares NR.",
+            "Total": "304.4B = 25.6 + 77.4 + 73.7 + 79.7 + 48.0 billion tokens.",
+            "Existing-dataset lower bound": "176.7B = 25.6 + 77.4 + 73.7 billion tokens. It is a lower bound, not the full reused-dataset total.",
+            "Unallocated by route": "127.7B = 79.7 + 48.0 billion tokens. These are known mixed-source components, not absent tokens.",
+            "Correction": "The earlier 25.6B lower bound counted FineWeb-Edu alone and omitted two explicitly dataset-derived top-level buckets. It is superseded by 176.7B."
+          }
         }
       ],
       "notes": [
         "BioMatrix's scientific text uses FineFineWeb biology/chemistry/medicine/health and literature; its figure also names bioRxiv. No numeric paper/web split is supplied. Figure 3 subdivides protein tokens into **36.0B sequence / 38.5B structure / 2.9B other**; molecule tokens into **32.1B sequence / 17.6B structure / 24.0B other**; cross-entity tokens into **17.1B sequence / 11.4B structure / 19.5B other**. The “other” subdivisions should not be relabeled entirely as generated text. Sources include PubChem, UniRef/UniProt, PDB/AFDB, interaction datasets and GPT-generated MolTextNet descriptions; exact individual budgets remain NR. These modalities are biomolecular representations, not paper-figure pixels. [BioMatrix, Figure 3 and §3](https://arxiv.org/pdf/2606.22138v1#page=12)",
-        "**BioMatrix:** Continues Qwen3 on 304.4B tokens spanning literature/web text, PubChem records, protein sequences and structures, interactions and interleaved text/entities. It includes GPT-generated MolTextNet descriptions and computational structures as well as experimental PDB structures. Its TrEMBL branch explicitly removes literature citations and evidence codes. These provenance differences should remain visible in a scientific corpus. [§3.1–3.2](https://arxiv.org/html/2606.22138v1)"
+        "**BioMatrix:** Continues Qwen3 on 304.4B tokens spanning literature/web text, PubChem records, protein sequences and structures, interactions and interleaved text/entities. It includes GPT-generated MolTextNet descriptions and computational structures as well as experimental PDB structures. Its TrEMBL branch explicitly removes literature citations and evidence codes. These provenance differences should remain visible in a scientific corpus. [§3.1–3.2](https://arxiv.org/html/2606.22138v1)",
+        "The existing-dataset lower bound was corrected from 25.6B to 176.7B after checking all Figure 3 categories against the source descriptions in §3.1.2–3.1.4. This changes the review’s allocation, not the paper’s reported total."
       ],
       "scope_group": "Continued pretraining",
       "token_budgets": [
@@ -1081,11 +1231,15 @@
           "stage": "Multimodal CPT",
           "basis": "Corpus",
           "token_kind": "text + scientific sequences",
-          "note": "304.4B covers text, molecules, proteins and interleaved material. The 79.7B scientific-text bucket mixes direct literature with FineFineWeb, so it cannot be assigned wholly to either route. FineWeb-Edu alone establishes a reused-dataset lower bound; the exact route split is NR.",
+          "note": "304.4B covers text, molecules, proteins and cross-entity/interleaved data. Figure 3 and §3.1 establish at least 176.7B dataset-derived tokens. The 79.7B scientific-text and 48.0B cross-entity/interleaved buckets mix acquisition routes; the remaining 127.7B is not assigned to a route. The total is not biology-only.",
           "sources": [
             {
-              "label": "§3 / Fig. 3",
-              "url": "https://arxiv.org/html/2606.22138v1"
+              "label": "Fig. 3 / §3.1",
+              "url": "https://arxiv.org/pdf/2606.22138v1#page=12"
+            },
+            {
+              "label": "Data sources",
+              "url": "https://arxiv.org/html/2606.22138v1#S3.SS1"
             }
           ],
           "counts": {
@@ -1100,11 +1254,12 @@
               "note": "Web-origin text comes through FineWeb-Edu/FineFineWeb; no separate direct-crawl token budget is established."
             },
             "existing_datasets": {
-              "status": "reported",
-              "tokens": 25600000000,
+              "status": "derived",
+              "tokens": 176700000000,
               "unit": "tokens",
               "relation": "at_least",
-              "note": "FineWeb-Edu component alone; FineFineWeb and biological datasets add an unseparated amount."
+              "note": "FineWeb-Edu general text (25.6B), protein datasets (77.4B), and molecule datasets (73.7B) are explicitly dataset-derived. Scientific text and cross-entity/interleaved data include further reused inputs but their exact route shares are unreported.",
+              "calculation": "(25.6 + 77.4 + 73.7) × 1000000000"
             },
             "total": {
               "status": "reported",
@@ -1125,8 +1280,81 @@
         "initialization_source": "https://arxiv.org/html/2606.22138v1",
         "note": "The headline contains scientific sequences and structures as well as prose. It is not a count of extracted paper text.",
         "data_scope": "Biological modalities + general text",
-        "biology_scope_note": "The 304.4B headline mixes text, molecules, proteins and cross-modal data. The 25.6B separately identified FineWeb-Edu component is general text, so that existing-dataset lower bound is not a biology-only number.",
+        "biology_scope_note": "The 304.4B headline includes general text and biological modalities. At least 176.7B is dataset-derived, including 25.6B of FineWeb-Edu general text; the rest of this lower bound is molecule/protein data. The 127.7B in mixed-source buckets is not fully allocated by acquisition route.",
         "quantity_type": "dataset"
+      },
+      "author_institutions": {
+        "authors_short": "Q. Pei et al.",
+        "institutions_short": "Renmin; Shanghai AI Lab +5",
+        "authors": [
+          "Qizhi Pei",
+          "Zhimeng Zhou",
+          "Yi Duan",
+          "Yiyang Zhao",
+          "Wei Li",
+          "Han Guo",
+          "Liang He",
+          "Chengping Li",
+          "Chang-Yu Hsieh",
+          "Conghui He",
+          "Rui Yan",
+          "Lijun Wu"
+        ],
+        "institutions": [
+          "Renmin University of China",
+          "Shanghai Artificial Intelligence Laboratory",
+          "Zhejiang University",
+          "Shanghai Innovation Institute",
+          "East China Normal University",
+          "Zhongguancun Academy",
+          "Wuhan University"
+        ],
+        "source": "https://arxiv.org/html/2606.22138v1"
+      },
+      "dataset_sources": {
+        "names": [
+          "FineWeb-Edu",
+          "PubChem",
+          "UniRef50",
+          "UniProt/Swiss-Prot",
+          "UniProt/TrEMBL",
+          "RCSB PDB",
+          "AlphaFold DB",
+          "MolTextNet",
+          "PCQM4Mv2",
+          "PubChemQC",
+          "FineFineWeb",
+          "S2ORC",
+          "USPTO-Applications",
+          "BindingDB",
+          "STITCH",
+          "jglaser binding affinity",
+          "CrossDocked2020",
+          "AlphaSeq",
+          "PPIRef"
+        ],
+        "source": "https://arxiv.org/html/2606.22138v1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "limited",
+        "summary": "Overlap unresolved; task-group SFT",
+        "strengths": [
+          "Broad evaluation across 80 tasks covers sequences, structures, language and interactions.",
+          "The paper provides a detailed data recipe and explicitly discusses failure modes and task-group tuning."
+        ],
+        "limitations": [
+          "Section 11 explicitly states that no dedicated entity-level filtering separates CPT from SFT/evaluation; scores do not establish contamination-free generalization.",
+          "Headline results use task-group-specific SFT variants; they should not be read as one unchanged final model succeeding across all tasks.",
+          "The total mixes modalities, generated dataset descriptions and general replay; exact source-route and biological-only fractions are incompletely reported."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.22138v1"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -1235,6 +1463,59 @@
         "data_scope": "Biomedical papers + general replay",
         "biology_scope_note": "The paper-derived stream is PubMed text. The existing-dataset component is C4 and Wikipedia general replay; all reported amounts here are inferred packed positions.",
         "quantity_type": "positions"
+      },
+      "author_institutions": {
+        "authors_short": "L. Yue et al.",
+        "institutions_short": "RPI; IBM Research +3",
+        "authors": [
+          "Ling Yue",
+          "Mingzhi Zhu",
+          "Sixue Xing",
+          "Yunning Cao",
+          "Yanbo Wang",
+          "Vijil Chenthamarakshan",
+          "Shaowu Pan",
+          "Payel Das",
+          "Tianfan Fu"
+        ],
+        "institutions": [
+          "Rensselaer Polytechnic Institute",
+          "IBM Research",
+          "Jiaxing New Jies Thermal Power Co. Ltd.",
+          "North University of China",
+          "Nanjing University"
+        ],
+        "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/"
+      },
+      "dataset_sources": {
+        "names": [
+          "C4",
+          "English Wikipedia"
+        ],
+        "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Base/adapted controls; release caveat",
+        "strengths": [
+          "Reports base-versus-adapted comparisons with tokenizer control and checks changes in general capability."
+        ],
+        "limitations": [
+          "Reported mixture proportions and sequence counts do not agree; packed positions are not non-padding content tokens.",
+          "The author README inspected for this review still defers checkpoint release until publication, limiting immediate reproduction from released weights."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/"
+          },
+          {
+            "label": "Author repository: checkpoint release status",
+            "url": "https://github.com/lingyue404/BioMamba#model-checkpoints"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -1765,7 +2046,49 @@
         "biology_scope_note": "The additional domain data is PubMed/PMC literature. The source does not supply a token count or a separate research-biology/clinical split.",
         "quantity_type": "unknown"
       },
-      "base": "BERT"
+      "base": "BERT",
+      "author_institutions": {
+        "authors_short": "J. Lee et al.",
+        "institutions_short": "Korea University; NAVER",
+        "authors": [
+          "Jinhyuk Lee",
+          "Wonjin Yoon",
+          "Sungdong Kim",
+          "Donghyeon Kim",
+          "Sunkyu Kim",
+          "Chan Ho So",
+          "Jaewoo Kang"
+        ],
+        "institutions": [
+          "Korea University",
+          "Clova AI Research, NAVER"
+        ],
+        "source": "https://arxiv.org/pdf/1901.08746"
+      },
+      "dataset_sources": {
+        "names": [],
+        "source": "https://arxiv.org/pdf/1901.08746",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "stronger_controls",
+        "summary": "Direct BERT/domain-corpus comparisons",
+        "strengths": [
+          "Initializes from BERT and compares added PubMed/PMC corpora across NER, relation extraction and QA.",
+          "Released models/code make the experimental recipe inspectable."
+        ],
+        "limitations": [
+          "Encoder task results do not establish the same gains for modern generative multimodal CPT.",
+          "The reported source sizes use words/documents; they do not supply the token split required by this review."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/pdf/1901.08746"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "pubmedbert",
@@ -1859,7 +2182,49 @@
         "biology_scope_note": "The reviewed PubMed/PMC sources are biomedical. Neither a comparable token total nor a nonclinical research-biology split is established here.",
         "quantity_type": "unknown"
       },
-      "base": "Random weights; BERT architecture"
+      "base": "Random weights; BERT architecture",
+      "author_institutions": {
+        "authors_short": "Y. Gu, R. Tinn et al.",
+        "institutions_short": "Microsoft Research",
+        "authors": [
+          "Yu Gu",
+          "Robert Tinn",
+          "Hao Cheng",
+          "Michael Lucas",
+          "Naoto Usuyama",
+          "Xiaodong Liu",
+          "Tristan Naumann",
+          "Jianfeng Gao",
+          "Hoifung Poon"
+        ],
+        "institutions": [
+          "Microsoft Research"
+        ],
+        "source": "https://arxiv.org/html/2007.15779v6"
+      },
+      "dataset_sources": {
+        "names": [],
+        "source": "https://arxiv.org/html/2007.15779v6",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "stronger_controls",
+        "summary": "Vocabulary/corpus pretraining ablations",
+        "strengths": [
+          "Compares domain-only and mixed-domain pretraining and studies vocabulary and masking choices across BLURB tasks."
+        ],
+        "limitations": [
+          "The evidence concerns BERT-style encoders, not a direct test of modern decoder or multimodal CPT.",
+          "Biomedical datasets in the benchmark do not by themselves measure paper extraction fidelity or mechanistic scientific reasoning."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2007.15779v6"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "biolinkbert",
@@ -1962,7 +2327,43 @@
         "biology_scope_note": "The training corpus is PubMed abstracts and their citation links. No comparable token total or nonclinical biology split is disclosed.",
         "quantity_type": "unknown"
       },
-      "base": "Random weights; BERT architecture"
+      "base": "Random weights; BERT architecture",
+      "author_institutions": {
+        "authors_short": "M. Yasunaga et al.",
+        "institutions_short": "Stanford",
+        "authors": [
+          "Michihiro Yasunaga",
+          "Jure Leskovec",
+          "Percy Liang"
+        ],
+        "institutions": [
+          "Stanford University"
+        ],
+        "source": "https://arxiv.org/html/2203.15827#S6.SS1"
+      },
+      "dataset_sources": {
+        "names": [],
+        "source": "https://arxiv.org/html/2203.15827#S6.SS1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Link ablations; biomedical transfer caveat",
+        "strengths": [
+          "Ablates link sampling and document-relation objectives and reports biomedical downstream tasks."
+        ],
+        "limitations": [
+          "The most detailed link-objective ablations are in the general-domain experiments; their exact gains should not be assumed for the biomedical variant.",
+          "Public-benchmark improvements do not isolate citation extraction quality or establish leakage-free deployment."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2203.15827#S6.SS1"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "naturelm",
@@ -2081,7 +2482,46 @@
         "biology_scope_note": "The complete 143.8B corpus is not biology-only. It includes 14.4B general text, several scientific modalities and cross-domain data; the existing-dataset lower bound also includes nonbiological materials.",
         "quantity_type": "dataset"
       },
-      "base": "Llama 3 8B / Mixtral 8×7B"
+      "base": "Llama 3 8B / Mixtral 8×7B",
+      "author_institutions": {
+        "authors_short": "NatureLM team",
+        "institutions_short": "Microsoft Research AI for Science",
+        "authors": [
+          "NatureLM team (credited group; individual author list in the paper)"
+        ],
+        "institutions": [
+          "Microsoft Research AI for Science"
+        ],
+        "source": "https://arxiv.org/html/2502.07527v2#S2.SS3"
+      },
+      "dataset_sources": {
+        "names": [
+          "PubChem",
+          "UniProt",
+          "Materials Project",
+          "NCBI resources"
+        ],
+        "source": "https://arxiv.org/html/2502.07527v2#S2.SS3",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Broad tasks; recipe effects not isolated",
+        "strengths": [
+          "Evaluates several model sizes and scientific modalities and supplies corpus/method details."
+        ],
+        "limitations": [
+          "The final capabilities combine changed vocabulary, scientific pretraining and instruction tuning; they do not isolate the value of a particular extraction/curation choice.",
+          "Different initial models and multimodal scientific tokens complicate direct comparisons; the headline is not biological prose alone."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2502.07527v2#S2.SS3"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "galactica",
@@ -2234,7 +2674,53 @@
         "biology_scope_note": "The headline includes several sciences, reference material and other text. Its entire dataset or training exposure must not be labeled biological tokens.",
         "quantity_type": "dataset"
       },
-      "base": "Random weights; scientific decoder"
+      "base": "Random weights; scientific decoder",
+      "author_institutions": {
+        "authors_short": "R. Taylor et al.",
+        "institutions_short": "Meta AI",
+        "authors": [
+          "Ross Taylor",
+          "Marcin Kardas",
+          "Guillem Cucurull",
+          "Thomas Scialom",
+          "Anthony Hartshorn",
+          "Elvis Saravia",
+          "Andrew Poulton",
+          "Viktor Kerkez",
+          "Robert Stojnic"
+        ],
+        "institutions": [
+          "Meta AI"
+        ],
+        "source": "https://arxiv.org/html/2211.09085v1"
+      },
+      "dataset_sources": {
+        "names": [
+          "UniProt",
+          "PubChem",
+          "Papers with Code"
+        ],
+        "source": "https://arxiv.org/html/2211.09085v1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Scaling studies; corpus/prompt effects mixed",
+        "strengths": [
+          "Reports model-scale, repeated-token and citation-identifier analyses over diverse scientific tasks."
+        ],
+        "limitations": [
+          "Prompt pretraining, scientific data and scale interact; the paper itself notes difficulties separating corpus and prompt effects.",
+          "Citation generation and fluent prose are not guarantees of factual reliability; the corpus is broad science, not biology alone."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2211.09085v1"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "gravity_bio",
@@ -2446,7 +2932,67 @@
         "biology_scope_note": "The displayed components are 52.6B biological database-derived tokens and approximately 54B biomedical literature tokens. Additional science/web replay is not quantified; the literature amount is not split into research biology versus clinical medicine.",
         "quantity_type": "dataset"
       },
-      "base": "Gravity-16B-A3B, before annealing"
+      "base": "Gravity-16B-A3B, before annealing",
+      "author_institutions": {
+        "authors_short": "H. Seo, H. Hwang et al.",
+        "institutions_short": "Trillion Labs; KAIST +3",
+        "authors": [
+          "Hyunjin Seo",
+          "Hyeon Hwang",
+          "Gyubok Lee",
+          "Jay Shin",
+          "Jimin Park",
+          "Taesoo Kim",
+          "Sanghoon Lee",
+          "Hongjoon Ahn",
+          "Sungjun Han",
+          "Sangwon Jung"
+        ],
+        "institutions": [
+          "Trillion Labs",
+          "KAIST",
+          "SK Biopharmaceuticals",
+          "Lunit",
+          "AIGEN Sciences"
+        ],
+        "source": "https://arxiv.org/html/2607.08803v1#S3.SS1"
+      },
+      "dataset_sources": {
+        "names": [
+          "PubChem",
+          "UniProt",
+          "GENCODE",
+          "DrugBank",
+          "BindingDB",
+          "ChEMBL",
+          "USPTO-50K",
+          "AlphaFold DB",
+          "PDB",
+          "ENCODE",
+          "DCLM-CC",
+          "EAI-DCLM"
+        ],
+        "source": "https://arxiv.org/html/2607.08803v1#S3.SS1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Text-only control; new benchmark",
+        "strengths": [
+          "Includes a text-only annealing comparison as well as the starting checkpoint and describes task-specific decontamination."
+        ],
+        "limitations": [
+          "Much of the evidence comes from the paper’s newly assembled evaluation suite; broad transfer to independent protocols remains to be established.",
+          "Complete replay/exposure counts are not disclosed, so full compute/source matching cannot be verified from the headline."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2607.08803v1#S3.SS1"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "scireasoner",
@@ -2531,7 +3077,83 @@
         "biology_scope_note": "The 206B total and 166B named-dataset subtotal cover multiple sciences, not biology alone. The paper leaves 40B outside its enumerated components.",
         "quantity_type": "dataset"
       },
-      "base": "Qwen3-1.7B / 8B"
+      "base": "Qwen3-1.7B / 8B",
+      "author_institutions": {
+        "authors_short": "Y. Wang et al.",
+        "institutions_short": "Shanghai AI Lab; collaborators",
+        "authors": [
+          "Yizhou Wang",
+          "Chen Tang",
+          "Han Deng",
+          "Jiabei Xiao",
+          "Jiaqi Liu",
+          "Jianyu Wu",
+          "Jun Yao",
+          "Pengze Li",
+          "Encheng Su",
+          "Lintao Wang",
+          "Guohang Zhuang",
+          "Yuchen Ren",
+          "Ben Fei",
+          "Ming Hu",
+          "Xin Chen",
+          "Dongzhan Zhou",
+          "Junjun He",
+          "Xiangyu Yue",
+          "Zhenfei Yin",
+          "Jiamin Wu",
+          "Qihao Zheng",
+          "Yuhao Zhou",
+          "Huihui Xu",
+          "Chenglong Ma",
+          "Yan Lu",
+          "Wenlong Zhang",
+          "Chunfeng Song",
+          "Philip Torr",
+          "Shixiang Tang",
+          "Xinzhu Ma",
+          "Wanli Ouyang",
+          "Lei Bai"
+        ],
+        "institutions": [
+          "Shanghai Artificial Intelligence Laboratory",
+          "The University of Sydney",
+          "The Chinese University of Hong Kong",
+          "University of Oxford",
+          "University of Science and Technology of China",
+          "Beihang University",
+          "Fudan University",
+          "Shanghai Jiao Tong University"
+        ],
+        "source": "https://arxiv.org/html/2509.21320v1"
+      },
+      "dataset_sources": {
+        "names": [
+          "UniRef50/90",
+          "RNAcentral",
+          "C4"
+        ],
+        "source": "https://arxiv.org/html/2509.21320v1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "CPT ablation; unresolved token accounting",
+        "strengths": [
+          "Table 9 reports before/after pretraining results on ten tasks, beyond final-model leaderboard comparisons."
+        ],
+        "limitations": [
+          "The five named source categories sum to 166B while the headline says 206B; the 40B difference is not reconciled.",
+          "Final reasoning results also depend on SFT/RL, so the CPT ablation should not be generalized to every headline task."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2509.21320v1"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "logos",
@@ -2619,7 +3241,51 @@
         "biology_scope_note": "The 44.87B corpus includes scientific modalities beyond biology and spans pretraining/post-training; it is neither a biology-only prose count nor a disclosed CPT-only exposure.",
         "quantity_type": "dataset"
       },
-      "base": "Qwen3-8B; Llama 3.2-1B / 3B variants"
+      "base": "Qwen3-8B; Llama 3.2-1B / 3B variants",
+      "author_institutions": {
+        "authors_short": "M. Li et al.",
+        "institutions_short": "Alibaba; Renmin",
+        "authors": [
+          "Mingyang Li",
+          "Yurou Liu",
+          "Jieping Ye",
+          "Bing Su",
+          "Ji-Rong Wen",
+          "Zheng Wang"
+        ],
+        "institutions": [
+          "Alibaba Group",
+          "Renmin University of China"
+        ],
+        "source": "https://arxiv.org/html/2606.16905v1#S2.SS3"
+      },
+      "dataset_sources": {
+        "names": [
+          "UniRef90",
+          "OAS",
+          "PubChemQC"
+        ],
+        "source": "https://arxiv.org/html/2606.16905v1#S2.SS3",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Grammar/init ablations; stage totals mixed",
+        "strengths": [
+          "Studies initialization, grammar components and cross-domain training rather than only reporting a final model."
+        ],
+        "limitations": [
+          "The 44.87B corpus headline spans pretraining/post-training and is not a disclosed CPT-only exposure budget.",
+          "Strong results on selected scientific generation tasks do not establish improved biological literature reasoning."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.16905v1#S2.SS3"
+          }
+        ],
+        "independent_replication": false
+      }
     },
     {
       "id": "txllm",
@@ -3180,6 +3846,44 @@
         "data_scope": "Biomedical paper text",
         "biology_scope_note": "PMC literature and its biomedical/clinical curation variants; this does not establish a research-biology-only token count.",
         "quantity_type": "training"
+      },
+      "author_institutions": {
+        "authors_short": "R. Touchent et al.",
+        "institutions_short": "Sorbonne; Inria",
+        "authors": [
+          "Rian Touchent",
+          "Nathan Godey",
+          "Eric de la Clergerie"
+        ],
+        "institutions": [
+          "Sorbonne Université",
+          "Inria Paris"
+        ],
+        "source": "https://arxiv.org/html/2506.20331v1"
+      },
+      "dataset_sources": {
+        "names": [],
+        "source": "https://arxiv.org/html/2506.20331v1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "stronger_controls",
+        "summary": "Matched CPT budgets; modest mean gain",
+        "strengths": [
+          "Same OLMo2 checkpoint and 33.6B-token budget across variants make the curation comparison more interpretable.",
+          "Reports multiple filtering/enrichment variants rather than only the best single score."
+        ],
+        "limitations": [
+          "BE-All improves the reported mean by 0.67 percentage points; large task-specific gains are not universal gains.",
+          "Teacher-generated educational/clinical labels are not human-verified scientific truth; a clinical-biased filter may be unsuitable for research biology."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2506.20331v1"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -3280,6 +3984,58 @@
         "data_scope": "Biomedical paper text + image tokens",
         "biology_scope_note": "The 9.63B amount includes text and image tokens and is curated for medical/scientific tasks. A biology-only text fraction is not separately disclosed.",
         "quantity_type": "dataset"
+      },
+      "author_institutions": {
+        "authors_short": "G. Zhu et al.",
+        "institutions_short": "HK PolyU; Sun Yat-sen +2",
+        "authors": [
+          "Guanghao Zhu",
+          "Zeyu Liu",
+          "Zhitian Hou",
+          "Pengkai Wang",
+          "Zhijie Sang",
+          "Yang Yu",
+          "Minheng Ni",
+          "Wenjun Wang",
+          "Yanggan Gu",
+          "Shuo Cai",
+          "Congkai Xie",
+          "Jianmin Wu",
+          "Hongxia Yang"
+        ],
+        "institutions": [
+          "The Hong Kong Polytechnic University",
+          "Sun Yat-sen University",
+          "InfiX.ai",
+          "PolyU-Daya Bay Technology and Innovation Research Institute"
+        ],
+        "source": "https://arxiv.org/html/2606.01049v2"
+      },
+      "dataset_sources": {
+        "names": [
+          "BIOMEDICA"
+        ],
+        "source": "https://arxiv.org/html/2606.01049v2",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "stronger_controls",
+        "summary": "Matched controls; small SFT-only margin",
+        "strengths": [
+          "Compares token-matched raw CPT with fixed downstream SFT and includes grounding/curation ablations.",
+          "Tests more than one model size/architecture."
+        ],
+        "limitations": [
+          "The general/scientific gain is +3.11 points over raw CPT but only +0.07 over SFT-only; comparator choice changes the practical conclusion.",
+          "The recipe targets medical/scientific tasks; clinical relevance labels should not be treated as a general biological quality metric."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.01049v2"
+          }
+        ],
+        "independent_replication": false
       }
     },
     {
@@ -3363,6 +4119,51 @@
         "data_scope": "Biology-labeled web subset",
         "biology_scope_note": "CPT uses a FineFineWeb biology subset, but the realized token total is not reported. A source topic label alone does not establish research quality or exclusion of clinical material.",
         "quantity_type": "unknown"
+      },
+      "author_institutions": {
+        "authors_short": "L. Fesser, H. Zhang et al.",
+        "institutions_short": "Harvard; Google",
+        "authors": [
+          "Lukas Fesser",
+          "Hanlin Zhang",
+          "Michelle M. Li",
+          "Eric Wang",
+          "Bryan Perozzi",
+          "Shekoofeh Azizi",
+          "Sham M. Kakade",
+          "Marinka Zitnik"
+        ],
+        "institutions": [
+          "Harvard University",
+          "Google DeepMind",
+          "Google Research"
+        ],
+        "source": "https://arxiv.org/html/2606.16517v1"
+      },
+      "dataset_sources": {
+        "names": [
+          "FineFineWeb"
+        ],
+        "source": "https://arxiv.org/html/2606.16517v1",
+        "note": "Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input."
+      },
+      "evidence_assessment": {
+        "level": "useful_limited",
+        "summary": "Stage/OOD analysis; unequal compute",
+        "strengths": [
+          "Separates CPT, supervised adaptation and RL and examines biologically meaningful out-of-distribution splits."
+        ],
+        "limitations": [
+          "Limited model/task families and stage allocations that are not fully FLOP-matched limit broad recommendations.",
+          "Answer accuracy does not verify the factual correctness of intermediate reasoning; broad web CPT is not strictly benchmark-decontaminated."
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.16517v1"
+          }
+        ],
+        "independent_replication": false
       }
     }
   ],
@@ -4104,5 +4905,20 @@
     "evaluation": "Separate private repository; do not copy benchmark cases, labels or raw evaluation outputs into the extraction literature review.",
     "content_scope": "Acquisition route and biological content are separate axes. General replay, other science, clinical literature and non-text tokens must be explicit. A mixed headline is never a biology-only token estimate."
   },
-  "presentation_updated_at_pst": "2026-10-15T13:59:32.548271-08:00"
+  "presentation_updated_at_pst": "2026-10-15T13:59:32.548271-08:00",
+  "evidence_assessment_policy": {
+    "scope": "Qualitative source-based judgment of evidence for training/data claims; not author prestige, publication venue, model parameter count or independent replication.",
+    "levels": {
+      "stronger_controls": "More direct comparisons/ablations of the claimed training intervention.",
+      "useful_limited": "Informative reported evidence with important remaining confounds or disclosure gaps.",
+      "limited": "Major limitations on interpreting the central claim, such as unresolved contamination or mismatched evaluation framing."
+    },
+    "required_rationale": [
+      "strengths",
+      "limitations",
+      "primary_sources"
+    ],
+    "institution_display": "Compact first-author/group credit and shortened institutions in the overview; reviewed-source names on study pages."
+  },
+  "assessment_updated_at_pst": "2026-10-15T16:22:39.072609-08:00"
 }

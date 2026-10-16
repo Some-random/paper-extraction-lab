@@ -12,6 +12,35 @@ The 8B and 8×7B models continue from existing checkpoints. The separate 1B mode
 
 **Data included in the overview amounts:** Biology, chemistry, materials + general text. The complete 143.8B corpus is not biology-only. It includes 14.4B general text, several scientific modalities and cross-domain data; the existing-dataset lower bound also includes nonbiological materials.
 
+## Authors and institutions
+
+**Authors:** NatureLM team (credited group; individual author list in the paper).
+
+**Institutions:** Microsoft Research AI for Science.
+
+[Paper attribution](https://arxiv.org/html/2502.07527v2#S2.SS3). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Broad tasks; recipe effects not isolated. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Evaluates several model sizes and scientific modalities and supplies corpus/method details.
+
+**Limitations**
+
+- The final capabilities combine changed vocabulary, scientific pretraining and instruction tuning; they do not isolate the value of a particular extraction/curation choice.
+- Different initial models and multimodal scientific tokens complicate direct comparisons; the headline is not biological prose alone.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2502.07527v2#S2.SS3)
+
+## Existing-dataset sources
+
+PubChem; UniProt; Materials Project; NCBI resources.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2502.07527v2#S2.SS3)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

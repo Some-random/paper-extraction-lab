@@ -194,3 +194,17 @@ cutoff and 32 GiB free-space floor. Run one serial document worker on two CPU
 threads and zero GPUs. Retain PDFs/XML, native text, source figures/tables and
 citations; no new OCR, inference, training or separate supplement acquisition.
 Publish compact progress/final manifests, with bulk artifacts kept locally.
+
+## Attribution, dataset names and evidence assessment
+
+The user requests compact existing-dataset names alongside token amounts and
+two additional overview columns: authors/institutions and how strong each
+paper's evidence is. Store credits, named input datasets and source-based
+assessments in the same review registry. Use first-author/group names and short
+institution names in the table, with fuller source information on study pages.
+Assess experimental controls, overlap/leakage, reproducibility and support for
+claims; do not use institution prestige as a quality score. Each assessment
+needs strengths, limitations and primary-source links and must not imply an
+independent replication. Record numerical corrections explicitly: BioMatrix's
+existing-dataset lower bound is 176.7B from 25.6B general text, 77.4B protein
+data and 73.7B molecular data, replacing the incomplete 25.6B-only bound.

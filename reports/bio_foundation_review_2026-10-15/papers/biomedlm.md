@@ -12,6 +12,36 @@ Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed
 
 **Data included in the overview amounts:** Biomedical papers. The corpus consists of The Pile PubMed Abstracts/PubMed Central components. This is a biomedical-literature count; it does not isolate nonclinical biological research.
 
+## Authors and institutions
+
+**Authors:** Elliot Bolton; Abhinav Venigalla; Michihiro Yasunaga; David Hall; Betty Xiong; Tony Lee; Roxana Daneshjou; Jonathan Frankle; Percy Liang; Michael Carbin; Christopher D. Manning.
+
+**Institutions:** Stanford University; Databricks.
+
+[Paper attribution](https://arxiv.org/html/2403.18421v1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Reproducible budget; small tokenizer ablation. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Reports 34.6B corpus tokens and 300B consumed tokens, with an inspectable training recipe.
+- The controlled 125M tokenizer experiment reports five-seed results.
+
+**Limitations**
+
+- The tokenizer ablation is smaller than the headline 2.7B model.
+- Most comparisons are after task-specific fine-tuning and do not isolate the effect of the biomedical corpus against a compute-matched general corpus.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2403.18421v1)
+
+## Existing-dataset sources
+
+The Pile: PubMed Central; The Pile: PubMed Abstracts.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2403.18421v1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

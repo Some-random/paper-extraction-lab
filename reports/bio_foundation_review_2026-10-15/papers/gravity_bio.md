@@ -12,6 +12,35 @@ The overview shows lower bounds from two separate known corpus components. Neith
 
 **Data included in the overview amounts:** Biological records + biomedical papers; replay extra. The displayed components are 52.6B biological database-derived tokens and approximately 54B biomedical literature tokens. Additional science/web replay is not quantified; the literature amount is not split into research biology versus clinical medicine.
 
+## Authors and institutions
+
+**Authors:** Hyunjin Seo; Hyeon Hwang; Gyubok Lee; Jay Shin; Jimin Park; Taesoo Kim; Sanghoon Lee; Hongjoon Ahn; Sungjun Han; Sangwon Jung.
+
+**Institutions:** Trillion Labs; KAIST; SK Biopharmaceuticals; Lunit; AIGEN Sciences.
+
+[Paper attribution](https://arxiv.org/html/2607.08803v1#S3.SS1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Text-only control; new benchmark. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Includes a text-only annealing comparison as well as the starting checkpoint and describes task-specific decontamination.
+
+**Limitations**
+
+- Much of the evidence comes from the paper’s newly assembled evaluation suite; broad transfer to independent protocols remains to be established.
+- Complete replay/exposure counts are not disclosed, so full compute/source matching cannot be verified from the headline.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2607.08803v1#S3.SS1)
+
+## Existing-dataset sources
+
+PubChem; UniProt; GENCODE; DrugBank; BindingDB; ChEMBL; USPTO-50K; AlphaFold DB; PDB; ENCODE; DCLM-CC; EAI-DCLM.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2607.08803v1#S3.SS1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

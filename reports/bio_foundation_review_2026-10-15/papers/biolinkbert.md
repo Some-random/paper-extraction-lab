@@ -12,6 +12,35 @@ Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The gener
 
 **Data included in the overview amounts:** Biomedical abstracts. The training corpus is PubMed abstracts and their citation links. No comparable token total or nonclinical biology split is disclosed.
 
+## Authors and institutions
+
+**Authors:** Michihiro Yasunaga; Jure Leskovec; Percy Liang.
+
+**Institutions:** Stanford University.
+
+[Paper attribution](https://arxiv.org/html/2203.15827#S6.SS1). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Link ablations; biomedical transfer caveat. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Ablates link sampling and document-relation objectives and reports biomedical downstream tasks.
+
+**Limitations**
+
+- The most detailed link-objective ablations are in the general-domain experiments; their exact gains should not be assumed for the biomedical variant.
+- Public-benchmark improvements do not isolate citation extraction quality or establish leakage-free deployment.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2203.15827#S6.SS1)
+
+## Existing-dataset sources
+
+No separately reused dataset identified for this overview row.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2203.15827#S6.SS1)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

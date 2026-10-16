@@ -12,6 +12,35 @@ Reported packed sequence counts imply positions, not measured non-padding tokens
 
 **Data included in the overview amounts:** Biomedical papers + general replay. The paper-derived stream is PubMed text. The existing-dataset component is C4 and Wikipedia general replay; all reported amounts here are inferred packed positions.
 
+## Authors and institutions
+
+**Authors:** Ling Yue; Mingzhi Zhu; Sixue Xing; Yunning Cao; Yanbo Wang; Vijil Chenthamarakshan; Shaowu Pan; Payel Das; Tianfan Fu.
+
+**Institutions:** Rensselaer Polytechnic Institute; IBM Research; Jiaxing New Jies Thermal Power Co. Ltd.; North University of China; Nanjing University.
+
+[Paper attribution](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Useful, limited.** Base/adapted controls; release caveat. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Reports base-versus-adapted comparisons with tokenizer control and checks changes in general capability.
+
+**Limitations**
+
+- Reported mixture proportions and sequence counts do not agree; packed positions are not non-padding content tokens.
+- The author README inspected for this review still defers checkpoint release until publication, limiting immediate reproduction from released weights.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/) · [Author repository: checkpoint release status](https://github.com/lingyue404/BioMamba#model-checkpoints)
+
+## Existing-dataset sources
+
+C4; English Wikipedia.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |

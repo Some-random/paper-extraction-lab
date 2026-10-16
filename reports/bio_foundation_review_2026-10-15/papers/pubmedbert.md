@@ -12,6 +12,35 @@ Domain vocabulary and model are learned from biomedical text, rather than starti
 
 **Data included in the overview amounts:** Biomedical paper text. The reviewed PubMed/PMC sources are biomedical. Neither a comparable token total nor a nonclinical research-biology split is established here.
 
+## Authors and institutions
+
+**Authors:** Yu Gu; Robert Tinn; Hao Cheng; Michael Lucas; Naoto Usuyama; Xiaodong Liu; Tristan Naumann; Jianfeng Gao; Hoifung Poon.
+
+**Institutions:** Microsoft Research.
+
+[Paper attribution](https://arxiv.org/html/2007.15779v6). Names and affiliations follow the reviewed paper version.
+
+## Evidence assessment
+
+**Our assessment: Stronger controls.** Vocabulary/corpus pretraining ablations. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+
+**Strengths**
+
+- Compares domain-only and mixed-domain pretraining and studies vocabulary and masking choices across BLURB tasks.
+
+**Limitations**
+
+- The evidence concerns BERT-style encoders, not a direct test of modern decoder or multimodal CPT.
+- Biomedical datasets in the benchmark do not by themselves measure paper extraction fidelity or mechanistic scientific reasoning.
+
+Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2007.15779v6)
+
+## Existing-dataset sources
+
+No separately reused dataset identified for this overview row.
+
+Named reused inputs relevant to the reviewed training stages. This is not necessarily exhaustive. A source name establishes provenance, not its token amount; unreported amounts remain NR. Directly collected PubMed/PMC text is described separately as online-paper input. [Source](https://arxiv.org/html/2007.15779v6)
+
 ## Token counts by acquisition route
 
 | Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |
