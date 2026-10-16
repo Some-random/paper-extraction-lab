@@ -10,8 +10,9 @@ this pattern with different choices. [FineWeb](https://arxiv.org/html/2406.17557
 [Dolma](https://arxiv.org/html/2402.00159v1)
 
 This document specifies the proposed project pipeline, building on the paper
-extraction already implemented. It does not report a new crawl or an executed
-end-to-end web pipeline. Corpus acquisition remains paused.
+extraction already implemented. Native paper acquisition has resumed in the
+separate bounded 500-paper batch. The web adapters, calibrated filters and
+cross-source deduplication below remain proposed work.
 
 ```mermaid
 flowchart TD
@@ -159,7 +160,7 @@ tokenizer makes their representation explicit. Unknown counts stay unknown.
 
 | Component | Status in this repository |
 |---|---|
-| Native paper parsing, original figures/tables and source-linked citations | Implemented; published three-paper outputs and native batch summaries |
+| Native paper parsing, original figures/tables and source-linked citations | Implemented; source records and compact summaries retained in the native batches |
 | olmOCR 2 page inference | Executed in the earlier bounded paper batch; full upstream production pipeline not claimed |
 | Reused web dataset access | Eight-record FineFineWeb prefix probe executed; this is not a representative corpus sample |
 | Live/archived HTML adapter and shared web-document records | Proposed here; not yet implemented or run |

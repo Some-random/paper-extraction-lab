@@ -1,6 +1,25 @@
 # Biological continued pretraining: data sources and token budgets
 
-How biological foundation models turn research papers, web content and existing datasets into training data. The main comparison focuses on **continued pretraining (CPT)**: starting with a pretrained model and training it further on domain data. Data-curation studies and released models appear together because both inform this choice.
+## What we need to do
+
+Build a source-linked biological research corpus from online papers, web URLs and existing datasets, retaining text, original evidence assets and biological sequences.
+
+**Next implementation:** Unify the document records, add the web and dataset import adapters, then calibrate filtering and deduplicate across all three sources before reporting final token totals.
+
+| Step | What we need to do | Relevant papers / sources | Current state |
+|---|---|---|---|
+| Paper text | Parse publisher XML/JATS when available; use olmOCR 2 for PDF text. Keep originals, raw extraction, section order, equations and page/element provenance. | [olmOCR 2](https://arxiv.org/abs/2510.19817) | Working: native parsing and earlier bounded olmOCR runs. |
+| Figures, tables and citations | Retain original images, captions, source table cells and referring paragraphs; attach cited titles/authors. Check extracted values and context against the source. | [Beyond Captions](https://arxiv.org/html/2606.01049v2) · [Ryze](https://arxiv.org/html/2606.00902v1) | Native extraction implemented; biological interpretation still needs validation. |
+| Web URLs | Build an HTML adapter that removes navigation and boilerplate while preserving useful text, tables, media and original URLs. Keep the raw HTML. | [FineWeb](https://arxiv.org/html/2406.17557v1) | To build; the existing web-dataset probe is only an access check. |
+| Existing datasets | Import versioned corpora and biological databases with upstream record IDs. Map text, sequence and image records to a shared schema without discarding their original provenance. | [S2ORC](https://aclanthology.org/2020.acl-main.447/) · [peS2o documentation](https://github.com/allenai/pes2o) | To build: common import adapters and shared records across sources. |
+| Biological selection and extraction quality | Label research biology, clinical-only material, other science and general text separately. Calibrate relevance and extraction-quality filters on reviewed biological examples. | [Biomed-Enriched](https://arxiv.org/html/2506.20331v1) | To calibrate; use biology-specific labels and thresholds. |
+| Deduplication and token totals | Match document IDs/versions, then exact and near-duplicate prose across all sources. Count retained biology with a fixed tokenizer by acquisition route and modality; track rejected and duplicate material. | [Dolma](https://arxiv.org/html/2402.00159v1) · [OLMo 3](https://arxiv.org/html/2512.13961v2) | Native counts exist; cross-source deduplication and final accounting remain to build. |
+
+The cited papers inform these methods; the status column describes this repository.
+
+The [detailed specification](data_pipeline.md) gives the record fields and processing rules. [Supporting literature](background.md) retains the wider method and corpus references.
+
+The comparison below focuses on **continued pretraining (CPT)**: starting with a pretrained model and training it further on domain data. Data-curation studies and released models appear together because both inform this choice.
 
 Counts follow each paper’s reported budget and may include general text, other sciences and biological sequences. The **Source** column links to the paper and detailed notes.
 
@@ -47,7 +66,3 @@ These models begin with randomly initialized weights and biological or scientifi
 | BioGPT<br>Random weights; GPT-2-style architecture | 104.8576B<br>PubMed titles/abstracts | 0 | 0 | 104.8576B | Text only | **Solid**<br>Useful early decoder study; conventional method | R. Luo et al.<br>Microsoft Research; Peking | [Paper](https://arxiv.org/pdf/2210.10341) · [Notes](papers/biogpt.md) |
 | BioMedLM<br>Random weights; 2.7B GPT-style decoder | 0<br>via The Pile PubMed components (reused) | 0 | 34.6B<br>The Pile: PubMed Central; The Pile: PubMed Abstracts | 34.6B | Text only | **Solid**<br>Transparent resource; limited methodological novelty | E. Bolton et al.<br>Stanford; Databricks | [Paper](https://arxiv.org/html/2403.18421v1) · [Notes](papers/biomedlm.md) |
 | Galactica<br>Random weights; scientific decoder | ≥64.926B<br>arXiv; PMC; PubMed abstracts (+6) | ≥700M | ≥23.87B<br>UniProt; PubChem; Papers with Code | ≈106B | Protein records: ≈600M<br>Molecule records: ≈1B<br>Genome records: ≈100M<br>Record totals include text; pure sequence/SMILES shares not reported. | **Mixed**<br>Substantial scientific LM; reliability claims weak | R. Taylor et al.<br>Meta AI | [Paper](https://arxiv.org/html/2211.09085v1) · [Notes](papers/galactica.md) |
-
-## Data preparation
-
-The [data preparation pipeline](data_pipeline.md) brings paper, web and reused-dataset inputs into the same source-linked records, then applies content selection, deduplication and token counting. It distinguishes existing implementation from proposed web-processing work. [Supporting literature](background.md) covers source corpora, extraction pipelines, instruction tuning and representation learning.

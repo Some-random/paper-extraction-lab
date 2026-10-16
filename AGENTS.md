@@ -239,3 +239,9 @@ text. Render unavailable category amounts as a dash, unknown totals as "Not
 reported", and explain the dash once. Preserve zeros, all numeric amounts and
 the full count-basis definitions on study pages and in the registry. Do not
 claim that the resulting unmarked amounts all represent unique corpus tokens.
+
+The user wants the extraction actions and their relevant papers directly on
+the main review page, near the top. Render a concise extraction plan before
+the model comparison, pairing concrete work with source references and actual
+implementation status. Keep the full specification as supporting detail; do
+not make readers navigate to the bottom or to another page for the basic plan.

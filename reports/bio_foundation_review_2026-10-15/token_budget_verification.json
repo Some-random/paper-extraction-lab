@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T17:15:42.589316-08:00",
+  "checked_at_pst": "2026-10-15T17:48:03.245768-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -12,7 +12,7 @@
     "existing_datasets": 21
   },
   "original_41_entries_and_source_records_preserved": true,
-  "regression_tests_passed": 33,
+  "regression_tests_passed": 34,
   "known_rounding_discrepancies": [
     {
       "id": "meditron",
@@ -339,7 +339,7 @@
   "overview_rows": 16,
   "summary_budget_note": "One additional Gravity-bio overview record combines disclosed, non-overlapping component lower bounds. Web and total remain NR; original component and training-exposure records are unchanged.",
   "content_scope_verification": "All 16 overview entries retain their original overall quality assessments, credits and source-route budgets. The main tables sort by quality, show numeric modality counts, and move authors after quality. BioMatrix composition reconciles to 304.4B; its 127.7B mixed-route component is explicitly labeled. New Galactica record totals preserve unknown pure-sequence amounts.",
-  "pipeline_documentation": "data_pipeline.md specifies shared processing and separates implemented paper work from proposed web extraction, cross-route deduplication and final biological accounting.",
+  "pipeline_documentation": "The main README now renders the extraction actions, supporting papers and current implementation status. data_pipeline.md retains the full record specification and distinguishes executed paper processing from proposed web extraction, filtering and cross-source deduplication.",
   "token_count_corrections": [
     {
       "entry": "biomatrix",
@@ -372,8 +372,8 @@
     "modality_profiles": 16,
     "modality_counts_added_to_acquisition_totals": false
   },
-  "local_links_and_anchors_checked": 142,
-  "all_52_token_budget_records_preserved_from_commit": "14b8eca59a9915e54816d8aae31721be781e8e67",
+  "local_links_and_anchors_checked": 145,
+  "all_52_token_budget_records_preserved_from_commit": "5102c4022b98745d83ba5c8a2fe0a480c19de2cd",
   "overview_sort": "Strong, Solid, Mixed, Weak; alphabetical ties within each CPT/from-scratch table",
   "author_column_after_quality": true,
   "modality_counts_visible_in_overview": true,
@@ -395,13 +395,20 @@
       "note": "Rounded source-record budgets include associated text and metadata; pure sequence/SMILES amounts remain NR. Already included in existing acquisition totals."
     }
   ],
-  "entire_review_registry_preserved_from_commit": "14b8eca59a9915e54816d8aae31721be781e8e67",
   "overview_presentation": {
     "count_markers_removed": true,
     "links_per_row": 2,
-    "link_location": "Source column only: Paper and Notes",
+    "link_location": "Model tables: Source column only, with Paper and Notes links",
     "unknown_category_display": "—",
     "unknown_total_display": "Not reported",
     "detailed_count_definitions_preserved": true
+  },
+  "existing_review_registry_fields_preserved_from_commit": "5102c4022b98745d83ba5c8a2fe0a480c19de2cd",
+  "extraction_plan_overview": {
+    "location": "Before the model comparison",
+    "steps": 6,
+    "primary_or_author_source_references": 9,
+    "implementation_status_distinguishes_planned_work": true,
+    "new_extraction_or_training_run_launched": false
   }
 }

@@ -5916,5 +5916,96 @@
   },
   "modality_policy": "Acquisition route and representation are orthogonal. Modality counts are included in source budgets and must never be added on top. Distinguish pure modality-token counts, domain buckets with mixed representations, and later-stage encoder features.",
   "quality_reviewed_at_pst": "2026-10-15T16:33:15.186299-08:00",
-  "overview_sort": "Within CPT and from-scratch sections: Strong, Solid, Mixed, Weak; alphabetical within each rating."
+  "overview_sort": "Within CPT and from-scratch sections: Strong, Solid, Mixed, Weak; alphabetical within each rating.",
+  "extraction_plan": {
+    "objective": "Build a source-linked biological research corpus from online papers, web URLs and existing datasets, retaining text, original evidence assets and biological sequences.",
+    "next_action": "Unify the document records, add the web and dataset import adapters, then calibrate filtering and deduplicate across all three sources before reporting final token totals.",
+    "steps": [
+      {
+        "id": "paper_text",
+        "step": "Paper text",
+        "action": "Parse publisher XML/JATS when available; use olmOCR 2 for PDF text. Keep originals, raw extraction, section order, equations and page/element provenance.",
+        "status": "Working: native parsing and earlier bounded olmOCR runs.",
+        "sources": [
+          {
+            "label": "olmOCR 2",
+            "url": "https://arxiv.org/abs/2510.19817"
+          }
+        ]
+      },
+      {
+        "id": "evidence_assets",
+        "step": "Figures, tables and citations",
+        "action": "Retain original images, captions, source table cells and referring paragraphs; attach cited titles/authors. Check extracted values and context against the source.",
+        "status": "Native extraction implemented; biological interpretation still needs validation.",
+        "sources": [
+          {
+            "label": "Beyond Captions",
+            "url": "https://arxiv.org/html/2606.01049v2"
+          },
+          {
+            "label": "Ryze",
+            "url": "https://arxiv.org/html/2606.00902v1"
+          }
+        ]
+      },
+      {
+        "id": "web",
+        "step": "Web URLs",
+        "action": "Build an HTML adapter that removes navigation and boilerplate while preserving useful text, tables, media and original URLs. Keep the raw HTML.",
+        "status": "To build; the existing web-dataset probe is only an access check.",
+        "sources": [
+          {
+            "label": "FineWeb",
+            "url": "https://arxiv.org/html/2406.17557v1"
+          }
+        ]
+      },
+      {
+        "id": "dataset_import",
+        "step": "Existing datasets",
+        "action": "Import versioned corpora and biological databases with upstream record IDs. Map text, sequence and image records to a shared schema without discarding their original provenance.",
+        "status": "To build: common import adapters and shared records across sources.",
+        "sources": [
+          {
+            "label": "S2ORC",
+            "url": "https://aclanthology.org/2020.acl-main.447/"
+          },
+          {
+            "label": "peS2o documentation",
+            "url": "https://github.com/allenai/pes2o"
+          }
+        ]
+      },
+      {
+        "id": "selection",
+        "step": "Biological selection and extraction quality",
+        "action": "Label research biology, clinical-only material, other science and general text separately. Calibrate relevance and extraction-quality filters on reviewed biological examples.",
+        "status": "To calibrate; use biology-specific labels and thresholds.",
+        "sources": [
+          {
+            "label": "Biomed-Enriched",
+            "url": "https://arxiv.org/html/2506.20331v1"
+          }
+        ]
+      },
+      {
+        "id": "deduplication_and_counts",
+        "step": "Deduplication and token totals",
+        "action": "Match document IDs/versions, then exact and near-duplicate prose across all sources. Count retained biology with a fixed tokenizer by acquisition route and modality; track rejected and duplicate material.",
+        "status": "Native counts exist; cross-source deduplication and final accounting remain to build.",
+        "sources": [
+          {
+            "label": "Dolma",
+            "url": "https://arxiv.org/html/2402.00159v1"
+          },
+          {
+            "label": "OLMo 3",
+            "url": "https://arxiv.org/html/2512.13961v2"
+          }
+        ]
+      }
+    ],
+    "scope_note": "The cited papers inform these methods; the status column describes this repository."
+  }
 }
