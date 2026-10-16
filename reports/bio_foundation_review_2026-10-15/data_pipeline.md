@@ -50,33 +50,59 @@ Set overlap thresholds using reviewed duplicate and non-duplicate examples, incl
 
 **5. Build a scorer whose labels have a clear meaning.**
 
+> [!IMPORTANT]
+> **Human annotation: bulk labels can be automated; human review is part of our validation plan.**
+>
+> - **Training labels:** FineWeb-Edu generates them with an LLM. DCLM's main classifiers use labels derived from reference-corpus membership. Neither requires people to label the entire training pool.
+> - **Published human study:** DCLM separately collected three judgments per document on 499 documents. This tests human agreement; it is separate from the main classifier-training labels.
+> - **Our biological review:** have domain reviewers inspect samples of both retained and rejected text, incorrect scorer decisions, extracted numbers and suspicious duplicate merges. Record which material was reviewed and what errors were found.
+> - **What establishes usefulness:** review checks the meaning and fidelity of the data; the controlled training experiments in stage 6 measure whether a filter improves the model.
+
 Separate **biology relevance** from **information value**. Relevance asks whether a passage concerns the research biology we want. Information value asks whether it contains useful methods, results, mechanisms or explanations, with enough context to understand them. Neither score establishes that the science is correct.
 
 Start with a representative sample from all three sources. A capable LLM can label it through prompting, without new training. Use those labels to train a cheaper scorer, checking its predictions on a held-out set of teacher-labeled examples. Compare it with direct LLM scoring before choosing the large-scale approach.
 
-A new manually labeled training corpus is not required to produce these scores. That does not establish that human review is unnecessary. For this biological corpus, use targeted expert checks of extracted numbers, duplicate decisions and scorer labels, especially methods, captions and borderline topics, before fixing the processing rules. This is our proposed validation step, not a claim about what FineWeb-Edu required. Store a short supporting passage or source offset so reviewers can inspect a decision. **That evidence is an audit trail, not an extra score.** Whether the filter actually improves learning is tested in stage 6.
+Store a short supporting passage or source offset with each decision so a reviewer can inspect it. **That evidence is an audit trail, not an extra score.** Keep agreement with teacher labels, human-review errors and downstream training gains as separate measurements.
 
 **References:** [FineWeb-Edu, §4](https://arxiv.org/html/2406.17557v1#S4) used model-generated labels for both scorer training and validation; validation therefore measured agreement with its teacher. [DCLM, §4.4 and Appendix M](https://arxiv.org/html/2406.11794v3) used reference-corpus versus web-sample labels for its main classifiers and separately studied human judgments on 499 documents. Human agreement did not reliably predict training gains; this does not establish that human checks of biological correctness or extraction fidelity are dispensable.
 
 **6. Test the recipe, choose the mixture and produce the final corpus.**
 
-The research precedent is a systematic search over data recipes, with smaller experiments used to select candidates for larger validation runs:
+The studies below answer different parts of the mixing problem. Their experiment counts cover the reported research programs, not just mixture-weight trials.
 
-| Study | What its experiments actually did |
-|---|---|
-| **DCLM** | Reported 416 baseline experiments across data-processing choices and compute scales. A fixed recipe at each scale made dataset comparisons meaningful; one scale used a 1.4B-parameter model and 28.8B training tokens. |
-| **OpenThoughts3** | Ran over 1,000 controlled experiments. Its main comparisons generated 31,600 examples per configuration and fine-tuned the same starting model. It ranked sources, tested mixtures of the top 1, 2, 4, 8 and 16 sources, and compared filtering, deduplication, answer sampling and teachers. |
-| **OLMo 3** | Sampled many mixture weights and trained 30M-parameter proxy models for 3B tokens each. It fitted models predicting task performance from mixture weights, then searched for good weights subject to available-data and repetition constraints. |
+**DCLM — compare processing recipes and test whether additional sources help.**
+
+- **What changes:** extraction, deduplication, quality filters and source composition. Its 416 baseline experiments span several compute scales, with training settings fixed within each scale.
+- **Actual mixing comparison:** train on filtered Common Crawl alone, then compare a mixture of 67% Common Crawl and 33% Wikipedia, books, Stack Exchange, arXiv and GitHub. Repeat this for several Common Crawl variants. Appendix L also applies the quality filter to the added sources.
+- **How choices are judged:** downstream task scores. The added sources help some weaker web corpora but do not improve DCLM-baseline. This directly tests the value of adding those sources rather than assuming curated additions will help.
+
+**OpenThoughts3 — rank sources, then compare combinations and later processing choices.**
+
+- **Source screening:** test 27 code, 21 math and 14 science question sources. Main comparisons use 31,600 examples per configuration and fine-tune the same Qwen2.5-7B-Instruct starting model.
+- **Actual mixing search:** rank sources from those experiments. For each domain, choose the top N sources, with N = 1, 2, 4, 8 or 16; sample 31,600/N questions from each. Total example count stays fixed, and sources within a candidate mixture have equal shares.
+- **What follows:** carry the selected approach into experiments on filtering, deduplication, multiple answers and teachers. Selection uses the average across eight development benchmarks; separate benchmarks are reserved for final evaluation. The reported 1,000-plus experiments cover this wider pipeline.
+
+**OLMo 3 — learn continuous mixture weights from proxy training runs.**
+
+- **What receives weights:** source collections and topic partitions, including 24 web topics. Within-topic quality upsampling is handled separately from source/topic mixing.
+- **Actual search:** sample many weight vectors around the natural data proportions. Train a 30M-parameter proxy model for 3B tokens on each mixture, then fit a regression for each task predicting loss from the weights.
+- **How weights are chosen:** optimize predicted average task loss under constraints on available tokens and repeated passes. Its conditional mixing procedure preserves an existing mixture's internal proportions while testing added or changed components, allowing late-arriving PDF data to be incorporated without rebuilding the entire search.
+
+**Marin / Datakit, September 2026 — jointly weight topic and quality buckets.**
+
+- **What receives weights:** documents from different sources are grouped into 40 topics and five quality bands, making 200 buckets. Quality scores organize the pool rather than immediately discarding its lower-scoring portion; band thresholds depend on content type.
+- **Actual search:** the report describes over 1,000 small proxy experiments, followed by regression from bucket weights to evaluation performance. Both proxy training budgets and bucket sizes are scaled so repeated exposure resembles the intended large run.
+- **Validation:** compare the optimized mixture with token-proportional sampling across a ladder of larger models before the main run. The important transfer is the treatment of quality, topic and repetition as linked sampling decisions.
 
 For this corpus, apply that experimental structure as follows:
 
-- **Define meaningful source pools.** Keep PMC papers, other paper collections, individual web collections and reused datasets distinguishable. Subdivide by biological topic, modality and quality tier where useful. The three acquisition routes remain the reporting categories; they are too coarse to be the only units of mixture optimization.
+- **Define meaningful source pools.** Keep PMC papers, other paper collections, individual web collections and reused datasets distinguishable. Following Marin's organization, retain topic and quality labels so content from different sources can contribute to the same biological bucket. Preserve source provenance for accounting. The three acquisition routes remain reporting categories rather than the only units receiving weights.
 - **Screen sources and processing recipes.** Compare individual source contributions, source subsets, filtering methods and deduplication settings in matched smaller runs. Include an unchanged baseline and compare whole pipelines as well as individual components, because a filter's effect can depend on the source and deduplication policy.
-- **Search mixture weights.** Use the source-screening results to select candidate combinations, then test multiple allocations across their source/topic/quality pools. Include source-removal tests to measure marginal contribution. For a larger search, use OLMo-style proxy runs and a fitted predictor to propose weights, then verify those proposals in actual training runs. Cap repeated sampling and retain explicit general-text replay weights.
+- **Search mixture weights.** Use OpenThoughts3-style source screening to narrow candidate combinations. Compare those with a token-proportional baseline, then use OLMo/Marin-style proxy runs and a fitted predictor for a broader weight search. Track the number of passes through each bucket; a small high-quality bucket cannot supply an unlimited share without repetition. Retain explicit general-text replay weights.
 - **Confirm on the intended checkpoint.** Re-run the strongest recipes with the target CPT model and budget, check more than one seed, and report per-task results and uncertainty. Include biological development tasks, general-capability checks and held-out language-modeling loss. Keep final test data and their near-duplicates out of both recipe selection and training.
 
 Hold the model, tokenizer, optimizer settings and training budget fixed within each matched comparison. Track the actual sampled tokens, repeated exposure and retained corpus size so a gain cannot be explained simply by one run seeing more data. Smaller runs screen the search; target-checkpoint confirmation determines the final choice.
 
 At the end of this stage, fix the recipe and package the corpus. Report retained tokens and training exposure separately for **online papers, web URLs and existing datasets**, plus modality breakdowns over the same records. Keep general-text replay separate. These counts accompany the finalized corpus.
 
-**References:** [DCLM, §§3–4](https://arxiv.org/html/2406.11794v3) for controlled comparisons across scales; [OpenThoughts3, §4](https://arxiv.org/html/2506.04178v2#S4) for staged configuration searches; [OLMo 3, §3.4.4](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4) for proxy-model mixture optimization. The corpus-specific search above combines these techniques; it is not a reproduction of any one paper's full experiment schedule.
+**References:** [DCLM, §§3–4 and Appendix L](https://arxiv.org/html/2406.11794v3); [OpenThoughts3, §§4.1–4.6](https://arxiv.org/html/2506.04178v2#S4); [OLMo 3, §3.4.4](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4); [Marin / Datakit: Curating 25 Trillion Tokens for LLM Pretraining](https://openathena.ai/blog/marin-data-pipeline-overview/), published September 11, 2026. The corpus-specific search above combines these techniques; it is not a reproduction of any one study's full experiment schedule.

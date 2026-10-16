@@ -334,6 +334,9 @@ class TokenAccountingChecks(unittest.TestCase):
         references = re.findall(r'\[([^\]]+)\]\((https://[^)]+)\)', pipeline)
         self.assertTrue(any('arxiv.org/html/2506.04178' in url for _, url in references))
         self.assertTrue(any('arxiv.org/html/2512.13961' in url for _, url in references))
+        self.assertTrue(any('openathena.ai/blog/marin-data-pipeline-overview/' in url
+                            for _, url in references))
+        self.assertIn('> [!IMPORTANT]', pipeline)
         self.assertEqual(pipeline.count('**References:**'), 6)
         self.assertNotIn('Method basis:', pipeline)
         self.assertNotIn('**7.', pipeline)

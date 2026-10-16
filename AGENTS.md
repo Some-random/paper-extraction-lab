@@ -299,3 +299,13 @@ verified overlap and containment, span versus document decisions, and version
 preservation. Distinguish the absence of a required new manually labeled scorer
 training set from the unsupported claim that human review is unnecessary.
 Targeted expert checks are our proposed biological-corpus validation step.
+
+The user wants human annotation/review to be visually prominent within the
+filtering stage. Use a short GitHub callout distinguishing automatic training
+labels, published human studies and our planned biological review. Expand the
+mixing discussion into separate readable profiles for DCLM, OpenThoughts3,
+OLMo 3 and Marin, explaining the units mixed, experiment controls, search and
+selection procedure. Marin's September 2026 Datakit report is a primary method
+reference for topic-by-quality buckets, repetition-aware proxy experiments and
+validation against proportional sampling at larger scales. Attribute that
+report specifically rather than merging it with the earlier Marin 8B recipe.
