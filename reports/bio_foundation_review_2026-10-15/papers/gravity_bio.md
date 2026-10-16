@@ -20,20 +20,44 @@ The overview shows lower bounds from two separate known corpus components. Neith
 
 [Paper attribution](https://arxiv.org/html/2607.08803v1#S3.SS1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Text-only control; new benchmark. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid corpus-and-model contribution with a useful biological data organization effort. Its direct comparisons strengthen the story, although a new in-house evaluation suite and incomplete total training accounting limit the broader conclusion. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Includes a text-only annealing comparison as well as the starting checkpoint and describes task-specific decontamination.
+**Contribution and originality:** The biological corpus, normalized records and derived descriptions are practically useful contributions.
 
-**Limitations**
+**Technical soundness:** The design links corpus construction to a fixed base model and separates biological data from general replay.
 
-- Much of the evidence comes from the paper’s newly assembled evaluation suite; broad transfer to independent protocols remains to be established.
-- Complete replay/exposure counts are not disclosed, so full compute/source matching cannot be verified from the headline.
+**Evaluation:** Text-only and base-model controls are helpful; independent benchmark transfer remains less established.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2607.08803v1#S3.SS1)
+**Reproducibility:** Data-source and decontamination descriptions are useful, but complete replay and consumed-token totals are missing.
+
+**Clarity and limitations:** The component budgets are readable; the 52.6B biological corpus must not be confused with all literature and replay.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2607.08803v1#S3.SS1)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed; bioRxiv; medRxiv.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The separately reported 54.0B scientific-text corpus comprises PubMed 48.8B, bioRxiv 4.6B and medRxiv 0.58B, with rounding. Additional science-PDF replay is not quantified. [Source](https://arxiv.org/html/2607.08803v1#S3.SS1)
+
+## Other modalities
+
+The reported domain buckets include biological sequences, serialized records, feature narratives and task representations. They are not pure sequence-token totals. The 52.6B biological corpus is separate from literature and replay.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Molecule-domain records | 28.2B | Domain bucket includes molecular representations and associated derived content. |
+| Protein-domain records | 14.5B | Domain bucket includes sequences, structures/annotations and derived content. |
+| Genomic-domain records | 7.1B | Domain bucket includes sequences and feature/task representations. |
+| Cells/pathways | 2.8B | Serialized cell/pathway information; not a pure sequence count. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2607.08803v1#S3.SS1)
 
 ## Existing-dataset sources
 

@@ -20,21 +20,37 @@ Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed
 
 [Paper attribution](https://arxiv.org/html/2403.18421v1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Reproducible budget; small tokenizer ablation. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid and transparent model/resource report. It demonstrates the practicality of a smaller specialized model and describes its budget clearly, but the methodological contribution and controlled evidence at the headline model scale are limited. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Reports 34.6B corpus tokens and 300B consumed tokens, with an inspectable training recipe.
-- The controlled 125M tokenizer experiment reports five-seed results.
+**Contribution and originality:** Offers an openly inspectable specialized model and a useful study of scale and domain tokenization.
 
-**Limitations**
+**Technical soundness:** The architecture and training recipe are conventional and sufficiently concrete.
 
-- The tokenizer ablation is smaller than the headline 2.7B model.
-- Most comparisons are after task-specific fine-tuning and do not isolate the effect of the biomedical corpus against a compute-matched general corpus.
+**Evaluation:** The five-seed tokenizer study is useful but smaller than the headline model; most full-model results follow task tuning.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2403.18421v1)
+**Reproducibility:** Corpus and consumed-token totals, training settings and released weights are useful for reproducibility.
+
+**Clarity and limitations:** The report is relatively clear about size, passes and task formatting; comparisons must retain their tuning conditions.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2403.18421v1)
+
+## Paper-text origins
+
+**Direct paper sources:** No direct source established for this row.
+
+**Paper text via reused datasets:** The Pile PubMed components.
+
+PubMed abstracts and PMC full articles are reused through The Pile. Their 34.6B-token corpus belongs in the existing-dataset column. [Source](https://arxiv.org/html/2403.18421v1)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2403.18421v1)
 
 ## Existing-dataset sources
 

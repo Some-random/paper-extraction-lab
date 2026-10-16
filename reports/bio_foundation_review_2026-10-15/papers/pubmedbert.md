@@ -20,20 +20,37 @@ Domain vocabulary and model are learned from biomedical text, rather than starti
 
 [Paper attribution](https://arxiv.org/html/2007.15779v6). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Stronger controls.** Vocabulary/corpus pretraining ablations. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Strong.** A strong empirical paper: it poses a clear question about domain-specific pretraining, studies important design choices systematically and supplies a useful benchmark and model. The conclusions are persuasive within biomedical encoder NLP. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Compares domain-only and mixed-domain pretraining and studies vocabulary and masking choices across BLURB tasks.
+**Contribution and originality:** Combines a substantive domain-pretraining question with a reusable benchmark and model.
 
-**Limitations**
+**Technical soundness:** Vocabulary, initialization and pretraining choices are tied directly to the hypothesis under study.
 
-- The evidence concerns BERT-style encoders, not a direct test of modern decoder or multimodal CPT.
-- Biomedical datasets in the benchmark do not by themselves measure paper extraction fidelity or mechanistic scientific reasoning.
+**Evaluation:** Multiple tasks and ablations provide a stronger overall case than a single headline score.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2007.15779v6)
+**Reproducibility:** Public artifacts and detailed settings make the work usable, though the review still lacks comparable corpus-token totals.
+
+**Clarity and limitations:** A focused presentation makes the scope and design tradeoffs understandable.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2007.15779v6)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed abstracts; PMC full text.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+PubMed abstracts are the main corpus; additional PMC full-text experiments are separately discussed. Their document/word sizes are not converted to token counts here. [Source](https://arxiv.org/html/2007.15779v6)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2007.15779v6)
 
 ## Existing-dataset sources
 

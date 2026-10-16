@@ -20,20 +20,45 @@ Science-wide corpus with biological data; the 206B total is not entirely biologi
 
 [Paper attribution](https://arxiv.org/html/2509.21320v1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** CPT ablation; unresolved token accounting. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Mixed.** An ambitious scientific reasoning system with useful experiments, including a CPT ablation. Overall confidence is reduced by unreconciled data quantities and the difficulty of attributing broad claims across many training stages and tasks. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Table 9 reports before/after pretraining results on ten tasks, beyond final-model leaderboard comparisons.
+**Contribution and originality:** Extends multimodal scientific training into reasoning-oriented tasks across several disciplines.
 
-**Limitations**
+**Technical soundness:** The multi-stage recipe is plausible, but interacting CPT, SFT and RL components complicate causal interpretation.
 
-- The five named source categories sum to 166B while the headline says 206B; the 40B difference is not reconciled.
-- Final reasoning results also depend on SFT/RL, so the CPT ablation should not be generalized to every headline task.
+**Evaluation:** Selected before/after CPT results are useful; they are narrower evidence than the complete final-model task suite.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2509.21320v1)
+**Reproducibility:** Named data sources and code links help, while the 206B headline versus 166B enumerated components remains unresolved.
+
+**Clarity and limitations:** The large scope creates reporting complexity, with important numerical statements needing reconciliation.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2509.21320v1)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The paper identifies PubMed abstracts/scientific prose. It does not separate the paper token total from other scientific and general data. [Source](https://arxiv.org/html/2509.21320v1)
+
+## Other modalities
+
+The reported scientific-domain buckets include sequence and associated representation/text data. The five figures sum to 166B; the 206B headline leaves 40B unreconciled. They must not be treated as pure sequence-token counts or added to acquisition totals.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Protein domain | 55B | Reported category volume; not a separately measured pure-sequence total. |
+| Chemistry domain | 50B | Includes molecular strings/representations and associated content. |
+| DNA domain | 30B | Reported domain bucket. |
+| RNA domain | 26B | Reported domain bucket. |
+| Materials domain | 5B | Reported domain bucket. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2509.21320v1)
 
 ## Existing-dataset sources
 

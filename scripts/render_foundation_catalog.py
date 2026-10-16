@@ -24,8 +24,10 @@ TOKEN_FIELDS = ('online_papers', 'web_urls', 'existing_datasets', 'total')
 TOKEN_HEADER = '| Model / stage | What is counted | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total tokens | Source |'
 TOKEN_SEPARATOR = '|---|---|---:|---:|---:|---:|---|'
 TOKEN_RELATIONS = {'exact': '', 'approximate': '≈', 'greater_than': '>', 'at_least': '≥'}
-ASSESSMENT_LABELS = {'stronger_controls': 'Stronger controls', 'useful_limited': 'Useful, limited',
-                     'limited': 'Limited', 'not_assessed': 'Not assessed'}
+QUALITY_LABELS = {'strong': 'Strong', 'solid': 'Solid', 'mixed': 'Mixed', 'weak': 'Weak'}
+QUALITY_DIMENSIONS = {'contribution': 'Contribution and originality',
+                      'technical_soundness': 'Technical soundness', 'evaluation': 'Evaluation',
+                      'reproducibility': 'Reproducibility', 'clarity': 'Clarity and limitations'}
 
 
 def token_amount(amount):
@@ -113,6 +115,17 @@ def overview_row(entry):
     elif view['quantity_type'] == 'positions':
         name += '<br>**Token positions‡**'
     amounts = [token_amount(budget['counts'][key]) for key in TOKEN_FIELDS]
+    origins = entry['paper_text_origins']
+    names = origins['direct']
+    if names:
+        origin_text = '; '.join(names[:3])
+        if len(names) > 3:
+            origin_text += f" (+{len(names) - 3})"
+    elif origins['reused']:
+        origin_text = 'via ' + '; '.join(origins['reused'][:2]) + ' (reused)'
+    else:
+        origin_text = origins['unspecified']
+    amounts[0] += f"<br>[{cell(origin_text)}](papers/{entry['id']}.md#paper-text-origins)"
     datasets = entry['dataset_sources']['names']
     if datasets:
         preview = '; '.join(datasets[:3])
@@ -121,15 +134,16 @@ def overview_row(entry):
         amounts[2] += f"<br>[{cell(preview)}](papers/{entry['id']}.md#existing-dataset-sources)"
     credits = entry['author_institutions']
     authors = cell(credits['authors_short']) + '<br>' + cell(credits['institutions_short'])
-    review = entry['evidence_assessment']
-    assessment = f"[{ASSESSMENT_LABELS[review['level']]}](papers/{entry['id']}.md#evidence-assessment)<br>{cell(review['summary'])}"
+    review = entry['paper_quality']
+    assessment = f"[{QUALITY_LABELS[review['overall']]}](papers/{entry['id']}.md#overall-paper-assessment)<br>{cell(review['headline'])}"
+    modalities = f"[{cell(entry['modality_profile']['summary'])}](papers/{entry['id']}.md#other-modalities)"
     refs = ' · '.join(f"[{cell(s['label'])}]({s['url']})" for s in budget['sources'])
-    return '| ' + ' | '.join([name, authors] + amounts + [cell(view['data_scope']), assessment, refs]) + ' |'
+    return '| ' + ' | '.join([name, authors] + amounts + [modalities, assessment, refs]) + ' |'
 
 
 def overview_table(entries):
     return '\n'.join([
-        '| Model / starting checkpoint | Authors / institutions | Online-paper tokens | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Data included | Evidence assessment | Source |',
+        '| Model / starting checkpoint | Authors / institutions | Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Other modalities | Overall paper assessment | Source |',
         '|---|---|---:|---:|---:|---:|---|---|---|',
         *(overview_row(entry) for entry in entries),
     ])
@@ -164,14 +178,37 @@ def render(data, directory=REPORT):
                 raise ValueError('Missing content scope or quantity type: ' + entry['id'])
             credits = entry.get('author_institutions', {})
             datasets = entry.get('dataset_sources', {})
-            review = entry.get('evidence_assessment', {})
+            review = entry.get('paper_quality', {})
             if not all(credits.get(k) for k in ('authors_short', 'institutions_short', 'authors', 'institutions', 'source')):
                 raise ValueError('Missing paper attribution: ' + entry['id'])
             if 'names' not in datasets or not datasets.get('source'):
                 raise ValueError('Missing dataset-name provenance: ' + entry['id'])
-            if (review.get('level') not in ASSESSMENT_LABELS or not review.get('summary')
-                    or not review.get('strengths') or not review.get('limitations') or not review.get('sources')):
-                raise ValueError('Missing evidence-assessment rationale: ' + entry['id'])
+            if (review.get('overall') not in QUALITY_LABELS or not review.get('headline')
+                    or not review.get('summary') or not review.get('sources')
+                    or any(not source.get('url', '').startswith('https://') for source in review.get('sources', []))
+                    or set(review.get('dimensions', {})) != set(QUALITY_DIMENSIONS)
+                    or not all(review['dimensions'].values())):
+                raise ValueError('Missing overall-paper assessment: ' + entry['id'])
+            origins = entry.get('paper_text_origins', {})
+            modalities = entry.get('modality_profile', {})
+            if (not all(k in origins for k in ('direct', 'reused', 'unspecified', 'note', 'source'))
+                    or not isinstance(origins.get('direct'), list) or not isinstance(origins.get('reused'), list)
+                    or not origins.get('note') or not origins.get('source', '').startswith('https://')):
+                raise ValueError('Missing paper-origin provenance: ' + entry['id'])
+            if (not modalities.get('summary') or not modalities.get('note') or not modalities.get('sources')
+                    or not isinstance(modalities.get('items'), list)
+                    or any(not source.get('url', '').startswith('https://') for source in modalities.get('sources', []))):
+                raise ValueError('Missing modality provenance: ' + entry['id'])
+            for item in modalities.get('items', []):
+                if not item.get('name') or not item.get('note') or item.get('measurement') not in {'modality', 'domain_bucket', 'presence'}:
+                    raise ValueError('Missing modality count definition: ' + entry['id'])
+                value = item.get('tokens')
+                if value is not None and (type(value) is not int or value < 0):
+                    raise ValueError('Invalid modality token amount: ' + entry['id'])
+                if item.get('relation', 'exact') not in TOKEN_RELATIONS:
+                    raise ValueError('Unknown modality token relation: ' + entry['id'])
+                if value is not None and item['measurement'] == 'presence':
+                    raise ValueError('Modality presence alone cannot establish token counts: ' + entry['id'])
     pages = directory / 'papers'
     pages.mkdir(exist_ok=True)
     for kind, entry in all_entries:
@@ -195,14 +232,30 @@ def render(data, directory=REPORT):
             body.append('**Authors:** ' + '; '.join(credits['authors']) + '.\n\n'
                         '**Institutions:** ' + '; '.join(credits['institutions']) + '.\n\n'
                         f"[Paper attribution]({credits['source']}). Names and affiliations follow the reviewed paper version.")
-            review = entry['evidence_assessment']
-            body.append('## Evidence assessment')
-            body.append(f"**Our assessment: {ASSESSMENT_LABELS[review['level']]}.** {review['summary']}. "
-                        'This judges the evidence for the training/data claims, not institutional reputation or model size. '
-                        'It is a source-based review, not an independent replication.')
-            body.append('**Strengths**\n\n' + '\n'.join('- ' + item for item in review['strengths']))
-            body.append('**Limitations**\n\n' + '\n'.join('- ' + item for item in review['limitations']))
-            body.append('Evidence: ' + ' · '.join(f"[{s['label']}]({s['url']})" for s in review['sources']))
+            review = entry['paper_quality']
+            body.append('<a id="evidence-assessment"></a>\n\n## Overall paper assessment')
+            body.append(f"**Overall: {QUALITY_LABELS[review['overall']]}.** {review['summary']} "
+                        'This is our provisional technical judgment of the whole paper in its publication context, '
+                        'not an official review score or an independent replication.')
+            body.append('\n\n'.join(f"**{title}:** {review['dimensions'][key]}"
+                                      for key, title in QUALITY_DIMENSIONS.items()))
+            body.append('Sources: ' + ' · '.join(f"[{s['label']}]({s['url']})" for s in review['sources']))
+            origins = entry['paper_text_origins']
+            body.append('## Paper-text origins')
+            body.append('**Direct paper sources:** ' + ('; '.join(origins['direct']) or 'No direct source established for this row')
+                        + '.\n\n**Paper text via reused datasets:** ' + ('; '.join(origins['reused']) or 'No reused paper-text source established for this row')
+                        + '.\n\n' + origins['note'] + f" [Source]({origins['source']})")
+            profile = entry['modality_profile']
+            body.append('## Other modalities')
+            body.append(profile['note'])
+            if profile['items']:
+                lines = ['| Representation / domain | Reported tokens | Count definition |', '|---|---:|---|']
+                for item in profile['items']:
+                    amount = 'NR' if item['tokens'] is None else token_amount(
+                        dict(status='reported', tokens=item['tokens'], relation=item.get('relation', 'exact')))
+                    lines.append(f"| {cell(item['name'])} | {amount} | {cell(item['note'])} |")
+                body.append('\n'.join(lines))
+            body.append('Sources: ' + ' · '.join(f"[{s['label']}]({s['url']})" for s in profile['sources']))
             datasets = entry['dataset_sources']
             body.append('## Existing-dataset sources')
             body.append(('; '.join(datasets['names']) + '.' if datasets['names'] else 'No separately reused dataset identified for this overview row.')
@@ -254,7 +307,7 @@ def render(data, directory=REPORT):
         'Data-curation studies and released models appear together because both inform this choice.',
         '**These are reported source budgets, not uniformly biology-only token counts.** '
         'Some include clinical literature, general text, other sciences or non-text modalities. '
-        'The “Data included” column identifies that scope. A paper’s full training total cannot be '
+        'The modality descriptions and linked source notes identify that scope. A paper’s full training total cannot be '
         'treated as a biology-only amount when that subset is not separately reported.',
         '## Continued pretraining',
         'Each row names the starting checkpoint and reports one clearly identified token budget. '
@@ -264,14 +317,16 @@ def render(data, directory=REPORT):
         overview_table(selected('cpt')),
         'The authors/institutions column gives compact credits; the study pages retain the fuller lists. '
         'Dataset names appear below their token count; a “+N” link opens the longer source list. '
-        '**Evidence assessment is our judgment of the reported experiments**, not an author-provided score. '
-        '**Stronger controls** means more direct comparisons or ablations for the claimed training effect; '
-        '**Useful, limited** means informative results with material gaps; **Limited** flags major barriers '
-        'to interpreting the central claim. We consider controls, held-out evaluation/overlap, '
-        'release/reproducibility and claim support. None of these ratings represents an independent replication.',
+        '**Overall paper assessment** considers the contribution and originality, technical soundness, '
+        'evaluation, reproducibility, and clarity of the whole paper in its publication context. '
+        '**Strong:** substantial contribution, convincingly executed. **Solid:** worthwhile work with '
+        'meaningful limits. **Mixed:** substantial strengths alongside weaknesses that constrain the '
+        'overall case. **Weak:** fundamental problems dominate. These are provisional editorial judgments, '
+        'not official reviewer scores; institutional prestige and relevance to this project do not determine them.',
         '### Reading the counts',
         '- **Online papers:** text acquired directly from publishers or publication repositories, '
-        'including abstracts, XML, PDF and LaTeX.\n'
+        'including abstracts, XML, PDF and LaTeX. The names below each amount identify the source; '
+        '“via … (reused)” means the text belongs in the existing-dataset column instead.\n'
         '- **Web URLs:** non-paper webpages acquired directly, including raw web archives.\n'
         '- **Existing datasets:** reused corpora and biological databases. Paper text imported through '
         'S2ORC or The Pile belongs here; it is not counted twice. These columns describe **how the study '
@@ -286,6 +341,11 @@ def render(data, directory=REPORT):
         '- **M / B** mean million / billion; **≈** means approximate; **> / ≥** indicate a lower bound. '
         'Tokenizers differ. Sequence/image tokens and planned token positions are labeled explicitly. '
         'A total may include material without a disclosed category split.',
+        '**Other modalities** describes data already included in the acquisition columns; it is not an '
+        'additional source category. Protein/DNA/RNA sequences, molecular strings, structure tokens and '
+        'figure images are distinguished on each study page, with counts where reported. A “protein data” '
+        'budget can include annotations and structures as well as sequence tokens. Later SFT/encoder '
+        'inputs are explicitly distinguished from the counted CPT stage.',
         '**Why a category can be smaller than the total:** BioMatrix’s existing-dataset lower bound is '
         '**176.7B = 25.6B general text + 77.4B protein data + 73.7B molecule data**. '
         'The other **127.7B** comprises 79.7B scientific text and 48.0B cross-entity/interleaved data; '
@@ -347,10 +407,12 @@ def render(data, directory=REPORT):
                    'in `token_budgets`; selecting an overview row never changes a reported amount. '
                    'CPT studies belong with CPT models regardless of publication type. '
                    'Do not classify instruction tuning, contrastive learning or random initialization as CPT.',
-                   'Overview entries also require `author_institutions`, `dataset_sources` and '
-                   '`evidence_assessment`. Preserve attribution sources and named inputs. '
-                   'An assessment needs a concise summary, strengths, limitations and primary-source links. '
-                   'A venue or institution name is not an experimental-quality measurement. '
+                   'Overview entries also require `author_institutions`, `dataset_sources`, '
+                   '`paper_text_origins`, `modality_profile` and `paper_quality`. Preserve attribution '
+                   'sources and named inputs. Overall quality reviews cover contribution, soundness, '
+                   'evaluation, reproducibility and clarity, with primary-source links. Keep historical '
+                   '`evidence_assessment` records as provenance. Do not add modality totals to acquisition totals. '
+                   'A venue or institution name is not an overall-quality measurement. '
                    'Record numerical allocation corrections explicitly in the token audit.',
                    'The [token audit](token_budget_verification.json) records numerical checks and '
                    'source snapshots. [Archived references](archive.md) preserve earlier out-of-scope material.',
@@ -362,7 +424,8 @@ def render(data, directory=REPORT):
     stream = io.StringIO()
     fields = ['id', 'budget_id', 'name', 'kind', 'scope', 'review_section', 'overview_selected',
               'starting_model', 'data_scope', 'quantity_type', 'authors', 'institutions',
-              'existing_dataset_names', 'evidence_assessment', 'assessment_summary',
+              'existing_dataset_names', 'direct_paper_sources', 'reused_paper_sources', 'other_modalities',
+              'overall_paper_quality', 'overall_review_summary',
               'stage', 'count_basis', 'token_kind']
     for key in TOKEN_FIELDS:
         fields.extend([key + '_tokens', key + '_relation', key + '_status'])
@@ -381,8 +444,11 @@ def render(data, directory=REPORT):
                 'authors':'; '.join(e.get('author_institutions', {}).get('authors', [])),
                 'institutions':'; '.join(e.get('author_institutions', {}).get('institutions', [])),
                 'existing_dataset_names':'; '.join(e.get('dataset_sources', {}).get('names', [])),
-                'evidence_assessment':e.get('evidence_assessment', {}).get('level', ''),
-                'assessment_summary':e.get('evidence_assessment', {}).get('summary', ''),
+                'direct_paper_sources':'; '.join(e.get('paper_text_origins', {}).get('direct', [])),
+                'reused_paper_sources':'; '.join(e.get('paper_text_origins', {}).get('reused', [])),
+                'other_modalities':e.get('modality_profile', {}).get('summary', ''),
+                'overall_paper_quality':e.get('paper_quality', {}).get('overall', ''),
+                'overall_review_summary':e.get('paper_quality', {}).get('summary', ''),
                 'count_basis':budget['basis'], 'token_kind':budget['token_kind'],
                 'details':f"papers/{e['id']}.md#token-counts-by-acquisition-route",
                 'primary_sources':' ; '.join(s['url'] for s in budget['sources']), 'qualification':budget['note']}

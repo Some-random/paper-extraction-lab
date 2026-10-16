@@ -20,21 +20,37 @@ Curation variants are compared at the same 33.6B-token CPT budget. Clinical filt
 
 [Paper attribution](https://arxiv.org/html/2506.20331v1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Stronger controls.** Matched CPT budgets; modest mean gain. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid, focused data-curation paper. Its controlled design and practical recipe are valuable, while modest average gains and biomedical-specific quality labels limit the breadth of its conclusions. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Same OLMo2 checkpoint and 33.6B-token budget across variants make the curation comparison more interpretable.
-- Reports multiple filtering/enrichment variants rather than only the best single score.
+**Contribution and originality:** A useful systematic application of paragraph labels, filtering and enrichment; mostly incremental rather than a new model principle.
 
-**Limitations**
+**Technical soundness:** A coherent pipeline with comparable starting checkpoints and token budgets across variants.
 
-- BE-All improves the reported mean by 0.67 percentage points; large task-specific gains are not universal gains.
-- Teacher-generated educational/clinical labels are not human-verified scientific truth; a clinical-biased filter may be unsuitable for research biology.
+**Evaluation:** Multiple variants expose tradeoffs; the small overall mean gain does not support a universally superior filter.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2506.20331v1)
+**Reproducibility:** The source data, labeling recipe and training budget are described; teacher-label quality is not human scientific validation.
+
+**Clarity and limitations:** The pipeline is clear, but clinical and educational labels need contextual interpretation.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2506.20331v1)
+
+## Paper-text origins
+
+**Direct paper sources:** PMC-OA XML.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The study parses PMC Open Access XML directly and compares paragraph-level curation variants. [Source](https://arxiv.org/html/2506.20331v1)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2506.20331v1)
 
 ## Existing-dataset sources
 

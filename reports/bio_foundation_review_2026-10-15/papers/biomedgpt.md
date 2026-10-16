@@ -20,20 +20,41 @@ This row covers the literature CPT stage, before molecule/protein alignment.
 
 [Paper attribution](https://arxiv.org/html/2308.09442v2). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Alignment controls; weak OOD evidence. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Mixed.** An interesting early multimodal biomedical prototype, with a plausible integration of literature and biological encoders. The experimental scope and generalization checks are too narrow to establish a broadly reliable biomedical foundation model. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Compares aligned and unaligned biological inputs and describes literature CPT before multimodal alignment.
+**Contribution and originality:** Connects a literature-adapted language model with molecule/protein inputs in a practically useful architecture.
 
-**Limitations**
+**Technical soundness:** The alignment design is reasonable, but several training stages make attribution of gains difficult.
 
-- Random protein splits give weaker evidence of cross-family generalization than held-out families.
-- The final-model comparisons do not isolate the contribution of the literature CPT corpus from subsequent alignment.
+**Evaluation:** Alignment comparisons are informative; random protein splits and limited task coverage weaken broad generalization claims.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2308.09442v2)
+**Reproducibility:** An author implementation exists, but corpus choices, alignment and task tuning all matter for reproducing the end result.
+
+**Clarity and limitations:** The model stages are understandable; the similarly named vision-language model must not be conflated with this work.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2308.09442v2)
+
+## Paper-text origins
+
+**Direct paper sources:** No direct source established for this row.
+
+**Paper text via reused datasets:** S2ORC.
+
+Biomedical paper text is imported through S2ORC; the >26B tokens are allocated to existing datasets, not direct online-paper acquisition. [Source](https://arxiv.org/html/2308.09442v2)
+
+## Other modalities
+
+The counted >26B literature CPT stage is text-only. Molecule/protein encoders enter in subsequent alignment and multimodal variants; their features are not included as counted text tokens.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Later molecule/protein encoder features | NR | Later-stage features, not token counts in the literature CPT row. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2308.09442v2)
 
 ## Existing-dataset sources
 

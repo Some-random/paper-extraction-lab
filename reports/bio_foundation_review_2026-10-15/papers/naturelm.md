@@ -20,20 +20,46 @@ The 8B and 8×7B models continue from existing checkpoints. The separate 1B mode
 
 [Paper attribution](https://arxiv.org/html/2502.07527v2#S2.SS3). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Broad tasks; recipe effects not isolated. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid, ambitious scientific-model paper with a valuable representation and data-integration effort. The breadth is a strength, but varying backbones, post-training and heterogeneous tasks make some sweeping conclusions harder to assess. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Evaluates several model sizes and scientific modalities and supplies corpus/method details.
+**Contribution and originality:** Combines language with several natural-science sequence types and cross-domain examples at meaningful scale.
 
-**Limitations**
+**Technical soundness:** The shared vocabulary and training stages are coherent; the 1B and larger variants have different initialization histories.
 
-- The final capabilities combine changed vocabulary, scientific pretraining and instruction tuning; they do not isolate the value of a particular extraction/curation choice.
-- Different initial models and multimodal scientific tokens complicate direct comparisons; the headline is not biological prose alone.
+**Evaluation:** Multiple domains and model sizes are informative, but they do not isolate each ingredient of the complete recipe.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2502.07527v2#S2.SS3)
+**Reproducibility:** Data distributions and training settings are documented; some source-specific allocations and experimental details remain less complete.
+
+**Clarity and limitations:** Examples make the broad design accessible, while some aggregate claims need more narrowly matched comparisons.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2502.07527v2#S2.SS3)
+
+## Paper-text origins
+
+**Direct paper sources:** No direct source established for this row.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The source describes scientific literature and entity-interleaved text, but the inspected pretraining section does not identify an auditable repository-by-repository paper allocation. PubMed mentions in related-work comparisons are not taken as evidence of NatureLM acquisition. [Source](https://arxiv.org/html/2502.07527v2#S2.SS3)
+
+## Other modalities
+
+Table S1 gives scientific-domain token buckets. These overlap the source-route totals: they are not additional data. The cross-domain bucket interleaves representations and text, and must not be treated as a disjoint acquisition route.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Protein domain | 65.2B | Table S1 protein-domain tokens. |
+| DNA domain | 19.8B | Table S1 DNA-domain tokens. |
+| RNA domain | 27.5B | Table S1 RNA-domain tokens. |
+| Small-molecule domain | 4.2B | Table S1 small-molecule domain; uses molecular string representations. |
+| Material domain | 20M | Table S1 material-domain tokens. |
+| Cross-domain text/sequence examples | 12.7B | Mixed text and scientific representations; not a pure non-text total. |
+
+Sources: [Table S1 / §2.1](https://arxiv.org/html/2502.07527v2)
 
 ## Existing-dataset sources
 

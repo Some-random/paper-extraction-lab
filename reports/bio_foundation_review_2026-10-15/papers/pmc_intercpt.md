@@ -20,21 +20,41 @@ Paper/figure curation study with a fixed downstream SFT stage. Its empirical tar
 
 [Paper attribution](https://arxiv.org/html/2606.01049v2). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Stronger controls.** Matched controls; small SFT-only margin. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid practical data-method paper with a clear source-grounding idea and unusually relevant controls. Its strongest case is improving raw multimodal corpus construction; gains over a strong SFT-only baseline are much less striking. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Compares token-matched raw CPT with fixed downstream SFT and includes grounding/curation ablations.
-- Tests more than one model size/architecture.
+**Contribution and originality:** Reference-constrained figure/context reconstruction addresses a concrete weakness in paper-derived training records.
 
-**Limitations**
+**Technical soundness:** The recovery and interleaving rules connect source references to the resulting examples in a coherent way.
 
-- The general/scientific gain is +3.11 points over raw CPT but only +0.07 over SFT-only; comparator choice changes the practical conclusion.
-- The recipe targets medical/scientific tasks; clinical relevance labels should not be treated as a general biological quality metric.
+**Evaluation:** Matched-token, fixed-SFT and cross-architecture comparisons are useful; the general/scientific margin over SFT-only is small.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.01049v2)
+**Reproducibility:** The recipe and budgets are detailed enough to inspect, though independent end-to-end reproduction has not been performed here.
+
+**Clarity and limitations:** The method is clear, but the choice of comparator matters when interpreting the headline gains.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.01049v2)
+
+## Paper-text origins
+
+**Direct paper sources:** PMC-OA XML.
+
+**Paper text via reused datasets:** BIOMEDICA.
+
+BIOMEDICA supplies article/figure records; PMC-OA source material supplies recovered captions and article-native context. The 9.63B total combines text and image tokens. [Source](https://arxiv.org/html/2606.01049v2)
+
+## Other modalities
+
+Original figure images accompany recovered captions and article context. The 9.63B headline is combined text plus image tokens; the pure image-token share is not separately established.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Figure-image tokens | NR | Included in the mixed 9.63B-token corpus; separate image-token amount not established. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2606.01049v2)
 
 ## Existing-dataset sources
 

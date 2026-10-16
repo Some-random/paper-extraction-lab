@@ -20,20 +20,37 @@ Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMe
 
 [Paper attribution](https://arxiv.org/pdf/2210.10341). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Task comparisons; limited corpus isolation. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid paper for its time, demonstrating a practical generative biomedical language model with useful task results and released code. Its main value is an empirical application and resource, rather than a fundamentally new learning method. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Evaluates six biomedical NLP tasks and ablates prompt/target formats with released implementation.
+**Contribution and originality:** Makes a generative biomedical decoder available alongside the then-common encoder approaches.
 
-**Limitations**
+**Technical soundness:** The autoregressive setup and task formulations are conventional but technically coherent.
 
-- Task tuning and decoding choices affect the headline scores, so they are not a clean measurement of corpus/extraction quality.
-- Abstract-only, from-scratch training is less directly applicable to full-paper multimodal CPT.
+**Evaluation:** Several tasks and prompt/target ablations support usefulness; they do not fully isolate corpus quality from task tuning.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/pdf/2210.10341)
+**Reproducibility:** Implementation and training settings are public; scheduled training positions are not a unique-data measurement.
+
+**Clarity and limitations:** The central model/task story is clear, with the abstract-only corpus scope important to retain.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/pdf/2210.10341)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed titles/abstracts.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+BioGPT is trained on PubMed title/abstract records, not a 15M-full-text-paper corpus. [Source](https://arxiv.org/pdf/2210.10341)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/pdf/2210.10341)
 
 ## Existing-dataset sources
 

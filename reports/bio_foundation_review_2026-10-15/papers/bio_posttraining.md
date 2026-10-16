@@ -20,20 +20,41 @@ Only the biological-web CPT stage is relevant to this overview. Encoder alignmen
 
 [Paper attribution](https://arxiv.org/html/2606.16517v1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Stage/OOD analysis; unequal compute. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid empirical analysis of biological post-training rather than a major architectural advance. Its stage-wise and out-of-distribution comparisons are useful, with appropriately bounded conclusions because task families and compute matching remain limited. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Separates CPT, supervised adaptation and RL and examines biologically meaningful out-of-distribution splits.
+**Contribution and originality:** Asks a meaningful question about allocation among biological adaptation stages and their different generalization effects.
 
-**Limitations**
+**Technical soundness:** The stage separation and frozen-encoder setup support interpretable comparisons, with some remaining budget confounds.
 
-- Limited model/task families and stage allocations that are not fully FLOP-matched limit broad recommendations.
-- Answer accuracy does not verify the factual correctness of intermediate reasoning; broad web CPT is not strictly benchmark-decontaminated.
+**Evaluation:** Biologically meaningful held-out settings are valuable, but the task/model sample is not a universal test of reasoning.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.16517v1)
+**Reproducibility:** The author repository and extensive settings help; realized CPT token totals and full FLOP matching remain missing.
+
+**Clarity and limitations:** The limitations are discussed directly; answer correctness should remain distinct from correctness of a reasoning trace.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.16517v1)
+
+## Paper-text origins
+
+**Direct paper sources:** No direct source established for this row.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The counted CPT stage uses a FineFineWeb biology subset. It is not a direct paper-acquisition experiment, even if some upstream web pages discuss papers. [Source](https://arxiv.org/html/2606.16517v1)
+
+## Other modalities
+
+The counted CPT input is biological web text. Frozen DNA/RNA/protein encoders and projected features are used in later adaptation experiments, not as measured tokens in this CPT row.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Later DNA/RNA/protein encoder features | NR | Later-stage inputs; not included in a disclosed CPT token count. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2606.16517v1)
 
 ## Existing-dataset sources
 

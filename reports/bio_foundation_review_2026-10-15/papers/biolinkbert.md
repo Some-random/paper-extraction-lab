@@ -20,20 +20,37 @@ Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The gener
 
 [Paper attribution](https://arxiv.org/html/2203.15827#S6.SS1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Link ablations; biomedical transfer caveat. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Strong.** A strong paper overall, with a simple well-motivated document-link idea, supporting ablations and useful results in general and biomedical NLP. The biomedical-specific mechanism evidence is less complete than the overall methodological case. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Ablates link sampling and document-relation objectives and reports biomedical downstream tasks.
+**Contribution and originality:** Using document links jointly with language modeling is a clear and reusable contribution.
 
-**Limitations**
+**Technical soundness:** The graph-based input construction and relation objective are coherent and directly testable.
 
-- The most detailed link-objective ablations are in the general-domain experiments; their exact gains should not be assumed for the biomedical variant.
-- Public-benchmark improvements do not isolate citation extraction quality or establish leakage-free deployment.
+**Evaluation:** Link-sampling/objective ablations and multiple benchmarks support the method; the fullest ablations are in the general domain.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2203.15827#S6.SS1)
+**Reproducibility:** Released code, models and data information help others inspect and reuse the recipe.
+
+**Clarity and limitations:** The core idea is explained clearly, while general-domain and biomedical initialization details need to remain separate.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2203.15827#S6.SS1)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed abstracts.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+Uses the PubMed abstract corpus and citation links, following the biomedical setup in §6.1. [Source](https://arxiv.org/html/2203.15827#S6.SS1)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2203.15827#S6.SS1)
 
 ## Existing-dataset sources
 

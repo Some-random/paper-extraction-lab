@@ -20,20 +20,41 @@ The model inherits pretrained backbone and embedding weights. The 44.87B source 
 
 [Paper attribution](https://arxiv.org/html/2606.16905v1#S2.SS3). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Grammar/init ablations; stage totals mixed. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Solid.** A solid representation-focused paper: its scientific grammar is coherent and supported by useful ablations. The results are strongest for the demonstrated structured generation tasks, with broader generality and reproducibility still less established. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Studies initialization, grammar components and cross-domain training rather than only reporting a final model.
+**Contribution and originality:** Provides a unified grammar for multiple scientific entities and interaction constraints.
 
-**Limitations**
+**Technical soundness:** The representation and inherited-backbone choices are motivated and examined experimentally.
 
-- The 44.87B corpus headline spans pretraining/post-training and is not a disclosed CPT-only exposure budget.
-- Strong results on selected scientific generation tasks do not establish improved biological literature reasoning.
+**Evaluation:** Initialization, grammar and cross-domain ablations add substance; the empirical task set bounds the generality claim.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.16905v1#S2.SS3)
+**Reproducibility:** Corpus construction is described, but combined pre-/post-training volumes obscure precise stage-specific replication.
+
+**Clarity and limitations:** The grammar-centric argument is clear; structured generation should not be presented as evidence of general paper comprehension.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.16905v1#S2.SS3)
+
+## Paper-text origins
+
+**Direct paper sources:** No direct source established for this row.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The described corpus is serialized scientific entities and interactions, not a separately acquired research-paper text stream. [Source](https://arxiv.org/html/2606.16905v1#S2.SS3)
+
+## Other modalities
+
+Seven entity/interaction types are serialized using a scientific grammar, including materials, reactions, pockets and complexes. The aggregate is across pretraining/post-training; individual modality shares are not disclosed here.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Scientific sequences and interaction grammar | 44.87B | Combined seven-modality corpus, not a pure protein or CPT-only amount. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2606.16905v1#S2.SS3)
 
 ## Existing-dataset sources
 

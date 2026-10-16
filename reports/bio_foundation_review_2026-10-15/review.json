@@ -218,6 +218,45 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Useful early decoder study; conventional method",
+        "summary": "A solid paper for its time, demonstrating a practical generative biomedical language model with useful task results and released code. Its main value is an empirical application and resource, rather than a fundamentally new learning method.",
+        "dimensions": {
+          "contribution": "Makes a generative biomedical decoder available alongside the then-common encoder approaches.",
+          "technical_soundness": "The autoregressive setup and task formulations are conventional but technically coherent.",
+          "evaluation": "Several tasks and prompt/target ablations support usefulness; they do not fully isolate corpus quality from task tuning.",
+          "reproducibility": "Implementation and training settings are public; scheduled training positions are not a unique-data measurement.",
+          "clarity": "The central model/task story is clear, with the abstract-only corpus scope important to retain."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/pdf/2210.10341"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed titles/abstracts"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "BioGPT is trained on PubMed title/abstract records, not a 15M-full-text-paper corpus.",
+        "source": "https://arxiv.org/pdf/2210.10341"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/pdf/2210.10341"
+          }
+        ]
       }
     },
     {
@@ -420,6 +459,45 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Transparent resource; limited methodological novelty",
+        "summary": "A solid and transparent model/resource report. It demonstrates the practicality of a smaller specialized model and describes its budget clearly, but the methodological contribution and controlled evidence at the headline model scale are limited.",
+        "dimensions": {
+          "contribution": "Offers an openly inspectable specialized model and a useful study of scale and domain tokenization.",
+          "technical_soundness": "The architecture and training recipe are conventional and sufficiently concrete.",
+          "evaluation": "The five-seed tokenizer study is useful but smaller than the headline model; most full-model results follow task tuning.",
+          "reproducibility": "Corpus and consumed-token totals, training settings and released weights are useful for reproducibility.",
+          "clarity": "The report is relatively clear about size, passes and task formatting; comparisons must retain their tuning conditions."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2403.18421v1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [],
+        "reused": [
+          "The Pile PubMed components"
+        ],
+        "unspecified": "Not specified",
+        "note": "PubMed abstracts and PMC full articles are reused through The Pile. Their 34.6B-token corpus belongs in the existing-dataset column.",
+        "source": "https://arxiv.org/html/2403.18421v1"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2403.18421v1"
+          }
+        ]
       }
     },
     {
@@ -1029,6 +1107,52 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "mixed",
+        "headline": "Useful prototype; validation is narrow",
+        "summary": "An interesting early multimodal biomedical prototype, with a plausible integration of literature and biological encoders. The experimental scope and generalization checks are too narrow to establish a broadly reliable biomedical foundation model.",
+        "dimensions": {
+          "contribution": "Connects a literature-adapted language model with molecule/protein inputs in a practically useful architecture.",
+          "technical_soundness": "The alignment design is reasonable, but several training stages make attribution of gains difficult.",
+          "evaluation": "Alignment comparisons are informative; random protein splits and limited task coverage weaken broad generalization claims.",
+          "reproducibility": "An author implementation exists, but corpus choices, alignment and task tuning all matter for reproducing the end result.",
+          "clarity": "The model stages are understandable; the similarly named vision-language model must not be conflated with this work."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2308.09442v2"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [],
+        "reused": [
+          "S2ORC"
+        ],
+        "unspecified": "Not specified",
+        "note": "Biomedical paper text is imported through S2ORC; the >26B tokens are allocated to existing datasets, not direct online-paper acquisition.",
+        "source": "https://arxiv.org/html/2308.09442v2"
+      },
+      "modality_profile": {
+        "summary": "None in literature CPT; later biological encoders",
+        "note": "The counted >26B literature CPT stage is text-only. Molecule/protein encoders enter in subsequent alignment and multimodal variants; their features are not included as counted text tokens.",
+        "items": [
+          {
+            "name": "Later molecule/protein encoder features",
+            "tokens": null,
+            "note": "Later-stage features, not token counts in the literature CPT row.",
+            "measurement": "presence"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2308.09442v2"
+          }
+        ]
       }
     },
     {
@@ -1355,6 +1479,104 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "mixed",
+        "headline": "Substantial engineering; overbroad validation claims",
+        "summary": "A substantial and interesting systems paper that unifies sequence, structure and language representations. It is less convincing as proof of general biological capability: overlap is unresolved and the headline task coverage combines specialized fine-tuned variants.",
+        "dimensions": {
+          "contribution": "Integrating molecule/protein sequences and geometric tokenizers into one decoder is a substantial engineering contribution.",
+          "technical_soundness": "Tokenization and training are detailed, but disjoint geometric spaces cannot directly represent molecule–pocket relative poses.",
+          "evaluation": "The 80-task suite is broad; missing entity-level decontamination and task-group SFT constrain the interpretation of headline superiority.",
+          "reproducibility": "Corpus categories and recipes are useful, but exact acquisition shares and contamination-controlled reruns are not supplied.",
+          "clarity": "Extensive method and limitation sections help; broad single-model framing is stronger than what the task-group results establish."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.22138v1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed",
+          "bioRxiv"
+        ],
+        "reused": [
+          "S2ORC",
+          "USPTO-Applications"
+        ],
+        "unspecified": "Not specified",
+        "note": "Direct PubMed text and PubMed/bioRxiv abstracts are combined with reused S2ORC and patent records. Source-specific token shares are not disclosed; PMC availability or a PDF extraction method is not inferred.",
+        "source": "https://arxiv.org/html/2606.22138v1"
+      },
+      "modality_profile": {
+        "summary": "Protein/molecule sequences; 3D structures; interactions",
+        "note": "These modalities occur in the counted CPT corpus. Figure 3 separates 1D, 3D and other representations. The token counts are another view of the same corpus, not additional acquisition-route tokens. The protein/molecule domain totals include more than pure sequences.",
+        "items": [
+          {
+            "name": "Protein 1D sequences",
+            "tokens": 36000000000,
+            "note": "Figure 3 protein 1D bucket.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Molecule 1D sequences",
+            "tokens": 32100000000,
+            "note": "SMILES/SELFIES representation bucket in Figure 3.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Cross-entity 1D representations",
+            "tokens": 17100000000,
+            "note": "Figure 3 cross-entity 1D bucket; not exclusively protein sequence tokens.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Protein 3D structures",
+            "tokens": 38500000000,
+            "note": "Figure 3 protein structure-token bucket.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Molecule 3D structures",
+            "tokens": 17600000000,
+            "note": "Figure 3 molecule structure-token bucket.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Cross-entity 3D representations",
+            "tokens": 11400000000,
+            "note": "Figure 3 cross-entity 3D bucket.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Other protein representations",
+            "tokens": 2900000000,
+            "note": "Other protein-domain content; not assumed to be sequence tokens.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Other molecule representations",
+            "tokens": 24000000000,
+            "note": "Other molecule-domain content, including descriptions; not assumed to be sequence tokens.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Other cross-entity representations",
+            "tokens": 19500000000,
+            "note": "Other cross-entity content; not assumed to be pure sequence or structure tokens.",
+            "measurement": "domain_bucket"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Figure 3 / §3.1",
+            "url": "https://arxiv.org/pdf/2606.22138v1#page=12"
+          }
+        ]
       }
     },
     {
@@ -1516,6 +1738,49 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "mixed",
+        "headline": "Reasonable adaptation study; reporting gaps",
+        "summary": "A useful exploration of biomedical adaptation of Mamba, but predominantly incremental. Inconsistent corpus accounting and incomplete checkpoint availability reduce confidence in its reproducibility and overall completeness.",
+        "dimensions": {
+          "contribution": "Tests a relevant non-Transformer backbone in a biomedical setting; the adaptation method itself is conventional.",
+          "technical_soundness": "Base/adapted comparisons and tokenizer control are sensible design choices.",
+          "evaluation": "Domain and general-capability checks add value; the findings remain tied to the selected tasks and scales.",
+          "reproducibility": "The author repository still describes future checkpoint release, and sequence-count/mix discrepancies need resolution.",
+          "clarity": "The overall recipe is understandable, but corpus and release statements should be more internally consistent."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/"
+          },
+          {
+            "label": "Author repository: checkpoint release status",
+            "url": "https://github.com/lingyue404/BioMamba#model-checkpoints"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed/MEDLINE"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "This overview follows the published paper’s PubMed/MEDLINE corpus description. The current author repository additionally names processed PubMed inputs; different releases must not be assumed to share the same token counts.",
+        "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/"
+          }
+        ]
       }
     },
     {
@@ -2088,6 +2353,46 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "strong",
+        "headline": "Clear, well-executed foundational study",
+        "summary": "A strong paper in its publication context: a clear domain-adaptation question, a simple reusable method and convincing improvements across several biomedical NLP tasks. Its value is the well-supported result, not architectural complexity.",
+        "dimensions": {
+          "contribution": "Established a useful biomedical adaptation recipe for BERT and made it broadly usable.",
+          "technical_soundness": "The method is simple and directly connects the research question to continued pretraining on domain text.",
+          "evaluation": "Comparisons across corpora and multiple task families support the central claim; they do not establish all later generative capabilities.",
+          "reproducibility": "Public checkpoints and code make the work substantially easier to inspect and build upon.",
+          "clarity": "A focused presentation with clear task definitions; word/document counts must be distinguished from tokenizer-token budgets."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/pdf/1901.08746"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed abstracts",
+          "PMC full text"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "The domain corpus combines PubMed abstracts and PMC full text; BERT’s earlier Wikipedia/Books pretraining is not part of the added domain stage.",
+        "source": "https://arxiv.org/pdf/1901.08746"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/pdf/1901.08746"
+          }
+        ]
       }
     },
     {
@@ -2224,6 +2529,46 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "strong",
+        "headline": "Focused question; systematic and useful analysis",
+        "summary": "A strong empirical paper: it poses a clear question about domain-specific pretraining, studies important design choices systematically and supplies a useful benchmark and model. The conclusions are persuasive within biomedical encoder NLP.",
+        "dimensions": {
+          "contribution": "Combines a substantive domain-pretraining question with a reusable benchmark and model.",
+          "technical_soundness": "Vocabulary, initialization and pretraining choices are tied directly to the hypothesis under study.",
+          "evaluation": "Multiple tasks and ablations provide a stronger overall case than a single headline score.",
+          "reproducibility": "Public artifacts and detailed settings make the work usable, though the review still lacks comparable corpus-token totals.",
+          "clarity": "A focused presentation makes the scope and design tradeoffs understandable."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2007.15779v6"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed abstracts",
+          "PMC full text"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "PubMed abstracts are the main corpus; additional PMC full-text experiments are separately discussed. Their document/word sizes are not converted to token counts here.",
+        "source": "https://arxiv.org/html/2007.15779v6"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2007.15779v6"
+          }
+        ]
       }
     },
     {
@@ -2363,6 +2708,45 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "strong",
+        "headline": "Clear method; substantive ablations and results",
+        "summary": "A strong paper overall, with a simple well-motivated document-link idea, supporting ablations and useful results in general and biomedical NLP. The biomedical-specific mechanism evidence is less complete than the overall methodological case.",
+        "dimensions": {
+          "contribution": "Using document links jointly with language modeling is a clear and reusable contribution.",
+          "technical_soundness": "The graph-based input construction and relation objective are coherent and directly testable.",
+          "evaluation": "Link-sampling/objective ablations and multiple benchmarks support the method; the fullest ablations are in the general domain.",
+          "reproducibility": "Released code, models and data information help others inspect and reuse the recipe.",
+          "clarity": "The core idea is explained clearly, while general-domain and biomedical initialization details need to remain separate."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2203.15827#S6.SS1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed abstracts"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "Uses the PubMed abstract corpus and citation links, following the biomedical setup in §6.1.",
+        "source": "https://arxiv.org/html/2203.15827#S6.SS1"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2203.15827#S6.SS1"
+          }
+        ]
       }
     },
     {
@@ -2521,6 +2905,80 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Ambitious and useful; uneven claim support",
+        "summary": "A solid, ambitious scientific-model paper with a valuable representation and data-integration effort. The breadth is a strength, but varying backbones, post-training and heterogeneous tasks make some sweeping conclusions harder to assess.",
+        "dimensions": {
+          "contribution": "Combines language with several natural-science sequence types and cross-domain examples at meaningful scale.",
+          "technical_soundness": "The shared vocabulary and training stages are coherent; the 1B and larger variants have different initialization histories.",
+          "evaluation": "Multiple domains and model sizes are informative, but they do not isolate each ingredient of the complete recipe.",
+          "reproducibility": "Data distributions and training settings are documented; some source-specific allocations and experimental details remain less complete.",
+          "clarity": "Examples make the broad design accessible, while some aggregate claims need more narrowly matched comparisons."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2502.07527v2#S2.SS3"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [],
+        "reused": [],
+        "unspecified": "Repository not specified",
+        "note": "The source describes scientific literature and entity-interleaved text, but the inspected pretraining section does not identify an auditable repository-by-repository paper allocation. PubMed mentions in related-work comparisons are not taken as evidence of NatureLM acquisition.",
+        "source": "https://arxiv.org/html/2502.07527v2#S2.SS3"
+      },
+      "modality_profile": {
+        "summary": "Protein, DNA/RNA, molecule sequences; materials",
+        "note": "Table S1 gives scientific-domain token buckets. These overlap the source-route totals: they are not additional data. The cross-domain bucket interleaves representations and text, and must not be treated as a disjoint acquisition route.",
+        "items": [
+          {
+            "name": "Protein domain",
+            "tokens": 65200000000,
+            "note": "Table S1 protein-domain tokens.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "DNA domain",
+            "tokens": 19800000000,
+            "note": "Table S1 DNA-domain tokens.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "RNA domain",
+            "tokens": 27500000000,
+            "note": "Table S1 RNA-domain tokens.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Small-molecule domain",
+            "tokens": 4200000000,
+            "note": "Table S1 small-molecule domain; uses molecular string representations.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Material domain",
+            "tokens": 20000000,
+            "note": "Table S1 material-domain tokens.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Cross-domain text/sequence examples",
+            "tokens": 12700000000,
+            "note": "Mixed text and scientific representations; not a pure non-text total.",
+            "measurement": "domain_bucket"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Table S1 / §2.1",
+            "url": "https://arxiv.org/html/2502.07527v2"
+          }
+        ]
       }
     },
     {
@@ -2720,6 +3178,75 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "mixed",
+        "headline": "Substantial scientific LM; reliability claims weak",
+        "summary": "A substantial scientific-language-model study with useful scaling and representation experiments. As an overall paper it is mixed: the system effort is valuable, but factual reliability and the interaction of corpus, scale and prompt pretraining leave broad use claims less convincing.",
+        "dimensions": {
+          "contribution": "A broad scientific language model with explicit citation and scientific-sequence representations is a substantial resource effort.",
+          "technical_soundness": "The unified token-stream approach is coherent; prompt pretraining adds an additional factor beyond corpus choice.",
+          "evaluation": "Scaling and citation analyses are informative, while generated scientific text can still be unreliable.",
+          "reproducibility": "Detailed corpus appendices help; reproducing large-model behavior and isolating data effects remains demanding.",
+          "clarity": "The appendices are useful, but fluent scientific generation and reliable scientific assistance require different evidence."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2211.09085v1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "arXiv",
+          "PMC",
+          "PubMed abstracts",
+          "bioRxiv",
+          "OSF",
+          "medRxiv",
+          "ACL",
+          "PubAg abstracts",
+          "ChemRxiv"
+        ],
+        "reused": [
+          "Semantic Scholar full text",
+          "Semantic Scholar abstracts"
+        ],
+        "unspecified": "Not specified",
+        "note": "Table 22 identifies the paper sources. Semantic Scholar imports remain existing-dataset input; the other named publication sources contribute to the reviewed direct-paper lower bound.",
+        "source": "https://arxiv.org/html/2211.09085v1"
+      },
+      "modality_profile": {
+        "summary": "Protein/DNA sequences; molecular SMILES",
+        "note": "Table 1 and the scientific-data descriptions include amino-acid sequences, DNA and SMILES. Exact modality-token shares are not separately established in this review.",
+        "items": [
+          {
+            "name": "Protein sequences",
+            "tokens": null,
+            "note": "Present; separate modality-token total NR.",
+            "measurement": "modality"
+          },
+          {
+            "name": "DNA sequences",
+            "tokens": null,
+            "note": "Present in the described tokenization; separate modality-token total NR.",
+            "measurement": "modality"
+          },
+          {
+            "name": "Molecular SMILES",
+            "tokens": null,
+            "note": "Present; separate modality-token total NR.",
+            "measurement": "modality"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2211.09085v1"
+          }
+        ]
       }
     },
     {
@@ -2992,6 +3519,72 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Valuable corpus; external validation still needed",
+        "summary": "A solid corpus-and-model contribution with a useful biological data organization effort. Its direct comparisons strengthen the story, although a new in-house evaluation suite and incomplete total training accounting limit the broader conclusion.",
+        "dimensions": {
+          "contribution": "The biological corpus, normalized records and derived descriptions are practically useful contributions.",
+          "technical_soundness": "The design links corpus construction to a fixed base model and separates biological data from general replay.",
+          "evaluation": "Text-only and base-model controls are helpful; independent benchmark transfer remains less established.",
+          "reproducibility": "Data-source and decontamination descriptions are useful, but complete replay and consumed-token totals are missing.",
+          "clarity": "The component budgets are readable; the 52.6B biological corpus must not be confused with all literature and replay."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2607.08803v1#S3.SS1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed",
+          "bioRxiv",
+          "medRxiv"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "The separately reported 54.0B scientific-text corpus comprises PubMed 48.8B, bioRxiv 4.6B and medRxiv 0.58B, with rounding. Additional science-PDF replay is not quantified.",
+        "source": "https://arxiv.org/html/2607.08803v1#S3.SS1"
+      },
+      "modality_profile": {
+        "summary": "Protein/genomic/molecule sequences; cell records",
+        "note": "The reported domain buckets include biological sequences, serialized records, feature narratives and task representations. They are not pure sequence-token totals. The 52.6B biological corpus is separate from literature and replay.",
+        "items": [
+          {
+            "name": "Molecule-domain records",
+            "tokens": 28200000000,
+            "note": "Domain bucket includes molecular representations and associated derived content.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Protein-domain records",
+            "tokens": 14500000000,
+            "note": "Domain bucket includes sequences, structures/annotations and derived content.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Genomic-domain records",
+            "tokens": 7100000000,
+            "note": "Domain bucket includes sequences and feature/task representations.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Cells/pathways",
+            "tokens": 2800000000,
+            "note": "Serialized cell/pathway information; not a pure sequence count.",
+            "measurement": "domain_bucket"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2607.08803v1#S3.SS1"
+          }
+        ]
       }
     },
     {
@@ -3153,6 +3746,76 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "mixed",
+        "headline": "Broad ambition; inconsistent reporting",
+        "summary": "An ambitious scientific reasoning system with useful experiments, including a CPT ablation. Overall confidence is reduced by unreconciled data quantities and the difficulty of attributing broad claims across many training stages and tasks.",
+        "dimensions": {
+          "contribution": "Extends multimodal scientific training into reasoning-oriented tasks across several disciplines.",
+          "technical_soundness": "The multi-stage recipe is plausible, but interacting CPT, SFT and RL components complicate causal interpretation.",
+          "evaluation": "Selected before/after CPT results are useful; they are narrower evidence than the complete final-model task suite.",
+          "reproducibility": "Named data sources and code links help, while the 206B headline versus 166B enumerated components remains unresolved.",
+          "clarity": "The large scope creates reporting complexity, with important numerical statements needing reconciliation."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2509.21320v1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PubMed"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "The paper identifies PubMed abstracts/scientific prose. It does not separate the paper token total from other scientific and general data.",
+        "source": "https://arxiv.org/html/2509.21320v1"
+      },
+      "modality_profile": {
+        "summary": "Protein, DNA/RNA; SMILES/SELFIES; materials",
+        "note": "The reported scientific-domain buckets include sequence and associated representation/text data. The five figures sum to 166B; the 206B headline leaves 40B unreconciled. They must not be treated as pure sequence-token counts or added to acquisition totals.",
+        "items": [
+          {
+            "name": "Protein domain",
+            "tokens": 55000000000,
+            "note": "Reported category volume; not a separately measured pure-sequence total.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Chemistry domain",
+            "tokens": 50000000000,
+            "note": "Includes molecular strings/representations and associated content.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "DNA domain",
+            "tokens": 30000000000,
+            "note": "Reported domain bucket.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "RNA domain",
+            "tokens": 26000000000,
+            "note": "Reported domain bucket.",
+            "measurement": "domain_bucket"
+          },
+          {
+            "name": "Materials domain",
+            "tokens": 5000000000,
+            "note": "Reported domain bucket.",
+            "measurement": "domain_bucket"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2509.21320v1"
+          }
+        ]
       }
     },
     {
@@ -3285,6 +3948,50 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Coherent representation idea; bounded validation",
+        "summary": "A solid representation-focused paper: its scientific grammar is coherent and supported by useful ablations. The results are strongest for the demonstrated structured generation tasks, with broader generality and reproducibility still less established.",
+        "dimensions": {
+          "contribution": "Provides a unified grammar for multiple scientific entities and interaction constraints.",
+          "technical_soundness": "The representation and inherited-backbone choices are motivated and examined experimentally.",
+          "evaluation": "Initialization, grammar and cross-domain ablations add substance; the empirical task set bounds the generality claim.",
+          "reproducibility": "Corpus construction is described, but combined pre-/post-training volumes obscure precise stage-specific replication.",
+          "clarity": "The grammar-centric argument is clear; structured generation should not be presented as evidence of general paper comprehension."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.16905v1#S2.SS3"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [],
+        "reused": [],
+        "unspecified": "No paper-text stream",
+        "note": "The described corpus is serialized scientific entities and interactions, not a separately acquired research-paper text stream.",
+        "source": "https://arxiv.org/html/2606.16905v1#S2.SS3"
+      },
+      "modality_profile": {
+        "summary": "Protein/antibody/molecule sequences; structural grammar",
+        "note": "Seven entity/interaction types are serialized using a scientific grammar, including materials, reactions, pockets and complexes. The aggregate is across pretraining/post-training; individual modality shares are not disclosed here.",
+        "items": [
+          {
+            "name": "Scientific sequences and interaction grammar",
+            "tokens": 44870000000,
+            "note": "Combined seven-modality corpus, not a pure protein or CPT-only amount.",
+            "measurement": "domain_bucket"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2606.16905v1#S2.SS3"
+          }
+        ]
       }
     },
     {
@@ -3884,6 +4591,45 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Careful, useful; incremental contribution",
+        "summary": "A solid, focused data-curation paper. Its controlled design and practical recipe are valuable, while modest average gains and biomedical-specific quality labels limit the breadth of its conclusions.",
+        "dimensions": {
+          "contribution": "A useful systematic application of paragraph labels, filtering and enrichment; mostly incremental rather than a new model principle.",
+          "technical_soundness": "A coherent pipeline with comparable starting checkpoints and token budgets across variants.",
+          "evaluation": "Multiple variants expose tradeoffs; the small overall mean gain does not support a universally superior filter.",
+          "reproducibility": "The source data, labeling recipe and training budget are described; teacher-label quality is not human scientific validation.",
+          "clarity": "The pipeline is clear, but clinical and educational labels need contextual interpretation."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2506.20331v1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PMC-OA XML"
+        ],
+        "reused": [],
+        "unspecified": "Not specified",
+        "note": "The study parses PMC Open Access XML directly and compares paragraph-level curation variants.",
+        "source": "https://arxiv.org/html/2506.20331v1"
+      },
+      "modality_profile": {
+        "summary": "None in counted stage; text only",
+        "note": "The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.",
+        "items": [],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2506.20331v1"
+          }
+        ]
       }
     },
     {
@@ -4036,6 +4782,54 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Useful reconstruction method; modest added value",
+        "summary": "A solid practical data-method paper with a clear source-grounding idea and unusually relevant controls. Its strongest case is improving raw multimodal corpus construction; gains over a strong SFT-only baseline are much less striking.",
+        "dimensions": {
+          "contribution": "Reference-constrained figure/context reconstruction addresses a concrete weakness in paper-derived training records.",
+          "technical_soundness": "The recovery and interleaving rules connect source references to the resulting examples in a coherent way.",
+          "evaluation": "Matched-token, fixed-SFT and cross-architecture comparisons are useful; the general/scientific margin over SFT-only is small.",
+          "reproducibility": "The recipe and budgets are detailed enough to inspect, though independent end-to-end reproduction has not been performed here.",
+          "clarity": "The method is clear, but the choice of comparator matters when interpreting the headline gains."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.01049v2"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [
+          "PMC-OA XML"
+        ],
+        "reused": [
+          "BIOMEDICA"
+        ],
+        "unspecified": "Not specified",
+        "note": "BIOMEDICA supplies article/figure records; PMC-OA source material supplies recovered captions and article-native context. The 9.63B total combines text and image tokens.",
+        "source": "https://arxiv.org/html/2606.01049v2"
+      },
+      "modality_profile": {
+        "summary": "Original figure images; image-token share NR",
+        "note": "Original figure images accompany recovered captions and article context. The 9.63B headline is combined text plus image tokens; the pure image-token share is not separately established.",
+        "items": [
+          {
+            "name": "Figure-image tokens",
+            "tokens": null,
+            "note": "Included in the mixed 9.63B-token corpus; separate image-token amount not established.",
+            "measurement": "modality"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2606.01049v2"
+          }
+        ]
       }
     },
     {
@@ -4164,6 +4958,50 @@
           }
         ],
         "independent_replication": false
+      },
+      "paper_quality": {
+        "overall": "solid",
+        "headline": "Thoughtful empirical study; limited scope",
+        "summary": "A solid empirical analysis of biological post-training rather than a major architectural advance. Its stage-wise and out-of-distribution comparisons are useful, with appropriately bounded conclusions because task families and compute matching remain limited.",
+        "dimensions": {
+          "contribution": "Asks a meaningful question about allocation among biological adaptation stages and their different generalization effects.",
+          "technical_soundness": "The stage separation and frozen-encoder setup support interpretable comparisons, with some remaining budget confounds.",
+          "evaluation": "Biologically meaningful held-out settings are valuable, but the task/model sample is not a universal test of reasoning.",
+          "reproducibility": "The author repository and extensive settings help; realized CPT token totals and full FLOP matching remain missing.",
+          "clarity": "The limitations are discussed directly; answer correctness should remain distinct from correctness of a reasoning trace."
+        },
+        "sources": [
+          {
+            "label": "Reviewed paper: methods/results/limitations",
+            "url": "https://arxiv.org/html/2606.16517v1"
+          }
+        ],
+        "review_type": "Provisional source-based whole-paper assessment; publication-context judgment, not official peer review or independent replication."
+      },
+      "paper_text_origins": {
+        "direct": [],
+        "reused": [],
+        "unspecified": "No direct paper stream in CPT",
+        "note": "The counted CPT stage uses a FineFineWeb biology subset. It is not a direct paper-acquisition experiment, even if some upstream web pages discuss papers.",
+        "source": "https://arxiv.org/html/2606.16517v1"
+      },
+      "modality_profile": {
+        "summary": "None in CPT; later DNA/RNA/protein encoders",
+        "note": "The counted CPT input is biological web text. Frozen DNA/RNA/protein encoders and projected features are used in later adaptation experiments, not as measured tokens in this CPT row.",
+        "items": [
+          {
+            "name": "Later DNA/RNA/protein encoder features",
+            "tokens": null,
+            "note": "Later-stage inputs; not included in a disclosed CPT token count.",
+            "measurement": "presence"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Reviewed paper: data and representations",
+            "url": "https://arxiv.org/html/2606.16517v1"
+          }
+        ]
       }
     }
   ],
@@ -4857,7 +5695,7 @@
       "scope_group": "Reusable source corpora"
     }
   ],
-  "catalog_schema_version": 3,
+  "catalog_schema_version": 4,
   "consolidated_at_pst": "2026-10-15T12:05:51.135005-08:00",
   "catalog_home": "reports/bio_foundation_review_2026-10-15/README.md",
   "catalog_policy": "One source record per model/study/corpus. The public overview merges CPT models and CPT data-curation studies, names the initialization and selects one sourced budget per entry. Full budgets and prior evidence remain in the same registry.",
@@ -4920,5 +5758,24 @@
     ],
     "institution_display": "Compact first-author/group credit and shortened institutions in the overview; reviewed-source names on study pages."
   },
-  "assessment_updated_at_pst": "2026-10-15T16:22:39.072609-08:00"
+  "assessment_updated_at_pst": "2026-10-15T16:22:39.072609-08:00",
+  "overall_paper_assessment_policy": {
+    "purpose": "Overall quality and value of the whole paper in its publication context, separate from project relevance and narrow evidence-strength labels.",
+    "dimensions": [
+      "contribution and originality",
+      "technical soundness",
+      "evaluation",
+      "reproducibility",
+      "clarity and limitations"
+    ],
+    "labels": {
+      "strong": "Substantial contribution, convincingly executed.",
+      "solid": "Worthwhile and broadly credible work with meaningful limitations.",
+      "mixed": "Substantial strengths and weaknesses constrain the overall case.",
+      "weak": "Fundamental weaknesses dominate."
+    },
+    "status": "Provisional editorial judgment; not an official reviewer rating, venue ranking or independent replication."
+  },
+  "modality_policy": "Acquisition route and representation are orthogonal. Modality counts are included in source budgets and must never be added on top. Distinguish pure modality-token counts, domain buckets with mixed representations, and later-stage encoder features.",
+  "quality_reviewed_at_pst": "2026-10-15T16:33:15.186299-08:00"
 }

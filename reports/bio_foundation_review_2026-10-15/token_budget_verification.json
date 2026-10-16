@@ -1,6 +1,6 @@
 {
-  "checked_at_pst": "2026-10-15T16:24:14.815274-08:00",
-  "scope": "Typed token accounting, preservation of source allocations, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
+  "checked_at_pst": "2026-10-15T16:34:12.345725-08:00",
+  "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
   "generated_files_reproduced_byte_identically": 46,
@@ -12,7 +12,7 @@
     "existing_datasets": 21
   },
   "original_41_entries_and_source_records_preserved": true,
-  "regression_tests_passed": 25,
+  "regression_tests_passed": 28,
   "known_rounding_discrepancies": [
     {
       "id": "meditron",
@@ -338,7 +338,7 @@
   },
   "overview_rows": 16,
   "summary_budget_note": "One additional Gravity-bio overview record combines disclosed, non-overlapping component lower bounds. Web and total remain NR; original component and training-exposure records are unchanged.",
-  "content_scope_verification": "All 16 overview entries disclose content scope, quantity type, authors/institutions, named dataset inputs and source-based evidence assessments. BioMatrix is the sole numerical allocation correction; all other budget amounts are unchanged.",
+  "content_scope_verification": "All 16 overview entries disclose content scope, quantity type, authors/institutions, named dataset inputs, direct/reused paper origins, modalities and five-dimension whole-paper assessments. No token-budget record changed in this update; the earlier BioMatrix allocation correction is retained.",
   "pipeline_documentation": "data_pipeline.md specifies shared processing and separates implemented paper work from proposed web extraction, cross-route deduplication and final biological accounting.",
   "token_count_corrections": [
     {
@@ -353,7 +353,25 @@
   ],
   "assessment_coverage": {
     "overview_entries": 16,
-    "review_type": "Qualitative source-based appraisal; no independent model replication",
-    "institution_used_as_quality_proxy": false
-  }
+    "review_type": "Provisional qualitative whole-paper technical judgment; no independent model replication",
+    "criteria": [
+      "contribution and originality",
+      "technical soundness",
+      "evaluation",
+      "reproducibility",
+      "clarity and limitations"
+    ],
+    "rating_counts": {
+      "solid": 8,
+      "mixed": 5,
+      "strong": 3
+    },
+    "institution_used_as_quality_proxy": false,
+    "prior_evidence_assessments_preserved": true,
+    "paper_origin_profiles": 16,
+    "modality_profiles": 16,
+    "modality_counts_added_to_acquisition_totals": false
+  },
+  "local_links_and_anchors_checked": 206,
+  "all_52_token_budget_records_preserved_from_commit": "49222ccb98b34b1efb3c94b884ba5d3afb661f9c"
 }

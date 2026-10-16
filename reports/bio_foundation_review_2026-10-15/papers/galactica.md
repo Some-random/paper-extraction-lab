@@ -20,20 +20,43 @@ A broad scientific model with disclosed biological sources, not a biology-only m
 
 [Paper attribution](https://arxiv.org/html/2211.09085v1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Scaling studies; corpus/prompt effects mixed. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Mixed.** A substantial scientific-language-model study with useful scaling and representation experiments. As an overall paper it is mixed: the system effort is valuable, but factual reliability and the interaction of corpus, scale and prompt pretraining leave broad use claims less convincing. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Reports model-scale, repeated-token and citation-identifier analyses over diverse scientific tasks.
+**Contribution and originality:** A broad scientific language model with explicit citation and scientific-sequence representations is a substantial resource effort.
 
-**Limitations**
+**Technical soundness:** The unified token-stream approach is coherent; prompt pretraining adds an additional factor beyond corpus choice.
 
-- Prompt pretraining, scientific data and scale interact; the paper itself notes difficulties separating corpus and prompt effects.
-- Citation generation and fluent prose are not guarantees of factual reliability; the corpus is broad science, not biology alone.
+**Evaluation:** Scaling and citation analyses are informative, while generated scientific text can still be unreliable.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2211.09085v1)
+**Reproducibility:** Detailed corpus appendices help; reproducing large-model behavior and isolating data effects remains demanding.
+
+**Clarity and limitations:** The appendices are useful, but fluent scientific generation and reliable scientific assistance require different evidence.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2211.09085v1)
+
+## Paper-text origins
+
+**Direct paper sources:** arXiv; PMC; PubMed abstracts; bioRxiv; OSF; medRxiv; ACL; PubAg abstracts; ChemRxiv.
+
+**Paper text via reused datasets:** Semantic Scholar full text; Semantic Scholar abstracts.
+
+Table 22 identifies the paper sources. Semantic Scholar imports remain existing-dataset input; the other named publication sources contribute to the reviewed direct-paper lower bound. [Source](https://arxiv.org/html/2211.09085v1)
+
+## Other modalities
+
+Table 1 and the scientific-data descriptions include amino-acid sequences, DNA and SMILES. Exact modality-token shares are not separately established in this review.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Protein sequences | NR | Present; separate modality-token total NR. |
+| DNA sequences | NR | Present in the described tokenization; separate modality-token total NR. |
+| Molecular SMILES | NR | Present; separate modality-token total NR. |
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/html/2211.09085v1)
 
 ## Existing-dataset sources
 

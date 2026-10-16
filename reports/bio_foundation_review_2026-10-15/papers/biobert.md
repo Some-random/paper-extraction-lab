@@ -20,21 +20,37 @@ The reviewed BioBERT models initialize from BERT trained on general text. The pa
 
 [Paper attribution](https://arxiv.org/pdf/1901.08746). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Stronger controls.** Direct BERT/domain-corpus comparisons. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Strong.** A strong paper in its publication context: a clear domain-adaptation question, a simple reusable method and convincing improvements across several biomedical NLP tasks. Its value is the well-supported result, not architectural complexity. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Initializes from BERT and compares added PubMed/PMC corpora across NER, relation extraction and QA.
-- Released models/code make the experimental recipe inspectable.
+**Contribution and originality:** Established a useful biomedical adaptation recipe for BERT and made it broadly usable.
 
-**Limitations**
+**Technical soundness:** The method is simple and directly connects the research question to continued pretraining on domain text.
 
-- Encoder task results do not establish the same gains for modern generative multimodal CPT.
-- The reported source sizes use words/documents; they do not supply the token split required by this review.
+**Evaluation:** Comparisons across corpora and multiple task families support the central claim; they do not establish all later generative capabilities.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/pdf/1901.08746)
+**Reproducibility:** Public checkpoints and code make the work substantially easier to inspect and build upon.
+
+**Clarity and limitations:** A focused presentation with clear task definitions; word/document counts must be distinguished from tokenizer-token budgets.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/pdf/1901.08746)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed abstracts; PMC full text.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+The domain corpus combines PubMed abstracts and PMC full text; BERT’s earlier Wikipedia/Books pretraining is not part of the added domain stage. [Source](https://arxiv.org/pdf/1901.08746)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://arxiv.org/pdf/1901.08746)
 
 ## Existing-dataset sources
 

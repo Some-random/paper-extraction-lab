@@ -20,20 +20,37 @@ Reported packed sequence counts imply positions, not measured non-padding tokens
 
 [Paper attribution](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Useful, limited.** Base/adapted controls; release caveat. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Mixed.** A useful exploration of biomedical adaptation of Mamba, but predominantly incremental. Inconsistent corpus accounting and incomplete checkpoint availability reduce confidence in its reproducibility and overall completeness. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Reports base-versus-adapted comparisons with tokenizer control and checks changes in general capability.
+**Contribution and originality:** Tests a relevant non-Transformer backbone in a biomedical setting; the adaptation method itself is conventional.
 
-**Limitations**
+**Technical soundness:** Base/adapted comparisons and tokenizer control are sensible design choices.
 
-- Reported mixture proportions and sequence counts do not agree; packed positions are not non-padding content tokens.
-- The author README inspected for this review still defers checkpoint release until publication, limiting immediate reproduction from released weights.
+**Evaluation:** Domain and general-capability checks add value; the findings remain tied to the selected tasks and scales.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/) · [Author repository: checkpoint release status](https://github.com/lingyue404/BioMamba#model-checkpoints)
+**Reproducibility:** The author repository still describes future checkpoint release, and sequence-count/mix discrepancies need resolution.
+
+**Clarity and limitations:** The overall recipe is understandable, but corpus and release statements should be more internally consistent.
+
+Sources: [Reviewed paper: methods/results/limitations](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/) · [Author repository: checkpoint release status](https://github.com/lingyue404/BioMamba#model-checkpoints)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed/MEDLINE.
+
+**Paper text via reused datasets:** No reused paper-text source established for this row.
+
+This overview follows the published paper’s PubMed/MEDLINE corpus description. The current author repository additionally names processed PubMed inputs; different releases must not be assumed to share the same token counts. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/)
+
+## Other modalities
+
+The reviewed training stage uses ordinary text rather than separately represented images, biological sequences or 3D structure tokens.
+
+Sources: [Reviewed paper: data and representations](https://pmc.ncbi.nlm.nih.gov/articles/PMC13635941/)
 
 ## Existing-dataset sources
 

@@ -195,11 +195,11 @@ threads and zero GPUs. Retain PDFs/XML, native text, source figures/tables and
 citations; no new OCR, inference, training or separate supplement acquisition.
 Publish compact progress/final manifests, with bulk artifacts kept locally.
 
-## Attribution, dataset names and evidence assessment
+## Attribution, dataset names and paper assessment
 
 The user requests compact existing-dataset names alongside token amounts and
-two additional overview columns: authors/institutions and how strong each
-paper's evidence is. Store credits, named input datasets and source-based
+two additional overview columns: authors/institutions and overall paper quality.
+Store credits, named input datasets and source-based
 assessments in the same review registry. Use first-author/group names and short
 institution names in the table, with fuller source information on study pages.
 Assess experimental controls, overlap/leakage, reproducibility and support for
@@ -208,3 +208,16 @@ needs strengths, limitations and primary-source links and must not imply an
 independent replication. Record numerical corrections explicitly: BioMatrix's
 existing-dataset lower bound is 176.7B from 25.6B general text, 77.4B protein
 data and 73.7B molecular data, replacing the incomplete 25.6B-only bound.
+
+The user clarified that narrow evidence-strength ratings do not answer the
+quality question. Assess the whole paper in its publication context, including
+contribution/originality, technical soundness, evaluation, reproducibility and
+clarity. Use an explained qualitative judgment rather than an invented numeric
+score; keep earlier evidence assessments in the registry as historical records.
+Name the publication repositories beneath online-paper amounts, distinguishing
+direct acquisition from paper text imported through datasets. Add an overview
+column for other modalities, with detailed sequence, structure and image counts
+where supported. Modality describes the same data as acquisition route: never
+add these amounts again. Distinguish pure sequence tokens from domain buckets
+that include annotations, and distinguish counted CPT inputs from later encoder
+or instruction-tuning inputs.

@@ -12,9 +12,10 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from render_foundation_catalog import TOKEN_FIELDS, render, token_amount, validate_token_budgets
 
 
-def entry():
+def entry(name='biomedlm'):
     data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
-    return copy.deepcopy(next(e for e in data['models'] if e['id'] == 'biomedlm'))
+    return copy.deepcopy(next(e for group in ('models', 'training_studies', 'method_references', 'corpora')
+                              for e in data[group] if e['id'] == name))
 
 
 class TokenAccountingChecks(unittest.TestCase):
@@ -26,7 +27,7 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             self.assertEqual(render(data, directory), 1)
             table = (directory / 'README.md').read_text()
-            self.assertIn('Online-paper tokens | Web-URL tokens | Existing-dataset tokens', table)
+            self.assertIn('Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens', table)
             self.assertNotIn('| Data summary |', table)
             self.assertIn('34.6B', table)
             self.assertEqual(table.count('[BioMedLM]('), 1)
@@ -112,7 +113,7 @@ class TokenAccountingChecks(unittest.TestCase):
         self.assertEqual(counts['web_urls']['status'], 'not_reported')
         validate_token_budgets(model)
 
-    def test_paper_assessment_requires_evidence_and_limitations(self):
+    def test_overall_paper_assessment_requires_all_five_dimensions_and_sources(self):
         model = entry()
         single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
         self.assertTrue(model['author_institutions']['authors'])
@@ -121,12 +122,87 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(single, directory)
             page = (directory / 'papers/biomedlm.md').read_text()
-            self.assertIn('## Evidence assessment', page)
+            self.assertIn('## Overall paper assessment', page)
+            self.assertIn('**Contribution and originality:**', page)
+            self.assertIn('**Technical soundness:**', page)
+            self.assertIn('**Evaluation:**', page)
+            self.assertIn('**Reproducibility:**', page)
+            self.assertIn('**Clarity and limitations:**', page)
+            self.assertNotIn('## Evidence assessment', page)
             self.assertIn('## Authors and institutions', page)
             self.assertIn('## Existing-dataset sources', page)
-            model['evidence_assessment']['limitations'] = []
+            original = copy.deepcopy(model['paper_quality'])
+            model['paper_quality']['sources'] = []
             with self.assertRaises(ValueError):
                 render(single, directory)
+            model['paper_quality'] = copy.deepcopy(original)
+            del model['paper_quality']['dimensions']['contribution']
+            with self.assertRaises(ValueError):
+                render(single, directory)
+            model['paper_quality'] = copy.deepcopy(original)
+            model['paper_quality']['overall'] = 'prestigious institution'
+            with self.assertRaises(ValueError):
+                render(single, directory)
+
+    def test_paper_origins_distinguish_direct_downloads_from_imported_corpora(self):
+        direct, reused = entry('biobert'), entry('biomedlm')
+        single = dict(models=[direct, reused], training_studies=[], method_references=[], corpora=[])
+        original_budgets = [copy.deepcopy(e['token_budgets']) for e in single['models']]
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(single, directory)
+            overview = (directory / 'README.md').read_text()
+            self.assertIn('PubMed abstracts; PMC full text', overview)
+            self.assertIn('0<br>[via The Pile PubMed components (reused)]', overview)
+            with (directory / 'catalog.csv').open(newline='') as handle:
+                rows = list(csv.DictReader(handle))
+            imported = next(row for row in rows if row['id'] == 'biomedlm')
+            self.assertEqual(imported['direct_paper_sources'], '')
+            self.assertEqual(imported['reused_paper_sources'], 'The Pile PubMed components')
+            self.assertEqual(imported['online_papers_tokens'], '0')
+            self.assertEqual(imported['existing_datasets_tokens'], '34600000000')
+        self.assertEqual([e['token_budgets'] for e in single['models']], original_budgets)
+
+    def test_modalities_keep_domain_buckets_and_later_encoder_inputs_distinct(self):
+        matrix, nature, later = entry('biomatrix'), entry('naturelm'), entry('biomedgpt')
+        single = dict(models=[matrix, nature, later], training_studies=[], method_references=[], corpora=[])
+        original_budgets = [copy.deepcopy(e['token_budgets']) for e in single['models']]
+        self.assertTrue(any(i['tokens'] == 36_000_000_000 and i['measurement'] == 'modality'
+                            for i in matrix['modality_profile']['items']))
+        self.assertTrue(any(i['tokens'] == 65_200_000_000 and i['measurement'] == 'domain_bucket'
+                            for i in nature['modality_profile']['items']))
+        self.assertTrue(all(i['measurement'] == 'presence' and i['tokens'] is None
+                            for i in later['modality_profile']['items']))
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(single, directory)
+            overview = (directory / 'README.md').read_text()
+            self.assertIn('| Other modalities | Overall paper assessment |', overview)
+            self.assertIn('None in literature CPT; later biological encoders', overview)
+            self.assertIn('already included in the acquisition columns', overview)
+            with (directory / 'catalog.csv').open(newline='') as handle:
+                rows = list(csv.DictReader(handle))
+            matrix_row = next(row for row in rows if row['id'] == 'biomatrix')
+            self.assertEqual(matrix_row['total_tokens'], '304400000000')
+            self.assertEqual(matrix_row['existing_datasets_tokens'], '176700000000')
+        self.assertEqual([e['token_budgets'] for e in single['models']], original_budgets)
+
+    def test_modalities_require_provenance_and_cannot_infer_tokens_from_presence(self):
+        for mutation in ('sources', 'items', 'amount', 'presence'):
+            model = entry('biomatrix')
+            profile = model['modality_profile']
+            if mutation == 'sources':
+                profile['sources'] = []
+            elif mutation == 'items':
+                del profile['items']
+            elif mutation == 'amount':
+                profile['items'][0]['tokens'] = -1
+            else:
+                profile['items'][0]['measurement'] = 'presence'
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as temporary:
+                single = dict(models=[model], training_studies=[], method_references=[], corpora=[])
+                with self.assertRaises(ValueError):
+                    render(single, Path(temporary))
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

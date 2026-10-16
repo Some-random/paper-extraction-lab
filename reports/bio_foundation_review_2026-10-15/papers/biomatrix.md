@@ -20,22 +20,49 @@ The headline contains scientific sequences and structures as well as prose. It i
 
 [Paper attribution](https://arxiv.org/html/2606.22138v1). Names and affiliations follow the reviewed paper version.
 
-## Evidence assessment
+<a id="evidence-assessment"></a>
 
-**Our assessment: Limited.** Overlap unresolved; task-group SFT. This judges the evidence for the training/data claims, not institutional reputation or model size. It is a source-based review, not an independent replication.
+## Overall paper assessment
 
-**Strengths**
+**Overall: Mixed.** A substantial and interesting systems paper that unifies sequence, structure and language representations. It is less convincing as proof of general biological capability: overlap is unresolved and the headline task coverage combines specialized fine-tuned variants. This is our provisional technical judgment of the whole paper in its publication context, not an official review score or an independent replication.
 
-- Broad evaluation across 80 tasks covers sequences, structures, language and interactions.
-- The paper provides a detailed data recipe and explicitly discusses failure modes and task-group tuning.
+**Contribution and originality:** Integrating molecule/protein sequences and geometric tokenizers into one decoder is a substantial engineering contribution.
 
-**Limitations**
+**Technical soundness:** Tokenization and training are detailed, but disjoint geometric spaces cannot directly represent molecule–pocket relative poses.
 
-- Section 11 explicitly states that no dedicated entity-level filtering separates CPT from SFT/evaluation; scores do not establish contamination-free generalization.
-- Headline results use task-group-specific SFT variants; they should not be read as one unchanged final model succeeding across all tasks.
-- The total mixes modalities, generated dataset descriptions and general replay; exact source-route and biological-only fractions are incompletely reported.
+**Evaluation:** The 80-task suite is broad; missing entity-level decontamination and task-group SFT constrain the interpretation of headline superiority.
 
-Evidence: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.22138v1)
+**Reproducibility:** Corpus categories and recipes are useful, but exact acquisition shares and contamination-controlled reruns are not supplied.
+
+**Clarity and limitations:** Extensive method and limitation sections help; broad single-model framing is stronger than what the task-group results establish.
+
+Sources: [Reviewed paper: methods/results/limitations](https://arxiv.org/html/2606.22138v1)
+
+## Paper-text origins
+
+**Direct paper sources:** PubMed; bioRxiv.
+
+**Paper text via reused datasets:** S2ORC; USPTO-Applications.
+
+Direct PubMed text and PubMed/bioRxiv abstracts are combined with reused S2ORC and patent records. Source-specific token shares are not disclosed; PMC availability or a PDF extraction method is not inferred. [Source](https://arxiv.org/html/2606.22138v1)
+
+## Other modalities
+
+These modalities occur in the counted CPT corpus. Figure 3 separates 1D, 3D and other representations. The token counts are another view of the same corpus, not additional acquisition-route tokens. The protein/molecule domain totals include more than pure sequences.
+
+| Representation / domain | Reported tokens | Count definition |
+|---|---:|---|
+| Protein 1D sequences | 36B | Figure 3 protein 1D bucket. |
+| Molecule 1D sequences | 32.1B | SMILES/SELFIES representation bucket in Figure 3. |
+| Cross-entity 1D representations | 17.1B | Figure 3 cross-entity 1D bucket; not exclusively protein sequence tokens. |
+| Protein 3D structures | 38.5B | Figure 3 protein structure-token bucket. |
+| Molecule 3D structures | 17.6B | Figure 3 molecule structure-token bucket. |
+| Cross-entity 3D representations | 11.4B | Figure 3 cross-entity 3D bucket. |
+| Other protein representations | 2.9B | Other protein-domain content; not assumed to be sequence tokens. |
+| Other molecule representations | 24B | Other molecule-domain content, including descriptions; not assumed to be sequence tokens. |
+| Other cross-entity representations | 19.5B | Other cross-entity content; not assumed to be pure sequence or structure tokens. |
+
+Sources: [Figure 3 / §3.1](https://arxiv.org/pdf/2606.22138v1#page=12)
 
 ## Existing-dataset sources
 
