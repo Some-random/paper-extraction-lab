@@ -34,11 +34,19 @@ For papers, replace opaque citation markers such as `[12]` with the **cited titl
 
 **4. Deduplicate across all three acquisition routes.**
 
-First match document identities, such as DOI and source IDs. Then compare exact content hashes and near-duplicate text to find mirrors, repeated crawls and papers imported through another dataset. Keep the most complete reliable copy, while preserving its alternative source locations.
+Run one duplicate index across papers, web pages and imported datasets. Comparing each source only with itself would miss a paper that also appears in a reused corpus.
 
-Use modality-specific identities for biological records. Similar proteins are not automatically duplicates, and a shared methods paragraph does not make two whole papers identical. Preserve meaningful sequence variants and publication-version differences.
+- **Find identity matches:** normalize DOI, PMID and PMCID fields and group matching records. IDs identify candidate copies; compare their content and versions before discarding anything.
+- **Find exact text copies:** create a comparison copy with standardized whitespace and line endings, preserving numbers, units, case and biological symbols. Compute its SHA-256 hash. Equal hashes identify equal comparison text even when filenames or URLs differ; preserve the original files.
+- **Find near-copies:** split text into overlapping five-token windows. Use MinHash and locality-sensitive hashing to find candidate pairs without comparing every document with every other document. Then check the actual overlap: Jaccard similarity is shared windows divided by all distinct windows. Also check containment, which detects when a shorter record is mostly contained in a longer one.
+- **Separate whole-document from passage duplication:** a mirrored article may be redundant as a whole; a repeated methods paragraph does not make two papers duplicates. Paragraph hashes and repeated-substring detection identify the shared spans. Any removal policy must preserve enough context to read the remaining document.
+- **Choose a representative and retain provenance:** for verified copies of the same version, keep the extraction with the best completeness and fidelity. Record all source locations, overlap measurements and the keep/remove decision. Retain revisions with changed results as linked versions.
 
-**References:** [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) for document- and paragraph-level deduplication. Cross-source identity matching and preservation of biological variants adapt these techniques to this corpus.
+For example, a publisher PDF, its PMC XML and a compatible copy imported through peS2o can become one training text with three recorded origins. A newer revision with changed measurements remains distinct. For proteins and molecules, use accession/version and representation-specific checks; an identical sequence with different useful annotations is not automatically redundant.
+
+Set overlap thresholds using reviewed duplicate and non-duplicate examples, including revised papers and shared protocols. Test aggressive versus conservative deduplication in stage 6 rather than treating one similarity threshold as universally correct.
+
+**References:** [Dolma](https://arxiv.org/html/2402.00159v1#S3.SS1) for document/paragraph deduplication; [DCLM, Appendix K](https://arxiv.org/html/2406.11794v3) for comparisons of MinHash, suffix arrays and Bloom-filter approaches; [OLMo 3](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS1) for a concrete exact-hash, MinHash/Jaccard and repeated-substring pipeline. The identity checks, containment checks and version-preservation policy adapt these techniques to this corpus.
 
 **5. Build a scorer whose labels have a clear meaning.**
 
@@ -46,28 +54,29 @@ Separate **biology relevance** from **information value**. Relevance asks whethe
 
 Start with a representative sample from all three sources. A capable LLM can label it through prompting, without new training. Use those labels to train a cheaper scorer, checking its predictions on a held-out set of teacher-labeled examples. Compare it with direct LLM scoring before choosing the large-scale approach.
 
-A small human audit can check whether the labels mean what we intended, especially for technical methods, captions and borderline topics. This is an additional check we can use for biology, not a requirement of the FineWeb-Edu recipe. Store a short supporting passage or source offset so reviewers can inspect a decision. **That evidence is an audit trail, not an extra score.** Whether the filter actually improves learning is tested in stage 6.
+A new manually labeled training corpus is not required to produce these scores. That does not establish that human review is unnecessary. For this biological corpus, use targeted expert checks of extracted numbers, duplicate decisions and scorer labels, especially methods, captions and borderline topics, before fixing the processing rules. This is our proposed validation step, not a claim about what FineWeb-Edu required. Store a short supporting passage or source offset so reviewers can inspect a decision. **That evidence is an audit trail, not an extra score.** Whether the filter actually improves learning is tested in stage 6.
 
-**References:** [FineWeb-Edu, §4](https://arxiv.org/html/2406.17557v1#S4) used Llama-3-70B-Instruct to label 460,000 examples, with 410,000 for scorer training and 50,000 for validation; both sets used model-generated labels. [DCLM, §4.4 and Appendix M](https://arxiv.org/html/2406.11794v3) trained filters using labels derived from selected reference corpora versus web samples. It separately collected three human judgments per document for 499 documents from 16 annotators. That study found that agreement with human judgments did not reliably predict downstream training performance.
+**References:** [FineWeb-Edu, §4](https://arxiv.org/html/2406.17557v1#S4) used model-generated labels for both scorer training and validation; validation therefore measured agreement with its teacher. [DCLM, §4.4 and Appendix M](https://arxiv.org/html/2406.11794v3) used reference-corpus versus web-sample labels for its main classifiers and separately studied human judgments on 499 documents. Human agreement did not reliably predict training gains; this does not establish that human checks of biological correctness or extraction fidelity are dispensable.
 
 **6. Test the recipe, choose the mixture and produce the final corpus.**
 
-Keep records tagged by **source** (papers, web or imported datasets), **topic** (for example, genomics or cell biology) and **modality** (text, protein sequence or structure). This lets us change how much of each kind the model sees and identify where a gain comes from.
+The research precedent is a systematic search over data recipes, with smaller experiments used to select candidates for larger validation runs:
 
-Run experiments in stages: compare candidate sources; compare filtering choices while holding the mixture fixed; then compare mixing ratios with the selected filters. Keep the starting checkpoint, tokenizer, optimizer settings and total training-token budget the same within each comparison. Test the combined recipe after selecting the individual components.
+| Study | What its experiments actually did |
+|---|---|
+| **DCLM** | Reported 416 baseline experiments across data-processing choices and compute scales. A fixed recipe at each scale made dataset comparisons meaningful; one scale used a 1.4B-parameter model and 28.8B training tokens. |
+| **OpenThoughts3** | Ran over 1,000 controlled experiments. Its main comparisons generated 31,600 examples per configuration and fine-tuned the same starting model. It ranked sources, tested mixtures of the top 1, 2, 4, 8 and 16 sources, and compared filtering, deduplication, answer sampling and teachers. |
+| **OLMo 3** | Sampled many mixture weights and trained 30M-parameter proxy models for 3B tokens each. It fitted models predicting task performance from mixture weights, then searched for good weights subject to available-data and repetition constraints. |
 
-**Example: a text-CPT mixing experiment.** These are illustrative budgets, not measured corpus sizes or a selected training budget. Existing-dataset text could come from a biological subset of peS2o; sequence records would be tested as a separate modality component.
+For this corpus, apply that experimental structure as follows:
 
-| Trial | Paper text | Web text | Existing-dataset text | General-text replay | Total |
-|---|---:|---:|---:|---:|---:|
-| A: paper-heavy baseline | 600M | 100M | 100M | 200M | 1B |
-| B: more web text | 400M | 300M | 100M | 200M | 1B |
-| C: more imported text | 400M | 100M | 300M | 200M | 1B |
+- **Define meaningful source pools.** Keep PMC papers, other paper collections, individual web collections and reused datasets distinguishable. Subdivide by biological topic, modality and quality tier where useful. The three acquisition routes remain the reporting categories; they are too coarse to be the only units of mixture optimization.
+- **Screen sources and processing recipes.** Compare individual source contributions, source subsets, filtering methods and deduplication settings in matched smaller runs. Include an unchanged baseline and compare whole pipelines as well as individual components, because a filter's effect can depend on the source and deduplication policy.
+- **Search mixture weights.** Use the source-screening results to select candidate combinations, then test multiple allocations across their source/topic/quality pools. Include source-removal tests to measure marginal contribution. For a larger search, use OLMo-style proxy runs and a fitted predictor to propose weights, then verify those proposals in actual training runs. Cap repeated sampling and retain explicit general-text replay weights.
+- **Confirm on the intended checkpoint.** Re-run the strongest recipes with the target CPT model and budget, check more than one seed, and report per-task results and uncertainty. Include biological development tasks, general-capability checks and held-out language-modeling loss. Keep final test data and their near-duplicates out of both recipe selection and training.
 
-Trial B asks whether replacing 200M paper tokens with web tokens helps; C asks the same about imported text. Evaluate all three on the same biological development tasks, and check whether general capabilities deteriorate. Repeat promising comparisons across seeds, then choose the mixture with the best supported tradeoff. Keep a separate final test set untouched during selection.
-
-Use the same logic for filtering: for example, compare retaining all eligible biological text with retaining the top 80% or top 50% by a candidate score, while holding the source mixture and training budget fixed. Record any repeated sampling so a smaller retained pool is not mistaken for more unique data.
+Hold the model, tokenizer, optimizer settings and training budget fixed within each matched comparison. Track the actual sampled tokens, repeated exposure and retained corpus size so a gain cannot be explained simply by one run seeing more data. Smaller runs screen the search; target-checkpoint confirmation determines the final choice.
 
 At the end of this stage, fix the recipe and package the corpus. Report retained tokens and training exposure separately for **online papers, web URLs and existing datasets**, plus modality breakdowns over the same records. Keep general-text replay separate. These counts accompany the finalized corpus.
 
-**References:** [OLMo 3](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4) for source/topic mixing, quality-aware sampling and token budgets; [OpenThoughts3](https://arxiv.org/html/2506.04178v2#S4) for its staged experiments over source selection, mixing, filtering, deduplication, answer sampling and teacher selection. We take its approach of testing components, selecting useful choices and evaluating their combined recipe.
+**References:** [DCLM, §§3–4](https://arxiv.org/html/2406.11794v3) for controlled comparisons across scales; [OpenThoughts3, §4](https://arxiv.org/html/2506.04178v2#S4) for staged configuration searches; [OLMo 3, §3.4.4](https://arxiv.org/html/2512.13961v2#S3.SS4.SSS4) for proxy-model mixture optimization. The corpus-specific search above combines these techniques; it is not a reproduction of any one paper's full experiment schedule.

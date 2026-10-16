@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T21:28:21.536954-08:00",
+  "checked_at_pst": "2026-10-15T21:40:40.973882-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -409,7 +409,7 @@
     "format": "Prose walkthrough with six stages and concrete examples",
     "inline_figures": false,
     "named_references_beside_relevant_steps": true,
-    "source_links": 15,
+    "source_links": 18,
     "metadata_distinguished_from_model_visible_tags": true,
     "explicit_cleaning_and_cross_source_deduplication": true,
     "non_text_validation_separate_from_prose_scoring": true,
@@ -446,17 +446,17 @@
       },
       {
         "paper": "OLMo 3",
-        "borrowed": "Separate topic/quality selection, controlled source mixing, and explicit sampled token budgets.",
+        "borrowed": "Exact-hash, MinHash/Jaccard and repeated-substring deduplication; proxy-model mixture optimization with explicit sampled token budgets.",
         "adaptation": "Compare choices using the selected biological CPT checkpoint and development tasks."
       },
       {
         "paper": "OpenThoughts3",
-        "borrowed": "Staged experiments across source selection, mixing, filtering, deduplication, answer sampling and teacher choice.",
+        "borrowed": "More than 1000 experiments; 31600 examples per main configuration; ranked top-N source mixing and staged component comparisons.",
         "adaptation": "Compare components and then their combined recipe on our biological development tasks."
       },
       {
         "paper": "DCLM",
-        "borrowed": "Controlled downstream comparisons; distinguish main proxy-label training from the separate 499-document human-annotation study."
+        "borrowed": "416 baseline experiments across recipes and scales; alternative deduplication pipelines; separate human-judgment study."
       }
     ],
     "bold_reference_labels": true,
@@ -466,10 +466,36 @@
       "UniProtKB P69905 record"
     ],
     "teacher_labels_and_held_out_scorer_validation": true,
-    "human_audit_is_optional": true,
     "human_annotation_sources_clarified": true,
     "openthoughts3_staged_experiments_attributed": true,
-    "illustrative_mixture_budgets_checked": true,
-    "accounting_in_final_mixing_stage": true
+    "accounting_in_final_mixing_stage": true,
+    "deduplication_operations_explained": true,
+    "proxy_model_mixture_search_explained": true,
+    "reported_research_experiments_replace_toy_mixture": true,
+    "human_labeling_distinguished_from_human_validation": true,
+    "targeted_expert_checks_recommended": true,
+    "reference_experiment_specs": {
+      "dclm": {
+        "reported_baseline_experiments": 416,
+        "example_model_parameters": 1400000000,
+        "example_training_tokens": 28800000000
+      },
+      "openthoughts3": {
+        "examples_per_main_configuration": 31600,
+        "top_n_source_sweep": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "reported_experiments": ">1000"
+      },
+      "olmo3": {
+        "proxy_model_parameters": 30000000,
+        "proxy_training_tokens": 3000000000,
+        "method": "Sample mixture weights, fit task-performance predictors, optimize under data/repetition constraints"
+      }
+    }
   }
 }

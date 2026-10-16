@@ -290,3 +290,12 @@ concrete, with explicitly illustrative budgets, fixed controls and decisions.
 Finish the pipeline at stage 6; fold packaging and token accounting into that
 stage instead of keeping a separate stage 7. Explain mixing in the chat as well
 as updating the page. These are documentation changes, not training permission.
+
+The user rejected the three-run A/B/C mixture example as an inadequate account
+of actual practice. Replace it with the documented DCLM/OpenThoughts3 experiment
+designs and OLMo 3 proxy-model mixture search. Explain concrete deduplication
+operations: comparison normalization, exact hashes, MinHash/LSH candidates,
+verified overlap and containment, span versus document decisions, and version
+preservation. Distinguish the absence of a required new manually labeled scorer
+training set from the unsupported claim that human review is unnecessary.
+Targeted expert checks are our proposed biological-corpus validation step.
