@@ -1,36 +1,61 @@
-# From papers and web pages to biological training data
+# Paper, web and dataset processing
 
-[Biological pretraining review](README.md)
+[Model and dataset comparison](README.md)
 
-The common pattern is **acquire → extract → select → deduplicate → tokenize**.
-Paper and web sources need different extractors, then the same downstream
-processing and accounting. There is no single universally agreed extractor,
-filter threshold or mixture. FineWeb and Dolma describe concrete versions of
-this pattern with different choices. [FineWeb](https://arxiv.org/html/2406.17557v1),
-[Dolma](https://arxiv.org/html/2402.00159v1)
+## Processing diagram
 
-This document specifies the proposed project pipeline, building on the paper
-extraction already implemented. Native paper acquisition has resumed in the
-separate bounded 500-paper batch. The web adapters, calibrated filters and
-cross-source deduplication below remain proposed work.
+**Next implementation:** unify the source records, build the HTML and dataset
+adapters, then calibrate selection and deduplicate before reporting final token
+totals. The diagram shows the actions and the papers behind them; the numbered
+references are immediately below it.
 
 ```mermaid
 flowchart TD
-    A[Paper sources] --> B{Source format}
-    B -->|Publisher XML or structured text| C[Parse sections and source assets]
-    B -->|PDF| D[olmOCR 2 and separate asset extraction]
-    E[Web URLs or archived HTML] --> F[Extract main content from HTML]
-    G[Existing datasets] --> H[Import text and original provenance]
-    C --> I[Common document records]
-    D --> I
-    F --> I
-    H --> I
-    I --> J[Select biological research content and check extraction quality]
-    J --> K[Deduplicate across all acquisition routes]
-    K --> L[Tokenize with the training model tokenizer]
-    L --> M[Retained biological tokens by source route]
-    M --> N[Separate training schedule and exposure count]
+    P["Online papers<br/>Keep XML/PDF and source IDs"]
+    W["Web URLs / archives<br/>Keep raw HTML and URLs"]
+    D["Existing datasets<br/>Keep versions and record IDs"]
+
+    P --> TEXT["Extract ordered sections and equations<br/>Native XML or olmOCR 2 [1]<br/>WORKING"]
+    P --> ASSETS["Keep figures, tables, captions,<br/>referring text and citations [2,3]<br/>Native route WORKING; PDF links need checks"]
+    W --> HTML["Build main-content and DOM extraction [4]<br/>Retain text, source tables and media<br/>TO BUILD"]
+    D --> IMPORT["Build typed dataset imports [5,6]<br/>Retain text, sequences and images<br/>TO BUILD"]
+
+    TEXT --> RECORDS
+    ASSETS --> RECORDS
+    HTML --> RECORDS
+    IMPORT --> RECORDS
+    RECORDS["Unify records and provenance<br/>Keep raw and normalized outputs<br/>NEXT"]
+    RECORDS --> QUALITY["Calibrate biological selection [7]<br/>Check extraction against originals<br/>TO BUILD"]
+    QUALITY --> DEDUP["Deduplicate across all three sources [8]<br/>Match IDs, versions, hashes and similar prose<br/>TO BUILD"]
+    DEDUP --> COUNT["Fix tokenizer and count retained tokens [8,9]<br/>Paper / web / dataset totals plus modalities<br/>FINAL ACCOUNTING PENDING"]
+
+    classDef source fill:#eef4fb,stroke:#688aaa,color:#17324d
+    classDef working fill:#e7f3e8,stroke:#43884a,color:#173b1d
+    classDef pending fill:#fff3df,stroke:#b97818,color:#533409
+    class P,W,D source
+    class TEXT,ASSETS working
+    class HTML,IMPORT,RECORDS,QUALITY,DEDUP,COUNT pending
 ```
+
+Green marks the implemented paper route; amber marks work still to complete.
+olmOCR page inference has run in earlier bounded experiments. The HTML adapter,
+shared import layer, calibrated filters and cross-source deduplication remain
+planned. The native paper collection has its own bounded 500-paper run.
+
+| Ref. | Relevant paper / source | What it contributes to this step |
+|---|---|---|
+| 1 | [olmOCR 2](https://arxiv.org/abs/2510.19817) | PDF reading order, equations and tables; verify extraction against the source. |
+| 2 | [Beyond Captions / PMC-InterCPT](https://arxiv.org/html/2606.01049v2) | Attach article-native captions and referring context to original figures. |
+| 3 | [Ryze](https://arxiv.org/html/2606.00902v1) | Preserve visual evidence, extracted structure and surrounding text together. |
+| 4 | [FineWeb](https://arxiv.org/html/2406.17557v1) | Extract and filter useful text from web pages. |
+| 5 | [S2ORC](https://aclanthology.org/2020.acl-main.447/) | Keep structured article metadata, citation links and document identity. |
+| 6 | [peS2o documentation](https://github.com/allenai/pes2o) | Import a versioned text corpus while retaining upstream provenance; its cleaned text does not restore source figures. |
+| 7 | [Biomed-Enriched](https://arxiv.org/html/2506.20331v1) | Paragraph-level relevance and quality labels; calibrate our labels for biological research. |
+| 8 | [Dolma](https://arxiv.org/html/2402.00159v1) | Shared processing records, filtering, deduplication and corpus accounting. |
+| 9 | [OLMo 3](https://arxiv.org/html/2512.13961v2) | Explicit PDF/web source accounting when constructing a training corpus. |
+
+The references inform the design; implementation status refers to this
+repository. The detailed record fields and processing rules follow below.
 
 ## 1. Acquire the source and retain its identity
 

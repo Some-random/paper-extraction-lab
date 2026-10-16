@@ -1,27 +1,10 @@
 # Biological continued pretraining: data sources and token budgets
 
-## What we need to do
-
-Build a source-linked biological research corpus from online papers, web URLs and existing datasets, retaining text, original evidence assets and biological sequences.
-
-**Next implementation:** Unify the document records, add the web and dataset import adapters, then calibrate filtering and deduplicate across all three sources before reporting final token totals.
-
-| Step | What we need to do | Relevant papers / sources | Current state |
-|---|---|---|---|
-| Paper text | Parse publisher XML/JATS when available; use olmOCR 2 for PDF text. Keep originals, raw extraction, section order, equations and page/element provenance. | [olmOCR 2](https://arxiv.org/abs/2510.19817) | Working: native parsing and earlier bounded olmOCR runs. |
-| Figures, tables and citations | Retain original images, captions, source table cells and referring paragraphs; attach cited titles/authors. Check extracted values and context against the source. | [Beyond Captions](https://arxiv.org/html/2606.01049v2) · [Ryze](https://arxiv.org/html/2606.00902v1) | Native extraction implemented; biological interpretation still needs validation. |
-| Web URLs | Build an HTML adapter that removes navigation and boilerplate while preserving useful text, tables, media and original URLs. Keep the raw HTML. | [FineWeb](https://arxiv.org/html/2406.17557v1) | To build; the existing web-dataset probe is only an access check. |
-| Existing datasets | Import versioned corpora and biological databases with upstream record IDs. Map text, sequence and image records to a shared schema without discarding their original provenance. | [S2ORC](https://aclanthology.org/2020.acl-main.447/) · [peS2o documentation](https://github.com/allenai/pes2o) | To build: common import adapters and shared records across sources. |
-| Biological selection and extraction quality | Label research biology, clinical-only material, other science and general text separately. Calibrate relevance and extraction-quality filters on reviewed biological examples. | [Biomed-Enriched](https://arxiv.org/html/2506.20331v1) | To calibrate; use biology-specific labels and thresholds. |
-| Deduplication and token totals | Match document IDs/versions, then exact and near-duplicate prose across all sources. Count retained biology with a fixed tokenizer by acquisition route and modality; track rejected and duplicate material. | [Dolma](https://arxiv.org/html/2402.00159v1) · [OLMo 3](https://arxiv.org/html/2512.13961v2) | Native counts exist; cross-source deduplication and final accounting remain to build. |
-
-The cited papers inform these methods; the status column describes this repository.
-
-The [detailed specification](data_pipeline.md) gives the record fields and processing rules. [Supporting literature](background.md) retains the wider method and corpus references.
-
 The comparison below focuses on **continued pretraining (CPT)**: starting with a pretrained model and training it further on domain data. Data-curation studies and released models appear together because both inform this choice.
 
 Counts follow each paper’s reported budget and may include general text, other sciences and biological sequences. The **Source** column links to the paper and detailed notes.
+
+[Processing diagram and implementation plan](data_pipeline.md#processing-diagram).
 
 ## Continued pretraining
 

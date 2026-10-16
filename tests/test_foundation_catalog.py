@@ -317,31 +317,30 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertEqual(unknown_row['online_papers_status'], 'not_reported')
             self.assertEqual(unknown_row['online_papers_tokens'], '')
 
-    def test_extraction_actions_and_primary_references_are_before_the_model_tables(self):
+    def test_processing_actions_and_papers_belong_with_the_diagram(self):
         data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
-        plan = data['extraction_plan']
-        self.assertEqual({step['id'] for step in plan['steps']},
-                         {'paper_text', 'evidence_assets', 'web', 'dataset_import',
-                          'selection', 'deduplication_and_counts'})
+        self.assertNotIn('extraction_plan', data)
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             render(data, directory)
             overview = (directory / 'README.md').read_text()
-            self.assertLess(overview.index('## What we need to do'),
-                            overview.index('## Continued pretraining'))
-            plan_text = overview.split('## Continued pretraining')[0]
-            self.assertIn('Next implementation:', plan_text)
-            self.assertIn('What we need to do | Relevant papers / sources | Current state', plan_text)
-            for name in ('olmOCR 2', 'Beyond Captions', 'Ryze', 'FineWeb', 'S2ORC',
-                         'peS2o documentation', 'Biomed-Enriched', 'Dolma', 'OLMo 3'):
-                self.assertIn('[' + name + '](', plan_text)
-            self.assertIn('To build', plan_text)
-            self.assertIn('Working: native parsing', plan_text)
-            self.assertNotIn('## Data preparation', overview)
-            # Work instructions without supporting sources must not be published.
-            plan['steps'][0]['sources'] = []
-            with self.assertRaisesRegex(ValueError, 'Extraction step'):
-                render(data, directory)
+            self.assertNotIn('## What we need to do', overview)
+            self.assertNotIn('Next implementation:', overview)
+            self.assertNotIn('Build main-content', overview)
+            self.assertEqual(overview.count('(data_pipeline.md#processing-diagram)'), 1)
+        pipeline = (ROOT / 'reports/bio_foundation_review_2026-10-15/data_pipeline.md').read_text()
+        self.assertLess(pipeline.index('## Processing diagram'), pipeline.index('## 1. Acquire'))
+        diagram = re.search(r'```mermaid\n(.*?)\n```', pipeline, re.S).group(1)
+        for action in ('Extract ordered sections', 'Keep figures, tables', 'Build main-content',
+                       'Build typed dataset imports', 'Unify records', 'Calibrate biological selection',
+                       'Deduplicate across all three sources', 'count retained tokens'):
+            self.assertIn(action, diagram)
+        for status in ('WORKING', 'TO BUILD', 'FINAL ACCOUNTING PENDING'):
+            self.assertIn(status, diagram)
+        references = pipeline.split('```', 2)[2].split('## 1. Acquire')[0]
+        for name in ('olmOCR 2', 'Beyond Captions / PMC-InterCPT', 'Ryze', 'FineWeb', 'S2ORC',
+                     'peS2o documentation', 'Biomed-Enriched', 'Dolma', 'OLMo 3'):
+            self.assertIn('[' + name + '](', references)
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

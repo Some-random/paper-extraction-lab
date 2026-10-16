@@ -220,31 +220,6 @@ def cell(value):
     return value.replace('|', '\\|').replace('\n', '<br>')
 
 
-def extraction_plan(plan):
-    """Put the proposed work and its primary references before the comparison."""
-    if not plan:
-        return []
-    if not all(plan.get(key) for key in ('objective', 'next_action', 'steps', 'scope_note')):
-        raise ValueError('Incomplete extraction plan')
-    ids = set()
-    rows = []
-    for step in plan['steps']:
-        if (not all(step.get(key) for key in ('id', 'step', 'action', 'status', 'sources'))
-                or step['id'] in ids
-                or any(not source.get('label') or not source.get('url', '').startswith('https://')
-                       for source in step.get('sources', []))):
-            raise ValueError('Extraction step requires a unique ID, action, status and sources')
-        ids.add(step['id'])
-        refs = ' · '.join(f"[{cell(source['label'])}]({source['url']})" for source in step['sources'])
-        rows.append('| ' + ' | '.join([cell(step['step']), cell(step['action']), refs, cell(step['status'])]) + ' |')
-    table = '\n'.join(['| Step | What we need to do | Relevant papers / sources | Current state |',
-                       '|---|---|---|---|', *rows])
-    return ['## What we need to do', plan['objective'], '**Next implementation:** ' + plan['next_action'],
-            table, plan['scope_note'],
-            'The [detailed specification](data_pipeline.md) gives the record fields and processing rules. '
-            '[Supporting literature](background.md) retains the wider method and corpus references.']
-
-
 def render(data, directory=REPORT):
     all_entries = [(kind, e) for kind in GROUPS for e in data.get(kind, [])]
     ids = [e['id'] for _, e in all_entries]
@@ -433,12 +408,12 @@ def render(data, directory=REPORT):
 
     intro = [
         '# Biological continued pretraining: data sources and token budgets',
-        *extraction_plan(data.get('extraction_plan')),
         'The comparison below focuses on **continued pretraining (CPT)**: '
         'starting with a pretrained model and training it further on domain data. '
         'Data-curation studies and released models appear together because both inform this choice.',
         'Counts follow each paper’s reported budget and may include general text, other sciences and '
         'biological sequences. The **Source** column links to the paper and detailed notes.',
+        '[Processing diagram and implementation plan](data_pipeline.md#processing-diagram).',
         '## Continued pretraining',
         'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
         overview_table(selected('cpt')),
@@ -505,9 +480,8 @@ def render(data, directory=REPORT):
                    'Keep overview links in the Source column (one Paper link and one Notes link). '
                    'Use a dash for unavailable category amounts and plain language for an unknown total. '
                    'Keep detailed counting definitions on study pages, without dagger markers in the overview. '
-                   'The registry-level `extraction_plan` renders the actions, primary references and '
-                   'implementation status at the top of the shared page. Keep future work separate '
-                   'from executed extraction. '
+                   'Keep the processing diagram, implementation actions and supporting papers in '
+                   '`data_pipeline.md`; the catalog overview links to that page. '
                    'A venue or institution name is not an overall-quality measurement. '
                    'Record numerical allocation corrections explicitly in the token audit.',
                    'The [token audit](token_budget_verification.json) records numerical checks and '
