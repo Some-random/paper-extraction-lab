@@ -31,7 +31,7 @@ class TokenAccountingChecks(unittest.TestCase):
             self.assertIn('Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens', table)
             self.assertNotIn('| Data summary |', table)
             self.assertIn('34.6B', table)
-            self.assertEqual(table.count('[BioMedLM]('), 1)
+            self.assertEqual(table.count('| BioMedLM<br>'), 1)
             detail = (directory / 'papers/biomedlm.md').read_text()
             self.assertIn('34.6B', detail)
             self.assertIn('300B', detail)
@@ -154,7 +154,7 @@ class TokenAccountingChecks(unittest.TestCase):
             render(single, directory)
             overview = (directory / 'README.md').read_text()
             self.assertIn('PubMed abstracts; PMC full text', overview)
-            self.assertIn('0<br>[via The Pile PubMed components (reused)]', overview)
+            self.assertIn('0<br>via The Pile PubMed components (reused)', overview)
             with (directory / 'catalog.csv').open(newline='') as handle:
                 rows = list(csv.DictReader(handle))
             imported = next(row for row in rows if row['id'] == 'biomedlm')
@@ -179,7 +179,7 @@ class TokenAccountingChecks(unittest.TestCase):
             render(single, directory)
             overview = (directory / 'README.md').read_text()
             self.assertIn('| Other modalities / tokens | Overall paper assessment |', overview)
-            self.assertIn('0 in literature CPT; encoders enter later alignment', overview)
+            self.assertIn('Text-only CPT; molecule/protein encoders used later', overview)
             self.assertIn('already included in the acquisition columns', overview)
             self.assertIn('Protein: 77.4B (1D 36B; 3D 38.5B; other 2.9B)', overview)
             self.assertIn('Molecule: 73.7B (1D 32.1B; 3D 17.6B; other 24B)', overview)
@@ -222,7 +222,7 @@ class TokenAccountingChecks(unittest.TestCase):
             for title, section in (('Continued pretraining', 'cpt'),
                                    ('Pretraining from scratch: comparison', 'from_scratch')):
                 part = overview.split('## ' + title + '\n', 1)[1].split('\n## ', 1)[0]
-                actual = re.findall(r'^\| \[[^]]+\]\(papers/([a-z0-9_]+)\.md\)', part, flags=re.M)
+                actual = re.findall(r'^\| .*?\[Notes\]\(papers/([a-z0-9_]+)\.md\) \|$', part, flags=re.M)
                 expected = [e['id'] for e in sorted(
                     (e for e in all_entries if e['presentation']['section'] == section),
                     key=lambda e: (quality_order[e['paper_quality']['overall']], e['name'].casefold()))]
@@ -244,7 +244,7 @@ class TokenAccountingChecks(unittest.TestCase):
             render(single, directory)
             overview = (directory / 'README.md').read_text()
             self.assertIn('105.3B text + 77.4B protein data + 73.7B molecule data + 48B cross-entity data = 304.4B', overview)
-            self.assertIn('127.7B route split NR', overview)
+            self.assertIn('127.7B source split unknown', overview)
             detail = (directory / 'papers/biomatrix.md').read_text()
             self.assertIn('## Full corpus composition', detail)
             model['corpus_composition']['components'][0]['tokens'] += 1
@@ -281,7 +281,41 @@ class TokenAccountingChecks(unittest.TestCase):
             overview = (directory / 'README.md').read_text()
             self.assertIn('Protein records: ≈600M', overview)
             self.assertIn('Molecule records: ≈1B', overview)
-            self.assertIn('pure sequence/SMILES shares NR', overview)
+            self.assertIn('pure sequence/SMILES shares not reported', overview)
+
+    def test_overview_consolidates_links_and_keeps_unknowns_distinct_from_zero(self):
+        data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(data, directory)
+            overview = (directory / 'README.md').read_text()
+            self.assertNotRegex(overview, r'\bNR\b|†|‡')
+            self.assertNotIn('repeated passes', overview)
+            self.assertNotIn('token positions', overview.lower())
+            rows = [line for line in overview.splitlines()
+                    if line.startswith('| ') and '[Notes]' in line]
+            self.assertEqual(len(rows), 16)
+            for row in rows:
+                columns = [c.strip() for c in row.strip('|').split('|')]
+                self.assertEqual(len(columns), 9)
+                self.assertTrue(all('](' not in c for c in columns[:-1]))
+                links = re.findall(r'\[([^]]+)\]\(([^)]+)\)', columns[-1])
+                self.assertEqual([label for label, _ in links], ['Paper', 'Notes'])
+                self.assertEqual(len({url for _, url in links}), 2)
+            unknown = next(row for row in rows if row.startswith('| BioBERT<br>'))
+            self.assertIn('| —<br>PubMed abstracts; PMC full text | — | — | Not reported |', unknown)
+            known_zero = next(row for row in rows if row.startswith('| BioMedLM<br>'))
+            self.assertIn('| 0<br>via The Pile PubMed components (reused) | 0 | 34.6B', known_zero)
+            self.assertIn('Figure images: not reported', overview)
+            # Detailed pages and numeric exports retain all original accounting distinctions.
+            detail = (directory / 'papers/biomedlm.md').read_text()
+            self.assertIn('Training exposure', detail)
+            self.assertIn('300B', detail)
+            with (directory / 'catalog.csv').open(newline='') as handle:
+                exported = list(csv.DictReader(handle))
+            unknown_row = next(row for row in exported if row['id'] == 'biobert')
+            self.assertEqual(unknown_row['online_papers_status'], 'not_reported')
+            self.assertEqual(unknown_row['online_papers_tokens'], '')
 
     def test_non_token_units_and_unsupported_calculations_are_rejected(self):
         bad = entry()

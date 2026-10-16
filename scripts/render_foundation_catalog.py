@@ -105,6 +105,12 @@ def overview_budget(entry):
     return next(b for b in entry['token_budgets'] if b['id'] == selected)
 
 
+def overview_amount(amount, *, total=False):
+    if amount['status'] == 'not_reported':
+        return 'Not reported' if total else '—'
+    return token_amount(amount)
+
+
 def modality_amount(item):
     if item['tokens'] is None:
         return 'NR'
@@ -130,41 +136,43 @@ def modality_group_amount(items):
 
 def modality_overview(entry):
     profile = entry['modality_profile']
-    target = f"papers/{entry['id']}.md#other-modalities"
+    if not profile['items']:
+        return 'Text only'
+    if all(item['measurement'] == 'presence' for item in profile['items']):
+        encoders = '; '.join(item.get('short_label', item['name']).removeprefix('Later ')
+                             for item in profile['items'])
+        return cell('Text-only CPT; ' + encoders + ' used later')
     lines = []
     for group, items in modality_groups(profile):
-        label = f"{group['label']}: {modality_group_amount(items)}"
+        amount = modality_group_amount(items)
+        label = f"{group['label']}: {'not reported' if amount == 'NR' else amount}"
         if group.get('show_parts'):
             parts = '; '.join(f"{item.get('short_label', item['name'])} {modality_amount(item)}"
                               for item in items)
             label += ' (' + parts + ')'
-        lines.append(f'[{cell(label)}]({target})')
-    if not lines:
-        lines.append(f'[0 — text only]({target})')
+        lines.append(cell(label))
     if profile.get('overview_note'):
-        lines.append(cell(profile['overview_note']))
+        note = profile['overview_note'].removesuffix('; image share NR.')
+        lines.append(cell(re.sub(r'\bNR\b', 'not reported', note)))
     return '<br>'.join(lines)
 
 
-def composition_summary(entry):
+def composition_summary(entry, *, include_sources=True):
     composition = entry['corpus_composition']
     terms = ' + '.join(f"{modality_amount(item)} {item['label'].lower()}" for item in composition['components'])
     total = token_amount(overview_budget(entry)['counts']['total'])
-    refs = ' · '.join(f"[{source['label']}]({source['url']})" for source in composition['sources'])
-    return f"**{entry['name']}’s full corpus adds up: {terms} = {total}.** {refs}"
+    refs = (' · '.join(f"[{source['label']}]({source['url']})" for source in composition['sources'])
+            if include_sources else '')
+    return f"**{entry['name']}’s full corpus adds up: {terms} = {total}.** {refs}".rstrip()
 
 
 def overview_row(entry):
     """One explicitly selected budget per study; never mix corpus and exposure."""
     budget = overview_budget(entry)
     view = entry['presentation']
-    name = f"[{cell(view.get('name', entry['name']))}](papers/{entry['id']}.md)"
+    name = cell(view.get('name', entry['name']))
     name += '<br>' + cell(view['starting_model'])
-    if view['quantity_type'] == 'training':
-        name += '<br>**Training tokens†**'
-    elif view['quantity_type'] == 'positions':
-        name += '<br>**Token positions‡**'
-    amounts = [token_amount(budget['counts'][key]) for key in TOKEN_FIELDS]
+    amounts = [overview_amount(budget['counts'][key], total=key == 'total') for key in TOKEN_FIELDS]
     origins = entry['paper_text_origins']
     names = origins['direct']
     if names:
@@ -175,25 +183,24 @@ def overview_row(entry):
         origin_text = 'via ' + '; '.join(origins['reused'][:2]) + ' (reused)'
     else:
         origin_text = origins['unspecified']
-    amounts[0] += f"<br>[{cell(origin_text)}](papers/{entry['id']}.md#paper-text-origins)"
+    amounts[0] += '<br>' + cell(origin_text)
     datasets = entry['dataset_sources']['names']
     if datasets:
         preview = '; '.join(datasets[:3])
         if len(datasets) > 3:
             preview += f" (+{len(datasets) - 3})"
-        amounts[2] += f"<br>[{cell(preview)}](papers/{entry['id']}.md#existing-dataset-sources)"
+        amounts[2] += '<br>' + cell(preview)
     if entry.get('corpus_composition'):
         counts = budget['counts']
         remainder = counts['total']['tokens'] - sum(counts[key].get('tokens') or 0 for key in TOKEN_FIELDS[:-1])
         remainder_label = modality_amount({'tokens': remainder})
-        amounts[3] += (f"<br>[{remainder_label} route split NR]"
-                       f"(papers/{entry['id']}.md#full-corpus-composition)")
+        amounts[3] += f"<br>{remainder_label} source split unknown"
     credits = entry['author_institutions']
     authors = cell(credits['authors_short']) + '<br>' + cell(credits['institutions_short'])
     review = entry['paper_quality']
-    assessment = f"[{QUALITY_LABELS[review['overall']]}](papers/{entry['id']}.md#overall-paper-assessment)<br>{cell(review['headline'])}"
+    assessment = f"**{QUALITY_LABELS[review['overall']]}**<br>{cell(review['headline'])}"
     modalities = modality_overview(entry)
-    refs = ' · '.join(f"[{cell(s['label'])}]({s['url']})" for s in budget['sources'])
+    refs = f"[Paper]({budget['sources'][0]['url']}) · [Notes](papers/{entry['id']}.md)"
     return '| ' + ' | '.join([name] + amounts + [modalities, assessment, authors, refs]) + ' |'
 
 
@@ -405,83 +412,38 @@ def render(data, directory=REPORT):
         'into training data. The main comparison focuses on **continued pretraining (CPT)**: '
         'starting with a pretrained model and training it further on domain data. '
         'Data-curation studies and released models appear together because both inform this choice.',
-        '**These are reported source budgets, not uniformly biology-only token counts.** '
-        'Some include clinical literature, general text, other sciences or non-text modalities. '
-        'The modality descriptions and linked source notes identify that scope. A paper’s full training total cannot be '
-        'treated as a biology-only amount when that subset is not separately reported.',
+        'Counts follow each paper’s reported budget and may include general text, other sciences and '
+        'biological sequences. The **Source** column links to the paper and detailed notes.',
         '## Continued pretraining',
-        'Each row names the starting checkpoint and reports one clearly identified token budget. '
-        'Unmarked rows show **dataset tokens before training repeats**. '
-        '**† Training tokens** include repeated passes; **‡ token positions** can include padding or '
-        'a planned schedule. The linked study pages retain the full counts and source qualifications. '
-        'Both comparison tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
+        'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
         overview_table(selected('cpt')),
-        'The authors/institutions column gives compact credits; the study pages retain the fuller lists. '
-        'Dataset names appear below their token count; a “+N” link opens the longer source list. '
-        '**Overall paper assessment** considers the contribution and originality, technical soundness, '
-        'evaluation, reproducibility, and clarity of the whole paper in its publication context. '
-        '**Strong:** substantial contribution, convincingly executed. **Solid:** worthwhile work with '
-        'meaningful limits. **Mixed:** substantial strengths alongside weaknesses that constrain the '
-        'overall case. **Weak:** fundamental problems dominate. These are provisional editorial judgments, '
-        'not official reviewer scores; institutional prestige and relevance to this project do not determine them.',
+        '**Quality** considers contribution, technical soundness, evaluation, reproducibility and clarity. '
+        'Strong = convincing contribution; Solid = worthwhile with limits; Mixed = substantial strengths '
+        'and weaknesses; Weak = fundamental problems. These are provisional judgments explained in the notes.',
         '### Reading the counts',
-        '- **Online papers:** text acquired directly from publishers or publication repositories, '
-        'including abstracts, XML, PDF and LaTeX. The names below each amount identify the source; '
-        '“via … (reused)” means the text belongs in the existing-dataset column instead.\n'
-        '- **Web URLs:** non-paper webpages acquired directly, including raw web archives.\n'
-        '- **Existing datasets:** reused corpora and biological databases. Paper text imported through '
-        'S2ORC or The Pile belongs here; it is not counted twice. These columns describe **how the study '
-        'obtained the data**, not just what the text discusses.\n'
-        '- **0** means the described data has no separate acquisition through that route. **NR** means '
-        'the token amount is not reported or cannot be established. Neither a known source name nor a '
-        'paper count supplies a missing token count.\n'
-        '- **Dataset size** counts the prepared corpus before training repeats. **Tokens used in training** '
-        'counts consumption, including repeated passes: a 10B-token dataset read three times gives '
-        '30B training tokens, not 30B of distinct data. The former measures data volume; the latter '
-        'measures how much training read it. For BioMedLM these figures are 34.6B and 300B.\n'
+        '- **Sources:** online papers are acquired directly from publication repositories; web URLs '
+        'are other directly collected webpages; existing datasets are imported corpora or databases. '
+        'Paper text imported through S2ORC or The Pile belongs in existing datasets.\n'
+        '- **—** means an amount is unavailable or cannot be separated; **0** means no data through that '
+        'route. Named sources can still have an unknown token count.\n'
         '- **M / B** mean million / billion; **≈** means approximate; **> / ≥** indicate a lower bound. '
-        'Tokenizers differ. Sequence/image tokens and planned token positions are labeled explicitly. '
-        'A total may include material without a disclosed category split.',
-        '**Other modalities / tokens** shows reported token counts alongside the representations. '
-        'These are data already included in the acquisition columns; do not add them again. '
-        '**1D** means sequence representations; **3D** means structure tokens. Domain and record totals '
-        'include associated text and annotations, so they are not pure sequence counts. '
-        '**0 — text only** applies to the counted stage; later encoder inputs are labeled separately. '
-        '**NR** means the modality count was not established, not zero.',
-        '\n\n'.join(composition_summary(e) for _, e in all_entries if e.get('corpus_composition')),
-        '**Why the source columns do not sum to BioMatrix’s total:** its text component is '
-        '**105.3B = 25.6B general text + 79.7B scientific text**. The existing-dataset lower bound is '
-        '**176.7B = 25.6B general text + 77.4B protein data + 73.7B molecule data**. '
-        'The other **127.7B** comprises 79.7B scientific text and 48.0B cross-entity/interleaved data; '
-        'their exact paper/web/dataset split is not disclosed. These are identified but unallocated '
-        'components, not missing training tokens. The modality column overlaps these source columns; '
-        'adding them together would double-count data. See [the full composition](papers/biomatrix.md#full-corpus-composition) '
-        'and [source breakdown](papers/biomatrix.md#token-budget-breakdown). '
-        'Elsewhere, “≥” likewise means a lower bound, and a dataset name without a token amount remains NR. '
-        'BioMatrix’s 25.6B general-text slice is FineWeb-Edu; '
-        'BioMamba’s existing-dataset component is general replay. NatureLM and SciReasoner also '
-        'cover sciences beyond biology. None of those whole-row totals is a verified biology-only budget.',
-        'Gravity-bio reports separate literature and biological-database components but not the full '
-        'training mixture. LOGOS reports a corpus spanning pretraining and post-training; its CPT-only '
-        'amount is not disclosed. BioMamba’s figure counts packed positions, including padding. '
-        'Biomed-Enriched’s 33.6B is the training budget **per experimental variant**. '
-        'PMC-InterCPT contributes a paper/figure curation method evaluated on medical and scientific tasks; '
-        'it is not evidence that clinical filtering is appropriate for all biology.',
+        'Full dataset lists, counting methods and qualifications are in **Notes**.',
+        '**Other modalities** are already included in the acquisition columns. **1D** means sequences; '
+        '**3D** means structures. Domain and record totals can include annotations and text. '
+        'Later-stage encoder inputs are identified separately.',
+        '\n\n'.join(composition_summary(e, include_sources=False) for _, e in all_entries if e.get('corpus_composition')),
+        'Of BioMatrix’s total, **176.7B** is identified as existing-dataset input. The other **127.7B** '
+        '(79.7B scientific text + 48B cross-entity data) has no disclosed paper/web/dataset split. '
+        'Those tokens are accounted for in the full composition; adding the modality column to '
+        'the source columns would count them twice.',
         '## Pretraining from scratch: comparison',
         'These models begin with randomly initialized weights and biological or scientific data, '
         'rather than adapting an existing checkpoint. They provide a comparison with CPT.',
         overview_table(selected('from_scratch')),
-        'BioGPT’s 104.8576B is calculated from its scheduled steps and batch size, not a measured unique '
-        'corpus size. Galactica includes broad scientific material as well as biology. '
-        'NatureLM’s 8B and 8×7B versions belong in the CPT table; its separate 1B model first undergoes '
-        'general-text pretraining on SlimPajama before scientific training.',
         '## Data preparation',
         'The [data preparation pipeline](data_pipeline.md) brings paper, web and reused-dataset inputs '
         'into the same source-linked records, then applies content selection, deduplication and token counting. '
         'It distinguishes existing implementation from proposed web-processing work. '
-        'See also the guides to [biological sources](source_planning.md), '
-        '[web and reusable corpora](web_acquisition.md), [original figures and context](figure_handling.md), '
-        'and [citation handling](citations_and_cpt_sources.md). '
         '[Supporting literature](background.md) covers source corpora, extraction pipelines, '
         'instruction tuning and representation learning.',
     ]
@@ -521,6 +483,9 @@ def render(data, directory=REPORT):
                    'The overview shows numeric modality counts and sorts by overall quality, with alphabetical '
                    'ties. Optional modality display groups sum only disjoint, known component amounts; '
                    'corpus composition records must reconcile with the selected total. '
+                   'Keep overview links in the Source column (one Paper link and one Notes link). '
+                   'Use a dash for unavailable category amounts and plain language for an unknown total. '
+                   'Keep detailed counting definitions on study pages, without dagger markers in the overview. '
                    'A venue or institution name is not an overall-quality measurement. '
                    'Record numerical allocation corrections explicitly in the token audit.',
                    'The [token audit](token_budget_verification.json) records numerical checks and '

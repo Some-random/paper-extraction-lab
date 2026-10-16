@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T16:44:32.782010-08:00",
+  "checked_at_pst": "2026-10-15T17:15:42.589316-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -12,7 +12,7 @@
     "existing_datasets": 21
   },
   "original_41_entries_and_source_records_preserved": true,
-  "regression_tests_passed": 32,
+  "regression_tests_passed": 33,
   "known_rounding_discrepancies": [
     {
       "id": "meditron",
@@ -372,8 +372,8 @@
     "modality_profiles": 16,
     "modality_counts_added_to_acquisition_totals": false
   },
-  "local_links_and_anchors_checked": 224,
-  "all_52_token_budget_records_preserved_from_commit": "2ac3a8a400ddc23b0b8901a94aaa809933f011ca",
+  "local_links_and_anchors_checked": 142,
+  "all_52_token_budget_records_preserved_from_commit": "14b8eca59a9915e54816d8aae31721be781e8e67",
   "overview_sort": "Strong, Solid, Mixed, Weak; alphabetical ties within each CPT/from-scratch table",
   "author_column_after_quality": true,
   "modality_counts_visible_in_overview": true,
@@ -394,5 +394,14 @@
       "refseq_record_tokens": 100000000,
       "note": "Rounded source-record budgets include associated text and metadata; pure sequence/SMILES amounts remain NR. Already included in existing acquisition totals."
     }
-  ]
+  ],
+  "entire_review_registry_preserved_from_commit": "14b8eca59a9915e54816d8aae31721be781e8e67",
+  "overview_presentation": {
+    "count_markers_removed": true,
+    "links_per_row": 2,
+    "link_location": "Source column only: Paper and Notes",
+    "unknown_category_display": "—",
+    "unknown_total_display": "Not reported",
+    "detailed_count_definitions_preserved": true
+  }
 }

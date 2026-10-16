@@ -230,3 +230,12 @@ unknowns, and distinguish source-record/domain amounts from pure sequence
 amounts. Make BioMatrix's complete 304.4B corpus composition and its 127.7B
 unresolved acquisition-route allocation visible; modality counts overlap the
 source-route counts and must never be added to them.
+
+The user subsequently requested a simpler overview: remove dagger markers and
+their training-token/position footnotes, consolidate row links into the Source
+column, and avoid repeated NR labels. Use one Paper link and one Notes link per
+row, with source names, dataset names, ratings and modality counts as plain
+text. Render unavailable category amounts as a dash, unknown totals as "Not
+reported", and explain the dash once. Preserve zeros, all numeric amounts and
+the full count-basis definitions on study pages and in the registry. Do not
+claim that the resulting unmarked amounts all represent unique corpus tokens.
