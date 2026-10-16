@@ -6,7 +6,7 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; BERT architecture. [Initialization evidence](https://arxiv.org/html/2203.15827#S6.SS1)
+**Training approach:** Pretraining from scratch. **Architecture:** BERT architecture. [Initialization evidence](https://arxiv.org/html/2203.15827#S6.SS1)
 
 Section 6.1 explicitly trains BioLinkBERT base and large from scratch. The general-domain LinkBERT initialization described elsewhere is a different experiment.
 
@@ -76,7 +76,7 @@ Named reused inputs relevant to the reviewed training stages. This is not necess
 
 **Training stage:** Encoder pretraining from scratch
 
-**Backbone:** Random weights; BERT architecture
+**Backbone:** BERT architecture
 
 **Source material and units:** PubMed documents and citation links
 

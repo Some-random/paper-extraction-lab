@@ -82,6 +82,68 @@ storage = {
               "Training deduplication earns no automatic storage saving: selected originals remain preserved, and token retention is not a document-retention measurement.",
               "Retaining all paper originals/figures is a separate multi-TiB budget. The current export layout contains several text/JSON views."]
 }
+
+# Runtime scenarios: these rates and experiment counts are planning assumptions.
+# Input parsing and scoring must process candidate text, not just retained text.
+input_tokens = pmc * parameters["central"]["paper_tokens_each"] + web_raw + records_raw
+score_tokens = sum(central["dedup_only_tokens"][k] for k in ("papers", "web_origin"))
+transfer_bytes = sum(storage["available_source_download_bytes"].values()) + pmc * paper_xml_bytes_each
+acquisition_hours = [transfer_bytes / rate / 3600 + pmc * latency / 3600
+                     for rate, latency in [(100e6, .2), (20e6, 1.)]]
+cpu_pass_hours = [input_tokens * 4 / rate / 3600 for rate in (3e6, 1e6)]
+application_gpu_hours = [score_tokens / rate / 3600 for rate in (200000, 50000)]
+teacher_gpu_hours = [20000 * (2048 / prefill + 256 / decode) / 3600
+                     for prefill, decode in [(2000, 80), (500, 20)]]
+scoring_total = [application_gpu_hours[i] + teacher_gpu_hours[i] + [4, 12][i]
+                 for i in (0, 1)]
+proxy_gpu_hours = [30 * 6 * 30e6 * 3e9 / rate / 3600 for rate in (75e12, 20e12)]
+confirmation_gpu_hours = [3 * 6 * 7e9 * 1e9 / rate / 3600 for rate in (125e12, 50e12)]
+mix_gpu_hours = [(proxy_gpu_hours[i] + confirmation_gpu_hours[i]) * 1.25 for i in (0, 1)]
+resource_plan = {
+    "status": "unbenchmarked_execution_scenarios_not_jobs_or_reservations",
+    "cluster_reference": {"date_pst": "2026-10-16", "a100_80gb": 71, "b200_180gb": 8,
+                          "shared_scratch_free_tib_rounded": 1.5,
+                          "note": "Installed/shared capacity, not an allocation. B200 speedup is not assumed."},
+    "acquisition": {"candidate_xml_objects": pmc, "selected_source_bytes": transfer_bytes,
+                    "assumed_transfer_bytes_per_second": [20e6, 100e6],
+                    "assumed_xml_request_overhead_seconds": [.2, 1.],
+                    "calculated_hours": acquisition_hours, "planning_days": [2, 7],
+                    "note": "One serial fetcher; dataset shards transfer in hours, but individual XML requests add latency. PDFs/figures excluded."},
+    "normalization_cleaning_dedup": {"candidate_tokens": input_tokens, "assumed_token_passes": 4,
+                                   "assumed_aggregate_tokens_per_second": [1e6, 3e6],
+                                   "cpu_cores": 16, "ram_gib": [128, 256],
+                                   "calculated_pass_hours": cpu_pass_hours, "planning_days": [3, 10],
+                                   "note": "Throughput is assumed for a compact implementation; extra time covers sorting, I/O and checks. The current two-thread runner is not this allocation."},
+    "scoring_and_review": {"paper_web_candidate_tokens": score_tokens,
+                           "assumed_compact_scorer_tokens_per_second_per_a100": [50000, 200000],
+                           "teacher_label_passages": 20000, "teacher_prompt_tokens_each": 2048,
+                           "teacher_output_tokens_each": 256,
+                           "assumed_teacher_prefill_tokens_per_second": [500, 2000],
+                           "assumed_teacher_decode_tokens_per_second": [20, 80],
+                           "teacher_gpu_hours": teacher_gpu_hours,
+                           "application_gpu_hours": application_gpu_hours,
+                           "student_training_gpu_hours": [4, 12],
+                           "calculated_a100_gpu_hours": scoring_total,
+                           "planning_a100_gpu_hours": [150, 600],
+                           "human_review_person_hours": [32, 64],
+                           "human_review_design": "400 passages, two independent reviewers, 2-4 minutes each plus adjudication.",
+                           "note": "Score candidate paper/web text before research rejection. Validate sequence/chemical records with representation-specific checks. Compact-scorer and teacher throughput are assumptions."},
+    "mixture_experiments": {"proxy_runs": 30, "proxy_groups": 6, "proxy_parameters": 30000000,
+                            "proxy_training_tokens_each": 3000000000,
+                            "assumed_proxy_effective_a100_tflops": [20, 75],
+                            "target_runs": 3, "target_design": "One baseline and two shortlisted recipes, one seed each.",
+                            "target_parameters": 7000000000, "target_training_tokens_each": 1000000000,
+                            "assumed_target_effective_a100_tflops": [50, 125],
+                            "overhead_fraction": .25, "calculated_a100_gpu_hours": mix_gpu_hours,
+                            "planning_a100_gpu_hours": [400, 1200],
+                            "proposed_gpus": [4, 8], "planning_days_at_proposed_allocation": [2, 13],
+                            "note": "An illustrative 7B CPT campaign, not a requirement to train 49B tokens or run three seeds. A 27B target costs about 27/7 times as much for target runs, excluding proxy costs.",
+                            "references": ["https://arxiv.org/html/2512.13961v2#S3.SS4", "https://arxiv.org/html/2406.11794v3"]},
+    "boundaries": ["Runtimes exclude implementation work, scheduler wait, major outages and full-paper OCR.",
+                   "These larger allocations are scenarios only; current paper-project limits remain two CPU threads and at most one GPU, with no training authorized.",
+                   "With one A100, scoring alone is roughly 6-25 days. Full-parameter 7B confirmation needs sharding across GPUs.",
+                   "Several stages can overlap, but no end-to-end completion date is guaranteed."]
+}
 report = {
     "date_pst": "2026-10-16", "status": "planning_scenarios_not_measured_corpus_yield",
     "scope": "Selected 55-journal PMC XML candidates; FineFineWeb biology; TheBioCollection free-text stream only.",
@@ -96,6 +158,7 @@ report = {
     "scenarios": scenarios,
     "central_modality_tokens_conditional_on_prefix_representativeness": modality,
     "storage": storage,
+    "resource_plan": resource_plan,
     "limitations": ["Low/high are sensitivity scenarios, not confidence intervals or measured retention rates.",
                     "Research selection fractions (especially web 5/15/25%) and additional dedup retention are explicit assumptions.",
                     "Prefixes are not a probability sample; modality and tokenizer ratios may shift after wider sampling.",

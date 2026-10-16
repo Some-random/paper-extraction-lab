@@ -6,7 +6,7 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; BERT architecture. [Initialization evidence](https://arxiv.org/html/2007.15779v6)
+**Training approach:** Pretraining from scratch. **Architecture:** BERT architecture. [Initialization evidence](https://arxiv.org/html/2007.15779v6)
 
 Domain vocabulary and model are learned from biomedical text, rather than starting with a general BERT checkpoint.
 
@@ -76,7 +76,7 @@ Named reused inputs relevant to the reviewed training stages. This is not necess
 
 **Training stage:** Encoder pretraining from scratch
 
-**Backbone:** Random weights; BERT architecture
+**Backbone:** BERT architecture
 
 **Source material and units:** PubMed abstracts; additional PMC experiments
 

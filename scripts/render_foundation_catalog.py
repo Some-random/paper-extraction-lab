@@ -3,6 +3,7 @@
 import csv
 import io
 import json
+import math
 import re
 from decimal import Decimal
 from pathlib import Path
@@ -166,12 +167,19 @@ def composition_summary(entry, *, include_sources=True):
     return f"**{entry['name']}’s full corpus adds up: {terms} = {total}.** {refs}".rstrip()
 
 
+def model_description(entry, value):
+    """State initialization once in the from-scratch section, preserving raw records."""
+    if entry['presentation']['section'] == 'from_scratch':
+        return re.sub(r'^Random weights;\s*', '', value)
+    return value
+
+
 def overview_row(entry):
     """One explicitly selected budget per study; never mix corpus and exposure."""
     budget = overview_budget(entry)
     view = entry['presentation']
     name = cell(view.get('name', entry['name']))
-    name += '<br>' + cell(view['starting_model'])
+    name += '<br>' + cell(model_description(entry, view['starting_model']))
     amounts = [overview_amount(budget['counts'][key], total=key == 'total') for key in TOKEN_FIELDS]
     origins = entry['paper_text_origins']
     names = origins['direct']
@@ -204,9 +212,10 @@ def overview_row(entry):
     return '| ' + ' | '.join([name] + amounts + [modalities, assessment, authors, refs]) + ' |'
 
 
-def overview_table(entries):
+def overview_table(entries, *, from_scratch=False):
+    model_label = 'architecture' if from_scratch else 'starting checkpoint'
     return '\n'.join([
-        '| Model / starting checkpoint | Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens | Total reported tokens | Other modalities / tokens | Overall paper assessment | Authors / institutions | Source |',
+        f'| Model / {model_label} | Online-paper tokens / origin | Direct web tokens | Existing-dataset tokens | Total reported tokens | Other modalities / tokens | Overall paper assessment | Authors / institutions | Source |',
         '|---|---:|---:|---:|---:|---|---|---|---|',
         *(overview_row(entry) for entry in entries),
     ])
@@ -220,7 +229,61 @@ def cell(value):
     return value.replace('|', '\\|').replace('\n', '<br>')
 
 
-def render(data, directory=REPORT):
+def starter_conclusion(estimate):
+    """Keep our availability forecast distinct from published model-training budgets."""
+    central = estimate['scenarios']['central']
+    content = central['research_starter_content_tokens']
+    billion = lambda value: f'{value / 1e9:.1f}B'
+    low = math.floor(estimate['scenarios']['low']['research_starter_total_tokens'] / 5e9) * 5
+    high = math.ceil(estimate['scenarios']['high']['research_starter_total_tokens'] / 5e9) * 5
+    resources = estimate['resource_plan']
+    days = lambda stage: '–'.join(str(v) for v in resources[stage]['planning_days'])
+    hours = lambda stage: '–'.join(f'{v:,}' for v in resources[stage]['planning_a100_gpu_hours'])
+    review_hours = '–'.join(str(v) for v in resources['scoring_and_review']['human_review_person_hours'])
+    scoring_days = '–'.join(str(round(v / 24)) for v in resources['scoring_and_review']['planning_a100_gpu_hours'])
+    mixture_days = '–'.join(str(v) for v in resources['mixture_experiments']['planning_days_at_proposed_allocation'])
+    mixture_gpus = '–'.join(str(v) for v in resources['mixture_experiments']['proposed_gpus'])
+    cpu = resources['normalization_cleaning_dedup']
+    ram = '–'.join(str(v) for v in cpu['ram_gib'])
+    storage = '–'.join(str(v) for v in estimate['storage']['text_sequence_processing_allowance_GiB'])
+    asset_tib = estimate['storage']['central_paper_pdf_figure_bytes_proxy'] / 2**40
+    modality = estimate['central_modality_tokens_conditional_on_prefix_representativeness']
+    return '\n\n'.join([
+        '## Starter corpus: expected data and resources',
+        f"**About {billion(central['research_starter_total_tokens'])} retained tokens; roughly {low}–{high}B across sensitivity scenarios.** "
+        'This forecasts what the available source inventories could yield after research selection and rough deduplication. '
+        'It is not an already downloaded or processed corpus. '
+        f"Deduplication alone leaves about **{billion(central['dedup_only_total_tokens'])}**; "
+        'the smaller research pool assumes further selection, especially retaining 15% of FineFineWeb biology text.',
+        '| Source content | Central retained-token estimate |\n|---|---:|\n'
+        f"| Papers: selected 55-journal PMC inventory | {billion(content['direct_paper_text'])} |\n"
+        f"| Web text imported from FineFineWeb biology | {billion(content['imported_web_origin_text'])} |\n"
+        f"| Biological database records imported from TheBioCollection | {billion(content['imported_biological_records'])} |\n"
+        f"| **Total** | **{billion(central['research_starter_total_tokens'])}** |",
+        'The database row includes descriptions and annotations. A small prefix probe projects '
+        f"**{billion(modality['protein_sequence_spans'])} protein-sequence tokens, "
+        f"{modality['dna_rna_sequence_spans'] / 1e9:.2f}B DNA/RNA tokens and "
+        f"{billion(modality['smiles_inchi_spans'])} SMILES/InChI tokens** within this same pool. "
+        'These modality projections are less certain than source inventories and must not be added to the total. '
+        'General-text replay is additional; available-pool proportions do not prescribe training weights.',
+        '**Processing:** download native XML and dataset shards; extract text with source IDs and citation metadata; '
+        'remove broken records and boilerplate; match paper identities, exact duplicates and verified near-duplicates; '
+        'apply research/quality filters with human review, plus sequence/chemical validity checks; '
+        'tokenize the retained pools and test sampling mixtures. PDFs needing OCR form a separate workload.',
+        '| Work | Planning time / resources |\n|---|---|\n'
+        f"| Native acquisition | {days('acquisition')} days, one serial fetcher; about 552k XML objects plus dataset shards |\n"
+        f"| Normalize, clean and deduplicate | {days('normalization_cleaning_dedup')} days on {cpu['cpu_cores']} CPU cores, {ram}GiB RAM |\n"
+        f"| Train/apply scorers and review | {hours('scoring_and_review')} A100 GPU-hours; {scoring_days} days on one GPU, plus {review_hours} person-hours |\n"
+        f"| Illustrative 7B mixture experiments | {hours('mixture_experiments')} A100 GPU-hours; {mixture_days} days with {mixture_gpus} GPUs |",
+        f'**Storage:** allow **{storage}GiB** for text/sequence processing. Retaining the projected paper PDFs and '
+        f'figures adds approximately **{asset_tib:.1f}TiB**, beyond that allowance. The current paper runner uses two CPU threads; '
+        'the larger allocations above are planning scenarios. Rates are unbenchmarked, stages can overlap, and '
+        'times exclude implementation, scheduler waits and full-paper OCR. '
+        '[Source counts, retention assumptions and cost calculations](source_planning.md).',
+    ])
+
+
+def render(data, directory=REPORT, *, starter_estimate=None):
     all_entries = [(kind, e) for kind in GROUPS for e in data.get(kind, [])]
     ids = [e['id'] for _, e in all_entries]
     if len(ids) != len(set(ids)):
@@ -310,7 +373,8 @@ def render(data, directory=REPORT):
             body.append('Archived reference outside the current biological pretraining review.')
         if view['section'] in {'cpt', 'from_scratch'}:
             training = 'Continued pretraining' if view['section'] == 'cpt' else 'Pretraining from scratch'
-            body.append(f"**Training approach:** {training}. **Starting checkpoint:** {view['starting_model']}. "
+            model_label = 'Architecture' if view['section'] == 'from_scratch' else 'Starting checkpoint'
+            body.append(f"**Training approach:** {training}. **{model_label}:** {model_description(entry, view['starting_model'])}. "
                         f"[Initialization evidence]({view['initialization_source']})")
             if view.get('note'):
                 body.append(view['note'])
@@ -380,7 +444,8 @@ def render(data, directory=REPORT):
                 body.append(f"- **{key.replace('_', ' ').title()}: {token_amount(amount)}.** {explanation}")
         for key, label in LABELS:
             if entry.get(key):
-                body.append(f"**{label}:** {entry[key]}")
+                value = model_description(entry, entry[key]) if key == 'base' else entry[key]
+                body.append(f"**{label}:** {value}")
         records = entry.get('data_records', [])
         for record_kind, title in RECORD_LABELS.items():
             matching = [r for r in records if r['kind'] == record_kind]
@@ -413,7 +478,13 @@ def render(data, directory=REPORT):
         'Data-curation studies and released models appear together because both inform this choice.',
         'Counts follow each paper’s reported budget and may include general text, other sciences and '
         'biological sequences. The **Source** column links to the paper and detailed notes.',
+        '**Direct web tokens** measures text from webpages or crawls collected directly by the reviewed study. '
+        'Web text imported through FineWeb, C4 or FineFineWeb goes under **Existing-dataset tokens**. '
+        'This is why direct-web counts are often 0 or unavailable even when web-origin text is used. '
+        'Galactica is an exception with **≥700M** direct-web tokens from ScientificCC. '
+        '**0** means no data through that route; **—** means the amount or split was not reported.',
         '[Processing recipe](data_pipeline.md).',
+        *([starter_conclusion(starter_estimate)] if starter_estimate is not None else []),
         '## Continued pretraining',
         'Both tables are sorted **Strong → Solid → Mixed → Weak**, alphabetically within each rating.',
         overview_table(selected('cpt')),
@@ -421,8 +492,8 @@ def render(data, directory=REPORT):
         'Strong = convincing contribution; Solid = worthwhile with limits; Mixed = substantial strengths '
         'and weaknesses; Weak = fundamental problems. These are provisional judgments explained in the notes.',
         '### Reading the counts',
-        '- **Sources:** online papers are acquired directly from publication repositories; web URLs '
-        'are other directly collected webpages; existing datasets are imported corpora or databases. '
+        '- **Sources:** online papers are acquired directly from publication repositories; direct web '
+        'tokens come from other directly collected webpages or crawls; existing datasets are imported corpora or databases. '
         'Paper text imported through S2ORC or The Pile belongs in existing datasets.\n'
         '- **—** means an amount is unavailable or cannot be separated; **0** means no data through that '
         'route. Named sources can still have an unknown token count.\n'
@@ -439,7 +510,7 @@ def render(data, directory=REPORT):
         '## Pretraining from scratch: comparison',
         'These models begin with randomly initialized weights and biological or scientific data, '
         'rather than adapting an existing checkpoint. They provide a comparison with CPT.',
-        overview_table(selected('from_scratch')),
+        overview_table(selected('from_scratch'), from_scratch=True),
     ]
     (directory / 'README.md').write_text('\n\n'.join(intro) + '\n')
 
@@ -463,6 +534,10 @@ def render(data, directory=REPORT):
                    'Edit [review.json](review.json), then run `python3 scripts/render_foundation_catalog.py` '
                    'from the repository root. This produces the review, supporting pages, study pages '
                    'and [numeric CSV](catalog.csv) from one registry.',
+                   'The starter conclusion is separate from author-reported budgets. Its figures come from '
+                   '`starter_corpus_estimate.json`; reproduce those with `scripts/estimate_starter_budget.py` '
+                   'before rerendering. Keep inventory measurements, assumed retention and unbenchmarked '
+                   'runtime scenarios explicit in `source_planning.md`.',
                    'The `presentation` record selects the review section, starting checkpoint and one '
                    'overview budget, with explicit content scope and quantity type. It must cite '
                    'initialization evidence. Keep every original budget '
@@ -533,4 +608,6 @@ def render(data, directory=REPORT):
 
 
 if __name__ == '__main__':
-    print(f'Rendered {render(json.loads((REPORT / "review.json").read_text()))} unique catalog entries')
+    data = json.loads((REPORT / 'review.json').read_text())
+    estimate = json.loads((REPORT / 'starter_corpus_estimate.json').read_text())
+    print(f'Rendered {render(data, starter_estimate=estimate)} unique catalog entries')

@@ -28,7 +28,7 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             self.assertEqual(render(data, directory), 1)
             table = (directory / 'README.md').read_text()
-            self.assertIn('Online-paper tokens / origin | Web-URL tokens | Existing-dataset tokens', table)
+            self.assertIn('Online-paper tokens / origin | Direct web tokens | Existing-dataset tokens', table)
             self.assertNotIn('| Data summary |', table)
             self.assertIn('34.6B', table)
             self.assertEqual(table.count('| BioMedLM<br>'), 1)
@@ -60,6 +60,12 @@ class TokenAccountingChecks(unittest.TestCase):
             directory = Path(temporary)
             render(data, directory)
             overview = (directory / 'README.md').read_text()
+            self.assertNotIn('Random weights;', overview)
+            self.assertIn('| Model / architecture |', overview)
+            for eid in scratch:
+                page = (directory / f'papers/{eid}.md').read_text()
+                self.assertIn('**Architecture:**', page)
+                self.assertNotIn('Random weights;', page)
             for e in all_entries:
                 target = f"(papers/{e['id']}.md)"
                 self.assertEqual(overview.count(target), int(e['id'] in cpt | scratch))
@@ -72,6 +78,51 @@ class TokenAccountingChecks(unittest.TestCase):
             budget = next(b for b in gravity['token_budgets'] if b['id'] == gravity['presentation']['budget_id'])
             self.assertEqual(budget['counts']['total']['status'], 'not_reported')
             self.assertEqual(budget['counts']['web_urls']['status'], 'not_reported')
+
+    def test_starter_forecast_is_separate_from_published_token_budgets(self):
+        report = ROOT / 'reports/bio_foundation_review_2026-10-15'
+        data = json.loads((report / 'review.json').read_text())
+        estimate = json.loads((report / 'starter_corpus_estimate.json').read_text())
+        before = copy.deepcopy((data, estimate))
+        central = estimate['scenarios']['central']
+        self.assertAlmostEqual(sum(central['research_starter_content_tokens'].values()),
+                               central['research_starter_total_tokens'])
+        self.assertAlmostEqual(sum(central['acquisition_route_tokens'].values()),
+                               central['research_starter_total_tokens'])
+        resources = estimate['resource_plan']
+        mixture = resources['mixture_experiments']
+        for index, throughput in enumerate(reversed(mixture['assumed_target_effective_a100_tflops'])):
+            target_hours = (mixture['target_runs'] * 6 * mixture['target_parameters']
+                            * mixture['target_training_tokens_each'] / (throughput * 1e12) / 3600)
+            proxy_throughput = list(reversed(mixture['assumed_proxy_effective_a100_tflops']))[index]
+            proxy_hours = (mixture['proxy_runs'] * 6 * mixture['proxy_parameters']
+                           * mixture['proxy_training_tokens_each'] / (proxy_throughput * 1e12) / 3600)
+            self.assertAlmostEqual(mixture['calculated_a100_gpu_hours'][index],
+                                   (target_hours + proxy_hours) * (1 + mixture['overhead_fraction']))
+        self.assertLessEqual(mixture['planning_a100_gpu_hours'][0], mixture['calculated_a100_gpu_hours'][0])
+        self.assertGreaterEqual(mixture['planning_a100_gpu_hours'][1], mixture['calculated_a100_gpu_hours'][1])
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            render(data, directory, starter_estimate=estimate)
+            overview = (directory / 'README.md').read_text()
+            self.assertLess(overview.index('## Starter corpus:'), overview.index('## Continued pretraining'))
+            self.assertIn('49.1B', overview)
+            self.assertIn('not an already downloaded or processed corpus', overview)
+            self.assertIn('500–800GiB', overview)
+            self.assertIn('400–1,200 A100 GPU-hours', overview)
+            self.assertIn('2.8TiB', overview)
+            self.assertIn('FineWeb, C4 or FineFineWeb', overview)
+            with (directory / 'catalog.csv').open(newline='') as handle:
+                rows = list(csv.DictReader(handle))
+            for group in ('models', 'training_studies', 'method_references', 'corpora'):
+                for study in data[group]:
+                    for budget in study['token_budgets']:
+                        exported = next(row for row in rows if row['id'] == study['id']
+                                        and row['budget_id'] == budget['id'])
+                        for route in TOKEN_FIELDS:
+                            tokens = budget['counts'][route].get('tokens')
+                            self.assertEqual(exported[route + '_tokens'], '' if tokens is None else str(tokens))
+        self.assertEqual((data, estimate), before)
 
     def test_mixed_data_requires_explicit_scope_and_quantity_type(self):
         data = json.loads((ROOT / 'reports/bio_foundation_review_2026-10-15/review.json').read_text())

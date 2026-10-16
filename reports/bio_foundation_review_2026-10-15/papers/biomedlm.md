@@ -6,7 +6,7 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; 2.7B GPT-style decoder. [Initialization evidence](https://arxiv.org/html/2403.18421v1)
+**Training approach:** Pretraining from scratch. **Architecture:** 2.7B GPT-style decoder. [Initialization evidence](https://arxiv.org/html/2403.18421v1)
 
 Trained on the PubMed components of The Pile. The 34.6B-token corpus is consumed for 8.67 passes, totaling 300B training tokens.
 
@@ -87,7 +87,7 @@ Named reused inputs relevant to the reviewed training stages. This is not necess
 
 **Training stage:** Pretraining from scratch; task-specific fine-tuning
 
-**Backbone:** Random weights; 2.7B GPT-style decoder
+**Backbone:** 2.7B GPT-style decoder
 
 **Source material and units:** The Pile's PubMed abstracts and full-article subsets: 34.6B corpus tokens. Training consumes 300B tokens, or 8.67 passes.
 

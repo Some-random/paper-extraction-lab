@@ -72,7 +72,32 @@ Pinned source inventories show **15.93GB compressed** for TheBioCollection free-
 
 The central 49.1B case needs **196GB / 183GiB as four-byte token IDs**. Probe-based UTF-8 estimates give about **143GiB of text**. Allow **500–800GiB** for selected raw inputs, canonical text, token IDs, metadata, deduplication indexes and bounded temporary outputs. This is an engineering allowance, not a measured peak; it excludes PDFs/figures, separate supplements, environments/model weights and training checkpoints.
 
-**Preserving every paper PDF and figure needs a separate multi-TiB budget.** At the central scope-selected paper count, extrapolating the measured 454-paper sizes gives about **2.8TiB for PDFs and figures**, before XML and processed outputs. The current multi-view export layout projects to **3.6TiB for those papers alone**. These uncertain projections show that roughly 1.8TiB currently free on shared scratch can accommodate a bounded text/sequence starter, but not every original asset in this larger scenario. Training deduplication does not authorize deleting preserved originals or automatically save their storage.
+**Preserving every paper PDF and figure needs a separate multi-TiB budget.** At the central scope-selected paper count, extrapolating the measured 454-paper sizes gives about **2.8TiB for PDFs and figures**, before XML and processed outputs. The current multi-view export layout projects to **3.6TiB for those papers alone**. Shared scratch had approximately **1.5TiB free on October 16, 2026 (PST)**. That snapshot supports a bounded text/sequence starter, but not every original asset in this larger scenario. Training deduplication does not authorize deleting preserved originals or automatically save their storage.
+
+## Processing time and resource assumptions
+
+**These are workload calculations with assumed throughput, not measured completion times.** The Slurm inventory lists 71 A100 80GB GPUs and eight B200 180GB GPUs; these are installed shared resources, not an allocation to this project. The CPU host has 144 logical CPUs and about 2TiB RAM. The current paper runner remains limited to two CPU threads and at most one GPU; native acquisition uses no GPU. The larger allocations below describe a possible processing campaign. No B200 speedup is assumed.
+
+| Work | Input and calculation | Planning allowance |
+|---|---|---|
+| Native acquisition | About **450GB** of dataset shards plus **120GB** of candidate XML. At 20–100MB/s, transfer takes about **1.6–7.9 hours**. A serial fetcher requesting **552,024** XML objects adds **31–153 hours** if request overhead averages 0.2–1 second per object. | **2–7 days**, one serial network worker; no PDFs/figures in this timing. |
+| Normalize, clean, deduplicate and tokenize | About **129B candidate tokens**, four token-equivalent passes, at an assumed aggregate **1–3M tokens/second** on **16 CPU cores**: approximately **48–144 hours**, before additional sorting/I/O/checks. | **3–10 days**, **128–256GiB RAM**, with disk-backed indexes and bounded intermediate files. The current two-thread runner is not this allocation. |
+| Score paper/web candidates | About **83B candidate tokens after rough deduplication**, including text later rejected. A compact scorer at **50k–200k tokens/second/A100** costs **115–462 GPU-hours**. Database sequences and chemical records use representation-specific validity checks. | Included in the scoring allowance below. |
+| Label examples and train the compact scorer | **20,000 passages × (2,048 input + 256 output tokens)**. Assuming **500–2,000 input tokens/second** and **20–80 generated tokens/second** costs **23–94 A100 GPU-hours**, plus **4–12 GPU-hours** for scorer training. Teacher size and batching must be benchmarked. | Combined labeling, scorer training and application: **150–600 A100 GPU-hours**, about **6–25 days on one GPU**. |
+| Human review | **400 passages**, two independent reviewers, **2–4 minutes** per judgment, plus adjudication. Include rejected text and suspected extraction/deduplication errors. | **32–64 person-hours**. This is reviewer effort, not GPU runtime or a claim that all text is manually checked. |
+| Initial mixture experiment campaign | **30 proxy runs** at 30M parameters and 3B training tokens each; then **three 7B CPT runs**, each for 1B training tokens: one baseline and two shortlisted recipes, one seed each. | Approximately **400–1,200 A100 GPU-hours** including a 25% allowance; **2–13 days with 4–8 GPUs**, excluding scheduler waits. |
+
+Acquisition need not perform OCR when native XML is available. Dataset shard downloads take hours under these rates; the large number of serial XML requests drives the multi-day allowance. Bulk XML transfer or already cached objects could shorten it. PDF retrieval, figure preservation and OCR of papers without usable native text require a separate inventory and measured throughput before they can be added to this budget.
+
+The mixture budget uses the approximate training-work formula **6 × parameters × training tokens**, divided by assumed effective A100 throughput. Small proxy runs assume **20–75 TFLOP/s per GPU**; sharded 7B runs assume **50–125 TFLOP/s per GPU**:
+
+- Proxies: `30 × 6 × 30M × 3B` gives **60–225 A100 GPU-hours**.
+- Target CPT comparisons: `3 × 6 × 7B × 1B` gives **280–700 A100 GPU-hours**.
+- Combined, with 25% for evaluation, checkpoints and contingency: **425–1,156 GPU-hours**, rounded to **400–1,200** for planning.
+
+The **30-run count and six candidate source/topic groups are our illustrative starting budget**. The 30M/3B proxy scale follows [OLMo 3's mixture search](https://arxiv.org/html/2512.13961v2#S3.SS4); [DCLM](https://arxiv.org/html/2406.11794v3) supports matched comparisons of processing recipes. Neither paper establishes the assumed cluster throughput or guarantees that this campaign is enough to select our final mixture. Close results require further runs or seeds, outside this initial allowance. Three target runs compare three recipes; they are not three seeds of the same recipe. Moving the target from 7B to 27B multiplies the target-run component by roughly 27/7; it does not multiply the proxy component.
+
+The output of these experiments is a tested source/topic sampling policy, not a requirement to train once on all 49.1B retained tokens. Source-pool size, sampled training exposure and experiment budget are different quantities. Stages can overlap; implementation work, queue time, outages and the additional paper-asset/OCR workload prevent a defensible fixed end-to-end date at this point.
 
 ## Reproduction and refinement
 

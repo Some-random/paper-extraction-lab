@@ -6,7 +6,7 @@ Scientific model with disclosed biological data
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; scientific decoder. [Initialization evidence](https://arxiv.org/html/2211.09085v1)
+**Training approach:** Pretraining from scratch. **Architecture:** scientific decoder. [Initialization evidence](https://arxiv.org/html/2211.09085v1)
 
 A broad scientific model with disclosed biological sources, not a biology-only model. The approximately 106B-token corpus and 450B training exposure are different quantities.
 
@@ -96,7 +96,7 @@ Named reused inputs relevant to the reviewed training stages. This is not necess
 
 **Training stage:** Decoder pretraining from scratch
 
-**Backbone:** Random weights; scientific decoder
+**Backbone:** scientific decoder
 
 **Source material and units:** Scientific papers plus biological/chemical records such as UniProt and PubChem
 

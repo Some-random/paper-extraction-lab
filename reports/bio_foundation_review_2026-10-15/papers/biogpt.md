@@ -6,7 +6,7 @@ Biomedical text
 
 This page consolidates existing reviewed sources. Author-reported results have not been reproduced here.
 
-**Training approach:** Pretraining from scratch. **Starting checkpoint:** Random weights; GPT-2-style architecture. [Initialization evidence](https://arxiv.org/pdf/2210.10341)
+**Training approach:** Pretraining from scratch. **Architecture:** GPT-2-style architecture. [Initialization evidence](https://arxiv.org/pdf/2210.10341)
 
 Architecture choice is not checkpoint reuse. BioGPT trains from scratch on PubMed abstracts. The overview uses scheduled token positions; unique corpus tokens are not reported.
 
@@ -87,7 +87,7 @@ Named reused inputs relevant to the reviewed training stages. This is not necess
 
 **Training stage:** Pretraining from scratch; task-specific fine-tuning
 
-**Backbone:** Random weights; GPT-2-style architecture
+**Backbone:** GPT-2-style architecture
 
 **Source material and units:** 15M PubMed records with both title and abstract, updated before 2021.
 
