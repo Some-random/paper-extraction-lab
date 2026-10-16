@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-15T22:03:31.856332-08:00",
+  "checked_at_pst": "2026-10-15T22:06:20.465933-08:00",
   "scope": "Typed token accounting, preservation of source allocations, whole-paper assessments, paper-text origins, modality provenance, review-scope and initialization classification, and generated-file consistency. Source snapshots are retained from the prior audit; no model run or new tokenizer census.",
   "catalog_entries": 41,
   "token_budget_rows": 52,
@@ -409,7 +409,7 @@
     "format": "Prose walkthrough with six stages and concrete examples",
     "inline_figures": false,
     "named_references_beside_relevant_steps": true,
-    "source_links": 19,
+    "source_links": 20,
     "metadata_distinguished_from_model_visible_tags": true,
     "explicit_cleaning_and_cross_source_deduplication": true,
     "non_text_validation_separate_from_prose_scoring": true,
@@ -521,6 +521,21 @@
     ],
     "leftover_packaging_paragraph_removed": true,
     "mixing_output_explained": "Source/topic sampling weights, within-topic quality upsampling rules, and the sampled training stream",
-    "olmo3_table4_sampled_mix_reproduced": true
+    "olmo3_table4_sampled_mix_reproduced": true,
+    "openthoughts3_output_explained": true,
+    "openthoughts3_released_example_counts": {
+      "source": "https://huggingface.co/datasets/open-thoughts/OpenThoughts3-1.2M",
+      "unit": "question-response training examples",
+      "domain_counts": {
+        "math": 850000,
+        "code": 250000,
+        "science": 100000
+      },
+      "total": 1200000,
+      "selected_question_entries": 75000,
+      "responses_per_entry": 16,
+      "domain_allocation_origin": "Follows the earlier OpenThoughts2 mixture, per paper section 5",
+      "not_token_shares": true
+    }
   }
 }

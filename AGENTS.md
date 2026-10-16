@@ -317,3 +317,10 @@ sampling weights, within-topic quality upsampling rules and the resulting text
 stream consumed by training. Use OLMo 3's actual Table 4 mixture as a concrete
 example, not another hypothetical A/B/C experiment. Keep token-budget records
 in the catalog unchanged; this is an explanation of the published recipe.
+
+The user requests the same concrete-output explanation for OpenThoughts3.
+Show the released 1.2M-example dataset, its 850k math / 250k code / 100k science
+composition, and the 75k selected question entries with 16 teacher responses
+per entry. Distinguish training examples from unique questions and tokens.
+Attribute the domain allocation to the earlier OpenThoughts2 mixture, as stated
+in the paper, rather than presenting it as learned token weights.

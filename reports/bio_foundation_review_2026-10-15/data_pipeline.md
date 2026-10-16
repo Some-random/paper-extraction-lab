@@ -82,6 +82,19 @@ The studies below answer different parts of the mixing problem. Their experiment
 - **Actual mixing search:** rank sources from those experiments. For each domain, choose the top N sources, with N = 1, 2, 4, 8 or 16; sample 31,600/N questions from each. Total example count stays fixed, and sources within a candidate mixture have equal shares.
 - **What follows:** carry the selected approach into experiments on filtering, deduplication, multiple answers and teachers. Selection uses the average across eight development benchmarks; separate benchmarks are reserved for final evaluation. The reported 1,000-plus experiments cover this wider pipeline.
 
+**What comes out:** first, a selected set of question sources and processing rules. The authors then apply those rules at scale to produce the released [OpenThoughts3-1.2M dataset](https://huggingface.co/datasets/open-thoughts/OpenThoughts3-1.2M): a concrete collection of question–response training examples.
+
+Its construction selects **75,000 question entries** and generates **16 responses per entry** with QwQ-32B, giving **1.2 million examples**. Each response contains the teacher's reasoning and answer. A question can therefore appear in multiple rows with different generated responses.
+
+| Domain | Final training examples | Approximate share of examples |
+|---|---:|---:|
+| Math | 850,000 | 70.8% |
+| Code | 250,000 | 20.8% |
+| Science | 100,000 | 8.3% |
+| **Total** | **1,200,000** | **100%** |
+
+The paper states that this cross-domain allocation follows the earlier OpenThoughts2 mixture. The source-selection experiments determine which question sources to use within those domains. The final rows are combined to train OpenThinker3-7B; the released records retain their source, domain and question–response conversation. **The output is an actual mixed training dataset.** These proportions count examples, so they do not imply the same proportions of tokens when response lengths differ.
+
 **OLMo 3 — learn continuous mixture weights from proxy training runs.**
 
 - **What receives weights:** source collections and topic partitions, including 24 web topics. Within-topic quality upsampling is handled separately from source/topic mixing.
@@ -118,4 +131,4 @@ For this corpus, apply that experimental structure as follows:
 
 Hold the model, tokenizer, optimizer settings and training budget fixed within each matched comparison. Track the actual sampled tokens, repeated exposure and retained corpus size so a gain cannot be explained simply by one run seeing more data. Smaller runs screen the search; target-checkpoint confirmation determines the final choice.
 
-**References:** [DCLM, §§3–4 and Appendix L](https://arxiv.org/html/2406.11794v3); [OpenThoughts3, §§4.1–4.6](https://arxiv.org/html/2506.04178v2#S4); [OLMo 3, §3.4.4 and Table 4](https://arxiv.org/html/2512.13961v2#S3.SS4); [Marin / Datakit: Curating 25 Trillion Tokens for LLM Pretraining](https://openathena.ai/blog/marin-data-pipeline-overview/), published September 11, 2026. The corpus-specific search above combines these techniques; it is not a reproduction of any one study's full experiment schedule.
+**References:** [DCLM, §§3–4 and Appendix L](https://arxiv.org/html/2406.11794v3); [OpenThoughts3, §§4–5](https://arxiv.org/html/2506.04178v2#S4); [OLMo 3, §3.4.4 and Table 4](https://arxiv.org/html/2512.13961v2#S3.SS4); [Marin / Datakit: Curating 25 Trillion Tokens for LLM Pretraining](https://openathena.ai/blog/marin-data-pipeline-overview/), published September 11, 2026. The corpus-specific search above combines these techniques; it is not a reproduction of any one study's full experiment schedule.
