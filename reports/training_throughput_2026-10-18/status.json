@@ -1,13 +1,15 @@
 {
-  "checked_at_pst": "2026-10-18T15:11:08-08:00",
-  "watcher_status": "starting",
-  "delivery": "GitHub hourly reports and local status history; automatic chat notifications are not configured",
+  "checked_at_pst": "2026-10-18T15:11:58-08:00",
+  "watcher_status": "watching",
+  "stop_reason": null,
+  "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
   "setup": {
     "stage": "ready",
     "updated_at_pst": "2026-10-18T15:10:49-08:00"
   },
   "admission": {
-    "supervisor_status": "starting",
+    "checked_at_pst": "2026-10-18T15:11:58-08:00",
+    "supervisor_status": "watching",
     "stop_reason": null
   },
   "scheduler_errors": [],
