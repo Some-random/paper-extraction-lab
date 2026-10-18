@@ -1,0 +1,1143 @@
+{
+  "checked_at_pst": "2026-10-18T10:43:55.529636-08:00",
+  "sample_sha256": "a27c281b243d52e26586b5ecf853d7ee8d310698bfd7fe9bca03497d4a9a7da9",
+  "sampling_seed": 2026101801,
+  "counting_tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "primary_review_records": 493,
+  "independent_audit_records": 60,
+  "audit_label_disagreements": 1,
+  "adjudicated_records": 3,
+  "targeted_influence_audit_records": 7,
+  "targeted_influence_label_disagreements": 2,
+  "resources": {
+    "cpu_cores": 2,
+    "cluster_gpus": 0,
+    "new_corpus_download_bytes": 0,
+    "planned_compressed_rowgroup_read_bytes": 1519514623,
+    "saved_primary_sample_bytes": 2680795
+  },
+  "review_method": "Assistant/model semantic full-document labels; blinded second model review; no human expert annotations.",
+  "sample_label_counts": {
+    "other": 320,
+    "clinical": 94,
+    "biology": 63,
+    "mixed": 16,
+    "unreadable": 31
+  },
+  "full_frame_readable_domain": {
+    "method": "stratified simple random sampling without replacement; HT totals; delta-method ratio intervals",
+    "uncertainty": "Approximate 95% sampling intervals; label error, overlap and selection bias are not included.",
+    "readable_domain": "Unreadable sampled rows keep original stratum weights and variance contributions; category document and token shares condition on readable content. No inference about the biology share of unreadable content is made.",
+    "definition_sensitivity": "biology is the strict definition; biology_plus_mixed adds every mixed document, not an extra independent corpus.",
+    "corpora": {
+      "fineweb_edu_10bt": {
+        "sample_records": 56,
+        "readable_sample_records": 56,
+        "unreadable_sample_records": 0,
+        "sampled_strata": 14,
+        "population_records": 9672101,
+        "estimate_scope": "currently readable document domain within the supplied source frame",
+        "readability": {
+          "estimate": 9672101.0,
+          "standard_error": 0.0,
+          "ci95": [
+            9672101.0,
+            9672101.0
+          ],
+          "share": 1.0,
+          "share_standard_error": 0.0,
+          "share_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "token_totals_scope": "Readable rows contribute full token counts; unreadable rows remain in the sample with zero domain contributions, not inferred actual lengths.",
+        "token_totals": {
+          "source_tokens": {
+            "estimate": 9708212630.5,
+            "standard_error": 2518168007.1585917,
+            "ci95": [
+              4772694029.448159,
+              14643731231.551842
+            ]
+          },
+          "target_tokens": {
+            "estimate": 9595778582.75,
+            "standard_error": 2511550197.8510833,
+            "ci95": [
+              4673230649.597429,
+              14518326515.90257
+            ]
+          }
+        },
+        "categories": {
+          "biology": {
+            "documents": {
+              "estimate": 2197750.0,
+              "standard_error": 538408.2041072554,
+              "ci95": [
+                1142489.310968889,
+                3253010.689031111
+              ],
+              "share": 0.22722570825097876,
+              "share_standard_error": 0.05566610647544473,
+              "share_ci95": [
+                0.11812214439953521,
+                0.3363292721024223
+              ]
+            },
+            "source_tokens": {
+              "estimate": 1050073250.0,
+              "standard_error": 306215860.21498173,
+              "ci95": [
+                449901192.4836842,
+                1650245307.516316
+              ],
+              "share": 0.10816339628790334,
+              "share_standard_error": 0.04481243029893481,
+              "share_ci95": [
+                0.020332646842279617,
+                0.19599414573352705
+              ]
+            },
+            "target_tokens": {
+              "estimate": 1050180000.0,
+              "standard_error": 307663466.7424175,
+              "ci95": [
+                447170685.8261249,
+                1653189314.173875
+              ],
+              "share": 0.10944187498113726,
+              "share_standard_error": 0.045568355790648975,
+              "share_ci95": [
+                0.02012953879675805,
+                0.19875421116551648
+              ]
+            }
+          },
+          "clinical": {
+            "documents": {
+              "estimate": 1737550.5,
+              "standard_error": 530902.8274079448,
+              "ci95": [
+                697000.0789899438,
+                2778100.921010056
+              ],
+              "share": 0.17964561164115223,
+              "share_standard_error": 0.05489012443190418,
+              "share_ci95": [
+                0.07206294464769794,
+                0.28722827863460654
+              ]
+            },
+            "source_tokens": {
+              "estimate": 1654448723.0,
+              "standard_error": 616528180.4325963,
+              "ci95": [
+                446075693.8980992,
+                2862821752.101901
+              ],
+              "share": 0.17041743789194194,
+              "share_standard_error": 0.07120287230386292,
+              "share_ci95": [
+                0.030862372580566122,
+                0.30997250320331776
+              ]
+            },
+            "target_tokens": {
+              "estimate": 1594494041.25,
+              "standard_error": 590023711.8391558,
+              "ci95": [
+                438068816.0206156,
+                2750919266.4793844
+              ],
+              "share": 0.16616619771910607,
+              "share_standard_error": 0.06968197137342012,
+              "share_ci95": [
+                0.029592043455451578,
+                0.30274035198276056
+              ]
+            }
+          },
+          "other": {
+            "documents": {
+              "estimate": 5373050.5,
+              "standard_error": 693050.1816725949,
+              "ci95": [
+                4014697.1044427725,
+                6731403.895557228
+              ],
+              "share": 0.5555205120376638,
+              "share_standard_error": 0.07165456416063014,
+              "share_ci95": [
+                0.41508014695491424,
+                0.6959608771204134
+              ]
+            },
+            "source_tokens": {
+              "estimate": 4696885657.5,
+              "standard_error": 1292168181.8425357,
+              "ci95": [
+                2164282559.1200266,
+                7229488755.879973
+              ],
+              "share": 0.4838053961389283,
+              "share_standard_error": 0.13982612100731498,
+              "share_ci95": [
+                0.20975123486665148,
+                0.7578595574112051
+              ]
+            },
+            "target_tokens": {
+              "estimate": 4675864541.5,
+              "standard_error": 1335746040.6993647,
+              "ci95": [
+                2057850409.2372723,
+                7293878673.762728
+              ],
+              "share": 0.4872834967144449,
+              "share_standard_error": 0.14142056926557706,
+              "share_ci95": [
+                0.21010427428076178,
+                0.7644627191481279
+              ]
+            }
+          },
+          "mixed": {
+            "documents": {
+              "estimate": 363750.0,
+              "standard_error": 257210.90324867645,
+              "ci95": [
+                0.0,
+                867874.1067984223
+              ],
+              "share": 0.03760816807020522,
+              "share_standard_error": 0.02659307458107359,
+              "share_ci95": [
+                0.0,
+                0.08972963648729704
+              ]
+            },
+            "source_tokens": {
+              "estimate": 2306805000.0,
+              "standard_error": 2229524512.4647527,
+              "ci95": [
+                0.0,
+                6676592747.080138
+              ],
+              "share": 0.23761376968122638,
+              "share_standard_error": 0.17938985474271255,
+              "share_ci95": [
+                0.0,
+                0.5892114241688148
+              ]
+            },
+            "target_tokens": {
+              "estimate": 2275240000.0,
+              "standard_error": 2199027702.273432,
+              "ci95": [
+                0.0,
+                6585255097.461795
+              ],
+              "share": 0.2371084305853118,
+              "share_standard_error": 0.17934798096927337,
+              "share_ci95": [
+                0.0,
+                0.5886240139850626
+              ]
+            }
+          },
+          "biology_plus_mixed": {
+            "documents": {
+              "estimate": 2561500.0,
+              "standard_error": 558240.7661573992,
+              "ci95": [
+                1467368.2036294513,
+                3655631.7963705487
+              ],
+              "share": 0.264833876321184,
+              "share_standard_error": 0.057716598095636014,
+              "share_ci95": [
+                0.15171142274356433,
+                0.3779563298988037
+              ]
+            },
+            "source_tokens": {
+              "estimate": 3356878250.0,
+              "standard_error": 2224588191.6796327,
+              "ci95": [
+                0.0,
+                7716990986.125166
+              ],
+              "share": 0.3457771659691297,
+              "share_standard_error": 0.1607096252597905,
+              "share_ci95": [
+                0.030792088491011838,
+                0.6607622434472475
+              ]
+            },
+            "target_tokens": {
+              "estimate": 3325420000.0,
+              "standard_error": 2194768792.7297883,
+              "ci95": [
+                0.0,
+                7627087788.142839
+              ],
+              "share": 0.34655030556644906,
+              "share_standard_error": 0.16090034249849333,
+              "share_ci95": [
+                0.031191429169242668,
+                0.6619091819636554
+              ]
+            }
+          }
+        }
+      },
+      "smollm_fineweb_edu_dedup": {
+        "sample_records": 468,
+        "readable_sample_records": 437,
+        "unreadable_sample_records": 31,
+        "sampled_strata": 234,
+        "population_records": 190168005,
+        "estimate_scope": "currently readable document domain within the supplied source frame",
+        "readability": {
+          "estimate": 177571406.0,
+          "standard_error": 1573753.3459742032,
+          "ci95": [
+            174486906.12134117,
+            180655905.87865883
+          ],
+          "share": 0.933760681771889,
+          "share_standard_error": 0.008275594761454237,
+          "share_ci95": [
+            0.9175408140887903,
+            0.9499805494549877
+          ]
+        },
+        "token_totals_scope": "Readable rows contribute full token counts; unreadable rows remain in the sample with zero domain contributions, not inferred actual lengths.",
+        "token_totals": {
+          "source_tokens": {
+            "estimate": 187098891138.0,
+            "standard_error": 12800439993.290718,
+            "ci95": [
+              162010489764.88406,
+              212187292511.11594
+            ]
+          },
+          "target_tokens": {
+            "estimate": 186917256091.0,
+            "standard_error": 13223905247.70692,
+            "ci95": [
+              160998878070.5242,
+              212835634111.4758
+            ]
+          }
+        },
+        "categories": {
+          "biology": {
+            "documents": {
+              "estimate": 20723436.0,
+              "standard_error": 2664558.6436281526,
+              "ci95": [
+                15500997.023793925,
+                25945874.976206075
+              ],
+              "share": 0.11670480324968537,
+              "share_standard_error": 0.014959686087536244,
+              "share_ci95": [
+                0.08738435729808941,
+                0.14602524920128132
+              ]
+            },
+            "source_tokens": {
+              "estimate": 22047706110.0,
+              "standard_error": 5953774552.602179,
+              "ci95": [
+                10378522414.828657,
+                33716889805.17134
+              ],
+              "share": 0.11783985450634285,
+              "share_standard_error": 0.029564296816147168,
+              "share_ci95": [
+                0.059894897518442215,
+                0.1757848114942435
+              ]
+            },
+            "target_tokens": {
+              "estimate": 22886802404.5,
+              "standard_error": 6473810863.563852,
+              "ci95": [
+                10198366269.190704,
+                35575238539.809296
+              ],
+              "share": 0.12244349656704591,
+              "share_standard_error": 0.03190129472623236,
+              "share_ci95": [
+                0.05991810784343292,
+                0.1849688852906589
+              ]
+            }
+          },
+          "clinical": {
+            "documents": {
+              "estimate": 33726378.0,
+              "standard_error": 3519019.692356097,
+              "ci95": [
+                26829226.14209483,
+                40623529.85790517
+              ],
+              "share": 0.18993135640318126,
+              "share_standard_error": 0.019838782542450792,
+              "share_ci95": [
+                0.15104805712285574,
+                0.22881465568350678
+              ]
+            },
+            "source_tokens": {
+              "estimate": 31416320433.5,
+              "standard_error": 5012218182.886304,
+              "ci95": [
+                21592553312.38605,
+                41240087554.61395
+              ],
+              "share": 0.1679129162252919,
+              "share_standard_error": 0.026265673177425748,
+              "share_ci95": [
+                0.1164331427678377,
+                0.21939268968274608
+              ]
+            },
+            "target_tokens": {
+              "estimate": 30943744682.5,
+              "standard_error": 5010676939.814271,
+              "ci95": [
+                21122998342.298656,
+                40764491022.70134
+              ],
+              "share": 0.16554782222693848,
+              "share_standard_error": 0.026377576474735178,
+              "share_ci95": [
+                0.11384872233700652,
+                0.21724692211687044
+              ]
+            }
+          },
+          "other": {
+            "documents": {
+              "estimate": 117432805.5,
+              "standard_error": 4319468.030717411,
+              "ci95": [
+                108966803.72742173,
+                125898807.27257827
+              ],
+              "share": 0.6613272268621897,
+              "share_standard_error": 0.023301464125305267,
+              "share_ci95": [
+                0.6156571963895393,
+                0.7069972573348401
+              ]
+            },
+            "source_tokens": {
+              "estimate": 120378372401.5,
+              "standard_error": 9766209859.102415,
+              "ci95": [
+                101236952812.19928,
+                139519791990.80072
+              ],
+              "share": 0.6433943657779969,
+              "share_standard_error": 0.040785923488889944,
+              "share_ci95": [
+                0.5634554246635664,
+                0.7233333068924275
+              ]
+            },
+            "target_tokens": {
+              "estimate": 119893606174.0,
+              "standard_error": 9956941156.993837,
+              "ci95": [
+                100378360110.1075,
+                139408852237.8925
+              ],
+              "share": 0.6414260977361567,
+              "share_standard_error": 0.04189374518556621,
+              "share_ci95": [
+                0.5593158659949486,
+                0.7235363294773647
+              ]
+            }
+          },
+          "mixed": {
+            "documents": {
+              "estimate": 5688786.5,
+              "standard_error": 1520390.2741349833,
+              "ci95": [
+                2708876.320250453,
+                8668696.679749547
+              ],
+              "share": 0.032036613484943625,
+              "share_standard_error": 0.008566840973657931,
+              "share_ci95": [
+                0.01524591371529203,
+                0.04882731325459522
+              ]
+            },
+            "source_tokens": {
+              "estimate": 13256492193.0,
+              "standard_error": 6316074311.377665,
+              "ci95": [
+                877214019.0211544,
+                25635770366.978844
+              ],
+              "share": 0.07085286349036833,
+              "share_standard_error": 0.031935090258674054,
+              "share_ci95": [
+                0.008261236740331274,
+                0.1334444902404054
+              ]
+            },
+            "target_tokens": {
+              "estimate": 13193102830.0,
+              "standard_error": 6333686925.352056,
+              "ci95": [
+                779304566.9577408,
+                25606901093.04226
+              ],
+              "share": 0.0705825834698589,
+              "share_standard_error": 0.03207188370492329,
+              "share_ci95": [
+                0.007722846491852231,
+                0.13344232044786558
+              ]
+            }
+          },
+          "biology_plus_mixed": {
+            "documents": {
+              "estimate": 26412222.5,
+              "standard_error": 3013508.3410824914,
+              "ci95": [
+                20505854.684367273,
+                32318590.315632727
+              ],
+              "share": 0.14874141673462898,
+              "share_standard_error": 0.0169300443251295,
+              "share_ci95": [
+                0.11555913960070843,
+                0.18192369386854954
+              ]
+            },
+            "source_tokens": {
+              "estimate": 35304198303.0,
+              "standard_error": 8643809208.30522,
+              "ci95": [
+                18362643565.48609,
+                52245753040.51391
+              ],
+              "share": 0.1886927179967112,
+              "share_standard_error": 0.039919604799962226,
+              "share_ci95": [
+                0.11045173031171296,
+                0.26693370568170943
+              ]
+            },
+            "target_tokens": {
+              "estimate": 36079905234.5,
+              "standard_error": 9023440139.118444,
+              "ci95": [
+                18394287545.174755,
+                53765522923.82524
+              ],
+              "share": 0.1930260800369048,
+              "share_standard_error": 0.04143356983155875,
+              "share_ci95": [
+                0.11181777541612434,
+                0.27423438465768524
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "allocation_eligible_subset": {
+    "method": "stratified simple random sampling without replacement; HT totals; delta-method ratio intervals",
+    "uncertainty": "Approximate 95% sampling intervals; label error, overlap and selection bias are not included.",
+    "readable_domain": "Unreadable sampled rows keep original stratum weights and variance contributions; category document and token shares condition on readable content. No inference about the biology share of unreadable content is made.",
+    "definition_sensitivity": "biology is the strict definition; biology_plus_mixed adds every mixed document, not an extra independent corpus.",
+    "corpora": {
+      "fineweb_edu_10bt": {
+        "sample_records": 56,
+        "readable_sample_records": 56,
+        "unreadable_sample_records": 0,
+        "sampled_strata": 14,
+        "population_records": 9672101,
+        "estimate_scope": "currently readable document domain within the supplied source frame",
+        "readability": {
+          "estimate": 9672101.0,
+          "standard_error": 0.0,
+          "ci95": [
+            9672101.0,
+            9672101.0
+          ],
+          "share": 1.0,
+          "share_standard_error": 0.0,
+          "share_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "token_totals_scope": "Readable rows contribute full token counts; unreadable rows remain in the sample with zero domain contributions, not inferred actual lengths.",
+        "token_totals": {
+          "source_tokens": {
+            "estimate": 9708212630.5,
+            "standard_error": 2518168007.1585917,
+            "ci95": [
+              4772694029.448159,
+              14643731231.551842
+            ]
+          },
+          "target_tokens": {
+            "estimate": 9595778582.75,
+            "standard_error": 2511550197.8510833,
+            "ci95": [
+              4673230649.597429,
+              14518326515.90257
+            ]
+          }
+        },
+        "categories": {
+          "biology": {
+            "documents": {
+              "estimate": 2197750.0,
+              "standard_error": 538408.2041072554,
+              "ci95": [
+                1142489.310968889,
+                3253010.689031111
+              ],
+              "share": 0.22722570825097876,
+              "share_standard_error": 0.05566610647544473,
+              "share_ci95": [
+                0.11812214439953521,
+                0.3363292721024223
+              ]
+            },
+            "source_tokens": {
+              "estimate": 1050073250.0,
+              "standard_error": 306215860.21498173,
+              "ci95": [
+                449901192.4836842,
+                1650245307.516316
+              ],
+              "share": 0.10816339628790334,
+              "share_standard_error": 0.04481243029893481,
+              "share_ci95": [
+                0.020332646842279617,
+                0.19599414573352705
+              ]
+            },
+            "target_tokens": {
+              "estimate": 1050180000.0,
+              "standard_error": 307663466.7424175,
+              "ci95": [
+                447170685.8261249,
+                1653189314.173875
+              ],
+              "share": 0.10944187498113726,
+              "share_standard_error": 0.045568355790648975,
+              "share_ci95": [
+                0.02012953879675805,
+                0.19875421116551648
+              ]
+            }
+          },
+          "clinical": {
+            "documents": {
+              "estimate": 1737550.5,
+              "standard_error": 530902.8274079448,
+              "ci95": [
+                697000.0789899438,
+                2778100.921010056
+              ],
+              "share": 0.17964561164115223,
+              "share_standard_error": 0.05489012443190418,
+              "share_ci95": [
+                0.07206294464769794,
+                0.28722827863460654
+              ]
+            },
+            "source_tokens": {
+              "estimate": 1654448723.0,
+              "standard_error": 616528180.4325963,
+              "ci95": [
+                446075693.8980992,
+                2862821752.101901
+              ],
+              "share": 0.17041743789194194,
+              "share_standard_error": 0.07120287230386292,
+              "share_ci95": [
+                0.030862372580566122,
+                0.30997250320331776
+              ]
+            },
+            "target_tokens": {
+              "estimate": 1594494041.25,
+              "standard_error": 590023711.8391558,
+              "ci95": [
+                438068816.0206156,
+                2750919266.4793844
+              ],
+              "share": 0.16616619771910607,
+              "share_standard_error": 0.06968197137342012,
+              "share_ci95": [
+                0.029592043455451578,
+                0.30274035198276056
+              ]
+            }
+          },
+          "other": {
+            "documents": {
+              "estimate": 5373050.5,
+              "standard_error": 693050.1816725949,
+              "ci95": [
+                4014697.1044427725,
+                6731403.895557228
+              ],
+              "share": 0.5555205120376638,
+              "share_standard_error": 0.07165456416063014,
+              "share_ci95": [
+                0.41508014695491424,
+                0.6959608771204134
+              ]
+            },
+            "source_tokens": {
+              "estimate": 4696885657.5,
+              "standard_error": 1292168181.8425357,
+              "ci95": [
+                2164282559.1200266,
+                7229488755.879973
+              ],
+              "share": 0.4838053961389283,
+              "share_standard_error": 0.13982612100731498,
+              "share_ci95": [
+                0.20975123486665148,
+                0.7578595574112051
+              ]
+            },
+            "target_tokens": {
+              "estimate": 4675864541.5,
+              "standard_error": 1335746040.6993647,
+              "ci95": [
+                2057850409.2372723,
+                7293878673.762728
+              ],
+              "share": 0.4872834967144449,
+              "share_standard_error": 0.14142056926557706,
+              "share_ci95": [
+                0.21010427428076178,
+                0.7644627191481279
+              ]
+            }
+          },
+          "mixed": {
+            "documents": {
+              "estimate": 363750.0,
+              "standard_error": 257210.90324867645,
+              "ci95": [
+                0.0,
+                867874.1067984223
+              ],
+              "share": 0.03760816807020522,
+              "share_standard_error": 0.02659307458107359,
+              "share_ci95": [
+                0.0,
+                0.08972963648729704
+              ]
+            },
+            "source_tokens": {
+              "estimate": 2306805000.0,
+              "standard_error": 2229524512.4647527,
+              "ci95": [
+                0.0,
+                6676592747.080138
+              ],
+              "share": 0.23761376968122638,
+              "share_standard_error": 0.17938985474271255,
+              "share_ci95": [
+                0.0,
+                0.5892114241688148
+              ]
+            },
+            "target_tokens": {
+              "estimate": 2275240000.0,
+              "standard_error": 2199027702.273432,
+              "ci95": [
+                0.0,
+                6585255097.461795
+              ],
+              "share": 0.2371084305853118,
+              "share_standard_error": 0.17934798096927337,
+              "share_ci95": [
+                0.0,
+                0.5886240139850626
+              ]
+            }
+          },
+          "biology_plus_mixed": {
+            "documents": {
+              "estimate": 2561500.0,
+              "standard_error": 558240.7661573992,
+              "ci95": [
+                1467368.2036294513,
+                3655631.7963705487
+              ],
+              "share": 0.264833876321184,
+              "share_standard_error": 0.057716598095636014,
+              "share_ci95": [
+                0.15171142274356433,
+                0.3779563298988037
+              ]
+            },
+            "source_tokens": {
+              "estimate": 3356878250.0,
+              "standard_error": 2224588191.6796327,
+              "ci95": [
+                0.0,
+                7716990986.125166
+              ],
+              "share": 0.3457771659691297,
+              "share_standard_error": 0.1607096252597905,
+              "share_ci95": [
+                0.030792088491011838,
+                0.6607622434472475
+              ]
+            },
+            "target_tokens": {
+              "estimate": 3325420000.0,
+              "standard_error": 2194768792.7297883,
+              "ci95": [
+                0.0,
+                7627087788.142839
+              ],
+              "share": 0.34655030556644906,
+              "share_standard_error": 0.16090034249849333,
+              "share_ci95": [
+                0.031191429169242668,
+                0.6619091819636554
+              ]
+            }
+          }
+        }
+      },
+      "smollm_fineweb_edu_dedup": {
+        "sample_records": 400,
+        "readable_sample_records": 400,
+        "unreadable_sample_records": 0,
+        "sampled_strata": 200,
+        "population_records": 162536759,
+        "estimate_scope": "currently readable document domain within the supplied source frame",
+        "readability": {
+          "estimate": 162536759.0,
+          "standard_error": 0.0,
+          "ci95": [
+            162536759.0,
+            162536759.0
+          ],
+          "share": 1.0,
+          "share_standard_error": 0.0,
+          "share_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "token_totals_scope": "Readable rows contribute full token counts; unreadable rows remain in the sample with zero domain contributions, not inferred actual lengths.",
+        "token_totals": {
+          "source_tokens": {
+            "estimate": 169542487664.5,
+            "standard_error": 12035482341.03903,
+            "ci95": [
+              145953375739.4957,
+              193131599589.5043
+            ]
+          },
+          "target_tokens": {
+            "estimate": 169541674707.0,
+            "standard_error": 12482317925.350122,
+            "ci95": [
+              145076781129.73505,
+              194006568284.26495
+            ]
+          }
+        },
+        "categories": {
+          "biology": {
+            "documents": {
+              "estimate": 17472701.5,
+              "standard_error": 2537601.1335879304,
+              "ci95": [
+                12499094.67103964,
+                22446308.32896036
+              ],
+              "share": 0.10749999943089797,
+              "share_standard_error": 0.015612475289899994,
+              "share_ci95": [
+                0.07690011015317244,
+                0.1380998887086235
+              ]
+            },
+            "source_tokens": {
+              "estimate": 18220777771.5,
+              "standard_error": 5456969890.667955,
+              "ci95": [
+                7525313321.071331,
+                28916242221.92867
+              ],
+              "share": 0.10747027498827479,
+              "share_standard_error": 0.030138640151747338,
+              "share_ci95": [
+                0.04839962574783721,
+                0.16654092422871236
+              ]
+            },
+            "target_tokens": {
+              "estimate": 19000141769.5,
+              "standard_error": 5986271265.015588,
+              "ci95": [
+                7267265688.38242,
+                30733017850.61758
+              ],
+              "share": 0.11206767776911387,
+              "share_standard_error": 0.03277390031067902,
+              "share_ci95": [
+                0.04783201352727691,
+                0.17630334201095083
+              ]
+            }
+          },
+          "clinical": {
+            "documents": {
+              "estimate": 32101010.5,
+              "standard_error": 3423893.4479687377,
+              "ci95": [
+                25390302.65507861,
+                38811718.344921395
+              ],
+              "share": 0.19750000367609152,
+              "share_standard_error": 0.021065348349715386,
+              "share_ci95": [
+                0.1562126795888591,
+                0.23878732776332395
+              ]
+            },
+            "source_tokens": {
+              "estimate": 29617039149.0,
+              "standard_error": 4900447231.6709385,
+              "ci95": [
+                20012339066.78595,
+                39221739231.21405
+              ],
+              "share": 0.17468800627490985,
+              "share_standard_error": 0.02821667808070851,
+              "share_ci95": [
+                0.11938433347336039,
+                0.22999167907645932
+              ]
+            },
+            "target_tokens": {
+              "estimate": 29116425870.5,
+              "standard_error": 4890083973.064243,
+              "ci95": [
+                19532037401.91755,
+                38700814339.08245
+              ],
+              "share": 0.17173609922645083,
+              "share_standard_error": 0.0282893867126355,
+              "share_ci95": [
+                0.1162899201249593,
+                0.22718227832794236
+              ]
+            }
+          },
+          "other": {
+            "documents": {
+              "estimate": 107274260.5,
+              "standard_error": 4063413.7499975003,
+              "ci95": [
+                99310115.89572005,
+                115238405.10427995
+              ],
+              "share": 0.65999999729292,
+              "share_standard_error": 0.02499996785341032,
+              "share_ci95": [
+                0.6110009606855766,
+                0.7089990339002634
+              ]
+            },
+            "source_tokens": {
+              "estimate": 108448178551.0,
+              "standard_error": 9081864089.408905,
+              "ci95": [
+                90648052023.27089,
+                126248305078.72911
+              ],
+              "share": 0.6396519246880653,
+              "share_standard_error": 0.0432697906411827,
+              "share_ci95": [
+                0.5548446934127589,
+                0.7244591559633717
+              ]
+            },
+            "target_tokens": {
+              "estimate": 108232004237.0,
+              "standard_error": 9309961483.588547,
+              "ci95": [
+                89984815031.71136,
+                126479193442.28864
+              ],
+              "share": 0.6383799406490783,
+              "share_standard_error": 0.04444230204663041,
+              "share_ci95": [
+                0.551274629247632,
+                0.7254852520505246
+              ]
+            }
+          },
+          "mixed": {
+            "documents": {
+              "estimate": 5688786.5,
+              "standard_error": 1520390.2741349833,
+              "ci95": [
+                2708876.320250453,
+                8668696.679749547
+              ],
+              "share": 0.03499999960009046,
+              "share_standard_error": 0.009354131849860396,
+              "share_ci95": [
+                0.016666238067725055,
+                0.053333761132455866
+              ]
+            },
+            "source_tokens": {
+              "estimate": 13256492193.0,
+              "standard_error": 6316074311.377665,
+              "ci95": [
+                877214019.0211544,
+                25635770366.978844
+              ],
+              "share": 0.07818979404875004,
+              "share_standard_error": 0.035016112215366324,
+              "share_ci95": [
+                0.009559475228019004,
+                0.14682011286948107
+              ]
+            },
+            "target_tokens": {
+              "estimate": 13193102830.0,
+              "standard_error": 6333686925.352056,
+              "ci95": [
+                779304566.9577408,
+                25606901093.04226
+              ],
+              "share": 0.077816282355357,
+              "share_standard_error": 0.035139094076263366,
+              "share_ci95": [
+                0.008944923516516032,
+                0.14668764119419797
+              ]
+            }
+          },
+          "biology_plus_mixed": {
+            "documents": {
+              "estimate": 23161488.0,
+              "standard_error": 2901857.8996268925,
+              "ci95": [
+                17473951.028478242,
+                28849024.971521758
+              ],
+              "share": 0.14249999903098842,
+              "share_standard_error": 0.01785354843716856,
+              "share_ci95": [
+                0.10750768709789668,
+                0.17749231096408016
+              ]
+            },
+            "source_tokens": {
+              "estimate": 31477269964.5,
+              "standard_error": 8309423962.82832,
+              "ci95": [
+                15191098265.082401,
+                47763441663.9176
+              ],
+              "share": 0.18566006903702484,
+              "share_standard_error": 0.04239826112950282,
+              "share_ci95": [
+                0.10256100421607481,
+                0.2687591338579749
+              ]
+            },
+            "target_tokens": {
+              "estimate": 32193244599.5,
+              "standard_error": 8680304632.062626,
+              "ci95": [
+                15180160145.821049,
+                49206329053.178955
+              ],
+              "share": 0.18988396012447087,
+              "share_standard_error": 0.0440049203032571,
+              "share_ci95": [
+                0.10363590118753155,
+                0.27613201906141016
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "allocation_summary": {
+    "fineweb_edu_10bt": {
+      "files": 14,
+      "metadata_frame_eligible_files": 14,
+      "apparent_bytes": 28518193415,
+      "allocated_bytes": 28493370880,
+      "eligible_apparent_bytes": 28518193415,
+      "population_rows": 9672101,
+      "eligible_population_rows": 9672101,
+      "stat_errors": 0
+    },
+    "smollm_fineweb_edu_dedup": {
+      "files": 234,
+      "metadata_frame_eligible_files": 200,
+      "apparent_bytes": 550069279849,
+      "allocated_bytes": 510402878464,
+      "eligible_apparent_bytes": 469809692825,
+      "population_rows": 190168005,
+      "eligible_population_rows": 162536759,
+      "stat_errors": 0
+    }
+  },
+  "missingness_sensitivity": {
+    "smollm_fineweb_edu_dedup": {
+      "sample_estimator_missing_source_token_upper": 385546925613.0,
+      "biology_share_missingness_sensitivity": [
+        0.03850147065614009,
+        0.711774398415333
+      ],
+      "interpretation": "Sample-estimator missing-data sensitivity only; not a population confidence interval or target-token bound."
+    },
+    "fineweb_edu_10bt": {
+      "sample_estimator_missing_source_token_upper": 0,
+      "biology_share_missingness_sensitivity": [
+        0.10816339628790334,
+        0.10816339628790334
+      ],
+      "interpretation": "Sample-estimator missing-data sensitivity only; not a population confidence interval or target-token bound."
+    }
+  },
+  "limits": [
+    "Approximate 95% sampling intervals exclude systematic label error.",
+    "Whole-document categories count tokens in biology-focused documents, not biological spans.",
+    "Source corpora overlap; their estimates must not be added.",
+    "Boundary Wald intervals with zero observed examples/failures are not proof of population absence.",
+    "No scope/quality-trained scorer, human expert validation, near deduplication or training ran.",
+    "Allocation eligibility and sampled decoding do not establish full-file checksum integrity."
+  ]
+}

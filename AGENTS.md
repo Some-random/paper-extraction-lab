@@ -425,3 +425,30 @@ in the conversation as well. State the actual delivery mechanism for unattended
 jobs: saved files and GitHub commits alone are not proactive chat notifications.
 This reporting preference does not authorize extending expired run budgets,
 starting training, acquiring more data, or touching evaluation work.
+
+## Existing cluster data and biological-share verification
+
+On October 18 the user requested searching existing cluster downloads, then
+verifying their biological share. The private inventory and source locations
+are under `experiments/cluster_data_inventory_2026-10-18/`; keep other users'
+cluster paths out of public reports. Read shared sources in place without
+modifying their files. Do not reuse licensed central catalogs contrary to
+their explicit local access conditions.
+
+The bounded CPU-only probability sample in
+`experiments/biology_share_2026-10-18/plan.json` selects two uniform rows from
+each of 234 SmolLM FineWeb-Edu-Dedup shards and four from each of 14 FineWeb-Edu
+10BT shards. Preserve its seed, full document samples and selected failures.
+No new corpus downloads, GPU jobs, training or evaluation work is authorized.
+Semantic assistant labels are model judgments, not human expert annotation.
+Report biology, clinical/health, mixed and other separately, using token and
+shard-population weights with sampling uncertainty.
+
+The earlier cache-presence inventory was not an integrity check: payload reads
+identified zero-filled data pages and 31 failed selected locations across 23
+larger-cache files. Do not silently resample or classify failures as other.
+Estimate the readable-content domain with original inclusion weights and
+explicit zero domain contributions for unreadable rows, not invented lengths.
+Keep any 200-shard allocation-based subset check explicit and avoid projecting
+readable-domain fractions onto the reported full 220B total. The two web pools
+overlap and their biological token estimates must not be added.
