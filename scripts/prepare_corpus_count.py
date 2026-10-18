@@ -2,9 +2,12 @@
 """Freeze existing paper exports and full released-shard inventories for counting."""
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from corpus_count import canonical_paper_text
 RUN = ROOT / "experiments/corpus_count_2026-10-17"
 CONFIG = ROOT / "config/corpus_count_2026-10-17.json"
 PROBE = ROOT / "experiments/starter_corpus_estimate_2026-10-16"
@@ -25,13 +28,8 @@ def main():
             raw = path.read_bytes()
             document_hashes[paper["pmcid"]] = hashlib.sha256(raw).hexdigest()
             doc = json.loads(raw)
-            parts = [doc["title"]] + [b["training_text"] for b in doc["blocks"]]
-            for visual in doc["visuals"]:
-                parts.extend([visual.get("caption_training_text", ""), visual.get("notes_training_text", "")])
-                if visual.get("table"):
-                    parts.append(visual["table"]["text_tsv"])
             record = {
-                "text": "\n\n".join(p for p in parts if p.strip()),
+                "text": canonical_paper_text(doc),
                 "id": paper["pmcid"], "doi": paper.get("doi"),
                 "source_xml_sha256": doc["source_xml_sha256"],
                 "source_document": str(path.relative_to(ROOT)),

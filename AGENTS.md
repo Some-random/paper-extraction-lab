@@ -386,3 +386,29 @@ use a locked transactional ledger. Publish measured candidate/exact-unique
 counts separately from estimates, near-dedup/scope/quality retention and
 unscanned source totals. Route/content/modality are alternative breakdowns;
 do not add them together. Keep all evaluation jobs and old batch files untouched.
+
+On October 17 the user then asked to process more papers. The frozen extension
+plan `config/corpus_count_pmc_expansion_2026-10-17.json` targets 5,000 new native
+PMC XML papers from broad topic/year searches, without the original journal
+restriction. Give this paper phase up to three hours and 3 GiB of response
+bytes inside the original census's cumulative limits, then resume the stored
+web/database cursors. One worker/lock/ledger, two CPU cores and zero GPUs still
+apply. Record all version/license/checksum/source provenance, citations, table
+structure and media URLs. New binary PDF/media/supplement acquisition is deferred
+for the text census; original assets remain preserved. This supersedes the
+454-paper-only scope for this census, not the limits on expired older jobs.
+
+The initial canonical paper adapter mistakenly appended caption/table views
+already present in its article blocks. Preserve the superseded 12,677,035-token
+result in the correction audit, and use the corrected **10,609,606** tokens for
+the initial 454 papers. This correction does not change the web/database counts.
+Acquired source files are appended transactionally without rewriting the base
+manifest; a registered extension plan/checksum and explicit correction marker
+prevent silent changes on restart. The earlier 8–10B pilot-token forecast must
+be reconsidered after prioritizing paper acquisition.
+
+The new-paper adapter screens explicit clinical-care/trial/device titles.
+Already acquired examples caught in the startup audit retain their raw counts,
+source files and `excluded_scope` status, but do not count toward the selected
+new-paper target and must not enter the selected-paper set. This transparent
+title screen is not claimed as a complete biology/clinical scope classifier.

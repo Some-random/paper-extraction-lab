@@ -4,7 +4,7 @@ The project converts **experimental biology papers** into source-linked text,
 tables, figures, and training-data candidates. Foundation-model reports inform
 the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
-Actual source counting is underway: [measured token counts](reports/corpus_count_2026-10-17/README.md)
+Actual source counting and broader PMC XML acquisition are underway: [measured token counts](reports/corpus_count_2026-10-17/README.md)
 and [counting setup](docs/corpus_counting.md).
 
 The current working copy and counting artifacts are in

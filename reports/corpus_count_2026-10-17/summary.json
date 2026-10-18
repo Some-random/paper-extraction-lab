@@ -1,17 +1,17 @@
 {
   "run_id": "corpus_count_2026-10-17",
   "started_at_pst": "2026-10-17T20:21:42.538990-08:00",
-  "network_reserved_bytes": 1008535083,
-  "network_body_bytes": 1008535083,
-  "counting_seconds": 1789.9149961126968,
-  "pid": 2833164,
+  "network_reserved_bytes": 1020720587,
+  "network_body_bytes": 1020720587,
+  "counting_seconds": 4379.712162061594,
+  "pid": 2927616,
   "status": "running",
   "error": null,
   "stop_at_pst": "2026-10-18T08:21:42.538990-08:00",
-  "updated_at_pst": "2026-10-17T20:54:38.389361-08:00",
-  "filesystem_free_bytes": 1310587879424,
-  "new_artifact_bytes": 1411220017,
-  "current_file": "biocollection_free_text_stream_part_000001.jsonl.zst",
+  "updated_at_pst": "2026-10-17T21:52:20.058652-08:00",
+  "filesystem_free_bytes": 1310033182720,
+  "new_artifact_bytes": 1932792392,
+  "current_file": "pmc_new_PMC13670481",
   "execution_history": [
     {
       "started_at_pst": "2026-10-17T20:26:48.313802-08:00",
@@ -27,25 +27,87 @@
       },
       "counting_code_sha256": "69c58548112b7bdf4b7db7ad9e98b6c027529a88859493585ae9119ffcd263fc",
       "runner_code_sha256": "3078cd59a7c89210fcb6ce5ae873bc899ab642733d98125a77a701ec44205bd9"
+    },
+    {
+      "started_at_pst": "2026-10-17T21:43:09.795463-08:00",
+      "pid": 2919440,
+      "host": "furiosa.stanford.edu",
+      "slurm_job_id": "238671",
+      "python": "3.12.3",
+      "packages": {
+        "tokenizers": "0.23.3",
+        "zstandard": "0.25.0",
+        "requests": "2.34.2",
+        "PySocks": "1.7.1"
+      },
+      "counting_code_sha256": "7aa982766808f016371b3ba34866c8e9addddb03efaec94973546caa4f56b36b",
+      "runner_code_sha256": "50ef712abf75f0ef5e084ade01bd35a3e8c4143f50981854afcc09c9d59ff159"
+    },
+    {
+      "started_at_pst": "2026-10-17T21:45:38.118798-08:00",
+      "pid": 2922381,
+      "host": "furiosa.stanford.edu",
+      "slurm_job_id": "240432",
+      "python": "3.12.3",
+      "packages": {
+        "tokenizers": "0.23.3",
+        "zstandard": "0.25.0",
+        "requests": "2.34.2",
+        "PySocks": "1.7.1",
+        "lxml": "6.1.3"
+      },
+      "counting_code_sha256": "7aa982766808f016371b3ba34866c8e9addddb03efaec94973546caa4f56b36b",
+      "runner_code_sha256": "10a91faa91af5d093347bfc93b12bd311405b225265f36fc508ba48bbc1affda"
+    },
+    {
+      "started_at_pst": "2026-10-17T21:50:19.776853-08:00",
+      "pid": 2927616,
+      "host": "furiosa.stanford.edu",
+      "slurm_job_id": "240433",
+      "python": "3.12.3",
+      "packages": {
+        "tokenizers": "0.23.3",
+        "zstandard": "0.25.0",
+        "requests": "2.34.2",
+        "PySocks": "1.7.1",
+        "lxml": "6.1.3"
+      },
+      "counting_code_sha256": "7aa982766808f016371b3ba34866c8e9addddb03efaec94973546caa4f56b36b",
+      "runner_code_sha256": "7c8e995c3d883518554d726a668aec9ed7a3956ec3566d76ffb691436366348e",
+      "pmc_adapter_code_sha256": "3dec11a775da3d90c58b2991ba80c0008932b6809d0a35e368c7d655bbb681d1"
     }
   ],
+  "paper_expansion": {
+    "accepted_new_papers": 65,
+    "started_at_pst": "2026-10-17T21:45:38.236154-08:00",
+    "started_epoch": 1792302339.0244095,
+    "downloaded_bytes": 12185504,
+    "reserved_bytes": 12185504,
+    "cursor": 89,
+    "rejected": 19,
+    "target_new_papers": 5000,
+    "status": "acquiring_native_papers",
+    "current_pmcid": "PMC13670481",
+    "scope_excluded_acquired_papers": 6,
+    "scope_excluded_acquired_tokens": 61951
+  },
   "tokenizer_path": "cache/tokenizers/olmocr2-e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
   "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
   "tokenizer_identity": "cached olmOCR 2 Qwen-family tokenizer; fixed counting reference, no added special tokens",
   "sources": {
     "pmc": {
-      "name": "PMC local biology papers",
+      "name": "PMC papers (local + new XML)",
       "acquisition_route": "online_papers",
       "content_category": "papers",
-      "source_scope": "Frozen local selected papers, not the whole PMC archive",
-      "expected_files": 1,
-      "expected_records": 454,
+      "source_scope": "Initial selected papers plus newly acquired native XML; not a PMC-wide census",
+      "expected_files": 72,
       "whole_source_inventory": false,
-      "raw_records": 454,
-      "raw_tokens": 12677035,
-      "raw_utf8_bytes": 47284727,
-      "unique_records": 454,
-      "unique_tokens": 12677035,
+      "acquisition_target_new_papers": 5000,
+      "raw_records": 525,
+      "raw_tokens": 11493019,
+      "raw_utf8_bytes": 44283739,
+      "unique_records": 525,
+      "unique_tokens": 11493019,
       "raw_protein_tokens": 0,
       "unique_protein_tokens": 0,
       "raw_dna_tokens": 0,
@@ -56,16 +118,16 @@
       "unique_smiles_tokens": 0,
       "raw_inchi_tokens": 0,
       "unique_inchi_tokens": 0,
-      "raw_text_or_unclassified_tokens": 12677035,
-      "unique_text_or_unclassified_tokens": 12677035,
+      "raw_text_or_unclassified_tokens": 11493019,
+      "unique_text_or_unclassified_tokens": 11493019,
       "raw_tagged_protein_characters": 0,
       "raw_tagged_dna_characters": 0,
       "raw_tagged_rna_characters": 0,
       "raw_tagged_smiles_characters": 0,
       "raw_tagged_inchi_characters": 0,
-      "completed_files": 1,
+      "completed_files": 72,
       "complete_frozen_input_scan": true,
-      "available_raw_bytes": 47728154
+      "available_raw_bytes": 44702167
     },
     "finefineweb": {
       "name": "FineFineWeb biology",
@@ -107,63 +169,63 @@
       "revision": "df09ee34ae7f9f00cc1290862f83fdb542f2ea35",
       "expected_files": 32,
       "whole_source_inventory": true,
-      "raw_records": 301500,
-      "raw_tokens": 299316189,
-      "raw_utf8_bytes": 749545600,
-      "unique_records": 301457,
-      "unique_tokens": 299270025,
-      "raw_protein_tokens": 12300679,
-      "unique_protein_tokens": 12292583,
-      "raw_dna_tokens": 907008,
-      "unique_dna_tokens": 907008,
-      "raw_rna_tokens": 1714216,
-      "unique_rna_tokens": 1714216,
-      "raw_smiles_tokens": 10685939,
-      "unique_smiles_tokens": 10683482,
-      "raw_inchi_tokens": 34336713,
-      "unique_inchi_tokens": 34327520,
-      "raw_text_or_unclassified_tokens": 239371634,
-      "unique_text_or_unclassified_tokens": 239345216,
-      "raw_tagged_protein_characters": 22461729,
-      "raw_tagged_dna_characters": 1770240,
-      "raw_tagged_rna_characters": 3272859,
-      "raw_tagged_smiles_characters": 14819638,
-      "raw_tagged_inchi_characters": 36481150,
+      "raw_records": 850146,
+      "raw_tokens": 844194374,
+      "raw_utf8_bytes": 2114744501,
+      "unique_records": 849866,
+      "unique_tokens": 843888793,
+      "raw_protein_tokens": 34532802,
+      "unique_protein_tokens": 34471826,
+      "raw_dna_tokens": 2541480,
+      "unique_dna_tokens": 2541367,
+      "raw_rna_tokens": 4820693,
+      "unique_rna_tokens": 4820693,
+      "raw_smiles_tokens": 30098379,
+      "unique_smiles_tokens": 30081667,
+      "raw_inchi_tokens": 96808417,
+      "unique_inchi_tokens": 96747949,
+      "raw_text_or_unclassified_tokens": 675392603,
+      "unique_text_or_unclassified_tokens": 675225291,
+      "raw_tagged_protein_characters": 63059931,
+      "raw_tagged_dna_characters": 4961951,
+      "raw_tagged_rna_characters": 9201152,
+      "raw_tagged_smiles_characters": 41749848,
+      "raw_tagged_inchi_characters": 102851363,
       "completed_files": 0,
       "complete_frozen_input_scan": false,
       "available_raw_bytes": 15931042772
     }
   },
   "totals": {
-    "raw_records": 401954,
-    "raw_tokens": 417791238,
-    "raw_utf8_bytes": 1260740009,
-    "unique_records": 401911,
-    "unique_tokens": 417745074,
-    "raw_protein_tokens": 12300679,
-    "unique_protein_tokens": 12292583,
-    "raw_dna_tokens": 907008,
-    "unique_dna_tokens": 907008,
-    "raw_rna_tokens": 1714216,
-    "unique_rna_tokens": 1714216,
-    "raw_smiles_tokens": 10685939,
-    "unique_smiles_tokens": 10683482,
-    "raw_inchi_tokens": 34336713,
-    "unique_inchi_tokens": 34327520,
-    "raw_text_or_unclassified_tokens": 357846683,
-    "unique_text_or_unclassified_tokens": 357820265,
-    "raw_tagged_protein_characters": 22461729,
-    "raw_tagged_dna_characters": 1770240,
-    "raw_tagged_rna_characters": 3272859,
-    "raw_tagged_smiles_characters": 14819638,
-    "raw_tagged_inchi_characters": 36481150
+    "raw_records": 950671,
+    "raw_tokens": 961485407,
+    "raw_utf8_bytes": 2622937922,
+    "unique_records": 950391,
+    "unique_tokens": 961179826,
+    "raw_protein_tokens": 34532802,
+    "unique_protein_tokens": 34471826,
+    "raw_dna_tokens": 2541480,
+    "unique_dna_tokens": 2541367,
+    "raw_rna_tokens": 4820693,
+    "unique_rna_tokens": 4820693,
+    "raw_smiles_tokens": 30098379,
+    "unique_smiles_tokens": 30081667,
+    "raw_inchi_tokens": 96808417,
+    "unique_inchi_tokens": 96747949,
+    "raw_text_or_unclassified_tokens": 792683636,
+    "unique_text_or_unclassified_tokens": 792516324,
+    "raw_tagged_protein_characters": 63059931,
+    "raw_tagged_dna_characters": 4961951,
+    "raw_tagged_rna_characters": 9201152,
+    "raw_tagged_smiles_characters": 41749848,
+    "raw_tagged_inchi_characters": 102851363
   },
   "acquisition_routes": {
     "online_papers": {
-      "raw_records": 454,
-      "raw_tokens": 12677035,
-      "unique_records": 454,
-      "unique_tokens": 12677035
+      "raw_records": 525,
+      "raw_tokens": 11493019,
+      "unique_records": 525,
+      "unique_tokens": 11493019
     },
     "web_urls": {
       "raw_records": 0,
@@ -172,18 +234,18 @@
       "unique_tokens": 0
     },
     "existing_datasets": {
-      "raw_records": 401500,
-      "raw_tokens": 405114203,
-      "unique_records": 401457,
-      "unique_tokens": 405068039
+      "raw_records": 950146,
+      "raw_tokens": 949992388,
+      "unique_records": 949866,
+      "unique_tokens": 949686807
     }
   },
   "content_categories": {
     "papers": {
-      "raw_records": 454,
-      "raw_tokens": 12677035,
-      "unique_records": 454,
-      "unique_tokens": 12677035
+      "raw_records": 525,
+      "raw_tokens": 11493019,
+      "unique_records": 525,
+      "unique_tokens": 11493019
     },
     "web_text": {
       "raw_records": 100000,
@@ -192,10 +254,10 @@
       "unique_tokens": 105798014
     },
     "database_records": {
-      "raw_records": 301500,
-      "raw_tokens": 299316189,
-      "unique_records": 301457,
-      "unique_tokens": 299270025
+      "raw_records": 850146,
+      "raw_tokens": 844194374,
+      "unique_records": 849866,
+      "unique_tokens": 843888793
     }
   },
   "files": {
@@ -211,7 +273,7 @@
     },
     "biocollection_free_text_stream_part_000001.jsonl.zst": {
       "status": "counting",
-      "rows_committed": 301500,
+      "rows_committed": 850146,
       "error": null
     },
     "finefineweb_biology_000001.jsonl": {
@@ -4683,6 +4745,361 @@
       "status": "pending",
       "rows_committed": 0,
       "error": null
+    },
+    "pmc_new_PMC9188303": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12487639": {
+      "status": "excluded_scope",
+      "rows_committed": 1,
+      "error": "Explicit clinical care/trial/device title outside research-biology selection"
+    },
+    "pmc_new_PMC13335844": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13668631": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13063126": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12877531": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12807325": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13670695": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC7130919": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12766539": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13669818": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC7129417": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC9487252": {
+      "status": "excluded_scope",
+      "rows_committed": 1,
+      "error": "Explicit clinical care/trial/device title outside research-biology selection"
+    },
+    "pmc_new_PMC12006513": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12978021": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13670029": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12876364": {
+      "status": "excluded_scope",
+      "rows_committed": 1,
+      "error": "Explicit clinical care/trial/device title outside research-biology selection"
+    },
+    "pmc_new_PMC12856878": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13294747": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13673906": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC9442079": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12798521": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12879837": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13359333": {
+      "status": "excluded_scope",
+      "rows_committed": 1,
+      "error": "Explicit clinical care/trial/device title outside research-biology selection"
+    },
+    "pmc_new_PMC13672343": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC7127287": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC10512436": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12807228": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13669631": {
+      "status": "excluded_scope",
+      "rows_committed": 1,
+      "error": "Explicit clinical care/trial/device title outside research-biology selection"
+    },
+    "pmc_new_PMC7131726": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC8189670": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC10406135": {
+      "status": "excluded_scope",
+      "rows_committed": 1,
+      "error": "Explicit clinical care/trial/device title outside research-biology selection"
+    },
+    "pmc_new_PMC12885604": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13668675": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC8543151": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11900737": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12807222": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13426094": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11877318": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12994296": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13668694": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC9427506": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC9680931": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12952443": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13671533": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12199662": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC8128104": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC10400018": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13007336": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13670015": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11126194": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC10687719": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11863348": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC12807233": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13672529": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC7617176": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13068109": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13390558": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13670818": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC9837792": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11142468": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13668525": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC7127741": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC9335516": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11675078": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13674861": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC10948077": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13336139": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13668854": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC11957381": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
+    },
+    "pmc_new_PMC13670481": {
+      "status": "complete",
+      "rows_committed": 1,
+      "error": null
     }
   },
   "source_coverage": [
@@ -5366,7 +5783,7 @@
       "counting_status": "outside_biology_total"
     }
   ],
-  "counting_tokens_per_second": 233414.01066941782,
+  "counting_tokens_per_second": 219531.64304464584,
   "final_retained_biology_tokens": null,
   "near_deduplicated_tokens": null,
   "image_tokens": null,
@@ -5385,5 +5802,16 @@
     "minimum_free_bytes": 34359738368,
     "maximum_line_bytes": 16777216,
     "maximum_text_bytes": 4194304
+  },
+  "paper_count_correction": {
+    "file_id": "pmc_local",
+    "path": "experiments/corpus_count_2026-10-17/local_papers_corrected.jsonl",
+    "sha256": "c3770f5eaa3d2c491e1e4dd8a90b88dfccdbd730176dda875ebd0ba78c926a82",
+    "bytes": 41090103,
+    "expected_records": 454,
+    "reason": "Count captions and tables already present in blocks once, retaining unmatched source visuals.",
+    "superseded_raw_tokens": 12677035,
+    "corrected_local_tokens": 10609606,
+    "audit_sha256": "0f51df13fa7b2a1ad2e67b748cf5781826d789f17350dc4fc826df2cdd796d14"
   }
 }

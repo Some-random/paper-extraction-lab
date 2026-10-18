@@ -2,3 +2,4 @@ requests[socks]==2.34.2
 tokenizers==0.23.3
 zstandard==0.25.0
 PySocks==1.7.1
+lxml==6.1.3

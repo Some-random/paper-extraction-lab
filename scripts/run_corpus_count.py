@@ -46,8 +46,11 @@ class StopWork(Exception):
 
 
 class Worker:
+    write_json = staticmethod(write_json)
+
     def __init__(self, config_path):
-        self.config_path = config_path
+        self.config_path = config_path.resolve()
+        config_path = self.config_path
         self.config = json.loads(config_path.read_text())
         self.run = ROOT / self.config["destination"]
         self.run.mkdir(parents=True, exist_ok=True)
@@ -64,6 +67,30 @@ class Worker:
         self.tokenizer = Tokenizer.from_file(str(tokenizer_path))
         self.ledger = Ledger(self.run / "counts.sqlite3", sha256(config_path), self.config["tokenizer_sha256"])
         self.ledger.register(self.config["files"])
+        self.paper_plan = None
+        plan_path = ROOT / "config/corpus_count_pmc_expansion_2026-10-17.json"
+        if plan_path.exists():
+            plan = json.loads(plan_path.read_text())
+            if config_path == (ROOT / plan["base_config"]).resolve():
+                self.paper_plan = plan
+                self.ledger.bind_identity("pmc_expansion_plan_sha256", sha256(plan_path))
+                correction = plan["correction"]
+                if sha256(ROOT / correction["path"]) != correction["sha256"]:
+                    raise ValueError("Corrected local paper input checksum mismatch")
+                self.ledger.retire_file(correction["file_id"], correction["sha256"],
+                                        self.run / "corrections/local_paper_caption_table_audit.json")
+                original = next(item for item in self.config["files"] if item["id"] == correction["file_id"])
+                original.update({k: correction[k] for k in ("path", "sha256", "bytes", "expected_records")})
+        self.config["files"].extend(self.ledger.extensions())
+        if self.paper_plan:
+            from pmc_count_expansion import clinical_title_reason
+            for item in self.ledger.extensions():
+                metadata_path = Path(item["path"]).parent / "selected_metadata.json"
+                metadata = json.loads(metadata_path.read_text())
+                reason = clinical_title_reason(metadata.get("title") or "")
+                if reason:
+                    self.ledger.status(item["id"], "excluded_scope", reason)
+        self.refresh_paper_source()
         state_path = self.run / "state.json"
         self.state = json.loads(state_path.read_text()) if state_path.exists() else {
             "started_at_pst": now(), "network_reserved_bytes": 0,
@@ -75,9 +102,10 @@ class Worker:
             "started_at_pst": now(), "pid": os.getpid(), "host": socket.gethostname(),
             "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
             "python": sys.version.split()[0],
-            "packages": {name: importlib.metadata.version(name) for name in ("tokenizers", "zstandard", "requests", "PySocks")},
+            "packages": {name: importlib.metadata.version(name) for name in ("tokenizers", "zstandard", "requests", "PySocks", "lxml")},
             "counting_code_sha256": sha256(ROOT / "src/corpus_count.py"),
             "runner_code_sha256": sha256(Path(__file__)),
+            "pmc_adapter_code_sha256": sha256(ROOT / "src/pmc_count_expansion.py") if self.paper_plan else None,
         })
         self.deadline = datetime.fromisoformat(self.state["started_at_pst"]).timestamp() + self.config["limits"]["runtime_seconds"]
         self.state["stop_at_pst"] = datetime.fromtimestamp(self.deadline, PST).isoformat()
@@ -87,6 +115,15 @@ class Worker:
         signal.signal(signal.SIGTERM, lambda *_: setattr(self, "signalled", True))
         signal.signal(signal.SIGINT, lambda *_: setattr(self, "signalled", True))
         self.persist()
+
+    def refresh_paper_source(self):
+        if self.paper_plan:
+            info = self.config["sources"]["pmc"]
+            info.update(name="PMC papers (local + new XML)",
+                        expected_files=sum(item["source"] == "pmc" for item in self.config["files"]),
+                        source_scope="Initial selected papers plus newly acquired native XML; not a PMC-wide census",
+                        acquisition_target_new_papers=self.paper_plan["target_new_papers"])
+            info.pop("expected_records", None)
 
     def persist(self):
         self.state["updated_at_pst"] = now()
@@ -237,6 +274,16 @@ class Worker:
         totals = self.ledger.totals()
         files = {row[0]: {"status": row[1], "rows_committed": row[2], "error": row[3]} for row in
                  self.ledger.db.execute("SELECT id,status,cursor,error FROM files")}
+        if self.paper_plan:
+            self.state.setdefault("paper_expansion", {})["accepted_new_papers"] = sum(
+                item.get("extension") == "pmc_expansion" and files[item["id"]]["status"] == "complete"
+                for item in self.config["files"])
+            excluded = [item for item in self.config["files"] if item.get("extension") == "pmc_expansion"
+                        and files[item["id"]]["status"] == "excluded_scope"]
+            self.state["paper_expansion"]["scope_excluded_acquired_papers"] = len(excluded)
+            self.state["paper_expansion"]["scope_excluded_acquired_tokens"] = sum(
+                self.ledger.db.execute("SELECT COALESCE(SUM(tokens),0) FROM records WHERE file_id=?", (item["id"],)).fetchone()[0]
+                for item in excluded)
         aggregate, categories = Counter(), {}
         routes = {route: Counter({metric: 0 for metric in ("raw_records", "raw_tokens", "unique_records", "unique_tokens")})
                   for route in ("online_papers", "web_urls", "existing_datasets")}
@@ -250,7 +297,7 @@ class Worker:
                 route[k] += metrics.get(k, 0)
                 category[k] += metrics.get(k, 0)
             relevant = [f for f in self.config["files"] if f["source"] == key]
-            completed = sum(files[f["id"]]["status"] == "complete" for f in relevant)
+            completed = sum(files[f["id"]]["status"] in {"complete", "excluded_scope"} for f in relevant)
             sources[key] = {**info, **metrics, "completed_files": completed,
                             "complete_frozen_input_scan": completed == info["expected_files"],
                             "available_raw_bytes": sum(f["bytes"] for f in relevant)}
@@ -283,6 +330,11 @@ class Worker:
             "image_tokens": None, "whole_available_biology_total": None,
             "counting_policy": self.config["counting_policy"], "limits": self.config["limits"],
         }
+        if self.paper_plan:
+            corrected_tokens = self.ledger.db.execute("SELECT COALESCE(SUM(tokens),0) FROM records WHERE file_id='pmc_local'").fetchone()[0]
+            summary["paper_count_correction"] = {**self.paper_plan["correction"],
+                "superseded_raw_tokens": 12677035, "corrected_local_tokens": corrected_tokens,
+                "audit_sha256": sha256(self.run / "corrections/local_paper_caption_table_audit.json")}
         write_json(self.run / "summary.json", summary)
         report = ROOT / self.config["report_directory"]
         report.mkdir(parents=True, exist_ok=True)
@@ -300,15 +352,28 @@ class Worker:
                      "| Explicit content | Tokens |", "|:---|---:|"])
         for kind in MODALITIES:
             body.append(f"| {kind.replace('_',' ')} | {aggregate.get('unique_' + kind + '_tokens',0):,} |")
-        body.extend(["", "The modality rows sum to the deduplicated total. Only explicit sequence/molecule tags identify those spans; untagged sequences remain unclassified. Image pixels are retained in existing paper assets; vision-token counts are unknown.",
+        body.extend(["", "The modality rows sum to the deduplicated total. Only explicit sequence/molecule tags identify those spans; untagged sequences remain unclassified. Existing paper image assets remain preserved; newly acquired XML retains source media URLs while binary media are deferred. Vision-token counts are unknown.",
             "", "## What this scan measures", "",
-            "- PMC is the frozen local collection, not a PMC-wide count. Each paper contributes its selected text, captions/notes and tables once; chunk and interleaved copies are excluded.",
+            "- PMC contains the initial selected collection and any new native-XML acquisitions, not a PMC-wide count. Each paper contributes its selected text, captions/notes and tables once; chunk and interleaved copies are excluded.",
             "- FineFineWeb is imported web-origin text; TheBioCollection is imported database-record text. Both have acquisition route `existing_datasets`. Route and content totals are alternative breakdowns of the same records.",
             "- Deduplication compares SHA-256 after whitespace collapse across all scanned sources, preserving case and punctuation. The first record in the frozen order supplies the unique tokens. Distinct annotations survive. Near duplicates and paper versions with different text remain unresolved.",
             "- No biology/clinical scope classifier, quality filter, new OCR or training has run. A source's biology label is not validation of every record.",
             "- Source coverage tracks all " + str(len(coverage)) + " inventoried families. A database appearing inside a bundle is not a separate measured export or an additional token total.",
             "", "[Counting setup and commands](../../docs/corpus_counting.md) · [Processing recipe](../bio_foundation_review_2026-10-15/data_pipeline.md)"])
         (report / "README.md").write_text("\n".join(body) + "\n")
+        if self.paper_plan:
+            progress = self.state.get("paper_expansion", {})
+            with (report / "README.md").open("a") as handle:
+                handle.write("\n## Paper expansion\n\n" +
+                    f"Target: **{self.paper_plan['target_new_papers']:,} new papers** from broad PMC topic/year searches. " +
+                    f"New papers counted: **{progress.get('accepted_new_papers',0):,}**. " +
+                    f"Paper phase: **{progress.get('status','queued')}**. " +
+                    "The native-XML phase has up to three hours and 3 GiB of downloads within the original shared run limits, followed by resumed web/database counting.\n\n" +
+                    f"Acquired candidates excluded by explicit clinical-title checks: **{progress.get('scope_excluded_acquired_papers',0):,} papers / {progress.get('scope_excluded_acquired_tokens',0):,} tokens**. " +
+                    "They remain in raw candidate counts with an exclusion status and do not count toward the selected-paper target. This title screen is not a complete biology/clinical classifier.\n\n" +
+                    "**Paper-count correction:** the initial 12,677,035-token local-paper count included duplicated caption/table views. " +
+                    f"The corrected 454-paper view has **{corrected_tokens:,} tokens**. " +
+                    "Original inputs and superseded ledger rows are preserved in a correction audit.\n")
         coverage_lines = ["# Source coverage for the measured census", "",
             f"Snapshot: {self.state['updated_at_pst']} (fixed PST).", "",
             "Every inventoried family is listed. A dash means unmeasured, not zero. Upstream resources are not counted again as independent exports.", "",
@@ -340,11 +405,22 @@ class Worker:
     def execute(self, local_only=False):
         try:
             self.publish()
+            if self.paper_plan:
+                # Finish corrected/local and interrupted acquired inputs before
+                # accepting another new paper. Preserve every dataset cursor.
+                for item in self.config["files"]:
+                    if item["source"] == "pmc" and self.ledger.file_state(item["id"])[0] not in {"complete", "excluded_scope"}:
+                        self.guard()
+                        self.state["current_file"] = item["id"]
+                        self.count(item, self.acquire(item))
+                if not local_only:
+                    from pmc_count_expansion import PaperExpansion
+                    PaperExpansion(self).run()
             for item in self.config["files"]:
                 if local_only and "url" in item:
                     continue
                 self.guard()
-                if self.ledger.file_state(item["id"])[0] == "complete":
+                if self.ledger.file_state(item["id"])[0] in {"complete", "excluded_scope"}:
                     continue
                 self.state["current_file"] = item["id"]
                 self.publish()

@@ -12,7 +12,7 @@ The frozen [configuration](../config/corpus_count_2026-10-17.json) includes:
 
 | Input | Frozen inventory | What is counted |
 |:---|:---|:---|
-| Local PMC biology collection | 454 papers | Title, selected article blocks, captions/notes and source tables, once per paper. |
+| PMC biology papers | 454 existing papers plus a target of 5,000 new XML papers | Title, selected article blocks, captions/notes and source tables, once per paper. |
 | FineFineWeb biology | 864 complete JSONL shards | Original text, retaining URLs, global IDs and source-reported token counts as provenance. |
 | TheBioCollection free-text stream | 32 complete compressed shards | Original text, including annotations and explicitly tagged biological strings. Instructions are excluded. |
 
@@ -26,10 +26,45 @@ The current run stores raw shards and its ledger under the project's ignored
 experiment directory on shared scratch. The historical RustFS filesystem path
 is unavailable in this environment; this run does not rely on it.
 
-PMC is a selected local collection, not a representative sample or a PMC-wide
-census. Its canonical document includes captions/tables outside the earlier
-packed prose diagnostic, so the counts differ. Source XML/PDF, images and
-original exports remain preserved. Images have no invented vision-token count.
+PMC is a selected collection, not a representative sample or a PMC-wide census.
+The initial local selection has **10,609,606 candidate tokens across 454 papers**.
+This corrects the first 12,677,035-token result: captions and tables already in
+the parser's block stream had also been added from its visual views. The
+canonical adapter now adds each source view once, with a regression check using
+actual JATS parsing. Title/serialization boundaries can still make its total
+differ from packed-chunk totals. Original inputs and superseded ledger rows
+remain in `corrections/local_paper_caption_table_audit.json`; this correction
+does not alter web/database counts.
+
+The [paper-expansion plan](../config/corpus_count_pmc_expansion_2026-10-17.json)
+adds broad PMC searches over four biological topic groups and five publication
+year ranges. The searches have no journal restriction. Research articles,
+reviews, methods articles and brief reports are eligible, with title/abstract
+biology markers and source/body checks. Query subsets are a convenience
+collection, not a representative sample of all biological literature.
+Explicit clinical-care/trial/device titles are screened out. A few acquired
+candidates identified during the initial audit remain preserved in raw counts
+with `excluded_scope` status; they do not count toward the selected-paper
+target or enter its selected set. This title screen is not a complete scope
+classifier.
+
+The paper phase targets **5,000 additional papers**, stopping sooner at three
+hours or 3 GiB of paper-related response bytes. Both sit **inside** the original
+12-hour/8-GiB-download/16-GiB-artifact run limits. It then resumes existing
+web/database cursors. Prioritizing paper acquisition changes the earlier
+8–10B-token pilot forecast, which assumed continuous released-shard scanning;
+that forecast is no longer a commitment for this schedule.
+
+The worker retrieves official PMC version metadata and native XML, verifies the
+metadata MD5 and its own SHA-256, expands source citations, retains full table
+structure and writes compressed source-linked parsed documents. PMCID/DOI
+checks prevent reimporting the initial collection. New files are registered
+transactionally as append-only ledger extensions; the initial manifest remains
+frozen. Rejections retain available source/metadata and their reason.
+
+Existing PDFs and image assets remain preserved. New acquisitions retain media
+URLs and figure captions; binary PDFs/media/supplements are deferred for the
+bounded text census. No new OCR, model inference or training is performed.
 
 Remote shards follow a frozen interleaved source order. Complete raw files are
 retained with pinned release, size and LFS SHA-256. The deadline may leave a
