@@ -1,17 +1,17 @@
 {
   "run_id": "corpus_count_2026-10-17",
   "started_at_pst": "2026-10-17T20:21:42.538990-08:00",
-  "network_reserved_bytes": 510879188,
-  "network_body_bytes": 510879188,
-  "counting_seconds": 203.73395089805126,
+  "network_reserved_bytes": 1008535083,
+  "network_body_bytes": 1008535083,
+  "counting_seconds": 1789.9149961126968,
   "pid": 2833164,
   "status": "running",
   "error": null,
   "stop_at_pst": "2026-10-18T08:21:42.538990-08:00",
-  "updated_at_pst": "2026-10-17T20:27:50.308102-08:00",
-  "filesystem_free_bytes": 1311269453824,
-  "new_artifact_bytes": 599273860,
-  "current_file": "finefineweb_biology_000000.jsonl",
+  "updated_at_pst": "2026-10-17T20:54:38.389361-08:00",
+  "filesystem_free_bytes": 1310587879424,
+  "new_artifact_bytes": 1411220017,
+  "current_file": "biocollection_free_text_stream_part_000001.jsonl.zst",
   "execution_history": [
     {
       "started_at_pst": "2026-10-17T20:26:48.313802-08:00",
@@ -74,11 +74,11 @@
       "revision": "7fd92dc825a75cbff271a5a52eea0eda91a2c112",
       "expected_files": 864,
       "whole_source_inventory": true,
-      "raw_records": 36811,
-      "raw_tokens": 39227598,
-      "raw_utf8_bytes": 171978685,
-      "unique_records": 36811,
-      "unique_tokens": 39227598,
+      "raw_records": 100000,
+      "raw_tokens": 105798014,
+      "raw_utf8_bytes": 463909682,
+      "unique_records": 100000,
+      "unique_tokens": 105798014,
       "raw_protein_tokens": 0,
       "unique_protein_tokens": 0,
       "raw_dna_tokens": 0,
@@ -89,14 +89,14 @@
       "unique_smiles_tokens": 0,
       "raw_inchi_tokens": 0,
       "unique_inchi_tokens": 0,
-      "raw_text_or_unclassified_tokens": 39227598,
-      "unique_text_or_unclassified_tokens": 39227598,
+      "raw_text_or_unclassified_tokens": 105798014,
+      "unique_text_or_unclassified_tokens": 105798014,
       "raw_tagged_protein_characters": 0,
       "raw_tagged_dna_characters": 0,
       "raw_tagged_rna_characters": 0,
       "raw_tagged_smiles_characters": 0,
       "raw_tagged_inchi_characters": 0,
-      "completed_files": 0,
+      "completed_files": 1,
       "complete_frozen_input_scan": false,
       "available_raw_bytes": 433883986250
     },
@@ -107,34 +107,56 @@
       "revision": "df09ee34ae7f9f00cc1290862f83fdb542f2ea35",
       "expected_files": 32,
       "whole_source_inventory": true,
+      "raw_records": 301500,
+      "raw_tokens": 299316189,
+      "raw_utf8_bytes": 749545600,
+      "unique_records": 301457,
+      "unique_tokens": 299270025,
+      "raw_protein_tokens": 12300679,
+      "unique_protein_tokens": 12292583,
+      "raw_dna_tokens": 907008,
+      "unique_dna_tokens": 907008,
+      "raw_rna_tokens": 1714216,
+      "unique_rna_tokens": 1714216,
+      "raw_smiles_tokens": 10685939,
+      "unique_smiles_tokens": 10683482,
+      "raw_inchi_tokens": 34336713,
+      "unique_inchi_tokens": 34327520,
+      "raw_text_or_unclassified_tokens": 239371634,
+      "unique_text_or_unclassified_tokens": 239345216,
+      "raw_tagged_protein_characters": 22461729,
+      "raw_tagged_dna_characters": 1770240,
+      "raw_tagged_rna_characters": 3272859,
+      "raw_tagged_smiles_characters": 14819638,
+      "raw_tagged_inchi_characters": 36481150,
       "completed_files": 0,
       "complete_frozen_input_scan": false,
       "available_raw_bytes": 15931042772
     }
   },
   "totals": {
-    "raw_records": 37265,
-    "raw_tokens": 51904633,
-    "raw_utf8_bytes": 219263412,
-    "unique_records": 37265,
-    "unique_tokens": 51904633,
-    "raw_protein_tokens": 0,
-    "unique_protein_tokens": 0,
-    "raw_dna_tokens": 0,
-    "unique_dna_tokens": 0,
-    "raw_rna_tokens": 0,
-    "unique_rna_tokens": 0,
-    "raw_smiles_tokens": 0,
-    "unique_smiles_tokens": 0,
-    "raw_inchi_tokens": 0,
-    "unique_inchi_tokens": 0,
-    "raw_text_or_unclassified_tokens": 51904633,
-    "unique_text_or_unclassified_tokens": 51904633,
-    "raw_tagged_protein_characters": 0,
-    "raw_tagged_dna_characters": 0,
-    "raw_tagged_rna_characters": 0,
-    "raw_tagged_smiles_characters": 0,
-    "raw_tagged_inchi_characters": 0
+    "raw_records": 401954,
+    "raw_tokens": 417791238,
+    "raw_utf8_bytes": 1260740009,
+    "unique_records": 401911,
+    "unique_tokens": 417745074,
+    "raw_protein_tokens": 12300679,
+    "unique_protein_tokens": 12292583,
+    "raw_dna_tokens": 907008,
+    "unique_dna_tokens": 907008,
+    "raw_rna_tokens": 1714216,
+    "unique_rna_tokens": 1714216,
+    "raw_smiles_tokens": 10685939,
+    "unique_smiles_tokens": 10683482,
+    "raw_inchi_tokens": 34336713,
+    "unique_inchi_tokens": 34327520,
+    "raw_text_or_unclassified_tokens": 357846683,
+    "unique_text_or_unclassified_tokens": 357820265,
+    "raw_tagged_protein_characters": 22461729,
+    "raw_tagged_dna_characters": 1770240,
+    "raw_tagged_rna_characters": 3272859,
+    "raw_tagged_smiles_characters": 14819638,
+    "raw_tagged_inchi_characters": 36481150
   },
   "acquisition_routes": {
     "online_papers": {
@@ -150,10 +172,10 @@
       "unique_tokens": 0
     },
     "existing_datasets": {
-      "raw_records": 36811,
-      "raw_tokens": 39227598,
-      "unique_records": 36811,
-      "unique_tokens": 39227598
+      "raw_records": 401500,
+      "raw_tokens": 405114203,
+      "unique_records": 401457,
+      "unique_tokens": 405068039
     }
   },
   "content_categories": {
@@ -164,16 +186,16 @@
       "unique_tokens": 12677035
     },
     "web_text": {
-      "raw_records": 36811,
-      "raw_tokens": 39227598,
-      "unique_records": 36811,
-      "unique_tokens": 39227598
+      "raw_records": 100000,
+      "raw_tokens": 105798014,
+      "unique_records": 100000,
+      "unique_tokens": 105798014
     },
     "database_records": {
-      "raw_records": 0,
-      "raw_tokens": 0,
-      "unique_records": 0,
-      "unique_tokens": 0
+      "raw_records": 301500,
+      "raw_tokens": 299316189,
+      "unique_records": 301457,
+      "unique_tokens": 299270025
     }
   },
   "files": {
@@ -183,13 +205,13 @@
       "error": null
     },
     "finefineweb_biology_000000.jsonl": {
-      "status": "counting",
-      "rows_committed": 36811,
+      "status": "complete",
+      "rows_committed": 100000,
       "error": null
     },
     "biocollection_free_text_stream_part_000001.jsonl.zst": {
-      "status": "pending",
-      "rows_committed": 0,
+      "status": "counting",
+      "rows_committed": 301500,
       "error": null
     },
     "finefineweb_biology_000001.jsonl": {
@@ -4781,7 +4803,7 @@
       "name": "TheBioCollection free-text stream",
       "group": "records",
       "upstream_of": [],
-      "counting_status": "queued"
+      "counting_status": "counting_partial"
     },
     {
       "id": "pubchem",
@@ -5344,7 +5366,7 @@
       "counting_status": "outside_biology_total"
     }
   ],
-  "counting_tokens_per_second": 254766.7326491555,
+  "counting_tokens_per_second": 233414.01066941782,
   "final_retained_biology_tokens": null,
   "near_deduplicated_tokens": null,
   "image_tokens": null,

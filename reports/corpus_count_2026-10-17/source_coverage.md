@@ -1,6 +1,6 @@
 # Source coverage for the measured census
 
-Snapshot: 2026-10-17T20:27:50.308102-08:00 (fixed PST).
+Snapshot: 2026-10-17T20:54:38.389361-08:00 (fixed PST).
 
 Every inventoried family is listed. A dash means unmeasured, not zero. Upstream resources are not counted again as independent exports.
 
@@ -21,8 +21,8 @@ Every inventoried family is listed. A dash means unmeasured, not zero. Upstream 
 | BIOMEDICA | Release inventory / adapter required | — | — |
 | OLMo 3 / olmOCR science PDFs | Release inventory / adapter required | — | — |
 | USPTO patent applications | Release inventory / adapter required | — | — |
-| FineFineWeb biology | Partial scan | 39,227,598 | 39,227,598 |
-| TheBioCollection free-text stream | Queued | — | — |
+| FineFineWeb biology | Partial scan | 105,798,014 | 105,798,014 |
+| TheBioCollection free-text stream | Partial scan | 299,316,189 | 299,270,025 |
 | PubChem | Upstream of a bundle; independent coverage unmeasured | — | — |
 | UniProt / UniRef | Upstream of a bundle; independent coverage unmeasured | — | — |
 | Protein Data Bank | Upstream of a bundle; independent coverage unmeasured | — | — |
