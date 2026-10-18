@@ -504,3 +504,27 @@ status/history under the ignored run directory; publish the sanitized report.
 This is GitHub reporting, not a configured proactive notification into chat.
 While the conversation is active, also report status here. Never describe a
 failed, cancelled or stopped job as still running or waiting.
+
+## Matched two-B200 versus eight-A100 test
+
+The user explicitly requested starting these two configurations. This replaces
+the queued eight-B200 follow-up; preserve its manifest and cancel only that
+obsolete owned request. Use `scripts/run_matched_training_throughput.sbatch`
+and the updated `config/training_throughput_2026-10-18.json`. Both allocations
+use the same 4B architecture, 4,096-token context, 32 sequences / 131,072 tokens
+per optimizer update, BF16 compute and FP32 AdamW. Test microbatches 1, 2 and 4
+with matching accumulation inside each allocation. Keep all profile results;
+only a fully completed matched profile can win the throughput comparison.
+
+Each allocation is limited to 20 minutes; the suite itself is limited to 17
+minutes and does not reset on restart. Both allocations together use at most
+3.33 new GPU-hours. Admit them sequentially, at most eight GPUs at once. Keep
+the existing 16 GiB environment/artifact cap. No additional acquisition, model
+checkpoint saving, full training or evaluation changes are authorized.
+
+Hold the requests until the CPU admission helper observes spare GPU/CPU/memory
+capacity and a scheduler preview without proposed preemptions, then bind the
+checked node and release only the recorded owned request. This is not atomic
+with the scheduler and cannot eliminate every race. The admission helper has
+a persisted seven-day deadline; it must report expiry and leave unstarted jobs
+held rather than silently extend the wait. Continue hourly status publication.

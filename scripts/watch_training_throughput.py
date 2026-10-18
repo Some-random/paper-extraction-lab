@@ -133,6 +133,8 @@ def collect_snapshot(run_dir, root, now, query=query_scheduler):
         seen.add(job_id)
         launches.append((path, launch))
     states, errors = query(sorted(seen))
+    admission_path = run_dir / "admission_state.json"
+    admission = report.read_json(admission_path) if admission_path.exists() else {}
     jobs = []
     for path, launch in launches:
         job_id = str(launch["job_id"])
@@ -149,6 +151,16 @@ def collect_snapshot(run_dir, root, now, query=query_scheduler):
                "scheduler_observed": scheduler is not None,
                "requested_gpus": launch.get("requested_gpus"),
                "target_gpu": launch.get("target_gpu")}
+        job.update({key: launch[key] for key in ("admission_status", "hold_reason", "comparison_group") if key in launch})
+        admission_job = admission.get("jobs", {}).get(job_id, {})
+        if launch.get("admission_required") and admission_job:
+            admission_status = admission_job.get("status", "waiting_spare_capacity")
+            if (admission.get("stop_reason") == "admission_runtime_limit"
+                    and admission_status not in {"released", "already_started", "terminal"}):
+                admission_status = "expired"
+            job["admission_status"] = admission_status
+            if admission_status in {"released", "already_started", "terminal"}:
+                job.pop("hold_reason", None)
         if scheduler:
             job.update({key: scheduler[key] for key in ("source", "reason", "exit_code") if key in scheduler})
         if result:
@@ -160,6 +172,10 @@ def collect_snapshot(run_dir, root, now, query=query_scheduler):
         fresh = report.read_json(path)
         fresh.update(status=status, status_checked_at_pst=timestamp(now),
                      scheduler_observed=scheduler is not None)
+        if "admission_status" in job:
+            fresh["admission_status"] = job["admission_status"]
+            if "hold_reason" not in job:
+                fresh.pop("hold_reason", None)
         if scheduler:
             fresh.update(slurm_state=scheduler["state"], scheduler_source=scheduler["source"])
         report.write_json(path, fresh)
@@ -168,7 +184,9 @@ def collect_snapshot(run_dir, root, now, query=query_scheduler):
     setup = report.read_json(setup_path) if setup_path.exists() else {}
     return {"checked_at_pst": timestamp(now), "checked_epoch": now,
             "setup": {key: setup[key] for key in ("stage", "error_type", "updated_at_pst") if key in setup},
-            "scheduler_errors": errors, "jobs": jobs}
+            "scheduler_errors": errors, "jobs": jobs,
+            "admission": {key: admission[key] for key in
+                          ("checked_at_pst", "supervisor_status", "stop_reason") if key in admission}}
 
 
 def meaningful_fingerprint(snapshot):

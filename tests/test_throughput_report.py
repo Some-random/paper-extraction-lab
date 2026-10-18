@@ -150,6 +150,35 @@ class TrainingThroughputReportTests(unittest.TestCase):
         self.assertNotIn("/dfs/", public)
         self.assertNotIn("private-hostname", public)
 
+    def test_matched_suite_retains_profile_failures_and_admission_status(self):
+        self.launch(state="queued", gpus=2)
+        launch_path = self.run / "launch_123.json"
+        launch = json.loads(launch_path.read_text())
+        launch.update(comparison_group="2b200_vs_8a100", admission_required=True,
+                      admission_status="waiting", hold_reason="Waiting for spare capacity")
+        launch_path.write_text(json.dumps(launch))
+        self.build()
+        self.assertIn("waiting for spare capacity", (self.public / "README.md").read_text())
+        launch.update(status="completed", admission_status="released")
+        launch.pop("hold_reason")
+        launch_path.write_text(json.dumps(launch))
+        path = self.result(world_size=2)
+        value = json.loads(path.read_text())
+        value['suite'] = {'status':'completed', 'selected_profile':'micro_1', 'private_path':'/dfs/private',
+                          'profiles':[{'microbatch_per_gpu':1,'accumulation':16,'status':'completed',
+                                       'input_tokens_per_second':100000},
+                                      {'microbatch_per_gpu':4,'accumulation':4,'status':'failed',
+                                       'failure_type':'OutOfMemoryError','traceback':'/dfs/private'}]}
+        path.write_text(json.dumps(value))
+        self.build()
+        text = (self.public / "README.md").read_text()
+        self.assertIn("131,072 input tokens per optimizer", text)
+        self.assertIn("failed — OutOfMemoryError", text)
+        self.assertIn("| 1 | 16 | completed | 100,000 |", text)
+        public = (self.public / "results_123.json").read_text()
+        self.assertNotIn("/dfs/", public)
+        self.assertNotIn("traceback", public)
+
     def test_launch_completed_without_results_is_not_a_measurement(self):
         self.launch(state="completed")
         self.build()

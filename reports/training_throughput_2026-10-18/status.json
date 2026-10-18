@@ -1,11 +1,14 @@
 {
-  "checked_at_pst": "2026-10-18T15:06:47-08:00",
-  "watcher_status": "watching",
-  "stop_reason": null,
-  "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
+  "checked_at_pst": "2026-10-18T15:11:08-08:00",
+  "watcher_status": "starting",
+  "delivery": "GitHub hourly reports and local status history; automatic chat notifications are not configured",
   "setup": {
-    "stage": "ready_jobs_released",
-    "updated_at_pst": "2026-10-18T14:45:41-08:00"
+    "stage": "ready",
+    "updated_at_pst": "2026-10-18T15:10:49-08:00"
+  },
+  "admission": {
+    "supervisor_status": "starting",
+    "stop_reason": null
   },
   "scheduler_errors": [],
   "jobs": [
@@ -15,7 +18,8 @@
       "scheduler_state": "CANCELLED",
       "scheduler_observed": true,
       "requested_gpus": 1,
-      "target_gpu": "A100 80GB"
+      "target_gpu": "A100 80GB",
+      "hold_reason": "Awaiting isolated runtime validation; no GPU allocated while held"
     },
     {
       "job_id": "241122",
@@ -23,7 +27,8 @@
       "scheduler_state": "CANCELLED",
       "scheduler_observed": true,
       "requested_gpus": 8,
-      "target_gpu": "B200 180GB"
+      "target_gpu": "B200 180GB",
+      "hold_reason": "Awaiting isolated runtime validation; no GPU allocated while held"
     },
     {
       "job_id": "241333",
@@ -38,11 +43,33 @@
     },
     {
       "job_id": "241334",
+      "status": "cancelled",
+      "scheduler_state": "CANCELLED",
+      "scheduler_observed": true,
+      "requested_gpus": 8,
+      "target_gpu": "B200 180GB"
+    },
+    {
+      "job_id": "241355",
+      "status": "queued",
+      "scheduler_state": "PENDING",
+      "scheduler_observed": true,
+      "requested_gpus": 2,
+      "target_gpu": "B200 180GB",
+      "admission_status": "waiting_spare_capacity",
+      "hold_reason": "Waiting for observed spare capacity and a preview without proposed preemptions",
+      "comparison_group": "2b200_vs_8a100"
+    },
+    {
+      "job_id": "241356",
       "status": "queued",
       "scheduler_state": "PENDING",
       "scheduler_observed": true,
       "requested_gpus": 8,
-      "target_gpu": "B200 180GB"
+      "target_gpu": "A100 80GB",
+      "admission_status": "waiting_spare_capacity",
+      "hold_reason": "Waiting for observed spare capacity and a preview without proposed preemptions",
+      "comparison_group": "2b200_vs_8a100"
     }
   ]
 }

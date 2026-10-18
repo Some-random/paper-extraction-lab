@@ -78,6 +78,17 @@ def sanitize_result(result, job_id):
                         for item in result.get("hardware", [])]
     safe["packages"] = {key: public_value(value) for key, value in result.get("packages", {}).items()
                         if key in ("torch", "transformers")}
+    if "suite" in result:
+        suite = result["suite"]
+        safe["suite"] = {key: public_value(value) for key, value in suite.items() if key in
+                         ("status", "world_size", "sequence_length", "global_batch_sequences",
+                          "input_tokens_per_update", "selection", "started_utc", "runtime_seconds",
+                          "runner_sha256", "selected_profile")}
+        safe["suite"]["profiles"] = [{key: public_value(value) for key, value in profile.items() if key in
+                                      ("name", "microbatch_per_gpu", "accumulation", "status", "exit_code",
+                                       "input_tokens_per_second", "measured_optimizer_steps", "input_tokens_per_step",
+                                       "peak_cuda_allocated_bytes", "peak_cuda_reserved_bytes", "failure_type")}
+                                     for profile in suite.get("profiles", [])]
     if "throughput" in result:
         measurements = result["throughput"]
         safe["throughput"] = {key: public_value(measurements[key]) for key in
@@ -133,7 +144,8 @@ def load_jobs(run_dir, root):
             raise ValueError(f"Duplicate launch manifest for job {job_id}")
         seen.add(job_id)
         safe = {key: public_value(launch[key]) for key in
-                ("requested_gpus", "target_gpu", "submitted_at_pst", "hold_reason") if key in launch}
+                ("requested_gpus", "target_gpu", "submitted_at_pst", "hold_reason", "admission_required",
+                 "admission_status", "comparison_group", "global_batch_tokens", "superseded_reason") if key in launch}
         safe.update(job_id=job_id, status=str(launch.get("status", "queued")).lower())
         output = result_path(launch, run_dir, root)
         if output.exists():
@@ -170,12 +182,15 @@ def sanitize_monitor(snapshot):
             ("checked_at_pst", "watcher_status", "stop_reason", "delivery") if key in snapshot}
     safe["setup"] = {key: public_value(value) for key, value in snapshot.get("setup", {}).items()
                      if key in ("stage", "error_type", "updated_at_pst")}
+    safe["admission"] = {key: public_value(value) for key, value in snapshot.get("admission", {}).items()
+                         if key in ("checked_at_pst", "supervisor_status", "stop_reason")}
     safe["scheduler_errors"] = [{key: public_value(value) for key, value in error.items()
                                  if key in ("source", "error_type")}
                                 for error in snapshot.get("scheduler_errors", [])]
     safe["jobs"] = [{key: public_value(value) for key, value in job.items() if key in
                      ("job_id", "status", "scheduler_state", "scheduler_observed", "requested_gpus",
-                      "target_gpu", "result_status", "failure_type", "input_tokens_per_second")}
+                      "target_gpu", "result_status", "failure_type", "input_tokens_per_second",
+                      "admission_status", "hold_reason", "comparison_group")}
                     for job in snapshot.get("jobs", [])]
     return safe
 
@@ -203,7 +218,39 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
     lines.extend(["This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, "
              "synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with "
              "FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological "
-             "training corpus are downloaded for the benchmark.", "", "## Cluster GPUs", "",
+             "training corpus are downloaded for the benchmark.", ""])
+    comparison = [job for job in jobs if job.get("comparison_group") == "2b200_vs_8a100"]
+    if comparison:
+        lines.extend(["## Two B200s versus eight A100s", "",
+                      "Both allocations use **32 sequences × 4,096 positions = 131,072 input tokens per optimizer "
+                      "update**, BF16 computation, FP32 AdamW and FSDP FULL_SHARD. Each tests microbatches of "
+                      "1, 2 and 4 per GPU with matching gradient accumulation. Each profile requests three warmup "
+                      "and eight measured updates. OOM, partial and skipped profiles remain visible; only fully "
+                      "completed profiles can supply the reported best rate.", "",
+                      "Each allocation has a **20-minute wall limit**; both together use at most **3.33 GPU-hours**. "
+                      "Requests wait for observed spare capacity and a scheduler preview without proposed preemptions. "
+                      "Queue waiting is separate from execution time.", "",
+                      "| Allocation | Status | Best completed input tokens/s | Seconds/update | Peak memory/GPU |",
+                      "|:---|:---|---:|---:|---:|"])
+        for job in comparison:
+            result = job.get("result", {})
+            rate = result.get("throughput", {}).get("input_tokens_per_second") if job["status"] == "success" else None
+            state = job["status"]
+            if state == "queued" and job.get("admission_required"):
+                state = "waiting for spare capacity" if job.get("hold_reason") else "queued"
+            if job.get("admission_status") == "expired":
+                state = "waiting; automatic admission stopped at its deadline"
+            if job.get("admission_status") == "invalid_request":
+                state = "held; admission validation failed"
+            memory = result.get("peak_cuda_allocated_bytes")
+            lines.append(f"| {job.get('requested_gpus')} × {cell(job.get('target_gpu', 'unknown'))} | {cell(state)} | "
+                         f"{format(rate, ',.0f') if valid_rate(rate) else '—'} | "
+                         f"{format(131072 / rate, '.2f') if valid_rate(rate) else '—'} | "
+                         f"{format(memory / 2**30, '.1f') + ' GiB' if valid_rate(memory) else '—'} |")
+        lines.extend(["", "The earlier one-B200 diagnostic uses a different global batch and provides context only. "
+                      "The comparison above reports the best of the tested profiles, not a claim of maximum possible "
+                      "performance. These short synthetic runs do not test biological learning or checkpoint recovery.", ""])
+    lines.extend(["## Cluster GPUs", "",
              "Each node is counted once across partitions. Unallocated GPUs are not necessarily schedulable "
              "immediately; account limits, reservations and planned allocations can apply.", "",
              "| GPU | Configured | Allocated | Unallocated on online nodes | On unavailable nodes |",
@@ -235,7 +282,9 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
         gpu = hardware[0].get("gpu") if hardware else job.get("target_gpu", "—")
         status = job["status"]
         if status == "queued" and job.get("hold_reason"):
-            status += " — runtime setup hold"
+            status += " — waiting for spare capacity" if job.get("admission_required") else " — runtime setup hold"
+        if job.get("superseded_reason"):
+            status += " — replaced by the matched comparison"
         if result.get("status") == "runtime_limit":
             status += " — time limit; partial measurement" if valid_rate(rate) else " — time limit"
         elif status == "failed" and result.get("failure_type"):
@@ -266,6 +315,17 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
                          f"Context: {result.get('arguments', {}).get('sequence_length', 'unknown')}; "
                          f"microbatch per GPU: {result.get('arguments', {}).get('batch_size', 'unknown')}; "
                          f"gradient accumulation: {result.get('arguments', {}).get('accumulation', 'unknown')}.")
+            lines.append("")
+        if result.get("suite"):
+            lines.extend(["| Microbatch/GPU | Accumulation | Status | Measured input tokens/s |",
+                          "|---:|---:|:---|---:|"])
+            for profile in result["suite"].get("profiles", []):
+                state = profile.get("status", "unknown")
+                if profile.get("failure_type"):
+                    state += f" — {profile['failure_type']}"
+                rate = profile.get("input_tokens_per_second") if profile.get("status") == "completed" else None
+                lines.append(f"| {profile.get('microbatch_per_gpu', '—')} | {profile.get('accumulation', '—')} | "
+                             f"{cell(state)} | {format(rate, ',.0f') if valid_rate(rate) else '—'} |")
             lines.append("")
         if job.get("report_note"):
             lines.extend([job["report_note"], ""])

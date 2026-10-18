@@ -85,6 +85,27 @@ class ThroughputWatchTests(unittest.TestCase):
                 self.assertTrue(updated["runtime_validated"])
             self.assertEqual(json.loads(unrelated.read_text())["status"], "queued")
 
+    def test_admission_release_removes_hold_and_expiry_is_visible(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, run = self.make_run(directory)
+            path = run / "launch_241120.json"
+            launch = json.loads(path.read_text())
+            launch.update(admission_required=True, hold_reason="Waiting for spare capacity")
+            path.write_text(json.dumps(launch))
+            state_path = run / "admission_state.json"
+            state_path.write_text(json.dumps({'supervisor_status':'stopped',
+                'stop_reason':'admission_runtime_limit','jobs':{'241120':{'status':'waiting_spare_capacity'}}}))
+            query = lambda ids: ({'241120':{'state':'PENDING','source':'squeue'}}, [])
+            snapshot = watcher.collect_snapshot(run, root, 100, query=query)
+            self.assertEqual(snapshot['jobs'][0]['admission_status'], 'expired')
+            self.assertIn('hold_reason', snapshot['jobs'][0])
+            state_path.write_text(json.dumps({'supervisor_status':'watching',
+                'jobs':{'241120':{'status':'released'}}}))
+            snapshot = watcher.collect_snapshot(run, root, 130, query=query)
+            self.assertEqual(snapshot['jobs'][0]['admission_status'], 'released')
+            self.assertNotIn('hold_reason', snapshot['jobs'][0])
+            self.assertNotIn('hold_reason', json.loads(path.read_text()))
+
     def test_result_success_requires_completed_measurement_and_completed_allocation(self):
         self.assertEqual(watcher.observed_status({}, {"state": "COMPLETED"}, None), "failed")
         self.assertEqual(watcher.observed_status({}, {"state": "COMPLETED"}, {"status": "completed"}), "success")
