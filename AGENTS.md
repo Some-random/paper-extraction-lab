@@ -371,3 +371,18 @@ complete biological-corpus total while other contributions remain unmeasured.
 Place the available-training-data summary last in the overview, after both the
 continued-pretraining and from-scratch comparisons. Present what existing papers
 did first, then conclude with the overall available-data picture.
+
+## Authorized actual corpus counting
+
+On October 17 the user requested setting up the data pipeline and starting
+actual counts. Use the frozen `config/corpus_count_2026-10-17.json`: the existing
+454-paper exports, 864 pinned FineFineWeb biology shards and 32 pinned
+TheBioCollection free-text shards. This is a new bounded CPU census, not a
+resumption of expired paper-acquisition jobs. Keep one worker, two CPU cores,
+zero GPUs, no inference or training. Its cumulative limits are 12 hours from
+first launch, 8 GiB reserved downloads, 16 GiB new artifacts and a 32 GiB
+free-space floor. Do not reset them on restart. Preserve raw shards and hashes;
+use a locked transactional ledger. Publish measured candidate/exact-unique
+counts separately from estimates, near-dedup/scope/quality retention and
+unscanned source totals. Route/content/modality are alternative breakdowns;
+do not add them together. Keep all evaluation jobs and old batch files untouched.

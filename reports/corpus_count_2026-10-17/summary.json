@@ -1,0 +1,5367 @@
+{
+  "run_id": "corpus_count_2026-10-17",
+  "started_at_pst": "2026-10-17T20:21:42.538990-08:00",
+  "network_reserved_bytes": 510879188,
+  "network_body_bytes": 510879188,
+  "counting_seconds": 203.73395089805126,
+  "pid": 2833164,
+  "status": "running",
+  "error": null,
+  "stop_at_pst": "2026-10-18T08:21:42.538990-08:00",
+  "updated_at_pst": "2026-10-17T20:27:50.308102-08:00",
+  "filesystem_free_bytes": 1311269453824,
+  "new_artifact_bytes": 599273860,
+  "current_file": "finefineweb_biology_000000.jsonl",
+  "execution_history": [
+    {
+      "started_at_pst": "2026-10-17T20:26:48.313802-08:00",
+      "pid": 2833164,
+      "host": "furiosa.stanford.edu",
+      "slurm_job_id": "240384",
+      "python": "3.12.3",
+      "packages": {
+        "tokenizers": "0.23.3",
+        "zstandard": "0.25.0",
+        "requests": "2.34.2",
+        "PySocks": "1.7.1"
+      },
+      "counting_code_sha256": "69c58548112b7bdf4b7db7ad9e98b6c027529a88859493585ae9119ffcd263fc",
+      "runner_code_sha256": "3078cd59a7c89210fcb6ce5ae873bc899ab642733d98125a77a701ec44205bd9"
+    }
+  ],
+  "tokenizer_path": "cache/tokenizers/olmocr2-e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "tokenizer_identity": "cached olmOCR 2 Qwen-family tokenizer; fixed counting reference, no added special tokens",
+  "sources": {
+    "pmc": {
+      "name": "PMC local biology papers",
+      "acquisition_route": "online_papers",
+      "content_category": "papers",
+      "source_scope": "Frozen local selected papers, not the whole PMC archive",
+      "expected_files": 1,
+      "expected_records": 454,
+      "whole_source_inventory": false,
+      "raw_records": 454,
+      "raw_tokens": 12677035,
+      "raw_utf8_bytes": 47284727,
+      "unique_records": 454,
+      "unique_tokens": 12677035,
+      "raw_protein_tokens": 0,
+      "unique_protein_tokens": 0,
+      "raw_dna_tokens": 0,
+      "unique_dna_tokens": 0,
+      "raw_rna_tokens": 0,
+      "unique_rna_tokens": 0,
+      "raw_smiles_tokens": 0,
+      "unique_smiles_tokens": 0,
+      "raw_inchi_tokens": 0,
+      "unique_inchi_tokens": 0,
+      "raw_text_or_unclassified_tokens": 12677035,
+      "unique_text_or_unclassified_tokens": 12677035,
+      "raw_tagged_protein_characters": 0,
+      "raw_tagged_dna_characters": 0,
+      "raw_tagged_rna_characters": 0,
+      "raw_tagged_smiles_characters": 0,
+      "raw_tagged_inchi_characters": 0,
+      "completed_files": 1,
+      "complete_frozen_input_scan": true,
+      "available_raw_bytes": 47728154
+    },
+    "finefineweb": {
+      "name": "FineFineWeb biology",
+      "acquisition_route": "existing_datasets",
+      "content_category": "web_text",
+      "revision": "7fd92dc825a75cbff271a5a52eea0eda91a2c112",
+      "expected_files": 864,
+      "whole_source_inventory": true,
+      "raw_records": 36811,
+      "raw_tokens": 39227598,
+      "raw_utf8_bytes": 171978685,
+      "unique_records": 36811,
+      "unique_tokens": 39227598,
+      "raw_protein_tokens": 0,
+      "unique_protein_tokens": 0,
+      "raw_dna_tokens": 0,
+      "unique_dna_tokens": 0,
+      "raw_rna_tokens": 0,
+      "unique_rna_tokens": 0,
+      "raw_smiles_tokens": 0,
+      "unique_smiles_tokens": 0,
+      "raw_inchi_tokens": 0,
+      "unique_inchi_tokens": 0,
+      "raw_text_or_unclassified_tokens": 39227598,
+      "unique_text_or_unclassified_tokens": 39227598,
+      "raw_tagged_protein_characters": 0,
+      "raw_tagged_dna_characters": 0,
+      "raw_tagged_rna_characters": 0,
+      "raw_tagged_smiles_characters": 0,
+      "raw_tagged_inchi_characters": 0,
+      "completed_files": 0,
+      "complete_frozen_input_scan": false,
+      "available_raw_bytes": 433883986250
+    },
+    "biocollection": {
+      "name": "TheBioCollection free-text stream",
+      "acquisition_route": "existing_datasets",
+      "content_category": "database_records",
+      "revision": "df09ee34ae7f9f00cc1290862f83fdb542f2ea35",
+      "expected_files": 32,
+      "whole_source_inventory": true,
+      "completed_files": 0,
+      "complete_frozen_input_scan": false,
+      "available_raw_bytes": 15931042772
+    }
+  },
+  "totals": {
+    "raw_records": 37265,
+    "raw_tokens": 51904633,
+    "raw_utf8_bytes": 219263412,
+    "unique_records": 37265,
+    "unique_tokens": 51904633,
+    "raw_protein_tokens": 0,
+    "unique_protein_tokens": 0,
+    "raw_dna_tokens": 0,
+    "unique_dna_tokens": 0,
+    "raw_rna_tokens": 0,
+    "unique_rna_tokens": 0,
+    "raw_smiles_tokens": 0,
+    "unique_smiles_tokens": 0,
+    "raw_inchi_tokens": 0,
+    "unique_inchi_tokens": 0,
+    "raw_text_or_unclassified_tokens": 51904633,
+    "unique_text_or_unclassified_tokens": 51904633,
+    "raw_tagged_protein_characters": 0,
+    "raw_tagged_dna_characters": 0,
+    "raw_tagged_rna_characters": 0,
+    "raw_tagged_smiles_characters": 0,
+    "raw_tagged_inchi_characters": 0
+  },
+  "acquisition_routes": {
+    "online_papers": {
+      "raw_records": 454,
+      "raw_tokens": 12677035,
+      "unique_records": 454,
+      "unique_tokens": 12677035
+    },
+    "web_urls": {
+      "raw_records": 0,
+      "raw_tokens": 0,
+      "unique_records": 0,
+      "unique_tokens": 0
+    },
+    "existing_datasets": {
+      "raw_records": 36811,
+      "raw_tokens": 39227598,
+      "unique_records": 36811,
+      "unique_tokens": 39227598
+    }
+  },
+  "content_categories": {
+    "papers": {
+      "raw_records": 454,
+      "raw_tokens": 12677035,
+      "unique_records": 454,
+      "unique_tokens": 12677035
+    },
+    "web_text": {
+      "raw_records": 36811,
+      "raw_tokens": 39227598,
+      "unique_records": 36811,
+      "unique_tokens": 39227598
+    },
+    "database_records": {
+      "raw_records": 0,
+      "raw_tokens": 0,
+      "unique_records": 0,
+      "unique_tokens": 0
+    }
+  },
+  "files": {
+    "pmc_local": {
+      "status": "complete",
+      "rows_committed": 454,
+      "error": null
+    },
+    "finefineweb_biology_000000.jsonl": {
+      "status": "counting",
+      "rows_committed": 36811,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000001.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000001.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000002.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000002.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000003.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000003.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000004.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000004.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000005.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000005.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000006.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000006.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000007.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000007.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000008.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000008.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000009.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000009.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000010.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000010.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000011.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000011.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000012.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000012.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000013.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000013.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000014.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000014.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000015.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000015.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000016.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000016.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000017.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000017.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000018.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000018.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000019.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000019.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000020.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000020.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000021.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000021.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000022.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000022.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000023.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000023.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000024.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000024.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000025.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000025.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000026.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000026.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000027.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000027.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000028.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000028.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000029.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000029.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000030.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000030.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000031.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000031.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "biocollection_free_text_stream_part_000032.jsonl.zst": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000032.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000033.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000034.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000035.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000036.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000037.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000038.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000039.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000040.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000041.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000042.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000043.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000044.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000045.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000046.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000047.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000048.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000049.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000050.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000051.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000052.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000053.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000054.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000055.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000056.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000057.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000058.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000059.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000060.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000061.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000062.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000063.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000064.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000065.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000066.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000067.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000068.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000069.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000070.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000071.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000072.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000073.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000074.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000075.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000076.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000077.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000078.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000079.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000080.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000081.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000082.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000083.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000084.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000085.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000086.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000087.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000088.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000089.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000090.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000091.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000092.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000093.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000094.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000095.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000096.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000097.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000098.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000099.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000100.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000101.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000102.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000103.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000104.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000105.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000106.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000107.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000108.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000109.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000110.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000111.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000112.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000113.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000114.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000115.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000116.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000117.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000118.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000119.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000120.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000121.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000122.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000123.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000124.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000125.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000126.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000127.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000128.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000129.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000130.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000131.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000132.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000133.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000134.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000135.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000136.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000137.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000138.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000139.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000140.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000141.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000142.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000143.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000144.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000145.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000146.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000147.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000148.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000149.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000150.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000151.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000152.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000153.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000154.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000155.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000156.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000157.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000158.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000159.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000160.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000161.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000162.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000163.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000164.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000165.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000166.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000167.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000168.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000169.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000170.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000171.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000172.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000173.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000174.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000175.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000176.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000177.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000178.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000179.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000180.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000181.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000182.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000183.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000184.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000185.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000186.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000187.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000188.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000189.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000190.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000191.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000192.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000193.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000194.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000195.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000196.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000197.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000198.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000199.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000200.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000201.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000202.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000203.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000204.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000205.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000206.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000207.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000208.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000209.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000210.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000211.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000212.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000213.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000214.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000215.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000216.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000217.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000218.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000219.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000220.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000221.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000222.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000223.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000224.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000225.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000226.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000227.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000228.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000229.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000230.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000231.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000232.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000233.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000234.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000235.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000236.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000237.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000238.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000239.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000240.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000241.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000242.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000243.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000244.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000245.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000246.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000247.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000248.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000249.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000250.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000251.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000252.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000253.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000254.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000255.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000256.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000257.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000258.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000259.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000260.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000261.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000262.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000263.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000264.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000265.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000266.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000267.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000268.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000269.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000270.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000271.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000272.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000273.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000274.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000275.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000276.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000277.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000278.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000279.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000280.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000281.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000282.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000283.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000284.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000285.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000286.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000287.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000288.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000289.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000290.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000291.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000292.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000293.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000294.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000295.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000296.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000297.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000298.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000299.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000300.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000301.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000302.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000303.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000304.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000305.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000306.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000307.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000308.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000309.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000310.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000311.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000312.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000313.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000314.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000315.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000316.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000317.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000318.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000319.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000320.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000321.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000322.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000323.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000324.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000325.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000326.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000327.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000328.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000329.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000330.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000331.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000332.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000333.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000334.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000335.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000336.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000337.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000338.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000339.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000340.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000341.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000342.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000343.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000344.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000345.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000346.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000347.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000348.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000349.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000350.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000351.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000352.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000353.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000354.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000355.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000356.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000357.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000358.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000359.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000360.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000361.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000362.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000363.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000364.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000365.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000366.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000367.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000368.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000369.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000370.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000371.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000372.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000373.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000374.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000375.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000376.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000377.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000378.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000379.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000380.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000381.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000382.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000383.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000384.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000385.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000386.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000387.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000388.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000389.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000390.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000391.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000392.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000393.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000394.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000395.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000396.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000397.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000398.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000399.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000400.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000401.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000402.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000403.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000404.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000405.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000406.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000407.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000408.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000409.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000410.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000411.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000412.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000413.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000414.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000415.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000416.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000417.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000418.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000419.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000420.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000421.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000422.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000423.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000424.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000425.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000426.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000427.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000428.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000429.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000430.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000431.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000432.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000433.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000434.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000435.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000436.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000437.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000438.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000439.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000440.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000441.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000442.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000443.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000444.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000445.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000446.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000447.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000448.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000449.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000450.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000451.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000452.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000453.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000454.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000455.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000456.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000457.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000458.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000459.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000460.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000461.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000462.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000463.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000464.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000465.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000466.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000467.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000468.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000469.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000470.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000471.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000472.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000473.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000474.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000475.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000476.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000477.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000478.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000479.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000480.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000481.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000482.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000483.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000484.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000485.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000486.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000487.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000488.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000489.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000490.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000491.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000492.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000493.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000494.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000495.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000496.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000497.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000498.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000499.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000500.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000501.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000502.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000503.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000504.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000505.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000506.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000507.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000508.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000509.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000510.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000511.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000512.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000513.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000514.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000515.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000516.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000517.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000518.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000519.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000520.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000521.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000522.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000523.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000524.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000525.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000526.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000527.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000528.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000529.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000530.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000531.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000532.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000533.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000534.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000535.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000536.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000537.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000538.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000539.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000540.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000541.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000542.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000543.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000544.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000545.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000546.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000547.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000548.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000549.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000550.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000551.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000552.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000553.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000554.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000555.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000556.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000557.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000558.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000559.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000560.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000561.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000562.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000563.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000564.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000565.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000566.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000567.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000568.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000569.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000570.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000571.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000572.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000573.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000574.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000575.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000576.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000577.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000578.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000579.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000580.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000581.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000582.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000583.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000584.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000585.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000586.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000587.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000588.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000589.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000590.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000591.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000592.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000593.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000594.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000595.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000596.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000597.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000598.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000599.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000600.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000601.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000602.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000603.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000604.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000605.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000606.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000607.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000608.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000609.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000610.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000611.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000612.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000613.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000614.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000615.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000616.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000617.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000618.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000619.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000620.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000621.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000622.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000623.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000624.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000625.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000626.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000627.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000628.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000629.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000630.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000631.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000632.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000633.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000634.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000635.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000636.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000637.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000638.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000639.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000640.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000641.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000642.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000643.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000644.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000645.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000646.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000647.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000648.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000649.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000650.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000651.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000652.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000653.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000654.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000655.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000656.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000657.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000658.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000659.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000660.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000661.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000662.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000663.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000664.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000665.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000666.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000667.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000668.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000669.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000670.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000671.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000672.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000673.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000674.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000675.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000676.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000677.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000678.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000679.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000680.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000681.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000682.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000683.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000684.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000685.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000686.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000687.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000688.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000689.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000690.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000691.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000692.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000693.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000694.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000695.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000696.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000697.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000698.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000699.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000700.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000701.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000702.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000703.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000704.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000705.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000706.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000707.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000708.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000709.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000710.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000711.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000712.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000713.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000714.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000715.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000716.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000717.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000718.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000719.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000720.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000721.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000722.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000723.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000724.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000725.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000726.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000727.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000728.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000729.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000730.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000731.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000732.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000733.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000734.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000735.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000736.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000737.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000738.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000739.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000740.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000741.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000742.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000743.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000744.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000745.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000746.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000747.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000748.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000749.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000750.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000751.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000752.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000753.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000754.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000755.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000756.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000757.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000758.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000759.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000760.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000761.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000762.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000763.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000764.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000765.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000766.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000767.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000768.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000769.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000770.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000771.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000772.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000773.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000774.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000775.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000776.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000777.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000778.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000779.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000780.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000781.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000782.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000783.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000784.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000785.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000786.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000787.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000788.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000789.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000790.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000791.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000792.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000793.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000794.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000795.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000796.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000797.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000798.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000799.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000800.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000801.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000802.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000803.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000804.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000805.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000806.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000807.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000808.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000809.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000810.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000811.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000812.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000813.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000814.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000815.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000816.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000817.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000818.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000819.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000820.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000821.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000822.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000823.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000824.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000825.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000826.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000827.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000828.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000829.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000830.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000831.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000832.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000833.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000834.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000835.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000836.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000837.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000838.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000839.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000840.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000841.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000842.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000843.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000844.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000845.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000846.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000847.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000848.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000849.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000850.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000851.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000852.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000853.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000854.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000855.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000856.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000857.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000858.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000859.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000860.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000861.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000862.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    },
+    "finefineweb_biology_000863.jsonl": {
+      "status": "pending",
+      "rows_committed": 0,
+      "error": null
+    }
+  },
+  "source_coverage": [
+    {
+      "id": "pmc",
+      "name": "PubMed Central",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "local_selected_papers_counted"
+    },
+    {
+      "id": "pubmed",
+      "name": "PubMed / MEDLINE abstracts",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "pile_pubmed",
+      "name": "The Pile PubMed components",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "biorxiv",
+      "name": "bioRxiv",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "medrxiv",
+      "name": "medRxiv",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "chemrxiv",
+      "name": "ChemRxiv",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "osf",
+      "name": "OSF",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "acl",
+      "name": "ACL Anthology",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "pubag",
+      "name": "PubAg",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "s2orc",
+      "name": "S2ORC / Semantic Scholar",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "pes2o",
+      "name": "peS2o",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "biomedica",
+      "name": "BIOMEDICA",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "olmo_pdfs",
+      "name": "OLMo 3 / olmOCR science PDFs",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "patents",
+      "name": "USPTO patent applications",
+      "group": "papers",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "finefineweb",
+      "name": "FineFineWeb biology",
+      "group": "web",
+      "upstream_of": [],
+      "counting_status": "counting_partial"
+    },
+    {
+      "id": "biocollection",
+      "name": "TheBioCollection free-text stream",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "queued"
+    },
+    {
+      "id": "pubchem",
+      "name": "PubChem",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "uniprot",
+      "name": "UniProt / UniRef",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "pdb",
+      "name": "Protein Data Bank",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "alphafold",
+      "name": "AlphaFold DB",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "bindingdb",
+      "name": "BindingDB",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "drugbank",
+      "name": "DrugBank",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "chembl",
+      "name": "ChEMBL",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "uspto50k",
+      "name": "USPTO-50K reactions",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "gencode",
+      "name": "GENCODE",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "encode",
+      "name": "ENCODE",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "rnacentral",
+      "name": "RNAcentral",
+      "group": "records",
+      "upstream_of": [
+        "biocollection",
+        "opengenome2"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "rfam",
+      "name": "Rfam",
+      "group": "records",
+      "upstream_of": [
+        "biocollection",
+        "opengenome2"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "l1000",
+      "name": "LINCS L1000",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "hpa",
+      "name": "Human Protein Atlas",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "generif",
+      "name": "GeneRIF",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "ncbi_gene",
+      "name": "NCBI Gene",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "go",
+      "name": "Gene Ontology / GOA",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "cell_ontology",
+      "name": "Cell Ontology",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "cellxgene",
+      "name": "CELLxGENE",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "jump",
+      "name": "JUMP Cell Painting",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "hubmap",
+      "name": "HuBMAP",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "hetionet",
+      "name": "Hetionet",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "drkg",
+      "name": "DRKG",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "dgidb",
+      "name": "DGIdb",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "string",
+      "name": "STRING",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "omnipath",
+      "name": "OmniPath",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "reactome",
+      "name": "Reactome",
+      "group": "records",
+      "upstream_of": [
+        "biocollection"
+      ],
+      "counting_status": "upstream_of_bundle_incremental_coverage_unmeasured"
+    },
+    {
+      "id": "moltextnet",
+      "name": "MolTextNet",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "pcqm4mv2",
+      "name": "PCQM4Mv2",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "pubchemqc",
+      "name": "PubChemQC",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "stitch",
+      "name": "STITCH",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "glaser",
+      "name": "J. Glaser binding-affinity dataset",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "crossdocked",
+      "name": "CrossDocked2020",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "alphaseq",
+      "name": "Open-AlphaSeq",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "ppiref",
+      "name": "PPIRef",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "ncbi_unspecified",
+      "name": "Other NCBI resources",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "zinc",
+      "name": "ZINC20",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "kegg",
+      "name": "KEGG",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "clinvar",
+      "name": "ClinVar",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "omim",
+      "name": "OMIM",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "dbsnp",
+      "name": "dbSNP",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "cosmic",
+      "name": "COSMIC",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "gnomad",
+      "name": "gnomAD",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "interpro",
+      "name": "InterPro",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "protdescribe",
+      "name": "ProtDescribe",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "tdc",
+      "name": "Therapeutics Data Commons",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "qm9",
+      "name": "QM9 / GEOM-QM9",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "geomdrugs",
+      "name": "GEOM-Drugs",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "misato",
+      "name": "MISATO",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "gfp",
+      "name": "TAPE GFP fluorescence",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "moledit",
+      "name": "Mega-MolEdit",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "molopt",
+      "name": "MolOpt-Instructions",
+      "group": "records",
+      "upstream_of": [],
+      "counting_status": "requires_source_adapter_or_release_inventory"
+    },
+    {
+      "id": "opengenome2",
+      "name": "OpenGenome2",
+      "group": "raw",
+      "upstream_of": [],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "gtdb",
+      "name": "GTDB",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "imgpr",
+      "name": "IMG/PR",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "imgvr",
+      "name": "IMG/VR",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "mgddb",
+      "name": "MGD metagenomes",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "ncbi_genomes",
+      "name": "NCBI genome assemblies",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "ensembl",
+      "name": "Ensembl",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "epd",
+      "name": "EPDnew",
+      "group": "raw",
+      "upstream_of": [
+        "opengenome2"
+      ],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "oas",
+      "name": "Observed Antibody Space",
+      "group": "raw",
+      "upstream_of": [],
+      "counting_status": "secondary_raw_modality_not_counted"
+    },
+    {
+      "id": "c4",
+      "name": "C4",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "finewebedu",
+      "name": "FineWeb-Edu",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "wikipedia",
+      "name": "English Wikipedia",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "dclmcc",
+      "name": "DCLM-CC",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "eaidclm",
+      "name": "EAI-DCLM",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "dolma",
+      "name": "Dolma",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "materials",
+      "name": "Materials Project",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "crystals",
+      "name": "MP-20 / Carbon-24 / MPTS-52",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    },
+    {
+      "id": "paperswithcode",
+      "name": "Papers with Code",
+      "group": "general",
+      "upstream_of": [],
+      "counting_status": "outside_biology_total"
+    }
+  ],
+  "counting_tokens_per_second": 254766.7326491555,
+  "final_retained_biology_tokens": null,
+  "near_deduplicated_tokens": null,
+  "image_tokens": null,
+  "whole_available_biology_total": null,
+  "counting_policy": {
+    "text": "Count original dataset text; local papers count title, selected blocks, captions/notes and tables once. Do not add chunks/interleaved copies.",
+    "exact_dedup": "SHA256 after whitespace collapse; preserve case, punctuation and scientific strings. Fixed input order keeps first occurrence across all sources.",
+    "modalities": "Assign each full-record token by its starting character offset to explicit protein/dna/rna/smiles/inchi content, otherwise text_or_unclassified. Tag boundaries stay in text_or_unclassified.",
+    "images": "Preserved original assets are not vision-tokenized; image token count is unknown.",
+    "scope": "Candidate tokens before biology/clinical selection, quality filtering and near-duplicate removal. No extrapolation to unscanned files."
+  },
+  "limits": {
+    "runtime_seconds": 43200,
+    "network_reserved_bytes": 8589934592,
+    "new_artifact_bytes": 17179869184,
+    "minimum_free_bytes": 34359738368,
+    "maximum_line_bytes": 16777216,
+    "maximum_text_bytes": 4194304
+  }
+}
