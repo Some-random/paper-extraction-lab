@@ -29,7 +29,7 @@ M = million; B = billion. GB and TB are decimal storage units; GiB and TiB are b
 | **Full online collection** | **PMC text-mining candidates** | **127.2B candidate scenario** | **About 1.28 TB XML**; about **3.01 TB** with parsed/canonical copies and uint32 token IDs |
 | Full online collection | FineFineWeb biology: 864 shards | 89.75B candidate scenario; publisher reports 86.99B in its tokenizer | 433.88 GB raw; about 792.89 GB raw + token IDs |
 | Full online collection | TheBioCollection free-text: 32 shards of biological descriptions, annotations, sequences and molecules | 36.99B candidate scenario; publisher reports 33.8B in its tokenizer | 15.93 GB compressed; about 163.88 GB raw + token IDs |
-| **These three full collections** | **PMC + FineFineWeb + TheBioCollection** | **253.93B candidate scenario, before cross-source deduplication and scope/quality filtering** | **About 3.97 TB** for source/native artifacts + IDs; reserve **4–5 TiB working capacity** |
+| **These three full collections** | **PMC + FineFineWeb + TheBioCollection** | **253.93B candidate scenario, before cross-source deduplication and scope/quality filtering** | **About 3.97 TB** for source/native artifacts + IDs; **4–5 TiB** for full materialization, or the [bounded streaming plan](../corpus_count_2026-10-17/capacity_plan.md#bounded-storage-alternative) |
 | Broader online pool | OLMo 3 / olmOCR scientific PDFs, across subjects | 972B source-reported tokens; biological share unmeasured | Not inventoried here |
 | Broader online pool, secondary priority | OpenGenome2 genomic sequence collection | 8.8T reported nucleotide positions; common text-tokenizer count unknown | Not inventoried here |
 | Other registered sources | Remaining contributions across the complete 87-family source register | Additional unique biological tokens unmeasured | Not fully inventoried |
@@ -37,6 +37,19 @@ M = million; B = billion. GB and TB are decimal storage units; GiB and TiB are b
 **Storage already found is not storage still needed.** The 922.98 GB is held in existing cluster locations and can be read in place. It is a subtotal of the listed stores, not a census of every cluster disk. The larger web cache's apparent size includes incomplete payloads; its allocated blocks occupy about 510.40 GB. The web-storage cells describe whole mixed-domain caches, not isolated biological subsets. Additional NCBI genomic FASTA, indexed UniRef copies and older project experiments are outside this subtotal.
 
 The 13.66 GB pilot footprint includes about 8.93 GB in the counting run plus 4.73 GB in its initial paper collection. Source rows omit shared counting indexes and other run files, so their storage cells do not sum to the total. Environments, model caches and older experiments are excluded. Four-byte IDs for the pilot's counted tokens would occupy another 19.85 GB if written; that packed copy has not been created.
+
+## Existing copies and remaining release files
+
+The first manifest join has run; these are measured file-presence and paper-ID results, independent of token estimates.
+
+| Collection | Present in the checked locations | Remaining / unresolved |
+|:---|:---|:---|
+| FineFineWeb biology | 4 of 864 pinned shards; 2.04 GB | 860 shards; 431.84 GB in that release |
+| TheBioCollection free-text | 4 of 32 pinned shards; 1.99 GB | 28 shards; 13.94 GB; the fourth local shard also needs its count completed |
+| PMC papers | 28,623 distinct PMCIDs across our selected pilot and the shared XML cache | 26,296 cache IDs are additional to our pilot; target eligibility, versions and full-inventory membership need checking |
+| Biomni | 103 files; 31.36 GB | Source families overlap existing biological databases; record-level overlap with TheBioCollection is uncounted |
+
+Present dataset files match expected byte sizes in this pass; their SHA-256 values have not been recomputed. The missing-shard amounts describe the specific releases, not guaranteed new biological content. The broader cluster web caches are different exports and cannot substitute for a pinned shard merely because their subject matter overlaps. [Reconciliation results](reconciliation_summary.json) · [All pinned shard states](online_shard_reconciliation.csv). Matching rules and the counting procedure are in the [processing recipe](../bio_foundation_review_2026-10-15/data_pipeline.md).
 
 ## How much is biological text?
 
@@ -46,7 +59,7 @@ The cluster web estimate counts whole biology-focused documents and keeps clinic
 
 ## What the full collection would require
 
-**The defensible quantified planning subtotal is about 254B candidate tokens, with 4–5 TiB of working storage for those three collections.** It does not establish 254B usable biological tokens or a complete ceiling on available data. The paper scenario scales the selected-paper mean to the PMC inventory; the two released-dataset scenarios scale completed prefix shards by exact release bytes. These are planning assumptions, not representative retention estimates.
+**The defensible quantified planning subtotal is about 254B candidate tokens. Fully materializing those three collections would use 4–5 TiB of working storage.** The alternative is a **200 GiB bounded workspace** that streams inputs, counts without retaining all token IDs, and limits retained outputs. This does not claim the entire final corpus fits in that space. It does not establish 254B usable biological tokens or a complete ceiling on available data. The paper scenario scales the selected-paper mean to the PMC inventory; the two released-dataset scenarios scale completed prefix shards by exact release bytes. These are planning assumptions, not representative retention estimates.
 
 Our pilot is nested inside these online collections. The two cluster web caches overlap each other and can overlap FineFineWeb. Paper imports, UniRef representations and TheBioCollection's upstream databases overlap as well. A unique biological grand total requires counting and cross-source deduplication; unknown contributions remain unknown rather than zero.
 

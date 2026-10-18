@@ -58,10 +58,10 @@ These models begin with randomly initialized weights and biological or scientifi
 |:---|:---|:---|
 | Our counted pilot | **4.962B candidate tokens**, after exact deduplication | **13.66 GB**, including source assets, outputs and indexes |
 | Existing cluster stores | **22.9B estimated biology-focused web tokens** (10.2–35.6B sampling interval), plus uncounted papers and databases | **922.98 GB** across the listed stores, including overlapping representations |
-| Full PMC + FineFineWeb biology + TheBioCollection | **254B candidate-token planning scenario** | **4–5 TiB working capacity** for source/native artifacts, token IDs, indexes and scratch |
+| Full PMC + FineFineWeb biology + TheBioCollection | **254B candidate-token planning scenario** | **4–5 TiB** for full materialization, or a proposed **200 GiB bounded workspace** for streaming/counting and selected outputs |
 
 **These rows overlap and cannot be added. The unique, retained biological-token total remains unmeasured.** The pilot and full-release scenarios include sequences and molecular representations. The cluster web estimate separates clinical/health content, uses assistant-reviewed probability samples and covers readable content; some larger-cache pages are incomplete. Its interval excludes systematic labeling error.
 
-The full-release scenario precedes biological scope/quality filtering and cross-source deduplication. Its storage allowance excludes full PDFs/figures, model weights and checkpoints. The broader scientific PDF pool reports 972B tokens across subjects, with biological share unknown. **Raw sequences and structures remain a secondary collection priority:** OpenGenome2 reports 8.8T nucleotide positions, which are kept separate from text-token amounts.
+The full-release scenario precedes biological scope/quality filtering and cross-source deduplication. The bounded workspace does not hold the complete token-ID pack; it pauses when its output or index allocation fills. Both storage plans exclude full PDFs/figures, model weights and checkpoints. The broader scientific PDF pool reports 972B tokens across subjects, with biological share unknown. **Raw sequences and structures remain a secondary collection priority:** OpenGenome2 reports 8.8T nucleotide positions, which are kept separate from text-token amounts.
 
 The [complete source inventory](source_inventory.md) covers **87 source families**. Additional unique biological contributions and their storage remain unmeasured. [Storage assumptions](../corpus_count_2026-10-17/capacity_plan.md).

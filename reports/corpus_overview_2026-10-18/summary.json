@@ -290,5 +290,17 @@
     "Biology-focused cluster web estimates use assistant semantic labels, not human expert annotation.",
     "Byte counts describe stored representations; they do not measure training usefulness or tokens.",
     "All 87 registered source families remain in scope; additional unique tokens and storage for unquantified families are unknown."
-  ]
+  ],
+  "bounded_storage_policy": {
+    "file": "config/corpus_storage_policy.json",
+    "sha256": "efa099863c3a5f47df5b180506401d18bfebfac164ffbcba3bd6f054ece65933",
+    "maximum_pipeline_data_bytes": 214748364800,
+    "status": "Proposed operating policy for a new bounded runner; not an active acquisition job",
+    "full_local_materialization": false,
+    "external_destination_configured": false
+  },
+  "reconciliation": {
+    "file": "reports/corpus_overview_2026-10-18/reconciliation_summary.json",
+    "method": "Metadata-only file-presence and paper-ID join; no new token counts or payload checksum validation"
+  }
 }

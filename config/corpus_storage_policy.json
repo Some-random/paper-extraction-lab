@@ -1,0 +1,22 @@
+{
+  "status": "Proposed operating policy for a new bounded runner; not an active acquisition job",
+  "maximum_pipeline_data_bytes": 214748364800,
+  "scope": "Pipeline-owned corpus data, including the existing counted pilot, all new source copies, normalized outputs, indexes and temporary files; shared inputs read in place are not duplicated. Historical experiments outside this pipeline, environments and model caches are separate existing footprints.",
+  "category_budget_bytes": {
+    "preserved_pilot_and_audit_metadata": 34359738368,
+    "raw_staging_cache": 17179869184,
+    "extraction_and_atomic_write_scratch": 17179869184,
+    "catalog_and_dedup_indexes_including_sort_spill": 42949672960,
+    "retained_compressed_corpus_including_original_paper_xml": 85899345920,
+    "headroom": 17179869184
+  },
+  "minimum_shared_filesystem_free_bytes": 68719476736,
+  "source_reading": "One source shard or bounded paper batch at a time, streaming compressed records; no full decompressed copies.",
+  "counting": "Tokenize records and accumulate counters without storing every token ID. Use compact versioned record locators and bounded duplicate indexes instead of the pilot per-record measurements layout at full scale.",
+  "preservation": "Preserve historical pilot originals and other users files. Newly retained papers preserve original XML in compressed storage with checksums and provenance. Do not silently discard originals or retained final outputs to meet the limit.",
+  "cache_eviction": "Only future run-owned disposable dataset cache files may be evicted after source checksum, committed processing checkpoint and retained-output verification; never delete existing archived sources or shared files.",
+  "capacity_behavior": "Reserve bytes before each bounded write/download and include concurrent temporary/atomic copies, indexes and sorting spill. Pause when a category or total cap or free-space floor is reached. Continue only after space is available or a configured durable output destination has been verified.",
+  "full_corpus_limit": "The policy supports bounded counting and selective materialization. It does not assert the full 254B-token corpus, all paper originals or a complete training pack fit in 200 GiB.",
+  "external_output_destination": null,
+  "execution": "No full acquisition, old-worker resumption, deletion, GPU use or model training is started by this policy file."
+}

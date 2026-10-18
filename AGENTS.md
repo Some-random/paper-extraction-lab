@@ -452,3 +452,24 @@ explicit zero domain contributions for unreadable rows, not invented lengths.
 Keep any 200-shard allocation-based subset check explicit and avoid projecting
 readable-domain fractions onto the reported full 220B total. The two web pools
 overlap and their biological token estimates must not be added.
+
+## Reconcile existing sources and bound storage
+
+The user requested reconciling existing cluster copies with remaining downloads,
+explaining Biomni's overlapping database resources, and restricting peak storage.
+The metadata-only manifest join is implemented in
+`scripts/reconcile_corpus_inventory.py`; public aggregate/shard results are under
+`reports/corpus_overview_2026-10-18/`, with detailed paper paths kept under ignored
+experiments. Match release/revision/path/hash at file level and namespace/ID/
+version/content at record level. Matching size is not checksum validation, and
+equal biological entity IDs do not make different annotations or assays duplicates.
+
+The proposed new-run policy is `config/corpus_storage_policy.json`: 200 GiB of
+pipeline data including the counted pilot, staged inputs, retained compressed
+outputs, indexes and temporary copies, plus a 64 GiB shared-free-space floor.
+It has not launched or changed any acquisition worker. Preserve existing originals
+and shared files; retain original XML for new retained papers, and pause on
+capacity rather than deleting archived sources or final outputs. A full 254B-token
+uint32 pack alone needs about 1.02 TB, so do not claim it fits in the bounded
+workspace. Keep processing explanations on `data_pipeline.md` and resource
+allocations in the capacity plan; no old run budget is extended by this request.

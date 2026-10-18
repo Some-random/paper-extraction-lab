@@ -235,13 +235,14 @@ def starter_conclusion(estimate):
     """Keep measured availability and storage beside the broader planning scenario."""
     inventory = json.loads((ROOT / 'reports/corpus_overview_2026-10-18/summary.json').read_text())
     pilot, cluster, online = (inventory[key] for key in ('pilot', 'cluster', 'online'))
+    bounded_gib = inventory['bounded_storage_policy']['maximum_pipeline_data_bytes'] / 2**30
     web = next(row for row in cluster['collections'] if row['id'] == 'smollm')
     web_low, web_high = web['tokens_ci95']
     rows = [
         '| Availability | Tokens | Storage |', '|:---|:---|:---|',
         f"| Our counted pilot | **{pilot['exact_unique_candidate_tokens'] / 1e9:.3f}B candidate tokens**, after exact deduplication | **{pilot['combined_run_storage_snapshot_bytes'] / 1e9:.2f} GB**, including source assets, outputs and indexes |",
         f"| Existing cluster stores | **{web['tokens'] / 1e9:.1f}B estimated biology-focused web tokens** ({web_low / 1e9:.1f}–{web_high / 1e9:.1f}B sampling interval), plus uncounted papers and databases | **{cluster['listed_store_apparent_bytes'] / 1e9:.2f} GB** across the listed stores, including overlapping representations |",
-        f"| Full PMC + FineFineWeb biology + TheBioCollection | **{online['combined_candidate_tokens_scenario'] / 1e9:.0f}B candidate-token planning scenario** | **4–5 TiB working capacity** for source/native artifacts, token IDs, indexes and scratch |",
+        f"| Full PMC + FineFineWeb biology + TheBioCollection | **{online['combined_candidate_tokens_scenario'] / 1e9:.0f}B candidate-token planning scenario** | **4–5 TiB** for full materialization, or a proposed **{bounded_gib:.0f} GiB bounded workspace** for streaming/counting and selected outputs |",
     ]
     return '\n\n'.join([
         '## Available training data',
@@ -252,7 +253,8 @@ def starter_conclusion(estimate):
         'The cluster web estimate separates clinical/health content, uses assistant-reviewed probability samples '
         'and covers readable content; some larger-cache pages are incomplete. Its interval excludes systematic labeling error.',
         'The full-release scenario precedes biological scope/quality filtering and cross-source deduplication. '
-        'Its storage allowance excludes full PDFs/figures, model weights and checkpoints. '
+        'The bounded workspace does not hold the complete token-ID pack; it pauses when its output or index allocation fills. '
+        'Both storage plans exclude full PDFs/figures, model weights and checkpoints. '
         'The broader scientific PDF pool reports 972B tokens across subjects, with biological share unknown. '
         '**Raw sequences and structures remain a secondary collection priority:** OpenGenome2 reports 8.8T nucleotide positions, '
         'which are kept separate from text-token amounts.',

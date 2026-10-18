@@ -1,0 +1,61 @@
+{
+  "checked_at_pst": "2026-10-18T11:11:20.316522-08:00",
+  "method": "Metadata-only joins of frozen shard manifests, local file stats, counting summary and paper ID metadata",
+  "counting_summary_updated_at_pst": "2026-10-18T08:21:43.649371-08:00",
+  "online_sources": {
+    "finefineweb": {
+      "release_files": 864,
+      "release_bytes": 433883986250,
+      "local_same_size_files": 4,
+      "local_same_size_bytes": 2039196054,
+      "local_file_status_counts": {
+        "same_size_unverified": 4,
+        "missing": 860
+      },
+      "completed_counting_files": 4,
+      "partly_counted_files": 0,
+      "missing_files": 860,
+      "missing_file_bytes": 431844790196,
+      "revisions": [
+        "7fd92dc825a75cbff271a5a52eea0eda91a2c112"
+      ],
+      "payload_checksums_recomputed": 0
+    },
+    "biocollection": {
+      "release_files": 32,
+      "release_bytes": 15931042772,
+      "local_same_size_files": 4,
+      "local_same_size_bytes": 1990962926,
+      "local_file_status_counts": {
+        "same_size_unverified": 4,
+        "missing": 28
+      },
+      "completed_counting_files": 3,
+      "partly_counted_files": 1,
+      "missing_files": 28,
+      "missing_file_bytes": 13940079846,
+      "revisions": [
+        "df09ee34ae7f9f00cc1290862f83fdb542f2ea35"
+      ],
+      "payload_checksums_recomputed": 0
+    }
+  },
+  "papers": {
+    "selected_pilot_pmcs": 2327,
+    "cached_pmcids": 26303,
+    "cached_xml_files": 26303,
+    "cached_manifest_bytes": 4174470646,
+    "overlap_by_pmcid": 7,
+    "additional_cached_pmcids": 26296,
+    "union_pmcids": 28623,
+    "scope_and_version_equivalence": "Not established by identifier comparison",
+    "paper_payloads_read": 0
+  },
+  "limitations": [
+    "Matching byte size is not a payload checksum or complete readability check.",
+    "Counting status is historical evidence from the supplied summary, not a new scan.",
+    "PMC IDs identify articles; versions, source hashes, licenses and biology scope require separate checks.",
+    "Missing-file bytes describe the pinned release remainder, not cross-source unique bytes or a download instruction.",
+    "No record contents were read and no new token counts were computed."
+  ]
+}

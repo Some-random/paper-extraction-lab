@@ -48,9 +48,58 @@ For the **two online releases**, raw files plus one uint32 token-ID copy give
 roughly **1.1–1.3 TiB** for that workflow. Stream compressed records during
 processing rather than keep a second fully decompressed text copy.
 
-Preparing both online releases plus the entire PMC text scenario therefore
+Fully materializing both online releases plus the entire PMC text scenario therefore
 calls for roughly **4–5 TiB of data storage**. Model weights and checkpoints
 need their own capacity. Shared scratch had about **585 GiB free** at this check.
+
+## Bounded storage alternative
+
+**Use a proposed 200 GiB ceiling for this pipeline's data footprint.** This includes
+the existing counted pilot, newly downloaded source copies, retained records,
+indexes and all temporary files. Existing shared cluster inputs are read in place;
+the plan does not duplicate or delete them. Historical experiments outside this
+pipeline, environments and model caches are separate existing footprints.
+
+| Allocation | Maximum |
+|:---|---:|
+| Preserved pilot and compact audit metadata | 32 GiB |
+| Future raw staging cache | 16 GiB |
+| Extraction and temporary/atomic output copies | 16 GiB |
+| New catalog/deduplication indexes and sorting spill | 40 GiB |
+| Retained compressed corpus, including original XML for retained papers | 80 GiB |
+| Headroom | 16 GiB |
+| **Total** | **200 GiB** |
+
+Stream one source shard or bounded paper batch at a time. Decompress while
+reading, tokenize in memory, and accumulate counts without saving every token
+ID. A compact record catalog stores source/revision/shard/row, content hash,
+token count and processing decisions. The pilot's verbose per-record SQLite
+layout is not assumed to fit at full scale. Global deduplication signatures,
+external sorting and concurrent output copies must fit their allocations too.
+
+Before each bounded operation, reserve its worst-case writes against both the
+category allocation and total ceiling, and maintain at least 64 GiB free on the
+shared filesystem. Future run-owned disposable dataset staging files may leave
+the cache only after source checksum, committed processing checkpoint and any
+retained-output checks succeed. Preserve historical originals, shared files,
+newly retained paper XML and final training shards. When an allocation fills,
+pause; continuing requires space or a verified durable destination. No external
+destination has been configured.
+
+**Counting all candidates does not require holding their complete token-ID
+array. Keeping the entire corpus locally does require enough durable storage.**
+The 253.93B-token scenario would occupy **1.016 TB / 946 GiB in uint32 IDs alone**.
+Neither the complete training pack nor every original PMC XML is claimed to fit
+within 200 GiB. Under this ceiling, retain a selected corpus that fits, or consume
+versioned source shards through a bounded stream. Completing a full preserved
+paper archive would require a separate durable destination. Compression can
+reduce retained text, but its size must be measured; no full-corpus compression
+ratio is assumed.
+
+The [machine-readable policy](../../config/corpus_storage_policy.json) records
+these limits. It is a design for a new bounded runner, not an extension of the
+expired pilot. The metadata reconciliation has run; no full download, deletion,
+training or new long-running counting job has been launched.
 
 ## Estimation and acquisition
 
