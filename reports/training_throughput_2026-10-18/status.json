@@ -1,7 +1,8 @@
 {
-  "checked_at_pst": "2026-10-18T15:19:39-08:00",
-  "watcher_status": "starting",
-  "delivery": "GitHub hourly reports and local status history; automatic chat notifications are not configured",
+  "checked_at_pst": "2026-10-18T15:20:10-08:00",
+  "watcher_status": "watching",
+  "stop_reason": null,
+  "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
   "setup": {
     "stage": "ready",
     "updated_at_pst": "2026-10-18T15:19:10-08:00"
