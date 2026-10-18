@@ -4,7 +4,7 @@ Snapshot: 2026-10-18T08:21:43.649371-08:00 (fixed PST). Worker status: **stopped
 
 The pilot stopped at its original 12-hour deadline, with no recorded error.
 It selected **1,873 new papers**, bringing the selected collection to **2,327 papers**.
-Downloads used **4.08 GiB**; all new run artifacts used **8.32 GiB**.
+Downloads used **4.07 GiB**; all new run artifacts used **8.32 GiB**.
 
 Actual counts in the pinned counting tokenizer, without added special tokens. These are scanned candidate records; the full available biological corpus and its final retained total remain unmeasured.
 
