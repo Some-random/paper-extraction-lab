@@ -47,3 +47,5 @@ Acquired candidates excluded by explicit clinical-title checks: **6 papers / 61,
 **Paper-count correction:** the initial 12,677,035-token local-paper count included duplicated caption/table views. The corrected 454-paper view has **10,609,606 tokens**. Original inputs and superseded ledger rows are preserved in a correction audit.
 
 [Coverage of all 87 source families](source_coverage.md).
+
+[Paper availability, storage and download plan](capacity_plan.md).

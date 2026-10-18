@@ -1,0 +1,133 @@
+{
+  "checked_at_pst": "2026-10-18T10:01:16.924521-08:00",
+  "purpose": "Acquisition and storage planning, not a measured final training corpus",
+  "inputs": {
+    "config": "config/corpus_count_2026-10-17.json",
+    "config_sha256": "4d53fed47402e79ccf21c8140d1fdbd333235819de1ef6fb7051455459f28b84",
+    "pilot_summary": "reports/corpus_count_2026-10-17/summary.json",
+    "pilot_summary_sha256": "9fe642ea1e9cc12b7e3324311c0c99aeb0c07bd731faff7c05bc76588d9a2917"
+  },
+  "pmc_candidates": {
+    "checked_at_pst": "2026-10-18T09:59:54.344627-08:00",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=%28open_access%5Bfilter%5D+OR+author_manuscript%5Bfilter%5D%29+NOT+%22pmc+embargo%22%5Bfilter%5D&retmode=json&retmax=0&tool=paper_extraction_lab",
+    "count": 9339471,
+    "response": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "9339471",
+        "retmax": "0",
+        "retstart": "0",
+        "idlist": [],
+        "translationset": [],
+        "querytranslation": "(\"open access\"[Filter] OR \"author manuscript\"[Filter]) NOT \"pmc embargo\"[Filter]"
+      }
+    }
+  },
+  "online_releases": {
+    "finefineweb": {
+      "sample_tokens": 421822182,
+      "sample_file_bytes": 2039196054,
+      "completed_sample_files": 4,
+      "reported_native_tokens": 86990000000,
+      "name": "FineFineWeb biology",
+      "revision": "7fd92dc825a75cbff271a5a52eea0eda91a2c112",
+      "release_files": 864,
+      "release_bytes": 433883986250,
+      "sample_file_ids": [
+        "finefineweb_biology_000000.jsonl",
+        "finefineweb_biology_000001.jsonl",
+        "finefineweb_biology_000002.jsonl",
+        "finefineweb_biology_000003.jsonl"
+      ],
+      "estimated_full_candidate_tokens": 89751983118.94781,
+      "estimated_uint32_token_id_bytes": 359007932475.79126,
+      "raw_plus_token_ids_bytes": 792891918725.7913
+    },
+    "biocollection": {
+      "sample_tokens": 3465327065,
+      "sample_file_bytes": 1492614090,
+      "completed_sample_files": 3,
+      "reported_native_tokens": 33800000000,
+      "name": "TheBioCollection free-text stream",
+      "revision": "df09ee34ae7f9f00cc1290862f83fdb542f2ea35",
+      "release_files": 32,
+      "release_bytes": 15931042772,
+      "sample_file_ids": [
+        "biocollection_free_text_stream_part_000001.jsonl.zst",
+        "biocollection_free_text_stream_part_000002.jsonl.zst",
+        "biocollection_free_text_stream_part_000003.jsonl.zst"
+      ],
+      "estimated_full_candidate_tokens": 36986300786.88606,
+      "estimated_uint32_token_id_bytes": 147945203147.54425,
+      "raw_plus_token_ids_bytes": 163876245919.54425
+    }
+  },
+  "paper_sample": {
+    "selected_sample_papers": 1873,
+    "selected_sample_tokens": 25508508,
+    "artifact_bytes": {
+      "source_xml": 257539735,
+      "canonical_jsonl": 102778700,
+      "parsed_document_gzip": 136434013,
+      "metadata": 5614999
+    },
+    "all_native_artifact_bytes": 502367447,
+    "mean_tokens_per_paper": 13619.064602242392,
+    "mean_native_artifact_bytes_per_paper": 268215.40149492794,
+    "scales": [
+      {
+        "papers": 100000,
+        "candidate_token_scenario": 1361906460.224239,
+        "native_artifact_bytes_scenario": 26821540149.492794,
+        "uint32_token_id_bytes_scenario": 5447625840.896956,
+        "native_plus_token_ids_bytes_scenario": 32269165990.38975
+      },
+      {
+        "papers": 1000000,
+        "candidate_token_scenario": 13619064602.242392,
+        "native_artifact_bytes_scenario": 268215401494.92795,
+        "uint32_token_id_bytes_scenario": 54476258408.96957,
+        "native_plus_token_ids_bytes_scenario": 322691659903.8975
+      },
+      {
+        "papers": 9339471,
+        "candidate_token_scenario": 127194858899.76935,
+        "native_artifact_bytes_scenario": 2504989964015.2363,
+        "uint32_token_id_bytes_scenario": 508779435599.0774,
+        "native_plus_token_ids_bytes_scenario": 3013769399614.3135
+      }
+    ],
+    "pdf_figure_bytes_per_paper_older_sample": 7899962.537444934,
+    "full_pmc_pdf_figure_bytes_scenario": 73781471019553.38
+  },
+  "combined_online": {
+    "release_bytes": 449815029022,
+    "candidate_token_scenario": 126738283905.83388,
+    "uint32_token_id_bytes_scenario": 506953135623.3355,
+    "raw_plus_token_ids_bytes_scenario": 956768164645.3354,
+    "working_capacity_allowance_tib": [
+      1.1,
+      1.3
+    ]
+  },
+  "combined_pmc_plus_online_candidate_token_scenario": 253933142805.6032,
+  "filesystem_free_bytes_snapshot": 628097024000,
+  "assumptions": [
+    "Token IDs use uint32, four bytes per token; no automatic savings assumed from deduplication.",
+    "Online full-token scenarios scale completed prefix shard token/file-byte ratios by exact release bytes; prefixes are not random representative samples.",
+    "Paper scenarios scale1873 topic/year-selected papers, not a representative PMC sample; excludes six clinical-title exclusions.",
+    "PMC candidate pool includes clinical and other material; available unique biology-only corpus is unmeasured.",
+    "No near-duplicate, scope or quality retention fraction is assumed.",
+    "New native paper layout excludes PDFs, figure binaries and supplements.",
+    "Other inventoried families can contribute additional unique data; their quantities and overlaps remain unmeasured."
+  ],
+  "sources": {
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/",
+    "finefineweb": "https://huggingface.co/datasets/m-a-p/FineFineWeb",
+    "biocollection": "https://huggingface.co/datasets/trillionlabs/TheBioCollection",
+    "hf_download": "https://huggingface.co/docs/huggingface_hub/en/guides/download"
+  }
+}
