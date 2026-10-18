@@ -14,12 +14,13 @@ SPEC.loader.exec_module(suite)
 
 
 class TrainingSuiteTests(unittest.TestCase):
-    def test_all_profiles_match_global_tokens_for_both_allocations(self):
-        for world in (2, 8):
+    def test_all_profiles_match_global_tokens_for_all_allocations(self):
+        for world in (2, 4, 8):
             for profile in suite.profiles(world):
                 self.assertEqual(world * profile["microbatch_per_gpu"] * profile["accumulation"] * 4096,
                                  131072)
         self.assertEqual([profile["accumulation"] for profile in suite.profiles(2)], [16, 8, 4])
+        self.assertEqual([profile["accumulation"] for profile in suite.profiles(4)], [8, 4, 2])
         self.assertEqual([profile["accumulation"] for profile in suite.profiles(8)], [4, 2, 1])
         with self.assertRaises(ValueError):
             suite.profiles(8, 31)

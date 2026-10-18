@@ -1,0 +1,63 @@
+{
+  "checked_at_pst": "2026-10-18T15:17:58-08:00",
+  "paper": "https://arxiv.org/html/2605.02937v2#A3.SS1",
+  "proteor1_checkpoint_config": {
+    "url": "https://huggingface.co/thinking-bio-lab/proteor1-understand/resolve/main/config.json",
+    "revision": "319b6e873cb795803eb822033c9c2c31e9304fa7",
+    "sha256": "8b1b7bd61f2b5614ebf7c6057a7e852265722f08aa215be16957ee44fba06c15"
+  },
+  "proteor1_language_backbone": "Qwen/Qwen3-4B-Instruct-2507",
+  "benchmark_architecture": "Qwen/Qwen3-4B-Base",
+  "benchmark_weights": "Random initialization; pretrained weights are not loaded",
+  "backbone_config": {
+    "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/resolve/main/config.json",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba"
+  },
+  "core_dimensions": {
+    "num_hidden_layers": {
+      "benchmark": 36,
+      "proteor1_backbone": 36
+    },
+    "hidden_size": {
+      "benchmark": 2560,
+      "proteor1_backbone": 2560
+    },
+    "intermediate_size": {
+      "benchmark": 9728,
+      "proteor1_backbone": 9728
+    },
+    "num_attention_heads": {
+      "benchmark": 32,
+      "proteor1_backbone": 32
+    },
+    "num_key_value_heads": {
+      "benchmark": 8,
+      "proteor1_backbone": 8
+    },
+    "head_dim": {
+      "benchmark": 128,
+      "proteor1_backbone": 128
+    },
+    "vocab_size": {
+      "benchmark": 151936,
+      "proteor1_backbone": 151936
+    },
+    "tie_word_embeddings": {
+      "benchmark": true,
+      "proteor1_backbone": true
+    }
+  },
+  "core_dimensions_match": true,
+  "configuration_differences": {
+    "max_position_embeddings": {
+      "benchmark": 32768,
+      "proteor1_backbone": 262144
+    },
+    "rope_theta": {
+      "benchmark": 1000000,
+      "proteor1_backbone": 5000000
+    }
+  },
+  "scope": "Language-backbone compute only; excludes Proteo-R1 protein encoders and diffusion generation"
+}

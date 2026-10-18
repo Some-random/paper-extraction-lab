@@ -22,7 +22,8 @@ DONE = {"terminal", "invalid_request"}
 ACTIVE = {"released", "already_started", "not_held"}
 TERMINAL_SLURM = {"COMPLETED", "CANCELLED", "FAILED", "TIMEOUT", "OUT_OF_MEMORY", "NODE_FAIL",
                   "BOOT_FAIL", "PREEMPTED", "REVOKED", "DEADLINE"}
-SHAPES = {("b200", 2): (24, 192 * 1024), ("a100", 8): (48, 384 * 1024)}
+SHAPES = {("b200", 2): (24, 192 * 1024), ("a100", 8): (48, 384 * 1024),
+          ("b200", 4): (32, 256 * 1024), ("b200", 8): (48, 384 * 1024)}
 
 
 def fields(line):
@@ -129,7 +130,7 @@ def attempt(job_id, launch, command=scheduler_command, uid=None):
 
 
 def refresh_active(job_id, previous, command):
-    """Keep the second request held until the released allocation is terminal."""
+    """Keep remaining requests held until the released allocation is terminal."""
     try:
         record = fields(command(["scontrol", "show", "job", "-o", job_id]))
         if record.get("JobId") != job_id:
@@ -153,9 +154,9 @@ def supervise(run_dir, job_ids, *, once=False, max_days=7, poll_seconds=60,
               command=scheduler_command, clock=time.time, sleep=time.sleep):
     if not 0 < max_days <= 7 or not 30 <= poll_seconds <= 60:
         raise ValueError("Require a 30–60 second poll and a budget of at most seven days")
-    if not job_ids or len(job_ids) > 2 or len(set(job_ids)) != len(job_ids) or any(
+    if not job_ids or len(job_ids) > 4 or len(set(job_ids)) != len(job_ids) or any(
             not re.fullmatch(r"[0-9]+", item) for item in job_ids):
-        raise ValueError("Require one or two explicit numeric benchmark job IDs")
+        raise ValueError("Require one to four explicit numeric benchmark job IDs")
     run_dir.mkdir(parents=True, exist_ok=True)
     with (run_dir / "admission.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -172,8 +173,8 @@ def supervise(run_dir, job_ids, *, once=False, max_days=7, poll_seconds=60,
             expired = now >= deadline
             blocked = False
             if not expired:
-                # Never release both: a released-but-pending job also blocks
-                # the other request, preserving the eight-GPU concurrency cap.
+                # Admit one allocation at a time: released-but-pending work also
+                # blocks all remaining requests, preserving the eight-GPU cap.
                 for job_id in job_ids:
                     current = state["jobs"].get(job_id, {})
                     if current.get("status") in ACTIVE:

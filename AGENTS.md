@@ -528,3 +528,18 @@ checked node and release only the recorded owned request. This is not atomic
 with the scheduler and cannot eliminate every race. The admission helper has
 a persisted seven-day deadline; it must report expiry and leave unstarted jobs
 held rather than silently extend the wait. Continue hourly status publication.
+
+The user then explicitly added four-B200 and eight-B200 allocations. Keep the
+two-B200 and eight-A100 requests, extend the same admission allowlist to all four
+owned requests, and preserve its original start/deadline and job states. All
+four use the same matched batch and profile sweep. Each retains the 20-minute
+wall limit; the four together cost at most 7.33 GPU-hours and still admit only
+one allocation at a time, at most eight GPUs concurrently. Queued requests use
+no GPU time. No unrelated jobs or full training runs are authorized by this.
+
+The benchmark remains Qwen3-4B-Base's architecture with random weights.
+Proteo-R1's official checkpoint config identifies Qwen3-4B-Instruct-2507 as its
+language backbone. Core tensor dimensions match, while context/RoPE settings
+and weights differ. Preserve the sourced comparison in
+`config/proteor1_backbone_reference.json`; do not describe the language-only
+throughput benchmark as a benchmark of the full Proteo-R1 system.

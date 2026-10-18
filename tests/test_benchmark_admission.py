@@ -155,6 +155,38 @@ class AdmissionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             admission.refresh_active("123", {"status": "released"}, lambda args: "")
 
+    def test_four_and_eight_b200_shapes_require_exact_resources(self):
+        for count, cpus, gib in ((4, 32, 256), (8, 48, 384)):
+            launch = {**LAUNCH, "requested_gpus": count, "cpus_per_task": cpus, "memory_mib": gib * 1024}
+            shape = admission.request_shape(launch)
+            self.assertEqual(shape, ("b200", count, cpus, gib * 1024))
+            request = admission.fields(job(NumCPUs=str(cpus),
+                ReqTRES=f"cpu={cpus},mem={gib}G,node=1,gres/gpu={count},gres/gpu:b200={count}"))
+            self.assertTrue(admission.valid_job(request, "123", shape, os.getuid()))
+            with self.assertRaises(ValueError):
+                admission.request_shape({**launch, "cpus_per_task": cpus - 1})
+            with self.assertRaises(ValueError):
+                admission.request_shape({**launch, "memory_mib": (gib - 1) * 1024})
+
+    def test_four_requests_preserve_budget_and_active_job_blocks_every_other_request(self):
+        with tempfile.TemporaryDirectory() as directory:
+            run = Path(directory)
+            ids = ["123", "124", "125", "126"]
+            (run / "admission_state.json").write_text(json.dumps({
+                "job_ids": ids, "started_epoch": 10, "deadline_epoch": 500,
+                "jobs": {"123": {"status": "released"},
+                         **{job_id: {"status": "waiting_spare_capacity"} for job_id in ids[1:]}}}))
+            with mock.patch.object(admission, "attempt") as attempt:
+                state = admission.supervise(run, ids, once=True, clock=lambda: 110,
+                                            command=lambda args: job(JobState="RUNNING"))
+                attempt.assert_not_called()
+            self.assertEqual(state["started_epoch"], 10)
+            self.assertEqual(state["deadline_epoch"], 500)
+            self.assertEqual(set(state["jobs"]), set(ids))
+            self.assertEqual(state["supervisor_status"], "watching")
+            with self.assertRaises(ValueError):
+                admission.supervise(run, [*ids, "127"], once=True, clock=lambda: 110)
+
 
 if __name__ == "__main__":
     unittest.main()

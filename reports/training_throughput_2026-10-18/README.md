@@ -1,29 +1,33 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-18T15:11:59-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-18T15:19:39-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-18T15:11:58-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-18T15:19:39-08:00**. Monitor: **starting**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. Updates are GitHub reports; automatic chat notifications are not configured.
 
 This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological training corpus are downloaded for the benchmark.
 
-## Two B200s versus eight A100s
+## Matched GPU allocation comparison
 
-Both allocations use **32 sequences × 4,096 positions = 131,072 input tokens per optimizer update**, BF16 computation, FP32 AdamW and FSDP FULL_SHARD. Each tests microbatches of 1, 2 and 4 per GPU with matching gradient accumulation. Each profile requests three warmup and eight measured updates. OOM, partial and skipped profiles remain visible; only fully completed profiles can supply the reported best rate.
+All allocations use **32 sequences × 4,096 positions = 131,072 input tokens per optimizer update**, BF16 computation, FP32 AdamW and FSDP FULL_SHARD. Each tests microbatches of 1, 2 and 4 per GPU with matching gradient accumulation. Each profile requests three warmup and eight measured updates. OOM, partial and skipped profiles remain visible; only fully completed profiles can supply the reported best rate.
 
-Each allocation has a **20-minute wall limit**; both together use at most **3.33 GPU-hours**. Requests wait for observed spare capacity and a scheduler preview without proposed preemptions. Queue waiting is separate from execution time.
+Each allocation has a **20-minute wall limit**; the listed requests together use at most **7.33 GPU-hours**. Requests wait for observed spare capacity and a scheduler preview without proposed preemptions. Queue waiting is separate from execution time.
 
 | Allocation | Status | Best completed input tokens/s | Seconds/update | Peak memory/GPU |
 |:---|:---|---:|---:|---:|
 | 2 × B200 180GB | waiting for spare capacity | — | — | — |
 | 8 × A100 80GB | waiting for spare capacity | — | — | — |
+| 4 × B200 180GB | waiting for spare capacity | — | — | — |
+| 8 × B200 180GB | waiting for spare capacity | — | — | — |
 
 The earlier one-B200 diagnostic uses a different global batch and provides context only. The comparison above reports the best of the tested profiles, not a claim of maximum possible performance. These short synthetic runs do not test biological learning or checkpoint recovery.
+
+The benchmark initializes the **Qwen3-4B-Base architecture with random weights**. Proteo-R1's [official checkpoint configuration](https://huggingface.co/thinking-bio-lab/proteor1-understand/blob/main/config.json) identifies **Qwen3-4B-Instruct-2507** as its language backbone. Their core layer dimensions match; the context/RoPE settings and starting weights differ. These tests exclude Proteo-R1's protein-specific encoders and diffusion generator. [Configuration comparison](../../config/proteor1_backbone_reference.json).
 
 ## Cluster GPUs
 
@@ -48,6 +52,8 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241334 | cancelled — replaced by the matched comparison | 8 | B200 180GB | — | — |
 | 241355 | queued — waiting for spare capacity | 2 | B200 180GB | — | — |
 | 241356 | queued — waiting for spare capacity | 8 | A100 80GB | — | — |
+| 241366 | queued — waiting for spare capacity | 4 | B200 180GB | — | — |
+| 241367 | queued — waiting for spare capacity | 8 | B200 180GB | — | — |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 

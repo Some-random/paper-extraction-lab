@@ -53,7 +53,7 @@ base = Path('experiments/training_throughput_2026-10-18')
 path = base / f'launch_{sys.argv[1]}.json'
 state = json.loads(path.read_text())
 world = int(os.environ['SLURM_GPUS_ON_NODE'])
-assert world == state['requested_gpus'] and world in (2, 8)
+assert world == state['requested_gpus'] and world in (2, 4, 8)
 state.update(status='running', admission_status='released',
              started_at_pst=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-8))).isoformat())
 state.pop('hold_reason', None)

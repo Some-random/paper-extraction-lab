@@ -233,7 +233,7 @@ def run_suite(args):
 
 def arguments():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--world-size", type=int, choices=(2, 8), required=True)
+    parser.add_argument("--world-size", type=int, choices=(2, 4, 8), required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--model-config", type=Path, required=True)
     parser.add_argument("--global-batch-sequences", type=int, default=32)

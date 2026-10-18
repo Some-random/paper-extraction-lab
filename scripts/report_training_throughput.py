@@ -219,15 +219,17 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
              "synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with "
              "FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological "
              "training corpus are downloaded for the benchmark.", ""])
-    comparison = [job for job in jobs if job.get("comparison_group") == "2b200_vs_8a100"]
+    comparison = [job for job in jobs if job.get("comparison_group") in
+                  {"2b200_vs_8a100", "gpu_allocation_comparison"}]
     if comparison:
-        lines.extend(["## Two B200s versus eight A100s", "",
-                      "Both allocations use **32 sequences × 4,096 positions = 131,072 input tokens per optimizer "
+        gpu_hours = sum(job.get("requested_gpus", 0) for job in comparison) / 3
+        lines.extend(["## Matched GPU allocation comparison", "",
+                      "All allocations use **32 sequences × 4,096 positions = 131,072 input tokens per optimizer "
                       "update**, BF16 computation, FP32 AdamW and FSDP FULL_SHARD. Each tests microbatches of "
                       "1, 2 and 4 per GPU with matching gradient accumulation. Each profile requests three warmup "
                       "and eight measured updates. OOM, partial and skipped profiles remain visible; only fully "
                       "completed profiles can supply the reported best rate.", "",
-                      "Each allocation has a **20-minute wall limit**; both together use at most **3.33 GPU-hours**. "
+                      f"Each allocation has a **20-minute wall limit**; the listed requests together use at most **{gpu_hours:.2f} GPU-hours**. "
                       "Requests wait for observed spare capacity and a scheduler preview without proposed preemptions. "
                       "Queue waiting is separate from execution time.", "",
                       "| Allocation | Status | Best completed input tokens/s | Seconds/update | Peak memory/GPU |",
@@ -250,6 +252,12 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
         lines.extend(["", "The earlier one-B200 diagnostic uses a different global batch and provides context only. "
                       "The comparison above reports the best of the tested profiles, not a claim of maximum possible "
                       "performance. These short synthetic runs do not test biological learning or checkpoint recovery.", ""])
+        lines.extend(["The benchmark initializes the **Qwen3-4B-Base architecture with random weights**. "
+                      "Proteo-R1's [official checkpoint configuration](https://huggingface.co/thinking-bio-lab/proteor1-understand/blob/main/config.json) "
+                      "identifies **Qwen3-4B-Instruct-2507** as its language backbone. Their core layer dimensions match; "
+                      "the context/RoPE settings and starting weights differ. These tests exclude Proteo-R1's "
+                      "protein-specific encoders and diffusion generator. "
+                      "[Configuration comparison](../../config/proteor1_backbone_reference.json).", ""])
     lines.extend(["## Cluster GPUs", "",
              "Each node is counted once across partitions. Unallocated GPUs are not necessarily schedulable "
              "immediately; account limits, reservations and planned allocations can apply.", "",

@@ -51,6 +51,44 @@
           1
         ]
       ]
+    },
+    {
+      "gpus": 4,
+      "gpu_type": "B200",
+      "wall_seconds": 1200,
+      "microbatch_accumulation_profiles": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ]
+    },
+    {
+      "gpus": 8,
+      "gpu_type": "B200",
+      "wall_seconds": 1200,
+      "microbatch_accumulation_profiles": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
     }
   ],
   "runtime_environment": {
@@ -70,21 +108,22 @@
     "new_environment_and_artifact_bytes": 17179869184,
     "saved_training_checkpoint_bytes": 0,
     "suite_seconds_per_allocation": 1020,
-    "allocation_count": 2,
+    "allocation_count": 4,
     "simultaneous_gpus_maximum": 8,
-    "maximum_new_gpu_hours": 3.3333333333333335
+    "maximum_new_gpu_hours": 7.333333333333333
   },
-  "authorization": "User explicitly requested starting the matched2B200 versus8A100 tests. Each allocation is capped at20minutes; no full training run or changes to evaluation jobs.",
+  "authorization": "User explicitly requested two-B200 versus eight-A100 tests, then added four-B200 and eight-B200 tests. Each allocation is capped at 20 minutes; one runs at a time. No full training or changes to evaluation jobs.",
   "extrapolation": "200B divided by measured aggregate input tokens per second at the measured allocation only; queueing, data preparation, checkpointing and convergence are separate",
   "global_batch_sequences": 32,
   "global_batch_tokens": 131072,
   "profile_selection": "Best fully completed matched-batch profile; retain failures, partials and skipped profiles",
-  "prior_baseline": "One B200 measured at global batch4sequences; context only, not a matched scaling comparison",
+  "prior_baseline": "One B200 measured at global batch of four sequences; context only, not a matched scaling comparison",
   "admission": {
     "policy": "Wait for observed spare GPUs, CPUs and memory; pin checked node and require no proposed scheduler preemptions before release",
     "serialized": true,
     "maximum_wait_days": 7,
     "on_wait_deadline": "Leave unstarted requests held and publish admission expiry; do not extend GPU runtime",
     "caveat": "Observations and release are not atomic; this reduces disruption risk but cannot guarantee against scheduler races"
-  }
+  },
+  "proteor1_backbone_reference": "config/proteor1_backbone_reference.json"
 }
