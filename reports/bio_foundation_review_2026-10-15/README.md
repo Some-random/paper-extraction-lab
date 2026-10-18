@@ -52,18 +52,16 @@ These models begin with randomly initialized weights and biological or scientifi
 
 ## Available training data
 
-**Currently quantified: approximately 197–340B candidate text/record tokens.** **The complete biological-corpus total is not yet established.** The table gives the supported subtotal; unmeasured contributions from other sources remain additional.
+[**Overall table: pilot, existing cluster data and full online collections, with token counts and storage**](../corpus_overview_2026-10-18/README.md). Updated October 18, 2026.
 
-| Source category | Quantified candidate tokens |
-|:---|---:|
-| Paper text | 74.6B–217.6B |
-| Biology web text | 85.7B |
-| Biological database records | 37.0B |
-| **Quantified subtotal** | **197.4B–340.4B** |
-| Additional unique contributions from other sources | Not yet quantified |
+| Availability | Tokens | Storage |
+|:---|:---|:---|
+| Our counted pilot | **4.962B candidate tokens**, after exact deduplication | **13.66 GB**, including source assets, outputs and indexes |
+| Existing cluster stores | **22.9B estimated biology-focused web tokens** (10.2–35.6B sampling interval), plus uncounted papers and databases | **922.98 GB** across the listed stores, including overlapping representations |
+| Full PMC + FineFineWeb biology + TheBioCollection | **254B candidate-token planning scenario** | **4–5 TiB working capacity** for source/native artifacts, token IDs, indexes and scratch |
 
-These are approximate amounts in a common tokenizer, before biological scope filtering and cross-source deduplication. The paper estimate includes candidate material that may be excluded. Published training budgets cannot be added together because the studies reuse sources.
+**These rows overlap and cannot be added. The unique, retained biological-token total remains unmeasured.** The pilot and full-release scenarios include sequences and molecular representations. The cluster web estimate separates clinical/health content, uses assistant-reviewed probability samples and covers readable content; some larger-cache pages are incomplete. Its interval excludes systematic labeling error.
 
-**Raw sequences and structures are tracked separately, at secondary priority.** The genomic pool alone contains 8.8T reported nucleotide positions. Nucleotides, protein residues and structural records are not added to the text-token subtotal.
+The full-release scenario precedes biological scope/quality filtering and cross-source deduplication. Its storage allowance excludes full PDFs/figures, model weights and checkpoints. The broader scientific PDF pool reports 972B tokens across subjects, with biological share unknown. **Raw sequences and structures remain a secondary collection priority:** OpenGenome2 reports 8.8T nucleotide positions, which are kept separate from text-token amounts.
 
-The [complete source inventory](source_inventory.md) consolidates **87 source families**, including the datasets underlying released collections, with their source papers and overlap qualifications. [Counting assumptions](source_planning.md).
+The [complete source inventory](source_inventory.md) covers **87 source families**. Additional unique biological contributions and their storage remain unmeasured. [Storage assumptions](../corpus_count_2026-10-17/capacity_plan.md).

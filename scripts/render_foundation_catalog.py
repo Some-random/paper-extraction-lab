@@ -232,34 +232,33 @@ def cell(value):
 
 
 def starter_conclusion(estimate):
-    """Present the calculable subtotal without implying that unresolved sources are zero."""
-    summary = estimate['aggregation']
-    components = {row['group']: row for row in summary['components']}
-    billions = lambda value: f'{value / 1e9:.1f}B'
-    low, high = summary['quantified_candidate_subtotal_low'], summary['quantified_candidate_subtotal_high']
+    """Keep measured availability and storage beside the broader planning scenario."""
+    inventory = json.loads((ROOT / 'reports/corpus_overview_2026-10-18/summary.json').read_text())
+    pilot, cluster, online = (inventory[key] for key in ('pilot', 'cluster', 'online'))
+    web = next(row for row in cluster['collections'] if row['id'] == 'smollm')
+    web_low, web_high = web['tokens_ci95']
     rows = [
-        '| Source category | Quantified candidate tokens |', '|:---|---:|',
-        f"| Paper text | {billions(components['papers']['low'])}–{billions(components['papers']['high'])} |",
-        f"| Biology web text | {billions(components['web']['low'])} |",
-        f"| Biological database records | {billions(components['records']['low'])} |",
-        f"| **Quantified subtotal** | **{billions(low)}–{billions(high)}** |",
-        '| Additional unique contributions from other sources | Not yet quantified |',
+        '| Availability | Tokens | Storage |', '|:---|:---|:---|',
+        f"| Our counted pilot | **{pilot['exact_unique_candidate_tokens'] / 1e9:.3f}B candidate tokens**, after exact deduplication | **{pilot['combined_run_storage_snapshot_bytes'] / 1e9:.2f} GB**, including source assets, outputs and indexes |",
+        f"| Existing cluster stores | **{web['tokens'] / 1e9:.1f}B estimated biology-focused web tokens** ({web_low / 1e9:.1f}–{web_high / 1e9:.1f}B sampling interval), plus uncounted papers and databases | **{cluster['listed_store_apparent_bytes'] / 1e9:.2f} GB** across the listed stores, including overlapping representations |",
+        f"| Full PMC + FineFineWeb biology + TheBioCollection | **{online['combined_candidate_tokens_scenario'] / 1e9:.0f}B candidate-token planning scenario** | **4–5 TiB working capacity** for source/native artifacts, token IDs, indexes and scratch |",
     ]
     return '\n\n'.join([
         '## Available training data',
-        f"**Currently quantified: approximately {low / 1e9:.0f}–{high / 1e9:.0f}B candidate text/record tokens.** "
-        '**The complete biological-corpus total is not yet established.** The table gives the supported subtotal; '
-        'unmeasured contributions from other sources remain additional.',
+        '[**Overall table: pilot, existing cluster data and full online collections, with token counts and storage**](../corpus_overview_2026-10-18/README.md). Updated October 18, 2026.',
         '\n'.join(rows),
-        'These are approximate amounts in a common tokenizer, before biological scope filtering and '
-        'cross-source deduplication. The paper estimate includes candidate material that may be excluded. '
-        'Published training budgets cannot be added together because the studies reuse sources.',
-        f"**Raw sequences and structures are tracked separately, at secondary priority.** "
-        f"The genomic pool alone contains {summary['raw_sequence_nucleotide_positions'] / 1e12:.1f}T reported nucleotide positions. "
-        'Nucleotides, protein residues and structural records are not added to the text-token subtotal.',
-        f"The [complete source inventory](source_inventory.md) consolidates **{summary['family_count']} source families**, "
-        'including the datasets underlying released collections, with their source papers and overlap qualifications. '
-        '[Counting assumptions](source_planning.md).',
+        '**These rows overlap and cannot be added. The unique, retained biological-token total remains unmeasured.** '
+        'The pilot and full-release scenarios include sequences and molecular representations. '
+        'The cluster web estimate separates clinical/health content, uses assistant-reviewed probability samples '
+        'and covers readable content; some larger-cache pages are incomplete. Its interval excludes systematic labeling error.',
+        'The full-release scenario precedes biological scope/quality filtering and cross-source deduplication. '
+        'Its storage allowance excludes full PDFs/figures, model weights and checkpoints. '
+        'The broader scientific PDF pool reports 972B tokens across subjects, with biological share unknown. '
+        '**Raw sequences and structures remain a secondary collection priority:** OpenGenome2 reports 8.8T nucleotide positions, '
+        'which are kept separate from text-token amounts.',
+        f"The [complete source inventory](source_inventory.md) covers **{estimate['aggregation']['family_count']} source families**. "
+        'Additional unique biological contributions and their storage remain unmeasured. '
+        '[Storage assumptions](../corpus_count_2026-10-17/capacity_plan.md).',
     ])
 
 
