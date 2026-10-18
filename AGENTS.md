@@ -412,3 +412,16 @@ Already acquired examples caught in the startup audit retain their raw counts,
 source files and `excluded_scope` status, but do not count toward the selected
 new-paper target and must not enter the selected-paper set. This transparent
 title screen is not claimed as a complete biology/clinical scope classifier.
+
+## Long-running task updates
+
+The user requests hourly updates during long-running work. Report the active
+stage, papers/records and tokens gained since the previous update, cumulative
+paper/web/database counts, downloads and artifact storage, and any errors or
+blocking conditions. Give a final update promptly when work finishes or stops;
+do not leave the user believing a stopped worker is still running. Persist the
+cadence across restarts. While a conversation is active, provide these updates
+in the conversation as well. State the actual delivery mechanism for unattended
+jobs: saved files and GitHub commits alone are not proactive chat notifications.
+This reporting preference does not authorize extending expired run budgets,
+starting training, acquiring more data, or touching evaluation work.

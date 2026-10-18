@@ -1,12 +1,12 @@
 # Source coverage for the measured census
 
-Snapshot: 2026-10-17T21:52:20.058652-08:00 (fixed PST).
+Snapshot: 2026-10-18T08:21:43.649371-08:00 (fixed PST).
 
 Every inventoried family is listed. A dash means unmeasured, not zero. Upstream resources are not counted again as independent exports.
 
 | Source family | Coverage | Scanned candidate tokens | Tokens after exact deduplication |
 |:---|:---|---:|---:|
-| PubMed Central | Local selected papers counted | 11,493,019 | 11,493,019 |
+| PubMed Central | Local selected papers counted | 36,180,065 | 36,180,065 |
 | PubMed / MEDLINE abstracts | Release inventory / adapter required | — | — |
 | The Pile PubMed components | Release inventory / adapter required | — | — |
 | bioRxiv | Release inventory / adapter required | — | — |
@@ -21,8 +21,8 @@ Every inventoried family is listed. A dash means unmeasured, not zero. Upstream 
 | BIOMEDICA | Release inventory / adapter required | — | — |
 | OLMo 3 / olmOCR science PDFs | Release inventory / adapter required | — | — |
 | USPTO patent applications | Release inventory / adapter required | — | — |
-| FineFineWeb biology | Partial scan | 105,798,014 | 105,798,014 |
-| TheBioCollection free-text stream | Partial scan | 844,194,374 | 843,888,793 |
+| FineFineWeb biology | Partial scan | 421,822,182 | 421,822,182 |
+| TheBioCollection free-text stream | Partial scan | 4,510,496,419 | 4,504,322,505 |
 | PubChem | Upstream of a bundle; independent coverage unmeasured | — | — |
 | UniProt / UniRef | Upstream of a bundle; independent coverage unmeasured | — | — |
 | Protein Data Bank | Upstream of a bundle; independent coverage unmeasured | — | — |

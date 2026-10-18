@@ -1,26 +1,30 @@
 # Measured biological-corpus candidate tokens
 
-Snapshot: 2026-10-17T21:52:20.058652-08:00 (fixed PST). Worker status: **running**.
+Snapshot: 2026-10-18T08:21:43.649371-08:00 (fixed PST). Worker status: **stopped**.
+
+The pilot stopped at its original 12-hour deadline, with no recorded error.
+It selected **1,873 new papers**, bringing the selected collection to **2,327 papers**.
+Downloads used **4.08 GiB**; all new run artifacts used **8.32 GiB**.
 
 Actual counts in the pinned counting tokenizer, without added special tokens. These are scanned candidate records; the full available biological corpus and its final retained total remain unmeasured.
 
 | Content | Records scanned | Raw tokens | Tokens after exact deduplication | Complete files / inventory |
 |:---|---:|---:|---:|---:|
-| PMC papers (local + new XML) | 525 | 11,493,019 | 11,493,019 | 72 / 72 |
-| FineFineWeb biology | 100,000 | 105,798,014 | 105,798,014 | 1 / 864 |
-| TheBioCollection free-text stream | 850,146 | 844,194,374 | 843,888,793 | 0 / 32 |
-| **Measured total** | **950,671** | **961,485,407** | **961,179,826** | |
+| PMC papers (local + new XML) | 2,333 | 36,180,065 | 36,180,065 | 1880 / 1880 |
+| FineFineWeb biology | 400,000 | 421,822,182 | 421,822,182 | 4 / 864 |
+| TheBioCollection free-text stream | 4,541,943 | 4,510,496,419 | 4,504,322,505 | 3 / 32 |
+| **Measured total** | **4,944,276** | **4,968,498,666** | **4,962,324,752** | |
 
 ## Modality partition of tokens after exact deduplication
 
 | Explicit content | Tokens |
 |:---|---:|
-| protein | 34,471,826 |
-| dna | 2,541,367 |
-| rna | 4,820,693 |
-| smiles | 30,081,667 |
-| inchi | 96,747,949 |
-| text or unclassified | 792,516,324 |
+| protein | 183,678,544 |
+| dna | 13,381,081 |
+| rna | 25,402,525 |
+| smiles | 160,174,513 |
+| inchi | 515,551,985 |
+| text or unclassified | 4,064,136,104 |
 
 The modality rows sum to the deduplicated total. Only explicit sequence/molecule tags identify those spans; untagged sequences remain unclassified. Existing paper image assets remain preserved; newly acquired XML retains source media URLs while binary media are deferred. Vision-token counts are unknown.
 
@@ -36,7 +40,7 @@ The modality rows sum to the deduplicated total. Only explicit sequence/molecule
 
 ## Paper expansion
 
-Target: **5,000 new papers** from broad PMC topic/year searches. New papers counted: **65**. Paper phase: **acquiring_native_papers**. The native-XML phase has up to three hours and 3 GiB of downloads within the original shared run limits, followed by resumed web/database counting.
+Target: **5,000 new papers** from broad PMC topic/year searches. New papers counted: **1,873**. Paper phase: **phase_time_limit**. The native-XML phase has up to three hours and 3 GiB of downloads within the original shared run limits, followed by resumed web/database counting.
 
 Acquired candidates excluded by explicit clinical-title checks: **6 papers / 61,951 tokens**. They remain in raw candidate counts with an exclusion status and do not count toward the selected-paper target. This title screen is not a complete biology/clinical classifier.
 
