@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen3-4B-Base",
+  "revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "config_file": "config/qwen3_4b_throughput_model.json",
+  "config_sha256": "304b2545a258d35620f1d4bf46940c0471d9baa00715ff8e77f84c2fca5057c1",
+  "weights_downloaded": false,
+  "initialization": "random, architecture throughput only"
+}

@@ -1,0 +1,42 @@
+{
+  "checked_at_pst": "2026-10-18T11:56:06.264883-08:00",
+  "source": "scontrol show nodes -o; count each node once across partitions",
+  "gpus": {
+    "a100": {
+      "configured": 71,
+      "allocated": 71,
+      "unallocated_online": 0,
+      "unavailable_node": 0
+    },
+    "b200": {
+      "configured": 8,
+      "allocated": 8,
+      "unallocated_online": 0,
+      "unavailable_node": 0
+    },
+    "titanxp": {
+      "configured": 7,
+      "allocated": 0,
+      "unallocated_online": 4,
+      "unavailable_node": 3
+    },
+    "rtx8000": {
+      "configured": 20,
+      "allocated": 4,
+      "unallocated_online": 16,
+      "unavailable_node": 0
+    },
+    "2080ti": {
+      "configured": 30,
+      "allocated": 0,
+      "unallocated_online": 30,
+      "unavailable_node": 0
+    }
+  },
+  "total_configured": 136,
+  "limits": [
+    "Unallocated does not imply immediate schedulability; reservations, planned jobs and account/QOS limits apply.",
+    "Configured includes GPUs on unavailable nodes.",
+    "No existing jobs were modified."
+  ]
+}

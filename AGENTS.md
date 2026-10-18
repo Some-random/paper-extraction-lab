@@ -473,3 +473,19 @@ capacity rather than deleting archived sources or final outputs. A full 254B-tok
 uint32 pack alone needs about 1.02 TB, so do not claim it fits in the bounded
 workspace. Keep processing explanations on `data_pipeline.md` and resource
 allocations in the capacity plan; no old run budget is extended by this request.
+
+## Authorized short 4B throughput benchmark
+
+On October 18 the user accepted the proposed short training-throughput benchmark
+and requested total cluster GPU counts. This authorizes a separate bounded
+diagnostic with the pinned Qwen3-4B architecture, random initialization and
+synthetic fixed-shape tokens: BF16 forward/backward, FP32 AdamW states, no model
+checkpoint saving, no biological capability claims and no full training run.
+Use `config/training_throughput_2026-10-18.json`. Request GPUs only through SLURM;
+leave all existing jobs, including the user's evaluation jobs, untouched. A short
+single-GPU baseline and up to one eight-GPU follow-up are in scope. Each
+allocation is limited to 20 minutes (maximum eight GPUs); cap new environment
+and benchmark artifacts at 16 GiB and keep them in this project. The benchmark
+scope supersedes the old no-training/one-GPU restrictions for this diagnostic
+only. Report queued, running and measured states accurately; do not infer
+measured multinode efficiency from a single-node result.

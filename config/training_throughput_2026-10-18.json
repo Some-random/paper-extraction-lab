@@ -1,0 +1,27 @@
+{
+  "purpose": "Short architecture training-throughput benchmark, not a biological model-training run",
+  "model": "Qwen/Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "model_config": "config/qwen3_4b_throughput_model.json",
+  "initialization": "random, no pretrained weight download",
+  "inputs": "Synthetic prepacked fixed-shape token IDs; measures training compute, not corpus loader speed or learning quality",
+  "sequence_length": 4096,
+  "microbatch_per_gpu": 1,
+  "gradient_accumulation_steps": 4,
+  "warmup_optimizer_steps": 5,
+  "measured_optimizer_steps": 15,
+  "precision": "BF16 forward/backward compute, FP32 master parameters and AdamW optimizer states",
+  "attention": "PyTorch SDPA",
+  "activation_checkpointing": true,
+  "distributed": "Plain model on one GPU; FSDP FULL_SHARD across decoder blocks on multiple GPUs",
+  "compile": false,
+  "bounds": {
+    "gpus_per_job_maximum": 8,
+    "gpu_job_wall_seconds": 1200,
+    "timed_runner_seconds": 600,
+    "new_environment_and_artifact_bytes": 17179869184,
+    "saved_training_checkpoint_bytes": 0
+  },
+  "authorization": "User accepted the proposed short throughput benchmark on October 18. No 200B-token training or changes to evaluation jobs are authorized.",
+  "extrapolation": "200B divided by measured aggregate input tokens per second at the measured allocation only; queueing, data preparation, checkpointing and convergence are separate"
+}
