@@ -123,7 +123,21 @@ Only scanning every frozen shard completes a released-source count; unscanned
 contributions stay unknown.
 
 Local reports update about every 30 seconds, plus file boundaries and shutdown.
-GitHub shows the latest committed snapshot, not a live connection to the worker.
+The batch launcher also publishes a concise [progress page](../reports/corpus_count_2026-10-17/progress.md)
+to GitHub at startup, every hour and immediately on a normal stop, completion or
+handled error. Updates show the active stage/file, counts gained since the
+previous update, paper/web/database totals and download/artifact storage.
+The interval baseline persists across worker restarts. `progress_events.jsonl`
+and `progress_state.json` retain the reporting history in the ignored run
+directory; `progress_delivery.json` records the last GitHub publication result.
+
+Publication commits only the generated report files, preserving unrelated
+staged and unstaged edits. It refuses to push unrelated unpublished commits or
+publish from a different branch. Transport failures are logged without stopping
+the census. GitHub contains the last successful push, not a live worker connection.
+An in-process reporter cannot report a killed process or lost node; there is no
+independent heartbeat monitor configured. These reports do not send chat
+notifications. Scheduled chat delivery requires a separate supported scheduler.
 
 ## Commands
 
@@ -141,6 +155,11 @@ Count local inputs only, or resume the full bounded worker:
 .review-venv/bin/python scripts/run_corpus_count.py --local-only
 .review-venv/bin/python scripts/run_corpus_count.py
 ```
+
+For an authorized new/resumable run, add `--publish-progress` to enable hourly
+GitHub publication outside the batch launcher. The existing October 17 pilot
+has finished at its original deadline; reporting changes do not restart it or
+extend its budget.
 
 Reserve the two CPU cores for a longer run:
 

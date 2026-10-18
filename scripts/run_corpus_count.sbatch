@@ -14,4 +14,4 @@ export OMP_NUM_THREADS=2
 export OPENBLAS_NUM_THREADS=2
 export MKL_NUM_THREADS=2
 export TOKENIZERS_PARALLELISM=false
-exec .review-venv/bin/python -u scripts/run_corpus_count.py
+exec .review-venv/bin/python -u scripts/run_corpus_count.py --publish-progress

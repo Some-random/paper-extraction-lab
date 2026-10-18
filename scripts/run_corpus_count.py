@@ -27,6 +27,8 @@ import requests
 import zstandard
 from tokenizers import Tokenizer
 from corpus_count import Ledger, MODALITIES, inspect_text, sha256
+from corpus_progress import ProgressReporter
+from corpus_progress_publish import publish_reports
 
 PST = timezone(timedelta(hours=-8))
 
@@ -48,12 +50,14 @@ class StopWork(Exception):
 class Worker:
     write_json = staticmethod(write_json)
 
-    def __init__(self, config_path):
+    def __init__(self, config_path, publish_progress=False):
         self.config_path = config_path.resolve()
         config_path = self.config_path
         self.config = json.loads(config_path.read_text())
         self.run = ROOT / self.config["destination"]
         self.run.mkdir(parents=True, exist_ok=True)
+        self.publish_progress = publish_progress
+        self.progress_reporter = ProgressReporter(self.run, ROOT / self.config["report_directory"])
         self.lock = (self.run / "worker.lock").open("a")
         try:
             fcntl.flock(self.lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -345,6 +349,9 @@ class Worker:
             "",
             "| Content | Records scanned | Raw tokens | Tokens after exact deduplication | Complete files / inventory |",
             "|:---|---:|---:|---:|---:|"]
+        if self.state.get("stop_reason") or self.state.get("error"):
+            detail = self.state.get("error") or self.state["stop_reason"].replace("_", " ")
+            body[4:4] = [f"Stop reason: **{detail}**.", ""]
         for key, info in sources.items():
             body.append(f"| {info['name']} | {info.get('raw_records',0):,} | {info.get('raw_tokens',0):,} | {info.get('unique_tokens',0):,} | {info['completed_files']} / {info['expected_files']} |")
         body.append(f"| **Measured total** | **{aggregate.get('raw_records',0):,}** | **{aggregate.get('raw_tokens',0):,}** | **{aggregate.get('unique_tokens',0):,}** | |")
@@ -401,6 +408,15 @@ class Worker:
         print(json.dumps({"at_pst": self.state["updated_at_pst"], "status": self.state["status"],
                           "file": self.state.get("current_file"), "raw_tokens": aggregate.get("raw_tokens", 0),
                           "unique_tokens": aggregate.get("unique_tokens", 0), "records": aggregate.get("raw_records", 0)}), flush=True)
+        try:
+            event = self.progress_reporter.emit(summary)
+            if event:
+                print(json.dumps({"progress_event": event}), flush=True)
+                if self.publish_progress:
+                    print(json.dumps({"progress_delivery": publish_reports(ROOT, self.run, report)}), flush=True)
+        except Exception as exc:
+            # Reporting must not invalidate committed counts or mask a worker error.
+            print(json.dumps({"progress_reporting_error": type(exc).__name__}), flush=True)
 
     def execute(self, local_only=False):
         try:
@@ -444,8 +460,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=ROOT / "config/corpus_count_2026-10-17.json")
     parser.add_argument("--local-only", action="store_true")
+    parser.add_argument("--publish-progress", action="store_true",
+                        help="Commit/push generated reports at startup, hourly and on terminal status")
     args = parser.parse_args()
-    Worker(args.config).execute(args.local_only)
+    Worker(args.config, publish_progress=args.publish_progress).execute(args.local_only)
 
 
 if __name__ == "__main__":
