@@ -1,10 +1,11 @@
 {
-  "checked_at_pst": "2026-10-18T14:45:07-08:00",
-  "watcher_status": "starting",
-  "delivery": "GitHub reports and local status; proactive chat notifications are not configured",
+  "checked_at_pst": "2026-10-18T14:45:41-08:00",
+  "watcher_status": "watching",
+  "stop_reason": null,
+  "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
   "setup": {
-    "stage": "ready_jobs_held",
-    "updated_at_pst": "2026-10-18T14:44:58-08:00"
+    "stage": "ready_jobs_released",
+    "updated_at_pst": "2026-10-18T14:45:41-08:00"
   },
   "scheduler_errors": [],
   "jobs": [
