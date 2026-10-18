@@ -114,6 +114,42 @@ class TrainingThroughputReportTests(unittest.TestCase):
         self.build()
         self.assertIn("| 123 | failed | 8 | a100 | — | — |", (self.public / "README.md").read_text())
 
+    def test_cancelled_is_not_resurrected_by_initializing_output(self):
+        self.launch(state="cancelled")
+        self.result(status="initializing")
+        self.build()
+        self.assertIn("| 123 | cancelled |", (self.public / "README.md").read_text())
+
+    def test_scheduler_failure_overrides_completed_result(self):
+        self.launch(state="failed")
+        path = self.run / "launch_123.json"
+        launch = json.loads(path.read_text())
+        launch.update(slurm_state="TIMEOUT", scheduler_observed=True)
+        path.write_text(json.dumps(launch))
+        self.result()
+        self.build()
+        self.assertIn("| 123 | failed |", (self.public / "README.md").read_text())
+
+    def test_monitor_and_setup_failure_are_visible_without_private_details(self):
+        self.launch(state="cancelled")
+        (self.run / "setup_state.json").write_text(json.dumps({
+            "stage": "setup_failed", "error_type": "TimeoutExpired", "error": "/dfs/private/error"}))
+        (self.run / "status.json").write_text(json.dumps({
+            "checked_at_pst": "2026-10-18T12:45:00-08:00", "watcher_status": "stopped",
+            "setup": {"stage": "setup_failed", "error_type": "TimeoutExpired"},
+            "scheduler_errors": [{"source": "squeue", "error_type": "RuntimeError", "error": "/dfs/private"}],
+            "jobs": [{"job_id": "123", "status": "cancelled", "reason": "private-hostname"}],
+            "private_path": "/dfs/private",
+        }))
+        self.build()
+        text = (self.public / "README.md").read_text()
+        self.assertIn("setup_failed (TimeoutExpired)", text)
+        self.assertIn("Scheduler query incomplete", text)
+        self.assertIn("[Status snapshot](status.json)", text)
+        public = (self.public / "status.json").read_text()
+        self.assertNotIn("/dfs/", public)
+        self.assertNotIn("private-hostname", public)
+
     def test_launch_completed_without_results_is_not_a_measurement(self):
         self.launch(state="completed")
         self.build()

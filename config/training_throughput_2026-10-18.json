@@ -15,6 +15,18 @@
   "activation_checkpointing": true,
   "distributed": "Plain model on one GPU; FSDP FULL_SHARD across decoder blocks on multiple GPUs",
   "compile": false,
+  "planned_allocations": [
+    {"gpus": 1, "gpu_type": "B200", "wall_seconds": 1200},
+    {"gpus": 8, "gpu_type": "B200", "wall_seconds": 1200, "after": "single-GPU baseline"}
+  ],
+  "runtime_environment": {"PYTHONDONTWRITEBYTECODE": "1"},
+  "reporting": {
+    "poll_seconds": 30,
+    "heartbeat_seconds": 3600,
+    "transitions": "Publish promptly on failure, completion or job-state changes",
+    "delivery": "GitHub report and local status history; proactive chat notifications are not configured",
+    "watcher_max_days": 7
+  },
   "bounds": {
     "gpus_per_job_maximum": 8,
     "gpu_job_wall_seconds": 1200,

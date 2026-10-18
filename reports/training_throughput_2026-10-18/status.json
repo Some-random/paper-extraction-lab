@@ -1,0 +1,44 @@
+{
+  "checked_at_pst": "2026-10-18T14:45:07-08:00",
+  "watcher_status": "starting",
+  "delivery": "GitHub reports and local status; proactive chat notifications are not configured",
+  "setup": {
+    "stage": "ready_jobs_held",
+    "updated_at_pst": "2026-10-18T14:44:58-08:00"
+  },
+  "scheduler_errors": [],
+  "jobs": [
+    {
+      "job_id": "241120",
+      "status": "cancelled",
+      "scheduler_state": "CANCELLED",
+      "scheduler_observed": true,
+      "requested_gpus": 1,
+      "target_gpu": "A100 80GB"
+    },
+    {
+      "job_id": "241122",
+      "status": "cancelled",
+      "scheduler_state": "CANCELLED",
+      "scheduler_observed": true,
+      "requested_gpus": 8,
+      "target_gpu": "B200 180GB"
+    },
+    {
+      "job_id": "241333",
+      "status": "queued",
+      "scheduler_state": "PENDING",
+      "scheduler_observed": true,
+      "requested_gpus": 1,
+      "target_gpu": "B200 180GB"
+    },
+    {
+      "job_id": "241334",
+      "status": "queued",
+      "scheduler_state": "PENDING",
+      "scheduler_observed": true,
+      "requested_gpus": 8,
+      "target_gpu": "B200 180GB"
+    }
+  ]
+}

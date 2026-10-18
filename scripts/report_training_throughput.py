@@ -139,8 +139,15 @@ def load_jobs(run_dir, root):
         if output.exists():
             safe["result"] = sanitize_result(read_json(output), job_id)
             state = safe["result"].get("status")
-            safe["status"] = {"completed": "success", "runtime_limit": "failed",
-                              "failed": "failed", "initializing": "running"}.get(state, safe["status"])
+            # A result written before cancellation/failure must not resurrect a
+            # job. The watcher records scheduler authority in the launch file.
+            authoritative = (safe["status"] == "cancelled" or launch.get("scheduler_observed")
+                             or launch.get("slurm_state") in {
+                                 "CANCELLED", "FAILED", "TIMEOUT", "PREEMPTED", "OUT_OF_MEMORY",
+                                 "NODE_FAIL", "BOOT_FAIL", "DEADLINE", "REVOKED"})
+            if not authoritative:
+                safe["status"] = {"completed": "success", "runtime_limit": "failed",
+                                  "failed": "failed", "initializing": "running"}.get(state, safe["status"])
         if safe["status"] in ("submitted", "pending"):
             safe["status"] = "queued"
         if safe["status"] == "completed":
@@ -158,17 +165,49 @@ def cell(value):
     return str(value).replace("|", "\\|").replace("\n", " ")
 
 
-def render_markdown(cluster, jobs, generated_at, setup=None):
+def sanitize_monitor(snapshot):
+    safe = {key: public_value(snapshot[key]) for key in
+            ("checked_at_pst", "watcher_status", "stop_reason", "delivery") if key in snapshot}
+    safe["setup"] = {key: public_value(value) for key, value in snapshot.get("setup", {}).items()
+                     if key in ("stage", "error_type", "updated_at_pst")}
+    safe["scheduler_errors"] = [{key: public_value(value) for key, value in error.items()
+                                 if key in ("source", "error_type")}
+                                for error in snapshot.get("scheduler_errors", [])]
+    safe["jobs"] = [{key: public_value(value) for key, value in job.items() if key in
+                     ("job_id", "status", "scheduler_state", "scheduler_observed", "requested_gpus",
+                      "target_gpu", "result_status", "failure_type", "input_tokens_per_second")}
+                    for job in snapshot.get("jobs", [])]
+    return safe
+
+
+def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
     lines = ["# 4B training-throughput diagnostic", "",
-             f"Report updated **{generated_at}**. Cluster snapshot: **{cluster.get('checked_at_pst', 'unknown')}**.", "",
-             "This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, "
+             f"Report updated **{generated_at}**. Cluster snapshot: **{cluster.get('checked_at_pst', 'unknown')}**.", ""]
+    if setup:
+        stage = cell(setup.get("stage", "unknown"))
+        failure = f" ({cell(setup['error_type'])})" if setup.get("error_type") else ""
+        lines.extend([f"Runtime setup: **{stage}{failure}**.", ""])
+        if setup.get("prior_setup_failure_type"):
+            lines.extend([f"The earlier setup failed with **{cell(setup['prior_setup_failure_type'])}**. "
+                          "Its cancelled requests are retained below. Replacement CPU validation passed.", ""])
+    if monitor:
+        lines.extend([f"Scheduler last checked **{cell(monitor.get('checked_at_pst', 'unknown'))}**. "
+                      f"Monitor: **{cell(monitor.get('watcher_status', 'unknown'))}**. "
+                      "[Status snapshot](status.json).", "",
+                      "While work is pending or running, this page is updated hourly even without a status change, "
+                      "and promptly on failure or completion. Updates are GitHub reports; automatic chat "
+                      "notifications are not configured.", ""])
+        if monitor.get("scheduler_errors"):
+            lines.extend(["**Scheduler query incomplete.** Some job states use the last observation; "
+                          "see the status snapshot for query errors.", ""])
+    lines.extend(["This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, "
              "synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with "
              "FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological "
              "training corpus are downloaded for the benchmark.", "", "## Cluster GPUs", "",
              "Each node is counted once across partitions. Unallocated GPUs are not necessarily schedulable "
              "immediately; account limits, reservations and planned allocations can apply.", "",
              "| GPU | Configured | Allocated | Unallocated on online nodes | On unavailable nodes |",
-             "|:---|---:|---:|---:|---:|"]
+             "|:---|---:|---:|---:|---:|"])
     total = [0, 0, 0, 0]
     for name, counts in cluster.get("gpus", {}).items():
         numbers = [counts.get(key, 0) for key in
@@ -297,10 +336,16 @@ def build_report(run_dir, report_dir, root=ROOT, publish_requested=False):
         jobs = load_jobs(run_dir, root)
         setup_path = run_dir / "setup_state.json"
         setup = read_json(setup_path) if setup_path.exists() else None
+        monitor_path = run_dir / "status.json"
+        monitor = sanitize_monitor(read_json(monitor_path)) if monitor_path.exists() else None
         generated_at = datetime.now(PST).isoformat(timespec="seconds")
         readme = report_dir / "README.md"
-        write_text(readme, render_markdown(cluster, jobs, generated_at, setup))
+        write_text(readme, render_markdown(cluster, jobs, generated_at, setup, monitor))
         generated = [readme]
+        if monitor:
+            destination = report_dir / "status.json"
+            write_json(destination, monitor)
+            generated.append(destination)
         for job in jobs:
             if "result" in job:
                 destination = report_dir / f"results_{job['job_id']}.json"

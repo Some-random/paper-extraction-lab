@@ -489,3 +489,18 @@ and benchmark artifacts at 16 GiB and keep them in this project. The benchmark
 scope supersedes the old no-training/one-GPU restrictions for this diagnostic
 only. Report queued, running and measured states accurately; do not infer
 measured multinode efficiency from a single-node result.
+
+The first held requests were cancelled after CPU validation timed out; they
+used no GPU time. A bounded repair preflight passed with bytecode writes
+disabled. Preserve the cancelled attempts and failure history. Use B200 for
+both replacement allocations: the A100 scheduler previews proposed preempting
+other jobs, while the B200 previews did not. GPU runtime limits are unchanged.
+
+Run `scripts/watch_training_throughput.py --publish` alongside this diagnostic.
+It checks only recorded benchmark job IDs and publishes hourly while queued or
+running, including unchanged waiting, and promptly on state changes. It stops
+after known work is terminal or its persisted seven-day deadline. Keep its
+status/history under the ignored run directory; publish the sanitized report.
+This is GitHub reporting, not a configured proactive notification into chat.
+While the conversation is active, also report status here. Never describe a
+failed, cancelled or stopped job as still running or waiting.

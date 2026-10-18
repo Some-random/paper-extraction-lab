@@ -1,6 +1,14 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-18T12:35:41-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-18T14:45:19-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+
+Runtime setup: **ready_jobs_held**.
+
+The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
+
+Scheduler last checked **2026-10-18T14:45:07-08:00**. Monitor: **starting**. [Status snapshot](status.json).
+
+While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. Updates are GitHub reports; automatic chat notifications are not configured.
 
 This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological training corpus are downloaded for the benchmark.
 
@@ -23,8 +31,10 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 
 | Job | Status | GPUs | GPU type | Measured input tokens/s | 200B tokens at this allocation |
 |:---|:---|---:|:---|---:|---:|
-| 241120 | failed | 1 | A100 80GB | — | — |
-| 241122 | failed | 8 | B200 180GB | — | — |
+| 241120 | cancelled | 1 | A100 80GB | — | — |
+| 241122 | cancelled | 8 | B200 180GB | — | — |
+| 241333 | queued — runtime setup hold | 1 | B200 180GB | — | — |
+| 241334 | queued — runtime setup hold | 8 | B200 180GB | — | — |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 

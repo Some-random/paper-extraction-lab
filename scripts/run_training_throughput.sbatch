@@ -6,7 +6,7 @@
 #SBATCH --nice=10000
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:a100:1
+#SBATCH --gres=gpu:b200:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=128G
 #SBATCH --time=00:20:00
@@ -57,6 +57,7 @@ PY
 
 export OMP_NUM_THREADS=2
 export MKL_NUM_THREADS=2
+export PYTHONDONTWRITEBYTECODE=1
 export TOKENIZERS_PARALLELISM=false
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
