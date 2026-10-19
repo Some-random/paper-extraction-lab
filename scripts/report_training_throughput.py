@@ -214,8 +214,8 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
                       f"Monitor: **{cell(monitor.get('watcher_status', 'unknown'))}**. "
                       "[Status snapshot](status.json).", "",
                       "While work is pending or running, this page is updated hourly even without a status change, "
-                      "and promptly on failure or completion. Updates are GitHub reports; automatic chat "
-                      "notifications are not configured.", ""])
+                      "and promptly on failure or completion. A separate session monitor queues the requested "
+                      "hourly chat updates.", ""])
         if monitor.get("scheduler_errors"):
             lines.extend(["**Scheduler query incomplete.** Some job states use the last observation; "
                           "see the status snapshot for query errors.", ""])

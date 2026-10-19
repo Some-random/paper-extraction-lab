@@ -585,3 +585,21 @@ Publish compact progress hourly while queued or running and promptly on failure
 or completion using the independent paper watcher. Serialize all automatic Git
 publication through `experiments/report_publication.lock`, preserving unrelated
 staged and unstaged edits. GitHub reports are not automatic chat notifications.
+
+## Hourly updates in the current chat
+
+The user explicitly requests hourly updates in this conversation, including
+while jobs are queued and when they stop or fail. The installed CLI supports
+`codex queue --thread UUID --message TEXT`; use the private configured current
+thread ID to queue narrowly scoped, read-only status checks. Do not open another
+interactive session, resume the conversation elsewhere, change its model, or
+send updates to another person. Preserve cadence and the original monitor
+deadline across restarts. Report queue acceptance separately from actual chat
+delivery; delivery requires the local Codex app-server/session to remain
+available. Never claim that GitHub publication alone satisfies this request.
+
+`scripts/run_status_updates.sbatch` runs the paper reporter, throughput reporter
+and chat timer in a dedicated one-CPU, zero-GPU Slurm allocation. It uses the
+same host as the existing local Codex server. Restart failed reporter children
+within their original deadlines, without resetting worker budgets. Private
+thread IDs, launch records and timer state remain in ignored experiments.

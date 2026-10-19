@@ -231,7 +231,7 @@ def build_report(config_path, run_dir, report_dir, *, root=ROOT, publish=False, 
         lines.extend([delta_text, ""])
     lines.extend(["Original XML is read in place when already present. New XML, structured sections, tables, captions, citation metadata and canonical text are retained. Exact-text duplicate removal and the initial biology selection are reported separately; biology selection is a keyword heuristic, not a reviewed quality score. Counts use the pinned extraction-reference tokenizer.", "",
                   "Identifier checks cover the inventoried accessible cluster sources. Figures, PDFs, supplements and genomic downloads are outside this batch.", "",
-                  "An independent monitor refreshes this report hourly, including while queued, and on status changes. These are GitHub updates; automatic chat notifications are not configured.", ""])
+                  "An independent monitor refreshes this report hourly, including while queued, and on status changes. A separate session monitor queues the requested hourly chat updates.", ""])
     # Watcher bookkeeping remains private, including any future extra fields.
     public_keys = set(empty_snapshot(config, 0)) | {"worker_heartbeat_age_seconds", "submitted_at_pst",
                   "deadline_at_pst", "stop_reason", "error_type", "watcher_status", "monitor_stop_reason"}

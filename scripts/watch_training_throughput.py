@@ -250,7 +250,7 @@ def watch(run_dir, report_dir, *, root=report.ROOT, publish=False, interval=3600
                 stop = "watcher_runtime_limit"
             snapshot.update(watcher_started_epoch=started, watcher_deadline_epoch=deadline,
                             watcher_status="stopped" if stop else "watching", stop_reason=stop,
-                            delivery="Local status files and optional GitHub reports; no proactive chat notification")
+                            delivery="Local status files and optional GitHub reports; a separate session monitor queues chat updates")
             for key in ("last_report_epoch", "last_report_attempt_epoch", "last_report_error", "last_report_fingerprint"):
                 if key in previous:
                     snapshot[key] = previous[key]
