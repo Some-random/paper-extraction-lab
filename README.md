@@ -4,13 +4,11 @@ The project converts **experimental biology papers** into source-linked text,
 tables, figures, and training-data candidates. Foundation-model reports inform
 the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
-Actual source counting and broader PMC XML acquisition are underway: [measured token counts](reports/corpus_count_2026-10-17/README.md)
-and [counting setup](docs/corpus_counting.md).
-
-The current working copy and counting artifacts are in
-`/dfs/scratch0/dongweij/paper-extraction-lab`.
-Experiments run sequentially with one document/inference worker, at most one
-GPU, no subagents, and no new SSH connections.
+The [current paper collection](reports/paper_collection_2026-10-19/README.md)
+reuses existing cluster copies before acquiring up to 10,000 missing papers.
+It uses one serial worker, two CPU cores and no GPUs, with bounded storage and
+hourly progress reports. Earlier [measured token counts](reports/corpus_count_2026-10-17/README.md)
+and the [counting setup](docs/corpus_counting.md) remain available.
 
 ## Updated native-source preview: three papers
 

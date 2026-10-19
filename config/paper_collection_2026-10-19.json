@@ -1,0 +1,95 @@
+{
+  "run_id": "paper_collection_2026-10-19",
+  "destination": "experiments/paper_collection_2026-10-19",
+  "report_directory": "reports/paper_collection_2026-10-19",
+  "source_catalog": "experiments/paper_collection_2026-10-19/source_catalog.json",
+  "presence_ids_csv": "experiments/paper_collection_2026-10-19/presence_ids.csv",
+  "tokenizer_path": "cache/tokenizers/olmocr2-e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "target_new_papers": 10000,
+  "existing_pipeline_bytes": 13662866815,
+  "maximum_table_rows": 2000,
+  "accepted_article_types": [
+    "research-article",
+    "review-article",
+    "brief-report",
+    "rapid-communication"
+  ],
+  "query_topics": {
+    "genes_genomes": [
+      "genetics",
+      "genomics",
+      "gene",
+      "genome",
+      "RNA"
+    ],
+    "proteins_metabolism": [
+      "protein",
+      "proteomics",
+      "enzyme",
+      "metabolism"
+    ],
+    "cells_molecular_biology": [
+      "cell",
+      "cellular",
+      "molecular biology",
+      "developmental biology"
+    ],
+    "organisms_ecology": [
+      "microbiology",
+      "microbiome",
+      "plant",
+      "ecology",
+      "evolution"
+    ]
+  },
+  "query_years": [
+    [
+      2018,
+      2020
+    ],
+    [
+      2021,
+      2022
+    ],
+    [
+      2023,
+      2023
+    ],
+    [
+      2024,
+      2024
+    ],
+    [
+      2025,
+      2026
+    ]
+  ],
+  "candidates_per_query": 2000,
+  "limits": {
+    "runtime_seconds": 86400,
+    "network_bytes": 8589934592,
+    "new_artifact_bytes": 34359738368,
+    "minimum_free_bytes": 68719476736,
+    "maximum_pipeline_data_bytes": 214748364800,
+    "max_xml_bytes": 8388608,
+    "max_text_bytes": 4194304,
+    "max_document_gzip_bytes": 33554432
+  },
+  "execution": {
+    "serial_workers": 1,
+    "cpu_cores": 2,
+    "gpus": 0
+  },
+  "scope": "Read existing native XML in place, then obtain absent biological research papers from official PMC XML. Exclude known full-text IDs before acquisition; abstract-only presence does not block full-text acquisition. No new PDF, figure, supplementary-file or genome downloads.",
+  "selection": "Preserve raw counts separately from coarse biology/clinical selection and exact whitespace-normalized deduplication. No calibrated quality classifier or near-duplicate filtering is claimed.",
+  "authorization": "User explicitly selected existing papers plus up to 10,000 missing papers, native XML, a 24-hour CPU-only run and a 32 GiB artifact cap on October 18. Preserve earlier stopped runs and read shared sources in place.",
+  "inventory": {
+    "native_xml_papers": 29414,
+    "known_pmcids": 144461,
+    "known_pmids": 144090,
+    "known_dois": 29265
+  },
+  "source_catalog_sha256": "92204f05a7381f9989f67b39684033d5fe3f8225c9bbbfc878a06cd517bdfcff",
+  "presence_ids_csv_sha256": "59fdf84903c5e7f003d9fba6648b098b24f7f2644a8c7ffec838cac15f4d3aca"
+}

@@ -558,3 +558,30 @@ of eight concurrent benchmark GPUs. Keep every 20-minute wall limit, the same
 matched workload and the 7.33 GPU-hour combined limit. Restart only the hourly
 status watcher, preserving its cadence and deadline. GPU count is not a blanket
 guarantee against preemption; do not claim `il-lo` jobs are protected.
+
+## Reuse-first paper collection
+
+The user explicitly resumed paper acquisition on October 18 and asked for a
+reasonable batch without downloading papers already on this cluster. The new
+run is `config/paper_collection_2026-10-19.json`; earlier expired runs remain
+stopped and their originals/results stay preserved. First index all known
+full-text paper IDs, including the older article archive's body-bearing records,
+then read the existing native XML in place and acquire up to 10,000 absent
+selected papers. Abstract-only records do not block full-text acquisition.
+Frozen private catalogs record source paths, IDs, sizes, timestamps and hashes;
+never publish other users' paths or bulk article text.
+
+Use one serial worker, two CPU cores and zero GPUs, with a fixed 24-hour
+deadline, 8 GiB of HTTP response bodies, 32 GiB of new artifacts, a 64 GiB
+shared-free-space floor and the overall 200 GiB pipeline-data ceiling. Include
+indexes, original new XML, compressed parsed/canonical text and temporary copies
+in the run budget. Preserve license/version/hash/XML provenance, citations,
+tables, captions and media URLs. This phase does not download PDF/image/figure/
+supplement binaries or genomes and does not run OCR or training. Known IDs and
+exact text hashes are separate checks; do not claim near-duplicate filtering,
+human-validated biology labels or complete knowledge of every cluster disk.
+
+Publish compact progress hourly while queued or running and promptly on failure
+or completion using the independent paper watcher. Serialize all automatic Git
+publication through `experiments/report_publication.lock`, preserving unrelated
+staged and unstaged edits. GitHub reports are not automatic chat notifications.

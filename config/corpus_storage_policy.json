@@ -1,5 +1,5 @@
 {
-  "status": "Proposed operating policy for a new bounded runner; not an active acquisition job",
+  "status": "Operating policy; the bounded paper_collection_2026-10-19 runner enforces the total ceiling and shared-free-space floor.",
   "maximum_pipeline_data_bytes": 214748364800,
   "scope": "Pipeline-owned corpus data, including the existing counted pilot, all new source copies, normalized outputs, indexes and temporary files; shared inputs read in place are not duplicated. Historical experiments outside this pipeline, environments and model caches are separate existing footprints.",
   "category_budget_bytes": {
@@ -18,5 +18,5 @@
   "capacity_behavior": "Reserve bytes before each bounded write/download and include concurrent temporary/atomic copies, indexes and sorting spill. Pause when a category or total cap or free-space floor is reached. Continue only after space is available or a configured durable output destination has been verified.",
   "full_corpus_limit": "The policy supports bounded counting and selective materialization. It does not assert the full 254B-token corpus, all paper originals or a complete training pack fit in 200 GiB.",
   "external_output_destination": null,
-  "execution": "No full acquisition, old-worker resumption, deletion, GPU use or model training is started by this policy file."
+  "execution": "Paper collection is authorized separately in config/paper_collection_2026-10-19.json. The policy does not extend earlier runs, delete preserved data, authorize GPU use or start full model training."
 }

@@ -4,9 +4,18 @@ from __future__ import annotations
 import json
 import subprocess
 from datetime import datetime, timedelta, timezone
+try:
+    from .report_publication_lock import publication_lock
+except ImportError:  # Existing command-line runners import from ROOT/src.
+    from report_publication_lock import publication_lock
 
 
 def publish_reports(root, run_dir, report_dir):
+    with publication_lock(root):
+        return _publish_reports(root, run_dir, report_dir)
+
+
+def _publish_reports(root, run_dir, report_dir):
     """Return delivery status; a delivery failure must never stop acquisition."""
     result = {"at_pst": datetime.now(timezone(timedelta(hours=-8))).isoformat()}
 

@@ -12,8 +12,11 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from report_publication_lock import publication_lock
 DEFAULT_RUN = Path("experiments/training_throughput_2026-10-18")
 DEFAULT_REPORT = Path("reports/training_throughput_2026-10-18")
 PST = timezone(timedelta(hours=-8))
@@ -375,6 +378,11 @@ def git_command(root, *args):
 
 
 def publish(root, report_dir, generated_paths):
+    with publication_lock(root):
+        return _publish(root, report_dir, generated_paths)
+
+
+def _publish(root, report_dir, generated_paths):
     relative = report_dir.resolve().relative_to(root.resolve())
     if relative != DEFAULT_REPORT:
         raise ValueError(f"Publication is restricted to {DEFAULT_REPORT}")
