@@ -1,8 +1,8 @@
 {
-  "checked_at_pst": "2026-10-19T00:46:33-08:00",
-  "watcher_status": "watching",
-  "stop_reason": null,
-  "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
+  "checked_at_pst": "2026-10-19T10:41:08-08:00",
+  "watcher_status": "not_running",
+  "stop_reason": "supervisor_restart_pending",
+  "delivery": "Local status files and GitHub reports; proactive chat notification not yet configured",
   "setup": {
     "stage": "ready",
     "updated_at_pst": "2026-10-18T22:05:25-08:00"
@@ -66,13 +66,16 @@
     },
     {
       "job_id": "241356",
-      "status": "queued",
-      "scheduler_state": "PENDING",
+      "status": "failed",
+      "scheduler_state": "TIMEOUT",
       "scheduler_observed": true,
       "requested_gpus": 8,
       "target_gpu": "A100 80GB",
       "admission_status": "ordinary_queue",
-      "comparison_group": "gpu_allocation_comparison"
+      "comparison_group": "gpu_allocation_comparison",
+      "result_status": "failed",
+      "failure_type": "NoCompletedMatchedProfile",
+      "input_tokens_per_second": null
     },
     {
       "job_id": "241366",

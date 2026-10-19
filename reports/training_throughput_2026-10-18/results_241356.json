@@ -1,0 +1,45 @@
+{
+  "status": "failed",
+  "started_utc": "2026-10-19T09:29:43.529974+00:00",
+  "world_size": 8,
+  "runtime_seconds": 908.8543698787689,
+  "failure_type": "NoCompletedMatchedProfile",
+  "job_id": "241356",
+  "arguments": {},
+  "hardware": [],
+  "packages": {},
+  "suite": {
+    "status": "failed",
+    "world_size": 8,
+    "sequence_length": 4096,
+    "global_batch_sequences": 32,
+    "input_tokens_per_update": 131072,
+    "selection": "Fastest fully completed profile with successful launcher exit",
+    "started_utc": "2026-10-19T09:29:43.529974+00:00",
+    "runtime_seconds": 908.8543698787689,
+    "runner_sha256": "f2afcce803543e069056e6528d790b961626ca448db35d2d51000c75352ecba2",
+    "profiles": [
+      {
+        "name": "micro_1",
+        "microbatch_per_gpu": 1,
+        "accumulation": 4,
+        "status": "failed",
+        "failure_type": "TimeoutExpired"
+      },
+      {
+        "name": "micro_2",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "failed",
+        "failure_type": "TimeoutExpired"
+      },
+      {
+        "name": "micro_4",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "skipped",
+        "failure_type": "InsufficientRemainingBudget"
+      }
+    ]
+  }
+}

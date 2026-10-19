@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T00:49:11-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T10:41:09-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T00:46:33-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T10:41:08-08:00**. Monitor: **not_running**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. Updates are GitHub reports; automatic chat notifications are not configured.
 
@@ -21,7 +21,7 @@ Each allocation has a **20-minute wall limit**; the listed requests together use
 | Allocation | Status | Best completed input tokens/s | Seconds/update | Peak memory/GPU |
 |:---|:---|---:|---:|---:|
 | 2 × B200 180GB | success | 14,527 | 9.02 | 61.9 GiB |
-| 8 × A100 80GB | queued | — | — | — |
+| 8 × A100 80GB | failed | — | — | — |
 | 4 × B200 180GB | queued | — | — | — |
 | 8 × B200 180GB | queued | — | — | — |
 
@@ -53,7 +53,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241333 | success | 1 | NVIDIA B200 | 6,546 | 353.61 days |
 | 241334 | cancelled — replaced by the matched comparison | 8 | B200 180GB | — | — |
 | 241355 | success | 2 | NVIDIA B200 | 14,527 | 159.35 days |
-| 241356 | queued | 8 | A100 80GB | — | — |
+| 241356 | failed — NoCompletedMatchedProfile | 8 | A100 80GB | — | — |
 | 241366 | queued | 4 | B200 180GB | — | — |
 | 241367 | queued | 8 | B200 180GB | — | — |
 
@@ -76,6 +76,16 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 | 1 | 16 | completed | 13,826 |
 | 2 | 8 | completed | 14,223 |
 | 4 | 4 | completed | 14,527 |
+
+### Job 241356
+
+Status: **failed**. Sanitized diagnostics: [results_241356.json](results_241356.json).
+
+| Microbatch/GPU | Accumulation | Status | Measured input tokens/s |
+|---:|---:|:---|---:|
+| 1 | 4 | failed — TimeoutExpired | — |
+| 2 | 2 | failed — TimeoutExpired | — |
+| 4 | 1 | skipped — InsufficientRemainingBudget | — |
 
 ## What the measurement covers
 
