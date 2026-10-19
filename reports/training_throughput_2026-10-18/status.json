@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-18T22:44:11-08:00",
+  "checked_at_pst": "2026-10-18T22:45:43-08:00",
   "watcher_status": "watching",
   "stop_reason": null,
   "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
@@ -53,8 +53,8 @@
     },
     {
       "job_id": "241355",
-      "status": "running",
-      "scheduler_state": "RUNNING",
+      "status": "success",
+      "scheduler_state": "COMPLETED",
       "scheduler_observed": true,
       "requested_gpus": 2,
       "target_gpu": "B200 180GB",
