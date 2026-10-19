@@ -1,21 +1,21 @@
 {
-  "checked_at_pst": "2026-10-19T00:27:22-08:00",
-  "checked_epoch": 1792398442.8353837,
+  "checked_at_pst": "2026-10-19T10:41:04-08:00",
+  "checked_epoch": 1792435264.9220433,
   "counts": {
-    "artifact_bytes": 521711329,
-    "exact_unique_tokens": 80061040,
+    "artifact_bytes": 665598924,
+    "exact_unique_tokens": 107453637,
     "known_id_skips": null,
     "known_pmcids": 144461,
     "network_bytes": 0,
     "network_charged_bytes": 0,
     "new_papers": 0,
     "new_processed_papers": 0,
-    "pipeline_bytes": 14184578144,
-    "raw_tokens": 80061040,
+    "pipeline_bytes": 14328465739,
+    "raw_tokens": 107453637,
     "rejected_papers": 1,
-    "reused_papers": 3782,
-    "selected_exact_unique_tokens": 49162598,
-    "selected_tokens": 49162598
+    "reused_papers": 5026,
+    "selected_exact_unique_tokens": 66454444,
+    "selected_tokens": 66454444
   },
   "deadline_at_pst": "2026-10-19T22:28:05-08:00",
   "error_type": null,
@@ -25,7 +25,7 @@
     "known_pmids": 144090,
     "native_xml_papers": 29414
   },
-  "job_id": "241765",
+  "job_id": "242193",
   "limits": {
     "maximum_pipeline_data_bytes": 214748364800,
     "minimum_free_bytes": 68719476736,
@@ -33,26 +33,26 @@
     "new_artifact_bytes": 34359738368,
     "runtime_seconds": 86400
   },
-  "monitor_stop_reason": null,
+  "monitor_stop_reason": "supervisor_restart_pending",
   "reason": null,
   "run_id": "paper_collection_2026-10-19",
   "scheduler_errors": [],
   "scheduler_observed": true,
   "scheduler_state": "RUNNING",
   "since_previous_report": {
-    "artifact_bytes": 420377005,
-    "exact_unique_tokens": 78917364,
+    "artifact_bytes": 143887595,
+    "exact_unique_tokens": 27392597,
     "network_bytes": 0,
     "new_papers": 0,
-    "raw_tokens": 78917364,
-    "reused_papers": 3734,
-    "selected_tokens": 48362704
+    "raw_tokens": 27392597,
+    "reused_papers": 1244,
+    "selected_tokens": 17291846
   },
   "stage": "process_reused_xml",
   "status": "running",
   "stop_reason": null,
-  "submitted_at_pst": "2026-10-18T22:28:27-08:00",
+  "submitted_at_pst": "2026-10-19T10:40:11-08:00",
   "target_new_papers": 10000,
-  "watcher_status": "watching",
-  "worker_heartbeat_age_seconds": 20.71761155128479
+  "watcher_status": "not_running",
+  "worker_heartbeat_age_seconds": 4.068615436553955
 }
