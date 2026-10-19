@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-18T22:43:40-08:00",
+  "checked_at_pst": "2026-10-18T22:44:11-08:00",
   "watcher_status": "watching",
   "stop_reason": null,
   "delivery": "Local status files and optional GitHub reports; no proactive chat notification",
@@ -59,7 +59,10 @@
       "requested_gpus": 2,
       "target_gpu": "B200 180GB",
       "admission_status": "released",
-      "comparison_group": "gpu_allocation_comparison"
+      "comparison_group": "gpu_allocation_comparison",
+      "result_status": "completed",
+      "failure_type": null,
+      "input_tokens_per_second": 14526.718877749294
     },
     {
       "job_id": "241356",
