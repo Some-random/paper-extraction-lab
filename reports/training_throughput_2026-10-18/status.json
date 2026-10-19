@@ -1,8 +1,8 @@
 {
-  "checked_at_pst": "2026-10-19T10:41:08-08:00",
-  "watcher_status": "not_running",
-  "stop_reason": "supervisor_restart_pending",
-  "delivery": "Local status files and GitHub reports; proactive chat notification not yet configured",
+  "checked_at_pst": "2026-10-19T10:42:51-08:00",
+  "watcher_status": "watching",
+  "stop_reason": null,
+  "delivery": "Local status files and optional GitHub reports; a separate session monitor queues chat updates",
   "setup": {
     "stage": "ready",
     "updated_at_pst": "2026-10-18T22:05:25-08:00"
