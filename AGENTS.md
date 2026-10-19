@@ -603,3 +603,25 @@ and chat timer in a dedicated one-CPU, zero-GPU Slurm allocation. It uses the
 same host as the existing local Codex server. Restart failed reporter children
 within their original deadlines, without resetting worker budgets. Private
 thread IDs, launch records and timer state remain in ignored experiments.
+
+## Throughput verification after the timeout
+
+The user explicitly requests checking the failed eight-A100 run and verifying
+whether setup or training implementation explains the B200 rate. Use
+`config/training_throughput_check_2026-10-19.json` for two additional bounded
+allocations: two B200s and eight A100s, 20 minutes each, at most 3.333 additional
+GPU-hours. Keep one benchmark allocation at a time and at most eight GPUs.
+Preserve earlier results and the queued four/eight-B200 requests. Use normal
+Slurm scheduling; no idle-only admission gate or changes to evaluation work.
+
+Record per-rank startup phases and stack diagnostics. Time setup, warmup,
+training and the separate CUDA profiling step independently. Keep the same
+4B architecture, 4,096-token context and 131,072 input positions per optimizer
+update. Compare the original baseline with explicitly labeled checkpointing
+and sharding variants; a tuned result is not a matched baseline hardware
+comparison. Reuse installed packages and synthetic inputs, with no model
+weight download or saved training checkpoint. New launch manifests and job
+outputs stay in the existing throughput registry so hourly reports and chat
+updates include them automatically. Measure the existing environment footprint
+in CPU preflight, rather than traversing the entire shared environment while
+holding a GPU allocation.

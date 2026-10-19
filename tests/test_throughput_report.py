@@ -184,6 +184,81 @@ class TrainingThroughputReportTests(unittest.TestCase):
         self.build()
         self.assertIn("| 123 | failed | 8 | a100 | — | — |", (self.public / "README.md").read_text())
 
+    def verification_result(self, state="completed", scheduler_state=None):
+        self.launch(job="124", state=state, gpus=2)
+        launch_path = self.run / "launch_124.json"
+        launch = json.loads(launch_path.read_text())
+        launch.update(target_gpu="b200", comparison_group=report.VERIFICATION_GROUP)
+        if scheduler_state:
+            launch.update(status="failed", slurm_state=scheduler_state, scheduler_observed=True)
+        launch_path.write_text(json.dumps(launch))
+        path = self.result(job="124", world_size=2)
+        result = json.loads(path.read_text())
+        baseline = {
+            "name": "baseline", "role": "baseline", "status": "completed", "exit_code": 0,
+            "activation_checkpointing": "on", "sharding": "full_shard",
+            "microbatch_per_gpu": 4, "accumulation": 4, "input_tokens_per_second": 100_000,
+            "setup_seconds": 20., "warmup_seconds": 10., "measurement_seconds": 2.4576,
+            "phase_timings": [{"stage": "setup_complete", "rank": 0, "elapsed_seconds": 20.,
+                               "host": "private-owner-machine", "path": "/dfs/private/phase"}],
+            "profiler": {"status": "completed", "elapsed_seconds": 4.,
+                         "trace_path": "/dfs/private/profile", "host": "private-owner-machine",
+                         "operators": [{"name": "aten::_scaled_dot_product_flash_attention",
+                                        "categories": ["attention"], "device_total_us": 10.,
+                                        "host": "private-owner-machine", "path": "/dfs/private/operator"}],
+                         "cuda_kernels": [{"name": "flash_fwd_kernel", "device_total_us": 8.,
+                                           "host": "private-owner-machine"}]},
+        }
+        tuned = {"name": "tuned_micro8", "role": "tuning", "status": "completed", "exit_code": 0,
+                 "activation_checkpointing": "off", "sharding": "shard_grad_op",
+                 "microbatch_per_gpu": 8, "accumulation": 2, "input_tokens_per_second": 200_000}
+        failed = {"name": "failed_tuned", "role": "tuning", "status": "failed", "exit_code": 1,
+                  "input_tokens_per_second": 999_999, "failure_type": "ProfileTimeout",
+                  "phase_timings": [{"stage": "first_forward_start", "elapsed_seconds": 30.}]}
+        result.update(setup_seconds=20., warmup_seconds=10., measurement_seconds=2.4576,
+                      arguments={**result["arguments"], "activation_checkpointing": "on",
+                                 "sharding": "full_shard", "profile_steps": 1},
+                      suite={"mode": "verification", "profiles": [baseline, tuned, failed],
+                             "baseline_result": baseline, "fastest_completed_profile": tuned,
+                             "tuning_speedup_over_baseline": 2.})
+        path.write_text(json.dumps(result))
+        return path
+
+    def test_verification_keeps_baseline_tuning_and_old_comparison_distinct(self):
+        self.launch(job="123", gpus=8)
+        launch_path = self.run / "launch_123.json"
+        launch = json.loads(launch_path.read_text())
+        launch["comparison_group"] = "gpu_allocation_comparison"
+        launch_path.write_text(json.dumps(launch))
+        self.verification_result()
+        self.build()
+        text = (self.public / "README.md").read_text()
+        self.assertLess(text.index("## Throughput verification"), text.index("## Matched GPU allocation comparison"))
+        self.assertIn("| 124 / 2 × b200 | success | 100,000 | 200,000 |", text)
+        self.assertIn("| 8 × a100 | queued |", text)
+        self.assertIn("Only baseline-to-baseline measurements", text)
+        self.assertIn("A timeout provides no training-speed ranking", text)
+        self.assertIn("| baseline / baseline | on / full_shard | 4 × 4 | completed | 100,000 | 20.00 | 10.00 | 2.46 | 4.00 |", text)
+        self.assertIn("first_forward_start", text)
+        self.assertNotIn("| success | 100,000 | 999,999 |", text)
+        public = json.loads((self.public / "results_124.json").read_text())
+        self.assertEqual(public["throughput"]["input_tokens_per_second"], 100_000)
+        self.assertEqual(public["suite"]["fastest_completed_profile"]["input_tokens_per_second"], 200_000)
+
+    def test_verification_failure_cannot_win_and_nested_diagnostics_are_safe(self):
+        self.verification_result(scheduler_state="TIMEOUT")
+        self.build()
+        text = (self.public / "README.md").read_text()
+        self.assertIn("| 124 / 2 × b200 | failed | — | — |", text)
+        self.assertIn("observed attention operators: `aten::_scaled_dot_product_flash_attention`", text)
+        self.assertIn("observed CUDA kernels: `flash_fwd_kernel`", text)
+        public_text = "\n".join(path.read_text() for path in self.public.iterdir())
+        for private in ("/dfs/", "private-owner-machine", "trace_path", '"host"', '"path"'):
+            self.assertNotIn(private, public_text)
+        public = json.loads((self.public / "results_124.json").read_text())
+        self.assertEqual(public["arguments"]["profile_steps"], 1)
+        self.assertEqual(public["suite"]["baseline_result"]["setup_seconds"], 20.)
+
     def test_setup_no_job_is_explicit(self):
         (self.run / "setup_state.json").write_text(json.dumps({"stage": "installing_isolated_runtime"}))
         self.build()

@@ -1,0 +1,66 @@
+{
+  "run_id": "training_throughput_check_2026-10-19",
+  "purpose": "Verify the A100 startup timeout and separate baseline B200 throughput from tuning opportunities",
+  "model_config": "config/qwen3_4b_throughput_model.json",
+  "sequence_length": 4096,
+  "global_batch_sequences": 32,
+  "warmup_optimizer_steps": 3,
+  "measured_optimizer_steps": 8,
+  "initialization": "Random parameters and synthetic tokens; reuse installed environment; no model checkpoint downloads or saves",
+  "profiles": {
+    "b200_tuning": [
+      {
+        "name": "baseline",
+        "activation_checkpointing": "on",
+        "sharding": "full_shard",
+        "microbatch_per_gpu": 4,
+        "accumulation": 4
+      },
+      {
+        "name": "tuned_micro4",
+        "activation_checkpointing": "off",
+        "sharding": "shard_grad_op",
+        "microbatch_per_gpu": 4,
+        "accumulation": 4
+      },
+      {
+        "name": "tuned_micro8",
+        "activation_checkpointing": "off",
+        "sharding": "shard_grad_op",
+        "microbatch_per_gpu": 8,
+        "accumulation": 2
+      }
+    ],
+    "a100_diagnostic": [
+      {
+        "name": "baseline",
+        "activation_checkpointing": "on",
+        "sharding": "full_shard",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1
+      }
+    ]
+  },
+  "bounds": {
+    "suite_seconds": 1080,
+    "b200_profile_seconds": 320,
+    "a100_profile_seconds": 900,
+    "new_environment_and_artifact_bytes": 17179869184,
+    "new_run_artifact_bytes": 67108864,
+    "minimum_free_bytes": 68719476736,
+    "allocation_seconds": 1200,
+    "additional_gpu_hours_maximum": 3.3333333333333335,
+    "simultaneous_gpus_maximum": 8
+  },
+  "timing": "Report import, initialization, warmup, measured optimizer steps and a separate one-step CUDA profile. Exclude setup, warmup and profiling from throughput.",
+  "report_directory": "reports/training_throughput_2026-10-18",
+  "registry_directory": "experiments/training_throughput_2026-10-18",
+  "comparison_group": "throughput_verification_2026-10-19",
+  "authorization": "User explicitly requested checking the A100 timeout and verifying whether setup or implementation overhead explains the low B200 CPT throughput. Two bounded diagnostic allocations, one at a time; preserve prior results and the queued four/eight-B200 requests.",
+  "model_config_sha256": "304b2545a258d35620f1d4bf46940c0471d9baa00715ff8e77f84c2fca5057c1",
+  "runner_sha256": "f99edb6621ca6cca209515caa287b18963243d6bf7ca958b1345050608f1c1b8",
+  "suite_runner_sha256": "322c9ec2b17d65a774d16e13ab73f6590d41734a7d19fce69ac0c95ffae4ce5d",
+  "baseline_environment_and_artifact_bytes": 6946364128,
+  "baseline_checked_epoch": 1792438558.2103295,
+  "baseline_measurement": "CPU du -sb of installed throughput environment and original benchmark artifacts, before verification allocations; 6,945,633,578 + 730,550 bytes. No environment modification."
+}
