@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-18T15:20:10-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-18T16:20:21-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-18T15:20:10-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-18T16:20:20-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. Updates are GitHub reports; automatic chat notifications are not configured.
 
