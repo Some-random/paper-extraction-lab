@@ -1,16 +1,16 @@
 {
-  "checked_at_pst": "2026-10-18T22:28:27-08:00",
-  "checked_epoch": 1792391307.6713643,
+  "checked_at_pst": "2026-10-18T22:29:16-08:00",
+  "checked_epoch": 1792391356.6061122,
   "counts": {
-    "artifact_bytes": 25657657,
+    "artifact_bytes": 56059409,
     "exact_unique_tokens": 0,
     "known_id_skips": null,
-    "known_pmcids": null,
+    "known_pmcids": 144461,
     "network_bytes": 0,
     "network_charged_bytes": 0,
     "new_papers": 0,
     "new_processed_papers": 0,
-    "pipeline_bytes": 13688524472,
+    "pipeline_bytes": 13718926224,
     "raw_tokens": 0,
     "rejected_papers": null,
     "reused_papers": 0,
@@ -33,16 +33,18 @@
     "new_artifact_bytes": 34359738368,
     "runtime_seconds": 86400
   },
+  "monitor_stop_reason": null,
   "reason": null,
   "run_id": "paper_collection_2026-10-19",
   "scheduler_errors": [],
   "scheduler_observed": true,
   "scheduler_state": "RUNNING",
   "since_previous_report": {},
-  "stage": null,
+  "stage": "index_local_xml_metadata",
   "status": "running",
   "stop_reason": null,
   "submitted_at_pst": "2026-10-18T22:28:27-08:00",
   "target_new_papers": 10000,
-  "worker_heartbeat_age_seconds": 22.540618419647217
+  "watcher_status": "watching",
+  "worker_heartbeat_age_seconds": 11.153520345687866
 }
