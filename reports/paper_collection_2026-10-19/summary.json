@@ -1,21 +1,21 @@
 {
-  "checked_at_pst": "2026-10-18T22:29:16-08:00",
-  "checked_epoch": 1792391356.6061122,
+  "checked_at_pst": "2026-10-18T23:26:38-08:00",
+  "checked_epoch": 1792394798.2889297,
   "counts": {
-    "artifact_bytes": 56059409,
-    "exact_unique_tokens": 0,
+    "artifact_bytes": 101334324,
+    "exact_unique_tokens": 1143676,
     "known_id_skips": null,
     "known_pmcids": 144461,
     "network_bytes": 0,
     "network_charged_bytes": 0,
     "new_papers": 0,
     "new_processed_papers": 0,
-    "pipeline_bytes": 13718926224,
-    "raw_tokens": 0,
+    "pipeline_bytes": 13764201139,
+    "raw_tokens": 1143676,
     "rejected_papers": null,
-    "reused_papers": 0,
-    "selected_exact_unique_tokens": 0,
-    "selected_tokens": 0
+    "reused_papers": 48,
+    "selected_exact_unique_tokens": 799894,
+    "selected_tokens": 799894
   },
   "deadline_at_pst": "2026-10-19T22:28:05-08:00",
   "error_type": null,
@@ -39,12 +39,20 @@
   "scheduler_errors": [],
   "scheduler_observed": true,
   "scheduler_state": "RUNNING",
-  "since_previous_report": {},
-  "stage": "index_local_xml_metadata",
+  "since_previous_report": {
+    "artifact_bytes": 45274915,
+    "exact_unique_tokens": 1143676,
+    "network_bytes": 0,
+    "new_papers": 0,
+    "raw_tokens": 1143676,
+    "reused_papers": 48,
+    "selected_tokens": 799894
+  },
+  "stage": "process_reused_xml",
   "status": "running",
   "stop_reason": null,
   "submitted_at_pst": "2026-10-18T22:28:27-08:00",
   "target_new_papers": 10000,
   "watcher_status": "watching",
-  "worker_heartbeat_age_seconds": 11.153520345687866
+  "worker_heartbeat_age_seconds": 24.6241238117218
 }
