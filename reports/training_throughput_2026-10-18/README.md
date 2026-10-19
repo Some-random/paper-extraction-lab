@@ -1,29 +1,16 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T11:37:25-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T11:37:28-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T11:36:54-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T11:37:26-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
 This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological training corpus are downloaded for the benchmark.
-
-## Throughput verification
-
-These follow-up allocations separate **setup, warmup and timed training**. Each uses the same 4B architecture, 4,096-token context and **131,072 input tokens per optimizer update**. The baseline retains activation checkpointing and FSDP FULL_SHARD, using microbatch 4 per GPU. The two-B200 allocation also tests checkpointing disabled with SHARD_GRAD_OP, at microbatches 4 and 8.
-
-The two requests add at most **3.33 GPU-hours** (two B200s and eight A100s, 20 minutes each), with one benchmark allocation running at a time. **Only baseline-to-baseline measurements compare the same training recipe across hardware.** Faster tuned profiles are separate optimization results. A timeout provides no training-speed ranking.
-
-| Job / allocation | Status | Baseline input tokens/s | Fastest completed tuning input tokens/s |
-|:---|:---|---:|---:|
-| 242255 / 2 × B200 180GB | queued | — | — |
-| 242256 / 8 × A100 80GB | queued | — | — |
-
-**Timing scope:** input tokens/s divides timed training tokens by timed training wall time. Setup and warmup are excluded. A separate post-measurement profiler update is also excluded; profiler operator/device durations can overlap and must not be added as a wall-time breakdown.
 
 ## Matched GPU allocation comparison
 
@@ -104,7 +91,7 @@ Status: **failed**. Sanitized diagnostics: [results_241356.json](results_241356.
 
 ## What the measurement covers
 
-The timing includes synthetic-input transfers, forward/backward passes, optimizer updates and the communication used by this allocation. The original matched comparison uses FSDP FULL_SHARD and activation checkpointing. Verification tuning profiles list their different settings above. PyTorch SDPA attention is requested without torch.compile; observed backend evidence, when available, is reported separately. Setup, warmup and profiling are outside the measured denominator.
+The timing includes synthetic-input transfers, forward/backward passes, optimizer updates and the communication used by this allocation. Multiple GPUs use FSDP FULL_SHARD. Activation checkpointing is enabled; PyTorch SDPA attention is used without torch.compile.
 
 Production corpus loading, biological learning quality, validation, checkpoint saving, restart behavior and multi-node scaling are **not tested**. Queueing and interruptions are excluded from the compute-time estimate. No full 200B-token training run has been started.
 
