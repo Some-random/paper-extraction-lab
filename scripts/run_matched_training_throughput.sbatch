@@ -2,8 +2,8 @@
 #SBATCH --job-name=bio4b-match
 #SBATCH --account=infolab
 #SBATCH --partition=il
-#SBATCH --qos=il-lo
-#SBATCH --nice=10000
+#SBATCH --qos=il
+#SBATCH --nice=0
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:b200:2

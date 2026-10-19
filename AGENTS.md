@@ -543,3 +543,18 @@ language backbone. Core tensor dimensions match, while context/RoPE settings
 and weights differ. Preserve the sourced comparison in
 `config/proteor1_backbone_reference.json`; do not describe the language-only
 throughput benchmark as a benchmark of the full Proteo-R1 system.
+
+## Normal scheduler queue replaces the extra admission gate
+
+The user objected to the idle-only holds. Remove that extra gate and stop the
+admission helper; the prior gate instructions above are superseded. Let Slurm
+apply its normal scheduling and preemption rules. Do not manually stop, change
+or cancel other users' jobs or any evaluation work. Two B200s and eight A100s
+use regular `il`; four and eight B200s require `il-lo` under the current two-B200
+regular-queue cap. Set ordinary job niceness, retain all four owned requests,
+and use afterany dependencies in the order two B200s, eight A100s, four B200s,
+eight B200s. This preserves one allocation at a time and the existing maximum
+of eight concurrent benchmark GPUs. Keep every 20-minute wall limit, the same
+matched workload and the 7.33 GPU-hour combined limit. Restart only the hourly
+status watcher, preserving its cadence and deadline. GPU count is not a blanket
+guarantee against preemption; do not claim `il-lo` jobs are protected.

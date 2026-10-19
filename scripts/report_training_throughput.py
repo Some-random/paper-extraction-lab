@@ -145,7 +145,8 @@ def load_jobs(run_dir, root):
         seen.add(job_id)
         safe = {key: public_value(launch[key]) for key in
                 ("requested_gpus", "target_gpu", "submitted_at_pst", "hold_reason", "admission_required",
-                 "admission_status", "comparison_group", "global_batch_tokens", "superseded_reason") if key in launch}
+                 "admission_status", "comparison_group", "global_batch_tokens", "superseded_reason",
+                 "qos", "dependency", "scheduling_mode") if key in launch}
         safe.update(job_id=job_id, status=str(launch.get("status", "queued")).lower())
         output = result_path(launch, run_dir, root)
         if output.exists():
@@ -230,7 +231,8 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
                       "and eight measured updates. OOM, partial and skipped profiles remain visible; only fully "
                       "completed profiles can supply the reported best rate.", "",
                       f"Each allocation has a **20-minute wall limit**; the listed requests together use at most **{gpu_hours:.2f} GPU-hours**. "
-                      "Requests wait for observed spare capacity and a scheduler preview without proposed preemptions. "
+                      "Slurm schedules these requests normally; the earlier idle-only admission gate has been removed. "
+                      "After-any dependencies limit execution to one benchmark allocation at a time. "
                       "Queue waiting is separate from execution time.", "",
                       "| Allocation | Status | Best completed input tokens/s | Seconds/update | Peak memory/GPU |",
                       "|:---|:---|---:|---:|---:|"])
@@ -252,6 +254,9 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
         lines.extend(["", "The earlier one-B200 diagnostic uses a different global batch and provides context only. "
                       "The comparison above reports the best of the tested profiles, not a claim of maximum possible "
                       "performance. These short synthetic runs do not test biological learning or checkpoint recovery.", ""])
+        lines.extend(["Two B200s and eight A100s use regular **il**. Four and eight B200s use preemptible **il-lo**, "
+                      "because regular B200 access is capped at two per user. GPU count alone does not remove "
+                      "preemption eligibility.", ""])
         lines.extend(["The benchmark initializes the **Qwen3-4B-Base architecture with random weights**. "
                       "Proteo-R1's [official checkpoint configuration](https://huggingface.co/thinking-bio-lab/proteor1-understand/blob/main/config.json) "
                       "identifies **Qwen3-4B-Instruct-2507** as its language backbone. Their core layer dimensions match; "
