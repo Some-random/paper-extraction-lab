@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-18T22:35:24-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-18T22:44:16-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-18T22:35:23-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-18T22:43:40-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. Updates are GitHub reports; automatic chat notifications are not configured.
 
@@ -20,7 +20,7 @@ Each allocation has a **20-minute wall limit**; the listed requests together use
 
 | Allocation | Status | Best completed input tokens/s | Seconds/update | Peak memory/GPU |
 |:---|:---|---:|---:|---:|
-| 2 × B200 180GB | running | — | — | — |
+| 2 × B200 180GB | success | 14,527 | 9.02 | 61.9 GiB |
 | 8 × A100 80GB | queued | — | — | — |
 | 4 × B200 180GB | queued | — | — | — |
 | 8 × B200 180GB | queued | — | — | — |
@@ -52,7 +52,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241122 | cancelled | 8 | B200 180GB | — | — |
 | 241333 | success | 1 | NVIDIA B200 | 6,546 | 353.61 days |
 | 241334 | cancelled — replaced by the matched comparison | 8 | B200 180GB | — | — |
-| 241355 | running | 2 | B200 180GB | — | — |
+| 241355 | success | 2 | NVIDIA B200 | 14,527 | 159.35 days |
 | 241356 | queued | 8 | A100 80GB | — | — |
 | 241366 | queued | 4 | B200 180GB | — | — |
 | 241367 | queued | 8 | B200 180GB | — | — |
@@ -64,6 +64,18 @@ Measured token rates are aggregate input positions per second at the **actual me
 Status: **success**. Sanitized diagnostics: [results_241333.json](results_241333.json).
 
 Measured 15 optimizer steps after 5 warmup steps. Context: 4096; microbatch per GPU: 1; gradient accumulation: 4.
+
+### Job 241355
+
+Status: **success**. Sanitized diagnostics: [results_241355.json](results_241355.json).
+
+Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per GPU: 4; gradient accumulation: 4.
+
+| Microbatch/GPU | Accumulation | Status | Measured input tokens/s |
+|---:|---:|:---|---:|
+| 1 | 16 | completed | 13,826 |
+| 2 | 8 | completed | 14,223 |
+| 4 | 4 | completed | 14,527 |
 
 ## What the measurement covers
 

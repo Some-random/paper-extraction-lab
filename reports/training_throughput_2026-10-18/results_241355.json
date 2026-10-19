@@ -1,0 +1,154 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-19T06:42:02.233982+00:00",
+  "world_size": 2,
+  "actual_parameter_count": 4022468096,
+  "config_sha256": "304b2545a258d35620f1d4bf46940c0471d9baa00715ff8e77f84c2fca5057c1",
+  "runner_sha256": "ce6859e26f3f4e324e892d121da0900fea838b24c3384cb2cff28973f997a838",
+  "cuda_runtime": "12.8",
+  "cudnn_version": 91002,
+  "attention": "sdpa",
+  "initialization": "random FP32; no model weights downloaded",
+  "optimizer": "fused AdamW; FP32 parameters, gradients and moments; BF16 compute",
+  "sharding": "FSDP FULL_SHARD",
+  "gradient_checkpointing": "nonreentrant",
+  "torch_compile": false,
+  "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+  "token_unit": "Input token positions; causal loss predicts sequence_length - 1 positions",
+  "completed_warmup_steps": 3,
+  "warmup_losses": [
+    12.434581756591797,
+    11.505430221557617,
+    10.638740539550781
+  ],
+  "measured_losses": [
+    9.791072845458984,
+    8.966609001159668,
+    8.161749839782715,
+    7.379161834716797,
+    6.620930194854736,
+    5.887685298919678,
+    5.1810302734375,
+    4.503064155578613
+  ],
+  "peak_cuda_allocated_bytes": 66474954240.0,
+  "peak_cuda_reserved_bytes": 89336578048.0,
+  "runtime_seconds": 131.7614539070055,
+  "optimizer_state_dtypes": [
+    "torch.float32"
+  ],
+  "job_id": "241355",
+  "arguments": {
+    "sequence_length": 4096,
+    "batch_size": 4,
+    "accumulation": 4,
+    "warmup": 3,
+    "steps": 8,
+    "max_runtime_seconds": 280,
+    "target_tokens": 200000000000,
+    "seed": 20261018
+  },
+  "hardware": [
+    {
+      "rank": 0,
+      "gpu": "NVIDIA B200",
+      "total_memory_bytes": 191490555904,
+      "compute_capability": [
+        10,
+        0
+      ]
+    },
+    {
+      "rank": 1,
+      "gpu": "NVIDIA B200",
+      "total_memory_bytes": 191490555904,
+      "compute_capability": [
+        10,
+        0
+      ]
+    }
+  ],
+  "packages": {
+    "torch": "2.8.0",
+    "transformers": "4.57.1"
+  },
+  "suite": {
+    "status": "completed",
+    "world_size": 2,
+    "sequence_length": 4096,
+    "global_batch_sequences": 32,
+    "input_tokens_per_update": 131072,
+    "selection": "Fastest fully completed profile with successful launcher exit",
+    "started_utc": "2026-10-19T06:35:11.683588+00:00",
+    "runtime_seconds": 544.7997028827667,
+    "runner_sha256": "f2afcce803543e069056e6528d790b961626ca448db35d2d51000c75352ecba2",
+    "selected_profile": "micro_4",
+    "profiles": [
+      {
+        "name": "micro_1",
+        "microbatch_per_gpu": 1,
+        "accumulation": 16,
+        "exit_code": 0,
+        "status": "completed",
+        "input_tokens_per_second": 13825.71390867444,
+        "measured_optimizer_steps": 8,
+        "input_tokens_per_step": 131072,
+        "peak_cuda_allocated_bytes": 41504017920.0,
+        "peak_cuda_reserved_bytes": 56006541312.0
+      },
+      {
+        "name": "micro_2",
+        "microbatch_per_gpu": 2,
+        "accumulation": 8,
+        "exit_code": 0,
+        "status": "completed",
+        "input_tokens_per_second": 14223.47285567035,
+        "measured_optimizer_steps": 8,
+        "input_tokens_per_step": 131072,
+        "peak_cuda_allocated_bytes": 49827663360.0,
+        "peak_cuda_reserved_bytes": 65978499072.0
+      },
+      {
+        "name": "micro_4",
+        "microbatch_per_gpu": 4,
+        "accumulation": 4,
+        "exit_code": 0,
+        "status": "completed",
+        "input_tokens_per_second": 14526.718877749294,
+        "measured_optimizer_steps": 8,
+        "input_tokens_per_step": 131072,
+        "peak_cuda_allocated_bytes": 66474954240.0,
+        "peak_cuda_reserved_bytes": 89336578048.0
+      }
+    ]
+  },
+  "throughput": {
+    "measured_optimizer_steps": 8,
+    "input_tokens_per_step": 131072,
+    "measured_input_tokens": 1048576,
+    "measured_wall_seconds": 72.18257672805339,
+    "input_tokens_per_second": 14526.718877749294,
+    "step_seconds": {
+      "mean": 9.022499155718833,
+      "p50": 9.002265248913318,
+      "p95": 9.071852211281657,
+      "values": [
+        8.982699574902654,
+        9.000304675661027,
+        9.06244072318077,
+        8.997287607751787,
+        9.0024125110358,
+        9.076919935643673,
+        9.002117986790836,
+        9.055810230784118
+      ]
+    },
+    "extrapolation": {
+      "target_input_tokens": 200000000000,
+      "gpu_count": 2,
+      "seconds": 13767733.903513601,
+      "days": 159.3487720314074,
+      "scope": "Measured allocation only; excludes queueing, production corpus loading, checkpointing, validation and interruptions"
+    }
+  }
+}
