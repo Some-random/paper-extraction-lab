@@ -63,9 +63,9 @@
     "sequence_length": 4096,
     "global_batch_sequences": 32,
     "input_tokens_per_update": 131072,
-    "tuning_speedup_over_baseline": 1.0,
+    "tuning_speedup_over_baseline": 4.276166917856251,
     "started_utc": "2026-10-20T02:08:50.861439+00:00",
-    "runtime_seconds": 170.55587124824524,
+    "runtime_seconds": 3787.0221934318542,
     "stop_reason": null,
     "rate_scope": "Global input tokens per second after warmup; setup, compile-inclusive warmup and separate profiler excluded",
     "profiles": [
@@ -140,7 +140,16 @@
         "accumulation": 4,
         "profile_steps": 1,
         "resolved_parent": "baseline",
-        "status": "initializing",
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "RuntimeError",
+        "setup_seconds": 33.27367348968983,
+        "launcher_wall_seconds": 37.238394029438496,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 0.16598341893404722,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
@@ -159,9 +168,60 @@
         "microbatch_per_gpu": 4,
         "accumulation": 4,
         "profile_steps": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 37.90376284811646,
+        "warmup_seconds": 13.672551054507494,
+        "measurement_seconds": 32.76014041155577,
+        "peak_cuda_allocated_bytes": 66407845376.0,
+        "peak_cuda_reserved_bytes": 89357549568.0,
+        "profiler_seconds": 18.569636828266084,
+        "input_tokens_per_second": 32007.677220764497,
+        "launcher_wall_seconds": 114.70531529653817,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 5.555098867975175,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "sdpa_cudnn"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 32.76014041155577,
+          "input_tokens_per_second": 32007.677220764497,
+          "step_seconds": {
+            "mean": 4.094668972073123,
+            "p50": 4.069716122467071,
+            "p95": 4.185589493485168,
+            "values": [
+              4.059645692817867,
+              4.079505423083901,
+              4.159952944144607,
+              4.058888855390251,
+              4.080327349714935,
+              4.199393789283931,
+              4.05992682185024,
+              4.059710900299251
+            ]
+          }
         }
       },
       {
@@ -171,9 +231,60 @@
         "microbatch_per_gpu": 4,
         "accumulation": 4,
         "profile_steps": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 40.96863701567054,
+        "warmup_seconds": 15.318065988831222,
+        "measurement_seconds": 31.47204907424748,
+        "peak_cuda_allocated_bytes": 66407845376.0,
+        "peak_cuda_reserved_bytes": 89357549568.0,
+        "profiler_seconds": 18.488364011980593,
+        "input_tokens_per_second": 33317.690803234495,
+        "launcher_wall_seconds": 111.6271788654849,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 8.134860360063612,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "flash_attn4"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.47204907424748,
+          "input_tokens_per_second": 33317.690803234495,
+          "step_seconds": {
+            "mean": 3.9336021054768935,
+            "p50": 3.892746089491993,
+            "p95": 4.076745698787272,
+            "values": [
+              3.87396702170372,
+              3.8795071123167872,
+              3.882232666015625,
+              4.087346717715263,
+              3.9032130548730493,
+              3.893284644931555,
+              3.8922075340524316,
+              4.0570580922067165
+            ]
+          }
         }
       },
       {
@@ -182,9 +293,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 47.66194242425263,
+        "warmup_seconds": 32.26617600210011,
+        "measurement_seconds": 72.1971463020891,
+        "peak_cuda_allocated_bytes": 41144585216.0,
+        "peak_cuda_reserved_bytes": 55389978624.0,
+        "input_tokens_per_second": 14523.787347667763,
+        "launcher_wall_seconds": 155.45654029864818,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 14.30179829429835,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "liger_loss"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 72.1971463020891,
+          "input_tokens_per_second": 14523.787347667763,
+          "step_seconds": {
+            "mean": 9.024272305890918,
+            "p50": 9.011114209890366,
+            "p95": 9.102933006128296,
+            "values": [
+              8.966950147412717,
+              8.998099158518016,
+              9.095519980415702,
+              9.020030541345477,
+              9.002197878435254,
+              9.106924635358155,
+              8.972938818857074,
+              9.031517286784947
+            ]
+          }
         }
       },
       {
@@ -193,9 +355,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 45.71148958709091,
+        "warmup_seconds": 37.1152192465961,
+        "measurement_seconds": 76.4203702667728,
+        "peak_cuda_allocated_bytes": 41144716288.0,
+        "peak_cuda_reserved_bytes": 55150903296.0,
+        "input_tokens_per_second": 13721.158329115236,
+        "launcher_wall_seconds": 162.48053742852062,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 12.958586217835546,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "cce"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "cce",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 76.4203702667728,
+          "input_tokens_per_second": 13721.158329115236,
+          "step_seconds": {
+            "mean": 9.55213383573573,
+            "p50": 9.513584774453193,
+            "p95": 9.681395026203244,
+            "values": [
+              9.511591237038374,
+              9.626609647646546,
+              9.51163171324879,
+              9.513114812783897,
+              9.710894845426083,
+              9.516058880835772,
+              9.513476019725204,
+              9.513693529181182
+            ]
+          }
         }
       },
       {
@@ -204,9 +417,21 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "loss_liger",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "LauncherNonzeroExit",
+        "launcher_wall_seconds": 128.77941821608692,
         "features": {
-          "kernels": "liger_full"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "liger_full",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -215,10 +440,60 @@
         "role": "combination",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 43.53654015995562,
+        "warmup_seconds": 15.435796718113124,
+        "measurement_seconds": 31.467167056165636,
+        "peak_cuda_allocated_bytes": 66407845376.0,
+        "peak_cuda_reserved_bytes": 89357549568.0,
+        "input_tokens_per_second": 33322.859923437034,
+        "launcher_wall_seconds": 94.18072603177279,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.578758148476481,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "@best:attention",
-          "kernels": "@best:kernels"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.467167056165636,
+          "input_tokens_per_second": 33322.859923437034,
+          "step_seconds": {
+            "mean": 3.9330343299079686,
+            "p50": 3.8851078832522035,
+            "p95": 4.088300033239648,
+            "values": [
+              3.875337202101946,
+              3.8797073615714908,
+              3.8848125971853733,
+              4.096845109947026,
+              3.88329719286412,
+              3.8854031693190336,
+              3.886441401205957,
+              4.072430605068803
+            ]
+          }
         }
       },
       {
@@ -227,9 +502,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 42.83424565754831,
+        "warmup_seconds": 12.165060197003186,
+        "measurement_seconds": 24.591613193042576,
+        "peak_cuda_allocated_bytes": 163822117376.0,
+        "peak_cuda_reserved_bytes": 186705248256.0,
+        "input_tokens_per_second": 42639.57763847154,
+        "launcher_wall_seconds": 84.31175295356661,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.541671357117593,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 24.591613193042576,
+          "input_tokens_per_second": 42639.57763847154,
+          "step_seconds": {
+            "mean": 3.0735359304817393,
+            "p50": 3.0733734192326665,
+            "p95": 3.0823519924189897,
+            "values": [
+              3.0668550254777074,
+              3.061740049161017,
+              3.0723449448123574,
+              3.080389787442982,
+              3.077387860044837,
+              3.071759318932891,
+              3.0744018936529756,
+              3.0834085643291473
+            ]
+          }
         }
       },
       {
@@ -238,8 +564,61 @@
         "role": "tuning",
         "microbatch_per_gpu": 2,
         "accumulation": 8,
-        "status": "pending",
-        "features": {}
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 40.70784407388419,
+        "warmup_seconds": 15.033321556635201,
+        "measurement_seconds": 32.67136633209884,
+        "peak_cuda_allocated_bytes": 49794108928.0,
+        "peak_cuda_reserved_bytes": 65999470592.0,
+        "input_tokens_per_second": 32094.64793548591,
+        "launcher_wall_seconds": 92.41104301437736,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.474090399220586,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.870156645774841e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 32.67136633209884,
+          "input_tokens_per_second": 32094.64793548591,
+          "step_seconds": {
+            "mean": 4.083549751783721,
+            "p50": 4.082857312168926,
+            "p95": 4.180348117183894,
+            "values": [
+              4.165633396245539,
+              3.992123967036605,
+              4.163751598447561,
+              4.004326965659857,
+              4.161387658677995,
+              3.993763000704348,
+              4.188271428458393,
+              3.999139999039471
+            ]
+          }
+        }
       },
       {
         "name": "checkpoint_off_micro2",
@@ -247,9 +626,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 2,
         "accumulation": 8,
-        "status": "pending",
+        "resolved_parent": "memory_baseline_micro2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 40.46572920959443,
+        "warmup_seconds": 12.407761410810053,
+        "measurement_seconds": 25.571272544562817,
+        "peak_cuda_allocated_bytes": 98502790656.0,
+        "peak_cuda_reserved_bytes": 115727138816.0,
+        "input_tokens_per_second": 41006.01556581341,
+        "launcher_wall_seconds": 82.64543488342315,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.018843884579837,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.870156645774841e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 25.571272544562817,
+          "input_tokens_per_second": 41006.01556581341,
+          "step_seconds": {
+            "mean": 3.195957335527055,
+            "p50": 3.1945967031642795,
+            "p95": 3.2030111546628177,
+            "values": [
+              3.1923065092414618,
+              3.191079859621823,
+              3.1967976726591587,
+              3.1923957336694,
+              3.201397671364248,
+              3.2038799533620477,
+              3.189145310781896,
+              3.2006559735164046
+            ]
+          }
         }
       },
       {
@@ -258,8 +688,61 @@
         "role": "tuning",
         "microbatch_per_gpu": 1,
         "accumulation": 16,
-        "status": "pending",
-        "features": {}
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 47.70564569719136,
+        "warmup_seconds": 16.46779294591397,
+        "measurement_seconds": 34.67555389739573,
+        "peak_cuda_allocated_bytes": 41487240704.0,
+        "peak_cuda_reserved_bytes": 55866032128.0,
+        "input_tokens_per_second": 30239.632309918263,
+        "launcher_wall_seconds": 102.64779466576874,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 7.041081584990025,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.860843420028687e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 34.67555389739573,
+          "input_tokens_per_second": 30239.632309918263,
+          "step_seconds": {
+            "mean": 4.334119831444696,
+            "p50": 4.3531241794116795,
+            "p95": 4.369270518608391,
+            "values": [
+              4.366729347035289,
+              4.349587133154273,
+              4.341662792488933,
+              4.1779236905276775,
+              4.361006596125662,
+              4.370638841763139,
+              4.348749024793506,
+              4.356661225669086
+            ]
+          }
+        }
       },
       {
         "name": "checkpoint_off_micro1",
@@ -267,9 +750,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 1,
         "accumulation": 16,
-        "status": "pending",
+        "resolved_parent": "memory_baseline_micro1",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 39.159122444689274,
+        "warmup_seconds": 13.03340243641287,
+        "measurement_seconds": 27.3695304710418,
+        "peak_cuda_allocated_bytes": 65843077120.0,
+        "peak_cuda_reserved_bytes": 80111206400.0,
+        "input_tokens_per_second": 38311.800822065285,
+        "launcher_wall_seconds": 83.41286477446556,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.607792558148503,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.860843420028687e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 27.3695304710418,
+          "input_tokens_per_second": 38311.800822065285,
+          "step_seconds": {
+            "mean": 3.417892613913864,
+            "p50": 3.3995800018310547,
+            "p95": 3.5156191857531667,
+            "values": [
+              3.3827993664890528,
+              3.391631876118481,
+              3.39958343654871,
+              3.390275583602488,
+              3.399678587913513,
+              3.3995765671133995,
+              3.4037262834608555,
+              3.575869210064411
+            ]
+          }
         }
       },
       {
@@ -278,9 +812,21 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "LauncherNonzeroExit",
+        "launcher_wall_seconds": 65.24477296508849,
         "features": {
-          "checkpointing": "selective"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "selective",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -289,9 +835,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 41.10608459636569,
+        "warmup_seconds": 14.464896171353757,
+        "measurement_seconds": 30.990469737909734,
+        "peak_cuda_allocated_bytes": 73474051072.0,
+        "peak_cuda_reserved_bytes": 96601112576.0,
+        "input_tokens_per_second": 33835.434211483014,
+        "launcher_wall_seconds": 90.44904550537467,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.991940832696855,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "sharding": "shard_grad_op"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "shard_grad_op",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 30.990469737909734,
+          "input_tokens_per_second": 33835.434211483014,
+          "step_seconds": {
+            "mean": 3.873391237575561,
+            "p50": 3.8475472978316247,
+            "p95": 3.976740121701732,
+            "values": [
+              3.8431676579639316,
+              3.8305115047842264,
+              3.8372060349211097,
+              4.007448144257069,
+              3.853991026058793,
+              3.845614681020379,
+              3.8494799146428704,
+              3.9197109369561076
+            ]
+          }
         }
       },
       {
@@ -300,9 +897,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 43.51052515115589,
+        "warmup_seconds": 15.686069171875715,
+        "measurement_seconds": 31.806490850634873,
+        "peak_cuda_allocated_bytes": 74567100928.0,
+        "peak_cuda_reserved_bytes": 91534393344.0,
+        "input_tokens_per_second": 32967.35892444639,
+        "launcher_wall_seconds": 94.6510594766587,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.655626927502453,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.879469871520996e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "sharding": "fsdp2"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.806490850634873,
+          "input_tokens_per_second": 32967.35892444639,
+          "step_seconds": {
+            "mean": 3.9754866383736953,
+            "p50": 3.961570620071143,
+            "p95": 4.03332301126793,
+            "values": [
+              3.957674034871161,
+              4.046100628562272,
+              3.9489571955055,
+              3.9676096942275763,
+              3.96209551487118,
+              3.9610457252711058,
+              4.009593150578439,
+              3.9508171631023288
+            ]
+          }
         }
       },
       {
@@ -311,9 +959,21 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "LauncherNonzeroExit",
+        "launcher_wall_seconds": 245.2234146632254,
         "features": {
-          "optimizer": "adamw_8bit"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_8bit",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -322,9 +982,60 @@
         "role": "combination",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "optimizer_8bit",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 44.36566752754152,
+        "warmup_seconds": 22.03920723963529,
+        "measurement_seconds": 27.67048449255526,
+        "peak_cuda_allocated_bytes": 160003012096.0,
+        "peak_cuda_reserved_bytes": 176716513280.0,
+        "input_tokens_per_second": 37895.108062965766,
+        "launcher_wall_seconds": 99.50748797692358,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 9.240358545444906,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.879469871520996e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_8bit",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "off",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 27.67048449255526,
+          "input_tokens_per_second": 37895.108062965766,
+          "step_seconds": {
+            "mean": 3.458335599862039,
+            "p50": 3.4584416495636106,
+            "p95": 3.4710310338530688,
+            "values": [
+              3.45065095461905,
+              3.4605261934921145,
+              3.4520096965134144,
+              3.465397536754608,
+              3.4617694541811943,
+              3.4563571056351066,
+              3.4740644553676248,
+              3.4459094023332
+            ]
+          }
         }
       },
       {
@@ -333,9 +1044,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 75.11147142667323,
+        "warmup_seconds": 25.605418694205582,
+        "measurement_seconds": 59.64849857520312,
+        "peak_cuda_allocated_bytes": 74569198080.0,
+        "peak_cuda_reserved_bytes": 92448751616.0,
+        "input_tokens_per_second": 17579.252203271895,
+        "launcher_wall_seconds": 165.2831255523488,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 43.28816758655012,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.885057806968689e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
           "precision": "float8_tensorwise"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 59.64849857520312,
+          "input_tokens_per_second": 17579.252203271895,
+          "step_seconds": {
+            "mean": 7.4555111117661,
+            "p50": 7.4151566424407065,
+            "p95": 7.619036310724914,
+            "values": [
+              7.4460243647918105,
+              7.7107554115355015,
+              7.448700837790966,
+              7.419311084784567,
+              7.411002200096846,
+              7.401592184789479,
+              7.404495759867132,
+              7.402207050472498
+            ]
+          }
         }
       },
       {
@@ -344,8 +1106,20 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "LauncherNonzeroExit",
+        "launcher_wall_seconds": 124.38727129530162,
         "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
           "precision": "float8_rowwise"
         }
       },
@@ -355,8 +1129,23 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "NumericalMismatch",
+        "launcher_wall_seconds": 83.46983744297177,
+        "smoke_checks": {
+          "status": "initializing"
+        },
         "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
           "precision": "mxfp8"
         }
       },
@@ -366,8 +1155,20 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "unavailable",
+        "exit_code": 1,
+        "failure_type": "UnsupportedFeature",
+        "launcher_wall_seconds": 2.0878227530047297,
         "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
           "precision": "nvfp4"
         }
       },
@@ -377,9 +1178,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 40.963302766904235,
+        "warmup_seconds": 74.16427087038755,
+        "measurement_seconds": 20.669800196774304,
+        "peak_cuda_allocated_bytes": 66410447872.0,
+        "peak_cuda_reserved_bytes": 89074434048.0,
+        "input_tokens_per_second": 50729.856603240856,
+        "launcher_wall_seconds": 141.61855036951602,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.04203079175204,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "compile": "on"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 20.669800196774304,
+          "input_tokens_per_second": 50729.856603240856,
+          "step_seconds": {
+            "mean": 2.583291221759282,
+            "p50": 2.5106619871221483,
+            "p95": 2.9002266970928754,
+            "values": [
+              2.504419251345098,
+              2.5016709975898266,
+              2.5006530471146107,
+              2.509479656815529,
+              2.513554422184825,
+              3.10526289511472,
+              2.51944518648088,
+              2.5118443174287677
+            ]
+          }
         }
       },
       {
@@ -388,9 +1240,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 41.63283286988735,
+        "warmup_seconds": 18.893963740207255,
+        "measurement_seconds": 20.824589198455215,
+        "peak_cuda_allocated_bytes": 74568149504.0,
+        "peak_cuda_reserved_bytes": 91532296192.0,
+        "input_tokens_per_second": 50352.78199282722,
+        "launcher_wall_seconds": 86.98056698776782,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 6.591225676238537,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.879469871520996e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "compile": "on"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 20.824589198455215,
+          "input_tokens_per_second": 50352.78199282722,
+          "step_seconds": {
+            "mean": 2.602613606955856,
+            "p50": 2.5641338261775672,
+            "p95": 2.7708603638224303,
+            "values": [
+              2.5616617742925882,
+              2.5539702251553535,
+              2.563600621186197,
+              2.875746624544263,
+              2.553082217462361,
+              2.572108767926693,
+              2.5646670311689377,
+              2.5760715939104557
+            ]
+          }
         }
       },
       {
@@ -399,9 +1302,21 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "fp8_tensorwise",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "LauncherNonzeroExit",
+        "launcher_wall_seconds": 244.82544779591262,
         "features": {
-          "compile": "on"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "float8_tensorwise"
         }
       },
       {
@@ -410,10 +1325,60 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "compiled_fp8_tensorwise",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 42.10806045681238,
+        "warmup_seconds": 103.71425082162023,
+        "measurement_seconds": 18.319194791838527,
+        "peak_cuda_allocated_bytes": 74466700800.0,
+        "peak_cuda_reserved_bytes": 91375009792.0,
+        "input_tokens_per_second": 57239.197023395165,
+        "launcher_wall_seconds": 169.5015849713236,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 9.291996189393103,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.883195161819458e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
           "float8_all_gather": "on",
-          "compile": "on"
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "float8_tensorwise"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 18.319194791838527,
+          "input_tokens_per_second": 57239.197023395165,
+          "step_seconds": {
+            "mean": 2.2894572927616537,
+            "p50": 2.2178553324192762,
+            "p95": 2.5874804886523632,
+            "values": [
+              2.217706930823624,
+              2.222857717424631,
+              2.2180037340149283,
+              2.225353500805795,
+              2.217490310780704,
+              2.2143939239904284,
+              2.7824719436466694,
+              2.2173802806064487
+            ]
+          }
         }
       },
       {
@@ -422,9 +1387,24 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "mxfp8",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
+        "failure_type": "NumericalMismatch",
+        "launcher_wall_seconds": 22.039576772600412,
+        "smoke_checks": {
+          "status": "initializing"
+        },
         "features": {
-          "compile": "on"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "mxfp8"
         }
       },
       {
@@ -433,8 +1413,61 @@
         "role": "combination",
         "microbatch_per_gpu": 1,
         "accumulation": 16,
-        "status": "pending",
-        "features": {}
+        "resolved_parent": "fp8_all_gather",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 40.52455595973879,
+        "warmup_seconds": 176.45074417628348,
+        "measurement_seconds": 25.930313102900982,
+        "peak_cuda_allocated_bytes": 49587514880.0,
+        "peak_cuda_reserved_bytes": 63367544832.0,
+        "input_tokens_per_second": 40438.23134101259,
+        "launcher_wall_seconds": 248.16344774421304,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 9.014731461182237,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.875744581222534e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "on",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "float8_tensorwise"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 25.930313102900982,
+          "input_tokens_per_second": 40438.23134101259,
+          "step_seconds": {
+            "mean": 3.2403534756740555,
+            "p50": 3.1242984859272838,
+            "p95": 3.4789958658628164,
+            "values": [
+              3.096894694492221,
+              3.4494955809786916,
+              3.1517022773623466,
+              3.087867395952344,
+              3.492537459358573,
+              3.0967174656689167,
+              3.093765739351511,
+              3.4538471922278404
+            ]
+          }
+        }
       },
       {
         "name": "best_micro2",
@@ -442,8 +1475,61 @@
         "role": "combination",
         "microbatch_per_gpu": 2,
         "accumulation": 8,
-        "status": "pending",
-        "features": {}
+        "resolved_parent": "fp8_all_gather",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 41.03297263197601,
+        "warmup_seconds": 155.11809767689556,
+        "measurement_seconds": 20.273673334158957,
+        "peak_cuda_allocated_bytes": 57850998272.0,
+        "peak_cuda_reserved_bytes": 71305265152.0,
+        "input_tokens_per_second": 51721.066168766876,
+        "launcher_wall_seconds": 221.43242678046227,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 8.827784827910364,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.877607226371765e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "on",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "float8_tensorwise"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 20.273673334158957,
+          "input_tokens_per_second": 51721.066168766876,
+          "step_seconds": {
+            "mean": 2.5337948743253946,
+            "p50": 2.4443213706836104,
+            "p95": 2.7984860171563923,
+            "values": [
+              2.4345446433871984,
+              2.796166672371328,
+              2.439428897574544,
+              2.443509003147483,
+              2.435884135775268,
+              2.799734895117581,
+              2.445133738219738,
+              2.475957009010017
+            ]
+          }
+        }
       },
       {
         "name": "best_micro8",
@@ -451,8 +1537,61 @@
         "role": "combination",
         "microbatch_per_gpu": 8,
         "accumulation": 2,
-        "status": "pending",
-        "features": {}
+        "resolved_parent": "fp8_all_gather",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
+        "setup_seconds": 41.243869261816144,
+        "warmup_seconds": 175.22562294825912,
+        "measurement_seconds": 16.87163637764752,
+        "peak_cuda_allocated_bytes": 107695222272.0,
+        "peak_cuda_reserved_bytes": 123945877504.0,
+        "input_tokens_per_second": 62150.22517846649,
+        "launcher_wall_seconds": 238.91509100794792,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 9.306781398132443,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 1.0058283805847168e-05,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "on",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "float8_tensorwise"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 16.87163637764752,
+          "input_tokens_per_second": 62150.22517846649,
+          "step_seconds": {
+            "mean": 2.1085434461710975,
+            "p50": 2.1116298716515303,
+            "p95": 2.1171711031813176,
+            "values": [
+              2.109737050719559,
+              2.1014428371563554,
+              2.1135226925835013,
+              2.0969057762995362,
+              2.0989805264398456,
+              2.1136459251865745,
+              2.1174387894570827,
+              2.1166739715263247
+            ]
+          }
+        }
       },
       {
         "name": "best_micro16",
@@ -460,8 +1599,19 @@
         "role": "combination",
         "microbatch_per_gpu": 16,
         "accumulation": 1,
-        "status": "pending",
-        "features": {}
+        "resolved_parent": "best_micro8",
+        "profile_steps": 0,
+        "status": "initializing",
+        "features": {
+          "float8_all_gather": "on",
+          "optimizer": "adamw_fp32",
+          "attention": "flash_attn4",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "float8_tensorwise"
+        }
       }
     ],
     "baseline_result": {
@@ -528,64 +1678,63 @@
       }
     },
     "fastest_completed_profile": {
-      "name": "baseline",
-      "parent": null,
-      "role": "baseline",
-      "microbatch_per_gpu": 4,
-      "accumulation": 4,
-      "profile_steps": 1,
-      "resolved_parent": null,
+      "name": "best_micro8",
+      "parent": "@best",
+      "role": "combination",
+      "microbatch_per_gpu": 8,
+      "accumulation": 2,
+      "resolved_parent": "fp8_all_gather",
+      "profile_steps": 0,
       "status": "completed",
       "exit_code": 0,
-      "setup_seconds": 36.08775650989264,
-      "warmup_seconds": 27.831373455002904,
-      "measurement_seconds": 72.1459333281964,
-      "peak_cuda_allocated_bytes": 66474954240.0,
-      "peak_cuda_reserved_bytes": 89357549568.0,
-      "profiler_seconds": 24.985151136294007,
-      "input_tokens_per_second": 14534.097094980552,
-      "launcher_wall_seconds": 169.46867564693093,
+      "setup_seconds": 41.243869261816144,
+      "warmup_seconds": 175.22562294825912,
+      "measurement_seconds": 16.87163637764752,
+      "peak_cuda_allocated_bytes": 107695222272.0,
+      "peak_cuda_reserved_bytes": 123945877504.0,
+      "input_tokens_per_second": 62150.22517846649,
+      "launcher_wall_seconds": 238.91509100794792,
       "smoke_checks": {
         "status": "passed",
-        "seconds": 1.455891908146441,
+        "seconds": 9.306781398132443,
         "scope": "Small functional output/gradient checks; no quality claim"
       },
       "optimizer_update_check": {
         "status": "passed",
         "sampled_elements": 1024,
-        "maximum_local_absolute_change": 9.883195161819458e-06,
+        "maximum_local_absolute_change": 1.0058283805847168e-05,
         "any_rank_changed": true,
         "dtype": "torch.float32"
       },
       "features": {
-        "float8_all_gather": "off",
+        "float8_all_gather": "on",
         "optimizer": "adamw_fp32",
-        "attention": "sdpa_auto",
+        "attention": "flash_attn4",
         "kernels": "none",
         "checkpointing": "full",
-        "sharding": "full_shard",
-        "compile": "off",
-        "precision": "bf16"
+        "sharding": "fsdp2",
+        "compile": "on",
+        "precision": "float8_tensorwise"
       },
       "throughput": {
         "measured_optimizer_steps": 8,
         "input_tokens_per_step": 131072,
         "measured_input_tokens": 1048576,
-        "measured_wall_seconds": 72.1459333281964,
-        "input_tokens_per_second": 14534.097094980552,
+        "measured_wall_seconds": 16.87163637764752,
+        "input_tokens_per_second": 62150.22517846649,
         "step_seconds": {
-          "mean": 9.01783718378283,
-          "p50": 9.018747204449028,
-          "p95": 9.079630694631486,
+          "mean": 2.1085434461710975,
+          "p50": 2.1116298716515303,
+          "p95": 2.1171711031813176,
           "values": [
-            9.014305334538221,
-            8.972332469187677,
-            9.074345273897052,
-            8.971910890191793,
-            8.974714623764157,
-            9.082476690411568,
-            9.029423113912344,
-            9.023189074359834
+            2.109737050719559,
+            2.1014428371563554,
+            2.1135226925835013,
+            2.0969057762995362,
+            2.0989805264398456,
+            2.1136459251865745,
+            2.1174387894570827,
+            2.1166739715263247
           ]
         }
       }

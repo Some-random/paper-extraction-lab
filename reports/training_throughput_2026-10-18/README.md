@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T18:12:03-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T19:12:32-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T18:12:02-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T19:12:31-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
@@ -29,36 +29,36 @@ Allocation: **2 × B200 180GB**. Scheduler status: **running**.
 | Profile | Parent | Attention / precision | Status | Input tokens/s | Peak allocated GiB |
 |:---|:---|:---|:---|---:|---:|
 | baseline | — | sdpa_auto / bf16 | completed | 14,534 | 61.91 |
-| attention_flash | baseline | sdpa_flash / bf16 | initializing | — | — |
-| attention_cudnn | baseline | sdpa_cudnn / — | pending | — | — |
-| attention_fa4 | baseline | flash_attn4 / — | pending | — | — |
-| loss_liger | baseline | — / — | pending | — | — |
-| loss_cce | baseline | — / — | pending | — | — |
-| liger_pointwise | loss_liger | — / — | pending | — | — |
-| best_bf16_kernels | baseline | @best:attention / — | pending | — | — |
-| checkpoint_off | best_bf16_kernels | — / — | pending | — | — |
-| memory_baseline_micro2 | best_bf16_kernels | — / — | pending | — | — |
-| checkpoint_off_micro2 | memory_baseline_micro2 | — / — | pending | — | — |
-| memory_baseline_micro1 | best_bf16_kernels | — / — | pending | — | — |
-| checkpoint_off_micro1 | memory_baseline_micro1 | — / — | pending | — | — |
-| checkpoint_selective | best_bf16_kernels | — / — | pending | — | — |
-| shard_grad | best_bf16_kernels | — / — | pending | — | — |
-| fsdp2 | best_bf16_kernels | — / — | pending | — | — |
-| optimizer_8bit | fsdp2 | — / — | pending | — | — |
-| optimizer_8bit_no_recompute | optimizer_8bit | — / — | pending | — | — |
-| fp8_tensorwise | fsdp2 | — / float8_tensorwise | pending | — | — |
-| fp8_rowwise | fsdp2 | — / float8_rowwise | pending | — | — |
-| mxfp8 | fsdp2 | — / mxfp8 | pending | — | — |
-| nvfp4 | fsdp2 | — / nvfp4 | pending | — | — |
-| compiled_fsdp1 | best_bf16_kernels | — / — | pending | — | — |
-| compiled_fsdp2 | fsdp2 | — / — | pending | — | — |
-| compiled_fp8_tensorwise | fp8_tensorwise | — / — | pending | — | — |
-| fp8_all_gather | compiled_fp8_tensorwise | — / — | pending | — | — |
-| compiled_mxfp8 | mxfp8 | — / — | pending | — | — |
-| best_micro1 | @best | — / — | pending | — | — |
-| best_micro2 | @best | — / — | pending | — | — |
-| best_micro8 | @best | — / — | pending | — | — |
-| best_micro16 | @best | — / — | pending | — | — |
+| attention_flash | baseline | sdpa_flash / bf16 | failed — RuntimeError | — | — |
+| attention_cudnn | baseline | sdpa_cudnn / bf16 | completed | 32,008 | 61.85 |
+| attention_fa4 | baseline | flash_attn4 / bf16 | completed | 33,318 | 61.85 |
+| loss_liger | baseline | sdpa_auto / bf16 | completed | 14,524 | 38.32 |
+| loss_cce | baseline | sdpa_auto / bf16 | completed | 13,721 | 38.32 |
+| liger_pointwise | loss_liger | sdpa_auto / bf16 | failed — LauncherNonzeroExit | — | — |
+| best_bf16_kernels | baseline | flash_attn4 / bf16 | completed | 33,323 | 61.85 |
+| checkpoint_off | best_bf16_kernels | flash_attn4 / bf16 | completed | 42,640 | 152.57 |
+| memory_baseline_micro2 | best_bf16_kernels | flash_attn4 / bf16 | completed | 32,095 | 46.37 |
+| checkpoint_off_micro2 | memory_baseline_micro2 | flash_attn4 / bf16 | completed | 41,006 | 91.74 |
+| memory_baseline_micro1 | best_bf16_kernels | flash_attn4 / bf16 | completed | 30,240 | 38.64 |
+| checkpoint_off_micro1 | memory_baseline_micro1 | flash_attn4 / bf16 | completed | 38,312 | 61.32 |
+| checkpoint_selective | best_bf16_kernels | flash_attn4 / bf16 | failed — LauncherNonzeroExit | — | — |
+| shard_grad | best_bf16_kernels | flash_attn4 / bf16 | completed | 33,835 | 68.43 |
+| fsdp2 | best_bf16_kernels | flash_attn4 / bf16 | completed | 32,967 | 69.45 |
+| optimizer_8bit | fsdp2 | flash_attn4 / bf16 | failed — LauncherNonzeroExit | — | — |
+| optimizer_8bit_no_recompute | optimizer_8bit | flash_attn4 / bf16 | completed | 37,895 | 149.01 |
+| fp8_tensorwise | fsdp2 | flash_attn4 / float8_tensorwise | completed | 17,579 | 69.45 |
+| fp8_rowwise | fsdp2 | flash_attn4 / float8_rowwise | failed — LauncherNonzeroExit | — | — |
+| mxfp8 | fsdp2 | flash_attn4 / mxfp8 | failed — NumericalMismatch | — | — |
+| nvfp4 | fsdp2 | flash_attn4 / nvfp4 | unavailable — UnsupportedFeature | — | — |
+| compiled_fsdp1 | best_bf16_kernels | flash_attn4 / bf16 | completed | 50,730 | 61.85 |
+| compiled_fsdp2 | fsdp2 | flash_attn4 / bf16 | completed | 50,353 | 69.45 |
+| compiled_fp8_tensorwise | fp8_tensorwise | flash_attn4 / float8_tensorwise | failed — LauncherNonzeroExit | — | — |
+| fp8_all_gather | compiled_fp8_tensorwise | flash_attn4 / float8_tensorwise | completed | 57,239 | 69.35 |
+| compiled_mxfp8 | mxfp8 | flash_attn4 / mxfp8 | failed — NumericalMismatch | — | — |
+| best_micro1 | fp8_all_gather | flash_attn4 / float8_tensorwise | completed | 40,438 | 46.18 |
+| best_micro2 | fp8_all_gather | flash_attn4 / float8_tensorwise | completed | 51,721 | 53.88 |
+| best_micro8 | fp8_all_gather | flash_attn4 / float8_tensorwise | completed | 62,150 | 100.30 |
+| best_micro16 | best_micro8 | flash_attn4 / float8_tensorwise | initializing | — | — |
 
 Full feature settings, timings and retained failures are in the [sanitized results](results_242576.json).
 
@@ -190,36 +190,36 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 | Microbatch/GPU | Accumulation | Status | Measured input tokens/s |
 |---:|---:|:---|---:|
 | 4 | 4 | completed | 14,534 |
-| 4 | 4 | initializing | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 2 | 8 | pending | — |
-| 2 | 8 | pending | — |
-| 1 | 16 | pending | — |
-| 1 | 16 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 4 | 4 | pending | — |
-| 1 | 16 | pending | — |
-| 2 | 8 | pending | — |
-| 8 | 2 | pending | — |
-| 16 | 1 | pending | — |
+| 4 | 4 | failed — RuntimeError | — |
+| 4 | 4 | completed | 32,008 |
+| 4 | 4 | completed | 33,318 |
+| 4 | 4 | completed | 14,524 |
+| 4 | 4 | completed | 13,721 |
+| 4 | 4 | failed — LauncherNonzeroExit | — |
+| 4 | 4 | completed | 33,323 |
+| 4 | 4 | completed | 42,640 |
+| 2 | 8 | completed | 32,095 |
+| 2 | 8 | completed | 41,006 |
+| 1 | 16 | completed | 30,240 |
+| 1 | 16 | completed | 38,312 |
+| 4 | 4 | failed — LauncherNonzeroExit | — |
+| 4 | 4 | completed | 33,835 |
+| 4 | 4 | completed | 32,967 |
+| 4 | 4 | failed — LauncherNonzeroExit | — |
+| 4 | 4 | completed | 37,895 |
+| 4 | 4 | completed | 17,579 |
+| 4 | 4 | failed — LauncherNonzeroExit | — |
+| 4 | 4 | failed — NumericalMismatch | — |
+| 4 | 4 | unavailable — UnsupportedFeature | — |
+| 4 | 4 | completed | 50,730 |
+| 4 | 4 | completed | 50,353 |
+| 4 | 4 | failed — LauncherNonzeroExit | — |
+| 4 | 4 | completed | 57,239 |
+| 4 | 4 | failed — NumericalMismatch | — |
+| 1 | 16 | completed | 40,438 |
+| 2 | 8 | completed | 51,721 |
+| 8 | 2 | completed | 62,150 |
+| 16 | 1 | initializing | — |
 
 ## What the measurement covers
 
