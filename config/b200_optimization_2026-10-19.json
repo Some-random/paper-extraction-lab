@@ -1,0 +1,402 @@
+{
+  "run_id": "b200_optimization_2026-10-19",
+  "comparison_group": "b200_optimization_2026-10-19",
+  "purpose": "Controlled B200 training optimization sweep authorized by the user, with baseline, feature ablations and selected combinations",
+  "model_config": "config/qwen3_4b_throughput_model.json",
+  "model_config_sha256": "304b2545a258d35620f1d4bf46940c0471d9baa00715ff8e77f84c2fca5057c1",
+  "world_size": 2,
+  "sequence_length": 4096,
+  "global_batch_sequences": 32,
+  "warmup_optimizer_steps": 3,
+  "measured_optimizer_steps": 8,
+  "environment_root": ".b200-opt-venv",
+  "environment_preflight": "experiments/b200_optimization_2026-10-19/environment_preflight.json",
+  "registry_directory": "experiments/training_throughput_2026-10-18",
+  "report_directory": "reports/training_throughput_2026-10-18",
+  "profiles": [
+    {
+      "name": "baseline",
+      "parent": null,
+      "role": "baseline",
+      "features": {
+        "attention": "sdpa_auto",
+        "kernels": "none",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "off",
+        "precision": "bf16",
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "profile_steps": 1
+    },
+    {
+      "name": "attention_flash",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "attention": "sdpa_flash"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "profile_steps": 1
+    },
+    {
+      "name": "attention_cudnn",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "attention": "sdpa_cudnn"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "profile_steps": 1
+    },
+    {
+      "name": "attention_fa4",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "attention": "flash_attn4"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "profile_steps": 1
+    },
+    {
+      "name": "loss_liger",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "kernels": "liger_loss"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "loss_cce",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "kernels": "cce"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "liger_pointwise",
+      "parent": "loss_liger",
+      "role": "tuning",
+      "features": {
+        "kernels": "liger_full"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "best_bf16_kernels",
+      "parent": "baseline",
+      "role": "combination",
+      "features": {
+        "attention": "@best:attention",
+        "kernels": "@best:kernels"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "feature_candidates": {
+        "attention": [
+          "baseline",
+          "attention_flash",
+          "attention_cudnn",
+          "attention_fa4"
+        ],
+        "kernels": [
+          "baseline",
+          "loss_liger",
+          "loss_cce",
+          "liger_pointwise"
+        ]
+      }
+    },
+    {
+      "name": "checkpoint_off",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "memory_baseline_micro2",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {},
+      "microbatch_per_gpu": 2,
+      "accumulation": 8
+    },
+    {
+      "name": "checkpoint_off_micro2",
+      "parent": "memory_baseline_micro2",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 2,
+      "accumulation": 8
+    },
+    {
+      "name": "memory_baseline_micro1",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {},
+      "microbatch_per_gpu": 1,
+      "accumulation": 16
+    },
+    {
+      "name": "checkpoint_off_micro1",
+      "parent": "memory_baseline_micro1",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 1,
+      "accumulation": 16
+    },
+    {
+      "name": "checkpoint_selective",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "selective"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "shard_grad",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "sharding": "shard_grad_op"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "fsdp2",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "sharding": "fsdp2"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "optimizer_8bit",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "optimizer": "adamw_8bit"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "optimizer_8bit_no_recompute",
+      "parent": "optimizer_8bit",
+      "role": "combination",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "fp8_tensorwise",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "precision": "float8_tensorwise"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "fp8_rowwise",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "precision": "float8_rowwise"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "mxfp8",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "precision": "mxfp8"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "nvfp4",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "precision": "nvfp4"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4
+    },
+    {
+      "name": "compiled_fsdp1",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "compiled_fsdp2",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "compiled_fp8_tensorwise",
+      "parent": "fp8_tensorwise",
+      "role": "tuning",
+      "features": {
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "fp8_all_gather",
+      "parent": "compiled_fp8_tensorwise",
+      "role": "tuning",
+      "features": {
+        "float8_all_gather": "on",
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "compiled_mxfp8",
+      "parent": "mxfp8",
+      "role": "tuning",
+      "features": {
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 4,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "best_micro1",
+      "parent": "@best",
+      "role": "combination",
+      "features": {},
+      "microbatch_per_gpu": 1,
+      "accumulation": 16
+    },
+    {
+      "name": "best_micro2",
+      "parent": "@best",
+      "role": "combination",
+      "features": {},
+      "microbatch_per_gpu": 2,
+      "accumulation": 8
+    },
+    {
+      "name": "best_micro8",
+      "parent": "@best",
+      "role": "combination",
+      "features": {},
+      "microbatch_per_gpu": 8,
+      "accumulation": 2
+    },
+    {
+      "name": "best_micro16",
+      "parent": "@best",
+      "role": "combination",
+      "features": {},
+      "microbatch_per_gpu": 16,
+      "accumulation": 1
+    }
+  ],
+  "bounds": {
+    "suite_seconds": 6600,
+    "profile_seconds": 420,
+    "compile_profile_seconds": 600,
+    "allocation_seconds": 7200,
+    "maximum_new_gpu_hours": 4.0,
+    "simultaneous_optimization_gpus_maximum": 2,
+    "new_environment_and_artifact_bytes": 17179869184,
+    "new_compile_cache_bytes": 4294967296,
+    "new_log_bytes": 67108864,
+    "new_run_artifact_bytes": 268435456,
+    "minimum_free_bytes": 68719476736
+  },
+  "authorization": "User explicitly requested trying every useful B200 optimization. Two B200s for up to two hours, existing paper/evaluation jobs and original benchmark results preserved. No model weight download or saved training checkpoint.",
+  "unsupported_integration_policy": "Record package/API incompatibility with evidence; never call unsupported, emulated or fallback execution a successful native optimized training profile.",
+  "measurement_scope": "Synthetic fixed-shape throughput plus numerical smoke checks; no biological capability, CPT convergence or long-run stability claim.",
+  "overlay_lock": "config/b200_optimization_overlay.lock",
+  "baseline_environment_and_artifact_bytes": 384573681,
+  "baseline_checked_epoch": 1792458735.8967335,
+  "runner_sha256": "d9cd99457183937911237bc68af080bfe7bbaa4750992578957c70864280417c",
+  "suite_runner_sha256": "93158962529144e2f1f62170af2142c85d67ac9fffd074b9c35127b5c98a2fe8",
+  "overlay_lock_sha256": "be5e3e7b919073c3ea590e5d1f4bb9083ad86ef5ff2a9e089289e13036479ec2",
+  "environment_packages": {
+    "apache-tvm-ffi": "0.1.15",
+    "cuda-bindings": "12.9.10",
+    "cut-cross-entropy": "25.1.1",
+    "flash-attn-4": "4.0.0b35",
+    "liger-kernel": "0.8.4",
+    "nvidia-cutlass-dsl": "4.8.1",
+    "quack-kernels": "0.6.5",
+    "torch": "2.8.0",
+    "torch-c-dlpack-ext": "0.1.5",
+    "torchao": "0.13.0",
+    "transformers": "4.57.1",
+    "triton": "3.4.0"
+  },
+  "unavailable_features": {
+    "coat": {
+      "status": "incompatible_drop_in_recipe",
+      "evidence": "fp8-coat 1.0.11 requires triton==3.1.0 and transformers==4.45.2, while this Qwen3 stack uses 3.4.0/4.57.1; official activation classes target Llama and FSDP2 integration remains a TODO.",
+      "sources": [
+        "https://pypi.org/pypi/fp8-coat/1.0.11/json",
+        "https://github.com/NVlabs/COAT"
+      ]
+    },
+    "nvfp4": {
+      "status": "no_compatible_binary_training_binding",
+      "evidence": "Transformer Engine provides real NVFP4BlockScaling training, but transformer-engine-torch 2.20.2 on PyPI ships only a source tarball. Its current torch binding metadata also requires transformer_engine_cu13; source compilation or a different CUDA/PyTorch stack is outside this bounded binary overlay.",
+      "sources": [
+        "https://pypi.org/pypi/transformer-engine-torch/2.20.2/json",
+        "https://docs.nvidia.com/deeplearning/transformer-engine/features/low_precision_training/nvfp4/nvfp4.html"
+      ]
+    }
+  }
+}

@@ -33,8 +33,12 @@ PUBLIC_SCALARS = (
 PUBLIC_ARGUMENTS = (
     "sequence_length", "batch_size", "accumulation", "warmup", "steps",
     "max_runtime_seconds", "target_tokens", "seed", "activation_checkpointing", "sharding", "profile_steps",
+    "attention", "fused_kernels", "compile", "precision", "float8_all_gather", "optimizer",
 )
 VERIFICATION_GROUP = "throughput_verification_2026-10-19"
+OPTIMIZATION_GROUP = "b200_optimization_2026-10-19"
+OPTIMIZATION_FEATURES = ("attention", "kernels", "checkpointing", "sharding", "compile", "precision",
+                         "float8_all_gather", "optimizer")
 MEASUREMENT_FIELDS = ("measured_optimizer_steps", "input_tokens_per_step", "measured_input_tokens",
                       "measured_wall_seconds", "input_tokens_per_second", "step_seconds")
 
@@ -64,7 +68,16 @@ def sanitize_profile(profile):
             ("name", "role", "microbatch_per_gpu", "accumulation", "activation_checkpointing", "sharding",
              "profile_steps", "status", "exit_code", "input_tokens_per_second", "measured_optimizer_steps",
              "input_tokens_per_step", "peak_cuda_allocated_bytes", "peak_cuda_reserved_bytes", "failure_type",
-             "setup_seconds", "warmup_seconds", "measurement_seconds", "launcher_wall_seconds")}
+             "setup_seconds", "warmup_seconds", "measurement_seconds", "launcher_wall_seconds",
+             "parent", "resolved_parent", "comparison_scope", "profiler_seconds")}
+    for key in ("smoke_checks", "optimizer_update_check"):
+        if isinstance(profile.get(key), dict):
+            safe[key] = {name: public_value(value) for name, value in profile[key].items()
+                         if name in ("status", "scope", "seconds", "dtype", "any_rank_changed",
+                                     "sampled_elements", "maximum_local_absolute_change")}
+    if isinstance(profile.get("features"), dict):
+        safe["features"] = {key: public_value(value) for key, value in profile["features"].items()
+                            if key in OPTIMIZATION_FEATURES and isinstance(value, (str, bool))}
     if "throughput" in profile:
         safe["throughput"] = {key: public_value(value) for key, value in profile["throughput"].items()
                               if key in MEASUREMENT_FIELDS}
@@ -117,7 +130,8 @@ def sanitize_result(result, job_id):
                          ("rank", "gpu", "total_memory_bytes", "compute_capability") if key in item}
                         for item in result.get("hardware", [])]
     safe["packages"] = {key: public_value(value) for key, value in result.get("packages", {}).items()
-                        if key in ("torch", "transformers")}
+                        if key in ("torch", "transformers", "triton", "torchao", "liger-kernel",
+                                   "cut-cross-entropy", "flash-attn-4")}
     safe.update(sanitize_timing_diagnostics(result))
     if "suite" in result:
         suite = result["suite"]
@@ -282,6 +296,8 @@ def render_verification(jobs):
         profiles = job.get("result", {}).get("suite", {}).get("profiles", [])
         if not profiles:
             continue
+        lines.extend([f"Suite status: **{cell(suite.get('status', 'unknown'))}**. "
+                      f"Stop reason: **{cell(suite.get('stop_reason') or 'none')}**.", ""])
         lines.extend([f"### Verification job {job['job_id']}", "",
                       "| Profile / role | Checkpointing / sharding | Microbatch × accumulation | Status | Input tokens/s | Setup s | Warmup s | Timed training s | Profiler s |",
                       "|:---|:---|:---|:---|---:|---:|---:|---:|---:|"])
@@ -322,6 +338,63 @@ def render_verification(jobs):
     return lines
 
 
+def render_optimization(jobs):
+    selected = [job for job in jobs if job.get("comparison_group") == OPTIMIZATION_GROUP]
+    if not selected:
+        return []
+    lines = ["## B200 optimization sweep", "",
+             "A controlled two-B200 sweep keeps the Qwen3-4B architecture, 4,096-token context and "
+             "131,072 input positions per optimizer update fixed. It compares attention backends, fused losses "
+             "and pointwise kernels, checkpointing, sharding, compilation and native low precision. "
+             "Individual changes precede selected combinations; unavailable features and failures stay visible.", "",
+             "This allocation is bounded to **two hours / four GPU-hours**, with a persistent 110-minute suite "
+             "budget. Setup and warmup are outside steady training throughput. Warmup includes compilation "
+             "where enabled. Numerical smoke checks establish executable compatibility, not biological "
+             "quality or long-run convergence. [Evidence and test rationale](training_speedups_2026-10-19.md).", ""]
+    lines.extend(["The planned comparisons include PyTorch Flash/cuDNN and FlashAttention-4; Liger and "
+                  "Cut Cross-Entropy; activation recomputation and batch sizes; FSDP2; compilation; "
+                  "native FP8/MXFP8 and FP8 communication; and an explicitly labeled 8-bit AdamW-state "
+                  "variant. The final combinations use successful earlier measurements. "
+                  "Any options left by the time limit are shown as skipped.", "",
+                  "COAT's released integration requires incompatible library versions. Native NVFP4 "
+                  "requires a separate training-library build in this environment. Both remain "
+                  "unavailable here; neither is counted as an executed speed test.", ""])
+    for job in selected:
+        suite = job.get("result", {}).get("suite", {})
+        profiles = suite.get("profiles", [])
+        lines.extend([f"### Optimization job {job['job_id']}", "",
+                      f"Allocation: **{job.get('requested_gpus')} × {cell(job.get('target_gpu', 'unknown'))}**. "
+                      f"Scheduler status: **{cell(job['status'])}**.", ""])
+        completed = [(profile, completed_profile_rate(profile)) for profile in profiles]
+        completed = [(profile, rate) for profile, rate in completed if valid_rate(rate)]
+        if completed and job["status"] == "success":
+            best, rate = max(completed, key=lambda item: item[1])
+            baseline = next((value for profile, value in completed if profile.get("role") == "baseline"), None)
+            improvement = f"; **{rate / baseline:.2f}×** the new baseline" if valid_rate(baseline) else ""
+            lines.extend([f"Fastest completed profile: **{cell(best.get('name'))}**, **{rate:,.0f} input tokens/s**"
+                          f"{improvement}.", ""])
+        if not profiles:
+            lines.extend(["No profile measurements are available yet.", ""])
+            continue
+        lines.extend(["| Profile | Parent | Attention / precision | Status | Input tokens/s | Peak allocated GiB |",
+                      "|:---|:---|:---|:---|---:|---:|"])
+        for profile in profiles:
+            features = profile.get("features", {})
+            status = profile.get("status", "unknown")
+            if profile.get("failure_type"):
+                status += " — " + profile["failure_type"]
+            rate = completed_profile_rate(profile)
+            memory = profile.get("peak_cuda_allocated_bytes")
+            memory = f"{memory / 1024 ** 3:.2f}" if valid_rate(memory) else "—"
+            lines.append(f"| {cell(profile.get('name', 'unknown'))} | "
+                         f"{cell(profile.get('resolved_parent') or profile.get('parent') or '—')} | "
+                         f"{cell(features.get('attention', '—'))} / {cell(features.get('precision', '—'))} | "
+                         f"{cell(status)} | {format(rate, ',.0f') if valid_rate(rate) else '—'} | {memory} |")
+        lines.extend(["", "Full feature settings, timings and retained failures are in the "
+                      f"[sanitized results](results_{job['job_id']}.json).", ""])
+    return lines
+
+
 def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
     lines = ["# 4B training-throughput diagnostic", "",
              f"Report updated **{generated_at}**. Cluster snapshot: **{cluster.get('checked_at_pst', 'unknown')}**.", ""]
@@ -343,9 +416,11 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
             lines.extend(["**Scheduler query incomplete.** Some job states use the last observation; "
                           "see the status snapshot for query errors.", ""])
     lines.extend(["This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, "
-             "synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with "
-             "FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological "
+             "synthetic token IDs and a **4,096-token context**. The baseline runs BF16 computation with "
+             "FP32 master parameters and conventional AdamW optimizer states; optimization profiles identify "
+             "their precision and kernel changes. No pretrained weights or biological "
              "training corpus are downloaded for the benchmark.", ""])
+    lines.extend(render_optimization(jobs))
     lines.extend(render_verification(jobs))
     comparison = [job for job in jobs if job.get("comparison_group") in
                   {"2b200_vs_8a100", "gpu_allocation_comparison"}]
@@ -473,12 +548,13 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
                   "The timing includes synthetic-input transfers, forward/backward passes, optimizer updates and "
                   "the communication used by this allocation. The original matched comparison uses FSDP FULL_SHARD "
                   "and activation checkpointing. Verification tuning profiles list their different settings above. "
-                  "PyTorch SDPA attention is requested without torch.compile; observed backend evidence, when "
+                  "The original comparisons request PyTorch SDPA without torch.compile; observed backend evidence, when "
                   "available, is reported separately. Setup, warmup and profiling are outside the measured denominator.", "",
                   "Production corpus loading, biological learning quality, validation, checkpoint saving, restart "
                   "behavior and multi-node scaling are **not tested**. Queueing and interruptions are excluded "
                   "from the compute-time estimate. No full 200B-token training run has been started.", "",
-                  "Each requested allocation is bounded to 20 minutes and at most eight GPUs. "
+                  "The original comparison and verification allocations are bounded to 20 minutes and at most "
+                  "eight GPUs. The optimization allocation above uses two B200s for at most two hours. "
                   "No existing jobs are modified by this diagnostic.", ""])
     return "\n".join(lines)
 

@@ -625,3 +625,35 @@ outputs stay in the existing throughput registry so hourly reports and chat
 updates include them automatically. Measure the existing environment footprint
 in CPU preflight, rather than traversing the entire shared environment while
 holding a GPU allocation.
+
+## Authorized B200 optimization sweep
+
+On October 19 the user explicitly asked to try all useful B200 training
+optimizations from the reviewed literature. This authorizes a new bounded sweep
+in `config/b200_optimization_2026-10-19.json`: one two-B200 allocation of at most
+two hours (four additional GPU-hours), with a persistent 110-minute suite budget.
+Keep benchmark allocations sequential and retain the earlier A100/four/eight-B200
+requests and results. Use ordinary Slurm scheduling; briefly wiring dependencies
+is not an idle-capacity admission gate. Leave evaluation work untouched.
+
+Use new runner/suite files and an isolated `.b200-opt-venv` overlay. Preserve the
+original environment and frozen runner used by earlier queued jobs. CPU package
+and API preflight may install compatible binary wheels within 16 GiB of new
+environment/cache data, including at most 4 GiB of compiler caches. Keep logs and
+results within 256 MiB and shared free space above 64 GiB. Do not build large
+packages from source or download/save model weights. Paper acquisition retains
+its separate original limits and deadline.
+
+Test available BF16 attention backends, fused/chunked losses and pointwise
+kernels, compilation, FSDP2, checkpointing/sharding variants, and native FP8/MXFP8
+training. Include native FP4 or activation/optimizer compression only where a
+compatible executable training implementation is available; record incompatible
+research integrations explicitly rather than substituting BF16 or emulation.
+Hold the Qwen3-4B architecture, 4,096-token context and global batch of 32
+sequences fixed. Compare individual changes before selected combinations, reject
+failed numerical checks, preserve every failure, and report the original baseline
+separately from the fastest validated optimized profile. Synthetic throughput and
+numerical smoke checks do not establish biological quality or long-run stability.
+
+Register new job IDs in the existing throughput registry so the existing hourly
+GitHub and same-chat monitors include the sweep without resetting their deadlines.

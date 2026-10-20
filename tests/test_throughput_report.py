@@ -264,6 +264,35 @@ class TrainingThroughputReportTests(unittest.TestCase):
         self.build()
         self.assertIn("Setup, no GPU job submitted", (self.public / "README.md").read_text())
 
+    def test_optimization_features_budget_and_completed_winner_remain_explicit(self):
+        baseline = {"name": "baseline", "role": "baseline", "status": "completed", "exit_code": 0,
+                    "input_tokens_per_second": 14000, "features": {"attention": "sdpa_auto", "precision": "bf16"}}
+        fast = {"name": "native_fp8", "role": "tuning", "parent": "baseline", "status": "completed",
+                "exit_code": 0, "input_tokens_per_second": 21000,
+                "peak_cuda_allocated_bytes": 64 * 1024 ** 3,
+                "features": {"attention": "flash_attn4", "precision": "mxfp8", "private_path": "/dfs/private"}}
+        failed = {"name": "oom", "status": "failed", "exit_code": 1,
+                  "input_tokens_per_second": 999999, "failure_type": "OutOfMemoryError"}
+        result = report.sanitize_result({"suite": {"profiles": [baseline, fast, failed]}}, "222")
+        job = {"job_id": "222", "status": "success", "comparison_group": report.OPTIMIZATION_GROUP,
+               "requested_gpus": 2, "target_gpu": "B200", "result": result}
+        text = "\n".join(report.render_optimization([job]))
+        self.assertIn("two hours / four GPU-hours", text)
+        self.assertIn("**native_fp8**", text)
+        self.assertIn("**1.50×**", text)
+        self.assertIn("flash_attn4 / mxfp8", text)
+        self.assertIn("64.00", text)
+        self.assertNotIn("999,999", text)
+        self.assertNotIn("private_path", json.dumps(result))
+        job["status"] = "failed"
+        self.assertNotIn("Fastest completed profile:", "\n".join(report.render_optimization([job])))
+
+    def test_optimization_queue_has_no_invented_measurement(self):
+        text = "\n".join(report.render_optimization([{"job_id": "222", "status": "queued",
+            "comparison_group": report.OPTIMIZATION_GROUP, "requested_gpus": 2, "target_gpu": "B200"}]))
+        self.assertIn("No profile measurements are available yet", text)
+        self.assertNotIn("Fastest completed profile:", text)
+
     def test_invalid_job_id_cannot_write_arbitrary_public_file(self):
         self.launch(job="123")
         path = self.run / "launch_123.json"

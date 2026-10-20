@@ -199,6 +199,39 @@ class ChatUpdatesTests(unittest.TestCase):
                 monitor.enqueue(self.config, "生" * 23000)
             command.assert_not_called()
 
+    def test_full_optimization_sweep_and_previous_update_fit_chat_payload(self):
+        profiles = []
+        for index in range(32):
+            profiles.append({"name": f"optimized_profile_{index}", "role": "tuning",
+                             "status": "completed", "exit_code": 0,
+                             "input_tokens_per_second": 14521.807479872334,
+                             "microbatch_per_gpu": 4, "accumulation": 4,
+                             "setup_seconds": 101.43789654783905,
+                             "warmup_seconds": 36.22404126636684,
+                             "measurement_seconds": 72.20698948483914,
+                             "runtime_seconds": 234.8385501075536,
+                             "launcher_wall_seconds": 316.6443138467148,
+                             "peak_cuda_allocated_bytes": 66474954240,
+                             "peak_cuda_reserved_bytes": 89336578048,
+                             "features": {"attention": "flash_attn4", "kernels": "liger_full",
+                                          "checkpointing": "selective", "sharding": "fsdp2",
+                                          "compile": "on", "precision": "float8_tensorwise",
+                                          "float8_all_gather": "on", "optimizer": "adamw_8bit"},
+                             "throughput": {"input_tokens_per_second": 14521.807479872334,
+                                            "input_tokens_per_step": 131072,
+                                            "measured_input_tokens": 1048576,
+                                            "measured_optimizer_steps": 8,
+                                            "measured_wall_seconds": 72.20698948483914},
+                             "profiler": {"operators": [{"name": "private_kernel"}] * 1000}})
+        self.observed["gpu_jobs"].append({"job_id": "999", "gpus": 2, "gpu_type": "B200 180GB",
+                                          "status": "running", "scheduler_state": "RUNNING",
+                                          "suite": {"status": "running", "profiles": profiles}})
+        prompt = monitor.message(self.config, self.observed, self.observed)
+        self.assertLess(len(prompt.encode()), monitor.MAX_PROMPT_BYTES)
+        self.assertNotIn("private_kernel", prompt)
+        self.assertIn('"optimizer": "adamw_8bit"', prompt)
+        self.assertIn('"name": "optimized_profile_31"', prompt)
+
     def test_oserror_retains_actionable_errno_without_private_argument(self):
         def fail(*args):
             raise OSError(errno.E2BIG, "Argument list too long", "/private/thread-id")

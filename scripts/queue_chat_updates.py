@@ -58,6 +58,10 @@ def compact_profile(value):
                            "peak_cuda_reserved_bytes"))
     if isinstance(value, dict) and value.get("throughput"):
         result["throughput"] = compact_measurement(value["throughput"])
+    if isinstance(value, dict) and isinstance(value.get("features"), dict):
+        result["features"] = fields(value["features"],
+                                    ("attention", "kernels", "checkpointing", "sharding", "compile", "precision",
+                                     "float8_all_gather", "optimizer"))
     if isinstance(value, dict) and isinstance(value.get("profiler"), dict):
         elapsed = value["profiler"].get("elapsed_seconds")
         if isinstance(elapsed, (int, float)):
