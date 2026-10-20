@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T21:53:36-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T21:54:12-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T21:53:35-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T21:54:11-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
@@ -73,7 +73,7 @@ The two requests add at most **3.33 GPU-hours** (two B200s and eight A100s, 20 m
 | Job / allocation | Status | Baseline input tokens/s | Fastest completed tuning input tokens/s |
 |:---|:---|---:|---:|
 | 242255 / 2 × B200 180GB | success | 14,522 | — |
-| 242256 / 8 × A100 80GB | failed | — | — |
+| 242256 / 8 × A100 80GB | success | 21,897 | — |
 
 **Timing scope:** input tokens/s divides timed training tokens by timed training wall time. Setup and warmup are excluded. A separate post-measurement profiler update is also excluded; profiler operator/device durations can overlap and must not be added as a wall-time breakdown.
 
@@ -148,7 +148,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241366 | queued | 4 | B200 180GB | — | — |
 | 241367 | queued | 8 | B200 180GB | — | — |
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
-| 242256 | failed | 8 | NVIDIA A100-SXM4-80GB | 21,897 | 105.71 days |
+| 242256 | success | 8 | NVIDIA A100-SXM4-80GB | 21,897 | 105.71 days |
 | 242576 | success | 2 | NVIDIA B200 | 14,534 | 159.27 days |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
@@ -195,7 +195,7 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 
 ### Job 242256
 
-Status: **failed**. Sanitized diagnostics: [results_242256.json](results_242256.json).
+Status: **success**. Sanitized diagnostics: [results_242256.json](results_242256.json).
 
 Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per GPU: 4; gradient accumulation: 1.
 
