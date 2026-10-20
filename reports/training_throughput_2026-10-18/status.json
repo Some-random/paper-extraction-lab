@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-20T07:01:01-08:00",
+  "checked_at_pst": "2026-10-20T08:02:59-08:00",
   "watcher_status": "watching",
   "stop_reason": null,
   "delivery": "Local status files and optional GitHub reports; a separate session monitor queues chat updates",
@@ -146,8 +146,8 @@
       "admission_status": "released",
       "comparison_group": "a100_optimization_2026-10-20",
       "result_status": "running",
-      "failure_type": "RealDataBaselineNotComplete",
-      "input_tokens_per_second": null
+      "failure_type": null,
+      "input_tokens_per_second": 21868.615296486576
     }
   ]
 }

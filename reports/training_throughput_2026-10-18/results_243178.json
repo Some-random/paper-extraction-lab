@@ -2,24 +2,231 @@
   "status": "running",
   "started_utc": "2026-10-20T15:00:05.481782+00:00",
   "world_size": 8,
-  "failure_type": "RealDataBaselineNotComplete",
+  "completed_warmup_steps": 3,
+  "peak_cuda_allocated_bytes": 40327422976.0,
+  "peak_cuda_reserved_bytes": 49371152384.0,
+  "runtime_seconds": 691.9044345729053,
+  "setup_seconds": 68.17929195985198,
+  "warmup_seconds": 18.365018721669912,
+  "measurement_seconds": 605.3548347949982,
+  "compile_seconds": 0.0,
+  "first_warmup_seconds": 6.471322018653154,
+  "completed_optimizer_updates": 104,
+  "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+  "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+  "host_input_prepare_and_transfer_schedule_seconds": 0.06345491111278534,
+  "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
   "job_id": "243178",
   "arguments": {},
-  "hardware": [],
-  "packages": {},
+  "hardware": [
+    {
+      "rank": 0,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 1,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 2,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 3,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 4,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 5,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 6,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    {
+      "rank": 7,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85119205376,
+      "compute_capability": [
+        8,
+        0
+      ]
+    }
+  ],
+  "packages": {
+    "torch": "2.8.0",
+    "transformers": "4.57.1",
+    "torchao": "0.13.0",
+    "liger-kernel": "0.8.4",
+    "cut-cross-entropy": "25.1.1",
+    "flash-attn-4": "4.0.0b35",
+    "triton": "3.4.0"
+  },
+  "loss_summary": {
+    "first": 10.801312446594238,
+    "last": 6.614369869232178,
+    "mean": 7.359854188295874,
+    "finite": true,
+    "meaning": "Real biological text with random initial weights; throughput/stability only; no CPT biological quality claim"
+  },
+  "measurement_requirements": {
+    "minimum_optimizer_steps": 8,
+    "minimum_measured_seconds": 600.0,
+    "last_completed_update_end_seconds": 605.2953461688012,
+    "satisfied": true
+  },
+  "data": {
+    "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+    "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+    "token_count": 67108864,
+    "bytes": 268435456,
+    "source_records": 3564,
+    "dtype": "uint32_le",
+    "start_token": 0,
+    "replay": false,
+    "consumed_tokens": 13631488,
+    "measured_start_token": 393216,
+    "measured_tokens": 13238272,
+    "stop_reason": null,
+    "tokenizer": {
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "revision": "qwen3-4b-base-906bfd4b4dc7f14ee4320094d8b41684abff8539"
+    }
+  },
+  "chunk_rates": [
+    {
+      "first_update": 1,
+      "last_update": 10,
+      "seconds": 60.01558896154165,
+      "input_tokens": 1310720,
+      "input_tokens_per_second": 21839.659039919065,
+      "partial_window": false
+    },
+    {
+      "first_update": 11,
+      "last_update": 20,
+      "seconds": 60.20617615059018,
+      "input_tokens": 1310720,
+      "input_tokens_per_second": 21770.523952917603,
+      "partial_window": false
+    },
+    {
+      "first_update": 21,
+      "last_update": 31,
+      "seconds": 65.91170356981456,
+      "input_tokens": 1441792,
+      "input_tokens_per_second": 21874.597710448106,
+      "partial_window": false
+    },
+    {
+      "first_update": 32,
+      "last_update": 42,
+      "seconds": 65.84819890744984,
+      "input_tokens": 1441792,
+      "input_tokens_per_second": 21895.69379151053,
+      "partial_window": false
+    },
+    {
+      "first_update": 43,
+      "last_update": 53,
+      "seconds": 65.76604815199971,
+      "input_tokens": 1441792,
+      "input_tokens_per_second": 21923.044496572205,
+      "partial_window": false
+    },
+    {
+      "first_update": 54,
+      "last_update": 64,
+      "seconds": 65.76421110704541,
+      "input_tokens": 1441792,
+      "input_tokens_per_second": 21923.656890723938,
+      "partial_window": false
+    },
+    {
+      "first_update": 65,
+      "last_update": 75,
+      "seconds": 65.87174696289003,
+      "input_tokens": 1441792,
+      "input_tokens_per_second": 21887.866444657346,
+      "partial_window": false
+    },
+    {
+      "first_update": 76,
+      "last_update": 85,
+      "seconds": 60.06008403748274,
+      "input_tokens": 1310720,
+      "input_tokens_per_second": 21823.479287541395,
+      "partial_window": false
+    },
+    {
+      "first_update": 86,
+      "last_update": 96,
+      "seconds": 65.95357809774578,
+      "input_tokens": 1441792,
+      "input_tokens_per_second": 21860.709328964807,
+      "partial_window": false
+    },
+    {
+      "first_update": 97,
+      "last_update": 101,
+      "seconds": 29.898010222241282,
+      "input_tokens": 655360,
+      "input_tokens_per_second": 21919.853365775973,
+      "partial_window": true
+    }
+  ],
   "suite": {
     "status": "running",
-    "stage": "short_sweep",
+    "stage": "confirm_winner",
     "mode": "gpu_optimization_confirmation",
     "world_size": 8,
     "gpu_type": "a100",
     "sequence_length": 4096,
     "global_batch_sequences": 32,
     "input_tokens_per_update": 131072,
-    "tuning_speedup_over_baseline": null,
+    "tuning_speedup_over_baseline": 1.0,
     "candidate_speedup_over_baseline": null,
     "started_utc": "2026-10-20T15:00:05.481782+00:00",
-    "runtime_seconds": 12.91010046005249,
+    "runtime_seconds": 3759.580145597458,
     "stop_reason": null,
     "short_stop_reason": null,
     "correctness_scope": "Functional smoke and actual optimizer updates; no CPT quality or convergence claim",
@@ -34,8 +241,35 @@
         "accumulation": 1,
         "profile_steps": 1,
         "resolved_parent": null,
-        "status": "initializing",
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 149.81482639722526,
+        "warmup_seconds": 22.531700463965535,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 48.52327980659902,
+        "peak_cuda_allocated_bytes": 40327422976.0,
+        "peak_cuda_reserved_bytes": 49371152384.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00027767568826675415,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 10.63959968648851,
+        "profiler_seconds": 12.353972958400846,
+        "input_tokens_per_second": 21609.75111697616,
+        "launcher_wall_seconds": 312.89660200476646,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 4.419889722019434,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
@@ -45,7 +279,55 @@
           "sharding": "full_shard",
           "compile": "off",
           "precision": "bf16"
-        }
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 48.52327980659902,
+          "input_tokens_per_second": 21609.75111697616,
+          "step_seconds": {
+            "mean": 6.0394779946655035,
+            "p50": 5.9834300596266985,
+            "p95": 6.303181752935052,
+            "values": [
+              6.391293480992317,
+              5.964178582653403,
+              5.917456932365894,
+              5.9213098883628845,
+              5.983377730473876,
+              6.015179267153144,
+              6.139545686542988,
+              5.983482388779521
+            ],
+            "standard_deviation": 0.14797960057805618,
+            "coefficient_of_variation": 0.024502051453579643
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918426513671875,
+          "last": 7.658729076385498,
+          "mean": 9.268156468868256,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 48.522532323375344,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 48.522532323375344,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 21610.08401234774,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "attention_flash",
@@ -54,10 +336,29 @@
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "status": "failed",
+        "exit_code": 1,
         "measurement_kind": "synthetic_short_probe",
+        "failure_type": "RuntimeError",
+        "setup_seconds": 76.60199605301023,
+        "compile_seconds": 0.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "launcher_wall_seconds": 82.180583499372,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 0.28202918730676174,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
         "features": {
-          "attention": "sdpa_flash"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_flash",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -67,11 +368,94 @@
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 84.66353261470795,
+        "warmup_seconds": 12.92405859567225,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 31.891002343967557,
+        "peak_cuda_allocated_bytes": 40260314112.0,
+        "peak_cuda_reserved_bytes": 49052385280.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00025409460067749023,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.150074766948819,
+        "profiler_seconds": 9.583509419113398,
+        "input_tokens_per_second": 32879.995074797225,
+        "launcher_wall_seconds": 152.2871566619724,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 5.694937871769071,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "sdpa_cudnn"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.891002343967557,
+          "input_tokens_per_second": 32879.995074797225,
+          "step_seconds": {
+            "mean": 3.9243482924066484,
+            "p50": 3.891023132018745,
+            "p95": 4.075273885205388,
+            "values": [
+              3.9397516567260027,
+              3.8677017148584127,
+              3.874811325222254,
+              3.8881540540605783,
+              4.148247392848134,
+              3.8881009444594383,
+              3.8938922099769115,
+              3.8941270411014557
+            ],
+            "standard_deviation": 0.08695947819724288,
+            "coefficient_of_variation": 0.022158960346486997
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918558120727539,
+          "last": 7.658679485321045,
+          "mean": 9.268266379833221,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 31.4031077940017,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 31.4031077940017,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 33390.83529179517,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "loss_liger",
@@ -79,11 +463,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 83.35084294341505,
+        "warmup_seconds": 25.275306027382612,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 47.63970601558685,
+        "peak_cuda_allocated_bytes": 14996919808.0,
+        "peak_cuda_reserved_bytes": 22596812800.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00024277903139591217,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 13.471488062292337,
+        "input_tokens_per_second": 22010.547245126258,
+        "launcher_wall_seconds": 161.51544289663434,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 23.137660210952163,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "liger_loss"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 47.63970601558685,
+          "input_tokens_per_second": 22010.547245126258,
+          "step_seconds": {
+            "mean": 5.947501098038629,
+            "p50": 5.936188240535557,
+            "p95": 6.047040406055748,
+            "values": [
+              5.934441637247801,
+              5.870179761201143,
+              5.923675956204534,
+              6.102161357179284,
+              5.925189765170217,
+              5.941752538084984,
+              5.937934843823314,
+              5.944672925397754
+            ],
+            "standard_deviation": 0.06251692279240963,
+            "coefficient_of_variation": 0.010511460487670444
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918503761291504,
+          "last": 7.658691883087158,
+          "mean": 9.268122613430023,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 47.638884503394365,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 47.638884503394365,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 22010.926807601612,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "loss_cce",
@@ -91,11 +558,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 107.68596963398159,
+        "warmup_seconds": 38.348493000492454,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 49.90748313255608,
+        "peak_cuda_allocated_bytes": 14996919808.0,
+        "peak_cuda_reserved_bytes": 22445817856.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00031274184584617615,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 26.041590163484216,
+        "input_tokens_per_second": 21010.396321027536,
+        "launcher_wall_seconds": 200.9747225921601,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 34.57165285758674,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "cce"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "cce",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 49.90748313255608,
+          "input_tokens_per_second": 21010.396321027536,
+          "step_seconds": {
+            "mean": 6.228508113650605,
+            "p50": 6.209329016506672,
+            "p95": 6.347464767564088,
+            "values": [
+              6.415636362507939,
+              6.197912190109491,
+              6.209859285503626,
+              6.208885012194514,
+              6.220860376954079,
+              6.162762101739645,
+              6.202376559376717,
+              6.2097730208188295
+            ],
+            "standard_deviation": 0.07254380120892276,
+            "coefficient_of_variation": 0.011647058956210293
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918829917907715,
+          "last": 7.659641265869141,
+          "mean": 9.268863916397095,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 49.90653283894062,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 49.90653283894062,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 21010.796389803032,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "best_bf16_kernels",
@@ -103,12 +653,94 @@
         "role": "combination",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 71.91104405373335,
+        "warmup_seconds": 12.875338042154908,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 31.152285624295473,
+        "peak_cuda_allocated_bytes": 14795594240.0,
+        "peak_cuda_reserved_bytes": 22051553280.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00025639496743679047,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.195477457717061,
+        "input_tokens_per_second": 33659.68111123834,
+        "launcher_wall_seconds": 121.5295057669282,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0414089784026146,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "@best:attention",
-          "kernels": "@best:kernels"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.152285624295473,
+          "input_tokens_per_second": 33659.68111123834,
+          "step_seconds": {
+            "mean": 3.876898365560919,
+            "p50": 3.854756658896804,
+            "p95": 3.98783211549744,
+            "values": [
+              3.867606431245804,
+              3.83746450394392,
+              3.8390442319214344,
+              4.052569022402167,
+              3.8509470634162426,
+              3.8525524605065584,
+              3.8569608572870493,
+              3.8580423537641764
+            ],
+            "standard_deviation": 0.06703891704352252,
+            "coefficient_of_variation": 0.017291894375937082
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918352127075195,
+          "last": 7.658649444580078,
+          "mean": 9.268243670463562,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 31.022836720570922,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 31.022836720570922,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 33800.132768152056,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "compiled_fsdp1",
@@ -116,11 +748,100 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 91.51345922797918,
+        "warmup_seconds": 101.05205723829567,
+        "compile_seconds": 94.59773914143443,
+        "measurement_seconds": 24.492734337225556,
+        "peak_cuda_allocated_bytes": 13499214336.0,
+        "peak_cuda_reserved_bytes": 21716008960.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00026247836649417877,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 94.59773914143443,
+        "input_tokens_per_second": 42811.71655082667,
+        "launcher_wall_seconds": 224.49706245213747,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.045791642740369,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "compile": "on"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 24.492734337225556,
+          "input_tokens_per_second": 42811.71655082667,
+          "step_seconds": {
+            "mean": 3.060471539851278,
+            "p50": 3.0591668114066124,
+            "p95": 3.077772036008537,
+            "values": [
+              3.0818036142736673,
+              3.050349723547697,
+              3.0498005002737045,
+              3.0511672664433718,
+              3.061977192759514,
+              3.056356430053711,
+              3.0620327722281218,
+              3.0702848192304373
+            ],
+            "standard_deviation": 0.010463556827120581,
+            "coefficient_of_variation": 0.003418936164205942
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.916450500488281,
+          "last": 7.6524200439453125,
+          "mean": 9.264038562774658,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 24.492096884176135,
+          "satisfied": true
+        },
+        "compilation_evidence": {
+          "unique_graphs": 1,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 24.492096884176135,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 42812.83080655558,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "fsdp2",
@@ -128,11 +849,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 62.51590331830084,
+        "warmup_seconds": 14.087177997455,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 30.859499789774418,
+        "peak_cuda_allocated_bytes": 15213812736.0,
+        "peak_cuda_reserved_bytes": 26726105088.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0002734232693910599,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 6.196681957691908,
+        "input_tokens_per_second": 33979.0342404531,
+        "launcher_wall_seconds": 112.5647320188582,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.073998112231493,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.916722774505615e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "sharding": "fsdp2"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 30.859499789774418,
+          "input_tokens_per_second": 33979.0342404531,
+          "step_seconds": {
+            "mean": 3.851689747069031,
+            "p50": 3.85225622728467,
+            "p95": 3.8651994791813196,
+            "values": [
+              3.8687251675873995,
+              3.836848594248295,
+              3.842413157224655,
+              3.8441166430711746,
+              3.850924976170063,
+              3.8535874783992767,
+              3.8582501877099276,
+              3.8586517721414566
+            ],
+            "standard_deviation": 0.009679668291260908,
+            "coefficient_of_variation": 0.002513096569791665
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918721199035645,
+          "last": 7.659579277038574,
+          "mean": 9.268641829490662,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 30.821878852322698,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 30.821878852322698,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 34020.508776381124,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "compiled_fsdp2",
@@ -140,11 +944,100 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 65.37280213087797,
+        "warmup_seconds": 16.616578659042716,
+        "compile_seconds": 10.517976470291615,
+        "measurement_seconds": 24.50599447451532,
+        "peak_cuda_allocated_bytes": 13890882048.0,
+        "peak_cuda_reserved_bytes": 25310527488.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00025584548711776733,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 10.517976470291615,
+        "input_tokens_per_second": 42788.551229392164,
+        "launcher_wall_seconds": 112.59174320660532,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.057730060070753,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.916722774505615e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "compile": "on"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 24.50599447451532,
+          "input_tokens_per_second": 42788.551229392164,
+          "step_seconds": {
+            "mean": 3.062129262369126,
+            "p50": 3.0628137746825814,
+            "p95": 3.0829249400645495,
+            "values": [
+              3.091152183711529,
+              3.0477052312344313,
+              3.0465611666440964,
+              3.052026318386197,
+              3.0610074773430824,
+              3.0663158763200045,
+              3.0646200720220804,
+              3.067645773291588
+            ],
+            "standard_deviation": 0.013464025598567578,
+            "coefficient_of_variation": 0.00439694880422868
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.916755676269531,
+          "last": 7.65316915512085,
+          "mean": 9.264544188976288,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 24.50510541163385,
+          "satisfied": true
+        },
+        "compilation_evidence": {
+          "unique_graphs": 1,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 24.50510541163385,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 42790.10362886202,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_off",
@@ -152,10 +1045,30 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
         "measurement_kind": "synthetic_short_probe",
+        "failure_type": "OutOfMemoryError",
+        "setup_seconds": 58.518342681229115,
+        "compile_seconds": 0.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "launcher_wall_seconds": 65.24862521514297,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0246374532580376,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
         "features": {
-          "checkpointing": "off"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -164,9 +1077,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 2,
         "accumulation": 2,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
-        "features": {}
+        "setup_seconds": 83.38923840783536,
+        "warmup_seconds": 16.937953917309642,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 32.71593966707587,
+        "peak_cuda_allocated_bytes": 19474114048.0,
+        "peak_cuda_reserved_bytes": 26262634496.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0008949823677539825,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 8.90431546792388,
+        "input_tokens_per_second": 32050.921069989887,
+        "launcher_wall_seconds": 137.88834767974913,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.030682461336255,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.909272193908691e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 32.71593966707587,
+          "input_tokens_per_second": 32050.921069989887,
+          "step_seconds": {
+            "mean": 4.08119121612981,
+            "p50": 4.031788379885256,
+            "p95": 4.268532368261367,
+            "values": [
+              4.300767082720995,
+              4.006798246875405,
+              4.017139844596386,
+              4.014562848955393,
+              4.031247526407242,
+              4.032329233363271,
+              4.20866789855063,
+              4.038017047569156
+            ],
+            "standard_deviation": 0.1032508907142587,
+            "coefficient_of_variation": 0.02529920438576545
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.437180519104004,
+          "last": 6.250392913818359,
+          "mean": 8.302656590938568,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 32.6577945612371,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 32.6577945612371,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 32107.985676552657,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_off_micro2",
@@ -174,11 +1172,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 2,
         "accumulation": 2,
-        "status": "pending",
+        "resolved_parent": "memory_baseline_micro2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 88.30469543486834,
+        "warmup_seconds": 11.709948098286986,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 26.010585520416498,
+        "peak_cuda_allocated_bytes": 70310287872.0,
+        "peak_cuda_reserved_bytes": 79341551616.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0008061341941356659,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.041776038706303,
+        "input_tokens_per_second": 40313.43312809859,
+        "launcher_wall_seconds": 132.90906144492328,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0427534729242325,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.909272193908691e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 26.010585520416498,
+          "input_tokens_per_second": 40313.43312809859,
+          "step_seconds": {
+            "mean": 3.250098003540188,
+            "p50": 3.2481968021020293,
+            "p95": 3.270786908175796,
+            "values": [
+              3.2772257830947638,
+              3.233680546283722,
+              3.2408587634563446,
+              3.2424003314226866,
+              3.2454521004110575,
+              3.2513960022479296,
+              3.250941503793001,
+              3.2588289976119995
+            ],
+            "standard_deviation": 0.012501389954591418,
+            "coefficient_of_variation": 0.00384646553456979
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.437201499938965,
+          "last": 6.250265121459961,
+          "mean": 8.302511036396027,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 26.0096629653126,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 26.0096629653126,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 40314.8630337278,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "memory_baseline_micro1",
@@ -186,9 +1267,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 1,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
-        "features": {}
+        "setup_seconds": 80.68994098342955,
+        "warmup_seconds": 20.28224878758192,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 35.90767563506961,
+        "peak_cuda_allocated_bytes": 17791477248.0,
+        "peak_cuda_reserved_bytes": 24421335040.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0022130385041236877,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 11.202070320025086,
+        "input_tokens_per_second": 29202.001562470872,
+        "launcher_wall_seconds": 142.4921475313604,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0701916832476854,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.922310709953308e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 35.90767563506961,
+          "input_tokens_per_second": 29202.001562470872,
+          "step_seconds": {
+            "mean": 4.481623611180112,
+            "p50": 4.412421981804073,
+            "p95": 4.671068274695426,
+            "values": [
+              4.731723751872778,
+              4.54924188554287,
+              4.3867381159216166,
+              4.39813812635839,
+              4.403880657628179,
+              4.558422388508916,
+              4.416020631790161,
+              4.408823331817985
+            ],
+            "standard_deviation": 0.11436839893239512,
+            "coefficient_of_variation": 0.025519411903999534
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 9.828682899475098,
+          "last": 4.574799537658691,
+          "mean": 7.12020879983902,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 35.907190350815654,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 35.907190350815654,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 29202.3962263642,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_off_micro1",
@@ -196,11 +1362,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 1,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "memory_baseline_micro1",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 80.23251880519092,
+        "warmup_seconds": 13.31889365054667,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 28.621791811659932,
+        "peak_cuda_allocated_bytes": 43209153024.0,
+        "peak_cuda_reserved_bytes": 50694455296.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0015323720872402191,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.7084308955818415,
+        "input_tokens_per_second": 36635.58196845075,
+        "launcher_wall_seconds": 128.62687732093036,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.046611823141575,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.922310709953308e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 28.621791811659932,
+          "input_tokens_per_second": 36635.58196845075,
+          "step_seconds": {
+            "mean": 3.5765754769090563,
+            "p50": 3.5792240677401423,
+            "p95": 3.5881878189742564,
+            "values": [
+              3.589801147580147,
+              3.558795742690563,
+              3.5632630959153175,
+              3.5721292179077864,
+              3.5782656986266375,
+              3.5801824368536472,
+              3.585191637277603,
+              3.5849748384207487
+            ],
+            "standard_deviation": 0.010299760453563423,
+            "coefficient_of_variation": 0.002879782775467853
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 9.829136848449707,
+          "last": 4.574594497680664,
+          "mean": 7.1199482679367065,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 28.621050531044602,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 28.621050531044602,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 36636.53082414405,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "shard_grad",
@@ -208,11 +1457,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 64.11890868842602,
+        "warmup_seconds": 12.814780253916979,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 30.753243388608098,
+        "peak_cuda_allocated_bytes": 21658889728.0,
+        "peak_cuda_reserved_bytes": 28915531776.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0002340506762266159,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.167447127401829,
+        "input_tokens_per_second": 34096.43616284139,
+        "launcher_wall_seconds": 112.63057612627745,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0571237076073885,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "sharding": "shard_grad_op"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "shard_grad_op",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 30.753243388608098,
+          "input_tokens_per_second": 34096.43616284139,
+          "step_seconds": {
+            "mean": 3.836043049581349,
+            "p50": 3.8362295711413026,
+            "p95": 3.8542733024805784,
+            "values": [
+              3.8487529065459967,
+              3.817994711920619,
+              3.819892669096589,
+              3.85724582336843,
+              3.8315344732254744,
+              3.836197528988123,
+              3.8362616132944822,
+              3.8404646702110767
+            ],
+            "standard_deviation": 0.01243797102716103,
+            "coefficient_of_variation": 0.003242396100981834
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918638229370117,
+          "last": 7.658748626708984,
+          "mean": 9.26821517944336,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 30.695086006075144,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 30.695086006075144,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 34161.03801737082,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "best_micro2",
@@ -220,9 +1552,100 @@
         "role": "combination",
         "microbatch_per_gpu": 2,
         "accumulation": 2,
-        "status": "pending",
+        "resolved_parent": "compiled_fsdp1",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
-        "features": {}
+        "setup_seconds": 71.02206278964877,
+        "warmup_seconds": 115.40017405152321,
+        "compile_seconds": 109.02178469672799,
+        "measurement_seconds": 25.73361531458795,
+        "peak_cuda_allocated_bytes": 18890235392.0,
+        "peak_cuda_reserved_bytes": 25757220864.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.001016136258840561,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 109.02178469672799,
+        "input_tokens_per_second": 40747.32551883528,
+        "launcher_wall_seconds": 218.9577244464308,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.044858045876026,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.909272193908691e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 25.73361531458795,
+          "input_tokens_per_second": 40747.32551883528,
+          "step_seconds": {
+            "mean": 3.215553738642484,
+            "p50": 3.200898098759353,
+            "p95": 3.284248799085617,
+            "values": [
+              3.3214941546320915,
+              3.215078853070736,
+              3.1872949711978436,
+              3.1917689815163612,
+              3.197119366377592,
+              3.1991487070918083,
+              3.202647490426898,
+              3.209877384826541
+            ],
+            "standard_deviation": 0.040920064213692334,
+            "coefficient_of_variation": 0.012725666413825082
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.435088157653809,
+          "last": 6.242496967315674,
+          "mean": 8.297407925128937,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 25.732657680287957,
+          "satisfied": true
+        },
+        "compilation_evidence": {
+          "unique_graphs": 1,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 25.732657680287957,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 40748.84192017379,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "liger_pointwise",
@@ -230,11 +1653,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "loss_liger",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 114.55305297113955,
+        "warmup_seconds": 42.40428660064936,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 40.984278954565525,
+        "peak_cuda_allocated_bytes": 13604410880.0,
+        "peak_cuda_reserved_bytes": 21023948800.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00027756020426750183,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 31.984682274982333,
+        "input_tokens_per_second": 25584.834642630496,
+        "launcher_wall_seconds": 203.38474265299737,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 48.82477906905115,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "liger_full"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "liger_full",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 40.984278954565525,
+          "input_tokens_per_second": 25584.834642630496,
+          "step_seconds": {
+            "mean": 5.116980286780745,
+            "p50": 5.070875309407711,
+            "p95": 5.306005366332829,
+            "values": [
+              5.385010998696089,
+              5.046511774882674,
+              5.0622908640652895,
+              5.062173383310437,
+              5.067893767729402,
+              5.1592806205153465,
+              5.0738568510860205,
+              5.0788240339607
+            ],
+            "standard_deviation": 0.1062516695433234,
+            "coefficient_of_variation": 0.02076452587042693
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918255805969238,
+          "last": 7.6578545570373535,
+          "mean": 9.26766723394394,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 40.98339407518506,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 40.98339407518506,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 25585.387049114604,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_selective",
@@ -242,11 +1748,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 68.91325607150793,
+        "warmup_seconds": 11.65546464920044,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 27.325471557676792,
+        "peak_cuda_allocated_bytes": 54882169344.0,
+        "peak_cuda_reserved_bytes": 63508054016.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00024865008890628815,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 4.340053416788578,
+        "input_tokens_per_second": 38373.573820555495,
+        "launcher_wall_seconds": 113.3506274279207,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.038991507142782,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "selective"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "selective",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 27.325471557676792,
+          "input_tokens_per_second": 38373.573820555495,
+          "step_seconds": {
+            "mean": 3.4145231903530657,
+            "p50": 3.3875566525384784,
+            "p95": 3.5502813733182847,
+            "values": [
+              3.4012115355581045,
+              3.3663659561425447,
+              3.3725352734327316,
+              3.6305497474968433,
+              3.380396021530032,
+              3.38854855671525,
+              3.3900136835873127,
+              3.3865647483617067
+            ],
+            "standard_deviation": 0.08227128414874563,
+            "coefficient_of_variation": 0.024094516148311377
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918476104736328,
+          "last": 7.658614635467529,
+          "mean": 9.26815515756607,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 27.32464959472418,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 27.32464959472418,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 38374.72815030932,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "optimizer_8bit",
@@ -254,11 +1843,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 73.95545582473278,
+        "warmup_seconds": 159.03939600847661,
+        "compile_seconds": 147.60412867181003,
+        "measurement_seconds": 46.29746095277369,
+        "peak_cuda_allocated_bytes": 12196538368.0,
+        "peak_cuda_reserved_bytes": 26789019648.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00029506906867027283,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 147.60412867181003,
+        "input_tokens_per_second": 22648.67183687704,
+        "launcher_wall_seconds": 286.5548103451729,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 11.534305043518543,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.916722774505615e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "optimizer": "adamw_8bit"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_8bit",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 46.29746095277369,
+          "input_tokens_per_second": 22648.67183687704,
+          "step_seconds": {
+            "mean": 5.780688484665006,
+            "p50": 5.787576803006232,
+            "p95": 5.916069331485778,
+            "values": [
+              5.845613883808255,
+              5.68123053573072,
+              5.685870947316289,
+              5.9386864844709635,
+              5.644886372610927,
+              5.741674263030291,
+              5.833479342982173,
+              5.874066047370434
+            ],
+            "standard_deviation": 0.09970675219015057,
+            "coefficient_of_variation": 0.017248248622054683
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918760299682617,
+          "last": 7.659575939178467,
+          "mean": 9.268690288066864,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 46.29544558376074,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 46.29544558376074,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 22649.65779631277,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "confirm_baseline",
@@ -268,8 +1940,36 @@
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 0,
-        "status": "pending",
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "real_data_confirmation",
+        "setup_seconds": 68.17929195985198,
+        "warmup_seconds": 18.365018721669912,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 605.3548347949982,
+        "peak_cuda_allocated_bytes": 40327422976.0,
+        "peak_cuda_reserved_bytes": 49371152384.0,
+        "input_kind": "ordered archived biological paper tokens; mmap/CPU/pinning/H2D eachmicrobatch; no replay",
+        "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+        "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.06345491111278534,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 104,
+        "first_warmup_seconds": 6.471322018653154,
+        "input_tokens_per_second": 21868.615296486576,
+        "launcher_wall_seconds": 697.5276820249856,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 0.2744282875210047,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 1.002475619316101e-05,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
@@ -279,26 +1979,257 @@
           "sharding": "full_shard",
           "compile": "off",
           "precision": "bf16"
-        }
+        },
+        "throughput": {
+          "measured_optimizer_steps": 101,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 13238272,
+          "measured_wall_seconds": 605.3548347949982,
+          "input_tokens_per_second": 21868.615296486576,
+          "step_seconds": {
+            "mean": 5.977364137510557,
+            "p50": 5.97416784055531,
+            "p95": 6.026448925957084,
+            "values": [
+              6.042193392291665,
+              5.923948796465993,
+              5.91900347173214,
+              5.955449847504497,
+              5.9338094368577,
+              5.969063188880682,
+              6.187924508005381,
+              5.954860836267471,
+              5.968501461669803,
+              5.973312325775623,
+              5.968649238348007,
+              5.944275368005037,
+              5.966687988489866,
+              5.971258839592338,
+              5.969476519152522,
+              5.970813004299998,
+              5.944541558623314,
+              5.955530479550362,
+              5.963214289397001,
+              6.026448925957084,
+              5.968826521188021,
+              5.9460244327783585,
+              5.951824851334095,
+              5.969885777682066,
+              5.969115948304534,
+              5.956335535272956,
+              5.9438355546444654,
+              5.963805131614208,
+              5.971176730468869,
+              5.970649838447571,
+              5.976510358974338,
+              5.972353449091315,
+              5.975893992930651,
+              6.0157177448272705,
+              5.994321633130312,
+              5.969991458579898,
+              5.975425086915493,
+              5.977050041779876,
+              5.972506118938327,
+              5.969813859090209,
+              5.970548700541258,
+              5.969008000567555,
+              5.97416784055531,
+              5.9663058537989855,
+              5.972211292013526,
+              5.971714563667774,
+              5.952834323048592,
+              5.9992587845772505,
+              5.974577963352203,
+              5.975786756724119,
+              5.982674738392234,
+              5.968788051977754,
+              5.979343950748444,
+              5.981435080990195,
+              5.963709961622953,
+              5.97827672213316,
+              5.94813571497798,
+              5.971946960315108,
+              5.975254667922854,
+              5.967454727739096,
+              5.9577603451907635,
+              5.977865820750594,
+              5.975113723427057,
+              5.974004963412881,
+              5.979537878185511,
+              6.015015214681625,
+              5.974548673257232,
+              5.9775781743228436,
+              5.981183370575309,
+              5.943434230983257,
+              5.997835095971823,
+              5.9762387946248055,
+              5.9684634525328875,
+              5.978943936526775,
+              5.980141310021281,
+              6.077187575399876,
+              5.975066274404526,
+              5.98093506321311,
+              5.987841982394457,
+              5.965931298211217,
+              6.03663788177073,
+              5.974081441760063,
+              5.96548024751246,
+              5.979614689946175,
+              5.985777599737048,
+              5.9961659368127584,
+              5.982579257339239,
+              5.979990439489484,
+              5.986768718808889,
+              5.998896647244692,
+              6.037297964096069,
+              5.975210944190621,
+              5.955472841858864,
+              5.984312815591693,
+              5.979981722310185,
+              5.994921915233135,
+              5.978907078504562,
+              5.983009196817875,
+              5.979448078200221,
+              5.976379733532667,
+              5.974753361195326
+            ],
+            "standard_deviation": 0.03060726350858589,
+            "coefficient_of_variation": 0.005120528514652807
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.801312446594238,
+          "last": 6.614369869232178,
+          "mean": 7.359854188295874,
+          "finite": true,
+          "meaning": "Real biological text with random initial weights; throughput/stability only; no CPT biological quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 600.0,
+          "last_completed_update_end_seconds": 605.2953461688012,
+          "satisfied": true
+        },
+        "data": {
+          "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+          "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+          "token_count": 67108864,
+          "bytes": 268435456,
+          "source_records": 3564,
+          "dtype": "uint32_le",
+          "start_token": 0,
+          "replay": false,
+          "consumed_tokens": 13631488,
+          "measured_start_token": 393216,
+          "measured_tokens": 13238272,
+          "stop_reason": null,
+          "tokenizer": {
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "revision": "qwen3-4b-base-906bfd4b4dc7f14ee4320094d8b41684abff8539"
+          }
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 10,
+            "seconds": 60.01558896154165,
+            "input_tokens": 1310720,
+            "input_tokens_per_second": 21839.659039919065,
+            "partial_window": false
+          },
+          {
+            "first_update": 11,
+            "last_update": 20,
+            "seconds": 60.20617615059018,
+            "input_tokens": 1310720,
+            "input_tokens_per_second": 21770.523952917603,
+            "partial_window": false
+          },
+          {
+            "first_update": 21,
+            "last_update": 31,
+            "seconds": 65.91170356981456,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21874.597710448106,
+            "partial_window": false
+          },
+          {
+            "first_update": 32,
+            "last_update": 42,
+            "seconds": 65.84819890744984,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21895.69379151053,
+            "partial_window": false
+          },
+          {
+            "first_update": 43,
+            "last_update": 53,
+            "seconds": 65.76604815199971,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21923.044496572205,
+            "partial_window": false
+          },
+          {
+            "first_update": 54,
+            "last_update": 64,
+            "seconds": 65.76421110704541,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21923.656890723938,
+            "partial_window": false
+          },
+          {
+            "first_update": 65,
+            "last_update": 75,
+            "seconds": 65.87174696289003,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21887.866444657346,
+            "partial_window": false
+          },
+          {
+            "first_update": 76,
+            "last_update": 85,
+            "seconds": 60.06008403748274,
+            "input_tokens": 1310720,
+            "input_tokens_per_second": 21823.479287541395,
+            "partial_window": false
+          },
+          {
+            "first_update": 86,
+            "last_update": 96,
+            "seconds": 65.95357809774578,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21860.709328964807,
+            "partial_window": false
+          },
+          {
+            "first_update": 97,
+            "last_update": 101,
+            "seconds": 29.898010222241282,
+            "input_tokens": 655360,
+            "input_tokens_per_second": 21919.853365775973,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "confirm_winner",
-        "parent": "baseline",
-        "resolved_parent": "baseline",
+        "parent": "compiled_fsdp1",
+        "resolved_parent": "compiled_fsdp1",
         "role": "confirmation_winner",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 0,
-        "status": "pending",
+        "status": "initializing",
         "measurement_kind": "real_data_confirmation",
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
-          "attention": "sdpa_auto",
-          "kernels": "none",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
           "checkpointing": "full",
           "sharding": "full_shard",
-          "compile": "off",
+          "compile": "on",
           "precision": "bf16"
         }
       }
@@ -311,8 +2242,36 @@
       "microbatch_per_gpu": 4,
       "accumulation": 1,
       "profile_steps": 0,
-      "status": "pending",
+      "status": "completed",
+      "exit_code": 0,
       "measurement_kind": "real_data_confirmation",
+      "setup_seconds": 68.17929195985198,
+      "warmup_seconds": 18.365018721669912,
+      "compile_seconds": 0.0,
+      "measurement_seconds": 605.3548347949982,
+      "peak_cuda_allocated_bytes": 40327422976.0,
+      "peak_cuda_reserved_bytes": 49371152384.0,
+      "input_kind": "ordered archived biological paper tokens; mmap/CPU/pinning/H2D eachmicrobatch; no replay",
+      "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+      "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+      "host_input_prepare_and_transfer_schedule_seconds": 0.06345491111278534,
+      "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+      "completed_optimizer_updates": 104,
+      "first_warmup_seconds": 6.471322018653154,
+      "input_tokens_per_second": 21868.615296486576,
+      "launcher_wall_seconds": 697.5276820249856,
+      "smoke_checks": {
+        "status": "passed",
+        "seconds": 0.2744282875210047,
+        "scope": "Small functional output/gradient checks; no quality claim"
+      },
+      "optimizer_update_check": {
+        "status": "passed",
+        "sampled_elements": 1024,
+        "maximum_local_absolute_change": 1.002475619316101e-05,
+        "any_rank_changed": true,
+        "dtype": "torch.float32"
+      },
       "features": {
         "float8_all_gather": "off",
         "optimizer": "adamw_fp32",
@@ -322,28 +2281,640 @@
         "sharding": "full_shard",
         "compile": "off",
         "precision": "bf16"
-      }
+      },
+      "throughput": {
+        "measured_optimizer_steps": 101,
+        "input_tokens_per_step": 131072,
+        "measured_input_tokens": 13238272,
+        "measured_wall_seconds": 605.3548347949982,
+        "input_tokens_per_second": 21868.615296486576,
+        "step_seconds": {
+          "mean": 5.977364137510557,
+          "p50": 5.97416784055531,
+          "p95": 6.026448925957084,
+          "values": [
+            6.042193392291665,
+            5.923948796465993,
+            5.91900347173214,
+            5.955449847504497,
+            5.9338094368577,
+            5.969063188880682,
+            6.187924508005381,
+            5.954860836267471,
+            5.968501461669803,
+            5.973312325775623,
+            5.968649238348007,
+            5.944275368005037,
+            5.966687988489866,
+            5.971258839592338,
+            5.969476519152522,
+            5.970813004299998,
+            5.944541558623314,
+            5.955530479550362,
+            5.963214289397001,
+            6.026448925957084,
+            5.968826521188021,
+            5.9460244327783585,
+            5.951824851334095,
+            5.969885777682066,
+            5.969115948304534,
+            5.956335535272956,
+            5.9438355546444654,
+            5.963805131614208,
+            5.971176730468869,
+            5.970649838447571,
+            5.976510358974338,
+            5.972353449091315,
+            5.975893992930651,
+            6.0157177448272705,
+            5.994321633130312,
+            5.969991458579898,
+            5.975425086915493,
+            5.977050041779876,
+            5.972506118938327,
+            5.969813859090209,
+            5.970548700541258,
+            5.969008000567555,
+            5.97416784055531,
+            5.9663058537989855,
+            5.972211292013526,
+            5.971714563667774,
+            5.952834323048592,
+            5.9992587845772505,
+            5.974577963352203,
+            5.975786756724119,
+            5.982674738392234,
+            5.968788051977754,
+            5.979343950748444,
+            5.981435080990195,
+            5.963709961622953,
+            5.97827672213316,
+            5.94813571497798,
+            5.971946960315108,
+            5.975254667922854,
+            5.967454727739096,
+            5.9577603451907635,
+            5.977865820750594,
+            5.975113723427057,
+            5.974004963412881,
+            5.979537878185511,
+            6.015015214681625,
+            5.974548673257232,
+            5.9775781743228436,
+            5.981183370575309,
+            5.943434230983257,
+            5.997835095971823,
+            5.9762387946248055,
+            5.9684634525328875,
+            5.978943936526775,
+            5.980141310021281,
+            6.077187575399876,
+            5.975066274404526,
+            5.98093506321311,
+            5.987841982394457,
+            5.965931298211217,
+            6.03663788177073,
+            5.974081441760063,
+            5.96548024751246,
+            5.979614689946175,
+            5.985777599737048,
+            5.9961659368127584,
+            5.982579257339239,
+            5.979990439489484,
+            5.986768718808889,
+            5.998896647244692,
+            6.037297964096069,
+            5.975210944190621,
+            5.955472841858864,
+            5.984312815591693,
+            5.979981722310185,
+            5.994921915233135,
+            5.978907078504562,
+            5.983009196817875,
+            5.979448078200221,
+            5.976379733532667,
+            5.974753361195326
+          ],
+          "standard_deviation": 0.03060726350858589,
+          "coefficient_of_variation": 0.005120528514652807
+        },
+        "valid_sustained_measurement": true
+      },
+      "loss_summary": {
+        "first": 10.801312446594238,
+        "last": 6.614369869232178,
+        "mean": 7.359854188295874,
+        "finite": true,
+        "meaning": "Real biological text with random initial weights; throughput/stability only; no CPT biological quality claim"
+      },
+      "measurement_requirements": {
+        "minimum_optimizer_steps": 8,
+        "minimum_measured_seconds": 600.0,
+        "last_completed_update_end_seconds": 605.2953461688012,
+        "satisfied": true
+      },
+      "data": {
+        "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+        "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+        "token_count": 67108864,
+        "bytes": 268435456,
+        "source_records": 3564,
+        "dtype": "uint32_le",
+        "start_token": 0,
+        "replay": false,
+        "consumed_tokens": 13631488,
+        "measured_start_token": 393216,
+        "measured_tokens": 13238272,
+        "stop_reason": null,
+        "tokenizer": {
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "revision": "qwen3-4b-base-906bfd4b4dc7f14ee4320094d8b41684abff8539"
+        }
+      },
+      "chunk_rates": [
+        {
+          "first_update": 1,
+          "last_update": 10,
+          "seconds": 60.01558896154165,
+          "input_tokens": 1310720,
+          "input_tokens_per_second": 21839.659039919065,
+          "partial_window": false
+        },
+        {
+          "first_update": 11,
+          "last_update": 20,
+          "seconds": 60.20617615059018,
+          "input_tokens": 1310720,
+          "input_tokens_per_second": 21770.523952917603,
+          "partial_window": false
+        },
+        {
+          "first_update": 21,
+          "last_update": 31,
+          "seconds": 65.91170356981456,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21874.597710448106,
+          "partial_window": false
+        },
+        {
+          "first_update": 32,
+          "last_update": 42,
+          "seconds": 65.84819890744984,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21895.69379151053,
+          "partial_window": false
+        },
+        {
+          "first_update": 43,
+          "last_update": 53,
+          "seconds": 65.76604815199971,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21923.044496572205,
+          "partial_window": false
+        },
+        {
+          "first_update": 54,
+          "last_update": 64,
+          "seconds": 65.76421110704541,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21923.656890723938,
+          "partial_window": false
+        },
+        {
+          "first_update": 65,
+          "last_update": 75,
+          "seconds": 65.87174696289003,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21887.866444657346,
+          "partial_window": false
+        },
+        {
+          "first_update": 76,
+          "last_update": 85,
+          "seconds": 60.06008403748274,
+          "input_tokens": 1310720,
+          "input_tokens_per_second": 21823.479287541395,
+          "partial_window": false
+        },
+        {
+          "first_update": 86,
+          "last_update": 96,
+          "seconds": 65.95357809774578,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21860.709328964807,
+          "partial_window": false
+        },
+        {
+          "first_update": 97,
+          "last_update": 101,
+          "seconds": 29.898010222241282,
+          "input_tokens": 655360,
+          "input_tokens_per_second": 21919.853365775973,
+          "partial_window": true
+        }
+      ]
+    },
+    "fastest_completed_profile": {
+      "name": "confirm_baseline",
+      "parent": "baseline",
+      "resolved_parent": "baseline",
+      "role": "confirmation_baseline",
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 0,
+      "status": "completed",
+      "exit_code": 0,
+      "measurement_kind": "real_data_confirmation",
+      "setup_seconds": 68.17929195985198,
+      "warmup_seconds": 18.365018721669912,
+      "compile_seconds": 0.0,
+      "measurement_seconds": 605.3548347949982,
+      "peak_cuda_allocated_bytes": 40327422976.0,
+      "peak_cuda_reserved_bytes": 49371152384.0,
+      "input_kind": "ordered archived biological paper tokens; mmap/CPU/pinning/H2D eachmicrobatch; no replay",
+      "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+      "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+      "host_input_prepare_and_transfer_schedule_seconds": 0.06345491111278534,
+      "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+      "completed_optimizer_updates": 104,
+      "first_warmup_seconds": 6.471322018653154,
+      "input_tokens_per_second": 21868.615296486576,
+      "launcher_wall_seconds": 697.5276820249856,
+      "smoke_checks": {
+        "status": "passed",
+        "seconds": 0.2744282875210047,
+        "scope": "Small functional output/gradient checks; no quality claim"
+      },
+      "optimizer_update_check": {
+        "status": "passed",
+        "sampled_elements": 1024,
+        "maximum_local_absolute_change": 1.002475619316101e-05,
+        "any_rank_changed": true,
+        "dtype": "torch.float32"
+      },
+      "features": {
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32",
+        "attention": "sdpa_auto",
+        "kernels": "none",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "off",
+        "precision": "bf16"
+      },
+      "throughput": {
+        "measured_optimizer_steps": 101,
+        "input_tokens_per_step": 131072,
+        "measured_input_tokens": 13238272,
+        "measured_wall_seconds": 605.3548347949982,
+        "input_tokens_per_second": 21868.615296486576,
+        "step_seconds": {
+          "mean": 5.977364137510557,
+          "p50": 5.97416784055531,
+          "p95": 6.026448925957084,
+          "values": [
+            6.042193392291665,
+            5.923948796465993,
+            5.91900347173214,
+            5.955449847504497,
+            5.9338094368577,
+            5.969063188880682,
+            6.187924508005381,
+            5.954860836267471,
+            5.968501461669803,
+            5.973312325775623,
+            5.968649238348007,
+            5.944275368005037,
+            5.966687988489866,
+            5.971258839592338,
+            5.969476519152522,
+            5.970813004299998,
+            5.944541558623314,
+            5.955530479550362,
+            5.963214289397001,
+            6.026448925957084,
+            5.968826521188021,
+            5.9460244327783585,
+            5.951824851334095,
+            5.969885777682066,
+            5.969115948304534,
+            5.956335535272956,
+            5.9438355546444654,
+            5.963805131614208,
+            5.971176730468869,
+            5.970649838447571,
+            5.976510358974338,
+            5.972353449091315,
+            5.975893992930651,
+            6.0157177448272705,
+            5.994321633130312,
+            5.969991458579898,
+            5.975425086915493,
+            5.977050041779876,
+            5.972506118938327,
+            5.969813859090209,
+            5.970548700541258,
+            5.969008000567555,
+            5.97416784055531,
+            5.9663058537989855,
+            5.972211292013526,
+            5.971714563667774,
+            5.952834323048592,
+            5.9992587845772505,
+            5.974577963352203,
+            5.975786756724119,
+            5.982674738392234,
+            5.968788051977754,
+            5.979343950748444,
+            5.981435080990195,
+            5.963709961622953,
+            5.97827672213316,
+            5.94813571497798,
+            5.971946960315108,
+            5.975254667922854,
+            5.967454727739096,
+            5.9577603451907635,
+            5.977865820750594,
+            5.975113723427057,
+            5.974004963412881,
+            5.979537878185511,
+            6.015015214681625,
+            5.974548673257232,
+            5.9775781743228436,
+            5.981183370575309,
+            5.943434230983257,
+            5.997835095971823,
+            5.9762387946248055,
+            5.9684634525328875,
+            5.978943936526775,
+            5.980141310021281,
+            6.077187575399876,
+            5.975066274404526,
+            5.98093506321311,
+            5.987841982394457,
+            5.965931298211217,
+            6.03663788177073,
+            5.974081441760063,
+            5.96548024751246,
+            5.979614689946175,
+            5.985777599737048,
+            5.9961659368127584,
+            5.982579257339239,
+            5.979990439489484,
+            5.986768718808889,
+            5.998896647244692,
+            6.037297964096069,
+            5.975210944190621,
+            5.955472841858864,
+            5.984312815591693,
+            5.979981722310185,
+            5.994921915233135,
+            5.978907078504562,
+            5.983009196817875,
+            5.979448078200221,
+            5.976379733532667,
+            5.974753361195326
+          ],
+          "standard_deviation": 0.03060726350858589,
+          "coefficient_of_variation": 0.005120528514652807
+        },
+        "valid_sustained_measurement": true
+      },
+      "loss_summary": {
+        "first": 10.801312446594238,
+        "last": 6.614369869232178,
+        "mean": 7.359854188295874,
+        "finite": true,
+        "meaning": "Real biological text with random initial weights; throughput/stability only; no CPT biological quality claim"
+      },
+      "measurement_requirements": {
+        "minimum_optimizer_steps": 8,
+        "minimum_measured_seconds": 600.0,
+        "last_completed_update_end_seconds": 605.2953461688012,
+        "satisfied": true
+      },
+      "data": {
+        "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+        "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+        "token_count": 67108864,
+        "bytes": 268435456,
+        "source_records": 3564,
+        "dtype": "uint32_le",
+        "start_token": 0,
+        "replay": false,
+        "consumed_tokens": 13631488,
+        "measured_start_token": 393216,
+        "measured_tokens": 13238272,
+        "stop_reason": null,
+        "tokenizer": {
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "revision": "qwen3-4b-base-906bfd4b4dc7f14ee4320094d8b41684abff8539"
+        }
+      },
+      "chunk_rates": [
+        {
+          "first_update": 1,
+          "last_update": 10,
+          "seconds": 60.01558896154165,
+          "input_tokens": 1310720,
+          "input_tokens_per_second": 21839.659039919065,
+          "partial_window": false
+        },
+        {
+          "first_update": 11,
+          "last_update": 20,
+          "seconds": 60.20617615059018,
+          "input_tokens": 1310720,
+          "input_tokens_per_second": 21770.523952917603,
+          "partial_window": false
+        },
+        {
+          "first_update": 21,
+          "last_update": 31,
+          "seconds": 65.91170356981456,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21874.597710448106,
+          "partial_window": false
+        },
+        {
+          "first_update": 32,
+          "last_update": 42,
+          "seconds": 65.84819890744984,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21895.69379151053,
+          "partial_window": false
+        },
+        {
+          "first_update": 43,
+          "last_update": 53,
+          "seconds": 65.76604815199971,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21923.044496572205,
+          "partial_window": false
+        },
+        {
+          "first_update": 54,
+          "last_update": 64,
+          "seconds": 65.76421110704541,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21923.656890723938,
+          "partial_window": false
+        },
+        {
+          "first_update": 65,
+          "last_update": 75,
+          "seconds": 65.87174696289003,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21887.866444657346,
+          "partial_window": false
+        },
+        {
+          "first_update": 76,
+          "last_update": 85,
+          "seconds": 60.06008403748274,
+          "input_tokens": 1310720,
+          "input_tokens_per_second": 21823.479287541395,
+          "partial_window": false
+        },
+        {
+          "first_update": 86,
+          "last_update": 96,
+          "seconds": 65.95357809774578,
+          "input_tokens": 1441792,
+          "input_tokens_per_second": 21860.709328964807,
+          "partial_window": false
+        },
+        {
+          "first_update": 97,
+          "last_update": 101,
+          "seconds": 29.898010222241282,
+          "input_tokens": 655360,
+          "input_tokens_per_second": 21919.853365775973,
+          "partial_window": true
+        }
+      ]
     },
     "confirmation_candidate": {
       "name": "confirm_winner",
-      "parent": "baseline",
-      "resolved_parent": "baseline",
+      "parent": "compiled_fsdp1",
+      "resolved_parent": "compiled_fsdp1",
       "role": "confirmation_winner",
       "microbatch_per_gpu": 4,
       "accumulation": 1,
       "profile_steps": 0,
-      "status": "pending",
+      "status": "initializing",
       "measurement_kind": "real_data_confirmation",
       "features": {
         "float8_all_gather": "off",
         "optimizer": "adamw_fp32",
-        "attention": "sdpa_auto",
-        "kernels": "none",
+        "attention": "sdpa_cudnn",
+        "kernels": "liger_loss",
         "checkpointing": "full",
         "sharding": "full_shard",
-        "compile": "off",
+        "compile": "on",
         "precision": "bf16"
       }
+    },
+    "short_sweep_winner": {
+      "name": "compiled_fsdp1",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "resolved_parent": "best_bf16_kernels",
+      "profile_steps": 0,
+      "status": "completed",
+      "exit_code": 0,
+      "measurement_kind": "synthetic_short_probe",
+      "setup_seconds": 91.51345922797918,
+      "warmup_seconds": 101.05205723829567,
+      "compile_seconds": 94.59773914143443,
+      "measurement_seconds": 24.492734337225556,
+      "peak_cuda_allocated_bytes": 13499214336.0,
+      "peak_cuda_reserved_bytes": 21716008960.0,
+      "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+      "host_input_prepare_and_transfer_schedule_seconds": 0.00026247836649417877,
+      "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+      "completed_optimizer_updates": 11,
+      "first_warmup_seconds": 94.59773914143443,
+      "input_tokens_per_second": 42811.71655082667,
+      "launcher_wall_seconds": 224.49706245213747,
+      "smoke_checks": {
+        "status": "passed",
+        "seconds": 2.045791642740369,
+        "scope": "Small functional output/gradient checks; no quality claim"
+      },
+      "optimizer_update_check": {
+        "status": "passed",
+        "sampled_elements": 1024,
+        "maximum_local_absolute_change": 9.920448064804077e-06,
+        "any_rank_changed": true,
+        "dtype": "torch.float32"
+      },
+      "features": {
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32",
+        "attention": "sdpa_cudnn",
+        "kernels": "liger_loss",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "on",
+        "precision": "bf16"
+      },
+      "throughput": {
+        "measured_optimizer_steps": 8,
+        "input_tokens_per_step": 131072,
+        "measured_input_tokens": 1048576,
+        "measured_wall_seconds": 24.492734337225556,
+        "input_tokens_per_second": 42811.71655082667,
+        "step_seconds": {
+          "mean": 3.060471539851278,
+          "p50": 3.0591668114066124,
+          "p95": 3.077772036008537,
+          "values": [
+            3.0818036142736673,
+            3.050349723547697,
+            3.0498005002737045,
+            3.0511672664433718,
+            3.061977192759514,
+            3.056356430053711,
+            3.0620327722281218,
+            3.0702848192304373
+          ],
+          "standard_deviation": 0.010463556827120581,
+          "coefficient_of_variation": 0.003418936164205942
+        },
+        "valid_sustained_measurement": true
+      },
+      "loss_summary": {
+        "first": 10.916450500488281,
+        "last": 7.6524200439453125,
+        "mean": 9.264038562774658,
+        "finite": true,
+        "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+      },
+      "measurement_requirements": {
+        "minimum_optimizer_steps": 8,
+        "minimum_measured_seconds": 0.0,
+        "last_completed_update_end_seconds": 24.492096884176135,
+        "satisfied": true
+      },
+      "compilation_evidence": {
+        "unique_graphs": 1,
+        "decoder_blocks_requested": 36,
+        "cache_size_limit": 64,
+        "status": "compiled"
+      },
+      "chunk_rates": [
+        {
+          "first_update": 1,
+          "last_update": 8,
+          "seconds": 24.492096884176135,
+          "input_tokens": 1048576,
+          "input_tokens_per_second": 42812.83080655558,
+          "partial_window": true
+        }
+      ]
     },
     "diagnostic_baseline_result": {
       "name": "baseline",
@@ -353,8 +2924,35 @@
       "accumulation": 1,
       "profile_steps": 1,
       "resolved_parent": null,
-      "status": "initializing",
+      "status": "completed",
+      "exit_code": 0,
       "measurement_kind": "synthetic_short_probe",
+      "setup_seconds": 149.81482639722526,
+      "warmup_seconds": 22.531700463965535,
+      "compile_seconds": 0.0,
+      "measurement_seconds": 48.52327980659902,
+      "peak_cuda_allocated_bytes": 40327422976.0,
+      "peak_cuda_reserved_bytes": 49371152384.0,
+      "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+      "host_input_prepare_and_transfer_schedule_seconds": 0.00027767568826675415,
+      "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+      "completed_optimizer_updates": 11,
+      "first_warmup_seconds": 10.63959968648851,
+      "profiler_seconds": 12.353972958400846,
+      "input_tokens_per_second": 21609.75111697616,
+      "launcher_wall_seconds": 312.89660200476646,
+      "smoke_checks": {
+        "status": "passed",
+        "seconds": 4.419889722019434,
+        "scope": "Small functional output/gradient checks; no quality claim"
+      },
+      "optimizer_update_check": {
+        "status": "passed",
+        "sampled_elements": 1024,
+        "maximum_local_absolute_change": 9.920448064804077e-06,
+        "any_rank_changed": true,
+        "dtype": "torch.float32"
+      },
       "features": {
         "float8_all_gather": "off",
         "optimizer": "adamw_fp32",
@@ -364,7 +2962,55 @@
         "sharding": "full_shard",
         "compile": "off",
         "precision": "bf16"
-      }
+      },
+      "throughput": {
+        "measured_optimizer_steps": 8,
+        "input_tokens_per_step": 131072,
+        "measured_input_tokens": 1048576,
+        "measured_wall_seconds": 48.52327980659902,
+        "input_tokens_per_second": 21609.75111697616,
+        "step_seconds": {
+          "mean": 6.0394779946655035,
+          "p50": 5.9834300596266985,
+          "p95": 6.303181752935052,
+          "values": [
+            6.391293480992317,
+            5.964178582653403,
+            5.917456932365894,
+            5.9213098883628845,
+            5.983377730473876,
+            6.015179267153144,
+            6.139545686542988,
+            5.983482388779521
+          ],
+          "standard_deviation": 0.14797960057805618,
+          "coefficient_of_variation": 0.024502051453579643
+        },
+        "valid_sustained_measurement": true
+      },
+      "loss_summary": {
+        "first": 10.918426513671875,
+        "last": 7.658729076385498,
+        "mean": 9.268156468868256,
+        "finite": true,
+        "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+      },
+      "measurement_requirements": {
+        "minimum_optimizer_steps": 8,
+        "minimum_measured_seconds": 0.0,
+        "last_completed_update_end_seconds": 48.522532323375344,
+        "satisfied": true
+      },
+      "chunk_rates": [
+        {
+          "first_update": 1,
+          "last_update": 8,
+          "seconds": 48.522532323375344,
+          "input_tokens": 1048576,
+          "input_tokens_per_second": 21610.08401234774,
+          "partial_window": true
+        }
+      ]
     },
     "real_data_confirmations": [
       {
@@ -375,8 +3021,36 @@
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 0,
-        "status": "pending",
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "real_data_confirmation",
+        "setup_seconds": 68.17929195985198,
+        "warmup_seconds": 18.365018721669912,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 605.3548347949982,
+        "peak_cuda_allocated_bytes": 40327422976.0,
+        "peak_cuda_reserved_bytes": 49371152384.0,
+        "input_kind": "ordered archived biological paper tokens; mmap/CPU/pinning/H2D eachmicrobatch; no replay",
+        "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+        "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.06345491111278534,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 104,
+        "first_warmup_seconds": 6.471322018653154,
+        "input_tokens_per_second": 21868.615296486576,
+        "launcher_wall_seconds": 697.5276820249856,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 0.2744282875210047,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 1.002475619316101e-05,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
@@ -386,26 +3060,257 @@
           "sharding": "full_shard",
           "compile": "off",
           "precision": "bf16"
-        }
+        },
+        "throughput": {
+          "measured_optimizer_steps": 101,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 13238272,
+          "measured_wall_seconds": 605.3548347949982,
+          "input_tokens_per_second": 21868.615296486576,
+          "step_seconds": {
+            "mean": 5.977364137510557,
+            "p50": 5.97416784055531,
+            "p95": 6.026448925957084,
+            "values": [
+              6.042193392291665,
+              5.923948796465993,
+              5.91900347173214,
+              5.955449847504497,
+              5.9338094368577,
+              5.969063188880682,
+              6.187924508005381,
+              5.954860836267471,
+              5.968501461669803,
+              5.973312325775623,
+              5.968649238348007,
+              5.944275368005037,
+              5.966687988489866,
+              5.971258839592338,
+              5.969476519152522,
+              5.970813004299998,
+              5.944541558623314,
+              5.955530479550362,
+              5.963214289397001,
+              6.026448925957084,
+              5.968826521188021,
+              5.9460244327783585,
+              5.951824851334095,
+              5.969885777682066,
+              5.969115948304534,
+              5.956335535272956,
+              5.9438355546444654,
+              5.963805131614208,
+              5.971176730468869,
+              5.970649838447571,
+              5.976510358974338,
+              5.972353449091315,
+              5.975893992930651,
+              6.0157177448272705,
+              5.994321633130312,
+              5.969991458579898,
+              5.975425086915493,
+              5.977050041779876,
+              5.972506118938327,
+              5.969813859090209,
+              5.970548700541258,
+              5.969008000567555,
+              5.97416784055531,
+              5.9663058537989855,
+              5.972211292013526,
+              5.971714563667774,
+              5.952834323048592,
+              5.9992587845772505,
+              5.974577963352203,
+              5.975786756724119,
+              5.982674738392234,
+              5.968788051977754,
+              5.979343950748444,
+              5.981435080990195,
+              5.963709961622953,
+              5.97827672213316,
+              5.94813571497798,
+              5.971946960315108,
+              5.975254667922854,
+              5.967454727739096,
+              5.9577603451907635,
+              5.977865820750594,
+              5.975113723427057,
+              5.974004963412881,
+              5.979537878185511,
+              6.015015214681625,
+              5.974548673257232,
+              5.9775781743228436,
+              5.981183370575309,
+              5.943434230983257,
+              5.997835095971823,
+              5.9762387946248055,
+              5.9684634525328875,
+              5.978943936526775,
+              5.980141310021281,
+              6.077187575399876,
+              5.975066274404526,
+              5.98093506321311,
+              5.987841982394457,
+              5.965931298211217,
+              6.03663788177073,
+              5.974081441760063,
+              5.96548024751246,
+              5.979614689946175,
+              5.985777599737048,
+              5.9961659368127584,
+              5.982579257339239,
+              5.979990439489484,
+              5.986768718808889,
+              5.998896647244692,
+              6.037297964096069,
+              5.975210944190621,
+              5.955472841858864,
+              5.984312815591693,
+              5.979981722310185,
+              5.994921915233135,
+              5.978907078504562,
+              5.983009196817875,
+              5.979448078200221,
+              5.976379733532667,
+              5.974753361195326
+            ],
+            "standard_deviation": 0.03060726350858589,
+            "coefficient_of_variation": 0.005120528514652807
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.801312446594238,
+          "last": 6.614369869232178,
+          "mean": 7.359854188295874,
+          "finite": true,
+          "meaning": "Real biological text with random initial weights; throughput/stability only; no CPT biological quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 600.0,
+          "last_completed_update_end_seconds": 605.2953461688012,
+          "satisfied": true
+        },
+        "data": {
+          "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+          "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+          "token_count": 67108864,
+          "bytes": 268435456,
+          "source_records": 3564,
+          "dtype": "uint32_le",
+          "start_token": 0,
+          "replay": false,
+          "consumed_tokens": 13631488,
+          "measured_start_token": 393216,
+          "measured_tokens": 13238272,
+          "stop_reason": null,
+          "tokenizer": {
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "revision": "qwen3-4b-base-906bfd4b4dc7f14ee4320094d8b41684abff8539"
+          }
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 10,
+            "seconds": 60.01558896154165,
+            "input_tokens": 1310720,
+            "input_tokens_per_second": 21839.659039919065,
+            "partial_window": false
+          },
+          {
+            "first_update": 11,
+            "last_update": 20,
+            "seconds": 60.20617615059018,
+            "input_tokens": 1310720,
+            "input_tokens_per_second": 21770.523952917603,
+            "partial_window": false
+          },
+          {
+            "first_update": 21,
+            "last_update": 31,
+            "seconds": 65.91170356981456,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21874.597710448106,
+            "partial_window": false
+          },
+          {
+            "first_update": 32,
+            "last_update": 42,
+            "seconds": 65.84819890744984,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21895.69379151053,
+            "partial_window": false
+          },
+          {
+            "first_update": 43,
+            "last_update": 53,
+            "seconds": 65.76604815199971,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21923.044496572205,
+            "partial_window": false
+          },
+          {
+            "first_update": 54,
+            "last_update": 64,
+            "seconds": 65.76421110704541,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21923.656890723938,
+            "partial_window": false
+          },
+          {
+            "first_update": 65,
+            "last_update": 75,
+            "seconds": 65.87174696289003,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21887.866444657346,
+            "partial_window": false
+          },
+          {
+            "first_update": 76,
+            "last_update": 85,
+            "seconds": 60.06008403748274,
+            "input_tokens": 1310720,
+            "input_tokens_per_second": 21823.479287541395,
+            "partial_window": false
+          },
+          {
+            "first_update": 86,
+            "last_update": 96,
+            "seconds": 65.95357809774578,
+            "input_tokens": 1441792,
+            "input_tokens_per_second": 21860.709328964807,
+            "partial_window": false
+          },
+          {
+            "first_update": 97,
+            "last_update": 101,
+            "seconds": 29.898010222241282,
+            "input_tokens": 655360,
+            "input_tokens_per_second": 21919.853365775973,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "confirm_winner",
-        "parent": "baseline",
-        "resolved_parent": "baseline",
+        "parent": "compiled_fsdp1",
+        "resolved_parent": "compiled_fsdp1",
         "role": "confirmation_winner",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 0,
-        "status": "pending",
+        "status": "initializing",
         "measurement_kind": "real_data_confirmation",
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
-          "attention": "sdpa_auto",
-          "kernels": "none",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
           "checkpointing": "full",
           "sharding": "full_shard",
-          "compile": "off",
+          "compile": "on",
           "precision": "bf16"
         }
       }
@@ -419,8 +3324,35 @@
         "accumulation": 1,
         "profile_steps": 1,
         "resolved_parent": null,
-        "status": "initializing",
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 149.81482639722526,
+        "warmup_seconds": 22.531700463965535,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 48.52327980659902,
+        "peak_cuda_allocated_bytes": 40327422976.0,
+        "peak_cuda_reserved_bytes": 49371152384.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00027767568826675415,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 10.63959968648851,
+        "profiler_seconds": 12.353972958400846,
+        "input_tokens_per_second": 21609.75111697616,
+        "launcher_wall_seconds": 312.89660200476646,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 4.419889722019434,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
           "float8_all_gather": "off",
           "optimizer": "adamw_fp32",
@@ -430,7 +3362,55 @@
           "sharding": "full_shard",
           "compile": "off",
           "precision": "bf16"
-        }
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 48.52327980659902,
+          "input_tokens_per_second": 21609.75111697616,
+          "step_seconds": {
+            "mean": 6.0394779946655035,
+            "p50": 5.9834300596266985,
+            "p95": 6.303181752935052,
+            "values": [
+              6.391293480992317,
+              5.964178582653403,
+              5.917456932365894,
+              5.9213098883628845,
+              5.983377730473876,
+              6.015179267153144,
+              6.139545686542988,
+              5.983482388779521
+            ],
+            "standard_deviation": 0.14797960057805618,
+            "coefficient_of_variation": 0.024502051453579643
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918426513671875,
+          "last": 7.658729076385498,
+          "mean": 9.268156468868256,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 48.522532323375344,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 48.522532323375344,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 21610.08401234774,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "attention_flash",
@@ -439,10 +3419,29 @@
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "status": "failed",
+        "exit_code": 1,
         "measurement_kind": "synthetic_short_probe",
+        "failure_type": "RuntimeError",
+        "setup_seconds": 76.60199605301023,
+        "compile_seconds": 0.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "launcher_wall_seconds": 82.180583499372,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 0.28202918730676174,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
         "features": {
-          "attention": "sdpa_flash"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_flash",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -452,11 +3451,94 @@
         "microbatch_per_gpu": 4,
         "accumulation": 1,
         "profile_steps": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 84.66353261470795,
+        "warmup_seconds": 12.92405859567225,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 31.891002343967557,
+        "peak_cuda_allocated_bytes": 40260314112.0,
+        "peak_cuda_reserved_bytes": 49052385280.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00025409460067749023,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.150074766948819,
+        "profiler_seconds": 9.583509419113398,
+        "input_tokens_per_second": 32879.995074797225,
+        "launcher_wall_seconds": 152.2871566619724,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 5.694937871769071,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "sdpa_cudnn"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.891002343967557,
+          "input_tokens_per_second": 32879.995074797225,
+          "step_seconds": {
+            "mean": 3.9243482924066484,
+            "p50": 3.891023132018745,
+            "p95": 4.075273885205388,
+            "values": [
+              3.9397516567260027,
+              3.8677017148584127,
+              3.874811325222254,
+              3.8881540540605783,
+              4.148247392848134,
+              3.8881009444594383,
+              3.8938922099769115,
+              3.8941270411014557
+            ],
+            "standard_deviation": 0.08695947819724288,
+            "coefficient_of_variation": 0.022158960346486997
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918558120727539,
+          "last": 7.658679485321045,
+          "mean": 9.268266379833221,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 31.4031077940017,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 31.4031077940017,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 33390.83529179517,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "loss_liger",
@@ -464,11 +3546,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 83.35084294341505,
+        "warmup_seconds": 25.275306027382612,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 47.63970601558685,
+        "peak_cuda_allocated_bytes": 14996919808.0,
+        "peak_cuda_reserved_bytes": 22596812800.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00024277903139591217,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 13.471488062292337,
+        "input_tokens_per_second": 22010.547245126258,
+        "launcher_wall_seconds": 161.51544289663434,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 23.137660210952163,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "liger_loss"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 47.63970601558685,
+          "input_tokens_per_second": 22010.547245126258,
+          "step_seconds": {
+            "mean": 5.947501098038629,
+            "p50": 5.936188240535557,
+            "p95": 6.047040406055748,
+            "values": [
+              5.934441637247801,
+              5.870179761201143,
+              5.923675956204534,
+              6.102161357179284,
+              5.925189765170217,
+              5.941752538084984,
+              5.937934843823314,
+              5.944672925397754
+            ],
+            "standard_deviation": 0.06251692279240963,
+            "coefficient_of_variation": 0.010511460487670444
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918503761291504,
+          "last": 7.658691883087158,
+          "mean": 9.268122613430023,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 47.638884503394365,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 47.638884503394365,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 22010.926807601612,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "loss_cce",
@@ -476,11 +3641,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 107.68596963398159,
+        "warmup_seconds": 38.348493000492454,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 49.90748313255608,
+        "peak_cuda_allocated_bytes": 14996919808.0,
+        "peak_cuda_reserved_bytes": 22445817856.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00031274184584617615,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 26.041590163484216,
+        "input_tokens_per_second": 21010.396321027536,
+        "launcher_wall_seconds": 200.9747225921601,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 34.57165285758674,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "cce"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "cce",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 49.90748313255608,
+          "input_tokens_per_second": 21010.396321027536,
+          "step_seconds": {
+            "mean": 6.228508113650605,
+            "p50": 6.209329016506672,
+            "p95": 6.347464767564088,
+            "values": [
+              6.415636362507939,
+              6.197912190109491,
+              6.209859285503626,
+              6.208885012194514,
+              6.220860376954079,
+              6.162762101739645,
+              6.202376559376717,
+              6.2097730208188295
+            ],
+            "standard_deviation": 0.07254380120892276,
+            "coefficient_of_variation": 0.011647058956210293
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918829917907715,
+          "last": 7.659641265869141,
+          "mean": 9.268863916397095,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 49.90653283894062,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 49.90653283894062,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 21010.796389803032,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "best_bf16_kernels",
@@ -488,12 +3736,94 @@
         "role": "combination",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "baseline",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 71.91104405373335,
+        "warmup_seconds": 12.875338042154908,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 31.152285624295473,
+        "peak_cuda_allocated_bytes": 14795594240.0,
+        "peak_cuda_reserved_bytes": 22051553280.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00025639496743679047,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.195477457717061,
+        "input_tokens_per_second": 33659.68111123834,
+        "launcher_wall_seconds": 121.5295057669282,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0414089784026146,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "attention": "@best:attention",
-          "kernels": "@best:kernels"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 31.152285624295473,
+          "input_tokens_per_second": 33659.68111123834,
+          "step_seconds": {
+            "mean": 3.876898365560919,
+            "p50": 3.854756658896804,
+            "p95": 3.98783211549744,
+            "values": [
+              3.867606431245804,
+              3.83746450394392,
+              3.8390442319214344,
+              4.052569022402167,
+              3.8509470634162426,
+              3.8525524605065584,
+              3.8569608572870493,
+              3.8580423537641764
+            ],
+            "standard_deviation": 0.06703891704352252,
+            "coefficient_of_variation": 0.017291894375937082
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918352127075195,
+          "last": 7.658649444580078,
+          "mean": 9.268243670463562,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 31.022836720570922,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 31.022836720570922,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 33800.132768152056,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "compiled_fsdp1",
@@ -501,11 +3831,100 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 91.51345922797918,
+        "warmup_seconds": 101.05205723829567,
+        "compile_seconds": 94.59773914143443,
+        "measurement_seconds": 24.492734337225556,
+        "peak_cuda_allocated_bytes": 13499214336.0,
+        "peak_cuda_reserved_bytes": 21716008960.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00026247836649417877,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 94.59773914143443,
+        "input_tokens_per_second": 42811.71655082667,
+        "launcher_wall_seconds": 224.49706245213747,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.045791642740369,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "compile": "on"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 24.492734337225556,
+          "input_tokens_per_second": 42811.71655082667,
+          "step_seconds": {
+            "mean": 3.060471539851278,
+            "p50": 3.0591668114066124,
+            "p95": 3.077772036008537,
+            "values": [
+              3.0818036142736673,
+              3.050349723547697,
+              3.0498005002737045,
+              3.0511672664433718,
+              3.061977192759514,
+              3.056356430053711,
+              3.0620327722281218,
+              3.0702848192304373
+            ],
+            "standard_deviation": 0.010463556827120581,
+            "coefficient_of_variation": 0.003418936164205942
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.916450500488281,
+          "last": 7.6524200439453125,
+          "mean": 9.264038562774658,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 24.492096884176135,
+          "satisfied": true
+        },
+        "compilation_evidence": {
+          "unique_graphs": 1,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 24.492096884176135,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 42812.83080655558,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "fsdp2",
@@ -513,11 +3932,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 62.51590331830084,
+        "warmup_seconds": 14.087177997455,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 30.859499789774418,
+        "peak_cuda_allocated_bytes": 15213812736.0,
+        "peak_cuda_reserved_bytes": 26726105088.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0002734232693910599,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 6.196681957691908,
+        "input_tokens_per_second": 33979.0342404531,
+        "launcher_wall_seconds": 112.5647320188582,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.073998112231493,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.916722774505615e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "sharding": "fsdp2"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 30.859499789774418,
+          "input_tokens_per_second": 33979.0342404531,
+          "step_seconds": {
+            "mean": 3.851689747069031,
+            "p50": 3.85225622728467,
+            "p95": 3.8651994791813196,
+            "values": [
+              3.8687251675873995,
+              3.836848594248295,
+              3.842413157224655,
+              3.8441166430711746,
+              3.850924976170063,
+              3.8535874783992767,
+              3.8582501877099276,
+              3.8586517721414566
+            ],
+            "standard_deviation": 0.009679668291260908,
+            "coefficient_of_variation": 0.002513096569791665
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918721199035645,
+          "last": 7.659579277038574,
+          "mean": 9.268641829490662,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 30.821878852322698,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 30.821878852322698,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 34020.508776381124,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "compiled_fsdp2",
@@ -525,11 +4027,100 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 65.37280213087797,
+        "warmup_seconds": 16.616578659042716,
+        "compile_seconds": 10.517976470291615,
+        "measurement_seconds": 24.50599447451532,
+        "peak_cuda_allocated_bytes": 13890882048.0,
+        "peak_cuda_reserved_bytes": 25310527488.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00025584548711776733,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 10.517976470291615,
+        "input_tokens_per_second": 42788.551229392164,
+        "launcher_wall_seconds": 112.59174320660532,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.057730060070753,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.916722774505615e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "compile": "on"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 24.50599447451532,
+          "input_tokens_per_second": 42788.551229392164,
+          "step_seconds": {
+            "mean": 3.062129262369126,
+            "p50": 3.0628137746825814,
+            "p95": 3.0829249400645495,
+            "values": [
+              3.091152183711529,
+              3.0477052312344313,
+              3.0465611666440964,
+              3.052026318386197,
+              3.0610074773430824,
+              3.0663158763200045,
+              3.0646200720220804,
+              3.067645773291588
+            ],
+            "standard_deviation": 0.013464025598567578,
+            "coefficient_of_variation": 0.00439694880422868
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.916755676269531,
+          "last": 7.65316915512085,
+          "mean": 9.264544188976288,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 24.50510541163385,
+          "satisfied": true
+        },
+        "compilation_evidence": {
+          "unique_graphs": 1,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 24.50510541163385,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 42790.10362886202,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_off",
@@ -537,10 +4128,30 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "failed",
+        "exit_code": 1,
         "measurement_kind": "synthetic_short_probe",
+        "failure_type": "OutOfMemoryError",
+        "setup_seconds": 58.518342681229115,
+        "compile_seconds": 0.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "launcher_wall_seconds": 65.24862521514297,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0246374532580376,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
         "features": {
-          "checkpointing": "off"
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
         }
       },
       {
@@ -549,9 +4160,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 2,
         "accumulation": 2,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
-        "features": {}
+        "setup_seconds": 83.38923840783536,
+        "warmup_seconds": 16.937953917309642,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 32.71593966707587,
+        "peak_cuda_allocated_bytes": 19474114048.0,
+        "peak_cuda_reserved_bytes": 26262634496.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0008949823677539825,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 8.90431546792388,
+        "input_tokens_per_second": 32050.921069989887,
+        "launcher_wall_seconds": 137.88834767974913,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.030682461336255,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.909272193908691e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 32.71593966707587,
+          "input_tokens_per_second": 32050.921069989887,
+          "step_seconds": {
+            "mean": 4.08119121612981,
+            "p50": 4.031788379885256,
+            "p95": 4.268532368261367,
+            "values": [
+              4.300767082720995,
+              4.006798246875405,
+              4.017139844596386,
+              4.014562848955393,
+              4.031247526407242,
+              4.032329233363271,
+              4.20866789855063,
+              4.038017047569156
+            ],
+            "standard_deviation": 0.1032508907142587,
+            "coefficient_of_variation": 0.02529920438576545
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.437180519104004,
+          "last": 6.250392913818359,
+          "mean": 8.302656590938568,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 32.6577945612371,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 32.6577945612371,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 32107.985676552657,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_off_micro2",
@@ -559,11 +4255,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 2,
         "accumulation": 2,
-        "status": "pending",
+        "resolved_parent": "memory_baseline_micro2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 88.30469543486834,
+        "warmup_seconds": 11.709948098286986,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 26.010585520416498,
+        "peak_cuda_allocated_bytes": 70310287872.0,
+        "peak_cuda_reserved_bytes": 79341551616.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0008061341941356659,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.041776038706303,
+        "input_tokens_per_second": 40313.43312809859,
+        "launcher_wall_seconds": 132.90906144492328,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0427534729242325,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.909272193908691e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 26.010585520416498,
+          "input_tokens_per_second": 40313.43312809859,
+          "step_seconds": {
+            "mean": 3.250098003540188,
+            "p50": 3.2481968021020293,
+            "p95": 3.270786908175796,
+            "values": [
+              3.2772257830947638,
+              3.233680546283722,
+              3.2408587634563446,
+              3.2424003314226866,
+              3.2454521004110575,
+              3.2513960022479296,
+              3.250941503793001,
+              3.2588289976119995
+            ],
+            "standard_deviation": 0.012501389954591418,
+            "coefficient_of_variation": 0.00384646553456979
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.437201499938965,
+          "last": 6.250265121459961,
+          "mean": 8.302511036396027,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 26.0096629653126,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 26.0096629653126,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 40314.8630337278,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "memory_baseline_micro1",
@@ -571,9 +4350,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 1,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
-        "features": {}
+        "setup_seconds": 80.68994098342955,
+        "warmup_seconds": 20.28224878758192,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 35.90767563506961,
+        "peak_cuda_allocated_bytes": 17791477248.0,
+        "peak_cuda_reserved_bytes": 24421335040.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0022130385041236877,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 11.202070320025086,
+        "input_tokens_per_second": 29202.001562470872,
+        "launcher_wall_seconds": 142.4921475313604,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0701916832476854,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.922310709953308e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 35.90767563506961,
+          "input_tokens_per_second": 29202.001562470872,
+          "step_seconds": {
+            "mean": 4.481623611180112,
+            "p50": 4.412421981804073,
+            "p95": 4.671068274695426,
+            "values": [
+              4.731723751872778,
+              4.54924188554287,
+              4.3867381159216166,
+              4.39813812635839,
+              4.403880657628179,
+              4.558422388508916,
+              4.416020631790161,
+              4.408823331817985
+            ],
+            "standard_deviation": 0.11436839893239512,
+            "coefficient_of_variation": 0.025519411903999534
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 9.828682899475098,
+          "last": 4.574799537658691,
+          "mean": 7.12020879983902,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 35.907190350815654,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 35.907190350815654,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 29202.3962263642,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_off_micro1",
@@ -581,11 +4445,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 1,
         "accumulation": 4,
-        "status": "pending",
+        "resolved_parent": "memory_baseline_micro1",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 80.23251880519092,
+        "warmup_seconds": 13.31889365054667,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 28.621791811659932,
+        "peak_cuda_allocated_bytes": 43209153024.0,
+        "peak_cuda_reserved_bytes": 50694455296.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0015323720872402191,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.7084308955818415,
+        "input_tokens_per_second": 36635.58196845075,
+        "launcher_wall_seconds": 128.62687732093036,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.046611823141575,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.922310709953308e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "off"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "off",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 28.621791811659932,
+          "input_tokens_per_second": 36635.58196845075,
+          "step_seconds": {
+            "mean": 3.5765754769090563,
+            "p50": 3.5792240677401423,
+            "p95": 3.5881878189742564,
+            "values": [
+              3.589801147580147,
+              3.558795742690563,
+              3.5632630959153175,
+              3.5721292179077864,
+              3.5782656986266375,
+              3.5801824368536472,
+              3.585191637277603,
+              3.5849748384207487
+            ],
+            "standard_deviation": 0.010299760453563423,
+            "coefficient_of_variation": 0.002879782775467853
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 9.829136848449707,
+          "last": 4.574594497680664,
+          "mean": 7.1199482679367065,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 28.621050531044602,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 28.621050531044602,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 36636.53082414405,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "shard_grad",
@@ -593,11 +4540,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 64.11890868842602,
+        "warmup_seconds": 12.814780253916979,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 30.753243388608098,
+        "peak_cuda_allocated_bytes": 21658889728.0,
+        "peak_cuda_reserved_bytes": 28915531776.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.0002340506762266159,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 5.167447127401829,
+        "input_tokens_per_second": 34096.43616284139,
+        "launcher_wall_seconds": 112.63057612627745,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.0571237076073885,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "sharding": "shard_grad_op"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "shard_grad_op",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 30.753243388608098,
+          "input_tokens_per_second": 34096.43616284139,
+          "step_seconds": {
+            "mean": 3.836043049581349,
+            "p50": 3.8362295711413026,
+            "p95": 3.8542733024805784,
+            "values": [
+              3.8487529065459967,
+              3.817994711920619,
+              3.819892669096589,
+              3.85724582336843,
+              3.8315344732254744,
+              3.836197528988123,
+              3.8362616132944822,
+              3.8404646702110767
+            ],
+            "standard_deviation": 0.01243797102716103,
+            "coefficient_of_variation": 0.003242396100981834
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918638229370117,
+          "last": 7.658748626708984,
+          "mean": 9.26821517944336,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 30.695086006075144,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 30.695086006075144,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 34161.03801737082,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "best_micro2",
@@ -605,9 +4635,100 @@
         "role": "combination",
         "microbatch_per_gpu": 2,
         "accumulation": 2,
-        "status": "pending",
+        "resolved_parent": "compiled_fsdp1",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
-        "features": {}
+        "setup_seconds": 71.02206278964877,
+        "warmup_seconds": 115.40017405152321,
+        "compile_seconds": 109.02178469672799,
+        "measurement_seconds": 25.73361531458795,
+        "peak_cuda_allocated_bytes": 18890235392.0,
+        "peak_cuda_reserved_bytes": 25757220864.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.001016136258840561,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 109.02178469672799,
+        "input_tokens_per_second": 40747.32551883528,
+        "launcher_wall_seconds": 218.9577244464308,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.044858045876026,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.909272193908691e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "on",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 25.73361531458795,
+          "input_tokens_per_second": 40747.32551883528,
+          "step_seconds": {
+            "mean": 3.215553738642484,
+            "p50": 3.200898098759353,
+            "p95": 3.284248799085617,
+            "values": [
+              3.3214941546320915,
+              3.215078853070736,
+              3.1872949711978436,
+              3.1917689815163612,
+              3.197119366377592,
+              3.1991487070918083,
+              3.202647490426898,
+              3.209877384826541
+            ],
+            "standard_deviation": 0.040920064213692334,
+            "coefficient_of_variation": 0.012725666413825082
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.435088157653809,
+          "last": 6.242496967315674,
+          "mean": 8.297407925128937,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 25.732657680287957,
+          "satisfied": true
+        },
+        "compilation_evidence": {
+          "unique_graphs": 1,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 25.732657680287957,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 40748.84192017379,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "liger_pointwise",
@@ -615,11 +4736,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "loss_liger",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 114.55305297113955,
+        "warmup_seconds": 42.40428660064936,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 40.984278954565525,
+        "peak_cuda_allocated_bytes": 13604410880.0,
+        "peak_cuda_reserved_bytes": 21023948800.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00027756020426750183,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 31.984682274982333,
+        "input_tokens_per_second": 25584.834642630496,
+        "launcher_wall_seconds": 203.38474265299737,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 48.82477906905115,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "kernels": "liger_full"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "liger_full",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 40.984278954565525,
+          "input_tokens_per_second": 25584.834642630496,
+          "step_seconds": {
+            "mean": 5.116980286780745,
+            "p50": 5.070875309407711,
+            "p95": 5.306005366332829,
+            "values": [
+              5.385010998696089,
+              5.046511774882674,
+              5.0622908640652895,
+              5.062173383310437,
+              5.067893767729402,
+              5.1592806205153465,
+              5.0738568510860205,
+              5.0788240339607
+            ],
+            "standard_deviation": 0.1062516695433234,
+            "coefficient_of_variation": 0.02076452587042693
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918255805969238,
+          "last": 7.6578545570373535,
+          "mean": 9.26766723394394,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 40.98339407518506,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 40.98339407518506,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 25585.387049114604,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "checkpoint_selective",
@@ -627,11 +4831,94 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "best_bf16_kernels",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 68.91325607150793,
+        "warmup_seconds": 11.65546464920044,
+        "compile_seconds": 0.0,
+        "measurement_seconds": 27.325471557676792,
+        "peak_cuda_allocated_bytes": 54882169344.0,
+        "peak_cuda_reserved_bytes": 63508054016.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00024865008890628815,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 4.340053416788578,
+        "input_tokens_per_second": 38373.573820555495,
+        "launcher_wall_seconds": 113.3506274279207,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 2.038991507142782,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.920448064804077e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "checkpointing": "selective"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "selective",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 27.325471557676792,
+          "input_tokens_per_second": 38373.573820555495,
+          "step_seconds": {
+            "mean": 3.4145231903530657,
+            "p50": 3.3875566525384784,
+            "p95": 3.5502813733182847,
+            "values": [
+              3.4012115355581045,
+              3.3663659561425447,
+              3.3725352734327316,
+              3.6305497474968433,
+              3.380396021530032,
+              3.38854855671525,
+              3.3900136835873127,
+              3.3865647483617067
+            ],
+            "standard_deviation": 0.08227128414874563,
+            "coefficient_of_variation": 0.024094516148311377
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918476104736328,
+          "last": 7.658614635467529,
+          "mean": 9.26815515756607,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 27.32464959472418,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 27.32464959472418,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 38374.72815030932,
+            "partial_window": true
+          }
+        ]
       },
       {
         "name": "optimizer_8bit",
@@ -639,12 +4926,213 @@
         "role": "tuning",
         "microbatch_per_gpu": 4,
         "accumulation": 1,
-        "status": "pending",
+        "resolved_parent": "fsdp2",
+        "profile_steps": 0,
+        "status": "completed",
+        "exit_code": 0,
         "measurement_kind": "synthetic_short_probe",
+        "setup_seconds": 73.95545582473278,
+        "warmup_seconds": 159.03939600847661,
+        "compile_seconds": 147.60412867181003,
+        "measurement_seconds": 46.29746095277369,
+        "peak_cuda_allocated_bytes": 12196538368.0,
+        "peak_cuda_reserved_bytes": 26789019648.0,
+        "input_kind": "fixed synthetic uniform token IDs, CPU to GPU transfer each microbatch",
+        "host_input_prepare_and_transfer_schedule_seconds": 0.00029506906867027283,
+        "host_input_timing_scope": "Host mmap/copy/int64 conversion/pinning plus asynchronous H2D launch; GPU transfer completion remains in total training wall time",
+        "completed_optimizer_updates": 11,
+        "first_warmup_seconds": 147.60412867181003,
+        "input_tokens_per_second": 22648.67183687704,
+        "launcher_wall_seconds": 286.5548103451729,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 11.534305043518543,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 9.916722774505615e-06,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
-          "optimizer": "adamw_8bit"
-        }
+          "float8_all_gather": "off",
+          "optimizer": "adamw_8bit",
+          "attention": "sdpa_cudnn",
+          "kernels": "liger_loss",
+          "checkpointing": "full",
+          "sharding": "fsdp2",
+          "compile": "off",
+          "precision": "bf16"
+        },
+        "throughput": {
+          "measured_optimizer_steps": 8,
+          "input_tokens_per_step": 131072,
+          "measured_input_tokens": 1048576,
+          "measured_wall_seconds": 46.29746095277369,
+          "input_tokens_per_second": 22648.67183687704,
+          "step_seconds": {
+            "mean": 5.780688484665006,
+            "p50": 5.787576803006232,
+            "p95": 5.916069331485778,
+            "values": [
+              5.845613883808255,
+              5.68123053573072,
+              5.685870947316289,
+              5.9386864844709635,
+              5.644886372610927,
+              5.741674263030291,
+              5.833479342982173,
+              5.874066047370434
+            ],
+            "standard_deviation": 0.09970675219015057,
+            "coefficient_of_variation": 0.017248248622054683
+          },
+          "valid_sustained_measurement": true
+        },
+        "loss_summary": {
+          "first": 10.918760299682617,
+          "last": 7.659575939178467,
+          "mean": 9.268690288066864,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "measurement_requirements": {
+          "minimum_optimizer_steps": 8,
+          "minimum_measured_seconds": 0.0,
+          "last_completed_update_end_seconds": 46.29544558376074,
+          "satisfied": true
+        },
+        "chunk_rates": [
+          {
+            "first_update": 1,
+            "last_update": 8,
+            "seconds": 46.29544558376074,
+            "input_tokens": 1048576,
+            "input_tokens_per_second": 22649.65779631277,
+            "partial_window": true
+          }
+        ]
       }
     ]
+  },
+  "throughput": {
+    "measured_optimizer_steps": 101,
+    "input_tokens_per_step": 131072,
+    "measured_input_tokens": 13238272,
+    "measured_wall_seconds": 605.3548347949982,
+    "input_tokens_per_second": 21868.615296486576,
+    "step_seconds": {
+      "mean": 5.977364137510557,
+      "p50": 5.97416784055531,
+      "p95": 6.026448925957084,
+      "values": [
+        6.042193392291665,
+        5.923948796465993,
+        5.91900347173214,
+        5.955449847504497,
+        5.9338094368577,
+        5.969063188880682,
+        6.187924508005381,
+        5.954860836267471,
+        5.968501461669803,
+        5.973312325775623,
+        5.968649238348007,
+        5.944275368005037,
+        5.966687988489866,
+        5.971258839592338,
+        5.969476519152522,
+        5.970813004299998,
+        5.944541558623314,
+        5.955530479550362,
+        5.963214289397001,
+        6.026448925957084,
+        5.968826521188021,
+        5.9460244327783585,
+        5.951824851334095,
+        5.969885777682066,
+        5.969115948304534,
+        5.956335535272956,
+        5.9438355546444654,
+        5.963805131614208,
+        5.971176730468869,
+        5.970649838447571,
+        5.976510358974338,
+        5.972353449091315,
+        5.975893992930651,
+        6.0157177448272705,
+        5.994321633130312,
+        5.969991458579898,
+        5.975425086915493,
+        5.977050041779876,
+        5.972506118938327,
+        5.969813859090209,
+        5.970548700541258,
+        5.969008000567555,
+        5.97416784055531,
+        5.9663058537989855,
+        5.972211292013526,
+        5.971714563667774,
+        5.952834323048592,
+        5.9992587845772505,
+        5.974577963352203,
+        5.975786756724119,
+        5.982674738392234,
+        5.968788051977754,
+        5.979343950748444,
+        5.981435080990195,
+        5.963709961622953,
+        5.97827672213316,
+        5.94813571497798,
+        5.971946960315108,
+        5.975254667922854,
+        5.967454727739096,
+        5.9577603451907635,
+        5.977865820750594,
+        5.975113723427057,
+        5.974004963412881,
+        5.979537878185511,
+        6.015015214681625,
+        5.974548673257232,
+        5.9775781743228436,
+        5.981183370575309,
+        5.943434230983257,
+        5.997835095971823,
+        5.9762387946248055,
+        5.9684634525328875,
+        5.978943936526775,
+        5.980141310021281,
+        6.077187575399876,
+        5.975066274404526,
+        5.98093506321311,
+        5.987841982394457,
+        5.965931298211217,
+        6.03663788177073,
+        5.974081441760063,
+        5.96548024751246,
+        5.979614689946175,
+        5.985777599737048,
+        5.9961659368127584,
+        5.982579257339239,
+        5.979990439489484,
+        5.986768718808889,
+        5.998896647244692,
+        6.037297964096069,
+        5.975210944190621,
+        5.955472841858864,
+        5.984312815591693,
+        5.979981722310185,
+        5.994921915233135,
+        5.978907078504562,
+        5.983009196817875,
+        5.979448078200221,
+        5.976379733532667,
+        5.974753361195326
+      ],
+      "standard_deviation": 0.03060726350858589,
+      "coefficient_of_variation": 0.005120528514652807
+    },
+    "valid_sustained_measurement": true
   }
 }

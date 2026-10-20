@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-20T07:01:02-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-20T08:02:59-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-20T07:01:01-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-20T08:02:59-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated at the configured reporting interval even without a status change, and promptly on failure or completion. A separate session monitor queues the requested chat updates.
 
@@ -18,43 +18,45 @@ Short synthetic probes select a candidate recipe. The baseline and selected cand
 
 ### Job 243178: 8 × A100 80GB
 
-Scheduler status: **running**. Suite stage: **short_sweep**. Suite wall time: **12.91 seconds**.
+Scheduler status: **running**. Suite stage: **confirm_winner**. Suite wall time: **3,759.58 seconds**.
 
 | Real-data run | Recipe | Status | Measured seconds | Updates | Input tokens/s | Peak allocated GiB/GPU |
 |:---|:---|:---|---:|---:|---:|---:|
-| Baseline | confirm_baseline: sdpa_auto / bf16 | pending | — | — | — | — |
-| Selected candidate | confirm_winner: sdpa_auto / bf16 | pending | — | — | — | — |
+| Baseline | confirm_baseline: sdpa_auto / bf16 | completed | 605.35 | 101 | 21,869 | 37.56 |
+| Selected candidate | confirm_winner: sdpa_cudnn / bf16 | initializing | — | — | — | — |
 
 | Run | Setup seconds | Warmup seconds | Compile setup seconds | First warmup seconds | Measured tokens | Loss: first → last |
 |:---|---:|---:|---:|---:|---:|:---|
-| confirm_baseline | — | — | — | — | — | — |
+| confirm_baseline | 68.18 | 18.37 | 0.00 | 6.47 | 13,238,272 | 10.8013 → 6.6144 |
 | confirm_winner | — | — | — | — | — | — |
 
 Lazy compilation can occur inside the first warmup update; the timing columns overlap and must not be added. Loss values provide a numerical diagnostic, not downstream biological scores.
+
+**confirm_baseline:** 13,631,488 token positions consumed including warmup; replay: **False**. Per-window rates, input-preparation timings and the frozen pack hashes are retained in [sanitized results](results_243178.json).
 
 Short synthetic probes used for recipe selection:
 
 | Probe | Status | Synthetic input tokens/s |
 |:---|:---|---:|
-| baseline | initializing | — |
-| attention_flash | pending | — |
-| attention_cudnn | pending | — |
-| loss_liger | pending | — |
-| loss_cce | pending | — |
-| best_bf16_kernels | pending | — |
-| compiled_fsdp1 | pending | — |
-| fsdp2 | pending | — |
-| compiled_fsdp2 | pending | — |
-| checkpoint_off | pending | — |
-| memory_baseline_micro2 | pending | — |
-| checkpoint_off_micro2 | pending | — |
-| memory_baseline_micro1 | pending | — |
-| checkpoint_off_micro1 | pending | — |
-| shard_grad | pending | — |
-| best_micro2 | pending | — |
-| liger_pointwise | pending | — |
-| checkpoint_selective | pending | — |
-| optimizer_8bit | pending | — |
+| baseline | completed | 21,610 |
+| attention_flash | failed — RuntimeError | — |
+| attention_cudnn | completed | 32,880 |
+| loss_liger | completed | 22,011 |
+| loss_cce | completed | 21,010 |
+| best_bf16_kernels | completed | 33,660 |
+| compiled_fsdp1 | completed | 42,812 |
+| fsdp2 | completed | 33,979 |
+| compiled_fsdp2 | completed | 42,789 |
+| checkpoint_off | failed — OutOfMemoryError | — |
+| memory_baseline_micro2 | completed | 32,051 |
+| checkpoint_off_micro2 | completed | 40,313 |
+| memory_baseline_micro1 | completed | 29,202 |
+| checkpoint_off_micro1 | completed | 36,636 |
+| shard_grad | completed | 34,096 |
+| best_micro2 | completed | 40,747 |
+| liger_pointwise | completed | 25,585 |
+| checkpoint_selective | completed | 38,374 |
+| optimizer_8bit | completed | 22,649 |
 
 ## B200 optimization sweep
 
@@ -194,7 +196,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
 | 242256 | success | 8 | NVIDIA A100-SXM4-80GB | 21,897 | 105.71 days |
 | 242576 | success | 2 | NVIDIA B200 | 14,534 | 159.27 days |
-| 243178 | running | 8 | A100 80GB | — | — |
+| 243178 | running | 8 | NVIDIA A100-SXM4-80GB | — | — |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 
@@ -291,6 +293,8 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 ### Job 243178
 
 Status: **running**. Sanitized diagnostics: [results_243178.json](results_243178.json).
+
+Measured 101 optimizer steps after 3 warmup steps. Context: unknown; microbatch per GPU: unknown; gradient accumulation: unknown.
 
 ## What the measurement covers
 
