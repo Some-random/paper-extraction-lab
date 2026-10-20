@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-19T18:03:36-08:00",
+  "checked_at_pst": "2026-10-19T18:09:21-08:00",
   "watcher_status": "watching",
   "stop_reason": null,
   "delivery": "Local status files and optional GitHub reports; a separate session monitor queues chat updates",
@@ -122,13 +122,16 @@
     },
     {
       "job_id": "242576",
-      "status": "queued",
-      "scheduler_state": "PENDING",
+      "status": "running",
+      "scheduler_state": "RUNNING",
       "scheduler_observed": true,
       "requested_gpus": 2,
       "target_gpu": "B200 180GB",
       "admission_status": "ordinary_queue",
-      "comparison_group": "b200_optimization_2026-10-19"
+      "comparison_group": "b200_optimization_2026-10-19",
+      "result_status": "running",
+      "failure_type": "BaselineNotYetComplete",
+      "input_tokens_per_second": null
     }
   ]
 }
