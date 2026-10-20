@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T18:09:21-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T18:12:03-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T18:09:21-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T18:12:02-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
@@ -28,8 +28,8 @@ Allocation: **2 × B200 180GB**. Scheduler status: **running**.
 
 | Profile | Parent | Attention / precision | Status | Input tokens/s | Peak allocated GiB |
 |:---|:---|:---|:---|---:|---:|
-| baseline | — | sdpa_auto / bf16 | initializing | — | — |
-| attention_flash | baseline | sdpa_flash / — | pending | — | — |
+| baseline | — | sdpa_auto / bf16 | completed | 14,534 | 61.91 |
+| attention_flash | baseline | sdpa_flash / bf16 | initializing | — | — |
 | attention_cudnn | baseline | sdpa_cudnn / — | pending | — | — |
 | attention_fa4 | baseline | flash_attn4 / — | pending | — | — |
 | loss_liger | baseline | — / — | pending | — | — |
@@ -137,7 +137,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241367 | queued | 8 | B200 180GB | — | — |
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
 | 242256 | queued | 8 | A100 80GB | — | — |
-| 242576 | running | 2 | B200 180GB | — | — |
+| 242576 | running | 2 | NVIDIA B200 | 14,534 | 159.27 days |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 
@@ -185,10 +185,12 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 
 Status: **running**. Sanitized diagnostics: [results_242576.json](results_242576.json).
 
+Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per GPU: 4; gradient accumulation: 4.
+
 | Microbatch/GPU | Accumulation | Status | Measured input tokens/s |
 |---:|---:|:---|---:|
+| 4 | 4 | completed | 14,534 |
 | 4 | 4 | initializing | — |
-| 4 | 4 | pending | — |
 | 4 | 4 | pending | — |
 | 4 | 4 | pending | — |
 | 4 | 4 | pending | — |
