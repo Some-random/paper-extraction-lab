@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T19:12:32-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T19:22:12-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T19:12:31-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T19:22:11-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
@@ -24,7 +24,9 @@ COAT's released integration requires incompatible library versions. Native NVFP4
 
 ### Optimization job 242576
 
-Allocation: **2 × B200 180GB**. Scheduler status: **running**.
+Allocation: **2 × B200 180GB**. Scheduler status: **success**.
+
+Fastest completed profile: **best_micro8**, **62,150 input tokens/s**; **4.28×** the new baseline.
 
 | Profile | Parent | Attention / precision | Status | Input tokens/s | Peak allocated GiB |
 |:---|:---|:---|:---|---:|---:|
@@ -58,7 +60,7 @@ Allocation: **2 × B200 180GB**. Scheduler status: **running**.
 | best_micro1 | fp8_all_gather | flash_attn4 / float8_tensorwise | completed | 40,438 | 46.18 |
 | best_micro2 | fp8_all_gather | flash_attn4 / float8_tensorwise | completed | 51,721 | 53.88 |
 | best_micro8 | fp8_all_gather | flash_attn4 / float8_tensorwise | completed | 62,150 | 100.30 |
-| best_micro16 | best_micro8 | flash_attn4 / float8_tensorwise | initializing | — | — |
+| best_micro16 | best_micro8 | flash_attn4 / float8_tensorwise | failed — LauncherNonzeroExit | — | 132.16 |
 
 Full feature settings, timings and retained failures are in the [sanitized results](results_242576.json).
 
@@ -137,7 +139,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241367 | queued | 8 | B200 180GB | — | — |
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
 | 242256 | queued | 8 | A100 80GB | — | — |
-| 242576 | running | 2 | NVIDIA B200 | 14,534 | 159.27 days |
+| 242576 | success | 2 | NVIDIA B200 | 14,534 | 159.27 days |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 
@@ -183,7 +185,7 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 
 ### Job 242576
 
-Status: **running**. Sanitized diagnostics: [results_242576.json](results_242576.json).
+Status: **success**. Sanitized diagnostics: [results_242576.json](results_242576.json).
 
 Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per GPU: 4; gradient accumulation: 4.
 
@@ -219,7 +221,7 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 | 1 | 16 | completed | 40,438 |
 | 2 | 8 | completed | 51,721 |
 | 8 | 2 | completed | 62,150 |
-| 16 | 1 | initializing | — |
+| 16 | 1 | failed — LauncherNonzeroExit | — |
 
 ## What the measurement covers
 

@@ -57,7 +57,7 @@
   ],
   "packages": {},
   "suite": {
-    "status": "running",
+    "status": "completed",
     "mode": "b200_optimization",
     "world_size": 2,
     "sequence_length": 4096,
@@ -65,7 +65,7 @@
     "input_tokens_per_update": 131072,
     "tuning_speedup_over_baseline": 4.276166917856251,
     "started_utc": "2026-10-20T02:08:50.861439+00:00",
-    "runtime_seconds": 3787.0221934318542,
+    "runtime_seconds": 4384.130569219589,
     "stop_reason": null,
     "rate_scope": "Global input tokens per second after warmup; setup, compile-inclusive warmup and separate profiler excluded",
     "profiles": [
@@ -1601,7 +1601,26 @@
         "accumulation": 1,
         "resolved_parent": "best_micro8",
         "profile_steps": 0,
-        "status": "initializing",
+        "status": "failed",
+        "exit_code": 1,
+        "setup_seconds": 41.42103842459619,
+        "warmup_seconds": 550.2457749973983,
+        "peak_cuda_allocated_bytes": 141909234688.0,
+        "peak_cuda_reserved_bytes": 182974414848.0,
+        "failure_type": "LauncherNonzeroExit",
+        "launcher_wall_seconds": 596.7632490377873,
+        "smoke_checks": {
+          "status": "passed",
+          "seconds": 9.471685895696282,
+          "scope": "Small functional output/gradient checks; no quality claim"
+        },
+        "optimizer_update_check": {
+          "status": "passed",
+          "sampled_elements": 1024,
+          "maximum_local_absolute_change": 1.0058283805847168e-05,
+          "any_rank_changed": true,
+          "dtype": "torch.float32"
+        },
         "features": {
           "float8_all_gather": "on",
           "optimizer": "adamw_fp32",
