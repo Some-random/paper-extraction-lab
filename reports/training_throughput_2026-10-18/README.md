@@ -1,6 +1,6 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T17:13:48-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T17:14:17-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
@@ -10,7 +10,23 @@ Scheduler last checked **2026-10-19T17:13:46-08:00**. Monitor: **watching**. [St
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
-This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, synthetic token IDs and a **4,096-token context**. It runs BF16 forward/backward computation with FP32 master parameters and conventional AdamW optimizer states. No pretrained weights or biological training corpus are downloaded for the benchmark.
+This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, synthetic token IDs and a **4,096-token context**. The baseline runs BF16 computation with FP32 master parameters and conventional AdamW optimizer states; optimization profiles identify their precision and kernel changes. No pretrained weights or biological training corpus are downloaded for the benchmark.
+
+## B200 optimization sweep
+
+A controlled two-B200 sweep keeps the Qwen3-4B architecture, 4,096-token context and 131,072 input positions per optimizer update fixed. It compares attention backends, fused losses and pointwise kernels, checkpointing, sharding, compilation and native low precision. Individual changes precede selected combinations; unavailable features and failures stay visible.
+
+This allocation is bounded to **two hours / four GPU-hours**, with a persistent 110-minute suite budget. Setup and warmup are outside steady training throughput. Warmup includes compilation where enabled. Numerical smoke checks establish executable compatibility, not biological quality or long-run convergence. [Evidence and test rationale](training_speedups_2026-10-19.md).
+
+The planned comparisons include PyTorch Flash/cuDNN and FlashAttention-4; Liger and Cut Cross-Entropy; activation recomputation and batch sizes; FSDP2; compilation; native FP8/MXFP8 and FP8 communication; and an explicitly labeled 8-bit AdamW-state variant. The final combinations use successful earlier measurements. Any options left by the time limit are shown as skipped.
+
+COAT's released integration requires incompatible library versions. Native NVFP4 requires a separate training-library build in this environment. Both remain unavailable here; neither is counted as an executed speed test.
+
+### Optimization job 242576
+
+Allocation: **2 × B200 180GB**. Scheduler status: **queued**.
+
+No profile measurements are available yet.
 
 ## Throughput verification
 
@@ -24,6 +40,8 @@ The two requests add at most **3.33 GPU-hours** (two B200s and eight A100s, 20 m
 | 242256 / 8 × A100 80GB | queued | — | — |
 
 **Timing scope:** input tokens/s divides timed training tokens by timed training wall time. Setup and warmup are excluded. A separate post-measurement profiler update is also excluded; profiler operator/device durations can overlap and must not be added as a wall-time breakdown.
+
+Suite status: **unknown**. Stop reason: **none**.
 
 ### Verification job 242255
 
@@ -131,8 +149,8 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 
 ## What the measurement covers
 
-The timing includes synthetic-input transfers, forward/backward passes, optimizer updates and the communication used by this allocation. The original matched comparison uses FSDP FULL_SHARD and activation checkpointing. Verification tuning profiles list their different settings above. PyTorch SDPA attention is requested without torch.compile; observed backend evidence, when available, is reported separately. Setup, warmup and profiling are outside the measured denominator.
+The timing includes synthetic-input transfers, forward/backward passes, optimizer updates and the communication used by this allocation. The original matched comparison uses FSDP FULL_SHARD and activation checkpointing. Verification tuning profiles list their different settings above. The original comparisons request PyTorch SDPA without torch.compile; observed backend evidence, when available, is reported separately. Setup, warmup and profiling are outside the measured denominator.
 
 Production corpus loading, biological learning quality, validation, checkpoint saving, restart behavior and multi-node scaling are **not tested**. Queueing and interruptions are excluded from the compute-time estimate. No full 200B-token training run has been started.
 
-Each requested allocation is bounded to 20 minutes and at most eight GPUs. No existing jobs are modified by this diagnostic.
+The original comparison and verification allocations are bounded to 20 minutes and at most eight GPUs. The optimization allocation above uses two B200s for at most two hours. No existing jobs are modified by this diagnostic.
