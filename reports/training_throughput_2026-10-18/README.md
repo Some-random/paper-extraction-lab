@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T21:50:53-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T21:53:36-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T21:50:52-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T21:53:35-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
 
@@ -73,11 +73,11 @@ The two requests add at most **3.33 GPU-hours** (two B200s and eight A100s, 20 m
 | Job / allocation | Status | Baseline input tokens/s | Fastest completed tuning input tokens/s |
 |:---|:---|---:|---:|
 | 242255 / 2 × B200 180GB | success | 14,522 | — |
-| 242256 / 8 × A100 80GB | running | — | — |
+| 242256 / 8 × A100 80GB | failed | — | — |
 
 **Timing scope:** input tokens/s divides timed training tokens by timed training wall time. Setup and warmup are excluded. A separate post-measurement profiler update is also excluded; profiler operator/device durations can overlap and must not be added as a wall-time breakdown.
 
-Suite status: **unknown**. Stop reason: **none**.
+Suite status: **completed**. Stop reason: **none**.
 
 ### Verification job 242255
 
@@ -92,6 +92,16 @@ Suite status: **unknown**. Stop reason: **none**.
 Last retained milestone for **tuned_micro4**: **first_optimizer_update_complete**, 38.73 seconds after process start. This identifies progress, not the cause of a stall.
 
 Last retained milestone for **tuned_micro8**: **first_forward_start**, 31.26 seconds after process start. This identifies progress, not the cause of a stall.
+
+Suite status: **completed**. Stop reason: **none**.
+
+### Verification job 242256
+
+| Profile / role | Checkpointing / sharding | Microbatch × accumulation | Status | Input tokens/s | Setup s | Warmup s | Timed training s | Profiler s |
+|:---|:---|:---|:---|---:|---:|---:|---:|---:|
+| baseline / baseline | on / full_shard | 4 × 1 | completed | 21,897 | 63.74 | 20.35 | 47.89 | 12.42 |
+
+**baseline:** observed attention operators: `aten::_efficient_attention_backward`, `fmha_cutlassB_bf16_aligned_128x128_k128_seqaligned_sm80(PyTorchMemEffAttention::AttentionBackwardKernel<cutlass::arch::Sm80, cutlass::bfloat16_t, true, false, true, 128, 128, 128, true>::Params)`, `aten::_efficient_attention_forward`, `fmha_cutlassF_bf16_aligned_64x128_rf_sm80(PyTorchMemEffAttention::AttentionKernel<cutlass::bfloat16_t, cutlass::arch::Sm80, true, 64, 128, 128, true, true>::Params)`, `aten::_scaled_dot_product_efficient_attention`, `ScaledDotProductEfficientAttentionBackward0`; observed CUDA kernels: `fmha_cutlassB_bf16_aligned_128x128_k128_seqaligned_sm80(PyTorchMemEffAttention::AttentionBackwardKernel<cutlass::arch::Sm80, cutlass::bfloat16_t, true, false, true, 128, 128, 128, true>::Params)`, `fmha_cutlassF_bf16_aligned_64x128_rf_sm80(PyTorchMemEffAttention::AttentionKernel<cutlass::bfloat16_t, cutlass::arch::Sm80, true, 64, 128, 128, true, true>::Params)`.
 
 ## Matched GPU allocation comparison
 
@@ -138,7 +148,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 241366 | queued | 4 | B200 180GB | — | — |
 | 241367 | queued | 8 | B200 180GB | — | — |
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
-| 242256 | running | 8 | A100 80GB | — | — |
+| 242256 | failed | 8 | NVIDIA A100-SXM4-80GB | 21,897 | 105.71 days |
 | 242576 | success | 2 | NVIDIA B200 | 14,534 | 159.27 days |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
@@ -182,6 +192,16 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 | 4 | 4 | completed | 14,522 |
 | 4 | 4 | failed — OutOfMemoryError | — |
 | 8 | 2 | failed — OutOfMemoryError | — |
+
+### Job 242256
+
+Status: **failed**. Sanitized diagnostics: [results_242256.json](results_242256.json).
+
+Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per GPU: 4; gradient accumulation: 1.
+
+| Microbatch/GPU | Accumulation | Status | Measured input tokens/s |
+|---:|---:|:---|---:|
+| 4 | 1 | completed | 21,897 |
 
 ### Job 242576
 
