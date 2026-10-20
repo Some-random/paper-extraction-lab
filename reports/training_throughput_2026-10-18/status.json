@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-19T22:55:13-08:00",
+  "checked_at_pst": "2026-10-19T23:46:18-08:00",
   "watcher_status": "watching",
   "stop_reason": null,
   "delivery": "Local status files and optional GitHub reports; a separate session monitor queues chat updates",
@@ -135,6 +135,16 @@
       "result_status": "completed",
       "failure_type": null,
       "input_tokens_per_second": 14534.097094980552
+    },
+    {
+      "job_id": "243178",
+      "status": "queued",
+      "scheduler_state": "PENDING",
+      "scheduler_observed": true,
+      "requested_gpus": 8,
+      "target_gpu": "A100 80GB",
+      "admission_status": "released",
+      "comparison_group": "a100_optimization_2026-10-20"
     }
   ]
 }

@@ -15,6 +15,7 @@
   "setup_seconds": 36.08775650989264,
   "warmup_seconds": 27.831373455002904,
   "measurement_seconds": 72.1459333281964,
+  "compile_seconds": 0.0,
   "job_id": "242576",
   "arguments": {
     "sequence_length": 4096,
@@ -56,6 +57,13 @@
     }
   ],
   "packages": {},
+  "loss_summary": {
+    "first": 9.791425704956055,
+    "last": 4.502752304077148,
+    "mean": 7.0614320039749146,
+    "finite": true,
+    "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+  },
   "suite": {
     "status": "completed",
     "mode": "b200_optimization",
@@ -81,6 +89,7 @@
         "exit_code": 0,
         "setup_seconds": 36.08775650989264,
         "warmup_seconds": 27.831373455002904,
+        "compile_seconds": 0.0,
         "measurement_seconds": 72.1459333281964,
         "peak_cuda_allocated_bytes": 66474954240.0,
         "peak_cuda_reserved_bytes": 89357549568.0,
@@ -130,6 +139,13 @@
               9.023189074359834
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.791425704956055,
+          "last": 4.502752304077148,
+          "mean": 7.0614320039749146,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -144,6 +160,7 @@
         "exit_code": 1,
         "failure_type": "RuntimeError",
         "setup_seconds": 33.27367348968983,
+        "compile_seconds": 0.0,
         "launcher_wall_seconds": 37.238394029438496,
         "smoke_checks": {
           "status": "passed",
@@ -173,6 +190,7 @@
         "exit_code": 0,
         "setup_seconds": 37.90376284811646,
         "warmup_seconds": 13.672551054507494,
+        "compile_seconds": 0.0,
         "measurement_seconds": 32.76014041155577,
         "peak_cuda_allocated_bytes": 66407845376.0,
         "peak_cuda_reserved_bytes": 89357549568.0,
@@ -222,6 +240,13 @@
               4.059710900299251
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.791389465332031,
+          "last": 4.502537727355957,
+          "mean": 7.061175048351288,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -236,6 +261,7 @@
         "exit_code": 0,
         "setup_seconds": 40.96863701567054,
         "warmup_seconds": 15.318065988831222,
+        "compile_seconds": 0.0,
         "measurement_seconds": 31.47204907424748,
         "peak_cuda_allocated_bytes": 66407845376.0,
         "peak_cuda_reserved_bytes": 89357549568.0,
@@ -285,6 +311,13 @@
               4.0570580922067165
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.79129409790039,
+          "last": 4.502700328826904,
+          "mean": 7.06133109331131,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -299,6 +332,7 @@
         "exit_code": 0,
         "setup_seconds": 47.66194242425263,
         "warmup_seconds": 32.26617600210011,
+        "compile_seconds": 0.0,
         "measurement_seconds": 72.1971463020891,
         "peak_cuda_allocated_bytes": 41144585216.0,
         "peak_cuda_reserved_bytes": 55389978624.0,
@@ -347,6 +381,13 @@
               9.031517286784947
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.791348457336426,
+          "last": 4.503029823303223,
+          "mean": 7.061653137207031,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -361,6 +402,7 @@
         "exit_code": 0,
         "setup_seconds": 45.71148958709091,
         "warmup_seconds": 37.1152192465961,
+        "compile_seconds": 0.0,
         "measurement_seconds": 76.4203702667728,
         "peak_cuda_allocated_bytes": 41144716288.0,
         "peak_cuda_reserved_bytes": 55150903296.0,
@@ -409,6 +451,13 @@
               9.513693529181182
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.792048454284668,
+          "last": 4.503658294677734,
+          "mean": 7.062274217605591,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -446,6 +495,7 @@
         "exit_code": 0,
         "setup_seconds": 43.53654015995562,
         "warmup_seconds": 15.435796718113124,
+        "compile_seconds": 0.0,
         "measurement_seconds": 31.467167056165636,
         "peak_cuda_allocated_bytes": 66407845376.0,
         "peak_cuda_reserved_bytes": 89357549568.0,
@@ -494,6 +544,13 @@
               4.072430605068803
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.79128646850586,
+          "last": 4.50313138961792,
+          "mean": 7.061574041843414,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -508,6 +565,7 @@
         "exit_code": 0,
         "setup_seconds": 42.83424565754831,
         "warmup_seconds": 12.165060197003186,
+        "compile_seconds": 0.0,
         "measurement_seconds": 24.591613193042576,
         "peak_cuda_allocated_bytes": 163822117376.0,
         "peak_cuda_reserved_bytes": 186705248256.0,
@@ -556,6 +614,13 @@
               3.0834085643291473
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.791572570800781,
+          "last": 4.50233268737793,
+          "mean": 7.061312139034271,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -570,6 +635,7 @@
         "exit_code": 0,
         "setup_seconds": 40.70784407388419,
         "warmup_seconds": 15.033321556635201,
+        "compile_seconds": 0.0,
         "measurement_seconds": 32.67136633209884,
         "peak_cuda_allocated_bytes": 49794108928.0,
         "peak_cuda_reserved_bytes": 65999470592.0,
@@ -618,6 +684,13 @@
               3.999139999039471
             ]
           }
+        },
+        "loss_summary": {
+          "first": 8.978170394897461,
+          "last": 2.5918822288513184,
+          "mean": 5.600569784641266,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -632,6 +705,7 @@
         "exit_code": 0,
         "setup_seconds": 40.46572920959443,
         "warmup_seconds": 12.407761410810053,
+        "compile_seconds": 0.0,
         "measurement_seconds": 25.571272544562817,
         "peak_cuda_allocated_bytes": 98502790656.0,
         "peak_cuda_reserved_bytes": 115727138816.0,
@@ -680,6 +754,13 @@
               3.2006559735164046
             ]
           }
+        },
+        "loss_summary": {
+          "first": 8.978166580200195,
+          "last": 2.594352960586548,
+          "mean": 5.600845962762833,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -694,6 +775,7 @@
         "exit_code": 0,
         "setup_seconds": 47.70564569719136,
         "warmup_seconds": 16.46779294591397,
+        "compile_seconds": 0.0,
         "measurement_seconds": 34.67555389739573,
         "peak_cuda_allocated_bytes": 41487240704.0,
         "peak_cuda_reserved_bytes": 55866032128.0,
@@ -742,6 +824,13 @@
               4.356661225669086
             ]
           }
+        },
+        "loss_summary": {
+          "first": 8.043594360351562,
+          "last": 1.125404715538025,
+          "mean": 4.195181623101234,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -756,6 +845,7 @@
         "exit_code": 0,
         "setup_seconds": 39.159122444689274,
         "warmup_seconds": 13.03340243641287,
+        "compile_seconds": 0.0,
         "measurement_seconds": 27.3695304710418,
         "peak_cuda_allocated_bytes": 65843077120.0,
         "peak_cuda_reserved_bytes": 80111206400.0,
@@ -804,6 +894,13 @@
               3.575869210064411
             ]
           }
+        },
+        "loss_summary": {
+          "first": 8.044140815734863,
+          "last": 1.1224303245544434,
+          "mean": 4.193628042936325,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -841,6 +938,7 @@
         "exit_code": 0,
         "setup_seconds": 41.10608459636569,
         "warmup_seconds": 14.464896171353757,
+        "compile_seconds": 0.0,
         "measurement_seconds": 30.990469737909734,
         "peak_cuda_allocated_bytes": 73474051072.0,
         "peak_cuda_reserved_bytes": 96601112576.0,
@@ -889,6 +987,13 @@
               3.9197109369561076
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.791400909423828,
+          "last": 4.503000259399414,
+          "mean": 7.061403572559357,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -903,6 +1008,7 @@
         "exit_code": 0,
         "setup_seconds": 43.51052515115589,
         "warmup_seconds": 15.686069171875715,
+        "compile_seconds": 0.0,
         "measurement_seconds": 31.806490850634873,
         "peak_cuda_allocated_bytes": 74567100928.0,
         "peak_cuda_reserved_bytes": 91534393344.0,
@@ -951,6 +1057,13 @@
               3.9508171631023288
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.79201602935791,
+          "last": 4.508152008056641,
+          "mean": 7.065034866333008,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -988,6 +1101,7 @@
         "exit_code": 0,
         "setup_seconds": 44.36566752754152,
         "warmup_seconds": 22.03920723963529,
+        "compile_seconds": 15.105045144446194,
         "measurement_seconds": 27.67048449255526,
         "peak_cuda_allocated_bytes": 160003012096.0,
         "peak_cuda_reserved_bytes": 176716513280.0,
@@ -1036,6 +1150,13 @@
               3.4459094023332
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.792276382446289,
+          "last": 4.508732795715332,
+          "mean": 7.0649659633636475,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -1050,6 +1171,7 @@
         "exit_code": 0,
         "setup_seconds": 75.11147142667323,
         "warmup_seconds": 25.605418694205582,
+        "compile_seconds": 0.0,
         "measurement_seconds": 59.64849857520312,
         "peak_cuda_allocated_bytes": 74569198080.0,
         "peak_cuda_reserved_bytes": 92448751616.0,
@@ -1098,6 +1220,13 @@
               7.402207050472498
             ]
           }
+        },
+        "loss_summary": {
+          "first": 10.165449142456055,
+          "last": 5.799338340759277,
+          "mean": 7.903647243976593,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
         }
       },
       {
@@ -1184,6 +1313,7 @@
         "exit_code": 0,
         "setup_seconds": 40.963302766904235,
         "warmup_seconds": 74.16427087038755,
+        "compile_seconds": 69.1102400906384,
         "measurement_seconds": 20.669800196774304,
         "peak_cuda_allocated_bytes": 66410447872.0,
         "peak_cuda_reserved_bytes": 89074434048.0,
@@ -1232,6 +1362,19 @@
               2.5118443174287677
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.789603233337402,
+          "last": 4.499034881591797,
+          "mean": 7.0588555335998535,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       },
       {
@@ -1246,6 +1389,7 @@
         "exit_code": 0,
         "setup_seconds": 41.63283286988735,
         "warmup_seconds": 18.893963740207255,
+        "compile_seconds": 13.79680344555527,
         "measurement_seconds": 20.824589198455215,
         "peak_cuda_allocated_bytes": 74568149504.0,
         "peak_cuda_reserved_bytes": 91532296192.0,
@@ -1294,6 +1438,19 @@
               2.5760715939104557
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.790485382080078,
+          "last": 4.503918647766113,
+          "mean": 7.061486005783081,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       },
       {
@@ -1331,6 +1488,7 @@
         "exit_code": 0,
         "setup_seconds": 42.10806045681238,
         "warmup_seconds": 103.71425082162023,
+        "compile_seconds": 99.30616582836956,
         "measurement_seconds": 18.319194791838527,
         "peak_cuda_allocated_bytes": 74466700800.0,
         "peak_cuda_reserved_bytes": 91375009792.0,
@@ -1379,6 +1537,19 @@
               2.2173802806064487
             ]
           }
+        },
+        "loss_summary": {
+          "first": 10.16129207611084,
+          "last": 5.784945487976074,
+          "mean": 7.897547543048859,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       },
       {
@@ -1419,6 +1590,7 @@
         "exit_code": 0,
         "setup_seconds": 40.52455595973879,
         "warmup_seconds": 176.45074417628348,
+        "compile_seconds": 169.77954623755068,
         "measurement_seconds": 25.930313102900982,
         "peak_cuda_allocated_bytes": 49587514880.0,
         "peak_cuda_reserved_bytes": 63367544832.0,
@@ -1467,6 +1639,19 @@
               3.4538471922278404
             ]
           }
+        },
+        "loss_summary": {
+          "first": 8.597558975219727,
+          "last": 2.2406015396118164,
+          "mean": 5.161361545324326,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       },
       {
@@ -1481,6 +1666,7 @@
         "exit_code": 0,
         "setup_seconds": 41.03297263197601,
         "warmup_seconds": 155.11809767689556,
+        "compile_seconds": 150.24539577774704,
         "measurement_seconds": 20.273673334158957,
         "peak_cuda_allocated_bytes": 57850998272.0,
         "peak_cuda_reserved_bytes": 71305265152.0,
@@ -1529,6 +1715,19 @@
               2.475957009010017
             ]
           }
+        },
+        "loss_summary": {
+          "first": 9.450852394104004,
+          "last": 4.022953033447266,
+          "mean": 6.5969061851501465,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       },
       {
@@ -1543,6 +1742,7 @@
         "exit_code": 0,
         "setup_seconds": 41.243869261816144,
         "warmup_seconds": 175.22562294825912,
+        "compile_seconds": 171.03493159171194,
         "measurement_seconds": 16.87163637764752,
         "peak_cuda_allocated_bytes": 107695222272.0,
         "peak_cuda_reserved_bytes": 123945877504.0,
@@ -1591,6 +1791,19 @@
               2.1166739715263247
             ]
           }
+        },
+        "loss_summary": {
+          "first": 10.723108291625977,
+          "last": 7.290838718414307,
+          "mean": 8.96528559923172,
+          "finite": true,
+          "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       },
       {
@@ -1605,6 +1818,7 @@
         "exit_code": 1,
         "setup_seconds": 41.42103842459619,
         "warmup_seconds": 550.2457749973983,
+        "compile_seconds": 550.2450329111889,
         "peak_cuda_allocated_bytes": 141909234688.0,
         "peak_cuda_reserved_bytes": 182974414848.0,
         "failure_type": "LauncherNonzeroExit",
@@ -1630,6 +1844,12 @@
           "sharding": "fsdp2",
           "compile": "on",
           "precision": "float8_tensorwise"
+        },
+        "compilation_evidence": {
+          "unique_graphs": 9,
+          "decoder_blocks_requested": 36,
+          "cache_size_limit": 64,
+          "status": "compiled"
         }
       }
     ],
@@ -1645,6 +1865,7 @@
       "exit_code": 0,
       "setup_seconds": 36.08775650989264,
       "warmup_seconds": 27.831373455002904,
+      "compile_seconds": 0.0,
       "measurement_seconds": 72.1459333281964,
       "peak_cuda_allocated_bytes": 66474954240.0,
       "peak_cuda_reserved_bytes": 89357549568.0,
@@ -1694,6 +1915,13 @@
             9.023189074359834
           ]
         }
+      },
+      "loss_summary": {
+        "first": 9.791425704956055,
+        "last": 4.502752304077148,
+        "mean": 7.0614320039749146,
+        "finite": true,
+        "meaning": "Synthetic uniform-token loss; no biological-quality claim"
       }
     },
     "fastest_completed_profile": {
@@ -1708,6 +1936,7 @@
       "exit_code": 0,
       "setup_seconds": 41.243869261816144,
       "warmup_seconds": 175.22562294825912,
+      "compile_seconds": 171.03493159171194,
       "measurement_seconds": 16.87163637764752,
       "peak_cuda_allocated_bytes": 107695222272.0,
       "peak_cuda_reserved_bytes": 123945877504.0,
@@ -1756,6 +1985,19 @@
             2.1166739715263247
           ]
         }
+      },
+      "loss_summary": {
+        "first": 10.723108291625977,
+        "last": 7.290838718414307,
+        "mean": 8.96528559923172,
+        "finite": true,
+        "meaning": "Synthetic uniform-token loss; no biological-quality claim"
+      },
+      "compilation_evidence": {
+        "unique_graphs": 9,
+        "decoder_blocks_requested": 36,
+        "cache_size_limit": 64,
+        "status": "compiled"
       }
     }
   },

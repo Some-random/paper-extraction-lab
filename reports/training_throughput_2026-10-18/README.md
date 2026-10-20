@@ -1,16 +1,26 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-19T22:55:14-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-19T23:46:21-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-19T22:55:13-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-19T23:46:18-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
-While work is pending or running, this page is updated hourly even without a status change, and promptly on failure or completion. A separate session monitor queues the requested hourly chat updates.
+While work is pending or running, this page is updated at the configured reporting interval even without a status change, and promptly on failure or completion. A separate session monitor queues the requested chat updates.
 
-This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, synthetic token IDs and a **4,096-token context**. The baseline runs BF16 computation with FP32 master parameters and conventional AdamW optimizer states; optimization profiles identify their precision and kernel changes. No pretrained weights or biological training corpus are downloaded for the benchmark.
+These compute diagnostics use the pinned **Qwen3-4B architecture**, random initialization and a **4,096-token context**. Original tests use synthetic token IDs; sustained confirmations use an existing local biological-paper token pack. The baseline runs BF16 computation with FP32 master parameters and conventional AdamW optimizer states; optimization profiles identify their precision and kernel changes. No pretrained model weights are downloaded.
+
+## Sustained training verification
+
+Short synthetic probes select a candidate recipe. The baseline and selected candidate then each train for **at least 600 measured seconds and eight optimizer updates** on the same frozen biological-paper token pack, starting from the same token cursor. Data reads, CPU preparation, GPU transfers and complete training updates are included. Setup, warmup and compilation are reported separately. Each run uses fresh random model weights; these are throughput and numerical-stability checks, without a biological learning-quality claim.
+
+### Job 243178: 8 × A100 80GB
+
+Scheduler status: **queued**. Suite stage: **not started**. Suite wall time: **— seconds**.
+
+No sustained real-data measurement is available yet.
 
 ## B200 optimization sweep
 
@@ -150,6 +160,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
 | 242256 | success | 8 | NVIDIA A100-SXM4-80GB | 21,897 | 105.71 days |
 | 242576 | success | 2 | NVIDIA B200 | 14,534 | 159.27 days |
+| 243178 | queued | 8 | A100 80GB | — | — |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 
@@ -247,6 +258,6 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 
 The timing includes synthetic-input transfers, forward/backward passes, optimizer updates and the communication used by this allocation. The original matched comparison uses FSDP FULL_SHARD and activation checkpointing. Verification tuning profiles list their different settings above. The original comparisons request PyTorch SDPA without torch.compile; observed backend evidence, when available, is reported separately. Setup, warmup and profiling are outside the measured denominator.
 
-Production corpus loading, biological learning quality, validation, checkpoint saving, restart behavior and multi-node scaling are **not tested**. Queueing and interruptions are excluded from the compute-time estimate. No full 200B-token training run has been started.
+Sustained confirmations additionally test the frozen local token pack's mmap/CPU/GPU input path. Production corpus scale and shuffling, biological learning quality, checkpoint saving, restart behavior and multi-node scaling are **not tested**. Queueing and interruptions are excluded from the compute-time estimate. No full 200B-token training run has been started.
 
-The original comparison and verification allocations are bounded to 20 minutes and at most eight GPUs. The optimization allocation above uses two B200s for at most two hours. No existing jobs are modified by this diagnostic.
+The original comparison and verification allocations are bounded to 20 minutes and at most eight GPUs. The original B200 optimization allocation uses two B200s for at most two hours; the sustained-verification allocations use their separately recorded resource limits. No existing jobs are modified by this diagnostic.
