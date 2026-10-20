@@ -1,21 +1,21 @@
 {
-  "checked_at_pst": "2026-10-19T20:56:43-08:00",
-  "checked_epoch": 1792472203.3837223,
+  "checked_at_pst": "2026-10-19T21:57:01-08:00",
+  "checked_epoch": 1792475821.2454617,
   "counts": {
-    "artifact_bytes": 4528111947,
-    "exact_unique_tokens": 651463171,
-    "known_id_skips": 285,
-    "known_pmcids": 150091,
-    "network_bytes": 812402524,
-    "network_charged_bytes": 812402524,
-    "new_papers": 3810,
-    "new_processed_papers": 5610,
-    "pipeline_bytes": 18190978762,
-    "raw_tokens": 651484104,
-    "rejected_papers": 72,
+    "artifact_bytes": 4885087030,
+    "exact_unique_tokens": 672098386,
+    "known_id_skips": 358,
+    "known_pmcids": 151567,
+    "network_bytes": 1024289783,
+    "network_charged_bytes": 1024289783,
+    "new_papers": 4809,
+    "new_processed_papers": 7082,
+    "pipeline_bytes": 18547953845,
+    "raw_tokens": 672119319,
+    "rejected_papers": 80,
     "reused_papers": 29404,
-    "selected_exact_unique_tokens": 390786939,
-    "selected_tokens": 390807790
+    "selected_exact_unique_tokens": 405828152,
+    "selected_tokens": 405849003
   },
   "deadline_at_pst": "2026-10-19T22:28:05-08:00",
   "error_type": null,
@@ -40,13 +40,13 @@
   "scheduler_observed": true,
   "scheduler_state": "RUNNING",
   "since_previous_report": {
-    "artifact_bytes": 358080006,
-    "exact_unique_tokens": 20670015,
-    "network_bytes": 213197350,
-    "new_papers": 984,
-    "raw_tokens": 20670015,
+    "artifact_bytes": 356975083,
+    "exact_unique_tokens": 20635215,
+    "network_bytes": 211887259,
+    "new_papers": 999,
+    "raw_tokens": 20635215,
     "reused_papers": 0,
-    "selected_tokens": 14946928
+    "selected_tokens": 15041213
   },
   "stage": "acquire_missing_papers",
   "status": "running",
@@ -54,5 +54,5 @@
   "submitted_at_pst": "2026-10-19T10:40:11-08:00",
   "target_new_papers": 10000,
   "watcher_status": "watching",
-  "worker_heartbeat_age_seconds": 23.799744367599487
+  "worker_heartbeat_age_seconds": 28.610575675964355
 }
