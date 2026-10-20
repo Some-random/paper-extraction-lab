@@ -1,26 +1,26 @@
 # Native-paper collection
 
-**Status: running** · Updated 2026-10-19T16:55:25-08:00 (fixed PST).
+**Status: running** · Updated 2026-10-19T17:55:49-08:00 (fixed PST).
 
 Process existing cluster XML first, then acquire up to **10,000 additional papers** whose identifiers are absent from the known cluster inventory.
 
 | Measure | Current amount |
 |:--|--:|
 | Existing native XML available | 29,414 papers |
-| Known PMC identifiers checked before acquisition | 144,464 |
+| Known PMC identifiers checked before acquisition | 145,635 |
 | Existing papers processed | 29,404 |
-| New papers processed | 3 |
-| New papers retained by biology rules | 3 |
-| Metadata/parse rejections | 10 |
-| Candidates skipped because already present | — |
-| Raw processed tokens | 572,549,937 |
-| Exact-unique processed tokens | 572,529,004 |
-| Biology-selected tokens before exact deduplication | 333,213,265 |
-| Biology-selected exact-unique tokens | 333,192,414 |
-| New artifacts | 2.95 GiB / 32.00 GiB |
-| Counted pipeline storage | 15.67 GiB / 200.00 GiB |
-| Measured HTTP response bodies | 0.00 GiB |
-| HTTP budget charged | 0.00 GiB / 8.00 GiB |
+| New papers processed | 1,166 |
+| New papers retained by biology rules | 782 |
+| Metadata/parse rejections | 24 |
+| Candidates skipped because already present | 53 |
+| Raw processed tokens | 588,237,553 |
+| Exact-unique processed tokens | 588,216,620 |
+| Biology-selected tokens before exact deduplication | 344,589,326 |
+| Biology-selected exact-unique tokens | 344,568,475 |
+| New artifacts | 3.20 GiB / 32.00 GiB |
+| Counted pipeline storage | 15.93 GiB / 200.00 GiB |
+| Measured HTTP response bodies | 0.15 GiB |
+| HTTP budget charged | 0.15 GiB / 8.00 GiB |
 
 Job: 242193; scheduler: RUNNING; stage: Downloading and processing missing papers.
 
@@ -30,7 +30,7 @@ Worker deadline: 2026-10-19T22:28:05-08:00 (fixed PST).
 
 Monitor: watching.
 
-Since the previous successful report: +413 existing papers; +3 new papers; +8,870,977 raw tokens; +8,870,977 exact-unique tokens; +5,362,692 biology-selected tokens; +52,000,670 artifact bytes; +742,673 HTTP response bytes.
+Since the previous successful report: +0 existing papers; +779 new papers; +15,687,616 raw tokens; +15,687,616 exact-unique tokens; +11,376,061 biology-selected tokens; +273,011,900 artifact bytes; +161,852,254 HTTP response bytes.
 
 Original XML is read in place when already present. New XML, structured sections, tables, captions, citation metadata and canonical text are retained. Exact-text duplicate removal and the initial biology selection are reported separately; biology selection is a keyword heuristic, not a reviewed quality score. Counts use the pinned extraction-reference tokenizer.
 
