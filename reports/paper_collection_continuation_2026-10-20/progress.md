@@ -1,7 +1,7 @@
-Updated 2026-10-20T05:44:40-08:00 (fixed PST).
+Updated 2026-10-20T07:45:17-08:00 (fixed PST).
 
-Status: **running**. New papers: 10,265; reused papers: 29,404; exact-unique tokens: 782,019,200.
+Status: **running**. New papers: 12,659; reused papers: 29,404; exact-unique tokens: 831,157,985.
 
-Since continuation began: 7,192 papers processed; 4,897 selected; 72,135,609 selected exact-unique tokens added.
+Since continuation began: 10,713 papers processed; 7,291 selected; 108,414,697 selected exact-unique tokens added.
 
-Since the previous successful report: +0 existing papers; +2,232 new papers; +44,608,073 raw tokens; +44,608,073 exact-unique tokens; +32,802,423 biology-selected tokens; +770,285,368 artifact bytes; +457,027,218 HTTP response bytes.
+Since the previous successful report: +0 existing papers; +2,394 new papers; +49,138,785 raw tokens; +49,138,785 exact-unique tokens; +36,279,088 biology-selected tokens; +847,390,273 artifact bytes; +504,276,388 HTTP response bytes.

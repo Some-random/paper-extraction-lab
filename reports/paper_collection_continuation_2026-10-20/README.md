@@ -1,6 +1,6 @@
 # Native-paper collection
 
-**Status: running** · Updated 2026-10-20T05:44:40-08:00 (fixed PST).
+**Status: running** · Updated 2026-10-20T07:45:17-08:00 (fixed PST).
 
 Continue downloading missing biological papers from the preserved identifier and exact-text deduplication ledger. Previously processed papers remain counted and are read in place. There is no fixed paper-count target or total runtime deadline; storage determines how far acquisition can continue.
 
@@ -9,31 +9,31 @@ Paper and token totals are cumulative across the prior run and this continuation
 | Measure | Current amount |
 |:--|--:|
 | Existing native XML available | 29,414 papers |
-| Known PMC identifiers checked before acquisition | 159,618 |
+| Known PMC identifiers checked before acquisition | 163,149 |
 | Existing papers processed | 29,404 |
-| New papers processed | 15,109 |
-| New papers retained by biology rules | 10,265 |
-| Metadata/parse rejections | 162 |
-| Candidates skipped because already present | 795 |
-| Raw processed tokens | 782,040,133 |
-| Exact-unique processed tokens | 782,019,200 |
-| Biology-selected tokens before exact deduplication | 486,240,766 |
-| Biology-selected exact-unique tokens | 486,219,915 |
-| Papers processed during this continuation | 7,192 |
-| Papers selected during this continuation | 4,897 |
-| Raw tokens added during this continuation | 98,537,082 |
-| Selected exact-unique tokens added during this continuation | 72,135,609 |
+| New papers processed | 18,630 |
+| New papers retained by biology rules | 12,659 |
+| Metadata/parse rejections | 204 |
+| Candidates skipped because already present | 978 |
+| Raw processed tokens | 831,178,918 |
+| Exact-unique processed tokens | 831,157,985 |
+| Biology-selected tokens before exact deduplication | 522,519,854 |
+| Biology-selected exact-unique tokens | 522,499,003 |
+| Papers processed during this continuation | 10,713 |
+| Papers selected during this continuation | 7,291 |
+| Raw tokens added during this continuation | 147,675,867 |
+| Selected exact-unique tokens added during this continuation | 108,414,697 |
 | Prior paper-run artifacts | 4.74 GiB |
-| Continuation artifacts, including the copied index | 1.77 GiB |
-| Combined paper-run artifacts | 6.51 GiB |
+| Continuation artifacts, including the copied index | 2.56 GiB |
+| Combined paper-run artifacts | 7.30 GiB |
 | Prior paper-run HTTP response bodies | 1.06 GiB |
-| Continuation HTTP response bodies | 0.95 GiB |
-| Combined paper-run HTTP response bodies | 2.01 GiB |
-| Shared filesystem free space | 123.06 GiB |
-| Pipeline storage including reserved reporting headroom | 19.75 GiB / 200.00 GiB |
-| Counted pipeline storage | 19.73 GiB / 200.00 GiB |
-| Measured HTTP response bodies | 0.95 GiB |
-| HTTP budget charged | 0.95 GiB / 200.00 GiB |
+| Continuation HTTP response bodies | 1.42 GiB |
+| Combined paper-run HTTP response bodies | 2.48 GiB |
+| Shared filesystem free space | 106.75 GiB |
+| Pipeline storage including reserved reporting headroom | 20.54 GiB / 200.00 GiB |
+| Counted pipeline storage | 20.52 GiB / 200.00 GiB |
+| Measured HTTP response bodies | 1.42 GiB |
+| HTTP budget charged | 1.42 GiB / 200.00 GiB |
 
 Job: 243177; scheduler: RUNNING; stage: Downloading and processing missing papers.
 
@@ -41,7 +41,7 @@ One serial worker uses two CPU cores and zero GPUs. It preserves a shared-free-s
 
 Monitor: watching.
 
-Since the previous successful report: +0 existing papers; +2,232 new papers; +44,608,073 raw tokens; +44,608,073 exact-unique tokens; +32,802,423 biology-selected tokens; +770,285,368 artifact bytes; +457,027,218 HTTP response bytes.
+Since the previous successful report: +0 existing papers; +2,394 new papers; +49,138,785 raw tokens; +49,138,785 exact-unique tokens; +36,279,088 biology-selected tokens; +847,390,273 artifact bytes; +504,276,388 HTTP response bytes.
 
 Original XML is read in place when already present. New XML, structured sections, tables, captions, citation metadata and canonical text are retained. Exact-text duplicate removal and the initial biology selection are reported separately; biology selection is a keyword heuristic, not a reviewed quality score. Counts use the pinned extraction-reference tokenizer.
 
