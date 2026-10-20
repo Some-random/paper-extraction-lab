@@ -24,6 +24,116 @@ import watch_training_throughput as gpu
 ROOT = Path(__file__).resolve().parents[1]
 RETRY_SECONDS = 300
 MAX_SECONDS = 7 * 86400
+MAX_PROMPT_BYTES = 64 * 1024
+
+
+class PromptTooLargeError(RuntimeError):
+    def __init__(self, size):
+        self.prompt_bytes = size
+        super().__init__(f"Status prompt exceeds {MAX_PROMPT_BYTES}-byte bound")
+
+
+def fields(value, names):
+    """Copy explicitly named scalar fields; never include nested raw results."""
+    if not isinstance(value, dict):
+        return {}
+    return {key: value[key] for key in names if key in value
+            and (value[key] is None or isinstance(value[key], (str, int, float, bool)))}
+
+
+def compact_measurement(value):
+    result = fields(value, ("input_tokens_per_second", "input_tokens_per_step",
+                           "measured_input_tokens", "measured_optimizer_steps", "measured_wall_seconds"))
+    if isinstance(value, dict) and isinstance(value.get("step_seconds"), dict):
+        result["step_seconds"] = fields(value["step_seconds"], ("mean", "p50", "p95"))
+    return result
+
+
+def compact_profile(value):
+    result = fields(value, ("name", "role", "status", "failure_type", "exit_code",
+                           "microbatch_per_gpu", "accumulation", "activation_checkpointing", "sharding",
+                           "input_tokens_per_second", "input_tokens_per_step", "measured_optimizer_steps",
+                           "setup_seconds", "warmup_seconds", "measurement_seconds", "runtime_seconds",
+                           "profiler_seconds", "launcher_wall_seconds", "completed_warmup_steps", "peak_cuda_allocated_bytes",
+                           "peak_cuda_reserved_bytes"))
+    if isinstance(value, dict) and value.get("throughput"):
+        result["throughput"] = compact_measurement(value["throughput"])
+    if isinstance(value, dict) and isinstance(value.get("profiler"), dict):
+        elapsed = value["profiler"].get("elapsed_seconds")
+        if isinstance(elapsed, (int, float)):
+            result["profiler_seconds"] = elapsed
+    return result
+
+
+def compact_suite(value):
+    result = fields(value, ("status", "mode", "stop_reason", "runtime_seconds", "deadline_epoch",
+                           "global_batch_sequences", "input_tokens_per_update", "sequence_length",
+                           "world_size", "selected_profile", "tuning_speedup_over_baseline",
+                           "baseline_profile", "fastest_completed_profile_name"))
+    if not isinstance(value, dict):
+        return result
+    if isinstance(value.get("profiles"), list):
+        result["profiles"] = [compact_profile(item) for item in value["profiles"]]
+    names = {item.get("name") for item in result.get("profiles", [])}
+    for key, reference in (("baseline_result", "baseline_profile"),
+                           ("fastest_completed_profile", "fastest_completed_profile_name")):
+        if isinstance(value.get(key), dict):
+            name = value[key].get("name")
+            if name is not None and name in names:
+                result[reference] = name
+            else:
+                result[key] = compact_profile(value[key])
+    configuration = fields(value.get("configuration"), ("gpu_type", "mode", "world_size"))
+    if configuration:
+        result["configuration"] = configuration
+    return result
+
+
+def compact_snapshot(value):
+    """Keep status evidence, counts and timings; exclude duplicated profiler dumps.
+
+    Also accepts snapshots from older monitor states, so restarting after a large
+    result cannot reinsert the old profiler into the previous-update prompt.
+    """
+    if value is None:
+        return None
+    observed = value.get("paper", {})
+    compact_paper = fields(observed, ("checked_at_pst", "checked_epoch", "deadline_at_pst", "job_id",
+                                     "run_id", "scheduler_observed", "scheduler_state", "stage", "status",
+                                     "stop_reason", "reason", "error_type", "submitted_at_pst",
+                                     "target_new_papers", "worker_heartbeat_age_seconds"))
+    for key in ("counts", "inventory", "limits"):
+        if isinstance(observed.get(key), dict):
+            compact_paper[key] = {name: count for name, count in observed[key].items()
+                                  if count is None or isinstance(count, (int, float, bool))}
+    jobs = []
+    for item in value.get("gpu_jobs", []):
+        job = fields(item, ("job_id", "status", "scheduler_state", "gpus", "gpu_type"))
+        job["measurement"] = compact_measurement(item.get("measurement"))
+        job["suite"] = compact_suite(item.get("suite"))
+        jobs.append(job)
+    result = {"paper": compact_paper, "gpu_jobs": jobs}
+    for key in ("scheduler_errors", "monitor_error"):
+        if key in value:
+            result[key] = value[key]
+    return result
+
+
+def check_prompt_size(prompt):
+    size = len(prompt.encode("utf-8"))
+    if size > MAX_PROMPT_BYTES:
+        raise PromptTooLargeError(size)
+    return prompt
+
+
+def queue_error(error):
+    result = {"error_type": type(error).__name__}
+    if isinstance(error, OSError) and error.errno is not None:
+        # The system description is actionable without filenames, argv or IDs.
+        result.update(errno=error.errno, strerror=os.strerror(error.errno))
+    if isinstance(error, PromptTooLargeError):
+        result.update(prompt_bytes=error.prompt_bytes, maximum_prompt_bytes=MAX_PROMPT_BYTES)
+    return result
 
 
 def read(path):
@@ -81,7 +191,7 @@ def snapshot(config, now, previous=None, query=gpu.query_scheduler):
                      "gpus": manifest.get("requested_gpus"), "gpu_type": manifest.get("target_gpu"),
                      "measurement": result.get("throughput", {}),
                      "suite": result.get("suite", {})})
-    return {"paper": observed, "gpu_jobs": jobs, "scheduler_errors": errors}
+    return compact_snapshot({"paper": observed, "gpu_jobs": jobs, "scheduler_errors": errors})
 
 
 def fingerprint(value):
@@ -102,7 +212,7 @@ def all_terminal(value):
 
 
 def message(config, observed, previous):
-    return (
+    return check_prompt_size(
         "The user explicitly requested hourly progress in THIS chat. Give a concise status update now, "
         "including whether the paper run and GPU benchmarks are running, queued, stopped, failed or complete. "
         "Read the current compact worker states and the exact recorded scheduler IDs before answering. "
@@ -113,12 +223,13 @@ def message(config, observed, previous):
         "Queued acceptance does not prove an earlier update was displayed.\n"
         f"Paper run: {config['paper_run_directory']}\n"
         f"Benchmark run: {config['throughput_run_directory']}\n"
-        "Latest observed status: " + json.dumps(observed, sort_keys=True) + "\n"
-        "Previous accepted update observation: " + json.dumps(previous, sort_keys=True)
+        "Latest observed status: " + json.dumps(compact_snapshot(observed), sort_keys=True) + "\n"
+        "Previous accepted update observation: " + json.dumps(compact_snapshot(previous), sort_keys=True)
     )
 
 
 def enqueue(config, prompt):
+    check_prompt_size(prompt)
     arguments = [config["codex_path"], "queue", "--thread", config["thread_id"], "--message", prompt]
     # No shell, resume invocation, new session, model override or message to others.
     with subprocess.Popen(arguments, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) as process:
@@ -135,6 +246,9 @@ def enqueue(config, prompt):
 
 def tick(config, state, observed, now, *, force=False, send=enqueue):
     state = dict(state)
+    observed = compact_snapshot(observed)
+    if state.get("last_accepted_snapshot") is not None:
+        state["last_accepted_snapshot"] = compact_snapshot(state["last_accepted_snapshot"])
     if state.get("thread_id", config["thread_id"]) != config["thread_id"]:
         raise ValueError("Existing monitor belongs to another thread")
     state["thread_id"] = config["thread_id"]
@@ -162,7 +276,7 @@ def tick(config, state, observed, now, *, force=False, send=enqueue):
                          next_due_epoch=now + config.get("interval_seconds", 3600),
                          accepted_count=state.get("accepted_count", 0) + 1)
         except (OSError, RuntimeError, subprocess.SubprocessError) as error:
-            state.update(queue_error={"error_type": type(error).__name__}, retry_after_epoch=now + RETRY_SECONDS)
+            state.update(queue_error=queue_error(error), retry_after_epoch=now + RETRY_SECONDS)
     state.update(checked_epoch=now, observation=observed,
                  monitor_status="watching", delivery="queue_acceptance_only")
     if terminal and state.get("last_accepted_fingerprint") == current and state.get("last_accepted_epoch") is not None:

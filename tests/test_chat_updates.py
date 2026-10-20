@@ -1,4 +1,5 @@
 import importlib.util
+import errno
 import json
 from pathlib import Path
 import sys
@@ -134,6 +135,78 @@ class ChatUpdatesTests(unittest.TestCase):
         self.assertEqual(len(self.sent), 1)
         with self.assertRaises(ValueError):
             self.tick({**state, "thread_id": "another-thread"}, 20)
+
+    def test_large_current_and_previous_profiler_dumps_compact_on_restart(self):
+        profiler = {"elapsed_seconds": 24.9,
+                    "operators": [{"name": "kernel" * 500, "device_total_us": 123}] * 100,
+                    "cuda_kernels": [{"name": "kernel" * 500}] * 100}
+        profile = {"name": "baseline", "status": "completed", "input_tokens_per_second": 14521.8,
+                   "setup_seconds": 101.4, "warmup_seconds": 36.2, "measurement_seconds": 72.2,
+                   "microbatch_per_gpu": 4, "accumulation": 4, "activation_checkpointing": "on",
+                   "sharding": "full_shard", "profiler": profiler,
+                   "phase_timings": [{"stage": "model_initialize", "host": "private.host"}] * 100,
+                   "hardware": [{"host": "private.host"}]}
+        self.observed["paper"].update(job_id="242193", deadline_at_pst="2026-10-19T22:28:05-08:00",
+                                      counts={"raw_tokens": 342022180, "reused_papers": 17959,
+                                              "new_papers": 0, "artifact_bytes": 1947822283,
+                                              "network_bytes": 0, "selected_exact_unique_tokens": 203163980})
+        self.observed["gpu_jobs"] = [
+            {"job_id": str(242250 + number), "gpus": 2, "gpu_type": "B200 180GB", "status": "success",
+             "scheduler_state": "COMPLETED", "measurement": {"input_tokens_per_second": 14521.8,
+                 "measured_input_tokens": 1048576, "measured_wall_seconds": 72.2,
+                 "step_seconds": {"mean": 9.02, "values": [9.0] * 10000}},
+             "suite": {"baseline_result": profile, "fastest_completed_profile": profile,
+                       "profiles": [profile, {"name": "tuned_micro4", "status": "failed",
+                           "failure_type": "OutOfMemoryError", "failure_message": "private.host"}]}}
+            for number in range(10)]
+        old_state = {"last_accepted_snapshot": self.observed, "last_accepted_epoch": 10,
+                     "started_epoch": 0, "deadline_epoch": 100000, "next_due_epoch": 3610,
+                     "accepted_count": 1}
+        self.assertGreater(len(json.dumps(old_state)), 128 * 1024)
+        state = self.tick(old_state, 3610)
+        prompt = self.sent[0]
+        self.assertLess(len(prompt.encode("utf-8")), 20 * 1024)
+        self.assertNotIn("private.host", prompt)
+        self.assertNotIn('"profiler"', prompt)
+        self.assertNotIn('"phase_timings"', prompt)
+        self.assertNotIn('"values"', prompt)
+        for label in ("Latest observed status: ", "Previous accepted update observation: "):
+            parsed = json.loads(prompt.split(label, 1)[1].split("\n", 1)[0])
+            self.assertEqual(parsed["paper"]["counts"], self.observed["paper"]["counts"])
+            self.assertEqual(parsed["paper"]["job_id"], "242193")
+            self.assertEqual(len(parsed["gpu_jobs"]), 10)
+            self.assertEqual(parsed["gpu_jobs"][0]["measurement"]["measured_input_tokens"], 1048576)
+            self.assertEqual(parsed["gpu_jobs"][0]["suite"]["baseline_profile"], "baseline")
+            self.assertEqual(parsed["gpu_jobs"][0]["suite"]["profiles"][0]["setup_seconds"], 101.4)
+            self.assertEqual(parsed["gpu_jobs"][0]["suite"]["profiles"][0]["profiler_seconds"], 24.9)
+            self.assertEqual(parsed["gpu_jobs"][0]["suite"]["profiles"][1]["failure_type"], "OutOfMemoryError")
+        self.assertEqual(state["accepted_count"], 2)
+        self.assertEqual(state["deadline_epoch"], 100000)
+        self.assertEqual(state["next_due_epoch"], 7210)
+        self.assertLess(len(json.dumps(state)), 40 * 1024)
+
+    def test_prompt_bound_counts_utf8_bytes_and_does_not_send_or_truncate(self):
+        self.observed["paper"]["reason"] = "生" * 23000
+        state = self.tick({}, 0, force=True)
+        self.assertEqual(self.sent, [])
+        self.assertNotIn("last_accepted_epoch", state)
+        self.assertEqual(state["queue_error"]["error_type"], "PromptTooLargeError")
+        self.assertGreater(state["queue_error"]["prompt_bytes"], monitor.MAX_PROMPT_BYTES)
+        self.assertEqual(state["queue_error"]["maximum_prompt_bytes"], 65536)
+        self.assertEqual(state["observation"]["paper"]["counts"]["raw_tokens"], 100)
+        with mock.patch.object(monitor.subprocess, "Popen") as command:
+            with self.assertRaises(monitor.PromptTooLargeError):
+                monitor.enqueue(self.config, "生" * 23000)
+            command.assert_not_called()
+
+    def test_oserror_retains_actionable_errno_without_private_argument(self):
+        def fail(*args):
+            raise OSError(errno.E2BIG, "Argument list too long", "/private/thread-id")
+        state = monitor.tick(self.config, {}, self.observed, 0, force=True, send=fail)
+        self.assertEqual(state["queue_error"], {"error_type": "OSError", "errno": errno.E2BIG,
+                                               "strerror": "Argument list too long"})
+        self.assertNotIn("last_accepted_epoch", state)
+        self.assertEqual(state["retry_after_epoch"], 300)
 
 
 if __name__ == "__main__":
