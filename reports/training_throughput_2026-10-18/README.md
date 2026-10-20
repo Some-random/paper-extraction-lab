@@ -1,12 +1,12 @@
 # 4B training-throughput diagnostic
 
-Report updated **2026-10-20T05:46:29-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
+Report updated **2026-10-20T07:00:25-08:00**. Cluster snapshot: **2026-10-18T11:56:06.264883-08:00**.
 
 Runtime setup: **ready**.
 
 The earlier setup failed with **TimeoutExpired**. Its cancelled requests are retained below. Replacement CPU validation passed.
 
-Scheduler last checked **2026-10-20T05:46:28-08:00**. Monitor: **watching**. [Status snapshot](status.json).
+Scheduler last checked **2026-10-20T07:00:24-08:00**. Monitor: **watching**. [Status snapshot](status.json).
 
 While work is pending or running, this page is updated at the configured reporting interval even without a status change, and promptly on failure or completion. A separate session monitor queues the requested chat updates.
 
@@ -18,9 +18,43 @@ Short synthetic probes select a candidate recipe. The baseline and selected cand
 
 ### Job 243178: 8 × A100 80GB
 
-Scheduler status: **queued**. Suite stage: **not started**. Suite wall time: **— seconds**.
+Scheduler status: **running**. Suite stage: **short_sweep**. Suite wall time: **12.91 seconds**.
 
-No sustained real-data measurement is available yet.
+| Real-data run | Recipe | Status | Measured seconds | Updates | Input tokens/s | Peak allocated GiB/GPU |
+|:---|:---|:---|---:|---:|---:|---:|
+| Baseline | confirm_baseline: sdpa_auto / bf16 | pending | — | — | — | — |
+| Selected candidate | confirm_winner: sdpa_auto / bf16 | pending | — | — | — | — |
+
+| Run | Setup seconds | Warmup seconds | Compile setup seconds | First warmup seconds | Measured tokens | Loss: first → last |
+|:---|---:|---:|---:|---:|---:|:---|
+| confirm_baseline | — | — | — | — | — | — |
+| confirm_winner | — | — | — | — | — | — |
+
+Lazy compilation can occur inside the first warmup update; the timing columns overlap and must not be added. Loss values provide a numerical diagnostic, not downstream biological scores.
+
+Short synthetic probes used for recipe selection:
+
+| Probe | Status | Synthetic input tokens/s |
+|:---|:---|---:|
+| baseline | initializing | — |
+| attention_flash | pending | — |
+| attention_cudnn | pending | — |
+| loss_liger | pending | — |
+| loss_cce | pending | — |
+| best_bf16_kernels | pending | — |
+| compiled_fsdp1 | pending | — |
+| fsdp2 | pending | — |
+| compiled_fsdp2 | pending | — |
+| checkpoint_off | pending | — |
+| memory_baseline_micro2 | pending | — |
+| checkpoint_off_micro2 | pending | — |
+| memory_baseline_micro1 | pending | — |
+| checkpoint_off_micro1 | pending | — |
+| shard_grad | pending | — |
+| best_micro2 | pending | — |
+| liger_pointwise | pending | — |
+| checkpoint_selective | pending | — |
+| optimizer_8bit | pending | — |
 
 ## B200 optimization sweep
 
@@ -160,7 +194,7 @@ Each node is counted once across partitions. Unallocated GPUs are not necessaril
 | 242255 | success | 2 | NVIDIA B200 | 14,522 | 159.40 days |
 | 242256 | success | 8 | NVIDIA A100-SXM4-80GB | 21,897 | 105.71 days |
 | 242576 | success | 2 | NVIDIA B200 | 14,534 | 159.27 days |
-| 243178 | queued | 8 | A100 80GB | — | — |
+| 243178 | running | 8 | A100 80GB | — | — |
 
 Measured token rates are aggregate input positions per second at the **actual measured GPU count**. The 200B-token duration is `200,000,000,000 / measured tokens per second`; no unmeasured GPU allocation or multi-node scaling is extrapolated.
 
@@ -253,6 +287,10 @@ Measured 8 optimizer steps after 3 warmup steps. Context: 4096; microbatch per G
 | 2 | 8 | completed | 51,721 |
 | 8 | 2 | completed | 62,150 |
 | 16 | 1 | failed — LauncherNonzeroExit | — |
+
+### Job 243178
+
+Status: **running**. Sanitized diagnostics: [results_243178.json](results_243178.json).
 
 ## What the measurement covers
 

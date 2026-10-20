@@ -1,0 +1,650 @@
+{
+  "status": "running",
+  "started_utc": "2026-10-20T15:00:05.481782+00:00",
+  "world_size": 8,
+  "failure_type": "RealDataBaselineNotComplete",
+  "job_id": "243178",
+  "arguments": {},
+  "hardware": [],
+  "packages": {},
+  "suite": {
+    "status": "running",
+    "stage": "short_sweep",
+    "mode": "gpu_optimization_confirmation",
+    "world_size": 8,
+    "gpu_type": "a100",
+    "sequence_length": 4096,
+    "global_batch_sequences": 32,
+    "input_tokens_per_update": 131072,
+    "tuning_speedup_over_baseline": null,
+    "candidate_speedup_over_baseline": null,
+    "started_utc": "2026-10-20T15:00:05.481782+00:00",
+    "runtime_seconds": 12.91010046005249,
+    "stop_reason": null,
+    "short_stop_reason": null,
+    "correctness_scope": "Functional smoke and actual optimizer updates; no CPT quality or convergence claim",
+    "rate_scope": "Real-data confirmations only: mmap reads/H2D/training included; setup and warmup excluded",
+    "allocation_timing_scope": "Suite wall time includes probe setup/warmup/compilation/logging; scheduler allocation includes wrapper startup too",
+    "profiles": [
+      {
+        "name": "baseline",
+        "parent": null,
+        "role": "baseline",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 1,
+        "resolved_parent": null,
+        "status": "initializing",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        }
+      },
+      {
+        "name": "attention_flash",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "attention": "sdpa_flash"
+        }
+      },
+      {
+        "name": "attention_cudnn",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "attention": "sdpa_cudnn"
+        }
+      },
+      {
+        "name": "loss_liger",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "kernels": "liger_loss"
+        }
+      },
+      {
+        "name": "loss_cce",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "kernels": "cce"
+        }
+      },
+      {
+        "name": "best_bf16_kernels",
+        "parent": "baseline",
+        "role": "combination",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "attention": "@best:attention",
+          "kernels": "@best:kernels"
+        }
+      },
+      {
+        "name": "compiled_fsdp1",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "compile": "on"
+        }
+      },
+      {
+        "name": "fsdp2",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "sharding": "fsdp2"
+        }
+      },
+      {
+        "name": "compiled_fsdp2",
+        "parent": "fsdp2",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "compile": "on"
+        }
+      },
+      {
+        "name": "checkpoint_off",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "off"
+        }
+      },
+      {
+        "name": "memory_baseline_micro2",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {}
+      },
+      {
+        "name": "checkpoint_off_micro2",
+        "parent": "memory_baseline_micro2",
+        "role": "tuning",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "off"
+        }
+      },
+      {
+        "name": "memory_baseline_micro1",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 1,
+        "accumulation": 4,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {}
+      },
+      {
+        "name": "checkpoint_off_micro1",
+        "parent": "memory_baseline_micro1",
+        "role": "tuning",
+        "microbatch_per_gpu": 1,
+        "accumulation": 4,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "off"
+        }
+      },
+      {
+        "name": "shard_grad",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "sharding": "shard_grad_op"
+        }
+      },
+      {
+        "name": "best_micro2",
+        "parent": "@best",
+        "role": "combination",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {}
+      },
+      {
+        "name": "liger_pointwise",
+        "parent": "loss_liger",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "kernels": "liger_full"
+        }
+      },
+      {
+        "name": "checkpoint_selective",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "selective"
+        }
+      },
+      {
+        "name": "optimizer_8bit",
+        "parent": "fsdp2",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "optimizer": "adamw_8bit"
+        }
+      },
+      {
+        "name": "confirm_baseline",
+        "parent": "baseline",
+        "resolved_parent": "baseline",
+        "role": "confirmation_baseline",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 0,
+        "status": "pending",
+        "measurement_kind": "real_data_confirmation",
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        }
+      },
+      {
+        "name": "confirm_winner",
+        "parent": "baseline",
+        "resolved_parent": "baseline",
+        "role": "confirmation_winner",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 0,
+        "status": "pending",
+        "measurement_kind": "real_data_confirmation",
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        }
+      }
+    ],
+    "baseline_result": {
+      "name": "confirm_baseline",
+      "parent": "baseline",
+      "resolved_parent": "baseline",
+      "role": "confirmation_baseline",
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 0,
+      "status": "pending",
+      "measurement_kind": "real_data_confirmation",
+      "features": {
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32",
+        "attention": "sdpa_auto",
+        "kernels": "none",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "off",
+        "precision": "bf16"
+      }
+    },
+    "confirmation_candidate": {
+      "name": "confirm_winner",
+      "parent": "baseline",
+      "resolved_parent": "baseline",
+      "role": "confirmation_winner",
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 0,
+      "status": "pending",
+      "measurement_kind": "real_data_confirmation",
+      "features": {
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32",
+        "attention": "sdpa_auto",
+        "kernels": "none",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "off",
+        "precision": "bf16"
+      }
+    },
+    "diagnostic_baseline_result": {
+      "name": "baseline",
+      "parent": null,
+      "role": "baseline",
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 1,
+      "resolved_parent": null,
+      "status": "initializing",
+      "measurement_kind": "synthetic_short_probe",
+      "features": {
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32",
+        "attention": "sdpa_auto",
+        "kernels": "none",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "off",
+        "precision": "bf16"
+      }
+    },
+    "real_data_confirmations": [
+      {
+        "name": "confirm_baseline",
+        "parent": "baseline",
+        "resolved_parent": "baseline",
+        "role": "confirmation_baseline",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 0,
+        "status": "pending",
+        "measurement_kind": "real_data_confirmation",
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        }
+      },
+      {
+        "name": "confirm_winner",
+        "parent": "baseline",
+        "resolved_parent": "baseline",
+        "role": "confirmation_winner",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 0,
+        "status": "pending",
+        "measurement_kind": "real_data_confirmation",
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        }
+      }
+    ],
+    "short_probe_profiles": [
+      {
+        "name": "baseline",
+        "parent": null,
+        "role": "baseline",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 1,
+        "resolved_parent": null,
+        "status": "initializing",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "float8_all_gather": "off",
+          "optimizer": "adamw_fp32",
+          "attention": "sdpa_auto",
+          "kernels": "none",
+          "checkpointing": "full",
+          "sharding": "full_shard",
+          "compile": "off",
+          "precision": "bf16"
+        }
+      },
+      {
+        "name": "attention_flash",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "attention": "sdpa_flash"
+        }
+      },
+      {
+        "name": "attention_cudnn",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "profile_steps": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "attention": "sdpa_cudnn"
+        }
+      },
+      {
+        "name": "loss_liger",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "kernels": "liger_loss"
+        }
+      },
+      {
+        "name": "loss_cce",
+        "parent": "baseline",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "kernels": "cce"
+        }
+      },
+      {
+        "name": "best_bf16_kernels",
+        "parent": "baseline",
+        "role": "combination",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "attention": "@best:attention",
+          "kernels": "@best:kernels"
+        }
+      },
+      {
+        "name": "compiled_fsdp1",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "compile": "on"
+        }
+      },
+      {
+        "name": "fsdp2",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "sharding": "fsdp2"
+        }
+      },
+      {
+        "name": "compiled_fsdp2",
+        "parent": "fsdp2",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "compile": "on"
+        }
+      },
+      {
+        "name": "checkpoint_off",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "off"
+        }
+      },
+      {
+        "name": "memory_baseline_micro2",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {}
+      },
+      {
+        "name": "checkpoint_off_micro2",
+        "parent": "memory_baseline_micro2",
+        "role": "tuning",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "off"
+        }
+      },
+      {
+        "name": "memory_baseline_micro1",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 1,
+        "accumulation": 4,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {}
+      },
+      {
+        "name": "checkpoint_off_micro1",
+        "parent": "memory_baseline_micro1",
+        "role": "tuning",
+        "microbatch_per_gpu": 1,
+        "accumulation": 4,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "off"
+        }
+      },
+      {
+        "name": "shard_grad",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "sharding": "shard_grad_op"
+        }
+      },
+      {
+        "name": "best_micro2",
+        "parent": "@best",
+        "role": "combination",
+        "microbatch_per_gpu": 2,
+        "accumulation": 2,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {}
+      },
+      {
+        "name": "liger_pointwise",
+        "parent": "loss_liger",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "kernels": "liger_full"
+        }
+      },
+      {
+        "name": "checkpoint_selective",
+        "parent": "best_bf16_kernels",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "checkpointing": "selective"
+        }
+      },
+      {
+        "name": "optimizer_8bit",
+        "parent": "fsdp2",
+        "role": "tuning",
+        "microbatch_per_gpu": 4,
+        "accumulation": 1,
+        "status": "pending",
+        "measurement_kind": "synthetic_short_probe",
+        "features": {
+          "optimizer": "adamw_8bit"
+        }
+      }
+    ]
+  }
+}
