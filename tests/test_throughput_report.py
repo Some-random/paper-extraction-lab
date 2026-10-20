@@ -293,6 +293,81 @@ class TrainingThroughputReportTests(unittest.TestCase):
         self.assertIn("No profile measurements are available yet", text)
         self.assertNotIn("Fastest completed profile:", text)
 
+    def sustained_profile(self, role, rate, *, seconds=601., status="completed"):
+        return {
+            "name": role, "role": role, "measurement_kind": "real_data_confirmation",
+            "status": status, "exit_code": 0 if status == "completed" else 1,
+            "input_tokens_per_second": rate, "features": {"attention": "sdpa_flash", "precision": "bf16"},
+            "throughput": {"input_tokens_per_second": rate, "measured_wall_seconds": seconds,
+                           "measured_optimizer_steps": 12, "measured_input_tokens": 1_572_864,
+                           "valid_sustained_measurement": status == "completed" and seconds >= 600},
+            "measurement_requirements": {"minimum_optimizer_steps": 8, "minimum_measured_seconds": 600,
+                                         "satisfied": status == "completed" and seconds >= 600},
+            "data_pack_sha256": "a" * 64,
+            "data": {"start_token": 0, "replay": False, "consumed_tokens": 1_966_080,
+                     "measured_tokens": 1_572_864, "token_count": 64_000_000,
+                     "path": "/dfs/private/input.bin", "host": "private-owner-machine",
+                     "tokenizer": {"name": "reference", "sha256": "b" * 64,
+                                   "path": "/dfs/private/tokenizer.json"}},
+            "setup_seconds": 25., "warmup_seconds": 12., "compile_seconds": 2., "first_warmup_seconds": 8.,
+            "loss_summary": {"first": 11.4, "last": 11.3, "finite": True, "host": "private-owner-machine"},
+            "chunk_rates": [{"first_update": 1, "last_update": 12, "seconds": seconds,
+                             "input_tokens": 1_572_864, "input_tokens_per_second": rate,
+                             "partial_window": False, "path": "/dfs/private/chunk"}],
+        }
+
+    def sustained_job(self, *, candidate_seconds=601., candidate_status="completed"):
+        baseline = self.sustained_profile("confirmation_baseline", 1000)
+        candidate = self.sustained_profile("confirmation_winner", 2000, seconds=candidate_seconds, status=candidate_status)
+        probe = {"name": "short_fast", "role": "tuning", "status": "completed", "exit_code": 0,
+                 "measurement_kind": "synthetic_short_probe", "input_tokens_per_second": 9_000_000}
+        result = report.sanitize_result({"status": "completed", "suite": {
+            "mode": "gpu_optimization_confirmation", "stage": "finished", "runtime_seconds": 1500,
+            "profiles": [probe, baseline, candidate], "real_data_confirmations": [baseline, candidate],
+            "short_probe_profiles": [probe], "baseline_result": baseline, "confirmation_candidate": candidate,
+        }}, "333")
+        return {"job_id": "333", "status": "success", "comparison_group": "a100_optimization_2026-10-20",
+                "requested_gpus": 8, "target_gpu": "a100", "result": result}
+
+    def test_sustained_rates_use_real_confirmations_not_fast_short_probe(self):
+        job = self.sustained_job()
+        text = "\n".join(report.render_sustained([job]))
+        self.assertIn("at least 600 measured seconds", text)
+        self.assertIn("**2.00×**", text)
+        self.assertIn("601.00 | 12 | 1,000", text)
+        self.assertIn("601.00 | 12 | 2,000", text)
+        self.assertIn("Synthetic input tokens/s", text)
+        self.assertIn("replay: **False**", text)
+        self.assertNotIn("9000.00×", text)
+
+    def test_partial_or_failed_confirmation_never_supplies_sustained_ratio(self):
+        for kwargs in ({"candidate_seconds": 300.}, {"candidate_status": "failed"}):
+            job = self.sustained_job(**kwargs)
+            text = "\n".join(report.render_sustained([job]))
+            self.assertNotIn("Selected candidate / baseline", text)
+            candidate = job["result"]["suite"]["real_data_confirmations"][1]
+            self.assertIsNone(report.sustained_profile_rate(candidate))
+
+    def test_sustained_public_results_keep_evidence_without_source_paths(self):
+        job = self.sustained_job()
+        public = json.dumps(job["result"])
+        self.assertNotIn("/dfs/", public)
+        self.assertNotIn("private-owner-machine", public)
+        self.assertNotIn('"path"', public)
+        candidate = job["result"]["suite"]["real_data_confirmations"][1]
+        self.assertEqual(candidate["data"]["measured_tokens"], 1_572_864)
+        self.assertEqual(candidate["chunk_rates"][0]["last_update"], 12)
+        self.assertEqual(candidate["measurement_requirements"]["minimum_measured_seconds"], 600)
+        self.assertEqual(candidate["loss_summary"]["last"], 11.3)
+
+    def test_sustained_queue_has_no_measurement_and_mismatched_pack_has_no_ratio(self):
+        text = "\n".join(report.render_sustained([{"job_id": "333", "status": "queued",
+            "comparison_group": "a100_optimization_2026-10-20", "requested_gpus": 8, "target_gpu": "a100"}]))
+        self.assertIn("No sustained real-data measurement is available yet", text)
+        job = self.sustained_job()
+        job["result"]["suite"]["real_data_confirmations"][1]["data_pack_sha256"] = "c" * 64
+        self.assertNotIn("Selected candidate / baseline", "\n".join(report.render_sustained([job])))
+
     def test_invalid_job_id_cannot_write_arbitrary_public_file(self):
         self.launch(job="123")
         path = self.run / "launch_123.json"

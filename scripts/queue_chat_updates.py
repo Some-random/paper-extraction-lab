@@ -44,7 +44,8 @@ def fields(value, names):
 
 def compact_measurement(value):
     result = fields(value, ("input_tokens_per_second", "input_tokens_per_step",
-                           "measured_input_tokens", "measured_optimizer_steps", "measured_wall_seconds"))
+                           "measured_input_tokens", "measured_optimizer_steps", "measured_wall_seconds",
+                           "valid_sustained_measurement"))
     if isinstance(value, dict) and isinstance(value.get("step_seconds"), dict):
         result["step_seconds"] = fields(value["step_seconds"], ("mean", "p50", "p95"))
     return result
@@ -77,6 +78,9 @@ def compact_profile(value):
         elapsed = value["profiler"].get("elapsed_seconds")
         if isinstance(elapsed, (int, float)):
             result["profiler_seconds"] = elapsed
+    if isinstance(value, dict) and isinstance(value.get("measurement_requirements"), dict):
+        result["measurement_requirements"] = fields(value["measurement_requirements"],
+            ("minimum_optimizer_steps", "minimum_measured_seconds", "last_completed_update_end_seconds", "satisfied"))
     return result
 
 
@@ -135,7 +139,8 @@ def compact_snapshot(value):
     compact_paper = fields(observed, ("checked_at_pst", "checked_epoch", "deadline_at_pst", "job_id",
                                      "run_id", "scheduler_observed", "scheduler_state", "stage", "status",
                                      "stop_reason", "reason", "error_type", "submitted_at_pst",
-                                     "target_new_papers", "worker_heartbeat_age_seconds"))
+                                     "target_new_papers", "worker_heartbeat_age_seconds",
+                                     "storage_bounded_continuation", "control_plane_reserve_bytes"))
     for key in ("counts", "inventory", "limits"):
         if isinstance(observed.get(key), dict):
             compact_paper[key] = {name: count for name, count in observed[key].items()

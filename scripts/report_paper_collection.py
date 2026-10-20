@@ -8,6 +8,7 @@ import json
 import math
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -28,6 +29,10 @@ ACTIVE = {"RUNNING", "CONFIGURING", "COMPLETING", "RESIZING", "SIGNALING", "STAG
 COUNT_KEYS = ("reused_papers", "new_papers", "new_processed_papers", "rejected_papers", "known_id_skips", "raw_tokens",
               "exact_unique_tokens", "selected_tokens", "selected_exact_unique_tokens", "artifact_bytes",
               "network_bytes", "network_charged_bytes", "pipeline_bytes", "known_pmcids")
+CONTINUATION_COUNT_KEYS = ("continuation_processed_papers", "continuation_selected_papers",
+                           "continuation_raw_tokens", "continuation_selected_exact_unique_tokens",
+                           "prior_artifact_bytes", "prior_network_bytes", "cumulative_artifact_bytes",
+                           "cumulative_network_bytes", "filesystem_free_bytes", "pipeline_with_control_reserve_bytes")
 LIMIT_KEYS = ("runtime_seconds", "network_bytes", "new_artifact_bytes", "minimum_free_bytes", "maximum_pipeline_data_bytes")
 INVENTORY_KEYS = ("native_xml_papers", "known_pmcids", "known_pmids", "known_dois")
 STAGES = {
@@ -127,7 +132,9 @@ def collect_snapshot(config, run_dir, now, *, query=query_scheduler, previous=No
         status = worker_status if worker_status in TERMINAL else "failed"
         reason = None if worker_status in TERMINAL else "worker_final_status_missing"
     elif slurm in ACTIVE:
-        if worker_status in TERMINAL:
+        if config.get("continuation") and worker.get("stop_reason", state.get("stop_reason")) == "allocation_checkpoint":
+            status, reason = "running", "allocation_checkpoint_pending_requeue"
+        elif worker_status in TERMINAL:
             status = worker_status
         elif (age is not None and age > 180) or (age is None and now - first_running > 180):
             status, reason = "stalled", "worker_heartbeat_stale"
@@ -153,6 +160,29 @@ def collect_snapshot(config, run_dir, now, *, query=query_scheduler, previous=No
     baseline, added = number(config.get("existing_pipeline_bytes")), number(worker.get("new_artifact_bytes"))
     counters["pipeline_bytes"] = baseline + added if baseline is not None and added is not None else None
     counts = {key: number(counters.get(key)) for key in COUNT_KEYS}
+    continuation = config.get("continuation")
+    if isinstance(continuation, dict):
+        prior = continuation.get("baseline_counts", {})
+        mapping = {
+            "continuation_processed_papers": (worker.get("new_processed_papers"), prior.get("new_processed_papers")),
+            "continuation_selected_papers": (worker.get("new_selected_papers"), prior.get("new_selected_papers")),
+            "continuation_raw_tokens": (counters.get("raw_tokens"), prior.get("raw_tokens")),
+            "continuation_selected_exact_unique_tokens": (counters.get("selected_exact_unique_tokens"), prior.get("selected_exact_unique_tokens")),
+        }
+        for name, (current, start) in mapping.items():
+            counts[name] = current - start if number(current) is not None and number(start) is not None and current >= start else None
+        counts["prior_artifact_bytes"] = number(continuation.get("prior_artifact_bytes"))
+        counts["prior_network_bytes"] = number(continuation.get("prior_network_bytes"))
+        for output_name, prior_key, current_key in (("cumulative_artifact_bytes", "prior_artifact_bytes", "artifact_bytes"),
+                                                   ("cumulative_network_bytes", "prior_network_bytes", "network_bytes")):
+            old, current = counts[prior_key], counts[current_key]
+            counts[output_name] = old + current if old is not None and current is not None else None
+        try:
+            counts["filesystem_free_bytes"] = number(shutil.disk_usage(run_dir).free)
+        except OSError:
+            counts["filesystem_free_bytes"] = number(worker.get("filesystem_free_bytes", state.get("filesystem_free_bytes")))
+        control = number(config.get("limits", {}).get("control_plane_reserve_bytes")) or 0
+        counts["pipeline_with_control_reserve_bytes"] = counts["pipeline_bytes"] + control if counts["pipeline_bytes"] is not None else None
     limits = config.get("limits", {})
     safe_limits = {key: number(limits.get(key)) for key in LIMIT_KEYS}
     inventory = {key: number(config.get("inventory", {}).get(key)) for key in INVENTORY_KEYS}
@@ -170,17 +200,25 @@ def collect_snapshot(config, run_dir, now, *, query=query_scheduler, previous=No
               "error_type": word(worker.get("error", worker.get("error_type", state.get("error_type"))))}
     if slurm in ACTIVE:
         output["first_running_epoch"] = first_running
+    if continuation:
+        output["storage_bounded_continuation"] = True
+        output["control_plane_reserve_bytes"] = number(limits.get("control_plane_reserve_bytes"))
     return output
 
 
 def empty_snapshot(config, now):
     """A valid safe report even when the first worker files cannot be read."""
-    return {"run_id": word(config.get("run_id")) or DEFAULT, "checked_at_pst": timestamp(now),
+    output = {"run_id": word(config.get("run_id")) or DEFAULT, "checked_at_pst": timestamp(now),
             "checked_epoch": now, "status": "stalled", "stage": None, "reason": "monitor_read_failed",
             "counts": dict.fromkeys(COUNT_KEYS), "limits": {key: number(config.get("limits", {}).get(key)) for key in LIMIT_KEYS},
             "inventory": {key: number(config.get("inventory", {}).get(key)) for key in INVENTORY_KEYS},
             "target_new_papers": number(config.get("target_new_papers")), "job_id": None,
             "scheduler_state": None, "scheduler_observed": False, "scheduler_errors": []}
+    if config.get("continuation"):
+        output["counts"].update(dict.fromkeys(CONTINUATION_COUNT_KEYS))
+        output["storage_bounded_continuation"] = True
+        output["control_plane_reserve_bytes"] = number(config.get("limits", {}).get("control_plane_reserve_bytes"))
+    return output
 
 
 def display(value):
@@ -196,11 +234,21 @@ def build_report(config_path, run_dir, report_dir, *, root=ROOT, publish=False, 
     snapshot = snapshot or collect_snapshot(config, run_dir, time.time() if now is None else now)
     report_dir.mkdir(parents=True, exist_ok=True)
     counts, limits, inventory = snapshot["counts"], snapshot["limits"], snapshot["inventory"]
+    continuation = bool(config.get("continuation"))
+    description = ("Continue downloading missing biological papers from the preserved identifier and exact-text "
+                   "deduplication ledger. Previously processed papers remain counted and are read in place. "
+                   "There is no fixed paper-count target or total runtime deadline; storage determines how far acquisition can continue."
+                   if continuation else
+                   f"Process existing cluster XML first, then acquire up to **{display(snapshot['target_new_papers'])} additional papers** whose identifiers are absent from the known cluster inventory.")
     lines = ["# Native-paper collection", "", f"**Status: {snapshot['status']}** · Updated {snapshot['checked_at_pst']} (fixed PST).", "",
-             f"Process existing cluster XML first, then acquire up to **{display(snapshot['target_new_papers'])} additional papers** whose identifiers are absent from the known cluster inventory.", "",
+             description, ""]
+    if continuation:
+        lines.extend(["Paper and token totals are cumulative across the prior run and this continuation; "
+                      "the continuation rows show only the additional work.", ""])
+    lines.extend([
              "| Measure | Current amount |", "|:--|--:|",
              f"| Existing native XML available | {display(inventory['native_xml_papers'])} papers |",
-             f"| Known PMC identifiers checked before acquisition | {display(counts['known_pmcids'] if counts['known_pmcids'] is not None else inventory['known_pmcids'])} |"]
+             f"| Known PMC identifiers checked before acquisition | {display(counts['known_pmcids'] if counts['known_pmcids'] is not None else inventory['known_pmcids'])} |"])
     for label, key in (("Existing papers processed", "reused_papers"), ("New papers processed", "new_processed_papers"),
                        ("New papers retained by biology rules", "new_papers"),
                        ("Metadata/parse rejections", "rejected_papers"), ("Candidates skipped because already present", "known_id_skips"),
@@ -208,17 +256,45 @@ def build_report(config_path, run_dir, report_dir, *, root=ROOT, publish=False, 
                        ("Biology-selected tokens before exact deduplication", "selected_tokens"),
                        ("Biology-selected exact-unique tokens", "selected_exact_unique_tokens")):
         lines.append(f"| {label} | {display(counts[key])} |")
-    lines.extend([f"| New artifacts | {gib(counts['artifact_bytes'])} / {gib(limits['new_artifact_bytes'])} |",
+    if continuation:
+        for label, key in (("Papers processed during this continuation", "continuation_processed_papers"),
+                           ("Papers selected during this continuation", "continuation_selected_papers"),
+                           ("Raw tokens added during this continuation", "continuation_raw_tokens"),
+                           ("Selected exact-unique tokens added during this continuation", "continuation_selected_exact_unique_tokens")):
+            lines.append(f"| {label} | {display(counts.get(key))} |")
+        lines.extend([f"| Prior paper-run artifacts | {gib(counts.get('prior_artifact_bytes'))} |",
+                      f"| Continuation artifacts, including the copied index | {gib(counts['artifact_bytes'])} |",
+                      f"| Combined paper-run artifacts | {gib(counts.get('cumulative_artifact_bytes'))} |",
+                      f"| Prior paper-run HTTP response bodies | {gib(counts.get('prior_network_bytes'))} |",
+                      f"| Continuation HTTP response bodies | {gib(counts['network_bytes'])} |",
+                      f"| Combined paper-run HTTP response bodies | {gib(counts.get('cumulative_network_bytes'))} |",
+                      f"| Shared filesystem free space | {gib(counts.get('filesystem_free_bytes'))} |",
+                      f"| Pipeline storage including reserved reporting headroom | {gib(counts.get('pipeline_with_control_reserve_bytes'))} / {gib(limits['maximum_pipeline_data_bytes'])} |"])
+    else:
+        lines.append(f"| New artifacts | {gib(counts['artifact_bytes'])} / {gib(limits['new_artifact_bytes'])} |")
+    lines.extend([
                   f"| Counted pipeline storage | {gib(counts['pipeline_bytes'])} / {gib(limits['maximum_pipeline_data_bytes'])} |",
                   f"| Measured HTTP response bodies | {gib(counts['network_bytes'])} |",
                   f"| HTTP budget charged | {gib(counts['network_charged_bytes'])} / {gib(limits['network_bytes'])} |", "",
-                  f"Job: {snapshot['job_id'] or 'not submitted'}; scheduler: {snapshot['scheduler_state'] or 'not observed'}; stage: {STAGES.get(snapshot['stage'], snapshot['stage'] or 'not started')}.", "",
-                  f"The worker has an original {display(limits['runtime_seconds'] / 3600 if limits['runtime_seconds'] is not None else None)}-hour allowance, two CPU cores and zero GPUs. It stops at the first time, download, storage or candidate limit. The shared free-space floor is {gib(limits['minimum_free_bytes'])}.", ""])
-    if snapshot.get("deadline_at_pst"):
+                  f"Job: {snapshot['job_id'] or 'not submitted'}; scheduler: {snapshot['scheduler_state'] or 'not observed'}; stage: {STAGES.get(snapshot['stage'], snapshot['stage'] or 'not started')}.", ""])
+    if continuation:
+        lines.extend([f"One serial worker uses two CPU cores and zero GPUs. It preserves a shared-free-space floor of "
+                      f"**{gib(limits['minimum_free_bytes'])}** and a total pipeline-data ceiling of "
+                      f"**{gib(limits['maximum_pipeline_data_bytes'])}**, including prior data, the copied index, "
+                      "new XML, parsed outputs, temporary writes and reserved reporting space. Allocation wall-time "
+                      "boundaries checkpoint and requeue the same job without resetting counters. Expanded-source "
+                      "exhaustion, a network safety ceiling or an explicit stop are reported separately.", ""])
+    else:
+        lines.extend([f"The worker has an original {display(limits['runtime_seconds'] / 3600 if limits['runtime_seconds'] is not None else None)}-hour allowance, two CPU cores and zero GPUs. It stops at the first time, download, storage or candidate limit. The shared free-space floor is {gib(limits['minimum_free_bytes'])}.", ""])
+    if not continuation and snapshot.get("deadline_at_pst"):
         lines.extend([f"Worker deadline: {snapshot['deadline_at_pst']} (fixed PST).", ""])
     if snapshot.get("reason") or snapshot.get("stop_reason") or snapshot.get("error_type"):
         lines.extend(["Run detail: " + "; ".join(value for value in (
             snapshot.get("reason"), snapshot.get("stop_reason"), snapshot.get("error_type")) if value) + ".", ""])
+    if continuation and snapshot.get("stop_reason") == "network_unavailable":
+        lines.extend(["Acquisition fetches exhausted bounded retries (recorded reason: network_unavailable). Acquisition is stopped; "
+                      "the saved identifier ledger, pending candidate and cached responses preserve progress "
+                      "for recovery under the same storage and download counters.", ""])
     if snapshot["scheduler_errors"]:
         lines.extend(["Scheduler query incomplete; the observed status includes that uncertainty.", ""])
     if snapshot.get("watcher_status"):
@@ -231,7 +307,7 @@ def build_report(config_path, run_dir, report_dir, *, root=ROOT, publish=False, 
         lines.extend([delta_text, ""])
     lines.extend(["Original XML is read in place when already present. New XML, structured sections, tables, captions, citation metadata and canonical text are retained. Exact-text duplicate removal and the initial biology selection are reported separately; biology selection is a keyword heuristic, not a reviewed quality score. Counts use the pinned extraction-reference tokenizer.", "",
                   "Identifier checks cover the inventoried accessible cluster sources. Figures, PDFs, supplements and genomic downloads are outside this batch.", "",
-                  "An independent monitor refreshes this report hourly, including while queued, and on status changes. A separate session monitor queues the requested hourly chat updates.", ""])
+                  "An independent monitor refreshes this report at its configured interval, including while queued, and on status changes. A separate session monitor queues the requested chat updates.", ""])
     # Watcher bookkeeping remains private, including any future extra fields.
     public_keys = set(empty_snapshot(config, 0)) | {"worker_heartbeat_age_seconds", "submitted_at_pst",
                   "deadline_at_pst", "stop_reason", "error_type", "watcher_status", "monitor_stop_reason"}
@@ -240,6 +316,10 @@ def build_report(config_path, run_dir, report_dir, *, root=ROOT, publish=False, 
     write_json(report_dir / "summary.json", public)
     (report_dir / "README.md").write_text("\n".join(lines))
     progress = f"Updated {snapshot['checked_at_pst']} (fixed PST).\n\nStatus: **{snapshot['status']}**. New papers: {display(counts['new_papers'])}; reused papers: {display(counts['reused_papers'])}; exact-unique tokens: {display(counts['exact_unique_tokens'])}.\n"
+    if continuation:
+        progress += (f"\nSince continuation began: {display(counts.get('continuation_processed_papers'))} papers processed; "
+                     f"{display(counts.get('continuation_selected_papers'))} selected; "
+                     f"{display(counts.get('continuation_selected_exact_unique_tokens'))} selected exact-unique tokens added.\n")
     if delta_text:
         progress += "\n" + delta_text + "\n"
     (report_dir / "progress.md").write_text(progress)

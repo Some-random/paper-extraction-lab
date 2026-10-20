@@ -29,18 +29,54 @@ PUBLIC_SCALARS = (
     "peak_cuda_allocated_bytes", "peak_cuda_reserved_bytes", "runtime_seconds",
     "stop_reason", "failure_type", "optimizer_state_dtypes",
     "setup_seconds", "warmup_seconds", "measurement_seconds",
+    "compile_seconds", "first_warmup_seconds", "completed_optimizer_updates",
+    "data_pack_sha256", "data_manifest_sha256", "data_cursor_tokens",
+    "host_input_prepare_and_transfer_schedule_seconds", "host_input_timing_scope",
 )
 PUBLIC_ARGUMENTS = (
     "sequence_length", "batch_size", "accumulation", "warmup", "steps",
     "max_runtime_seconds", "target_tokens", "seed", "activation_checkpointing", "sharding", "profile_steps",
     "attention", "fused_kernels", "compile", "precision", "float8_all_gather", "optimizer",
+    "hardware", "minimum_measured_seconds", "maximum_measured_steps", "data_start_token",
 )
 VERIFICATION_GROUP = "throughput_verification_2026-10-19"
 OPTIMIZATION_GROUP = "b200_optimization_2026-10-19"
+SUSTAINED_GROUPS = {"a100_optimization_2026-10-20", "b200_optimization_2026-10-20"}
 OPTIMIZATION_FEATURES = ("attention", "kernels", "checkpointing", "sharding", "compile", "precision",
                          "float8_all_gather", "optimizer")
 MEASUREMENT_FIELDS = ("measured_optimizer_steps", "input_tokens_per_step", "measured_input_tokens",
-                      "measured_wall_seconds", "input_tokens_per_second", "step_seconds")
+                      "measured_wall_seconds", "input_tokens_per_second", "step_seconds",
+                      "valid_sustained_measurement")
+
+
+def sanitize_training_details(result):
+    """Retain bounded real-data/timing evidence without source locators or logs."""
+    safe = {}
+    fields = {
+        "loss_summary": ("first", "last", "mean", "finite", "meaning"),
+        "measurement_requirements": ("minimum_optimizer_steps", "minimum_measured_seconds",
+                                     "last_completed_update_end_seconds", "satisfied"),
+        "compilation_evidence": ("unique_graphs", "decoder_blocks_requested", "cache_size_limit", "status"),
+        "data_validation": ("status", "scope", "token_count", "start_token", "replay"),
+        "data": ("data_pack_sha256", "data_manifest_sha256", "token_count", "bytes", "source_records",
+                 "dtype", "start_token", "replay", "consumed_tokens", "measured_start_token", "measured_tokens",
+                 "stop_reason"),
+    }
+    for name, allowed in fields.items():
+        if isinstance(result.get(name), dict):
+            safe[name] = {key: public_value(value) for key, value in result[name].items() if key in allowed}
+    tokenizer = result.get("data", {}).get("tokenizer") if isinstance(result.get("data"), dict) else None
+    if isinstance(tokenizer, str):
+        safe["data"]["tokenizer"] = public_value(tokenizer)
+    elif isinstance(tokenizer, dict):
+        safe["data"]["tokenizer"] = {key: public_value(value) for key, value in tokenizer.items()
+                                      if key in ("name", "identity", "revision", "sha256", "vocabulary_size")}
+    if isinstance(result.get("chunk_rates"), list):
+        safe["chunk_rates"] = [{key: public_value(value) for key, value in row.items() if key in
+                                ("first_update", "last_update", "seconds", "input_tokens",
+                                 "input_tokens_per_second", "partial_window")}
+                               for row in result["chunk_rates"][:100]]
+    return safe
 
 
 def sanitize_timing_diagnostics(result):
@@ -69,7 +105,10 @@ def sanitize_profile(profile):
              "profile_steps", "status", "exit_code", "input_tokens_per_second", "measured_optimizer_steps",
              "input_tokens_per_step", "peak_cuda_allocated_bytes", "peak_cuda_reserved_bytes", "failure_type",
              "setup_seconds", "warmup_seconds", "measurement_seconds", "launcher_wall_seconds",
-             "parent", "resolved_parent", "comparison_scope", "profiler_seconds")}
+             "parent", "resolved_parent", "comparison_scope", "profiler_seconds", "measurement_kind",
+             "compile_seconds", "first_warmup_seconds", "completed_optimizer_updates", "input_kind",
+             "data_pack_sha256", "data_manifest_sha256", "data_cursor_tokens",
+             "host_input_prepare_and_transfer_schedule_seconds", "host_input_timing_scope")}
     for key in ("smoke_checks", "optimizer_update_check"):
         if isinstance(profile.get(key), dict):
             safe[key] = {name: public_value(value) for name, value in profile[key].items()
@@ -82,6 +121,7 @@ def sanitize_profile(profile):
         safe["throughput"] = {key: public_value(value) for key, value in profile["throughput"].items()
                               if key in MEASUREMENT_FIELDS}
     safe.update(sanitize_timing_diagnostics(profile))
+    safe.update(sanitize_training_details(profile))
     return safe
 
 
@@ -133,17 +173,24 @@ def sanitize_result(result, job_id):
                         if key in ("torch", "transformers", "triton", "torchao", "liger-kernel",
                                    "cut-cross-entropy", "flash-attn-4")}
     safe.update(sanitize_timing_diagnostics(result))
+    safe.update(sanitize_training_details(result))
     if "suite" in result:
         suite = result["suite"]
         safe["suite"] = {key: public_value(value) for key, value in suite.items() if key in
                          ("status", "world_size", "sequence_length", "global_batch_sequences",
                           "input_tokens_per_update", "selection", "started_utc", "runtime_seconds",
                           "runner_sha256", "selected_profile", "mode", "tuning_speedup_over_baseline",
-                          "stop_reason", "rate_scope")}
+                          "stop_reason", "rate_scope", "stage", "gpu_type", "short_stop_reason",
+                          "candidate_speedup_over_baseline", "allocation_timing_scope", "correctness_scope")}
         safe["suite"]["profiles"] = [sanitize_profile(profile) for profile in suite.get("profiles", [])]
-        for key in ("baseline_result", "fastest_completed_profile"):
+        for key in ("baseline_result", "fastest_completed_profile", "confirmation_candidate",
+                    "short_sweep_winner", "diagnostic_baseline_result"):
             if isinstance(suite.get(key), dict):
                 safe["suite"][key] = sanitize_profile(suite[key])
+        if isinstance(suite.get("real_data_confirmations"), list):
+            safe["suite"]["real_data_confirmations"] = [sanitize_profile(profile) for profile in suite["real_data_confirmations"][:2]]
+        if isinstance(suite.get("short_probe_profiles"), list):
+            safe["suite"]["short_probe_profiles"] = [sanitize_profile(profile) for profile in suite["short_probe_profiles"][:100]]
     if "throughput" in result:
         measurements = result["throughput"]
         safe["throughput"] = {key: public_value(measurements[key]) for key in
@@ -395,6 +442,114 @@ def render_optimization(jobs):
     return lines
 
 
+def sustained_profile_rate(profile):
+    throughput = profile.get("throughput", {})
+    requirements = profile.get("measurement_requirements", {})
+    seconds = throughput.get("measured_wall_seconds")
+    steps = throughput.get("measured_optimizer_steps")
+    if (profile.get("measurement_kind") != "real_data_confirmation"
+            or throughput.get("valid_sustained_measurement") is not True
+            or requirements.get("satisfied") is not True
+            or not valid_rate(seconds) or seconds < 600
+            or not isinstance(steps, int) or steps < 8):
+        return None
+    return completed_profile_rate(profile)
+
+
+def render_sustained(jobs):
+    selected = [job for job in jobs if job.get("comparison_group") in SUSTAINED_GROUPS
+                or job.get("result", {}).get("suite", {}).get("mode") == "gpu_optimization_confirmation"]
+    if not selected:
+        return []
+    lines = ["## Sustained training verification", "",
+             "Short synthetic probes select a candidate recipe. The baseline and selected candidate then "
+             "each train for **at least 600 measured seconds and eight optimizer updates** on the same frozen "
+             "biological-paper token pack, starting from the same token cursor. Data reads, CPU preparation, "
+             "GPU transfers and complete training updates are included. Setup, warmup and compilation are "
+             "reported separately. Each run uses fresh random model weights; these are throughput and "
+             "numerical-stability checks, without a biological learning-quality claim.", ""]
+    for job in selected:
+        suite = job.get("result", {}).get("suite", {})
+        confirmations = suite.get("real_data_confirmations") or [profile for profile in suite.get("profiles", [])
+                            if profile.get("measurement_kind") == "real_data_confirmation"]
+        probes = suite.get("short_probe_profiles") or [profile for profile in suite.get("profiles", [])
+                            if profile.get("measurement_kind") == "synthetic_short_probe"]
+        lines.extend([f"### Job {job['job_id']}: {job.get('requested_gpus')} × {cell(job.get('target_gpu', 'unknown'))}", "",
+                      f"Scheduler status: **{cell(job['status'])}**. "
+                      f"Suite stage: **{cell(suite.get('stage', 'not started'))}**. "
+                      f"Suite wall time: **{seconds_cell(suite.get('runtime_seconds'))} seconds**.", ""])
+        if suite.get("stop_reason"):
+            lines.extend([f"Stop reason: **{cell(suite['stop_reason'])}**.", ""])
+        if not confirmations:
+            lines.extend(["No sustained real-data measurement is available yet.", ""])
+        else:
+            lines.extend(["| Real-data run | Recipe | Status | Measured seconds | Updates | Input tokens/s | Peak allocated GiB/GPU |",
+                          "|:---|:---|:---|---:|---:|---:|---:|"])
+            for profile in confirmations:
+                features = profile.get("features", {})
+                throughput = profile.get("throughput", {})
+                status = profile.get("status", "unknown")
+                if profile.get("failure_type"):
+                    status += " — " + profile["failure_type"]
+                rate = sustained_profile_rate(profile)
+                role = "Baseline" if profile.get("role") == "confirmation_baseline" else "Selected candidate"
+                memory = profile.get("peak_cuda_allocated_bytes")
+                memory = f"{memory / 2**30:.2f}" if valid_rate(memory) else "—"
+                lines.append(f"| {role} | {cell(profile.get('name', 'unknown'))}: "
+                             f"{cell(features.get('attention', '—'))} / {cell(features.get('precision', '—'))} | "
+                             f"{cell(status)} | {seconds_cell(throughput.get('measured_wall_seconds'))} | "
+                             f"{throughput.get('measured_optimizer_steps', '—')} | "
+                             f"{format(rate, ',.0f') if valid_rate(rate) else '—'} | {memory} |")
+            lines.append("")
+            baseline = next((profile for profile in confirmations if profile.get("role") == "confirmation_baseline"), {})
+            candidate = next((profile for profile in confirmations if profile.get("role") == "confirmation_winner"), {})
+            baseline_rate, candidate_rate = sustained_profile_rate(baseline), sustained_profile_rate(candidate)
+            if (valid_rate(baseline_rate) and valid_rate(candidate_rate)
+                    and baseline.get("data_pack_sha256")
+                    and baseline.get("data_pack_sha256") == candidate.get("data_pack_sha256")):
+                lines.extend([f"Selected candidate / baseline on the frozen real-data pack: "
+                              f"**{candidate_rate / baseline_rate:.2f}×**. "
+                              "This ratio uses the sustained measurements, excluding short synthetic probes.", ""])
+            lines.extend(["| Run | Setup seconds | Warmup seconds | Compile setup seconds | First warmup seconds | Measured tokens | Loss: first → last |",
+                          "|:---|---:|---:|---:|---:|---:|:---|"])
+            for profile in confirmations:
+                loss = profile.get("loss_summary", {})
+                first, last = loss.get("first"), loss.get("last")
+                loss_text = f"{first:.4f} → {last:.4f}" if isinstance(first, (int, float)) and isinstance(last, (int, float)) else "—"
+                throughput = profile.get("throughput", {})
+                tokens = throughput.get("measured_input_tokens")
+                lines.append(f"| {cell(profile.get('name', 'unknown'))} | {seconds_cell(profile.get('setup_seconds'))} | "
+                             f"{seconds_cell(profile.get('warmup_seconds'))} | {seconds_cell(profile.get('compile_seconds'))} | "
+                             f"{seconds_cell(profile.get('first_warmup_seconds'))} | "
+                             f"{format(tokens, ',') if isinstance(tokens, int) else '—'} | {loss_text} |")
+            lines.extend(["", "Lazy compilation can occur inside the first warmup update; the timing columns overlap "
+                          "and must not be added. Loss values provide a numerical diagnostic, not downstream biological scores.", ""])
+            for profile in confirmations:
+                data = profile.get("data", {})
+                rate = sustained_profile_rate(profile)
+                if valid_rate(rate) and data:
+                    consumed = data.get("consumed_tokens")
+                    replay = data.get("replay")
+                    lines.extend([f"**{cell(profile.get('name', 'unknown'))}:** "
+                                  f"{format(consumed, ',') if isinstance(consumed, int) else 'Unknown'} token positions consumed "
+                                  f"including warmup; replay: **{cell(replay) if isinstance(replay, bool) else 'unreported'}**. "
+                                  "Per-window rates, input-preparation timings and the frozen pack hashes are retained "
+                                  f"in [sanitized results](results_{job['job_id']}.json).", ""])
+        if probes:
+            lines.extend(["Short synthetic probes used for recipe selection:", "",
+                          "| Probe | Status | Synthetic input tokens/s |",
+                          "|:---|:---|---:|"])
+            for profile in probes:
+                status = profile.get("status", "unknown")
+                if profile.get("failure_type"):
+                    status += " — " + profile["failure_type"]
+                rate = completed_profile_rate(profile)
+                lines.append(f"| {cell(profile.get('name', 'unknown'))} | {cell(status)} | "
+                             f"{format(rate, ',.0f') if valid_rate(rate) else '—'} |")
+            lines.append("")
+    return lines
+
+
 def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
     lines = ["# 4B training-throughput diagnostic", "",
              f"Report updated **{generated_at}**. Cluster snapshot: **{cluster.get('checked_at_pst', 'unknown')}**.", ""]
@@ -409,17 +564,18 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
         lines.extend([f"Scheduler last checked **{cell(monitor.get('checked_at_pst', 'unknown'))}**. "
                       f"Monitor: **{cell(monitor.get('watcher_status', 'unknown'))}**. "
                       "[Status snapshot](status.json).", "",
-                      "While work is pending or running, this page is updated hourly even without a status change, "
-                      "and promptly on failure or completion. A separate session monitor queues the requested "
-                      "hourly chat updates.", ""])
+                      "While work is pending or running, this page is updated at the configured reporting interval "
+                      "even without a status change, and promptly on failure or completion. A separate session "
+                      "monitor queues the requested chat updates.", ""])
         if monitor.get("scheduler_errors"):
             lines.extend(["**Scheduler query incomplete.** Some job states use the last observation; "
                           "see the status snapshot for query errors.", ""])
-    lines.extend(["This is a short compute diagnostic using the pinned **Qwen3-4B architecture**, random initialization, "
-             "synthetic token IDs and a **4,096-token context**. The baseline runs BF16 computation with "
+    lines.extend(["These compute diagnostics use the pinned **Qwen3-4B architecture**, random initialization "
+             "and a **4,096-token context**. Original tests use synthetic token IDs; sustained confirmations "
+             "use an existing local biological-paper token pack. The baseline runs BF16 computation with "
              "FP32 master parameters and conventional AdamW optimizer states; optimization profiles identify "
-             "their precision and kernel changes. No pretrained weights or biological "
-             "training corpus are downloaded for the benchmark.", ""])
+             "their precision and kernel changes. No pretrained model weights are downloaded.", ""])
+    lines.extend(render_sustained(jobs))
     lines.extend(render_optimization(jobs))
     lines.extend(render_verification(jobs))
     comparison = [job for job in jobs if job.get("comparison_group") in
@@ -531,7 +687,7 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
                          f"microbatch per GPU: {result.get('arguments', {}).get('batch_size', 'unknown')}; "
                          f"gradient accumulation: {result.get('arguments', {}).get('accumulation', 'unknown')}.")
             lines.append("")
-        if result.get("suite"):
+        if result.get("suite") and result["suite"].get("mode") != "gpu_optimization_confirmation":
             lines.extend(["| Microbatch/GPU | Accumulation | Status | Measured input tokens/s |",
                           "|---:|---:|:---|---:|"])
             for profile in result["suite"].get("profiles", []):
@@ -550,11 +706,13 @@ def render_markdown(cluster, jobs, generated_at, setup=None, monitor=None):
                   "and activation checkpointing. Verification tuning profiles list their different settings above. "
                   "The original comparisons request PyTorch SDPA without torch.compile; observed backend evidence, when "
                   "available, is reported separately. Setup, warmup and profiling are outside the measured denominator.", "",
-                  "Production corpus loading, biological learning quality, validation, checkpoint saving, restart "
+                  "Sustained confirmations additionally test the frozen local token pack's mmap/CPU/GPU input path. "
+                  "Production corpus scale and shuffling, biological learning quality, checkpoint saving, restart "
                   "behavior and multi-node scaling are **not tested**. Queueing and interruptions are excluded "
                   "from the compute-time estimate. No full 200B-token training run has been started.", "",
                   "The original comparison and verification allocations are bounded to 20 minutes and at most "
-                  "eight GPUs. The optimization allocation above uses two B200s for at most two hours. "
+                  "eight GPUs. The original B200 optimization allocation uses two B200s for at most two hours; "
+                  "the sustained-verification allocations use their separately recorded resource limits. "
                   "No existing jobs are modified by this diagnostic.", ""])
     return "\n".join(lines)
 

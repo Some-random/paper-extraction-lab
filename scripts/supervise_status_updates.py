@@ -34,6 +34,26 @@ def reporter_commands(config, config_path):
     }
 
 
+def apply_requested_reload(directory, config):
+    marker = directory / "reporter_reload.json"
+    if not marker.exists():
+        return
+    request = json.loads(marker.read_text())
+    if request["deadline_epoch"] != config["deadline_epoch"]:
+        raise ValueError("Reporter reload cannot change the monitor deadline")
+    state_path = directory / "queue_state.json"
+    if state_path.exists() and not (directory / "STOP").exists():
+        state = json.loads(state_path.read_text())
+        if (state.get("stop_reason") == "requested_stop"
+                and state.get("checked_epoch", 0) >= request["requested_epoch"]):
+            state["monitor_status"] = "watching"
+            state.pop("stop_reason", None)
+            temporary = state_path.with_suffix(".reload.tmp")
+            temporary.write_text(json.dumps(state, indent=2) + "\n")
+            temporary.replace(state_path)
+    marker.replace(directory / "reporter_reload_applied.json")
+
+
 def supervise(config_path):
     config = json.loads(config_path.read_text())
     directory = Path(config["run_directory"])
@@ -52,6 +72,7 @@ def supervise(config_path):
     children, finished, retry_at = {}, set(), {}
     with (directory / "supervisor.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        apply_requested_reload(directory, config)
         (directory / "supervisor.pid").write_text(str(os.getpid()) + "\n")
         try:
             while not stop and time.time() < deadline:

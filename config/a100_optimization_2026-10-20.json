@@ -1,0 +1,286 @@
+{
+  "model_config": "config/qwen3_4b_throughput_model.json",
+  "model_config_sha256": "304b2545a258d35620f1d4bf46940c0471d9baa00715ff8e77f84c2fca5057c1",
+  "sequence_length": 4096,
+  "global_batch_sequences": 32,
+  "warmup_optimizer_steps": 3,
+  "measured_optimizer_steps": 8,
+  "environment_root": ".b200-opt-venv",
+  "registry_directory": "experiments/training_throughput_2026-10-18",
+  "report_directory": "reports/training_throughput_2026-10-18",
+  "overlay_lock": "config/b200_optimization_overlay.lock",
+  "overlay_lock_sha256": "be5e3e7b919073c3ea590e5d1f4bb9083ad86ef5ff2a9e089289e13036479ec2",
+  "environment_packages": {
+    "apache-tvm-ffi": "0.1.15",
+    "cuda-bindings": "12.9.10",
+    "cut-cross-entropy": "25.1.1",
+    "flash-attn-4": "4.0.0b35",
+    "liger-kernel": "0.8.4",
+    "nvidia-cutlass-dsl": "4.8.1",
+    "quack-kernels": "0.6.5",
+    "torch": "2.8.0",
+    "torch-c-dlpack-ext": "0.1.5",
+    "torchao": "0.13.0",
+    "transformers": "4.57.1",
+    "triton": "3.4.0"
+  },
+  "run_id": "a100_optimization_2026-10-20",
+  "comparison_group": "a100_optimization_2026-10-20",
+  "gpu_type": "a100",
+  "world_size": 8,
+  "profiles": [
+    {
+      "name": "baseline",
+      "parent": null,
+      "role": "baseline",
+      "features": {
+        "attention": "sdpa_auto",
+        "kernels": "none",
+        "checkpointing": "full",
+        "sharding": "full_shard",
+        "compile": "off",
+        "precision": "bf16",
+        "float8_all_gather": "off",
+        "optimizer": "adamw_fp32"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 1
+    },
+    {
+      "name": "attention_flash",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "attention": "sdpa_flash"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 1
+    },
+    {
+      "name": "attention_cudnn",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "attention": "sdpa_cudnn"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "profile_steps": 1
+    },
+    {
+      "name": "loss_liger",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "kernels": "liger_loss"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "loss_cce",
+      "parent": "baseline",
+      "role": "tuning",
+      "features": {
+        "kernels": "cce"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "best_bf16_kernels",
+      "parent": "baseline",
+      "role": "combination",
+      "features": {
+        "attention": "@best:attention",
+        "kernels": "@best:kernels"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "feature_candidates": {
+        "attention": [
+          "baseline",
+          "attention_flash",
+          "attention_cudnn"
+        ],
+        "kernels": [
+          "baseline",
+          "loss_liger",
+          "loss_cce"
+        ]
+      }
+    },
+    {
+      "name": "compiled_fsdp1",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "fsdp2",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "sharding": "fsdp2"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "compiled_fsdp2",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "compile": "on"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1,
+      "timeout_seconds": 600
+    },
+    {
+      "name": "checkpoint_off",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "memory_baseline_micro2",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {},
+      "microbatch_per_gpu": 2,
+      "accumulation": 2
+    },
+    {
+      "name": "checkpoint_off_micro2",
+      "parent": "memory_baseline_micro2",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 2,
+      "accumulation": 2
+    },
+    {
+      "name": "memory_baseline_micro1",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {},
+      "microbatch_per_gpu": 1,
+      "accumulation": 4
+    },
+    {
+      "name": "checkpoint_off_micro1",
+      "parent": "memory_baseline_micro1",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "off"
+      },
+      "microbatch_per_gpu": 1,
+      "accumulation": 4
+    },
+    {
+      "name": "shard_grad",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "sharding": "shard_grad_op"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "best_micro2",
+      "parent": "@best",
+      "role": "combination",
+      "features": {},
+      "microbatch_per_gpu": 2,
+      "accumulation": 2
+    },
+    {
+      "name": "liger_pointwise",
+      "parent": "loss_liger",
+      "role": "tuning",
+      "features": {
+        "kernels": "liger_full"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "checkpoint_selective",
+      "parent": "best_bf16_kernels",
+      "role": "tuning",
+      "features": {
+        "checkpointing": "selective"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    },
+    {
+      "name": "optimizer_8bit",
+      "parent": "fsdp2",
+      "role": "tuning",
+      "features": {
+        "optimizer": "adamw_8bit"
+      },
+      "microbatch_per_gpu": 4,
+      "accumulation": 1
+    }
+  ],
+  "environment_preflight": "experiments/a100_optimization_2026-10-20/environment_preflight.json",
+  "data_pack": "experiments/a100_optimization_2026-10-20/token_pack/tokens.uint32",
+  "data_manifest": "experiments/a100_optimization_2026-10-20/token_pack/manifest.json",
+  "confirmations": {
+    "minimum_measurement_seconds": 600,
+    "minimum_optimizer_steps": 8,
+    "baseline_name": "confirm_baseline",
+    "winner_name": "confirm_winner"
+  },
+  "bounds": {
+    "suite_seconds": 6600,
+    "profile_seconds": 420,
+    "compile_profile_seconds": 600,
+    "allocation_seconds": 7200,
+    "maximum_new_gpu_hours": 16.0,
+    "simultaneous_optimization_gpus_maximum": 8,
+    "new_environment_and_artifact_bytes": 17179869184,
+    "new_compile_cache_bytes": 4294967296,
+    "new_log_bytes": 67108864,
+    "new_run_artifact_bytes": 268435456,
+    "minimum_free_bytes": 68719476736,
+    "confirmation_profile_seconds": 900,
+    "confirmation_reserve_seconds": 1900
+  },
+  "authorization": "User requested analogous eight-A100 optimization and longer realistic timing. Maximum two-hour allocation/16GPU-hours; preserve prior jobs and their results, use normal Slurm queue, at most one benchmark allocation/eight GPUs at once.",
+  "measurement_scope": "Short synthetic compatibility probes followed by independent baseline/winner real-paper confirmations of at least600timedseconds each. Random initialization; throughput only, no CPT quality/convergence claim.",
+  "input_policy": "Frozen archived exact-unique selected biological paper text; pinned native Qwen3 tokenizer; document EOS boundaries; same pack start and rank-disjoint global batches; no replay; CPU mmap/copy and H2D included within measured wall time.",
+  "startup_policy": "Report setup, lazy compilation/warmup and full scheduler/launcher time separately; do not add compile duration twice when it lies within warmup.",
+  "unavailable_features": {
+    "native_fp8_fp4": "Not compatible with native Ampere training kernels used here; no BF16 emulation substituted.",
+    "flash_attn4": "Blackwell-only implementation in this overlay; use and verify supported SDPA backends."
+  },
+  "data_pack_sha256": "6cabf1dabd6578f01ec2b7cea504ecdef21c58c00d79b5e20a36379a9c788caa",
+  "data_manifest_sha256": "21c1f0999836704dcee2da25ef04d74e76e8a2ec25fe0c234cf839ed8e6af431",
+  "environment_preflight_sha256": "f932206560e418fee917ce235a56713e0674a19872f7202e79019209cae4a7c7",
+  "runner_sha256": "2ef2e10842e8137259f4e98cad04fd22bfca1be080c2ba7a79a232a1d1bbd402",
+  "suite_runner_sha256": "9a7960a31cfbd58f2e45c2882d8e77178e3f24c4fd73b97075435f1061cccbca",
+  "baseline_environment_and_artifact_bytes": 655699623,
+  "baseline_checked_epoch": 1792482283.38126,
+  "baseline_storage_accounting": {
+    "overlay_owned_bytes": 384251107,
+    "fixed_cpu_inputs_and_preflight_bytes": 271448516,
+    "method": "CPU preflight; entire fixed experiment tree, including uint32 inputs and provenance; GPU job tree/cache guarded separately"
+  }
+}

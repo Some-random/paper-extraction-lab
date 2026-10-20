@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Monitor one paper allocation independently and publish hourly GitHub status."""
+"""Monitor one paper allocation and publish two-hour progress plus state changes."""
 from __future__ import annotations
 
 import argparse
@@ -15,7 +15,7 @@ import report_paper_collection as report
 
 
 def meaningful_fingerprint(snapshot):
-    # Counters/heartbeats progress continuously. Publish those hourly, with
+    # Counters/heartbeats progress continuously. Publish those at the requested interval, with
     # immediate delivery reserved for status, stage and failure transitions.
     value = {key: snapshot.get(key) for key in (
         "status", "stage", "scheduler_state", "reason", "stop_reason", "error_type", "scheduler_errors")}

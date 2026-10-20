@@ -105,6 +105,90 @@ class PaperCollectionReportingTests(unittest.TestCase):
                                            previous={"scheduler_state": "FAILED", "status": "failed", "reason": "failed"})
         self.assertEqual(snapshot["status"], "failed")
 
+    def continuation(self):
+        self.config.update(run_id="paper_collection_continuation_2026-10-20", target_new_papers=None,
+                           existing_pipeline_bytes=18 * 2**30,
+                           continuation={"source_run": "/dfs/another_user/private/prior_run",
+                                         "prior_artifact_bytes": 5 * 2**30,
+                                         "prior_network_bytes": 2**30,
+                                         "baseline_counts": {"new_processed_papers": 100, "new_selected_papers": 70,
+                                                             "raw_tokens": 10000,
+                                                             "selected_exact_unique_tokens": 7000}})
+        self.config["limits"].pop("runtime_seconds", None)
+        self.config["limits"].update(maximum_pipeline_data_bytes=200 * 2**30, control_plane_reserve_bytes=16 * 2**20)
+        report.write_json(self.config_path, self.config)
+        self.worker(stage="acquire_missing_papers", new_processed_papers=150, new_selected_papers=110,
+                    counts={"raw_tokens": 16000, "exact_unique_tokens": 15000,
+                            "selected_tokens": 11000, "selected_exact_unique_tokens": 10000},
+                    new_artifact_bytes=2**30, network_bytes=2**29)
+
+    def test_continuation_keeps_cumulative_counts_and_explicit_new_work(self):
+        self.continuation()
+        snapshot = self.snapshot()
+        counts = snapshot["counts"]
+        self.assertEqual(counts["new_processed_papers"], 150)
+        self.assertEqual(counts["new_papers"], 110)
+        self.assertEqual(counts["raw_tokens"], 16000)
+        self.assertEqual(counts["continuation_processed_papers"], 50)
+        self.assertEqual(counts["continuation_selected_papers"], 40)
+        self.assertEqual(counts["continuation_raw_tokens"], 6000)
+        self.assertEqual(counts["continuation_selected_exact_unique_tokens"], 3000)
+        self.assertEqual(counts["cumulative_artifact_bytes"], 6 * 2**30)
+        self.assertEqual(counts["cumulative_network_bytes"], 3 * 2**29)
+        self.assertEqual(counts["pipeline_bytes"], 19 * 2**30)
+        self.assertEqual(counts["pipeline_with_control_reserve_bytes"], 19 * 2**30 + 16 * 2**20)
+        self.assertGreater(counts["filesystem_free_bytes"], 0)
+
+    def test_continuation_report_omits_null_target_and_expired_runtime(self):
+        self.continuation()
+        snapshot = self.snapshot()
+        snapshot["deadline_at_pst"] = "2000-01-01T00:00:00-08:00"
+        report.build_report(self.config_path, self.run, self.public, snapshot=snapshot)
+        text = (self.public / "README.md").read_text()
+        self.assertIn("no fixed paper-count target or total runtime deadline", text)
+        self.assertIn("| Papers processed during this continuation | 50 |", text)
+        self.assertIn("| Combined paper-run artifacts | 6.00 GiB |", text)
+        self.assertIn("| Combined paper-run HTTP response bodies | 1.50 GiB |", text)
+        self.assertIn("checkpoint and requeue", text)
+        self.assertNotIn("up to **—", text)
+        self.assertNotIn("-hour allowance", text)
+        self.assertNotIn("2000-01-01", text)
+        public = report.read_json(self.public / "summary.json")
+        self.assertEqual(public["counts"]["continuation_processed_papers"], 50)
+        self.assertTrue(public["storage_bounded_continuation"])
+        self.assertNotIn("/dfs/", json.dumps(public))
+        progress = (self.public / "progress.md").read_text()
+        self.assertIn("Since continuation began: 50 papers processed", progress)
+
+    def test_allocation_checkpoint_is_transitional_while_scheduler_requeues(self):
+        self.continuation()
+        self.worker(status="stopped", stage="acquire_missing_papers", stop_reason="allocation_checkpoint")
+        running = self.snapshot("RUNNING")
+        self.assertEqual(running["status"], "running")
+        self.assertEqual(running["reason"], "allocation_checkpoint_pending_requeue")
+        self.assertEqual(self.snapshot("PENDING")["status"], "queued")
+        self.assertEqual(self.snapshot("COMPLETED")["status"], "stopped")
+
+    def test_original_bounded_report_retains_original_runtime_explanation(self):
+        self.worker()
+        report.build_report(self.config_path, self.run, self.public, snapshot=self.snapshot())
+        text = (self.public / "README.md").read_text()
+        self.assertIn("original 24-hour allowance", text)
+        self.assertIn("10,000", text)
+        self.assertNotIn("during this continuation", text)
+
+    def test_continuation_network_failure_is_explicit_and_remains_failed(self):
+        self.continuation()
+        self.worker(status="failed", stage="acquire_missing_papers", stop_reason="network_unavailable",
+                    error="TransportUnavailable")
+        snapshot = self.snapshot("COMPLETED")
+        self.assertEqual(snapshot["status"], "failed")
+        report.build_report(self.config_path, self.run, self.public, snapshot=snapshot)
+        text = (self.public / "README.md").read_text()
+        self.assertIn("Acquisition fetches exhausted bounded retries", text)
+        self.assertIn("Acquisition is stopped", text)
+        self.assertIn("same storage and download counters", text)
+
     def test_report_is_due_hourly_even_without_change_and_promptly_on_failure(self):
         self.worker()
         snapshot = self.snapshot("PENDING")
