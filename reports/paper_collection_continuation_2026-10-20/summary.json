@@ -1,0 +1,50 @@
+{
+  "checked_at_pst": "2026-10-19T23:42:55-08:00",
+  "checked_epoch": 1792482175.3995273,
+  "counts": {
+    "artifact_bytes": 198660348,
+    "exact_unique_tokens": 683983510,
+    "known_id_skips": 404,
+    "known_pmcids": 152440,
+    "network_bytes": 5163054,
+    "network_charged_bytes": 5163054,
+    "new_papers": 5390,
+    "new_processed_papers": 7955,
+    "pipeline_bytes": 19482756743,
+    "raw_tokens": 684004443,
+    "rejected_papers": 89,
+    "reused_papers": 29404,
+    "selected_exact_unique_tokens": 414395610,
+    "selected_tokens": 414416461
+  },
+  "deadline_at_pst": null,
+  "error_type": null,
+  "inventory": {
+    "known_dois": 29265,
+    "known_pmcids": 144461,
+    "known_pmids": 144090,
+    "native_xml_papers": 29414
+  },
+  "job_id": "243177",
+  "limits": {
+    "maximum_pipeline_data_bytes": 214748364800,
+    "minimum_free_bytes": 68719476736,
+    "network_bytes": 214748364800,
+    "new_artifact_bytes": 195464268405,
+    "runtime_seconds": null
+  },
+  "monitor_stop_reason": null,
+  "reason": null,
+  "run_id": "paper_collection_continuation_2026-10-20",
+  "scheduler_errors": [],
+  "scheduler_observed": true,
+  "scheduler_state": "RUNNING",
+  "since_previous_report": {},
+  "stage": "acquire_missing_papers",
+  "status": "running",
+  "stop_reason": null,
+  "submitted_at_pst": "2026-10-19T23:39:10-08:00",
+  "target_new_papers": null,
+  "watcher_status": "watching",
+  "worker_heartbeat_age_seconds": 30.419178247451782
+}
