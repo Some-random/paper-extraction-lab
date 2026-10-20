@@ -287,11 +287,11 @@ def main():
     parser.add_argument("--report-dir", type=Path, default=report.ROOT / report.DEFAULT_REPORT)
     parser.add_argument("--publish", action="store_true")
     parser.add_argument("--poll-seconds", type=float, default=30)
-    parser.add_argument("--report-seconds", type=float, default=3600)
+    parser.add_argument("--report-seconds", type=float, default=7200)
     parser.add_argument("--max-days", type=float, default=7)
     args = parser.parse_args()
-    if not 10 <= args.poll_seconds <= 60 or not 60 <= args.report_seconds <= 3600 or not 0 < args.max_days <= 7:
-        parser.error("Require 10–60 second polls, 60–3600 second reports and at most seven days")
+    if not 10 <= args.poll_seconds <= 60 or not 60 <= args.report_seconds <= 7200 or not 0 < args.max_days <= 7:
+        parser.error("Require 10–60 second polls, 60–7200 second reports and at most seven days")
     try:
         watch(args.run_dir, args.report_dir, publish=args.publish, interval=args.report_seconds,
               poll_seconds=args.poll_seconds, max_days=args.max_days)

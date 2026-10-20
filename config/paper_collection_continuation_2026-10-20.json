@@ -1,0 +1,242 @@
+{
+  "run_id": "paper_collection_continuation_2026-10-20",
+  "destination": "experiments/paper_collection_continuation_2026-10-20",
+  "report_directory": "reports/paper_collection_continuation_2026-10-20",
+  "source_catalog": "experiments/paper_collection_2026-10-19/source_catalog.json",
+  "presence_ids_csv": "experiments/paper_collection_2026-10-19/presence_ids.csv",
+  "tokenizer_path": "cache/tokenizers/olmocr2-e52d6f090b7a9007afffbbd6ce510876222fea93/tokenizer.json",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "target_new_papers": null,
+  "existing_pipeline_bytes": 19284096395,
+  "maximum_table_rows": 2000,
+  "accepted_article_types": [
+    "research-article",
+    "review-article",
+    "brief-report",
+    "rapid-communication"
+  ],
+  "query_topics": {
+    "genes_genomes": [
+      "genetics",
+      "genomics",
+      "gene",
+      "genome",
+      "RNA"
+    ],
+    "proteins_metabolism": [
+      "protein",
+      "proteomics",
+      "enzyme",
+      "metabolism"
+    ],
+    "cells_molecular_biology": [
+      "cell",
+      "cellular",
+      "molecular biology",
+      "developmental biology"
+    ],
+    "organisms_ecology": [
+      "microbiology",
+      "microbiome",
+      "plant",
+      "ecology",
+      "evolution"
+    ]
+  },
+  "query_years": [
+    [
+      2018,
+      2020
+    ],
+    [
+      2021,
+      2022
+    ],
+    [
+      2023,
+      2023
+    ],
+    [
+      2024,
+      2024
+    ],
+    [
+      2025,
+      2026
+    ]
+  ],
+  "candidates_per_query": 2000,
+  "limits": {
+    "network_bytes": 214748364800,
+    "new_artifact_bytes": 195464268405,
+    "minimum_free_bytes": 68719476736,
+    "maximum_pipeline_data_bytes": 214748364800,
+    "max_xml_bytes": 8388608,
+    "max_text_bytes": 4194304,
+    "max_document_gzip_bytes": 33554432,
+    "control_plane_reserve_bytes": 16777216
+  },
+  "execution": {
+    "serial_workers": 1,
+    "cpu_cores": 2,
+    "gpus": 0
+  },
+  "scope": "Acquire absent biological research papers from official PMC XML, continuing the preserved identifier/dedup ledger. No new PDF, figure, supplementary binary, genome, OCR or model-training work.",
+  "selection": "Preserve raw counts separately from coarse biology/clinical selection and exact whitespace-normalized deduplication. No calibrated quality classifier or near-duplicate filtering is claimed.",
+  "authorization": "On October20 the user explicitly requested continuing paper downloads until reasonable storage is insufficient. This new storage-bounded scope supersedes the expired prior24-hour deadline,10,000 selected-paper target and8GiB HTTP cap. Preserve the64GiB shared-free floor,200GiB total pipeline ceiling, one serial2CPU/0GPU native-XML worker, source provenance and prior outputs. Allocation wall limits trigger checkpoint and own-job requeue, not a new data budget.",
+  "inventory": {
+    "native_xml_papers": 29414,
+    "known_pmcids": 144461,
+    "known_pmids": 144090,
+    "known_dois": 29265
+  },
+  "source_catalog_sha256": "92204f05a7381f9989f67b39684033d5fe3f8225c9bbbfc878a06cd517bdfcff",
+  "presence_ids_csv_sha256": "59fdf84903c5e7f003d9fba6648b098b24f7f2644a8c7ffec838cac15f4d3aca",
+  "continuation": {
+    "source_run": "experiments/paper_collection_2026-10-19",
+    "source_config": "config/paper_collection_2026-10-19.json",
+    "source_config_sha256": "9f9d86a10ca6c2b118bc56993244549dda96a48dd5fd91c125d1df291d3cfe52",
+    "source_summary": "experiments/paper_collection_2026-10-19/summary.json",
+    "source_summary_sha256": "1960e0bad2a23105bdc046b102c55919600b04b35ebdd4de8f9369e5b47b6008",
+    "baseline_counts": {
+      "new_processed_papers": 7917,
+      "new_selected_papers": 5368,
+      "raw_tokens": 683503051,
+      "selected_exact_unique_tokens": 414084306,
+      "raw_distinct_papers": 37321,
+      "reused_processed_papers": 29404
+    },
+    "prior_network_bytes": 1142944297,
+    "prior_artifact_bytes": 5084358668,
+    "preservation": "Stopped prior config, final state, raw XML and parsed outputs remain unchanged. The new ledger preserves IDs, text hashes, records and pending candidate cursors."
+  },
+  "continuation_discovery": {
+    "version": "storage_continuation_v1",
+    "candidates_per_query": 10000,
+    "query_years": [
+      [
+        2026,
+        2026
+      ],
+      [
+        2025,
+        2025
+      ],
+      [
+        2024,
+        2024
+      ],
+      [
+        2023,
+        2023
+      ],
+      [
+        2022,
+        2022
+      ],
+      [
+        2021,
+        2021
+      ],
+      [
+        2020,
+        2020
+      ],
+      [
+        2019,
+        2019
+      ],
+      [
+        2018,
+        2018
+      ],
+      [
+        2017,
+        2017
+      ],
+      [
+        2016,
+        2016
+      ],
+      [
+        2015,
+        2015
+      ],
+      [
+        2014,
+        2014
+      ],
+      [
+        2013,
+        2013
+      ],
+      [
+        2012,
+        2012
+      ],
+      [
+        2011,
+        2011
+      ],
+      [
+        2010,
+        2010
+      ],
+      [
+        2009,
+        2009
+      ],
+      [
+        2008,
+        2008
+      ],
+      [
+        2007,
+        2007
+      ],
+      [
+        2006,
+        2006
+      ],
+      [
+        2005,
+        2005
+      ],
+      [
+        2004,
+        2004
+      ],
+      [
+        2003,
+        2003
+      ],
+      [
+        2002,
+        2002
+      ],
+      [
+        2001,
+        2001
+      ],
+      [
+        2000,
+        2000
+      ],
+      [
+        1990,
+        1999
+      ],
+      [
+        1900,
+        1989
+      ]
+    ],
+    "schedule": "Drain inherited pending candidates first, then append one versioned topic/year subset at a time; known PMID/PMCID/DOI checks still precede XML downloads."
+  },
+  "runtime_policy": "No total acquisition deadline. Each24-hour Slurm allocation checkpoints on USR1 and requeues only its own job. Data/network counters persist; storage stops and user STOP do not requeue.",
+  "storage_baseline": {
+    "prior_recorded_pipeline_bytes": 18747225483,
+    "token_pack_reserved_bytes": 536870912,
+    "basis": "Prior stopped-run recorded accounting plus full CPU token-pack artifact allowance; original data is read in place. New continuation ledger, indexes, outputs, caches and temporary files are counted separately. Shared free space is checked before bounded writes."
+  }
+}

@@ -15,17 +15,32 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def reporter_commands(config, config_path):
+    interval = config.get("interval_seconds", 7200)
+    if not isinstance(interval, int) or not 60 <= interval <= 7200:
+        raise ValueError("Require 60–7200 second reporting interval")
+    papers = [sys.executable, "-B", "-u", str(ROOT / "scripts/watch_paper_collection.py"),
+              "--publish", "--report-seconds", str(interval), "--max-hours", "168"]
+    for key, option in (("paper_config_path", "--config"), ("paper_run_directory", "--run-dir"),
+                        ("paper_report_directory", "--report-dir")):
+        if config.get(key):
+            papers += [option, str(config[key])]
+    return {
+        "papers": papers,
+        "throughput": [sys.executable, "-B", "-u", str(ROOT / "scripts/watch_training_throughput.py"),
+                       "--publish", "--report-seconds", str(interval)],
+        "chat": [sys.executable, "-B", "-u", str(ROOT / "scripts/queue_chat_updates.py"),
+                 "--config", str(config_path)],
+    }
+
+
 def supervise(config_path):
     config = json.loads(config_path.read_text())
     directory = Path(config["run_directory"])
     directory = directory if directory.is_absolute() else ROOT / directory
     directory.mkdir(parents=True, exist_ok=True)
     deadline = config["deadline_epoch"]
-    commands = {
-        "papers": [sys.executable, "-B", "-u", str(ROOT / "scripts/watch_paper_collection.py"), "--publish"],
-        "throughput": [sys.executable, "-B", "-u", str(ROOT / "scripts/watch_training_throughput.py"), "--publish"],
-        "chat": [sys.executable, "-B", "-u", str(ROOT / "scripts/queue_chat_updates.py"), "--config", str(config_path)],
-    }
+    commands = reporter_commands(config, config_path)
     stop = False
 
     def request_stop(*_):

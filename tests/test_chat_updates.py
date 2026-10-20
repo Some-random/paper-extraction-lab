@@ -53,6 +53,22 @@ class ChatUpdatesTests(unittest.TestCase):
         self.assertEqual(state["last_accepted_epoch"], 120)
         self.assertIn("free_space_floor", self.sent[0])
 
+    def test_two_hour_migration_preserves_last_update_and_deadline(self):
+        state = self.tick({}, 0)
+        state = self.tick(state, 3600)
+        self.config["interval_seconds"] = 7200
+        state = self.tick(json.loads(json.dumps(state)), 4000)
+        self.assertEqual(state["next_due_epoch"], 10800)
+        self.assertEqual(state["deadline_epoch"], 100000)
+        state = self.tick(json.loads(json.dumps(state)), 10799)
+        self.assertEqual(len(self.sent), 1)
+        state = self.tick(state, 10800)
+        self.assertEqual(len(self.sent), 2)
+        self.assertIn("every two hours", self.sent[-1])
+        self.observed["gpu_jobs"][0].update(status="failed", scheduler_state="TIMEOUT")
+        self.tick(state, 10801)
+        self.assertEqual(len(self.sent), 3)
+
     def test_failure_retries_five_minutes_without_claiming_acceptance(self):
         def fail(*args):
             raise RuntimeError("offline")
@@ -231,6 +247,33 @@ class ChatUpdatesTests(unittest.TestCase):
         self.assertNotIn("private_kernel", prompt)
         self.assertIn('"optimizer":"adamw_8bit"', prompt)
         self.assertIn('"name":"optimized_profile_31"', prompt)
+
+    def test_multiple_sweeps_keep_confirmations_under_payload_bound(self):
+        def profile(index):
+            return {"name": f"probe_{index}", "status": "completed", "role": "tuning",
+                    "measurement_kind": "synthetic_short_probe", "input_tokens_per_second": 21000 + index,
+                    "setup_seconds": 65.1, "measurement_seconds": 47.2, "warmup_seconds": 22.2,
+                    "microbatch_per_gpu": 4, "accumulation": 1,
+                    "features": {"attention": "sdpa_auto", "precision": "bf16", "compile": "on"}}
+        for job in ("888", "999"):
+            profiles = [profile(i) for i in range(32)]
+            baseline = {**profile(0), "name": "confirm_baseline", "measurement_kind": "real_data_confirmation",
+                        "measurement_seconds": 600.8, "measured_optimizer_steps": 101}
+            winner = {**profile(31), "name": "confirm_winner", "measurement_kind": "real_data_confirmation",
+                      "measurement_seconds": 601.1, "measured_optimizer_steps": 202}
+            self.observed["gpu_jobs"].append({"job_id": job, "status": "success", "gpus": 8,
+                "suite": {"profiles": profiles + [baseline, winner], "baseline_result": baseline,
+                          "confirmation_candidate": winner, "fastest_completed_profile": winner,
+                          "short_sweep_winner": profiles[-1]}})
+        prompt = monitor.message(self.config, self.observed, self.observed)
+        self.assertLess(len(prompt.encode()), monitor.MAX_PROMPT_BYTES)
+        compact = monitor.compact_snapshot(self.observed)
+        for job in compact["gpu_jobs"][1:]:
+            by_name = {p["name"]: p for p in job["suite"]["profiles"]}
+            self.assertEqual(by_name["confirm_winner"]["measurement_seconds"], 601.1)
+            self.assertEqual(by_name["confirm_winner"]["measurement_kind"], "real_data_confirmation")
+            self.assertEqual(by_name["probe_31"]["measurement_kind"], "synthetic_short_probe")
+            self.assertEqual(job["suite"]["profile_counts"], {"completed": 34})
 
     def test_oserror_retains_actionable_errno_without_private_argument(self):
         def fail(*args):

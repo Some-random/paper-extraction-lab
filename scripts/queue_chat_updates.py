@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Queue requested hourly status checks into one existing Codex thread.
+"""Queue requested two-hour status checks into one existing Codex thread.
 
 This monitor reads only the recorded paper/benchmark jobs. Queue acceptance is
 recorded separately from message delivery; it never starts a Codex session.
@@ -7,6 +7,7 @@ recorded separately from message delivery; it never starts a Codex session.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from contextlib import contextmanager
 import fcntl
 import hashlib
@@ -55,7 +56,8 @@ def compact_profile(value):
                            "input_tokens_per_second", "input_tokens_per_step", "measured_optimizer_steps",
                            "setup_seconds", "warmup_seconds", "measurement_seconds", "runtime_seconds",
                            "profiler_seconds", "launcher_wall_seconds", "completed_warmup_steps", "peak_cuda_allocated_bytes",
-                           "peak_cuda_reserved_bytes"))
+                           "peak_cuda_reserved_bytes", "measurement_kind", "compile_seconds",
+                           "minimum_measurement_seconds", "data_cursor_tokens"))
     if isinstance(value, dict) and value.get("throughput"):
         # Keep each measured count once; rates/timings often appear both on the
         # profile and in its throughput object.
@@ -79,17 +81,36 @@ def compact_profile(value):
 
 
 def compact_suite(value):
-    result = fields(value, ("status", "mode", "stop_reason", "runtime_seconds", "deadline_epoch",
+    result = fields(value, ("status", "stage", "mode", "stop_reason", "short_stop_reason", "runtime_seconds", "deadline_epoch",
                            "global_batch_sequences", "input_tokens_per_update", "sequence_length",
                            "world_size", "selected_profile", "tuning_speedup_over_baseline",
-                           "baseline_profile", "fastest_completed_profile_name"))
+                           "baseline_profile", "fastest_completed_profile_name", "candidate_speedup_over_baseline", "rate_scope"))
     if not isinstance(value, dict):
         return result
     if isinstance(value.get("profiles"), list):
         result["profiles"] = [compact_profile(item) for item in value["profiles"]]
+        # Older completed sweeps accumulate across jobs. Keep detailed evidence
+        # for baseline/winner/active profiles and short outcomes for the rest.
+        # This bounds both current and previous observations without dropping IDs,
+        # measured winning rates, failed attempts or the active recipe.
+        profiles = result["profiles"]
+        if len(profiles) > 6:
+            detailed = {profiles[0].get("name"), value.get("baseline_profile"),
+                        value.get("fastest_completed_profile_name"), value.get("selected_profile")}
+            for key in ("baseline_result", "fastest_completed_profile", "confirmation_candidate", "short_sweep_winner"):
+                if isinstance(value.get(key), dict):
+                    detailed.add(value[key].get("name"))
+            detailed.update(item.get("name") for item in profiles
+                            if item.get("status") in ("initializing", "running"))
+            result["profile_counts"] = dict(Counter(item.get("status", "unknown") for item in profiles))
+            result["profiles"] = [item if item.get("name") in detailed else fields(item,
+                ("name", "status", "failure_type", "exit_code", "input_tokens_per_second",
+                 "microbatch_per_gpu", "accumulation")) for item in profiles]
     names = {item.get("name") for item in result.get("profiles", [])}
     for key, reference in (("baseline_result", "baseline_profile"),
-                           ("fastest_completed_profile", "fastest_completed_profile_name")):
+                           ("fastest_completed_profile", "fastest_completed_profile_name"),
+                           ("confirmation_candidate", "confirmation_candidate_name"),
+                           ("short_sweep_winner", "short_sweep_winner_name")):
         if isinstance(value.get(key), dict):
             name = value[key].get("name")
             if name is not None and name in names:
@@ -165,8 +186,8 @@ def load_config(path):
     config["thread_id"] = str(uuid.UUID(config["thread_id"]))
     if not Path(config["codex_path"]).is_absolute():
         raise ValueError("Codex executable must be absolute")
-    if not 60 <= config.get("interval_seconds", 3600) <= 3600:
-        raise ValueError("Require 60–3600 second interval")
+    if not 60 <= config.get("interval_seconds", 7200) <= 7200:
+        raise ValueError("Require 60–7200 second interval")
     if not 10 <= config.get("poll_seconds", 60) <= 60:
         raise ValueError("Require 10–60 second polls")
     for key in ("run_directory", "paper_run_directory", "throughput_run_directory"):
@@ -226,7 +247,8 @@ def all_terminal(value):
 
 def message(config, observed, previous):
     return check_prompt_size(
-        "The user explicitly requested hourly progress in THIS chat. Give a concise status update now, "
+        "The user explicitly requested progress every two hours in THIS chat, plus prompt completion/failure updates. "
+        "Give a concise status update now, "
         "including whether the paper run and GPU benchmarks are running, queued, stopped, failed or complete. "
         "Read the current compact worker states and the exact recorded scheduler IDs before answering. "
         "For papers report processed/reused/new counts, token counts, artifact/download storage and any stop reason. "
@@ -272,7 +294,13 @@ def tick(config, state, observed, now, *, force=False, send=enqueue):
     started = state.setdefault("started_epoch", now)
     state["deadline_epoch"] = min(state.get("deadline_epoch", float("inf")),
                                   config["deadline_epoch"], started + MAX_SECONDS)
-    state.setdefault("next_due_epoch", now + config.get("interval_seconds", 3600))
+    interval = config.get("interval_seconds", 7200)
+    if state.get("interval_seconds", 3600) != interval:
+        # A user-requested cadence change keeps the last accepted update and
+        # original deadline; restarting must not postpone updates repeatedly.
+        state["next_due_epoch"] = state.get("last_accepted_epoch", now) + interval
+    state["interval_seconds"] = interval
+    state.setdefault("next_due_epoch", now + interval)
     current = fingerprint(observed)
     state.setdefault("last_accepted_fingerprint", current)
     terminal, expired = all_terminal(observed), now >= state["deadline_epoch"]
@@ -288,7 +316,7 @@ def tick(config, state, observed, now, *, force=False, send=enqueue):
             state.update(last_accepted_epoch=now, last_accepted_fingerprint=current,
                          last_accepted_snapshot=observed, pending_fingerprint=None,
                          queue_error=None, retry_after_epoch=0,
-                         next_due_epoch=now + config.get("interval_seconds", 3600),
+                         next_due_epoch=now + interval,
                          accepted_count=state.get("accepted_count", 0) + 1)
         except (OSError, RuntimeError, subprocess.SubprocessError) as error:
             state.update(queue_error=queue_error(error), retry_after_epoch=now + RETRY_SECONDS)

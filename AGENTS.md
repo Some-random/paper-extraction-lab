@@ -657,3 +657,33 @@ numerical smoke checks do not establish biological quality or long-run stability
 
 Register new job IDs in the existing throughput registry so the existing hourly
 GitHub and same-chat monitors include the sweep without resetting their deadlines.
+
+## Sustained verification, capacity-limited collection and two-hour updates
+
+On October 20 the user requested the same optimization work on eight A100s and
+questioned extrapolating a few timed seconds to an hour. Use new versioned GPU
+runner/suite files, preserving frozen earlier runners. One new eight-A100
+allocation is limited to two hours (16 additional GPU-hours), including short
+compatible probes followed by baseline and winner confirmations with at least
+600 timed seconds each. Use pinned Qwen3-4B architecture and tokenizer, real
+paper text, context 4,096 and 32 sequences per optimizer update. Count actual
+data loading and transfer within the timed interval, record startup and compile
+warmup separately, and distinguish random-initialized throughput from CPT
+quality. Keep numerical checks, resource guards and sequential GPU allocations;
+leave the queued four/eight-B200 requests and evaluation work preserved.
+
+The user explicitly requested continuing paper downloads until reasonable space
+is insufficient. A new versioned continuation may clone the stopped October 19
+ledger and reuse existing sources in place. Its cumulative stop conditions are
+the 64 GiB shared-free-space reserve and 200 GiB combined pipeline-data ceiling,
+including originals, indexes, outputs and temporary copies. The old expired
+24-hour, 10,000-paper and 8 GiB HTTP allowances are historical, not continuation
+stop conditions. Keep one serial two-CPU, zero-GPU native-XML worker; preserve
+all old sources/results. Checkpoint and requeue only its own allocation when
+needed rather than resetting capacity counters or claiming completion.
+
+The user changed routine reporting to every two hours in this same chat and on
+GitHub, superseding all hourly cadence instructions above. Preserve the original
+monitor deadline and accepted-update history across restarts. Still report
+completion, failure or capacity stops promptly; queue acceptance alone does not
+prove that a chat update was displayed.
