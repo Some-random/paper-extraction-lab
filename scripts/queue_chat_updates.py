@@ -57,11 +57,20 @@ def compact_profile(value):
                            "profiler_seconds", "launcher_wall_seconds", "completed_warmup_steps", "peak_cuda_allocated_bytes",
                            "peak_cuda_reserved_bytes"))
     if isinstance(value, dict) and value.get("throughput"):
-        result["throughput"] = compact_measurement(value["throughput"])
+        # Keep each measured count once; rates/timings often appear both on the
+        # profile and in its throughput object.
+        for key, item in compact_measurement(value["throughput"]).items():
+            if key != "step_seconds":
+                result.setdefault(key, item)
     if isinstance(value, dict) and isinstance(value.get("features"), dict):
         result["features"] = fields(value["features"],
                                     ("attention", "kernels", "checkpointing", "sharding", "compile", "precision",
                                      "float8_all_gather", "optimizer"))
+        # Older profiles need the original fields; optimized profiles already
+        # state these settings in their complete feature recipe.
+        for legacy, feature in (("activation_checkpointing", "checkpointing"), ("sharding", "sharding")):
+            if feature in result["features"]:
+                result.pop(legacy, None)
     if isinstance(value, dict) and isinstance(value.get("profiler"), dict):
         elapsed = value["profiler"].get("elapsed_seconds")
         if isinstance(elapsed, (int, float)):
@@ -227,8 +236,10 @@ def message(config, observed, previous):
         "Queued acceptance does not prove an earlier update was displayed.\n"
         f"Paper run: {config['paper_run_directory']}\n"
         f"Benchmark run: {config['throughput_run_directory']}\n"
-        "Latest observed status: " + json.dumps(compact_snapshot(observed), sort_keys=True) + "\n"
-        "Previous accepted update observation: " + json.dumps(compact_snapshot(previous), sort_keys=True)
+        "Latest observed status: " + json.dumps(compact_snapshot(observed), sort_keys=True,
+                                               separators=(",", ":")) + "\n"
+        "Previous accepted update observation: " + json.dumps(compact_snapshot(previous), sort_keys=True,
+                                                             separators=(",", ":"))
     )
 
 

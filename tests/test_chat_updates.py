@@ -229,8 +229,8 @@ class ChatUpdatesTests(unittest.TestCase):
         prompt = monitor.message(self.config, self.observed, self.observed)
         self.assertLess(len(prompt.encode()), monitor.MAX_PROMPT_BYTES)
         self.assertNotIn("private_kernel", prompt)
-        self.assertIn('"optimizer": "adamw_8bit"', prompt)
-        self.assertIn('"name": "optimized_profile_31"', prompt)
+        self.assertIn('"optimizer":"adamw_8bit"', prompt)
+        self.assertIn('"name":"optimized_profile_31"', prompt)
 
     def test_oserror_retains_actionable_errno_without_private_argument(self):
         def fail(*args):
