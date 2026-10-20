@@ -1,5 +1,5 @@
 {
-  "checked_at_pst": "2026-10-20T07:00:24-08:00",
+  "checked_at_pst": "2026-10-20T07:01:01-08:00",
   "watcher_status": "watching",
   "stop_reason": null,
   "delivery": "Local status files and optional GitHub reports; a separate session monitor queues chat updates",
@@ -144,7 +144,10 @@
       "requested_gpus": 8,
       "target_gpu": "A100 80GB",
       "admission_status": "released",
-      "comparison_group": "a100_optimization_2026-10-20"
+      "comparison_group": "a100_optimization_2026-10-20",
+      "result_status": "running",
+      "failure_type": "RealDataBaselineNotComplete",
+      "input_tokens_per_second": null
     }
   ]
 }
