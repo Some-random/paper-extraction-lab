@@ -6,18 +6,20 @@ Updated **October 23, 2026**. This report covers the general data collection; th
 
 | Source content | Total available in this source | Collected so far | Prepared so far | Current work |
 |---|---:|---:|---|---|
-| PMC research papers | 9.27 million papers | **700,888 papers** | About **290,000 converted to text**; about **410,000 awaiting conversion** | Downloading and text extraction continue |
+| PMC research papers | 9.27 million papers | **707,036 papers** | About **292,000 converted to text**; about **415,000 awaiting conversion**.<br>Completed initial batch: **6.31 GB; 1.71 billion tokens**.<br>Ongoing expansion: **5.71 GB; 1.46 billion tokens**. | Downloading and text extraction continue; the combined total after duplicate removal is pending |
 | TheBioCollection: biological text, sequences, and molecular data | 37.23 million records in the selected release | All 37.23 million records | **92.61 GB; 36.98 billion tokens** | Filtering and duplicate checks remain |
 | FineWeb-Edu: educational web pages | 190.17 million source pages | Source files downloaded | **1.75 million pages selected automatically as likely biology; 5.99 GB; 1.36 billion tokens** | Filtering is running: 29.50 million rows reached; 160.67 million remain. Retained pages still require validation |
 
 ## Preparation stages
 
+Remove exact duplicates before expensive scoring, and identify near-copies for final selection. Different batches can pass through these stages at the same time.
+
 | Stage | What it does | Progress |
 |---|---|---|
 | **1. Collect** | Download the original source material | Paper downloads continue; the selected reference and web sources are available |
 | **2. Extract** | Turn source files into usable text and sequences | Paper conversion continues; the selected reference collection has been read and counted |
-| **3. Score and filter** | Assess relevance and quality, then select useful material | Web relevance scoring and filtering are running; final quality approval is pending |
-| **4. Remove duplicates** | Find repeated documents and near-identical copies | An initial exact-copy pass is complete; the full combined collection still needs duplicate checks |
+| **3. Remove duplicates** | Remove exact repeats and identify near-identical copies | An initial exact-copy pass is complete; the full combined collection still needs duplicate checks |
+| **4. Score and filter** | Assess relevance and quality, then select useful material | Web relevance scoring and filtering are running; final quality approval is pending |
 | **5. Validate and package** | Check the selected data and assemble the final training files | Not yet complete |
 
 **The final combined training collection is still being prepared.** GB uses decimal units; tokens are the text units used by language models.
