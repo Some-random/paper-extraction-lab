@@ -6,7 +6,7 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[General data preparation](reports/training_preparation_2026-10-21/README.md):** what we have collected from research papers, TheBioCollection, and educational web pages, plus what remains to finish.
 
-**[Protein question-answer dataset](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k):** a separate collection of 10,000 training examples. Start with [two simple examples and the papers behind their explanations](reports/training_preparation_2026-10-21/PAPER_LINK_EXAMPLES.md).
+**[Protein question-answer dataset](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k):** a separate collection of 10,000 training examples. Start with [two complete training examples and the papers behind their explanations](reports/training_preparation_2026-10-21/PAPER_LINK_EXAMPLES.md).
 
 The [October 19 paper-collection report](reports/paper_collection_2026-10-19/README.md),
 earlier [measured token counts](reports/corpus_count_2026-10-17/README.md), and

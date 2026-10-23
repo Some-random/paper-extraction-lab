@@ -1,26 +1,23 @@
-# General biological data preparation
+# General data preparation
 
-We are collecting research papers, biological reference data, and relevant educational web pages for future model training.
+Updated **October 23, 2026**. This report covers the general data collection; the protein question-answer dataset is documented separately.
 
-## Results so far
+## Source content and progress
 
-Snapshot: **October 23, 2026, 1:04 p.m. Pacific time.**
+| Source content | Total available in this source | Collected so far | Prepared so far | Current work |
+|---|---:|---:|---|---|
+| PMC research papers | 9.27 million papers | **700,888 papers** | About **290,000 converted to text**; about **410,000 awaiting conversion** | Downloading and text extraction continue |
+| TheBioCollection: biological text, sequences, and molecular data | 37.23 million records in the selected release | All 37.23 million records | **92.61 GB; 36.98 billion tokens** | Filtering and duplicate checks remain |
+| FineWeb-Edu: educational web pages | 190.17 million source pages | Source files downloaded | **1.75 million provisionally retained pages; 5.98 GB; 1.36 billion tokens** | Biology filtering and quality review continue |
 
-| Source | Collected material | Text size | Tokens | Progress |
-|---|---:|---:|---:|---|
-| Research papers: completed collection | 166,027 papers | 6.31 GB | 1.71 billion | Text extraction complete |
-| TheBioCollection: selected release | 37.23 million records | 92.61 GB | 36.98 billion | Downloaded and counted |
-| Biology-related FineWeb-Edu pages | 1.74 million candidate documents | 5.95 GB | 1.35 billion | Filtering and review continue |
+## Preparation stages
 
-TheBioCollection includes biological text, protein sequences, and molecular data. The web collection is provisional: being retained by a filter does not yet mean a page has passed final quality review.
+| Stage | What it does | Progress |
+|---|---|---|
+| **1. Collect** | Download the original source material | Paper downloads continue; the selected reference and web sources are available |
+| **2. Extract** | Turn source files into usable text and sequences | Paper conversion continues; the selected reference collection has been read and counted |
+| **3. Score and filter** | Assess relevance and quality, then select useful material | Web relevance scoring and filtering are running; final quality approval is pending |
+| **4. Remove duplicates** | Find repeated documents and near-identical copies | An initial exact-copy pass is complete; the full combined collection still needs duplicate checks |
+| **5. Validate and package** | Check the selected data and assemble the final training files | Not yet complete |
 
-We are also expanding the paper collection. **533,884 paper files have been downloaded in the ongoing expansion**, and conversion into usable text is continuing. This collection overlaps the completed paper collection above, so the figures are not added together.
-
-## What remains
-
-- Finish the expanded paper downloads and text extraction.
-- Finish selecting relevant web pages and checking their quality.
-- Remove repeated documents and near-identical copies.
-- Assemble and check the final combined training corpus.
-
-**The complete combined corpus is still being prepared.** The source collections can overlap, so their sizes are not a unique combined total. Sizes use decimal GB; tokens are the text units used by language models.
+**The final combined training collection is still being prepared.** GB uses decimal units; tokens are the text units used by language models.
