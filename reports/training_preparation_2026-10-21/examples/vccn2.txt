@@ -1,0 +1,23 @@
+Original training example
+
+Protein sequence:
+MYQSMNLSFSSNFTNLSFLKPRLYSGISARAPKSLHFKFNPSCVSSGPKSDDSPLSEKLISLLKAVPNWSDGIKERRMQQKRSLYTHENWVRHRSSLRHLRHVSSSPSSRVILSLIPPVFFFTTVAILIAGYNSAVDLDWLPDFFPVLRASPLPYQLTAPALALLLVFRTEASYSRFEQGRKAWVKIISGTNDLARLVISSVHGSGDELIIRDALLRYIVAFPVALKCHVIYGSDIASDLKNVIEVDDLSLILQSKHRPRCVIQFISQSLQLLNLDSTKIDMLETKMMQLQEGIGVCEQLMGIPIPLSYTRLTSRFLVLWHLTLPVILWDDCHWNVVPATFISAASLFCIEEVGVLIEEPFSMLALDELCAMVLSNSDEAVESKEVIRNRIIAKKRILEIKHSSNGWHKS
+
+Task: GO_cellular_component
+
+Question: For this protein’s cellular-component task, which location is most specifically associated with its role as a chloride channel contributing to proton-motive-force partitioning?
+
+Choices:
+A. Chloroplast thylakoid membrane
+B. Mitochondrial inner membrane
+C. Chloroplast outer envelope
+D. Vacuolar membrane
+
+Explanation
+The protein is a voltage-dependent chloride channel associated with the chloroplast thylakoid membrane. Its role in moving anions across that membrane is consistent with influencing proton-motive-force partitioning across the thylakoid. The sequence’s hydrophobic regions are compatible with a membrane protein, but sequence features alone do not establish this specific cellular location.
+
+Final answer
+A
+
+Supporting paper
+https://pmc.ncbi.nlm.nih.gov/articles/PMC4890181/

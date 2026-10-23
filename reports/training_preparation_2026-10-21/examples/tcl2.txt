@@ -1,0 +1,23 @@
+Original training example
+
+Protein sequence:
+MDNTNRLRHLRSRKQSKFTLGDTAEVNSVKWEFINMTEQEEDLIFRMHRLVGDRWDLIAGRVVGREAKDIERYWIMRNCDHCSHKRRRVHKFYRFSISPP
+
+Task: protein_subunit
+
+Question: Which protein is the interaction partner associated with this protein?
+
+Choices:
+A. GL1
+B. TTG1
+C. EGL3
+D. GL3
+
+Explanation
+The supported protein-subunit association is an interaction with GL3, so D is correct. This identifies a protein interaction, not something that can be established from the amino-acid sequence alone; the sequence does not by itself distinguish GL3 from the other plausible regulatory proteins listed.
+
+Final answer
+D
+
+Supporting paper
+https://pmc.ncbi.nlm.nih.gov/articles/PMC3264604/
