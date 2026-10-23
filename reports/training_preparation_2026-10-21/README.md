@@ -8,7 +8,7 @@ Updated **October 23, 2026**. This report covers the general data collection; th
 |---|---:|---:|---|---|
 | PMC research papers | 9.27 million papers | **700,888 papers** | About **290,000 converted to text**; about **410,000 awaiting conversion** | Downloading and text extraction continue |
 | TheBioCollection: biological text, sequences, and molecular data | 37.23 million records in the selected release | All 37.23 million records | **92.61 GB; 36.98 billion tokens** | Filtering and duplicate checks remain |
-| FineWeb-Edu: educational web pages | 190.17 million source pages | Source files downloaded | **1.75 million provisionally retained pages; 5.98 GB; 1.36 billion tokens** | Biology filtering and quality review continue |
+| FineWeb-Edu: educational web pages | 190.17 million source pages | Source files downloaded | **1.75 million pages selected automatically as likely biology; 6.00 GB; 1.36 billion tokens** | Filtering is running: 29.50 million rows reached; 160.67 million remain. Retained pages still require validation |
 
 ## Preparation stages
 

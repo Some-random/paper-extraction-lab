@@ -1,8 +1,16 @@
-# Two complete protein questions, with supporting papers
+# Protein properties, training questions, and the papers behind them
 
-These are two actual examples from the training dataset. Each shows the **full protein sequence, original question, all answer choices, full training explanation, and selected answer**. Each letter in a sequence represents one amino acid, a building block of the protein.
+We are building a dataset that connects a **protein sequence** to its **biological properties** and the **research supporting those properties**. For example: where is a protein found in a cell, or which other protein does it interact with?
 
-The training explanations were generated from UniProt annotations. The separate plain-English paper explanations below show the supporting experiments in the cited papers; they were added afterward.
+## How the dataset is made
+
+1. **Get the protein and its properties from UniProt.** UniProt records protein sequences, annotations about what the proteins do, and references to relevant papers.
+2. **Use GPT-6 Luna to create questions and answers.** We give Luna those annotations to write multiple-choice questions, explanations, and answers. A separate Luna call checks the generated example.
+3. **Link the evidence back to the papers.** We follow the recorded references to the original articles. For the two examples below, we also read the relevant experiments and explain how they support the answer.
+
+For this first dataset, the original training explanations were generated from UniProt annotations; the papers were attached afterward. Below, each complete training example is followed by a plain-English explanation of the paper evidence. Both original papers are linked.
+
+Each letter in a protein sequence represents one amino acid, a building block of the protein.
 
 ## 1. Where is VCCN2 found in a plant cell?
 
