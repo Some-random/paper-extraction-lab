@@ -1,0 +1,294 @@
+{
+  "created_utc": "2026-10-23T19:51:43.420384+00:00",
+  "scope": "Three existing training examples with selected-annotation citations and included original papers. No training data changed. Review checks the selected answer support, not every generated rationale claim.",
+  "hf_dataset_revision": "181c177733b15feac8abcafa6da652bf83dfbe4f",
+  "source_chain": "exact training sequence → frozen UniProt accession/sequence version → selected annotation field → explicit PubMed citation → verified PMC original text",
+  "teacher_received_full_paper_text": false,
+  "input_sha256": {
+    "experiments/sequence_mcq_10000_2026-10-23/hf_release_v2_provenance/package/train.jsonl": "bc048eb086e27853d5138d244b6246e1a1412fd429aaef25a73d2a541ad964a1",
+    "experiments/sequence_mcq_10000_2026-10-23/hf_release_v2_provenance/package/provenance/examples.jsonl": "42c922337eb53f02c68c3c3f10c7ad05f0c05a99a784c8397015618911116111",
+    "experiments/sequence_mcq_10000_2026-10-23/hf_release_v2_provenance/package/provenance/papers.jsonl": "2d66f633010baba1d48bb38300321fd9b2725d53ce57abb1c8db255f04461bb4"
+  },
+  "cases": [
+    {
+      "id": "sequence-mcq-judge-009",
+      "name": "PGP1 / PGPS1",
+      "accession": "O80952",
+      "gene": "PGPS1 (synonym PGP1)",
+      "locus": "At2g39290",
+      "pmid": "27047516",
+      "pointer": "/record/uniProtKBCrossReferences/43",
+      "annotation": "GO:0006655 — phosphatidylglycerol biosynthetic process",
+      "evidence": "ECO:0000315; IMP:UniProtKB (mutant-phenotype evidence)",
+      "section": "Abstract; Introduction; PGP1-knockout mutant results",
+      "quote": "In this study, we characterized the photosynthesis of an Arabidopsis thaliana T-DNA insertional mutant (pgp1-2), which lacks plastidic PG biosynthesis.",
+      "review": "The article names the Arabidopsis PGP1 knockout and directly studies the loss of plastidic phosphatidylglycerol biosynthesis and its photosynthetic consequences. This supports the chosen biological-process answer. It is mutant-phenotype support, not a new purified-enzyme assay of every reaction detail stated in the generated explanation.",
+      "limitation": "The teacher explanation adds the enzyme reaction. This specific paper supports the biological process and mutant phenotype; it does not independently verify each enzyme-reaction detail or establish that the answer can be inferred from sequence alone.",
+      "sequence_version": 1,
+      "organism": "Arabidopsis thaliana",
+      "sequence_length": 296,
+      "sequence_sha256": "efe422219bada00a67564e4dde5ebcb919cad9fe3c82abbbb42bd229eaf51d29",
+      "sequence_start": "MLRSGLASLIVDVNLRRTLR",
+      "sequence_end": "GLSVWSLAVYMRKIWKVLMK",
+      "sequence": "MLRSGLASLIVDVNLRRTLRPSPTFSFPAHLSRCIITSRYSSRTSLRFPIQISRHQHRLSYFSSSSSSEQSRPTSSSRNSFSGHGQLDSDDNSSPPPSQSSSKVLTLPTVLTLGRVAAVPLLVATFYVDSWWGTTATTSIFIAAAITDWLDGYLARKMRLGSAFGAFLDPVADKLMVAATLILLCTKPIQVAELGPLPWLLTVPSIAIIGREITMSAVREWAASQNGKLLEAVAVNNLGKWKTATQMTALTILLASRDSNVGWLVASGAGLLYVSAGLSVWSLAVYMRKIWKVLMK",
+      "task": "GO_biological_process",
+      "question": "Which biological process most directly describes the catalytic role of this protein?",
+      "choices": {
+        "A": "Phosphatidylglycerol biosynthetic process",
+        "B": "Chloroplast organization",
+        "C": "Photosynthetic electron transport in photosystem II",
+        "D": "Regulation of embryonic development"
+      },
+      "answer_letter": "A",
+      "answer_text": "Phosphatidylglycerol biosynthetic process",
+      "original_training_prompt": "Protein sequence:\nMLRSGLASLIVDVNLRRTLRPSPTFSFPAHLSRCIITSRYSSRTSLRFPIQISRHQHRLSYFSSSSSSEQSRPTSSSRNSFSGHGQLDSDDNSSPPPSQSSSKVLTLPTVLTLGRVAAVPLLVATFYVDSWWGTTATTSIFIAAAITDWLDGYLARKMRLGSAFGAFLDPVADKLMVAATLILLCTKPIQVAELGPLPWLLTVPSIAIIGREITMSAVREWAASQNGKLLEAVAVNNLGKWKTATQMTALTILLASRDSNVGWLVASGAGLLYVSAGLSVWSLAVYMRKIWKVLMK\n\nTask: GO_biological_process\n\nQuestion: Which biological process most directly describes the catalytic role of this protein?\n\nChoices:\nA. Phosphatidylglycerol biosynthetic process\nB. Chloroplast organization\nC. Photosynthetic electron transport in photosystem II\nD. Regulation of embryonic development",
+      "generated_training_explanation": "The protein catalyzes transfer of a phosphatidyl group from CDP-diacylglycerol to glycerol-3-phosphate, producing phosphatidylglycerophosphate, an intermediate in phosphatidylglycerol synthesis. Chloroplast organization, photosystem II function, and embryonic development are associated biological outcomes, but they do not describe this direct catalytic process. The sequence alone does not establish that function.",
+      "teacher_received_full_paper_text": false,
+      "training_file_line": 4,
+      "training_row_url": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k/blob/181c177733b15feac8abcafa6da652bf83dfbe4f/train.jsonl#L4",
+      "source_annotation": {
+        "additional_proof_citations_not_assigned_directly": [],
+        "direct_annotation_paper_ids": [
+          "PMID:24632290",
+          "PMID:27047516"
+        ],
+        "evidence_class": "experimental_support",
+        "evidence_codes": [
+          "ECO:0000315"
+        ],
+        "field_pointers": [
+          "/record/uniProtKBCrossReferences/43"
+        ],
+        "relation": "paper explicitly cited by selected task source annotation; not sentence-level verification of generated explanation",
+        "source_object": {
+          "database": "GO",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000315",
+              "id": "24632290",
+              "source": "PubMed"
+            },
+            {
+              "evidenceCode": "ECO:0000315",
+              "id": "27047516",
+              "source": "PubMed"
+            }
+          ],
+          "id": "GO:0006655",
+          "properties": [
+            {
+              "key": "GoTerm",
+              "value": "P:phosphatidylglycerol biosynthetic process"
+            },
+            {
+              "key": "GoEvidenceType",
+              "value": "IMP:UniProtKB"
+            }
+          ]
+        },
+        "source_object_sha256": "8dd93ed6e6f5c7880ef819c016701e3c0ba0659ef6370f6ca56b3d84542b223b",
+        "source_record_hash_scope": "canonical_record_object",
+        "source_record_sha256": "54d97ea7188fe654386d0833697fb9e945d191495f74bf20538f78703a8fc32d"
+      },
+      "paper_title": "Multiple Impacts of Loss of Plastidic Phosphatidylglycerol Biosynthesis on Photosynthesis during Seedling Growth of Arabidopsis.",
+      "doi": "10.3389/fpls.2016.00336",
+      "pmcid": "PMC4800280",
+      "paper_version": "1",
+      "paper_license": "CC-BY",
+      "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4800280/",
+      "hf_paper_text_url": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k/blob/181c177733b15feac8abcafa6da652bf83dfbe4f/papers/PMC4800280.1/PMC4800280.1.txt",
+      "paper_text_sha256": "bcee5508681dd3d07fa570ae965cd4298ce1c794572e6868be955c91612f5604",
+      "review_type": "assistant comparison with the recorded annotation and original paper; not expert human ground truth",
+      "paper_authors": [
+        "Kobayashi K.",
+        "Endo K.",
+        "Wada H."
+      ],
+      "paper_publication_year": "2016",
+      "paper_license_url": "http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "id": "judge:sequence-mcq-expansion-v1-00489",
+      "name": "VCCN2 / BEST2",
+      "accession": "O80832",
+      "gene": "VCCN2 (synonym BEST2)",
+      "locus": "At2g45870",
+      "pmid": "27216227",
+      "pointer": "/record/uniProtKBCrossReferences/31",
+      "annotation": "GO:0042651 — thylakoid membrane",
+      "evidence": "ECO:0000314; IDA:TAIR (direct-assay evidence)",
+      "section": "Results → AtVCCNs are thylakoid members of a conserved channel family; Figure 1",
+      "quote": "Immunoblotting of chloroplast subfractions isolated from leaves of transformed plants revealed a location for both AtVCCNs in the thylakoid membrane",
+      "review": "The paper identifies At2g45870 as AtVCCN2 and distinguishes it from the close paralogue AtVCCN1. It reports chloroplast colocalization and thylakoid-fraction immunoblots for both proteins. Those results support the selected thylakoid-membrane location for this exact protein.",
+      "limitation": "O80832 is VCCN2, not VCCN1. The paper focuses its physiological and electrophysiological characterization on VCCN1; the demonstrated VCCN2 localization should not be treated as proof of every VCCN1 functional claim. The training question and rationale include a chloride-channel/PMF premise; the narrower localization answer is what this example verifies.",
+      "sequence_version": 1,
+      "organism": "Arabidopsis thaliana",
+      "sequence_length": 410,
+      "sequence_sha256": "9b88b557cc487cc3e925ed46c3f7b24e474274c64972e84852e8e0881d331b64",
+      "sequence_start": "MYQSMNLSFSSNFTNLSFLK",
+      "sequence_end": "IIAKKRILEIKHSSNGWHKS",
+      "sequence": "MYQSMNLSFSSNFTNLSFLKPRLYSGISARAPKSLHFKFNPSCVSSGPKSDDSPLSEKLISLLKAVPNWSDGIKERRMQQKRSLYTHENWVRHRSSLRHLRHVSSSPSSRVILSLIPPVFFFTTVAILIAGYNSAVDLDWLPDFFPVLRASPLPYQLTAPALALLLVFRTEASYSRFEQGRKAWVKIISGTNDLARLVISSVHGSGDELIIRDALLRYIVAFPVALKCHVIYGSDIASDLKNVIEVDDLSLILQSKHRPRCVIQFISQSLQLLNLDSTKIDMLETKMMQLQEGIGVCEQLMGIPIPLSYTRLTSRFLVLWHLTLPVILWDDCHWNVVPATFISAASLFCIEEVGVLIEEPFSMLALDELCAMVLSNSDEAVESKEVIRNRIIAKKRILEIKHSSNGWHKS",
+      "task": "GO_cellular_component",
+      "question": "For this protein’s cellular-component task, which location is most specifically associated with its role as a chloride channel contributing to proton-motive-force partitioning?",
+      "choices": {
+        "A": "Chloroplast thylakoid membrane",
+        "B": "Mitochondrial inner membrane",
+        "C": "Chloroplast outer envelope",
+        "D": "Vacuolar membrane"
+      },
+      "answer_letter": "A",
+      "answer_text": "Chloroplast thylakoid membrane",
+      "original_training_prompt": "Protein sequence:\nMYQSMNLSFSSNFTNLSFLKPRLYSGISARAPKSLHFKFNPSCVSSGPKSDDSPLSEKLISLLKAVPNWSDGIKERRMQQKRSLYTHENWVRHRSSLRHLRHVSSSPSSRVILSLIPPVFFFTTVAILIAGYNSAVDLDWLPDFFPVLRASPLPYQLTAPALALLLVFRTEASYSRFEQGRKAWVKIISGTNDLARLVISSVHGSGDELIIRDALLRYIVAFPVALKCHVIYGSDIASDLKNVIEVDDLSLILQSKHRPRCVIQFISQSLQLLNLDSTKIDMLETKMMQLQEGIGVCEQLMGIPIPLSYTRLTSRFLVLWHLTLPVILWDDCHWNVVPATFISAASLFCIEEVGVLIEEPFSMLALDELCAMVLSNSDEAVESKEVIRNRIIAKKRILEIKHSSNGWHKS\n\nTask: GO_cellular_component\n\nQuestion: For this protein’s cellular-component task, which location is most specifically associated with its role as a chloride channel contributing to proton-motive-force partitioning?\n\nChoices:\nA. Chloroplast thylakoid membrane\nB. Mitochondrial inner membrane\nC. Chloroplast outer envelope\nD. Vacuolar membrane",
+      "generated_training_explanation": "The protein is a voltage-dependent chloride channel associated with the chloroplast thylakoid membrane. Its role in moving anions across that membrane is consistent with influencing proton-motive-force partitioning across the thylakoid. The sequence’s hydrophobic regions are compatible with a membrane protein, but sequence features alone do not establish this specific cellular location.",
+      "teacher_received_full_paper_text": false,
+      "training_file_line": 1840,
+      "training_row_url": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k/blob/181c177733b15feac8abcafa6da652bf83dfbe4f/train.jsonl#L1840",
+      "source_annotation": {
+        "additional_proof_citations_not_assigned_directly": [],
+        "direct_annotation_paper_ids": [
+          "PMID:27216227"
+        ],
+        "evidence_class": "experimental_support",
+        "evidence_codes": [
+          "ECO:0000314"
+        ],
+        "field_pointers": [
+          "/record/uniProtKBCrossReferences/31"
+        ],
+        "relation": "paper explicitly cited by selected task source annotation; not sentence-level verification of generated explanation",
+        "source_object": {
+          "database": "GO",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000314",
+              "id": "27216227",
+              "source": "PubMed"
+            }
+          ],
+          "id": "GO:0042651",
+          "properties": [
+            {
+              "key": "GoTerm",
+              "value": "C:thylakoid membrane"
+            },
+            {
+              "key": "GoEvidenceType",
+              "value": "IDA:TAIR"
+            }
+          ]
+        },
+        "source_object_sha256": "148d1c75f6118cd9ed99d59740d7fbc6dd8532490a33e67300a527b2c19a4d41",
+        "source_record_hash_scope": "canonical_record_object",
+        "source_record_sha256": "3eaf93f54e7cbe7a7ea69e4bae27249f7a28b0b0dbb1cc6f6684459a9805f696"
+      },
+      "paper_title": "A voltage-dependent chloride channel fine-tunes photosynthesis in plants.",
+      "doi": "10.1038/ncomms11654",
+      "pmcid": "PMC4890181",
+      "paper_version": "1",
+      "paper_license": "CC-BY",
+      "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890181/",
+      "hf_paper_text_url": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k/blob/181c177733b15feac8abcafa6da652bf83dfbe4f/papers/PMC4890181.1/PMC4890181.1.txt",
+      "paper_text_sha256": "b180544c037b5e7ea8f5a47dbf746ed87bb8932fad5dee2b2c81fc7a31b246c4",
+      "review_type": "assistant comparison with the recorded annotation and original paper; not expert human ground truth",
+      "paper_authors": [
+        "Herdean A.",
+        "Teardo E.",
+        "Nilsson A.K.",
+        "Pfeil B.E.",
+        "Johansson O.N.",
+        "Uennep R.",
+        "Nagy G.",
+        "Zsiros O.",
+        "Dana S.",
+        "Solymosi K.",
+        "Garab G.",
+        "Szabo I.",
+        "Spetea C.",
+        "Lundin B."
+      ],
+      "paper_publication_year": "2016",
+      "paper_license_url": "http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "id": "judge:sequence-mcq-expansion-v1-01324",
+      "name": "TCL2",
+      "accession": "B3H4X8",
+      "gene": "TCL2 (synonym CPL4)",
+      "locus": "At2g30424",
+      "pmid": "22168948",
+      "pointer": "/record/comments/1/texts/0",
+      "annotation": "Interacts with GL3",
+      "evidence": "ECO:0000269 (experimental evidence)",
+      "section": "Results → TCL2 interacts with GL3; Figure 6A",
+      "quote": "indicating that TCL2 interacts with GL3 in plant cells",
+      "review": "The article identifies Arabidopsis At2g30424 as TCL2 and reports a cell-based protein-interaction assay with controls. Its Results and Figure 6A support interaction with GL3, which is exactly the selected answer.",
+      "limitation": "The paper supports the stated interaction under the reported experimental conditions. It does not make GL3 inferable from the letters of the sequence alone or establish that GL3 is the only possible interaction partner.",
+      "sequence_version": 1,
+      "organism": "Arabidopsis thaliana",
+      "sequence_length": 100,
+      "sequence_sha256": "1c02181978a4c844cd934e419a43098fa7c92d906ad182dea3ab24f43b929872",
+      "sequence_start": "MDNTNRLRHLRSRKQSKFTL",
+      "sequence_end": "HCSHKRRRVHKFYRFSISPP",
+      "sequence": "MDNTNRLRHLRSRKQSKFTLGDTAEVNSVKWEFINMTEQEEDLIFRMHRLVGDRWDLIAGRVVGREAKDIERYWIMRNCDHCSHKRRRVHKFYRFSISPP",
+      "task": "protein_subunit",
+      "question": "Which protein is the interaction partner associated with this protein?",
+      "choices": {
+        "A": "GL1",
+        "B": "TTG1",
+        "C": "EGL3",
+        "D": "GL3"
+      },
+      "answer_letter": "D",
+      "answer_text": "GL3",
+      "original_training_prompt": "Protein sequence:\nMDNTNRLRHLRSRKQSKFTLGDTAEVNSVKWEFINMTEQEEDLIFRMHRLVGDRWDLIAGRVVGREAKDIERYWIMRNCDHCSHKRRRVHKFYRFSISPP\n\nTask: protein_subunit\n\nQuestion: Which protein is the interaction partner associated with this protein?\n\nChoices:\nA. GL1\nB. TTG1\nC. EGL3\nD. GL3",
+      "generated_training_explanation": "The supported protein-subunit association is an interaction with GL3, so D is correct. This identifies a protein interaction, not something that can be established from the amino-acid sequence alone; the sequence does not by itself distinguish GL3 from the other plausible regulatory proteins listed.",
+      "teacher_received_full_paper_text": false,
+      "training_file_line": 6726,
+      "training_row_url": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k/blob/181c177733b15feac8abcafa6da652bf83dfbe4f/train.jsonl#L6726",
+      "source_annotation": {
+        "additional_proof_citations_not_assigned_directly": [],
+        "direct_annotation_paper_ids": [
+          "PMID:22168948"
+        ],
+        "evidence_class": "experimental_support",
+        "evidence_codes": [
+          "ECO:0000269"
+        ],
+        "field_pointers": [
+          "/record/comments/1/texts/0"
+        ],
+        "relation": "paper explicitly cited by selected task source annotation; not sentence-level verification of generated explanation",
+        "source_object": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "22168948",
+              "source": "PubMed"
+            }
+          ],
+          "value": "Interacts with GL3"
+        },
+        "source_object_sha256": "96d79f9e666635ac11ef99e3169eb983e9f9d4521177a491b8139db4706feb54",
+        "source_record_hash_scope": "canonical_record_object",
+        "source_record_sha256": "1e7efbc3415e4f8029202a2d952f9ad29470f5f030ddb0ebe8d740e15435a64b"
+      },
+      "paper_title": "Functional characterization of TRICHOMELESS2, a new single-repeat R3 MYB transcription factor in the regulation of trichome patterning in Arabidopsis.",
+      "doi": "10.1186/1471-2229-11-176",
+      "pmcid": "PMC3264604",
+      "paper_version": "1",
+      "paper_license": "CC-BY",
+      "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3264604/",
+      "hf_paper_text_url": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k/blob/181c177733b15feac8abcafa6da652bf83dfbe4f/papers/PMC3264604.1/PMC3264604.1.txt",
+      "paper_text_sha256": "20369138b19803ca72b2478431a1bb356b9609e269ac6f6d94b73171bb147d6a",
+      "review_type": "assistant comparison with the recorded annotation and original paper; not expert human ground truth",
+      "paper_authors": [
+        "Gan L.",
+        "Xia K.",
+        "Chen J.G.",
+        "Wang S."
+      ],
+      "paper_publication_year": "2011",
+      "paper_license_url": "http://creativecommons.org/licenses/by/2.0"
+    }
+  ]
+}

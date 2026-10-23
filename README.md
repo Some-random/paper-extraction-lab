@@ -4,11 +4,18 @@ The project converts **experimental biology papers** into source-linked text,
 tables, figures, and training-data candidates. Foundation-model reports inform
 the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
-The [current paper collection](reports/paper_collection_2026-10-19/README.md)
-reuses existing cluster copies before acquiring up to 10,000 missing papers.
-It uses one serial worker, two CPU cores and no GPUs, with bounded storage and
-hourly progress reports. Earlier [measured token counts](reports/corpus_count_2026-10-17/README.md)
-and the [counting setup](docs/corpus_counting.md) remain available.
+Start with the [overall data-preparation report](reports/training_preparation_2026-10-21/README.md)
+for PMC, TheBioCollection, FineWeb-Edu, duplicate removal, and the separate
+10,000-example protein SFT dataset. It distinguishes measured corpus snapshots,
+remaining work, source provenance, and quality limitations.
+
+[Inspect three actual training examples and their original papers](reports/training_preparation_2026-10-21/PAPER_LINK_EXAMPLES.md).
+The [public Hugging Face dataset](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k)
+includes exact sequence/annotation links, paper metadata, and 261 original articles.
+
+The [October 19 paper-collection report](reports/paper_collection_2026-10-19/README.md),
+earlier [measured token counts](reports/corpus_count_2026-10-17/README.md), and
+[counting setup](docs/corpus_counting.md) remain as historical reports.
 
 ## Updated native-source preview: three papers
 
