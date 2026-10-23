@@ -54,7 +54,11 @@ The protein is a voltage-dependent chloride channel associated with the chloropl
 
 ## 2. Which protein interacts with TCL2?
 
-**In plain English:** Which other protein does this protein interact with?
+**This protein is TCL2**, a 100-amino-acid protein from the plant *Arabidopsis thaliana*. It helps regulate the tiny hairs that grow on the plant’s surface. The full sequence below belongs to TCL2.
+
+**The question, in plain English:** Which other protein does TCL2 interact with?
+
+_The protein name and background introduce the example for readers. The original training question below used the sequence and answer choices._
 
 **Full protein sequence (100 amino acids)**
 
