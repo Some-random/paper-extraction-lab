@@ -1,13 +1,13 @@
-example,group,topic,information_supplied,original_example
-general-001,Broad protein reasoning,Covalent modification of a particular lysine,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-001.md
-general-002,Broad protein reasoning,Locating repeated sequence motifs,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-002.md
-general-003,Broad protein reasoning,Recognizing multiple membrane-spanning segments,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-003.md
-general-004,Broad protein reasoning,Distinguishing heme from other cofactors,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-004.md
-general-005,Broad protein reasoning,Calcium binding through repeated structural motifs,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-005.md
-general-006,Broad protein reasoning,Membrane anchoring,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-006.md
-general-007,Broad protein reasoning,Protein-interaction domains,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-007.md
-general-008,Broad protein reasoning,Chromophore binding,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-008.md
-general-009,Broad protein reasoning,Post-translational modification chemistry,Sequence-only,../astra_sequence_only_nine_2026-10-23/examples/case-009.md
-mutation-001,Enzyme mutations,APEX: enzyme behavior depends on substrate conditions,Sequence + published variants and assay evidence,../astra_enzyme_mutation_pool_2026-10-23/examples/case-001.md
-mutation-004,Enzyme mutations,Adenylate kinase: a conservative substitution can impair catalysis,Sequence + published variants and assay evidence,../astra_enzyme_mutation_pool_2026-10-23/examples/case-004.md
-mutation-015,Enzyme mutations,PafA: inactive protein fraction versus inhibitor binding,Sequence + published variants and assay evidence,../astra_enzyme_mutation_pool_2026-10-23/examples/case-015.md
+example,question_topic,question_and_answer
+1,APEX: enzyme behavior depends on substrate conditions,examples/example-01.md
+2,Adenylate kinase: a conservative substitution can impair catalysis,examples/example-02.md
+3,PafA: inactive protein fraction versus inhibitor binding,examples/example-03.md
+4,Covalent modification of a particular lysine,examples/example-04.md
+5,Locating repeated sequence motifs,examples/example-05.md
+6,Recognizing multiple membrane-spanning segments,examples/example-06.md
+7,Distinguishing heme from other cofactors,examples/example-07.md
+8,Calcium binding through repeated structural motifs,examples/example-08.md
+9,Membrane anchoring,examples/example-09.md
+10,Protein-interaction domains,examples/example-10.md
+11,Chromophore binding,examples/example-11.md
+12,Post-translational modification chemistry,examples/example-12.md

@@ -1,104 +1,126 @@
 {
-  "compilation_only": true,
+  "presentation_only": true,
   "new_generation_cost_usd": 0,
-  "broad_examples": 9,
-  "mutation_examples": 3,
   "examples": [
     {
-      "id": "general-001",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-001",
-      "source_example_sha256": "6ea59a30267966d4b2cce061970a7787df1da4dbbc1d47c28484467ff5cf9dc5",
-      "student_prompt_sha256": "85be7aac9d6012b3d4a0536a11f8d7fa7ac16d364781eda7c165fe8648746844",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-002",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-002",
-      "source_example_sha256": "6a4c9dee965535c12c67945ceddf4878b867e0b579111140f335b32fbf6212b5",
-      "student_prompt_sha256": "ba9cea91f2478f12237cf857591bb277aa30c3a86ecee113bcf3965652ae03a7",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-003",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-003",
-      "source_example_sha256": "480a0fd2b96be62b8811056bd8081e86b879d79b151cbd9a871709c651e2c0ae",
-      "student_prompt_sha256": "7c1f8aaef65aa41ace60af5032890cff18a070813ee5d76ccedd44809b2581c5",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-004",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-004",
-      "source_example_sha256": "9ddd5e177de402acd5f078187bd045824e41ac3eb9fc60b0a1c33cddfa9db602",
-      "student_prompt_sha256": "1119321cd7a5bd2a072c1a1e1eb8d8b138f2afc99daa696e31cb7ec51ef0c0bd",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-005",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-005",
-      "source_example_sha256": "66f27351b86d5fe59b122e36ddf68cb51bd678dd3e0e252d111ac140e92a969e",
-      "student_prompt_sha256": "c51059d51b97f4097547c942d8bc59a460f6dd9f082bfb98b41b662f550894e8",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-006",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-006",
-      "source_example_sha256": "34b48994b04ffd7dc446087ba47d9fb8df72d872f19eb2e6f8762c5fee3df724",
-      "student_prompt_sha256": "ff543545afca298f1a8dd1e8b927c3d6a97ecf14b0f36b49a6440e8b05b442f6",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-007",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-007",
-      "source_example_sha256": "0038a18b5a6436128cf691d64862e9c0f4ad73235a61ed98be65a7ec7f35e675",
-      "student_prompt_sha256": "769b2ce704a3f12a88bea134a14eb8cd53cb81f39b35fe0a3957d9473c41164d",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-008",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-008",
-      "source_example_sha256": "2bd73d74f78ae3a3e001f2a211744cf6941000eb2e3ee7762799c73bee276189",
-      "student_prompt_sha256": "8ae686eba13d606969ae23ca81c0fb03ba7de23248330ac59c48cbf48bff0aec",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "general-009",
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-009",
-      "source_example_sha256": "7930d8276b981a7ee178760c4147361bd23dd26bb0d97a3caa0ed14f4ce14a5c",
-      "student_prompt_sha256": "fd2e2ab4cafd046d4d6f438202d47cd1582addae6ddd726bda853b4dfcf6117e",
-      "input_mode": "Sequence-only"
-    },
-    {
-      "id": "mutation-001",
+      "id": "example-01",
+      "previous_selection_id": "mutation-001",
       "source_report": "astra_enzyme_mutation_pool_2026-10-23",
       "source_case": "case-001",
       "source_example_sha256": "27cd9908889344ffe9e70b4ed43f98755cb1119ba960f61be43291c17bbe02ff",
       "student_prompt_sha256": "83bebb2b1c44021105b6d46b67989e2aea4ce0eab130f68957e18011fcc23010",
-      "input_mode": "Sequence + published variants and assay evidence"
+      "worked_solution_sha256": "a268a5127979a9b24165e25de054a4460325bd0b7bd6e9e8ed09b945f72797f5",
+      "evidence_check": "Primary full-text Results and Figure 2E text support the condition-dependent peroxide comparisons. The precise molecular cause of the A134P effect remains an interpretation, rather than an experimentally established mechanism."
     },
     {
-      "id": "mutation-004",
+      "id": "example-02",
+      "previous_selection_id": "mutation-004",
       "source_report": "astra_enzyme_mutation_pool_2026-10-23",
       "source_case": "case-004",
       "source_example_sha256": "743964afa2566a65ecd154e2dfd9b240db3ec886f96711e4ad72908241908567",
       "student_prompt_sha256": "eeda80bd9420a4dd2a38e7033c5a6e07d762f3771892e751851ecc9d58d61509",
-      "input_mode": "Sequence + published variants and assay evidence"
+      "worked_solution_sha256": "72f2fea957f3c84dce2ad007ea65bae0be1ad527308bd8270737cd352f02a994",
+      "evidence_check": "Primary full-text Results and a kinetic table support the reported measurements and fold-change calculations. General side-chain chemistry helps interpret them; a specific structural cause is not established by the table."
     },
     {
-      "id": "mutation-015",
+      "id": "example-03",
+      "previous_selection_id": "mutation-015",
       "source_report": "astra_enzyme_mutation_pool_2026-10-23",
       "source_case": "case-015",
       "source_example_sha256": "bcafbd6e189979485e6800e50a96afab61b150b4e95503f7d5282b2332baa1bc",
       "student_prompt_sha256": "b6048afb09a9ecda5b4010c4fb847917c97c72dfd4fea9ac5c88fc288efc76cc",
-      "input_mode": "Sequence + published variants and assay evidence"
+      "worked_solution_sha256": "aaec7c2470b13ec0849994802a75f8ba6ec6fbbeca438bc32efd25752de5ac23",
+      "evidence_check": "Cached primary full-text Results and Figure 6B support stronger phosphate binding for H83G. Cancellation of the active-enzyme fraction is a mathematical derivation from the fixed-population assumptions supplied in the question, not a separate measured result."
+    },
+    {
+      "id": "example-04",
+      "previous_selection_id": "general-001",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-001",
+      "source_example_sha256": "6ea59a30267966d4b2cce061970a7787df1da4dbbc1d47c28484467ff5cf9dc5",
+      "student_prompt_sha256": "85be7aac9d6012b3d4a0536a11f8d7fa7ac16d364781eda7c165fe8648746844",
+      "worked_solution_sha256": "b0ff3cd2fc0e00d1c0757804ce41ebaa67e96cfae77ab8db320f7cbb3531159d",
+      "evidence_check": "Primary abstracts support experimental biotin attachment at Lys35 in heterologous E. coli. The MKM motif is a qualified clue, not a universal biotin/lipoate rule; native modification in B. subtilis is not established."
+    },
+    {
+      "id": "example-05",
+      "previous_selection_id": "general-002",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-002",
+      "source_example_sha256": "6a4c9dee965535c12c67945ceddf4878b867e0b579111140f335b32fbf6212b5",
+      "student_prompt_sha256": "ba9cea91f2478f12237cf857591bb277aa30c3a86ecee113bcf3965652ae03a7",
+      "worked_solution_sha256": "a90d02219975177911db51ab9e9ad29aad45bb8aeeffab583713e66e777d2d08",
+      "evidence_check": "Primary Results/Figure 2 passages support both LYR motif positions, which can also be counted exactly in the sequence. This example mainly tests indexing rather than deep biological reasoning."
+    },
+    {
+      "id": "example-06",
+      "previous_selection_id": "general-003",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-003",
+      "source_example_sha256": "480a0fd2b96be62b8811056bd8081e86b879d79b151cbd9a871709c651e2c0ae",
+      "student_prompt_sha256": "7c1f8aaef65aa41ace60af5032890cff18a070813ee5d76ccedd44809b2581c5",
+      "worked_solution_sha256": "a2bf1b862b853aa8f6d462243297258bb9811a8213d77e53376f2aa7c600bc03",
+      "evidence_check": "Primary Results/Figure 1 passages support a membrane/channel protein, but the detailed topology is computationally predicted and sources differ on the number of membrane-spanning segments. The supported answer concerns broad multipass architecture."
+    },
+    {
+      "id": "example-07",
+      "previous_selection_id": "general-004",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-004",
+      "source_example_sha256": "9ddd5e177de402acd5f078187bd045824e41ac3eb9fc60b0a1c33cddfa9db602",
+      "student_prompt_sha256": "1119321cd7a5bd2a072c1a1e1eb8d8b138f2afc99daa696e31cb7ec51ef0c0bd",
+      "worked_solution_sha256": "bc69e2c369181883a9de41d8d922cffc191ff26bb30fba04b0c34d9b5ffbd012",
+      "evidence_check": "Primary structural Results directly support heme, its coordinating cysteine and the catalytic-region facts. Assigning a family from sequence remains an inference; exact catalytic properties require experiments."
+    },
+    {
+      "id": "example-08",
+      "previous_selection_id": "general-005",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-005",
+      "source_example_sha256": "66f27351b86d5fe59b122e36ddf68cb51bd678dd3e0e252d111ac140e92a969e",
+      "student_prompt_sha256": "c51059d51b97f4097547c942d8bc59a460f6dd9f082bfb98b41b662f550894e8",
+      "worked_solution_sha256": "df08d75acd38b2e37f79118f97ef37016786fdb7e542366d1e1257e58c567edd",
+      "evidence_check": "A primary abstract and experimental structure deposition support two N-terminal calcium-binding sites. The full canonical sequence includes a C-terminal region absent from the NMR construct. Binding affinity and occupancy cannot be established from sequence alone."
+    },
+    {
+      "id": "example-09",
+      "previous_selection_id": "general-006",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-006",
+      "source_example_sha256": "34b48994b04ffd7dc446087ba47d9fb8df72d872f19eb2e6f8762c5fee3df724",
+      "student_prompt_sha256": "ff543545afca298f1a8dd1e8b927c3d6a97ecf14b0f36b49a6440e8b05b442f6",
+      "worked_solution_sha256": "dce7c83de9c835da24cf6532c0466fb940b87263a731fe6321367bad485af6e2",
+      "evidence_check": "A primary abstract supports the C-terminal membrane anchor and cytoplasmic region. Exact boundaries and orientation inferred from the sequence remain predictions."
+    },
+    {
+      "id": "example-10",
+      "previous_selection_id": "general-007",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-007",
+      "source_example_sha256": "0038a18b5a6436128cf691d64862e9c0f4ad73235a61ed98be65a7ec7f35e675",
+      "student_prompt_sha256": "769b2ce704a3f12a88bea134a14eb8cd53cb81f39b35fe0a3957d9473c41164d",
+      "worked_solution_sha256": "e495fb2c7a195ebc15672426928c85a215d02fa62300bda3de9d37850e474350",
+      "evidence_check": "Full primary Results and Figures 1–2 support the selected tandem-PDZ isoform and interaction with a partner terminus. Exact partner specificity is an experimental question."
+    },
+    {
+      "id": "example-11",
+      "previous_selection_id": "general-008",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-008",
+      "source_example_sha256": "2bd73d74f78ae3a3e001f2a211744cf6941000eb2e3ee7762799c73bee276189",
+      "student_prompt_sha256": "8ae686eba13d606969ae23ca81c0fb03ba7de23248330ac59c48cbf48bff0aec",
+      "worked_solution_sha256": "bdd797f9cc4b49e796fbeea5ae194b3b434c5c47485c02644369bb25ee8d8017",
+      "evidence_check": "A primary abstract and experimental structure deposition support retinal attachment through Schiff-base chemistry. Seven membrane helices plus a lysine are compatible with this family but do not independently prove retinal attachment."
+    },
+    {
+      "id": "example-12",
+      "previous_selection_id": "general-009",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-009",
+      "source_example_sha256": "7930d8276b981a7ee178760c4147361bd23dd26bb0d97a3caa0ed14f4ce14a5c",
+      "student_prompt_sha256": "fd2e2ab4cafd046d4d6f438202d47cd1582addae6ddd726bda853b4dfcf6117e",
+      "worked_solution_sha256": "30342e1e585d60cff2a7905e7ef673717f347a1ecd808e0a18b835b4fdb74b4b",
+      "evidence_check": "The full primary kinetic article supports SAM-dependent methylation of the terminal prenylcysteine carboxyl group, distinct from prior proteolysis. Supporting motif-study passages describe patterns shared with other families, so sequence identification remains qualified."
     }
   ]
 }

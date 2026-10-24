@@ -1,41 +1,35 @@
-# Mixed protein reasoning — 12 examples for selection
+# AI-created protein reasoning training data
 
-The goal is a broad protein-reasoning dataset with enzyme mutations as one component. This selection contains **nine broad protein questions and three enzyme-mutation questions** (75% / 25%). That is a starting mix for this small pilot, not a fixed training-data ratio.
+This collection contains **12 AI-created question-and-answer examples intended for protein-model training**. They combine protein function, binding, membrane architecture, sequence features and enzyme-mutation reasoning in one collection, with the enzyme examples first for convenient review.
 
-The broad questions cover sequence motifs, membrane architecture, cofactors, binding, protein-interaction domains and modification chemistry. The three mutation examples add condition-dependent activity, side-chain chemistry and interpretation of active-protein fraction.
+Each example shows the full protein sequence, the question, answer choices and a worked answer. Sources, evidence checks and limitations are available in an expandable section below each answer.
 
-[Read all 12 complete examples](ALL_EXAMPLES.md) · [Plain text](ALL_EXAMPLES.txt) · [Questions only](QUESTIONS_ONLY.md) · [Questions as plain text](QUESTIONS_ONLY.txt) · [Selection spreadsheet](selection.csv)
+**[Read all questions and answers](ALL_EXAMPLES.md)** · [Plain-text Q&A](ALL_EXAMPLES.txt) · [Questions only](QUESTIONS_ONLY.md) · [Selection spreadsheet](selection.csv)
 
-## Broad protein reasoning — nine examples
+| Example | Question topic |
+|---|---|
+| 1 | [APEX: enzyme behavior depends on substrate conditions](examples/example-01.md) |
+| 2 | [Adenylate kinase: a conservative substitution can impair catalysis](examples/example-02.md) |
+| 3 | [PafA: inactive protein fraction versus inhibitor binding](examples/example-03.md) |
+| 4 | [Covalent modification of a particular lysine](examples/example-04.md) |
+| 5 | [Locating repeated sequence motifs](examples/example-05.md) |
+| 6 | [Recognizing multiple membrane-spanning segments](examples/example-06.md) |
+| 7 | [Distinguishing heme from other cofactors](examples/example-07.md) |
+| 8 | [Calcium binding through repeated structural motifs](examples/example-08.md) |
+| 9 | [Membrane anchoring](examples/example-09.md) |
+| 10 | [Protein-interaction domains](examples/example-10.md) |
+| 11 | [Chromophore binding](examples/example-11.md) |
+| 12 | [Post-translational modification chemistry](examples/example-12.md) |
 
-| Example | Topic | Information supplied |
-|---|---|---|
-| general-001 | [Covalent modification of a particular lysine](../astra_sequence_only_nine_2026-10-23/examples/case-001.md) | Sequence-only |
-| general-002 | [Locating repeated sequence motifs](../astra_sequence_only_nine_2026-10-23/examples/case-002.md) | Sequence-only |
-| general-003 | [Recognizing multiple membrane-spanning segments](../astra_sequence_only_nine_2026-10-23/examples/case-003.md) | Sequence-only |
-| general-004 | [Distinguishing heme from other cofactors](../astra_sequence_only_nine_2026-10-23/examples/case-004.md) | Sequence-only |
-| general-005 | [Calcium binding through repeated structural motifs](../astra_sequence_only_nine_2026-10-23/examples/case-005.md) | Sequence-only |
-| general-006 | [Membrane anchoring](../astra_sequence_only_nine_2026-10-23/examples/case-006.md) | Sequence-only |
-| general-007 | [Protein-interaction domains](../astra_sequence_only_nine_2026-10-23/examples/case-007.md) | Sequence-only |
-| general-008 | [Chromophore binding](../astra_sequence_only_nine_2026-10-23/examples/case-008.md) | Sequence-only |
-| general-009 | [Post-translational modification chemistry](../astra_sequence_only_nine_2026-10-23/examples/case-009.md) | Sequence-only |
+<details>
+<summary>How the examples were created and checked</summary>
 
-## Enzyme mutations — three examples
+AI generated the worked answers. Cited biological papers and experimental records were used to check the selected answers and key facts. All 12 selected answers agree with the recorded source evidence. Some explanations remain qualified sequence-based interpretations or calculations from supplied assumptions; the papers do not prove every explanatory sentence. Reviews were performed by assistants rather than expert human reviewers.
 
-| Example | Topic | Information supplied |
-|---|---|---|
-| mutation-001 | [APEX: enzyme behavior depends on substrate conditions](../astra_enzyme_mutation_pool_2026-10-23/examples/case-001.md) | Sequence + published variants and assay evidence |
-| mutation-004 | [Adenylate kinase: a conservative substitution can impair catalysis](../astra_enzyme_mutation_pool_2026-10-23/examples/case-004.md) | Sequence + published variants and assay evidence |
-| mutation-015 | [PafA: inactive protein fraction versus inhibitor binding](../astra_enzyme_mutation_pool_2026-10-23/examples/case-015.md) | Sequence + published variants and assay evidence |
+Where an experimentally measured mutation effect is needed, the question supplies the published variants and relevant observations. Other questions provide the sequence and choices. Full papers and private answer labels were withheld during solving; their role was to check the results afterward. The exact information supplied is preserved in the [student prompts](questions.jsonl).
 
-## What is already complete
+Source checks include full-text Results, abstracts, indexed passages and experimental structure depositions, as specified for each example. We do not claim that every full paper was independently reread or every reasoning step experimentally established. These examples are intended for training; training benefit has not yet been measured.
 
-All 12 worked answers were completed previously with GPT-6 Astra at maximum reasoning effort, pro mode. This page reorganizes existing material; it does not represent 12 new API generations. The full reference sequence, question, four choices, worked answer and paper links are available for every example. Original prompts and generated outputs remain unchanged in their source reports.
+This presentation reuses completed answers and incurs no additional model-generation cost. Original scientific inputs and generated outputs remain preserved in the source reports. [Source provenance and evidence-check notes](selection_provenance.json).
 
-For the nine broad questions, papers and verification identities were withheld during solving. For the three mutation questions, the prompt explicitly supplies the published variants and essential assay evidence. Full papers and private gold labels were withheld in both groups. These two input formats should be evaluated separately before choosing a training mixture.
-
-All 12 selected answers match their source-supported labels. Explanation reviews are assistant assessments, not expert human validation; source-specific qualifications remain with each example. No training gain or aggregate benchmark accuracy is claimed.
-
-The larger [enzyme-mutation candidate bank](../astra_enzyme_mutation_pool_2026-10-23/README.md) remains available for selecting alternatives. It is one optional component of the broader dataset.
-
-[Exact student prompts](questions.jsonl) · [Compilation provenance](selection_provenance.json)
+</details>

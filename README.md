@@ -8,13 +8,13 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[Protein question-answer dataset](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k):** a separate collection of 10,000 training examples. Start with [two complete training examples and the papers behind their explanations](reports/training_preparation_2026-10-21/PAPER_LINK_EXAMPLES.md).
 
-**[Astra protein reasoning pilot](reports/astra_protein_pilot_2026-10-23/README.md):** one complete protein question and paper-grounded solution, with the full sequence, supporting paper, generation settings, evidence checks and measured usage cost.
+**[AI-created protein reasoning pilot](reports/astra_protein_pilot_2026-10-23/README.md):** one complete protein question and paper-grounded solution, with the full sequence, supporting paper, generation settings, evidence checks and measured usage cost.
 
-**[Mixed protein QA selection](reports/mixed_protein_selection_2026-10-23/README.md):** 12 complete examples combining nine broad protein questions with three enzyme-mutation questions. Start here to inspect the intended mixed scope, full sequences, worked answers and supporting papers.
+**[AI-created protein reasoning training data](reports/mixed_protein_selection_2026-10-23/README.md):** one collection of 12 complete question-and-answer examples intended for training, with enzyme-mutation examples first. Full sequences, questions and worked answers appear up front; sources and limitations expand on request.
 
-**[Nine sequence-only Astra examples](reports/astra_sequence_only_nine_2026-10-23/README.md):** diverse protein questions with full sequences, worked solutions and source checks.
+**[Nine sequence-only AI-created examples](reports/astra_sequence_only_nine_2026-10-23/README.md):** diverse protein questions with full sequences, worked solutions and source checks.
 
-**[Additional enzyme-mutation candidate bank](reports/astra_enzyme_mutation_pool_2026-10-23/README.md):** 32 candidates and 28 completed Astra worked answers for selecting alternatives. This is one component of the broader protein dataset; the mixed selection above uses three of these examples. Four candidates remain held for source overlap.
+**[Additional enzyme-mutation candidate bank](reports/astra_enzyme_mutation_pool_2026-10-23/README.md):** 32 candidates and 28 completed AI-created worked answers for selecting alternatives. This is one component of the broader protein dataset; the mixed selection above uses three of these examples. Four candidates remain held for source overlap.
 
 The [October 19 paper-collection report](reports/paper_collection_2026-10-19/README.md),
 earlier [measured token counts](reports/corpus_count_2026-10-17/README.md), and
