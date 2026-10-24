@@ -1,0 +1,18 @@
+{
+  "sequence_claim_checks": [
+    {
+      "end": 88,
+      "exact_sequence_match": true,
+      "residues": "R",
+      "start": 88
+    },
+    {
+      "end": 156,
+      "exact_sequence_match": true,
+      "residues": "R",
+      "start": 156
+    }
+  ],
+  "sequence_claims_passed": true,
+  "strict_schema_passed": true
+}

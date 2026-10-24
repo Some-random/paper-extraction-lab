@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "limitations": "The observations support peroxide tolerance as a contributor, not necessarily the sole cause of higher cellular activity. Peroxide concentrations, cellular enzyme abundance and complete assay constructs are not supplied. Neither the sequence nor these comparisons establish the precise structural mechanism of A134P.",
+  "selected_answer": "D",
+  "sequence_claims": [
+    {
+      "end": 14,
+      "interpretation": "Wild-type Lys14 is replaced by Asp in both APEX and APEX2, but not in the listed dimeric comparator.",
+      "residues": "K",
+      "start": 14
+    },
+    {
+      "end": 41,
+      "interpretation": "Wild-type Trp41 is replaced by Phe in all three listed variants.",
+      "residues": "W",
+      "start": 41
+    },
+    {
+      "end": 112,
+      "interpretation": "Wild-type Glu112 is replaced by Lys in both APEX and APEX2, but not in the listed dimeric comparator.",
+      "residues": "E",
+      "start": 112
+    },
+    {
+      "end": 134,
+      "interpretation": "Wild-type Ala134 is replaced by Pro only in APEX2. This is the sole listed sequence difference between APEX2 and APEX.",
+      "residues": "A",
+      "start": 134
+    }
+  ],
+  "worked_solution": "D best reconciles the observations.\n\nSequence comparison: APEX2 adds A134P to the K14D/W41F/E112K background of APEX. This identifies the listed sequence difference, but the presence of a proline substitution alone does not establish its effects on stability, heme binding or peroxide inhibition. Those effects must be interpreted from the supplied measurements.\n\nObserved rankings: Cellular activity places APEX2 above both APEX and the dimeric APX-W41F comparator. In contrast, thermal stability and heme binding each rank the dimeric comparator above APEX2, with APEX2 only slightly improved over APEX. Therefore, neither thermal stability nor heme binding alone reproduces the cellular ranking.\n\nMechanistic interpretation: Peroxide is a catalytic cosubstrate for a heme peroxidase, but excessive peroxide exposure can also inhibit catalysis or cause oxidative inactivation. Resistance to peroxide inhibition is therefore distinct from resistance to thermal unfolding and from heme binding. If peroxide inhibition limits activity under the cellular assay conditions, APEX2's observed greater resistance can preserve catalytic activity despite its lower thermal stability and heme binding relative to the dimeric comparator. The purified-assay result supplies independent biochemical support for this explanation without requiring a particular structural mechanism.\n\nDiscriminating the alternatives: A incorrectly asserts a heme-binding advantage over the dimeric comparator, directly contradicting the observations. C makes the corresponding incorrect assertion about thermal stability. B incorrectly states that cellular activity follows the thermal-stability ranking and treats peroxide tolerance as though it necessarily follows that ranking. D correctly identifies peroxide tolerance as a plausible contributor while recognizing that stability and heme-binding rankings alone cannot explain the cellular advantage."
+}

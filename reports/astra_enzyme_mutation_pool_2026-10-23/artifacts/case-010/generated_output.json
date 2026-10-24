@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "The conclusion applies to the two tested substrates under the reported assay conditions. Retained activity on phosphorylated poly(Glu,Tyr) does not establish unchanged activity on every protein substrate. The observations do not directly measure folding stability, enzyme abundance, substrate binding, or the precise catalytic step affected.",
+  "selected_answer": "C",
+  "sequence_claims": [
+    {
+      "end": 130,
+      "interpretation": "This active-site phosphatase-loop sequence contains the C(X)5R signature spanning Cys124 to Arg130. Its wild-type Gly129 is replaced by glutamate in G129E.",
+      "residues": "HCKAGKGR",
+      "start": 123
+    }
+  ],
+  "worked_solution": "C is directly supported by the substrate comparison. Approximately 90% less PIP3 activity means that G129E retains roughly 10% of the wild-type activity in that lipid-substrate assay: a strong impairment, not preservation and not necessarily complete abolition. In contrast, activity remains detectable against the phosphorylated poly(Glu,Tyr) preparation. Thus, the mutation affects the two measured substrate reactions differently. The supplied description does not quantify how closely the retained protein-substrate activity matches wild type.\n\nThe sequence provides a mechanistically relevant context: Gly129 lies in the phosphatase active-site loop containing catalytic Cys124 and Arg130. Replacing glycine with a larger acidic glutamate side chain could alter substrate accommodation or local active-site chemistry, allowing different effects on lipid and protein-substrate processing. This is a plausible interpretation, not a demonstrated structural mechanism; the assay observations, rather than sequence alone, establish the differential activities.\n\nA reverses the observed substrate effects. B contradicts the retained protein-substrate activity and the reported residual PIP3 activity. D incorrectly describes lipid dephosphorylation as preserved and misidentifies the assay readouts: phosphate release measures substrate dephosphorylation, not enzyme abundance or folding stability. Therefore, C is the supported conclusion."
+}

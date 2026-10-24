@@ -6,7 +6,7 @@ The nine proteins cover 7 task types, including sequence motifs, membrane archit
 
 Unlike the [earlier paper-assisted CorA example](../astra_protein_pilot_2026-10-23/README.md), these are new sequence-only solving attempts. Protein identities and supporting sources appear only **after** each unchanged solution, as post-generation checks.
 
-[Next focus: enzyme mutations and experimental evidence](ENZYME_MUTATION_FOCUS.md). Source selection is complete; mutation-focused teacher generation has not started.
+[The enzyme-mutation pool is now available](../astra_enzyme_mutation_pool_2026-10-23/README.md): 32 candidate questions and 28 completed worked answers, with a 12-example shortlist. Four candidates remain held for source overlap. The [source plan](ENZYME_MUTATION_FOCUS.md) explains the focus.
 
 ## Read the examples
 

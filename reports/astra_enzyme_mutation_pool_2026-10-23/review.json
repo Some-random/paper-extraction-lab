@@ -1,0 +1,504 @@
+{
+  "review_type": "Assistant review, not expert human validation",
+  "cases": [
+    {
+      "id": "case-001",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly compares both guaiacol conditions and checks the approximate concentration ratios.",
+        "Explains the peroxide/electron-donor balance without converting apparent rate maxima into formal inhibition constants or asserting an unmeasured structural mechanism.",
+        "The assay evidence establishes the phenotype; the sequence supports the A134P background comparison."
+      ],
+      "sequence_claims_checked": 4,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Compare condition-dependent inhibition across two substrate settings.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-002",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly separates wild-type-like human-cell abundance from failed yeast rescue and does not turn score 1.14 into a fold-change or catalytic rate.",
+        "Adds a correct catalytic-cysteine explanation and explicitly limits what cross-system comparisons establish."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Separate protein abundance from functional rescue and catalytic chemistry.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-003",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly links removal of Thr79’s hydroxyl to loss of the normal covalent phospho-enzyme intermediate, without assuming loss of expression.",
+        "Distinguishes the GFP reporter from active PafA, treats background as background, and does not invent a measured residual turnover or active fraction.",
+        "Canonical Thr79 to expressed-ORF60 mapping is correct. Catalytic assignment is explicitly attributed to supplied observations rather than the sequence alone."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-004",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": "Correct remapped answer C. Correctly calculates about 446-fold lower turnover, about 327-fold lower ATP-dependent catalytic efficiency, and a 27% Km decrease. Connects the shared positive charge to different guanidinium/ammonium geometry and hydrogen bonding without claiming specific Arg156 contacts were observed. Correctly distinguishes Km from Kd, and treats changes in chemistry, conformational steps, product release and active fraction as possibilities rather than measured causes.",
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Connect conservative side-chain chemistry with a large measured turnover effect.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-005",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "moderate",
+      "notes": [
+        "Correctly distinguishes a 108-fold endpoint-duration difference from an intrinsic turnover-number ratio.",
+        "Expression normalization and exclusion of self-biotinylation are handled correctly.",
+        "The decisive distinction is already stated in the supplied observations, so the question is relatively easy evidence reading despite a useful explanation."
+      ],
+      "sequence_claims_checked": 0,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-006",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly reads greater W99R complementation under the tested condition.",
+        "Explains why cellular growth need not scale linearly with enzymatic flux and cannot determine abundance or turnover ratios.",
+        "Possible abundance, folding and kinetic contributions are presented as alternatives rather than claimed measurements."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-007",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly defines the specificity ratio and explains why a large FC1 need not mean improved absolute diester activity.",
+        "The shared active-fraction factor cancels algebraically even when the active fraction changes; the solution makes this condition explicit.",
+        "Contrasts valine and glycine chemistry without claiming an observed atomic rearrangement or a proven long-range pathway. Canonical473 to ORF454 mapping is correct."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-008",
+      "selected_answer": null,
+      "gold_correct": null,
+      "selection_tier": "held",
+      "notes": [
+        "This reference overlaps a reserved source group. The candidate is retained for visibility and excluded from generation and the shortlist."
+      ],
+      "sequence_claims_checked": 0,
+      "sequence_claims_passed": null,
+      "scientific_review_status": "Source exclusion; not submitted to Astra",
+      "shortlist": false,
+      "hold_reason": "Overlap with reserved evaluation/development sources; not submitted to Astra."
+    },
+    {
+      "id": "case-009",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly contrasts the cellular ranking with the different stability and heme-binding rankings.",
+        "Uses independent peroxide-tolerance evidence as a conditional contributing explanation, without claiming exclusive causality.",
+        "Correctly identifies the shared substitutions and sole additional A134P difference."
+      ],
+      "sequence_claims_checked": 4,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Reconcile cellular activity with separate stability, cofactor and inhibition measurements.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-010",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly converts approximately 90% less lipid activity into approximately 10% residual activity, while not inventing a quantitative protein-substrate value.",
+        "Correctly identifies substrate-dependent functional separation and restricts the claim to the tested substrates.",
+        "The bulky acidic substitution in the active-site loop is offered as a plausible interpretation, not a demonstrated structure or precise kinetic mechanism."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Recognize substrate-specific loss instead of assigning a single total-activity label.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-011",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Separates expression temperature from reaction temperature and correctly interprets persistence under matched assays as support for long-lived functional populations.",
+        "The population equation separates active fraction from per-active-molecule activity; the260-fold bulk loss is not misreported as a260-fold chemical-step kcat change.",
+        "Uses the tagless and circular-dichroism controls appropriately, without claiming a unique inactive structure or unchanged kinetics of every remaining active molecule. Canonical103 to ORF84 mapping is correct."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-012",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": "Correct remapped answer D. Derives the full ratio R(S) = (1.8/0.74)*(52+S)/(120+S), then correctly obtains about 1.054 at low ATP and 2.432 at saturation. Keeps the equal-active-enzyme and saturating-AMP assumptions explicit. Correctly notes that the roughly 5% low-ATP difference is a central-value comparison rather than demonstrated statistical significance. Distractors are rejected using the appropriate kinetic regimes.",
+      "sequence_claims_checked": 2,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Derive why the ranking of variants changes with substrate concentration.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-013",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "moderate",
+      "notes": [
+        "Correctly preserves both the lower overall activity and lower pre-addition labeling findings.",
+        "Explains endogenous biotin and avoids claiming zero background, a superior induced/background ratio, or isolated causality from a multimutant comparison.",
+        "The answer is mainly a careful synthesis of two explicitly supplied qualitative observations."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-014",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "moderate",
+      "notes": [
+        "Correctly ranks F150S below the two near-wild-type comparators without inventing a finer D217N-versus-E279Q ranking.",
+        "Residue identities and side-chain chemistry are correct; abundance, folding and kinetic explanations remain possibilities rather than measured causes.",
+        "The main inference is reading the supplied assay comparison; the response does not establish a specific molecular mechanism."
+      ],
+      "sequence_claims_checked": 3,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-015",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "The active-fraction and enzyme-concentration factors cancel correctly from v(I)/v(0); the solution distinguishes an absolute-rate change from a normalized inhibition-curve shift.",
+        "The conclusion is explicitly conditional on fixed, noninterconverting populations. It allows reduced active abundance to coexist with altered binding and does not infer faster chemical catalysis.",
+        "His83 and canonical83 to expressed-ORF64 indexing are correct. The explanation uses the provided binding result and population model rather than asserting a sequence-only affinity prediction."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Use normalized rates to distinguish inhibitor interaction from inactive protein fraction.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-016",
+      "selected_answer": null,
+      "gold_correct": null,
+      "selection_tier": "held",
+      "notes": [
+        "This reference overlaps a reserved source group. The candidate is retained for visibility and excluded from generation and the shortlist."
+      ],
+      "sequence_claims_checked": 0,
+      "sequence_claims_passed": null,
+      "scientific_review_status": "Source exclusion; not submitted to Astra",
+      "shortlist": false,
+      "hold_reason": "Overlap with reserved evaluation/development sources; not submitted to Astra."
+    },
+    {
+      "id": "case-017",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly subtracts shared substitutions against the APEX parent and distinguishes the two extra VPGAPEX changes.",
+        "Connects that genotype comparison to the assay result without equating nondetection of a difference with biochemical equivalence or individual mutation neutrality.",
+        "The explanation teaches why additional substitutions need not yield additive gains."
+      ],
+      "sequence_claims_checked": 6,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-018",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly separates preserved PIP3 activity from approximately 3% protein-substrate activity and computes the corresponding approximately 97% reduction.",
+        "Correctly distinguishes frequently undetectable activity from a demonstrated absolute zero.",
+        "Explains different substrate-recognition and positioning requirements without claiming that the precise microscopic cause was measured."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-019",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Accurately contrasts the threonine and serine side chains: the hydroxyl remains while the methyl substituent is removed. It does not equate functional-group retention with identical positioning or energetics.",
+        "Interprets stronger phosphate affinity as a smaller dissociation/inhibition constant under the relevant binding model, and avoids equating ground-state binding with improved turnover or efficiency.",
+        "The reduced-repulsion/mobility explanation is kept as a compatible mechanistic model. No specific conformation, active fraction or measured intrinsic rate is invented; canonical79 to ORF60 mapping is correct."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Separate ground-state binding, nucleophile positioning and catalytic benefit.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-020",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": "Correct remapped answer B. Correctly converts the efficiencies to M^-1 s^-1 and calculates 6-fold versus about 1180-fold WT turnover losses, about 196-fold difference in mutant turnover and about 243-fold difference in mutant catalytic efficiencies. Explains why half-saturation changes do not determine the turnover ceiling. Gives plausible position-specific catalytic roles while explicitly declining to identify exact contacts, folded fractions or a microscopic rate-limiting step.",
+      "sequence_claims_checked": 2,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-021",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly distinguishes the single difference between G3Δ and miniTurbo from their many shared differences relative to canonical wild type.",
+        "Jointly interprets increased activity and unchanged no-added-biotin signal, without equating unchanged background with zero or reduced background.",
+        "Keeps the conclusion specific to the tested background and cellular assay."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Interpret a controlled single-substitution comparison in its tested background.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-022",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "moderate",
+      "notes": [
+        "Correctly describes acidic-to-neutral-amide side-chain changes and does not call either replacement positively charged.",
+        "Correctly restricts the functional conclusion to the two tested positions and the assay context.",
+        "Most of the chemistry and functional facts are already given in the question; the added interpretation is useful but not a newly inferred enzyme mechanism."
+      ],
+      "sequence_claims_checked": 2,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-023",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "moderate",
+      "notes": [
+        "Correctly places His83 and Ala165 in the supplied helix intervals, confirms that the named catalytic residues are retained, and explains why proximity does not force the same binding response.",
+        "Does not claim an observed Arg164 displacement, a uniquely improved Thr79 position, or a global folding change. The suggested interaction, hydration and conformational routes remain possibilities.",
+        "Scientifically sound but less discriminating than the quantitative PafA examples: much of the solution restates the supplied opposite binding effects and lists compatible mechanisms rather than deriving a particular one."
+      ],
+      "sequence_claims_checked": 2,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-024",
+      "selected_answer": null,
+      "gold_correct": null,
+      "selection_tier": "held",
+      "notes": [
+        "This reference overlaps a reserved source group. The candidate is retained for visibility and excluded from generation and the shortlist."
+      ],
+      "sequence_claims_checked": 0,
+      "sequence_claims_passed": null,
+      "scientific_review_status": "Source exclusion; not submitted to Astra",
+      "shortlist": false,
+      "hold_reason": "Overlap with reserved evaluation/development sources; not submitted to Astra."
+    },
+    {
+      "id": "case-025",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Combines comparable expression, stronger proximal-marker enrichment and weak or absent other-compartment markers.",
+        "Correctly separates increased reporter performance from indiscriminate labeling or higher protein abundance.",
+        "Explains proximity-labeling chemistry while avoiding claims of direct reporter–marker binding or an isolated kinetic effect."
+      ],
+      "sequence_claims_checked": 4,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-026",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly separates the downstream growth phenotype from PIP3 reporter and biochemical endpoints.",
+        "Uses a residual-activity threshold or saturation relationship as an explicitly hypothetical explanation, rather than asserting a measured mechanism.",
+        "Does not assert the paper's proposed deamidation explanation as established and does not infer an exact residual catalytic rate."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Understand how a downstream phenotype can mask partial biochemical loss.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-027",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Builds a defensible mechanism from the supplied Asp38–Lys162 contact and the different chemical environments of the relevant monoester/diester oxygen. It does not infer those three-dimensional contacts from the sequence alone.",
+        "Correctly interprets FC1 as a ratio of relative efficiencies, cancels a shared active-fraction factor and refuses to invent the direction or size of an effect not supplied to the solver.",
+        "Separates a lack of significant specificity change from unchanged absolute activity and preserves uncertainty about a unique structural rearrangement. All residue identities match the canonical reference."
+      ],
+      "sequence_claims_checked": 4,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-028",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": "Correct remapped answer A. Calculates 44000-fold loss without Mg2+ and 137.5-fold loss for R167A with Mg2+, plus about 0.73% retained mutant turnover. Correctly confines the lack of compensation to the supplied Mg2+-containing comparison. General phosphate-coordination and electrostatic explanations are labeled plausible rather than experimentally established Arg167 contacts. Does not confuse turnover ratios with affinities or assert an unmeasured ATP-rescue result.",
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-029",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly uses biotin depletion to distinguish no added biotin from absence of available substrate.",
+        "Compares the distinguishing N-terminal deletion against the shared internal deletion and substitutions.",
+        "Explains the reduced background phenotype without inventing a binding constant, altered catalytic mechanism or complete elimination of background."
+      ],
+      "sequence_claims_checked": 2,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": false,
+      "hold_reason": ""
+    },
+    {
+      "id": "case-030",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly assigns A456V to initial glucose association and W99R to the later active-form isomerization.",
+        "The two-step reversible pathway accurately organizes the supplied kinetic observations.",
+        "Distinguishes binding and conformational changes from chemical catalysis, avoids exclusive one-step claims, and does not invent kinetic constants or structural causes."
+      ],
+      "sequence_claims_checked": 2,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Relate distinct substitutions to different steps in a conformational pathway.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-031",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "selection_tier": "strong",
+      "notes": [
+        "Correctly contrasts the greater-than-millionfold catalytic-efficiency loss with the roughly hundredfold affinity loss; the disparity is about four or more orders of magnitude.",
+        "Explains the imperfect physical correspondence of a stable transition-state analog to the actual transition state, while distinguishing catalytic efficiency, first-order turnover and substrate affinity.",
+        "Does not use residual analog binding to infer preserved catalytic power or to assign the defect to active abundance. Canonical Lys162 to expressed-ORF143 mapping is correct."
+      ],
+      "sequence_claims_checked": 1,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Assistant-reviewed; no material errors found",
+      "shortlist": true,
+      "shortlist_reason": "Explain why transition-state-analog affinity cannot replace measurement of catalysis.",
+      "hold_reason": ""
+    },
+    {
+      "id": "case-032",
+      "selected_answer": null,
+      "gold_correct": null,
+      "selection_tier": "held",
+      "notes": [
+        "This reference overlaps a reserved source group. The candidate is retained for visibility and excluded from generation and the shortlist."
+      ],
+      "sequence_claims_checked": 0,
+      "sequence_claims_passed": null,
+      "scientific_review_status": "Source exclusion; not submitted to Astra",
+      "shortlist": false,
+      "hold_reason": "Overlap with reserved evaluation/development sources; not submitted to Astra."
+    }
+  ]
+}

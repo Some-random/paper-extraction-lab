@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "limitations": "The reported rate maxima are approximate, condition-dependent markers, not formal inhibition constants. These observations do not distinguish reversible inhibition from oxidative inactivation, establish a structural mechanism for A134P, or show that APEX2 has a higher maximum rate. The canonical sequence provides coordinates, not the complete tagged assay construct.",
+  "selected_answer": "C",
+  "sequence_claims": [
+    {
+      "end": 14,
+      "interpretation": "Wild-type Lys14 is replaced by Asp in both APEX and APEX2 (K14D).",
+      "residues": "K",
+      "start": 14
+    },
+    {
+      "end": 41,
+      "interpretation": "Wild-type Trp41 is replaced by Phe in both variants (W41F).",
+      "residues": "W",
+      "start": 41
+    },
+    {
+      "end": 112,
+      "interpretation": "Wild-type Glu112 is replaced by Lys in both variants (E112K).",
+      "residues": "E",
+      "start": 112
+    },
+    {
+      "end": 134,
+      "interpretation": "Wild-type Ala134 is replaced by Pro in APEX2 (A134P), the sole additional listed substitution relative to APEX.",
+      "residues": "A",
+      "start": 134
+    }
+  ],
+  "worked_solution": "Choice C captures both the variant difference and the dependence on guaiacol concentration.\n\nUse the peroxide concentration at the reported rate maximum as an approximate boundary above which activity declines:\n- At 1.4 mM guaiacol, the maximum occurs around 0.1 mM peroxide for APEX versus 2.5 mM for APEX2: approximately a 25-fold higher peroxide concentration for APEX2.\n- At 0.5 mM guaiacol, the corresponding values are 0.05 mM and 0.5 mM: approximately a 10-fold higher concentration for APEX2.\n\nThus, both substrate conditions show a higher apparent peroxide-inhibition threshold for APEX2. The threshold is also guaiacol-dependent: increasing guaiacol from 0.5 to 1.4 mM shifts the maximum from 0.05 to 0.1 mM peroxide for APEX and from 0.5 to 2.5 mM for APEX2, approximately twofold and fivefold increases, respectively.\n\nMechanistically, peroxide drives formation of oxidizing heme intermediates during peroxidase catalysis, while guaiacol supplies reducing equivalents for productive turnover. Excess peroxide can promote nonproductive states or oxidative inactivation. Changing the electron-donor concentration can alter the balance between productive turnover and these competing processes, so an apparent peroxide-inhibition threshold need not be substrate-independent. This is consistent with the observations without establishing their precise molecular cause.\n\nThe listed sequence difference is A134P added to the shared K14D/W41F/E112K background. The assay observations establish the kinetic distinction; alanine-to-proline substitution chemistry alone would not uniquely predict it.\n\nA is excluded because APEX2 also has a higher threshold at lower guaiacol. B is excluded because the thresholds change with guaiacol concentration. D is excluded because the variants have different thresholds under both conditions."
+}

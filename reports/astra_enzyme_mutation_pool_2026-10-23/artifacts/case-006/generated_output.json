@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "The supplied readout does not separately measure enzyme abundance, expression, stability, turnover number or glucose-binding constants. It establishes improved complementation under the tested glucose condition, not a unique molecular mechanism or an effect that necessarily generalizes to other conditions.",
+  "selected_answer": "D",
+  "sequence_claims": [
+    {
+      "end": 99,
+      "interpretation": "The reference residue is tryptophan; W99R replaces it with arginine. This substitution alone does not establish its effects on protein abundance or enzyme kinetics.",
+      "residues": "W",
+      "start": 99
+    }
+  ],
+  "worked_solution": "The supported conclusion is improved functional performance in this assay, with the mechanism unresolved.\n\nGlucokinase phosphorylates glucose to glucose-6-phosphate using ATP. In the supplied yeast complementation assay, growth depends on the human enzyme supporting glucose metabolism. W99R produces greater growth than wild type under the same tested glucose condition, so it provides stronger functional complementation.\n\nHowever, growth is an integrated cellular outcome, not a direct measurement of purified-enzyme kinetics or protein abundance. Improved complementation could result from more functional enzyme being present, altered activity per enzyme molecule at the tested glucose concentration, or both. Expression, folding and stability can affect functional enzyme abundance; substrate interactions, conformational transitions and catalytic steps can affect per-molecule performance. None of these possible mechanisms is individually established by the reported growth comparison or by the W99R substitution itself.\n\nFurthermore, growth need not be proportional to enzymatic flux. Therefore, a growth ratio cannot be interpreted as either a turnover-number ratio or an enzyme-abundance ratio. Testing one glucose condition also does not determine glucose-binding constants.\n\nA reverses the functional interpretation of the supplied complementation result. B incorrectly claims that purified-enzyme turnover was measured independently of abundance. C incorrectly claims that abundance was measured independently of kinetics. D correctly states both the improved assay performance and the unresolved distinction between abundance and microscopic kinetic effects."
+}

@@ -1,0 +1,33 @@
+candidate,enzyme,mutations_or_variants,topic,assistant_tier,hold_reason,suggested_shortlist,example_link
+case-001,APEX peroxidase,"APEX (K14D, W41F, E112K); APEX2 (K14D, W41F, E112K, A134P)",Peroxide tolerance changes with substrate conditions,strong,,yes,examples/case-001.md
+case-002,PTEN phosphatase,C124S,Normal protein abundance does not ensure catalytic function,strong,,yes,examples/case-002.md
+case-004,Adenylate kinase,R156K,A conservative charge substitution can disrupt catalysis,strong,,yes,examples/case-004.md
+case-009,APEX peroxidase,"APEX (K14D, W41F, E112K); APEX2 (K14D, W41F, E112K, A134P); Dimeric APX-W41F comparator (W41F)","Activity, stability and heme binding give different rankings",strong,,yes,examples/case-009.md
+case-010,PTEN phosphatase,G129E,One mutation separates lipid and protein substrate activity,strong,,yes,examples/case-010.md
+case-012,Adenylate kinase,R88A; R156K,Variant rankings depend on substrate concentration,strong,,yes,examples/case-012.md
+case-015,PafA alkaline phosphatase,H83G,Inactive enzyme fraction versus inhibitor affinity,strong,,yes,examples/case-015.md
+case-019,PafA alkaline phosphatase,T79S,Stronger product binding does not imply faster catalysis,strong,,yes,examples/case-019.md
+case-021,Biotin ligase,"G3Δ, published intermediate (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, Δ1–63, Δ146); miniTurbo (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, K194I, Δ1–63, Δ146)",A matched mutation improves activity without raising background,strong,,yes,examples/case-021.md
+case-026,PTEN phosphatase,D92N,A downstream phenotype can mask partial functional loss,strong,,yes,examples/case-026.md
+case-030,Glucokinase / hexokinase-4,A456V; W99R,Different substitutions affect binding and conformational change,strong,,yes,examples/case-030.md
+case-031,PafA alkaline phosphatase,K162A,Transition-state-analog binding is not catalytic power,strong,,yes,examples/case-031.md
+case-003,PafA alkaline phosphatase,T79G,Removing a catalytic hydroxyl: activity versus expression,strong,,no,examples/case-003.md
+case-006,Glucokinase / hexokinase-4,W99R,Cellular growth improvement does not identify a kinetic mechanism,strong,,no,examples/case-006.md
+case-007,PafA alkaline phosphatase,D473V; D473G,A distant substitution changes relative substrate activity,strong,,no,examples/case-007.md
+case-011,PafA alkaline phosphatase,Y103G,Expression history changes the active protein population,strong,,no,examples/case-011.md
+case-017,APEX peroxidase,"APEX (K14D, W41F, E112K); APEX2 (K14D, W41F, E112K, A134P); VPGAPEX (K14D, W41F, E112K, A19V, A134P, D222G)",Single versus combined substitutions: what is established?,strong,,no,examples/case-017.md
+case-018,PTEN phosphatase,Y138L,Reverse substrate selectivity in the same enzyme,strong,,no,examples/case-018.md
+case-020,Adenylate kinase,R36A; R123A,The location of an arginine substitution matters,strong,,no,examples/case-020.md
+case-025,APEX peroxidase,"APEX (K14D, W41F, E112K); APEX2 (K14D, W41F, E112K, A134P)",Improved labeling can retain spatial discrimination,strong,,no,examples/case-025.md
+case-027,PafA alkaline phosphatase,D38G; D352G; H353V,Metal ligands can have different substrate-specific roles,strong,,no,examples/case-027.md
+case-028,Adenylate kinase,R167A,Cofactor presence does not replace a catalytic residue,strong,,no,examples/case-028.md
+case-029,Biotin ligase,"G3, published intermediate (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, Δ146); G3Δ, published intermediate (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, Δ1–63, Δ146)",Deletion effects and endogenous substrate controls,strong,,no,examples/case-029.md
+case-005,Biotin ligase,"BioID, paper construct definition (R118G, Δ146); TurboID (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, K194I, M241T, S263P, Δ146)",A shorter labeling window is not a kcat measurement,moderate,,no,examples/case-005.md
+case-013,Biotin ligase,"TurboID (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, K194I, M241T, S263P, Δ146); miniTurbo (Q65P, I87V, R118S, E140K, Q141R, S150G, L151P, V160A, T192A, M209V, I305V, K194I, Δ1–63, Δ146)",Labeling strength versus temporal background,moderate,,no,examples/case-013.md
+case-014,Glucokinase / hexokinase-4,F150S; D217N; E279Q,Compare cellular activity without assuming a mechanism,moderate,,no,examples/case-014.md
+case-022,Glucokinase / hexokinase-4,D217N; E279Q,Acid-to-amide substitutions can preserve measured function,moderate,,no,examples/case-022.md
+case-023,PafA alkaline phosphatase,A165V; H83G,Nearby residues can alter binding in opposite directions,moderate,,no,examples/case-023.md
+case-008,Triosephosphate isomerase,Y208F; Y208A,Aromatic replacements can differ in catalytic effect,held,Overlap with reserved evaluation/development sources; not submitted to Astra.,no,examples/case-008.md
+case-016,Triosephosphate isomerase,S211A; S211G,Similar group loss can produce different kinetics,held,Overlap with reserved evaluation/development sources; not submitted to Astra.,no,examples/case-016.md
+case-024,Triosephosphate isomerase,"Y208T; S211G; Y208T/S211G (Y208T, S211G)",Testing a specified model of kinetic epistasis,held,Overlap with reserved evaluation/development sources; not submitted to Astra.,no,examples/case-024.md
+case-032,Triosephosphate isomerase,Y208F,A substitution changes protonation in a bound state,held,Overlap with reserved evaluation/development sources; not submitted to Astra.,no,examples/case-032.md

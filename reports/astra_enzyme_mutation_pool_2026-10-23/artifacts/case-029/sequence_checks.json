@@ -1,0 +1,18 @@
+{
+  "sequence_claim_checks": [
+    {
+      "end": 63,
+      "exact_sequence_match": true,
+      "residues": "MKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEP",
+      "start": 1
+    },
+    {
+      "end": 146,
+      "exact_sequence_match": true,
+      "residues": "A",
+      "start": 146
+    }
+  ],
+  "sequence_claims_passed": true,
+  "strict_schema_passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "confidence": "high",
+  "limitations": "The measurements support different effects on catalytic turnover but do not identify the precise atomic roles of Arg36 and Arg123, isolate the rate-limiting step, or establish protein-folding fractions. ATP Km alone does not determine equilibrium ATP affinity.",
+  "selected_answer": "B",
+  "sequence_claims": [
+    {
+      "end": 36,
+      "interpretation": "Wild-type Arg36; R36A replaces this arginine with alanine.",
+      "residues": "R",
+      "start": 36
+    },
+    {
+      "end": 123,
+      "interpretation": "Wild-type Arg123; R123A replaces this arginine with alanine at a different sequence position.",
+      "residues": "R",
+      "start": 123
+    }
+  ],
+  "worked_solution": "The supplied sequence confirms that both substitutions replace arginine, but at different positions. Arg-to-Ala removes the guanidinium group, including its electrostatic and hydrogen-bonding capabilities, and substantially reduces side-chain size. Identical substitution chemistry therefore does not imply identical functional consequences.\n\nQuantitative comparison:\n\n| Enzyme | kcat (s^-1) | ATP Km (µM) | kcat/Km (M^-1 s^-1) |\n|---|---:|---:|---:|\n| WT | 330 | 71 | 4.65 × 10^6 |\n| R36A | 55 | 89 | 6.18 × 10^5 |\n| R123A | 0.28 | 110 | 2.55 × 10^3 |\n\nR36A decreases turnover by 330/55 = 6-fold. R123A decreases turnover by 330/0.28 ≈ 1,180-fold and turns over approximately 196-fold more slowly than R36A. In contrast, their ATP Km values are only about 1.25-fold and 1.55-fold the WT value. Thus, the striking difference is in turnover capacity, not ATP half-saturation.\n\nFor the fitted Michaelis–Menten ATP dependence at fixed other assay conditions, v/[E] = kcat[ATP]/(Km + [ATP]). Increasing ATP approaches the turnover ceiling kcat; changing Km changes how that ceiling is approached, not its height. Moreover, Km is a kinetic parameter and is not generally equal to the equilibrium dissociation constant Kd. Consequently, the modest Km increase cannot explain R123A's approximately thousand-fold decrease in kcat as simply weaker equilibrium ATP binding.\n\nAdenylate kinase catalyzes phosphoryl transfer in ATP + AMP ⇌ 2 ADP. Depending on their three-dimensional positions, arginine residues can contribute differently to nucleotide positioning, transition-state electrostatics, or formation of catalytically competent conformations. The results are consistent with Arg123 making a substantially more consequential contribution to the turnover cycle under these conditions. They do not establish which microscopic step is affected: steady-state kcat can reflect chemistry, conformational changes, and product release.\n\nThe alternatives fail for distinct reasons:\n• A: Turnover ratios are not direct measurements of folded fractions. That interpretation would require unsupported assumptions that the only defect is loss of active molecules and that the remaining active molecules retain WT turnover.\n• C: Km is not an equilibrium-binding measurement, and its modest increase cannot account for the greatly reduced ATP-saturated turnover ceiling.\n• D: kcat/Km is a low-ATP catalytic-efficiency measure, not a correction that makes turnover ceilings equivalent. These efficiencies still differ by approximately 243-fold between R36A and R123A.\n\nTherefore, the most consistent explanation is that the same charge-removing substitution has different consequences because the two positions make different functional contributions. Answer: B."
+}

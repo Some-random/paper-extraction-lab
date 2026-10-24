@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "The observations are qualitative cellular comparisons. They do not establish zero pre-addition labeling, a better induced-to-background ratio, or precise switching kinetics. They also cannot separate contributions from catalysis, biotin binding, expression, stability, or assay-construct context, nor assign the differences to a particular mutation or deletion. The reference sequence is not the complete tagged assay construct.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 63,
+      "interpretation": "This canonical N-terminal segment is deleted in miniTurbo but retained in TurboID according to the supplied variant identities. It establishes a backbone difference, not a uniquely demonstrated cause of the labeling differences.",
+      "residues": "MKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEP",
+      "start": 1
+    }
+  ],
+  "worked_solution": "A is supported by both supplied observations: miniTurbo has lower overall cellular labeling activity than TurboID, and it produces less labeling before exogenous biotin addition. The annotation must preserve both findings rather than treating reduced background as evidence of equally strong or stronger induced labeling.\n\nMechanistically, biotin-dependent proximity-labeling enzymes can use biotin already available in cells. Therefore, before exogenous biotin addition does not necessarily mean before any labeling can occur. Reduced pre-addition labeling supports lower temporal background, whereas overall labeling strength is a separate performance dimension. This does not demonstrate an absolute off state or a particular activation speed.\n\nThe sequence definitions also prevent a single-change causal interpretation. miniTurbo lacks canonical residues 1–63, which TurboID retains, and their substitution sets differ. The cellular observations therefore compare complete variants with multiple differences; they do not isolate the effect of the N-terminal deletion or any individual substitution.\n\nThe alternatives fail as follows:\n- B reverses both observations, claiming stronger overall labeling and more pre-addition labeling for miniTurbo.\n- C correctly states reduced pre-addition labeling but replaces the reported activity reduction with an unsupported claim of equal activity after addition.\n- D retains the lower-activity distinction but contradicts the observed reduction in pre-addition labeling.\n\nThus A correctly separates miniTurbo's lower pre-addition background from TurboID's stronger overall labeling activity."
+}

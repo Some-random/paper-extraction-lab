@@ -1,0 +1,26 @@
+{
+  "confidence": "high",
+  "limitations": "The molecular cause of the F150S growth defect is unresolved because no matched abundance measurements or purified-enzyme kinetics are supplied. Approximately wild-type-like growth also does not establish identical biochemical behavior under other conditions.",
+  "selected_answer": "B",
+  "sequence_claims": [
+    {
+      "end": 150,
+      "interpretation": "Reference residue 150 is phenylalanine. F150S replaces this aromatic, hydrophobic residue with the smaller, polar serine; this chemical change alone does not establish its functional mechanism.",
+      "residues": "F",
+      "start": 150
+    },
+    {
+      "end": 217,
+      "interpretation": "Reference residue 217 is aspartate. D217N replaces its acidic side chain with the uncharged amide side chain of asparagine.",
+      "residues": "D",
+      "start": 217
+    },
+    {
+      "end": 279,
+      "interpretation": "Reference residue 279 is glutamate. E279Q replaces its acidic side chain with the uncharged amide side chain of glutamine.",
+      "residues": "E",
+      "start": 279
+    }
+  ],
+  "worked_solution": "The reported comparison directly supports B: F150S produces lower growth-based functional performance than wild type, whereas D217N and E279Q are approximately wild-type-like in the same yeast complementation assay. Thus, F150S performs worse than the two comparators in this cellular readout. No finer ranking between D217N and E279Q is established.\n\nGlucokinase catalyzes ATP-dependent phosphorylation of glucose. Yeast complementation reports whether the expressed enzyme supports cellular function, rather than measuring an isolated molecular property. Reduced growth can reflect less protein, a smaller correctly folded or stable protein population, altered catalytic kinetics under cellular conditions, or combinations of these effects. The supplied observations do not distinguish those possibilities.\n\nThe reference sequence confirms that F150S is a chemically nonconservative substitution. Such a change could affect protein interactions or conformational behavior, but neither the residue identity nor the growth result proves a particular folding, abundance, or catalytic defect. Likewise, the acidic-to-amide substitutions in the two comparators cannot be assumed biochemically neutral merely because their growth performance is approximately wild-type-like.\n\nA contradicts the reported performance of D217N and E279Q. C asserts an abundance measurement that was not supplied and unjustifiably excludes folding and kinetic contributions, which can coexist with abundance changes. D reverses the observed comparison. B alone preserves both the measured functional ranking and the uncertainty about its molecular cause."
+}

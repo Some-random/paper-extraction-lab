@@ -1,0 +1,20 @@
+{
+  "confidence": "high",
+  "limitations": "The conclusion uses the supplied central values and assumes saturating AMP, equal active-enzyme concentrations, and the stated Michaelis–Menten model without substrate inhibition. No measurement uncertainties are provided, so the approximately 5% low-ATP difference is not evidence of statistical significance. Sequence alone would not establish these kinetic effects.",
+  "selected_answer": "D",
+  "sequence_claims": [
+    {
+      "end": 88,
+      "interpretation": "Reference Arg88 is replaced by alanine in R88A.",
+      "residues": "R",
+      "start": 88
+    },
+    {
+      "end": 156,
+      "interpretation": "Reference Arg156 is replaced by lysine in R156K.",
+      "residues": "R",
+      "start": 156
+    }
+  ],
+  "worked_solution": "The supplied reference has arginine at both reported mutation positions. The rate comparison follows from the supplied kinetic measurements, rather than from predicting effects of these substitutions from sequence.\n\nAdenylate kinase catalyzes ATP + AMP ⇌ 2 ADP. With AMP fixed and saturating, use the stated ATP-dependent rate law. Equal active-enzyme concentrations cancel in the rate ratio. Writing S = [ATP] in micromolar:\n\nR(S) = v_R88A/v_R156K = (1.8/0.74) × (52 + S)/(120 + S).\n\nAt ATP far below both Km values, v/[E] ≈ (kcat/Km)S. Thus the relevant quantities are ATP catalytic efficiencies:\n• R88A: 1.8/120 = 0.0150 s^-1 µM^-1.\n• R156K: 0.74/52 ≈ 0.01423 s^-1 µM^-1.\n\nThe low-ATP rate ratio is therefore 0.0150/0.01423 ≈ 1.054. R88A is only about 1.05 times faster. Its approximately 2.43-fold higher kcat is almost offset by its approximately 2.31-fold higher ATP Km. A lower Km alone does not establish a faster low-substrate rate, and Km should not automatically be interpreted as a binding dissociation constant.\n\nAt ATP far above both Km values, v/[E] approaches kcat. The rate ratio becomes 1.8/0.74 ≈ 2.43, so R88A is about 2.4 times faster.\n\nThe ratio therefore increases from approximately 1.05 at low ATP to approximately 2.4 at saturating ATP. A and C incorrectly assign a 2.4-fold advantage at low ATP; B incorrectly favors R156K at low ATP. The supplied measurements support D."
+}

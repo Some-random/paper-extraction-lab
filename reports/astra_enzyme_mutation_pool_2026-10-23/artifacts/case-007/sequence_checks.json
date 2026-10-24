@@ -1,0 +1,12 @@
+{
+  "sequence_claim_checks": [
+    {
+      "end": 473,
+      "exact_sequence_match": true,
+      "residues": "D",
+      "start": 473
+    }
+  ],
+  "sequence_claims_passed": true,
+  "strict_schema_passed": true
+}

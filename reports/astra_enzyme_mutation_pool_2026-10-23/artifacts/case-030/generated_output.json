@@ -1,0 +1,20 @@
+{
+  "confidence": "high",
+  "limitations": "The kinetic assignments come from the supplied experimental observations, not from sequence alone. They do not establish that either variant affects only one step, quantify overall turnover or equilibrium glucose affinity, or identify a unique structural cause. The canonical sequence supplies reference coordinates, not complete assay-construct sequences.",
+  "selected_answer": "C",
+  "sequence_claims": [
+    {
+      "end": 456,
+      "interpretation": "Wild-type alanine at reference position 456 is replaced by valine in A456V.",
+      "residues": "A",
+      "start": 456
+    },
+    {
+      "end": 99,
+      "interpretation": "Wild-type tryptophan at reference position 99 is replaced by arginine in W99R.",
+      "residues": "W",
+      "start": 99
+    }
+  ],
+  "worked_solution": "The supplied transient-kinetic evidence separates glucose recognition into two microscopic steps:\n\nE + glucose ⇌ E·glucose ⇌ E*·glucose\n\nHere, E denotes glucose-free glucokinase, the first transition is initial glucose association, and the second is the subsequent conformational isomerization toward the active form, E*.\n\nThe reported effects map differently onto this pathway:\n- A456V accelerates initial glucose binding to the glucose-free enzyme—the first step.\n- W99R facilitates the subsequent isomerization toward the active form—the second step.\n\nThus, initial substrate association and conversion of the bound enzyme into an active conformation are distinct opportunities to enhance function. Similar functional gains need not reflect the same microscopic mechanism: one variant can accelerate glucose association, while another facilitates the conformational transition that follows. These observations concern the same glucokinase reaction and do not imply a new substrate, a new product, or faster chemical catalysis itself.\n\nChoice C states this lesson correctly. A reverses the experimental assignments. B incorrectly assigns both reported effects to initial association, whereas W99R is associated with the later isomerization. D incorrectly assigns both effects to isomerization, whereas A456V is reported to accelerate initial association. The sequence establishes the variant identities; the supplied kinetic observations establish the mechanistic distinction."
+}

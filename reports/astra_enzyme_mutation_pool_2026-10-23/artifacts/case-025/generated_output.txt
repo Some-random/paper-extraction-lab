@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "limitations": "The conclusion is restricted to the supplied markers and assay conditions. The data do not establish complete absence of off-target labeling or determine whether A134P changes intrinsic catalysis, stability, active-enzyme fraction, or substrate specificity.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 14,
+      "interpretation": "The reference residue is lysine; K14D is shared by the supplied APEX and APEX2 variants.",
+      "residues": "K",
+      "start": 14
+    },
+    {
+      "end": 41,
+      "interpretation": "The reference residue is tryptophan; W41F is shared by the supplied APEX and APEX2 variants.",
+      "residues": "W",
+      "start": 41
+    },
+    {
+      "end": 112,
+      "interpretation": "The reference residue is glutamate; E112K is shared by the supplied APEX and APEX2 variants.",
+      "residues": "E",
+      "start": 112
+    },
+    {
+      "end": 134,
+      "interpretation": "The reference residue is alanine; A134P is the only additional substitution distinguishing the supplied APEX2 variant from APEX.",
+      "residues": "A",
+      "start": 134
+    }
+  ],
+  "worked_solution": "A is supported by the assay observations.\n\nThe supplied variant definitions show that APEX2 is APEX plus A134P, with no deletions. This identifies the sequence difference, but the substitution alone does not predict its functional effect; the experimental comparison supplies that evidence.\n\nUnder matched outer-mitochondrial-membrane targeting, APEX2 strongly enriches the proximal markers Tom70 and Tom20, whereas APEX barely enriches them. Crucially, this stronger proximal signal is not accompanied by similarly strong enrichment of the other tested compartments: the mitochondrial-matrix marker ATP5B is not enriched, and the ER-membrane marker BCAP31 is only slightly enriched. Similar construct expression also argues against a large increase in reporter abundance as the explanation.\n\nAPEX proximity labeling uses peroxidase chemistry to generate locally acting labeling intermediates that modify nearby accessible proteins. Thus, the pattern supports more effective proximal-marker labeling and recovery while retaining substantial spatial discrimination among the tested markers. Enrichment is not a direct measurement of reporter–marker binding affinity or an isolated catalytic parameter.\n\nThe alternatives conflict with specific observations:\n- B predicts equal mitochondrial- and ER-membrane-marker enrichment, contrary to the weak BCAP31 signal.\n- C predicts strong matrix-marker enrichment, contrary to the ATP5B result.\n- D predicts much higher APEX2 expression, contrary to the similar expression of the construct pairs.\n\nTherefore, A best captures both the enhanced proximal signal and the absent or much weaker enrichment of the supplied other-compartment markers."
+}

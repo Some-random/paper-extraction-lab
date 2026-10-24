@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "The conclusion applies to PIP3 and phosphorylated poly(Glu,Tyr) under the tested conditions, not necessarily to every physiological substrate. These readouts do not establish whether the protein-substrate defect arises from altered binding, productive substrate positioning, or catalytic chemistry, and they do not separately measure expression or stability.",
+  "selected_answer": "D",
+  "sequence_claims": [
+    {
+      "end": 138,
+      "interpretation": "The reference residue is tyrosine; Y138L substitutes leucine at this position. This identifies the substitution using the canonical reference coordinates, without reconstructing the assay constructs.",
+      "residues": "Y",
+      "start": 138
+    }
+  ],
+  "worked_solution": "Y138L replaces the reference Tyr138 with leucine, removing an aromatic, hydroxyl-bearing side chain. That chemical change alone cannot determine which phosphatase reaction will be affected; the supplied assays provide the decisive evidence.\n\nThe two readouts must be considered separately:\n- Lipid substrate: kinetic analysis found Y138L activity against PIP3 essentially indistinguishable from wild type under the tested conditions. This supports preservation of the tested lipid phosphatase activity.\n- Protein-substrate preparation: activity against phosphorylated poly(Glu,Tyr) was approximately 3% of wild type, corresponding to roughly a 97% reduction, and was frequently undetectable. This supports a severe loss of the tested protein-substrate activity. Undetectability does not establish that activity is absolutely zero.\n\nDifferent substrates impose different recognition and productive-positioning requirements on an enzyme. Consequently, retaining lipid dephosphorylation does not require retaining the protein-substrate reaction. Preserved PIP3 activity argues against uniform catalytic inactivation under these conditions, while the protein-substrate result demonstrates a strongly substrate-dependent impairment. A single total-activity label would conceal this distinction.\n\nA is inconsistent with the reduced, rather than increased, protein-substrate activity. B incorrectly assigns the approximately 3% result to both substrates. C reverses the observed pattern. D correctly describes preserved tested lipid activity together with strongly reduced protein-substrate activity."
+}

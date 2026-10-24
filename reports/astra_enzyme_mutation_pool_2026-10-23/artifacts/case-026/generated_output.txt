@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "No quantitative relationship between growth, reporter output and biochemical activity is supplied. The observations do not establish an exact residual catalytic rate or uniquely explain why growth appears wild-type-like. The canonical sequence establishes residue numbering, not the complete assay constructs.",
+  "selected_answer": "B",
+  "sequence_claims": [
+    {
+      "end": 92,
+      "interpretation": "Wild-type residue 92 is aspartate. D92N replaces its acidic carboxylate-containing side chain with the neutral amide-containing side chain of asparagine.",
+      "residues": "D",
+      "start": 92
+    }
+  ],
+  "worked_solution": "B is the most defensible interpretation: partial phosphatase function can support wild-type-like growth, so growth rescue does not establish fully wild-type activity in other assays.\n\nSequence context: The reference confirms Asp at position 92. Asp92 lies in PTEN’s catalytic-loop region, and replacing its carboxylate with an asparagine amide can alter catalytic chemistry. However, this sequence-based mechanistic consideration does not determine the magnitude of the activity change or establish complete inactivation.\n\nExperimental observations: D92N resembles wild type in yeast growth rescue, whereas the PIP3 fluorescence reporter and in-vitro phosphatase assay report partial activity. These are distinct endpoints. The reporter reflects a cellular PIP3-related state, the biochemical assay assesses phosphatase function under its assay conditions, and growth is a downstream cellular phenotype rather than a direct measurement of enzymatic rate.\n\nMechanistic interpretation: The relationship between phosphatase function and growth need not be linear. For example, residual activity could exceed the threshold needed for near-maximal growth rescue, even while reporter and biochemical measurements remain detectably below wild type. Such a threshold or saturation effect is a compatible explanation, not a quantitatively established mechanism here. Consequently, the supplied results need not be contradictory.\n\nDiscriminating the choices: A incorrectly treats growth as a calibrated measure of enzymatic activity. C incorrectly assumes that normalization to each assay’s own wild-type control makes different readouts quantitatively interchangeable; normalization does not eliminate their different response relationships. D contradicts the supplied description of partial activity, which is not complete loss. B preserves the distinction between residual phosphatase function and its downstream growth consequence without claiming more than the evidence supports."
+}

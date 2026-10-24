@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "These qualitative cellular readouts do not establish a molecular mechanism or distinguish effects on intrinsic catalysis from expression, stability, or other determinants of labeling. The conclusion applies to K194I in the G3Δ background under the supplied screening conditions, not necessarily to other backgrounds or assay constructs.",
+  "selected_answer": "B",
+  "sequence_claims": [
+    {
+      "end": 194,
+      "interpretation": "The reference residue is lysine. miniTurbo adds its substitution by isoleucine (K194I) relative to G3Δ. This position is retained in both variants, and its numbering remains the canonical reference numbering despite the shared deletions.",
+      "residues": "K",
+      "start": 194
+    }
+  ],
+  "worked_solution": "The controlled comparison is miniTurbo versus G3Δ, not either variant versus canonical wild type. Both variants share all 11 substitutions listed for G3Δ and both deletions, covering reference positions 1–63 and position 146. miniTurbo has exactly one additional enzyme-core substitution: K194I. Thus, although both variants differ substantially from wild type, they differ from each other at only this one retained position.\n\nThe supplied cellular screening reports two distinct outcomes: adding K194I increases labeling activity, while the measured signal does not increase when exogenous biotin is omitted. The no-added-biotin condition is an operational background readout; it does not imply that cells contain no endogenous biotin. Likewise, an absence of increased signal does not establish zero background or a background reduction.\n\nThese observations directly support B: K194I raises activity in the G3Δ background without increasing the measured no-added-biotin signal.\n\nA incorrectly asserts an increased background signal. C mistakes shared differences from wild type for differences between the compared cores. D contradicts the observed activity increase and additionally asserts a background reduction that is not supplied. The justified conclusion is therefore improved cellular labeling performance without an observed background increase, rather than a demonstrated change in any particular catalytic or binding mechanism."
+}

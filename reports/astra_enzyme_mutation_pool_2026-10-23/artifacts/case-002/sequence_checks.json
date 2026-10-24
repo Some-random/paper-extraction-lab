@@ -1,0 +1,12 @@
+{
+  "sequence_claim_checks": [
+    {
+      "end": 130,
+      "exact_sequence_match": true,
+      "residues": "HCKAGKGR",
+      "start": 123
+    }
+  ],
+  "sequence_claims_passed": true,
+  "strict_schema_passed": true
+}

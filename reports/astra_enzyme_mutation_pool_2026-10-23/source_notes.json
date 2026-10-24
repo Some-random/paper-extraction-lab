@@ -1,0 +1,924 @@
+{
+  "role": "Post-generation checking; exact solver evidence is in requests",
+  "cases": [
+    {
+      "id": "case-001",
+      "papers": [
+        {
+          "title": "Directed evolution of APEX2 for electron microscopy and proximity labeling",
+          "year": 2015,
+          "online_year": 2014,
+          "doi": "10.1038/nmeth.3179",
+          "url": "https://www.nature.com/articles/nmeth.3179",
+          "correction_note": "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 2e; accompanying Results paragraph on purified-protein kinetics",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "Values are approximate maxima reported in Results, not newly fitted kinetic constants.",
+        "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+      ],
+      "additional_source_urls": [
+        "https://www.nature.com/articles/nmeth.3179",
+        "https://rest.uniprot.org/uniprotkb/Q43758.json",
+        "https://static1.squarespace.com/static/5617d7d8e4b09f2fdf34baa6/t/562e5b3de4b056817c45ef92/1445878589139/LamNatureMethods.pdf"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-002",
+      "papers": [
+        {
+          "title": "A Saturation Mutagenesis Approach to Understanding PTEN Lipid Phosphatase Activity and Genotype-Phenotype Relationships",
+          "year": 2018,
+          "doi": "10.1016/j.ajhg.2018.03.018",
+          "pubmed_id": "29706350",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5986715/"
+        },
+        {
+          "title": "Multiplex assessment of protein variant abundance by massively parallel sequencing",
+          "year": 2018,
+          "doi": "10.1038/s41588-018-0122-z",
+          "pubmed_id": "29785012",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5980760/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1A; Results describing growth rescue",
+        "Wild-type PTEN rescues the growth defect; C124S does not. Methods use a 403-aa NP_000305 reference.",
+        "Results on wild-type-like abundance of inactive variants, near Figure 4",
+        "C124S is among inactive variants with wild-type-like abundance; its reported abundance score is 1.14."
+      ],
+      "qualifications": [
+        "Do not treat score 1.14 as a 1.14-fold protein concentration.",
+        "Do not infer that human-cell abundance measured the amount in the yeast assay.",
+        "Catalytic impairment has stronger primary support than a specific folding or degradation mechanism.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Mighell2018 Methods: NM_000314.6, corresponding 403-aa NP_000305; current canonical record cross-references NP_000305.3. Full paper-assay construct sequence still requires final replay before release.",
+        "VAMP-seq is an abundance assay in a different cellular system, not a direct PTEN catalytic-rate measurement."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-003",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "Fig.1A,H; Results: HT-MEK reproduces kinetic constants; BioC passages22 and24",
+          "factual_basis": "T79 is the covalent nucleophile; T79G lacks detectable activity and is used with empty chambers for local contamination/background controls."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.1A,H; Results: HT-MEK reproduces kinetic constants; BioC passages22 and24",
+        "T79 is the covalent nucleophile; T79G lacks detectable activity and is used with empty chambers for local contamination/background controls."
+      ],
+      "qualifications": [
+        "Do not assign exactly zero physical activity or a measured kcat to the inactive/upper-limit control.",
+        "This addresses an already published substitution; it does not propose a new mutant or experiment.",
+        "Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-004",
+      "papers": [
+        {
+          "title": "Dynamic Connection between Enzymatic Catalysis and Collective Protein Motions",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8297476/",
+          "doi": "10.1021/acs.biochem.1c00221",
+          "evidence_locator": "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+          "verification": "Primary article read directly. Exact arginine-variant values also independently checked in Table 1 of the 2023 primary article, whose footnote a attributes them to this work."
+        },
+        {
+          "title": "Mechanistic basis for a connection between the catalytic step and slow opening dynamics of adenylate kinase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11779523/",
+          "doi": "10.1021/acs.jcim.2c01629",
+          "evidence_locator": "Table 1, footnote a.",
+          "verification": "Numeric table read directly. Distinguishes previously measured arginine variants from newly measured D158A; no D158A measurements are used here."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "2021 Figure 2c / Table S2; 2023 Table 1, WT and R156K rows.",
+        "Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):\nWT: kcat 330, Km 71.\nR156K: kcat 0.74, Km 52.\nArginine and lysine both normally carry a positive side-chain charge near neutral pH.",
+        "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+        "Table 1, footnote a."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. Published R36, R88, R123, R156 and R167 all match the reference residues.",
+        "The prompt supplies the verified canonical reference and published mutation labels. No unreported affinity tag, cloning scar or exact expressed-construct extension is inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-005",
+      "papers": [
+        {
+          "title": "Efficient proximity labeling in living cells and organisms with TurboID",
+          "year": 2018,
+          "doi": "10.1038/nbt.4201",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+          "correction_note": "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 2a–b; normalization in Figure 1g; accompanying Results",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "Do not translate elapsed-time ratios into an unmeasured catalytic constant.",
+        "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+      ],
+      "additional_source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+        "https://rest.uniprot.org/uniprotkb/P06709.json",
+        "https://perrimon.med.harvard.edu/sites/g/files/omnuum4036/files/perrimonlab/files/2018_NatBiotech_Branon_Supp.pdf",
+        "https://www.nature.com/articles/s41587-019-0355-0"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-006",
+      "papers": [
+        {
+          "title": "A comprehensive map of human glucokinase variant activity",
+          "year": 2023,
+          "doi": "10.1186/s13059-023-02935-8",
+          "pubmed_id": "37101203",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10131484/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1B and Results validating the yeast complementation assay",
+        "W99R has higher activity than WT in the initial growth assay; F150S/R191W/G223S/G261R reduce function, while D217N/E279Q are WT-like."
+      ],
+      "qualifications": [
+        "A higher growth readout is not itself a measured purified-enzyme turnover number.",
+        "No clinical outcome or variant design recommendation follows from this question.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Gersing2023 Methods: pancreatic isoform ENST00000403799.8; same transcript is cross-referenced by current P35557-1. Paper also identifies P35557 isoform1 in its sequence analysis.",
+        "The assay uses pancreatic glucokinase, ENST00000403799.8, and the paper identifies P35557 isoform 1. No exact kcat is supplied by Figure 1B."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-007",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "Fig.5B,F; text describing D473/L434/I451; BioC passage54",
+          "factual_basis": "D473V has anFC1 effect>60-fold versus<2-fold for D473G at a solvent-exposed residue about20Å away; a specific local-folding/allosteric interpretation is proposed."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.5B,F; text describing D473/L434/I451; BioC passage54",
+        "D473V has anFC1 effect>60-fold versus<2-fold for D473G at a solvent-exposed residue about20Å away; a specific local-folding/allosteric interpretation is proposed."
+      ],
+      "qualifications": [
+        "Distance is a structural observation, not proof of a particular communication route.",
+        "The conformational explanation remains a model; FC1 is not kcat and not an absolute improvement measure.",
+        "Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-008",
+      "papers": [
+        {
+          "title": "Role of Loop-Clamping Side Chains in Catalysis by Triosephosphate Isomerase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4694050/",
+          "doi": "10.1021/jacs.5b09328",
+          "evidence_locator": "Table 1 and footnotes a-d.",
+          "verification": "Directly checked GAP turnover and Km values at pH 7.5, 25 C. The reported efficiencies used here refer to total GAP, not the separately tabulated reactive-carbonyl fraction."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Table 1, GAP columns, WT/Y208A/Y208F rows and footnotes a-d.",
+        "Published GAP-isomerization values at pH 7.5 and 25 C (Km based on total GAP): WT kcat = 8900 s^-1, Km = 1.0 mM; Y208A kcat = 740 s^-1, Km = 2.9 mM; Y208F kcat = 13 s^-1, Km = 2.4 mM. Tyrosine-to-phenylalanine removes the phenolic hydroxyl while retaining an aromatic ring; tyrosine-to-alanine also removes that ring.",
+        "Table 1 and footnotes a-d."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. E165, Y208 and S211 match the paper labels.",
+        "The canonical reference includes initiator methionine. The verified mature structural polymer omits it but retains canonical author numbering. No additional tags or scars are inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-009",
+      "papers": [
+        {
+          "title": "Directed evolution of APEX2 for electron microscopy and proximity labeling",
+          "year": 2015,
+          "online_year": 2014,
+          "doi": "10.1038/nmeth.3179",
+          "url": "https://www.nature.com/articles/nmeth.3179",
+          "correction_note": "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 2e; Supplementary Figures 8c and 9; accompanying Results",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "The assays support a contributing explanation; they do not prove a uniquely sufficient mechanism.",
+        "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+      ],
+      "additional_source_urls": [
+        "https://www.nature.com/articles/nmeth.3179",
+        "https://rest.uniprot.org/uniprotkb/Q43758.json",
+        "https://static1.squarespace.com/static/5617d7d8e4b09f2fdf34baa6/t/562e5b3de4b056817c45ef92/1445878589139/LamNatureMethods.pdf"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-010",
+      "papers": [
+        {
+          "title": "The lipid phosphatase activity of PTEN is critical for its tumor supressor function",
+          "year": 1998,
+          "doi": "10.1073/pnas.95.23.13513",
+          "pubmed_id": "9811831",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC24850/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1A; Results paragraph comparing purified WT, C124S and G129E on PIP3 and polyGluTyr",
+        "G129E reduces lipid phosphatase activity by approximately 90% while retaining activity against polyGluTyr."
+      ],
+      "qualifications": [
+        "Retained polyGluTyr activity does not prove every physiological protein substrate is processed normally.",
+        "No causal structural mechanism or folding-stability value is measured in this question.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Mighell2018 Methods: NM_000314.6, corresponding 403-aa NP_000305; current canonical record cross-references NP_000305.3. Full paper-assay construct sequence still requires final replay before release.",
+        "The qualitative retention of polyGluTyr activity is supported; do not invent an exact percentage for that substrate."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-011",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "Fig.3D–K; TableS6; Figs.S39–S40 and TableS7; BioC passages38,41,43",
+          "factual_basis": "The tagless Y103G test gave wild-type-like activity after23°C expression and260-fold less after37°C expression; CD spectra differed. Standard expression-history tests used matched23°C/100μMZn assays."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.3D–K; TableS6; Figs.S39–S40 and TableS7; BioC passages38,41,43",
+        "The tagless Y103G test gave wild-type-like activity after23°C expression and260-fold less after37°C expression; CD spectra differed. Standard expression-history tests used matched23°C/100μMZn assays."
+      ],
+      "qualifications": [
+        "Do not claim that a CD change proves a unique atomic structure or equilibrium-unfolding mechanism.",
+        "The exact reporter-free terminal tag sequence was not independently reconstructed; canonical PafA mutation numbering is verified, and the tagless condition is kept separate from the deposited eGFP construct.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-012",
+      "papers": [
+        {
+          "title": "Dynamic Connection between Enzymatic Catalysis and Collective Protein Motions",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8297476/",
+          "doi": "10.1021/acs.biochem.1c00221",
+          "evidence_locator": "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+          "verification": "Primary article read directly. Exact arginine-variant values also independently checked in Table 1 of the 2023 primary article, whose footnote a attributes them to this work."
+        },
+        {
+          "title": "Mechanistic basis for a connection between the catalytic step and slow opening dynamics of adenylate kinase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11779523/",
+          "doi": "10.1021/acs.jcim.2c01629",
+          "evidence_locator": "Table 1, footnote a.",
+          "verification": "Numeric table read directly. Distinguishes previously measured arginine variants from newly measured D158A; no D158A measurements are used here."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "2021 Figure 2c / Table S2; 2023 Table 1, R88A and R156K rows.",
+        "Published central values: R88A kcat = 1.8 s^-1 and ATP Km = 120 micromolar; R156K kcat = 0.74 s^-1 and ATP Km = 52 micromolar. Compare equal active-enzyme concentrations with AMP held fixed and saturating. Use v/[E] = kcat[ATP]/(Km+[ATP]); no substrate inhibition is assumed in this comparison.",
+        "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+        "Table 1, footnote a."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. Published R36, R88, R123, R156 and R167 all match the reference residues.",
+        "The prompt supplies the verified canonical reference and published mutation labels. No unreported affinity tag, cloning scar or exact expressed-construct extension is inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-013",
+      "papers": [
+        {
+          "title": "Efficient proximity labeling in living cells and organisms with TurboID",
+          "year": 2018,
+          "doi": "10.1038/nbt.4201",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+          "correction_note": "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 2a–b; Supplementary Figure 6; accompanying Results",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "This compares published multimutant variants; it does not isolate a single causal substitution.",
+        "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+      ],
+      "additional_source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+        "https://rest.uniprot.org/uniprotkb/P06709.json",
+        "https://perrimon.med.harvard.edu/sites/g/files/omnuum4036/files/perrimonlab/files/2018_NatBiotech_Branon_Supp.pdf",
+        "https://www.nature.com/articles/s41587-019-0355-0"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-014",
+      "papers": [
+        {
+          "title": "A comprehensive map of human glucokinase variant activity",
+          "year": 2023,
+          "doi": "10.1186/s13059-023-02935-8",
+          "pubmed_id": "37101203",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10131484/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1B; Results describing initial assay validation",
+        "F150S is among the function-reducing test variants; D217N and E279Q are WT-like."
+      ],
+      "qualifications": [
+        "No exact magnitude or confidence interval is invented from the qualitative comparison.",
+        "The assay does not isolate protein abundance, folding stability, substrate affinity or turnover in this question.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Gersing2023 Methods: pancreatic isoform ENST00000403799.8; same transcript is cross-referenced by current P35557-1. Paper also identifies P35557 isoform1 in its sequence analysis.",
+        "These are observed test-variant results, not imputed values from unmeasured variants."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-015",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "Fig.6B, FC2/FC3 section; Fig.3D model",
+          "factual_basis": "H83G is the representative strengthened-Pi-binding(FC2) mutant; the study separates long-lived inactive fractions from catalytic/binding effects."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.6B, FC2/FC3 section; Fig.3D model",
+        "H83G is the representative strengthened-Pi-binding(FC2) mutant; the study separates long-lived inactive fractions from catalytic/binding effects."
+      ],
+      "qualifications": [
+        "The result is conditional on the stated noninterconverting inactive-state model and normalization.",
+        "Do not assume every inactive conformation cannot bind phosphate in all possible biological systems.",
+        "Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-016",
+      "papers": [
+        {
+          "title": "Role of Loop-Clamping Side Chains in Catalysis by Triosephosphate Isomerase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4694050/",
+          "doi": "10.1021/jacs.5b09328",
+          "evidence_locator": "Table 1 and footnotes a-d.",
+          "verification": "Directly checked GAP turnover and Km values at pH 7.5, 25 C. The reported efficiencies used here refer to total GAP, not the separately tabulated reactive-carbonyl fraction."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Table 1, GAP kcat and Km columns, S211A/S211G rows.",
+        "Published GAP-isomerization central values at pH 7.5 and 25 C, using total GAP: S211A kcat = 2800 s^-1, Km = 12 mM; S211G kcat = 7500 s^-1, Km = 1.8 mM. Both substitutions remove the serine side-chain hydroxyl; alanine retains a methyl side chain and glycine does not.",
+        "Table 1 and footnotes a-d."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. E165, Y208 and S211 match the paper labels.",
+        "The canonical reference includes initiator methionine. The verified mature structural polymer omits it but retains canonical author numbering. No additional tags or scars are inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-017",
+      "papers": [
+        {
+          "title": "Directed evolution of APEX2 for electron microscopy and proximity labeling",
+          "year": 2015,
+          "online_year": 2014,
+          "doi": "10.1038/nmeth.3179",
+          "url": "https://www.nature.com/articles/nmeth.3179",
+          "correction_note": "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1a; first Results section identifying evolved clones; Figure 2a–b",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "Indistinguishable in reported assays does not mean identical under every conceivable condition.",
+        "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+      ],
+      "additional_source_urls": [
+        "https://www.nature.com/articles/nmeth.3179",
+        "https://rest.uniprot.org/uniprotkb/Q43758.json",
+        "https://static1.squarespace.com/static/5617d7d8e4b09f2fdf34baa6/t/562e5b3de4b056817c45ef92/1445878589139/LamNatureMethods.pdf"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-018",
+      "papers": [
+        {
+          "title": "Suppression of cellular proliferation and invasion by the concerted lipid and protein phosphatase activities of PTEN",
+          "year": 2010,
+          "doi": "10.1038/onc.2009.384",
+          "pubmed_id": "19915616",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2816976/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1e/f; Figure 2 and Supplementary Figure S2; Results following the initial mutant screen",
+        "Y138L lipid activity is essentially indistinguishable from WT, whereas polyGluTyr-P activity is approximately 3% of WT and often undetectable."
+      ],
+      "qualifications": [
+        "The answer applies to the tested substrates and conditions.",
+        "Do not infer unchanged thermal stability or cellular expression from these activity readouts.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Mighell2018 Methods: NM_000314.6, corresponding 403-aa NP_000305; current canonical record cross-references NP_000305.3. Full paper-assay construct sequence still requires final replay before release.",
+        "Figure 1d describes GST fusion production and tag removal. The exact full assay construct sequence has not been independently reconstructed."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-019",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "FC2/FC3 section; Fig.6A; BioC passage56",
+          "factual_basis": "T79S increases Pi affinity about100-fold; reduced electrostatic repulsion through increased mobility is presented as a mechanistic interpretation."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "FC2/FC3 section; Fig.6A; BioC passage56",
+        "T79S increases Pi affinity about100-fold; reduced electrostatic repulsion through increased mobility is presented as a mechanistic interpretation."
+      ],
+      "qualifications": [
+        "Treat the mobility/repulsion explanation as a supported model, not a measured trajectory.",
+        "Do not replace the published approximate100-fold comparison with an exact value inferred from censored summary entries.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-020",
+      "papers": [
+        {
+          "title": "Dynamic Connection between Enzymatic Catalysis and Collective Protein Motions",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8297476/",
+          "doi": "10.1021/acs.biochem.1c00221",
+          "evidence_locator": "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+          "verification": "Primary article read directly. Exact arginine-variant values also independently checked in Table 1 of the 2023 primary article, whose footnote a attributes them to this work."
+        },
+        {
+          "title": "Mechanistic basis for a connection between the catalytic step and slow opening dynamics of adenylate kinase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11779523/",
+          "doi": "10.1021/acs.jcim.2c01629",
+          "evidence_locator": "Table 1, footnote a.",
+          "verification": "Numeric table read directly. Distinguishes previously measured arginine variants from newly measured D158A; no D158A measurements are used here."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "2021 Figure 2c / Table S2; 2023 Table 1, WT, R36A and R123A rows.",
+        "Published ATP-dependent measurements: WT kcat = 330 s^-1, ATP Km = 71 micromolar; R36A kcat = 55 s^-1, Km = 89 micromolar; R123A kcat = 0.28 s^-1, Km = 110 micromolar. Both substitutions replace one arginine with alanine in the same enzyme.",
+        "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+        "Table 1, footnote a."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. Published R36, R88, R123, R156 and R167 all match the reference residues.",
+        "The prompt supplies the verified canonical reference and published mutation labels. No unreported affinity tag, cloning scar or exact expressed-construct extension is inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-021",
+      "papers": [
+        {
+          "title": "Efficient proximity labeling in living cells and organisms with TurboID",
+          "year": 2018,
+          "doi": "10.1038/nbt.4201",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+          "correction_note": "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Supplementary Table 1; Methods subsection on miniTurbo evolution; final/intermediate variant comparison in Figure 1e–g",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "Published screening describes this comparison qualitatively; no unreported numerical effect size is supplied.",
+        "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+      ],
+      "additional_source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+        "https://rest.uniprot.org/uniprotkb/P06709.json",
+        "https://perrimon.med.harvard.edu/sites/g/files/omnuum4036/files/perrimonlab/files/2018_NatBiotech_Branon_Supp.pdf",
+        "https://www.nature.com/articles/s41587-019-0355-0"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-022",
+      "papers": [
+        {
+          "title": "A comprehensive map of human glucokinase variant activity",
+          "year": 2023,
+          "doi": "10.1186/s13059-023-02935-8",
+          "pubmed_id": "37101203",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10131484/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 1B; Results validating the assay with common variants",
+        "D217N and E279Q are described as WT-like in the yeast functional assay."
+      ],
+      "qualifications": [
+        "WT-like complementation does not mean all microscopic constants are identical.",
+        "No claim is made that these positions are universally nonessential across all cellular settings.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Gersing2023 Methods: pancreatic isoform ENST00000403799.8; same transcript is cross-referenced by current P35557-1. Paper also identifies P35557 isoform1 in its sequence analysis.",
+        "Side-chain chemistry is standard biochemical interpretation of the exact mapped substitutions, not a claim that the paper measured side-chain charge."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-023",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "Fig.1A helix definitions; Fig.6B and6G; BioC passages166 and176",
+          "factual_basis": "The nucleophile helix is77–89; monoesterase helix161–171. H83G and A165V exemplify strengthened and weakened Pi binding, respectively."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.1A helix definitions; Fig.6B and6G; BioC passages166 and176",
+        "The nucleophile helix is77–89; monoesterase helix161–171. H83G and A165V exemplify strengthened and weakened Pi binding, respectively."
+      ],
+      "qualifications": [
+        "Structural proximity and mutation identity do not reveal a unique atomistic mechanism.",
+        "Do not treat weaker product binding as automatic evidence for faster chemistry or improved fitness.",
+        "Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-024",
+      "papers": [
+        {
+          "title": "Role of Loop-Clamping Side Chains in Catalysis by Triosephosphate Isomerase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4694050/",
+          "doi": "10.1021/jacs.5b09328",
+          "evidence_locator": "Table 1 and footnotes a-d.",
+          "verification": "Directly checked GAP turnover and Km values at pH 7.5, 25 C. The reported efficiencies used here refer to total GAP, not the separately tabulated reactive-carbonyl fraction."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Table 1, GAP kcat column, WT/Y208T/S211G/Y208T-S211G rows.",
+        "Published GAP-isomerization kcat values at pH 7.5 and 25 C: WT 8900 s^-1; Y208T 3700 s^-1; S211G 7500 s^-1; the experimentally measured double variant Y208T/S211G 520 s^-1. For this question, an independent fractional-effects model predicts kcat(double) = kcat(Y208T) * kcat(S211G) / kcat(WT).",
+        "Table 1 and footnotes a-d."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. E165, Y208 and S211 match the paper labels.",
+        "The canonical reference includes initiator methionine. The verified mature structural polymer omits it but retains canonical author numbering. No additional tags or scars are inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-025",
+      "papers": [
+        {
+          "title": "Directed evolution of APEX2 for electron microscopy and proximity labeling",
+          "year": 2015,
+          "online_year": 2014,
+          "doi": "10.1038/nmeth.3179",
+          "url": "https://www.nature.com/articles/nmeth.3179",
+          "correction_note": "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Figure 2c and accompanying Results",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "Proximity enrichment does not demonstrate direct physical binding to the reporter.",
+        "Use corrected Figure 2a symbols and Figure 2e axis labels; correction dated December 10, 2014."
+      ],
+      "additional_source_urls": [
+        "https://www.nature.com/articles/nmeth.3179",
+        "https://rest.uniprot.org/uniprotkb/Q43758.json",
+        "https://static1.squarespace.com/static/5617d7d8e4b09f2fdf34baa6/t/562e5b3de4b056817c45ef92/1445878589139/LamNatureMethods.pdf"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-026",
+      "papers": [
+        {
+          "title": "A Saturation Mutagenesis Approach to Understanding PTEN Lipid Phosphatase Activity and Genotype-Phenotype Relationships",
+          "year": 2018,
+          "doi": "10.1016/j.ajhg.2018.03.018",
+          "pubmed_id": "29706350",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5986715/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Discussion paragraph on the Asp92 discrepancy and D92N",
+        "D92N appears WT-like in growth rescue but partially functional in PIP3 fluorescence or in-vitro phosphatase assays."
+      ],
+      "qualifications": [
+        "The question does not determine an exact kinetic rate or which assay is universally superior.",
+        "Deamidation is not established by these observations and must not be asserted as the demonstrated cause.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Mighell2018 Methods: NM_000314.6, corresponding 403-aa NP_000305; current canonical record cross-references NP_000305.3. Full paper-assay construct sequence still requires final replay before release.",
+        "The paper proposes deamidation as a possible explanation, rather than establishing it. No mechanism of deamidation is required or taught as a fact here."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-027",
+      "papers": [
+        {
+          "title": "Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics",
+          "year": 2021,
+          "doi": "10.1126/science.abf8761",
+          "pmcid": "PMC8454890",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/",
+          "locator": "Fig.5A,E; TableS9A/B; BioC passages50–52",
+          "factual_basis": "D38G shows a specificity-component effect whereas D352G/H353V do not; D38 contacts K162 through a hydrogen bond. MeP/MecMUP probe the oxygen-interaction distinction."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.5A,E; TableS9A/B; BioC passages50–52",
+        "D38G shows a specificity-component effect whereas D352G/H353V do not; D38 contacts K162 through a hydrogen bond. MeP/MecMUP probe the oxygen-interaction distinction."
+      ],
+      "qualifications": [
+        "No significant FC1 effect does not mean no catalytic effect.",
+        "Do not identify a specific atomistic rearrangement from the ratio alone or infer that all zinc dissociates.",
+        "Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-028",
+      "papers": [
+        {
+          "title": "Dynamic Connection between Enzymatic Catalysis and Collective Protein Motions",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8297476/",
+          "doi": "10.1021/acs.biochem.1c00221",
+          "evidence_locator": "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+          "verification": "Primary article read directly. Exact arginine-variant values also independently checked in Table 1 of the 2023 primary article, whose footnote a attributes them to this work."
+        },
+        {
+          "title": "Mechanistic basis for a connection between the catalytic step and slow opening dynamics of adenylate kinase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11779523/",
+          "doi": "10.1021/acs.jcim.2c01629",
+          "evidence_locator": "Table 1, footnote a.",
+          "verification": "Numeric table read directly. Distinguishes previously measured arginine variants from newly measured D158A; no D158A measurements are used here."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "2021 main-text Mg2+ paragraph and Figure S9; arginine data in Figure 2c / Table S2, reproduced in 2023 Table 1.",
+        "The primary study reports WT kcat = 330 s^-1 with Mg2+ and 0.0075 s^-1 without Mg2+. The published R167A variant has kcat = 2.4 s^-1 in the Mg2+-containing kinetic comparison. These are reported turnover measurements; they are not Mg2+ binding-affinity measurements.",
+        "Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.",
+        "Table 1, footnote a."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. Published R36, R88, R123, R156 and R167 all match the reference residues.",
+        "The prompt supplies the verified canonical reference and published mutation labels. No unreported affinity tag, cloning scar or exact expressed-construct extension is inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-029",
+      "papers": [
+        {
+          "title": "Efficient proximity labeling in living cells and organisms with TurboID",
+          "year": 2018,
+          "doi": "10.1038/nbt.4201",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+          "correction_note": "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not claimed to be the complete tagged assay construct.",
+      "support_notes": [
+        "Supplementary Figure 3e; Supplementary Table 1",
+        "Supplied assay observations in the exact student prompt are short paraphrases of the stated paper Results/caption/Methods; approximate numbers are explicitly labelled."
+      ],
+      "qualifications": [
+        "All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded.",
+        "Published enzyme-core identity; complete assay fusion sequence, tag/linker boundaries and expression cassette are not supplied.",
+        "This cellular phenotype does not supply a measured binding constant or uniquely establish the molecular cause of the deletion effect.",
+        "Correction concerns Supplementary Tables 2–7; variant definitions here use Supplementary Table 1 and the stated main/supplementary figures."
+      ],
+      "additional_source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+        "https://rest.uniprot.org/uniprotkb/P06709.json",
+        "https://perrimon.med.harvard.edu/sites/g/files/omnuum4036/files/perrimonlab/files/2018_NatBiotech_Branon_Supp.pdf",
+        "https://www.nature.com/articles/s41587-019-0355-0"
+      ],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-030",
+      "papers": [
+        {
+          "title": "Biochemical basis of glucokinase activation and the regulation by glucokinase regulatory protein in naturally occurring mutations",
+          "year": 2006,
+          "doi": "10.1074/jbc.M607987200",
+          "pubmed_id": "17082186",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17082186/"
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type backbone for reference coordinates only; not the complete tagged assay construct.",
+      "support_notes": [
+        "Primary abstract, Results describing transient kinetic analysis",
+        "The abstract groups A456V with variants accelerating initial glucose binding and W99R with variants facilitating isomerization to the active form."
+      ],
+      "qualifications": [
+        "Do not infer identical catalytic-efficiency ratios, abundance changes or glucose responses from these qualitative findings.",
+        "The full paper-specific purified construct has not been replayed; numbering matches the canonical human reference.",
+        "All substitutions use one-based coordinates in the full reference sequence, including the initial methionine. The sequence is a canonical coordinate reference, not a claim that complete tagged assay constructs have been reconstructed.",
+        "Gersing2023 Methods: pancreatic isoform ENST00000403799.8; same transcript is cross-referenced by current P35557-1. Paper also identifies P35557 isoform1 in its sequence analysis.",
+        "This case is based on verified qualitative findings in the primary abstract. No uninspected figure/table number or unreported kinetic constant is assigned."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-031",
+      "papers": [
+        {
+          "title": "Decoupling of catalysis and transition state analog binding from mutations throughout a phosphatase revealed by high-throughput enzymology",
+          "year": 2023,
+          "doi": "10.1073/pnas.2219074120",
+          "pmcid": "PMC10629569",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10629569/",
+          "locator": "Fig.3A; Results: Active-Site and Second-Shell mutations; PDFpage4 / BioC passage21",
+          "factual_basis": "K162A is an active-site exception:>10^6-fold catalytic loss versus~10^2-fold weaker vanadate binding. MeP chemistry is the relevant rate-limiting comparison."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Fig.3A; Results: Active-Site and Second-Shell mutations; PDFpage4 / BioC passage21",
+        "K162A is an active-site exception:>10^6-fold catalytic loss versus~10^2-fold weaker vanadate binding. MeP chemistry is the relevant rate-limiting comparison."
+      ],
+      "qualifications": [
+        "Binding affinity weakens rather than increases; retain that direction.",
+        "The result does not specify a unique structural cause or imply every TSA is uninformative.",
+        "Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.",
+        "Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.",
+        "On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.",
+        "The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    },
+    {
+      "id": "case-032",
+      "papers": [
+        {
+          "title": "Enzyme Architecture: Amino Acid Side-Chains That Function To Optimize the Basicity of the Active Site Glutamate of Triosephosphate Isomerase",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6037162/",
+          "doi": "10.1021/jacs.8b04367",
+          "evidence_locator": "Table 1 (yeast WT and Y208F rows), Figure 2, and discussion of inhibitor-bound E165 protonation.",
+          "verification": "Directly checked complex pKa estimates. These are properties of the PGA-inhibitor complex, not measurements of free glutamate in water or of a directly observed catalytic intermediate."
+        }
+      ],
+      "reference_sequence_role": "Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.",
+      "support_notes": [
+        "Table 1, WT yeast and Y208F rows; Figure 2 and associated inhibitor-complex interpretation.",
+        "Published pH-dependent inhibitor-binding analysis estimates pKa = 10.4 for E165 in the WT TIM complex with the intermediate analogue phosphoglycolate trianion (PGA), and pKa = 6.3 for the corresponding Y208F complex. These pKa values refer specifically to the inhibitor-bound enzyme. For the simple protonation equilibrium in this question, protonated fraction = 1/(1+10^(pH-pKa)).",
+        "Table 1 (yeast WT and Y208F rows), Figure 2, and discussion of inhibitor-bound E165 protonation."
+      ],
+      "qualifications": [
+        "Canonical full-length sequence; initial methionine is residue 1. E165, Y208 and S211 match the paper labels.",
+        "The canonical reference includes initiator methionine. The verified mature structural polymer omits it but retains canonical author numbering. No additional tags or scars are inferred."
+      ],
+      "additional_source_urls": [],
+      "role": "Post-generation label and explanation verification; see exact request for facts supplied during solving."
+    }
+  ]
+}

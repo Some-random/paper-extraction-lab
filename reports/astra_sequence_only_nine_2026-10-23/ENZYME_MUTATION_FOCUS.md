@@ -1,8 +1,8 @@
-# Enzyme mutations: the next question pool
+# Enzyme mutations: source plan and completed question pool
 
-The next pool will focus on how experimentally tested mutations change enzyme function, and what the evidence says about the mechanism. The aim is to teach a model to connect a sequence change with enzyme chemistry, interpret measurements, and distinguish competing explanations.
+This pool focuses on how experimentally tested mutations change enzyme function, and what the evidence says about the mechanism. The aim is to teach a model to connect a sequence change with enzyme chemistry, interpret measurements, and distinguish competing explanations.
 
-**Current status:** primary papers and question formats have been selected. New mutation-focused Astra answers have not been generated. The [nine completed sequence-only examples](README.md) remain available as a separate pilot.
+**Current status:** the [enzyme-mutation selection pool](../astra_enzyme_mutation_pool_2026-10-23/README.md) contains 32 candidate questions and 28 completed Astra worked answers. Four candidates remain held for source overlap; a 12-example shortlist is available for inspection. The source plan below describes the starting priorities, including studies not used in the completed pool. The [nine completed sequence-only examples](README.md) remain a separate pilot.
 
 ## Priority sources
 
@@ -38,4 +38,4 @@ These formats add enzyme-mutation skills to the data. They differ from the seque
 - Use the current [TurboID correction](https://doi.org/10.1038/s41587-019-0355-0) when extracting Supplementary Tables 2–7.
 - The APEX2 article records corrections to Figure 2a symbols and Figure 2e axis-label display. Extract the corrected panels.
 - The [split APEX2 correction](https://doi.org/10.1021/acschembio.9b00798) replaces images in Figures 1e and 2b. Figure 3 is the preferred starting point for the comparison questions above.
-- Source selection and question design are assistant work. They are not expert validation, completed training-data generation or measured evidence of a training gain.
+- Source selection and question design are assistant work. They are not expert validation or measured evidence of a training gain.

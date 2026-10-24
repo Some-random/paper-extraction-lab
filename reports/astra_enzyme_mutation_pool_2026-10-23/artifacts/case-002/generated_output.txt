@@ -1,0 +1,14 @@
+{
+  "confidence": "high",
+  "limitations": "The measurements come from different experimental systems. No yeast abundance measurement or same-system, protein-normalized catalytic rate is supplied, so these data cannot quantify intrinsic catalytic activity or establish that failed rescue is caused exclusively by a catalytic defect. Wild-type-like human-cell abundance does not establish unchanged folding or stability.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 130,
+      "interpretation": "This segment matches the cysteine-dependent phosphatase catalytic motif HCXXGXXR. C124 is the wild-type catalytic cysteine replaced by serine in C124S.",
+      "residues": "HCKAGKGR",
+      "start": 123
+    }
+  ],
+  "worked_solution": "A best combines the measurements because abundance and functional rescue are distinct assay outcomes.\n\nObserved evidence: In the yeast assay, wild-type PTEN rescues growth whereas C124S does not. This demonstrates failure of the mutant to support the lipid-phosphatase-associated rescue phenotype under those conditions; it is not a direct measurement of protein abundance or a protein-normalized catalytic rate. Separately, human-cell VAMP-seq assigns C124S a normalized abundance score of 1.14 and places it in the wild-type-like abundance class. The score therefore supports normal accumulation in that assay, not low abundance, enhanced catalysis, or a 1.14-fold catalytic rate.\n\nMechanistic interpretation: Reference residues 123–130 are HCKAGKGR, placing C124 in the phosphatase catalytic motif. PTEN uses this cysteine's thiolate as a nucleophile during phosphate removal. Replacing cysteine with serine changes that active-site chemistry, making an activity defect compatible with continued protein accumulation. This provides a mechanistic explanation consistent with the observations, but it does not convert either assay into a direct catalytic-rate measurement or establish normal abundance in yeast.\n\nDiscriminating the choices: A accurately states both observations while keeping their experimental contexts separate. B reverses both results: rescue fails, and human-cell abundance is not classified as low; improved catalytic performance is unsupported. C incorrectly treats an abundance score as a catalytic score and reinterprets a functional rescue readout as an abundance measurement. D contradicts the wild-type-like human-cell abundance classification and incorrectly claims that deficient accumulation was directly measured in yeast.\n\nThe reusable principle is that a protein can accumulate normally yet fail a functional assay, particularly when an essential catalytic residue is altered."
+}

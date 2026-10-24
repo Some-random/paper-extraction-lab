@@ -1,0 +1,20 @@
+{
+  "confidence": "high",
+  "limitations": "The supplied evidence concerns these two substitutions in a pancreatic human glucokinase complementation assay. It does not establish identical kinetics across glucose conditions, independently unchanged binding, expression or stability, or the effects of substitutions at other acidic residues.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 217,
+      "interpretation": "The reference residue is aspartate. D217N replaces it with asparagine, removing the negatively charged carboxylate while retaining a similarly sized polar amide side chain.",
+      "residues": "D",
+      "start": 217
+    },
+    {
+      "end": 279,
+      "interpretation": "The reference residue is glutamate. E279Q replaces it with glutamine, removing the negatively charged carboxylate while retaining a similarly sized polar amide side chain.",
+      "residues": "E",
+      "start": 279
+    }
+  ],
+  "worked_solution": "A is the justified generalization.\n\nSequence and chemical observations: The reference contains Asp at position 217 and Glu at position 279. Asp and Glu have acidic carboxylate side chains; their respective replacements, Asn and Gln, have neutral polar amide side chains. These substitutions therefore neutralize a negative charge. They neither preserve that charge nor introduce a positive charge.\n\nExperimental interpretation: Both variants show wild-type-like functional performance in the supplied pancreatic human glucokinase complementation assay. Thus, loss of the acidic side-chain charge is tolerated for these particular substitutions at these two positions in that measured context. This conclusion comes from the supplied functional observations, not from sequence inspection alone.\n\nMechanistic scope: Retaining similar side-chain size and polarity may help preserve some interactions, but the observations do not identify why these variants perform well. Acidic residues elsewhere can have different roles in local electrostatics, substrate interactions, catalysis, or structural stability. Consequently, the same type of chemical substitution need not have the same functional effect at another position. Likewise, wild-type-like complementation does not establish that every underlying molecular property or kinetic parameter is unchanged.\n\nDiscriminating the alternatives:\n- B is chemically incorrect: Asn and Gln do not retain the original negatively charged carboxylate groups.\n- C is chemically incorrect: these replacements are neutral amides, not positively charged side chains, so neither substitution is a negative-to-positive charge reversal.\n- D overgeneralizes two position-specific observations into a rule for every acidic residue. The supplied evidence does not support that extrapolation.\n\nA correctly limits the conclusion to the tested positions and assay context."
+}

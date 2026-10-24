@@ -1,0 +1,782 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning": {
+    "effort": "max",
+    "mode": "pro"
+  },
+  "known_cost_usd": "15.2453330",
+  "batch_wall_seconds": 431.086929,
+  "started_utc": "2026-10-24T02:32:16.056634+00:00",
+  "finished_utc": "2026-10-24T02:39:27.143563+00:00",
+  "pricing_basis": "Standard rates per million aggregate tokens: uncached input10, cache read1, cache write12.50, output including internal reasoning50 USD. Usage calculation; invoice not independently retrieved.",
+  "cases": [
+    {
+      "id": "case-001",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11213,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 9254,
+        "output_tokens_details": {
+          "reasoning_tokens": 7778
+        },
+        "total_tokens": 20467
+      },
+      "known_cost_usd": "0.57483",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.4627",
+        "uncached_input_usd": "0.11213"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 102.68962853495032
+    },
+    {
+      "id": "case-002",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 8929,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 6643,
+        "output_tokens_details": {
+          "reasoning_tokens": 5572
+        },
+        "total_tokens": 15572
+      },
+      "known_cost_usd": "0.42144",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.33215",
+        "uncached_input_usd": "0.08929"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 86.23266170918941
+    },
+    {
+      "id": "case-003",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10253,
+        "input_tokens_details": {
+          "cache_write_tokens": 1085,
+          "cached_tokens": 1085
+        },
+        "output_tokens": 8016,
+        "output_tokens_details": {
+          "reasoning_tokens": 6788
+        },
+        "total_tokens": 18269
+      },
+      "known_cost_usd": "0.4962775",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001085",
+        "cache_write_usd": "0.0135625",
+        "output_including_reasoning_usd": "0.4008",
+        "uncached_input_usd": "0.08083"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 96.85720586124808
+    },
+    {
+      "id": "case-004",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11816,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10459,
+        "output_tokens_details": {
+          "reasoning_tokens": 9138
+        },
+        "total_tokens": 22275
+      },
+      "known_cost_usd": "0.64111",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.52295",
+        "uncached_input_usd": "0.11816"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 113.19393850583583
+    },
+    {
+      "id": "case-005",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 8631,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 5181,
+        "output_tokens_details": {
+          "reasoning_tokens": 4341
+        },
+        "total_tokens": 13812
+      },
+      "known_cost_usd": "0.34536",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.25905",
+        "uncached_input_usd": "0.08631"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 66.24952111952007
+    },
+    {
+      "id": "case-006",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 8824,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 5280,
+        "output_tokens_details": {
+          "reasoning_tokens": 4349
+        },
+        "total_tokens": 14104
+      },
+      "known_cost_usd": "0.35224",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.264",
+        "uncached_input_usd": "0.08824"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 61.69173773378134
+    },
+    {
+      "id": "case-007",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 16187,
+        "input_tokens_details": {
+          "cache_write_tokens": 1113,
+          "cached_tokens": 1113
+        },
+        "output_tokens": 12956,
+        "output_tokens_details": {
+          "reasoning_tokens": 11559
+        },
+        "total_tokens": 29143
+      },
+      "known_cost_usd": "0.8024355",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001113",
+        "cache_write_usd": "0.0139125",
+        "output_including_reasoning_usd": "0.6478",
+        "uncached_input_usd": "0.13961"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 119.4054702874273
+    },
+    {
+      "id": "case-008",
+      "status": "not_dispatched_source_hold",
+      "attempts": 0,
+      "usage": null,
+      "known_cost_usd": "0",
+      "cost_components_usd": null,
+      "billing_unknown": false,
+      "wall_seconds": null
+    },
+    {
+      "id": "case-009",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10803,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8654,
+        "output_tokens_details": {
+          "reasoning_tokens": 7199
+        },
+        "total_tokens": 19457
+      },
+      "known_cost_usd": "0.54073",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.4327",
+        "uncached_input_usd": "0.10803"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 97.35410685092211
+    },
+    {
+      "id": "case-010",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10741,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8184,
+        "output_tokens_details": {
+          "reasoning_tokens": 7105
+        },
+        "total_tokens": 18925
+      },
+      "known_cost_usd": "0.51661",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.4092",
+        "uncached_input_usd": "0.10741"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 87.95682740397751
+    },
+    {
+      "id": "case-011",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 12226,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1127
+        },
+        "output_tokens": 9371,
+        "output_tokens_details": {
+          "reasoning_tokens": 7972
+        },
+        "total_tokens": 21597
+      },
+      "known_cost_usd": "0.580667",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001127",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.46855",
+        "uncached_input_usd": "0.11099"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 111.17863739654422
+    },
+    {
+      "id": "case-012",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10485,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 9024,
+        "output_tokens_details": {
+          "reasoning_tokens": 7717
+        },
+        "total_tokens": 19509
+      },
+      "known_cost_usd": "0.55605",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.4512",
+        "uncached_input_usd": "0.10485"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 84.67377741355449
+    },
+    {
+      "id": "case-013",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11987,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8826,
+        "output_tokens_details": {
+          "reasoning_tokens": 7813
+        },
+        "total_tokens": 20813
+      },
+      "known_cost_usd": "0.56117",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.4413",
+        "uncached_input_usd": "0.11987"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 82.66420810203999
+    },
+    {
+      "id": "case-014",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10777,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 7821,
+        "output_tokens_details": {
+          "reasoning_tokens": 6631
+        },
+        "total_tokens": 18598
+      },
+      "known_cost_usd": "0.49882",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.39105",
+        "uncached_input_usd": "0.10777"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 80.0523294787854
+    },
+    {
+      "id": "case-015",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10190,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1105
+        },
+        "output_tokens": 6992,
+        "output_tokens_details": {
+          "reasoning_tokens": 5947
+        },
+        "total_tokens": 17182
+      },
+      "known_cost_usd": "0.441555",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001105",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.3496",
+        "uncached_input_usd": "0.09085"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 85.06834082584828
+    },
+    {
+      "id": "case-016",
+      "status": "not_dispatched_source_hold",
+      "attempts": 0,
+      "usage": null,
+      "known_cost_usd": "0",
+      "cost_components_usd": null,
+      "billing_unknown": false,
+      "wall_seconds": null
+    },
+    {
+      "id": "case-017",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10492,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8385,
+        "output_tokens_details": {
+          "reasoning_tokens": 6855
+        },
+        "total_tokens": 18877
+      },
+      "known_cost_usd": "0.52417",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.41925",
+        "uncached_input_usd": "0.10492"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 74.76843344885856
+    },
+    {
+      "id": "case-018",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 9464,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 6117,
+        "output_tokens_details": {
+          "reasoning_tokens": 5141
+        },
+        "total_tokens": 15581
+      },
+      "known_cost_usd": "0.40049",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.30585",
+        "uncached_input_usd": "0.09464"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 76.44353356957436
+    },
+    {
+      "id": "case-019",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11581,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1103
+        },
+        "output_tokens": 8567,
+        "output_tokens_details": {
+          "reasoning_tokens": 7227
+        },
+        "total_tokens": 20148
+      },
+      "known_cost_usd": "0.534233",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001103",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.42835",
+        "uncached_input_usd": "0.10478"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 92.19840168580413
+    },
+    {
+      "id": "case-020",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 15865,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 13903,
+        "output_tokens_details": {
+          "reasoning_tokens": 12204
+        },
+        "total_tokens": 29768
+      },
+      "known_cost_usd": "0.85380",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.69515",
+        "uncached_input_usd": "0.15865"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 142.67549167294055
+    },
+    {
+      "id": "case-021",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10949,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1025
+        },
+        "output_tokens": 8303,
+        "output_tokens_details": {
+          "reasoning_tokens": 7343
+        },
+        "total_tokens": 19252
+      },
+      "known_cost_usd": "0.515415",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001025",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.41515",
+        "uncached_input_usd": "0.09924"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 81.12903848383576
+    },
+    {
+      "id": "case-022",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 9736,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1040
+        },
+        "output_tokens": 6240,
+        "output_tokens_details": {
+          "reasoning_tokens": 5168
+        },
+        "total_tokens": 15976
+      },
+      "known_cost_usd": "0.40000",
+      "cost_components_usd": {
+        "cache_read_usd": "0.00104",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.312",
+        "uncached_input_usd": "0.08696"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 67.7681885138154
+    },
+    {
+      "id": "case-023",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11499,
+        "input_tokens_details": {
+          "cache_write_tokens": 1096,
+          "cached_tokens": 1096
+        },
+        "output_tokens": 8291,
+        "output_tokens_details": {
+          "reasoning_tokens": 7012
+        },
+        "total_tokens": 19790
+      },
+      "known_cost_usd": "0.522416",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001096",
+        "cache_write_usd": "0.0137",
+        "output_including_reasoning_usd": "0.41455",
+        "uncached_input_usd": "0.09307"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 76.18897566292435
+    },
+    {
+      "id": "case-024",
+      "status": "not_dispatched_source_hold",
+      "attempts": 0,
+      "usage": null,
+      "known_cost_usd": "0",
+      "cost_components_usd": null,
+      "billing_unknown": false,
+      "wall_seconds": null
+    },
+    {
+      "id": "case-025",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10412,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8602,
+        "output_tokens_details": {
+          "reasoning_tokens": 7210
+        },
+        "total_tokens": 19014
+      },
+      "known_cost_usd": "0.53422",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.4301",
+        "uncached_input_usd": "0.10412"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 111.25017062574625
+    },
+    {
+      "id": "case-026",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11447,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 9327,
+        "output_tokens_details": {
+          "reasoning_tokens": 8270
+        },
+        "total_tokens": 20774
+      },
+      "known_cost_usd": "0.58082",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.46635",
+        "uncached_input_usd": "0.11447"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 115.1169682778418
+    },
+    {
+      "id": "case-027",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 15365,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1170
+        },
+        "output_tokens": 12888,
+        "output_tokens_details": {
+          "reasoning_tokens": 11106
+        },
+        "total_tokens": 28253
+      },
+      "known_cost_usd": "0.78752",
+      "cost_components_usd": {
+        "cache_read_usd": "0.00117",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.6444",
+        "uncached_input_usd": "0.14195"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 133.14365113619715
+    },
+    {
+      "id": "case-028",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10619,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8229,
+        "output_tokens_details": {
+          "reasoning_tokens": 7077
+        },
+        "total_tokens": 18848
+      },
+      "known_cost_usd": "0.51764",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.41145",
+        "uncached_input_usd": "0.10619"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 90.19304810930043
+    },
+    {
+      "id": "case-029",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 10743,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 7746,
+        "output_tokens_details": {
+          "reasoning_tokens": 6580
+        },
+        "total_tokens": 18489
+      },
+      "known_cost_usd": "0.49473",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.3873",
+        "uncached_input_usd": "0.10743"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 81.76093847677112
+    },
+    {
+      "id": "case-030",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 11191,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1046
+        },
+        "output_tokens": 8965,
+        "output_tokens_details": {
+          "reasoning_tokens": 8004
+        },
+        "total_tokens": 20156
+      },
+      "known_cost_usd": "0.550746",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001046",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.44825",
+        "uncached_input_usd": "0.10145"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 94.31897476688027
+    },
+    {
+      "id": "case-031",
+      "status": "completed",
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 13685,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1118
+        },
+        "output_tokens": 11461,
+        "output_tokens_details": {
+          "reasoning_tokens": 10112
+        },
+        "total_tokens": 25146
+      },
+      "known_cost_usd": "0.699838",
+      "cost_components_usd": {
+        "cache_read_usd": "0.001118",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.57305",
+        "uncached_input_usd": "0.12567"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 133.57879678346217
+    },
+    {
+      "id": "case-032",
+      "status": "not_dispatched_source_hold",
+      "attempts": 0,
+      "usage": null,
+      "known_cost_usd": "0",
+      "cost_components_usd": null,
+      "billing_unknown": false,
+      "wall_seconds": null
+    }
+  ]
+}
