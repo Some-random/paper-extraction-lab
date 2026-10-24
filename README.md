@@ -10,9 +10,11 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[Astra protein reasoning pilot](reports/astra_protein_pilot_2026-10-23/README.md):** one complete protein question and paper-grounded solution, with the full sequence, supporting paper, generation settings, evidence checks and measured usage cost.
 
+**[Mixed protein QA selection](reports/mixed_protein_selection_2026-10-23/README.md):** 12 complete examples combining nine broad protein questions with three enzyme-mutation questions. Start here to inspect the intended mixed scope, full sequences, worked answers and supporting papers.
+
 **[Nine sequence-only Astra examples](reports/astra_sequence_only_nine_2026-10-23/README.md):** diverse protein questions with full sequences, worked solutions and source checks.
 
-**[Enzyme-mutation question selection pool](reports/astra_enzyme_mutation_pool_2026-10-23/README.md):** 32 candidate questions, 28 completed Astra worked answers, and a 12-example shortlist covering APEX2, TurboID, PTEN, glucokinase, PafA and adenylate kinase. Published mutations and essential assay observations are supplied in the questions; four candidates remain held for source overlap.
+**[Additional enzyme-mutation candidate bank](reports/astra_enzyme_mutation_pool_2026-10-23/README.md):** 32 candidates and 28 completed Astra worked answers for selecting alternatives. This is one component of the broader protein dataset; the mixed selection above uses three of these examples. Four candidates remain held for source overlap.
 
 The [October 19 paper-collection report](reports/paper_collection_2026-10-19/README.md),
 earlier [measured token counts](reports/corpus_count_2026-10-17/README.md), and

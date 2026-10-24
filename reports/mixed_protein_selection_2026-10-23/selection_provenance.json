@@ -1,0 +1,104 @@
+{
+  "compilation_only": true,
+  "new_generation_cost_usd": 0,
+  "broad_examples": 9,
+  "mutation_examples": 3,
+  "examples": [
+    {
+      "id": "general-001",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-001",
+      "source_example_sha256": "6ea59a30267966d4b2cce061970a7787df1da4dbbc1d47c28484467ff5cf9dc5",
+      "student_prompt_sha256": "85be7aac9d6012b3d4a0536a11f8d7fa7ac16d364781eda7c165fe8648746844",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-002",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-002",
+      "source_example_sha256": "6a4c9dee965535c12c67945ceddf4878b867e0b579111140f335b32fbf6212b5",
+      "student_prompt_sha256": "ba9cea91f2478f12237cf857591bb277aa30c3a86ecee113bcf3965652ae03a7",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-003",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-003",
+      "source_example_sha256": "480a0fd2b96be62b8811056bd8081e86b879d79b151cbd9a871709c651e2c0ae",
+      "student_prompt_sha256": "7c1f8aaef65aa41ace60af5032890cff18a070813ee5d76ccedd44809b2581c5",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-004",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-004",
+      "source_example_sha256": "9ddd5e177de402acd5f078187bd045824e41ac3eb9fc60b0a1c33cddfa9db602",
+      "student_prompt_sha256": "1119321cd7a5bd2a072c1a1e1eb8d8b138f2afc99daa696e31cb7ec51ef0c0bd",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-005",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-005",
+      "source_example_sha256": "66f27351b86d5fe59b122e36ddf68cb51bd678dd3e0e252d111ac140e92a969e",
+      "student_prompt_sha256": "c51059d51b97f4097547c942d8bc59a460f6dd9f082bfb98b41b662f550894e8",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-006",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-006",
+      "source_example_sha256": "34b48994b04ffd7dc446087ba47d9fb8df72d872f19eb2e6f8762c5fee3df724",
+      "student_prompt_sha256": "ff543545afca298f1a8dd1e8b927c3d6a97ecf14b0f36b49a6440e8b05b442f6",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-007",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-007",
+      "source_example_sha256": "0038a18b5a6436128cf691d64862e9c0f4ad73235a61ed98be65a7ec7f35e675",
+      "student_prompt_sha256": "769b2ce704a3f12a88bea134a14eb8cd53cb81f39b35fe0a3957d9473c41164d",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-008",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-008",
+      "source_example_sha256": "2bd73d74f78ae3a3e001f2a211744cf6941000eb2e3ee7762799c73bee276189",
+      "student_prompt_sha256": "8ae686eba13d606969ae23ca81c0fb03ba7de23248330ac59c48cbf48bff0aec",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "general-009",
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-009",
+      "source_example_sha256": "7930d8276b981a7ee178760c4147361bd23dd26bb0d97a3caa0ed14f4ce14a5c",
+      "student_prompt_sha256": "fd2e2ab4cafd046d4d6f438202d47cd1582addae6ddd726bda853b4dfcf6117e",
+      "input_mode": "Sequence-only"
+    },
+    {
+      "id": "mutation-001",
+      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
+      "source_case": "case-001",
+      "source_example_sha256": "27cd9908889344ffe9e70b4ed43f98755cb1119ba960f61be43291c17bbe02ff",
+      "student_prompt_sha256": "83bebb2b1c44021105b6d46b67989e2aea4ce0eab130f68957e18011fcc23010",
+      "input_mode": "Sequence + published variants and assay evidence"
+    },
+    {
+      "id": "mutation-004",
+      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
+      "source_case": "case-004",
+      "source_example_sha256": "743964afa2566a65ecd154e2dfd9b240db3ec886f96711e4ad72908241908567",
+      "student_prompt_sha256": "eeda80bd9420a4dd2a38e7033c5a6e07d762f3771892e751851ecc9d58d61509",
+      "input_mode": "Sequence + published variants and assay evidence"
+    },
+    {
+      "id": "mutation-015",
+      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
+      "source_case": "case-015",
+      "source_example_sha256": "bcafbd6e189979485e6800e50a96afab61b150b4e95503f7d5282b2332baa1bc",
+      "student_prompt_sha256": "b6048afb09a9ecda5b4010c4fb847917c97c72dfd4fea9ac5c88fc288efc76cc",
+      "input_mode": "Sequence + published variants and assay evidence"
+    }
+  ]
+}
