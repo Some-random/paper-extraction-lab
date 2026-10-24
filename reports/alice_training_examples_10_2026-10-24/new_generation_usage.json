@@ -1,0 +1,53 @@
+{
+  "known_cost_usd": "0.70678",
+  "new_requests": 2,
+  "billing_unknown_usd": "0",
+  "cases": [
+    {
+      "id": "example-09",
+      "usage": {
+        "input_tokens": 7796,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 6025,
+        "output_tokens_details": {
+          "reasoning_tokens": 4966
+        },
+        "total_tokens": 13821
+      },
+      "known_cost_usd": "0.37921",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.30125",
+        "uncached_input_usd": "0.07796"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "example-10",
+      "usage": {
+        "input_tokens": 7512,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 5049,
+        "output_tokens_details": {
+          "reasoning_tokens": 4045
+        },
+        "total_tokens": 12561
+      },
+      "known_cost_usd": "0.32757",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.25245",
+        "uncached_input_usd": "0.07512"
+      },
+      "attempts": 1
+    }
+  ]
+}

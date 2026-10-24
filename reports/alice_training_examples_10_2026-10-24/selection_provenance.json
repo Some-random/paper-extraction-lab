@@ -1,0 +1,88 @@
+{
+  "selected_existing": 8,
+  "newly_generated": 2,
+  "examples": [
+    {
+      "id": "example-01",
+      "reused": true,
+      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
+      "source_case": "case-001",
+      "student_prompt_sha256": "83bebb2b1c44021105b6d46b67989e2aea4ce0eab130f68957e18011fcc23010",
+      "output_sha256": "993f54784e47a0cf6fec294cb7cfac8387fc7c9c1b1fe554bcb8a875264f051d"
+    },
+    {
+      "id": "example-02",
+      "reused": true,
+      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
+      "source_case": "case-004",
+      "student_prompt_sha256": "eeda80bd9420a4dd2a38e7033c5a6e07d762f3771892e751851ecc9d58d61509",
+      "output_sha256": "4c6eba6ee51b451fcfe8350b872034820e6920ad766123135156f42197c46902"
+    },
+    {
+      "id": "example-03",
+      "reused": true,
+      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
+      "source_case": "case-015",
+      "student_prompt_sha256": "b6048afb09a9ecda5b4010c4fb847917c97c72dfd4fea9ac5c88fc288efc76cc",
+      "output_sha256": "67e331994bde12ad1e518b0119f95e5bca0eecc583f8ac3273a55342d66511fd"
+    },
+    {
+      "id": "example-04",
+      "reused": true,
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-004",
+      "student_prompt_sha256": "1119321cd7a5bd2a072c1a1e1eb8d8b138f2afc99daa696e31cb7ec51ef0c0bd",
+      "output_sha256": "e525c8336267ab1dee568e79f710e3245ff60303a3382c4174b8f37d1edc5690"
+    },
+    {
+      "id": "example-05",
+      "reused": true,
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-005",
+      "student_prompt_sha256": "c51059d51b97f4097547c942d8bc59a460f6dd9f082bfb98b41b662f550894e8",
+      "output_sha256": "61637de060f6320b952958ace2007672650ea308412227b21dc8413c4b358dc0"
+    },
+    {
+      "id": "example-06",
+      "reused": true,
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-006",
+      "student_prompt_sha256": "ff543545afca298f1a8dd1e8b927c3d6a97ecf14b0f36b49a6440e8b05b442f6",
+      "output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18"
+    },
+    {
+      "id": "example-07",
+      "reused": true,
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-007",
+      "student_prompt_sha256": "769b2ce704a3f12a88bea134a14eb8cd53cb81f39b35fe0a3957d9473c41164d",
+      "output_sha256": "fd34a366e5e28a7076b351c477116b9cc9a1fc2c725755cebc3ca8c946e4b780"
+    },
+    {
+      "id": "example-08",
+      "reused": true,
+      "source_report": "astra_sequence_only_nine_2026-10-23",
+      "source_case": "case-008",
+      "student_prompt_sha256": "8ae686eba13d606969ae23ca81c0fb03ba7de23248330ac59c48cbf48bff0aec",
+      "output_sha256": "420edc455e6b8139b24376162b2f5fcd946c44de4133068e84de5e90394730a0"
+    },
+    {
+      "id": "example-09",
+      "reused": false,
+      "source_case": "alice-streptavidin-valency",
+      "student_prompt_sha256": "d6bf3724a3ccf900f4ebabf6abd6d651a6766365fc7b708b1bcd1bf98c2ebc0a",
+      "output_sha256": "f6704f2edac45e3a3c61f7c490520451455fa7aa4174e139bcf483b2494e6bb3",
+      "paper": "https://doi.org/10.1038/nmeth861"
+    },
+    {
+      "id": "example-10",
+      "reused": false,
+      "source_case": "alice-split-turboid-localization-controls",
+      "student_prompt_sha256": "facae5a37fa9be2c7a4167c1e2fa137f358ce5b73fc28ffb716ef1e4a45ac5da",
+      "output_sha256": "567ace5db046f550b22c8f435fa2de57b5468d152b4bdf34ae61a6331600f466",
+      "paper": "https://doi.org/10.1073/pnas.1919528117"
+    }
+  ],
+  "expert_human_review_performed": false,
+  "student_training_released": false
+}

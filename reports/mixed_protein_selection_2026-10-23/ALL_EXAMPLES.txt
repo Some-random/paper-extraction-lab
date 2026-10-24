@@ -1,3 +1,5 @@
+Archived twelve-example presentation. The current ten-example collection is at reports/alice_training_examples_10_2026-10-24/.
+
 AI-created protein reasoning training data
 
 # 1. APEX: enzyme behavior depends on substrate conditions

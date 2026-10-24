@@ -1,0 +1,11 @@
+example,question_topic,question_and_answer
+1,APEX: enzyme behavior depends on substrate conditions,examples/example-01.md
+2,Adenylate kinase: a conservative substitution can impair catalysis,examples/example-02.md
+3,PafA: inactive protein fraction versus inhibitor binding,examples/example-03.md
+4,Distinguishing heme from other cofactors,examples/example-04.md
+5,Calcium binding through repeated structural motifs,examples/example-05.md
+6,Membrane anchoring,examples/example-06.md
+7,Protein-interaction domains,examples/example-07.md
+8,Chromophore binding,examples/example-08.md
+9,Binding affinity versus valency and probe-induced clustering,examples/example-09.md
+10,"Background controls, compartment references and dual localization",examples/example-10.md

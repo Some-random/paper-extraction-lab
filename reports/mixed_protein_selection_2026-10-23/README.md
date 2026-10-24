@@ -1,3 +1,5 @@
+Archived twelve-example presentation. [Current ten-example collection](../alice_training_examples_10_2026-10-24/README.md).
+
 # AI-created protein reasoning training data
 
 This collection contains **12 AI-created question-and-answer examples intended for protein-model training**. They combine protein function, binding, membrane architecture, sequence features and enzyme-mutation reasoning in one collection, with the enzyme examples first for convenient review.

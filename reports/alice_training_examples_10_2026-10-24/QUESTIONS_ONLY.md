@@ -1,0 +1,261 @@
+# Protein questions
+
+# 1. APEX: enzyme behavior depends on substrate conditions
+
+Reference protein sequence (canonical wild-type backbone; coordinate reference only):
+
+```text
+MGKSYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAWHSAGTFDKGTKTGGPFGTIKHPAELAHSA
+NNGLDIAVRLLEPLKAEFPILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH
+LRDVFGKAMGLTDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLSGEKEGLLQLPSDKA
+LLSDPVFRPLVDKYAADEDAFFADYAEAHQKLSELGFADA
+```
+
+
+Reference: Q43758. All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded. The sequence is not the complete tagged assay construct.
+
+Published variant identities:
+APEX: substitutions K14D, W41F, E112K; deletions none.
+APEX2: substitutions K14D, W41F, E112K, A134P; deletions none.
+
+Supplied assay observations:
+- With 1.4 mM guaiacol, the reported rate maximum occurs around 0.1 mM peroxide for APEX and 2.5 mM for APEX2; rates decrease above these ranges.
+- With 0.5 mM guaiacol, the corresponding values are around 0.05 mM and 0.5 mM.
+
+**Question:** Which interpretation best explains the variant difference across both substrate conditions?
+
+**Choices:**
+
+- **A.** Only the higher-guaiacol condition shows an APEX2 advantage; the lower-guaiacol condition gives the same inhibition threshold for both enzymes.
+- **B.** Both substrate conditions show a higher peroxide-inhibition threshold for APEX2, with unchanged thresholds when guaiacol concentration changes.
+- **C.** Both substrate conditions show a higher peroxide-inhibition threshold for APEX2, with the threshold also depending on guaiacol concentration.
+- **D.** Both substrate conditions give the same peroxide-inhibition threshold for APEX and APEX2, despite different guaiacol concentrations.
+
+---
+
+# 2. Adenylate kinase: a conservative substitution can impair catalysis
+
+Wild-type protein: Adenylate kinase (Escherichia coli K-12).
+Full canonical wild-type sequence, numbered from the initial methionine as residue 1:
+
+```text
+MRIILLGAPGAGKGTQAQFIMEKYGIPQISTGDMLRAAVKSGSELGKQAKDIMDAGKLVTDELVIALVKE
+RIAQEDCRNGFLLDGFPRTIPQADAMKEAGINVDYVLEFDVPDELIVDRIVGRRVHAPSGRVYHVKFNPP
+KVEGKDDVTGEELTTRKDDQEETVRKRLVEYHQMTAPLIGYYSKEAEAGNTKYAKVDGTKPVAEVRADLE
+KILG
+```
+
+
+Published variant(s): R156K.
+
+Experimental evidence:
+Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):
+WT: kcat 330, Km 71.
+R156K: kcat 0.74, Km 52.
+Arginine and lysine both normally carry a positive side-chain charge near neutral pH.
+
+**Question:** Which interpretation best explains why calling R156K a conservative substitution does not establish functional conservation?
+
+**Choices:**
+
+- **A.** The lower ATP Km compensates for the turnover loss, so R156K should retain near-WT catalytic efficiency when ATP is limiting.
+- **B.** The lower ATP Km establishes stronger equilibrium ATP binding, so the turnover defect must arise entirely from slower product release.
+- **C.** The roughly 450-fold turnover loss with a modest Km shift shows that retaining positive charge need not preserve residue-specific catalytic performance.
+- **D.** The roughly 450-fold turnover loss directly measures a 450-fold reduction in correctly folded protein, while catalysis by the folded molecules remains unchanged.
+
+Interpret the supplied published measurements. Explain the relevant biological and quantitative reasoning, then give one answer letter. Do not propose new variants or experimental procedures.
+
+---
+
+# 3. PafA: inactive protein fraction versus inhibitor binding
+
+Protein: PafA alkaline phosphatase.
+
+Full canonical reference sequence (546 amino acids):
+
+```text
+MLTPKKWLLGVLVVSGMLGAQKTNAVPRPKLVVGLVVDQMRWDYLYRYYSKYGEGGFKRMLNTGYSLNNV
+HIDYVPTVTAIGHTSIFTGSVPSIHGIAGNDWYDKELGKSVYCTSDETVQPVGTTSNSVGQHSPRNLWST
+TVTDQLGLATNFTSKVVGVSLKDRASILPAGHNPTGAFWFDDTTGKFITSTYYTKELPKWVNDFNNKNVP
+AQLVANGWNTLLPINQYTESSEDNVEWEGLLGSKKTPTFPYTDLAKDYEAKKGLIRTTPFGNTLTLQMAD
+AAIDGNQMGVDDITDFLTVNLASTDYVGHNFGPNSIEVEDTYLRLDRDLADFFNNLDKKVGKGNYLVFLS
+ADHGAAHSVGFMQAHKMPTGFFVEDMKKEMNAKLKQKFGADNIIAAAMNYQVYFDRKVLADSKLELDDVR
+DYVMTELKKEPSVLYVLSTDEIWESSIPEPIKSRVINGYNWKRSGDIQIISKDGYLSAYSKKGTTHSVWN
+SYDSHIPLLFMGWGIKQGESNQPYHMTDIAPTVSSLLKIQFPSGAVGKPITEVIGR
+```
+
+
+Numbering: mutation labels use positions in this full reference. The published HT-MEK PafA construct contains an initiating methionine followed by reference residues21–546, with a C-terminal linker and eGFP for the on-chip experiments. Within the PafA-only expressed ORF, canonical position n maps to position n-19. The full reference is supplied for unambiguous mutation indexing; it is not a claim that the native N-terminal segment was present in the assay.
+
+Published observations:
+The published H83G variant has a lower Pi inhibition constant than wild type, meaning stronger phosphate binding. The inhibition readout is a fractional rate v(I)/v(0) for the same variant. In a simple model with a long-lived inactive fraction, only the active population reacts and binds inhibitor, and its concentration multiplies both v(I) and v(0) by the same factor. There is no interconversion of populations during the measurement.
+
+**Question:** Can a smaller active population alone explain the changed normalized inhibition constant?
+
+**Choices:**
+
+- **A.** The inactive population changes the fitted inhibition constant because normalization removes enzyme concentration only from the uninhibited rate, leaving inhibitor-dependent population effects.
+- **B.** Cancellation of the active-enzyme factor shows that H83G stabilizes the catalytic transition state more strongly, so stronger inhibition establishes faster intrinsic chemistry.
+- **C.** A smaller active population lowers the inhibitor concentration needed to halve its fractional rate, so inactive abundance alone can explain stronger apparent binding.
+- **D.** The common active-enzyme factor cancels from the fractional rate; the changed inhibition constant therefore requires more than uniform dilution by inactive protein.
+
+---
+
+# 4. Distinguishing heme from other cofactors
+
+Protein sequence:
+
+```text
+MTIASSTASSEFLKNPYSFYDTLRAVHPIYKGSFLKYPGWYVTGYEETAAILKDARFKVRTPLPESSTKY
+QDLSHVQNQMMLFQNQPDHRRLRTLASGAFTPRTTESYQPYIIETVHHLLDQVQGKKKMEVISDFAFPLA
+SFVIANIIGVPEEDREQLKEWAASLIQTIDFTRSRKALTEGNIMAVQAMAYFKELIQKRKRHPQQDMISM
+LLKGREKDKLTEEEAASTCILLAIAGHETTVNLISNSVLCLLQHPEQLLKLRENPDLIGTAVEECLRYES
+PTQMTARVASEDIDICGVTIRQGEQVYLLLGAANRDPSIFTNPDVFDITRSPNPHLSFGHGHHVCLGSSL
+ARLEAQIAINTLLQRMPSLNLADFEWRYRPLFGFRALEELPVTFE
+```
+
+
+**Question:** Which cofactor is most strongly supported by this protein sequence?
+
+**Choices:**
+
+- **A.** FAD
+- **B.** FMN
+- **C.** A four-iron four-sulfur cluster
+- **D.** Heme
+
+---
+
+# 5. Calcium binding through repeated structural motifs
+
+Protein sequence:
+
+```text
+MPFHPVTAALMYRGIYTVPNLLSEQRPVDIPEDELEEIREAFKVFDRDGNGFISKQELGTAMRSLGYMPN
+EVELEVIIQRLDMDGDGQVDFEEFVTLLGPKLSTSGIPEKFHGTDFDTVFWKCDMQKLTVDELKRLLYDT
+FCEHLSMKDIENIIMTEEESHLGTAEECPVDVETCSNQQIRQTCVRKSLICAFAIAFIISVMLIAANQVL
+RSGMK
+```
+
+
+**Question:** Which binding role is most consistent with the soluble region of this protein?
+
+**Choices:**
+
+- **A.** Binding calcium ions through EF-hand domains.
+- **B.** Binding a structural zinc ion through a C2H2 zinc-finger domain.
+- **C.** Binding heme to catalyze peroxide-dependent oxidation.
+- **D.** Binding FAD to transfer electrons during redox catalysis.
+
+---
+
+# 6. Membrane anchoring
+
+Protein sequence:
+
+```text
+MSSDFEGYEQDFAVLTAEITSKIARVPRLPPDEKKQMVANVEKQLEEARELLEQMDLEVREIPPQSRGMY
+SNRMRSYKQEMGKLETDFKRSRIAYSDEVRNELLGDAGNSSENQRAHLLDNTERLERSSRRLEAGYQIAV
+ETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNRILLVILGIIVVIAILTAI
+AFFVKGH
+```
+
+
+**Question:** Which overall membrane-association architecture best fits this protein sequence?
+
+**Choices:**
+
+- **A.** A soluble peripheral membrane protein with no membrane-spanning segment.
+- **B.** A protein with a large cytosolic region and a single membrane anchor near its C terminus.
+- **C.** A seven-pass membrane receptor with short loops connecting its membrane-spanning helices.
+- **D.** A secreted soluble protein whose only hydrophobic segment is a cleaved N-terminal signal peptide.
+
+---
+
+# 7. Protein-interaction domains
+
+Protein sequence:
+
+```text
+MVHIPSDVTPPRLCVVEKLNGENEYGYNLHAEKGRGQFVGTVDPDSPAERGGLITGDRIFAVNGHSIIGE
+NHKKVVERIKANPNRCEMLVISEEGAKWYNENNVQITLDLPNIERVSPMSKETPVFVPPPPPPTDAMPYL
+PRLAELNKGTPDQEFGFNLHAERGRGHFIGTVDAGGIGEKAGLEAGQRIVGVNGQLIYPTTGHKEVVALI
+KKDTMKTTLLVASEDVDKYHKDHNIAYSWDNVERVDTRPVINVETHHHHEEVSVPKSNGYDVPPLNPHSI
+QVNEEREISKMTTTTRTETITNSNSAYQYKESSTAYDAYATPPVDSNDLMDEVFGRVNLPGVTMSSHTEV
+LPPTDDISSVSSLSSHRESAVDVPVSHQYVPSYATESHQKHEQHSQTHHHHHQHQQPSPLSNGSSHGYAA
+SSTSGYDDDDIYHLSAREARERLRMKNRKHHLHEMSLNEKYQLVSNM
+```
+
+
+**Question:** Which protein-interaction domain architecture is most consistent with this sequence?
+
+**Choices:**
+
+- **A.** A WD40-repeat beta-propeller that lacks PDZ domains.
+- **B.** Two SH2 domains specialized for recognizing phosphotyrosine-containing peptides.
+- **C.** Two PDZ domains capable of recognizing short peptide motifs on partner proteins.
+- **D.** A single SH3 domain specialized for recognizing proline-rich peptides.
+
+---
+
+# 8. Chromophore binding
+
+Protein sequence:
+
+```text
+MVGLTTLFWLGAIGMLVGTLAFAWAGRDAGSGERRYYVTLVGISGIAAVAYVVMALGVGWVPVAERTVFA
+PRYIDWILTTPLIVYFLGLLAGLDSREFGIVITLNTVVMLAGFAGAMVPGIERYALFGMGAVAFLGLVYY
+LVGPMTESASQRSSGIKSLYVRLRNLTVILWAIYPFIWLLGPPGVALLTPTVDVALIVYLDLVTKVGFGF
+IALDAAATLRAEHGESLAGVDTDAPAVAD
+```
+
+
+**Question:** Which chromophore-association mechanism is most consistent with this protein sequence?
+
+**Choices:**
+
+- **A.** Covalent bilin attachment to a cysteine in a large phytochrome photosensory domain.
+- **B.** Noncovalent FMN binding in a soluble LOV-domain pocket.
+- **C.** Formation of an internal GFP-like chromophore by cyclization of residues in a soluble beta-barrel.
+- **D.** Retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin.
+
+---
+
+# 9. Binding affinity versus valency and probe-induced clustering
+
+Streptavidin is used to attach labels to biotinylated proteins. Compare these published observations. A4 is a tetramer of four active, His-tagged subunits; A1D3 is a tetramer containing one active and three binding-inactive subunits. The affinity measurements below use these tagged preparations, whereas the cellular comparison uses wild-type streptavidin versus A1D3.
+
+| Preparation | Biotins bound per tetramer | Biotin Kd, mean ± SEM |
+|---|---|---|
+| A4 | 4 | (4.4 ± 1.1) × 10^-14 M |
+| A1D3 | 1 | (4.8 ± 0.5) × 10^-14 M |
+
+In cultured neurons expressing acceptor-peptide-tagged neuroligin-1, both fluorescent labels initially gave diffuse surface labeling. Two hours later, wild-type streptavidin produced strong clustering, whereas A1D3 labeling remained predominantly diffuse.
+
+**Question:** Which explanation best reconciles the binding measurements with the cellular labeling pattern?
+
+- **A.** A1D3 retains strong binding at its remaining site but has fewer sites for bridging labeled proteins; affinity and crosslinking capacity can therefore separate.
+- **B.** A1D3 retains four-site bridging but has substantially weaker binding at every site; reduced occupancy therefore explains the predominantly diffuse labeling.
+- **C.** A1D3 loses tetramer assembly and its neighboring-subunit support for binding; monomer formation therefore explains the reduced cellular clustering.
+- **D.** A1D3 retains four functional binding sites because its Kd is similar to A4; the Kd measurement therefore establishes equivalent crosslinking capacity.
+
+---
+
+# 10. Background controls, compartment references and dual localization
+
+Split-TurboID was used to label proteins near contacts between the endoplasmic reticulum (ER) and mitochondria in human cells. Its fragments were attached separately to the ER membrane and the outer mitochondrial membrane. Nearby proteins were recovered for mass spectrometry. The authors used these sequential comparisons:
+
+| Stage | Reference sample | Proteins retained in two independent +rapamycin replicates |
+|---|---|---|
+| Filter 1 | Split-TurboID with added biotin omitted | 607 and 619 |
+| Filter 2 | Full-length TurboID in the cytosol, after filter 1 | 97 and 97 |
+| Intersection of the filtered replicates | Both replicates | 67 |
+
+Split-TurboID samples were labeled for four hours; full-length TurboID samples for one minute. These are enrichment comparisons under the published conditions, not equal-duration catalytic-rate measurements.
+
+**Question:** What does the cytosolic-reference filter add, and what kind of genuine contact-associated protein could it exclude?
+
+- **A.** It removes biotin-independent capture rather than cytosolic labeling; therefore a protein present in both contact sites and cytosol should always be retained.
+- **B.** It favors contact-site labeling over cytosolic labeling; therefore a genuine contact-associated protein may be lost if it also labels strongly in the cytosol.
+- **C.** It favors general cytosolic labeling over contact-site labeling; therefore abundant cytosolic proteins should become more prominent in the final contact-site list.
+- **D.** It identifies direct binding between the two organelle membranes; therefore a retained protein is established as a physical tether that holds those membranes together.
