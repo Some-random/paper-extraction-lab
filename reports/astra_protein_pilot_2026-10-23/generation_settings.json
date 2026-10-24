@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning": {
+    "effort": "max",
+    "mode": "pro"
+  },
+  "endpoint": "https://api.openai.com/v1/responses",
+  "max_output_tokens": 65536,
+  "store": false,
+  "generation_requests": 1,
+  "paid_retries": 0,
+  "separate_paid_judge_requests": 0,
+  "elapsed_generation_seconds": 194.77486082166433,
+  "student_input": "Full sequence, task, question and choices; CorA family is named in question.",
+  "teacher_extra_input": [
+    "Full main paper text",
+    "Full published correction XML",
+    "Relevant UniProt annotation",
+    "Checked literal sequence observations"
+  ],
+  "gold_letter_and_prior_Luna_answer_supplied": false,
+  "student_target": "Generated visible worked solution followed by selected final letter",
+  "private_internal_reasoning_exported": false,
+  "student_training_released": false,
+  "public_request_edits": [
+    "Account-specific identifier removed",
+    "Full correction XML replaced by an explicit source pointer; reconstruction helper restores it"
+  ],
+  "correction_xml_sha256": "883037531276615ab9cbe0e0583b010a31df711741e9d71db8f4ef9c70ce3efe",
+  "original_student_question_sha256": "f82456527802a630f5338363874cfd278237bd8f2147cc7a3a243e2faa621023",
+  "official_model_documentation": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "official_reasoning_documentation": "https://developers.openai.com/api/docs/guides/reasoning"
+}

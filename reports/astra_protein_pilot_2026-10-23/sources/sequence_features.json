@@ -1,0 +1,32 @@
+[
+  {
+    "end": 313,
+    "label": "UniProt-annotated TM1",
+    "residues": "VLTIIATIFMPLTFIAGIYGM",
+    "start": 293
+  },
+  {
+    "end": 345,
+    "label": "UniProt-annotated TM2",
+    "residues": "WGYPVVLAVMGVIAVIMVVYF",
+    "start": 325
+  },
+  {
+    "end": 314,
+    "label": "CorA signature",
+    "residues": "GMN",
+    "start": 312
+  },
+  {
+    "end": 315,
+    "label": "extended motif",
+    "residues": "YGMNF",
+    "start": 311
+  },
+  {
+    "end": 321,
+    "label": "second signature",
+    "residues": "MPEL",
+    "start": 318
+  }
+]

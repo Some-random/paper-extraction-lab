@@ -1,0 +1,66 @@
+{
+  "evidence": [
+    {
+      "claim": "Established CorA architecture directly supports A: each of five subunits contributes its first transmembrane domain to the shared central ion pathway.",
+      "quote": "The central ion permeation pathway is formed by the first transmembrane domain from each of the five subunits.",
+      "source_id": "annotation"
+    },
+    {
+      "claim": "The conserved GMN motif belongs to the polar ion-entry region of CorA.",
+      "quote": "The universally conserved GMN motif is arranged in an almost exact way as that of MjCorA, creating a polar entry made of the Asn314 side chain with the underlying ring of the carbonyl group from Gly312 (Figure 1C).",
+      "source_id": "paper"
+    },
+    {
+      "claim": "MPEL is a second CorA signature motif in the extracellular connecting-loop region.",
+      "quote": "In MjCorA, this stretch is composed of SYLPLA (which is also less conserved within the family), whereas TmCorA contains the conserved region EYMPEL (where MPEL is the second signature motif of the CorA family).",
+      "source_id": "paper"
+    },
+    {
+      "claim": "Intracellular metal-binding sites have regulatory and stabilizing functions, distinct from TM1's membrane pore-forming role.",
+      "quote": "Finally, the roles of the intracellular metal-binding sites have been assigned to increased thermostability and regulation of the gating.",
+      "source_id": "paper"
+    }
+  ],
+  "limitations": "The literal sequence features are directly observable, but precise membrane boundaries and the pentameric pore arrangement require annotation or established CorA structural knowledge. No new hydropathy prediction, homology search, or structural calculation is claimed. The answer does not require inferring substrate preference or adopting a particular detailed gating model.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 313,
+      "interpretation": "Hydrophobic segment corresponding to the annotated TM1 span. Its pore-lining role follows from known CorA architecture, not from hydrophobicity alone.",
+      "residues": "VLTIIATIFMPLTFIAGIYGM",
+      "start": 293
+    },
+    {
+      "end": 345,
+      "interpretation": "Hydrophobic segment corresponding to the annotated TM2 span, consistent with CorA's paired C-terminal membrane-spanning regions.",
+      "residues": "WGYPVVLAVMGVIAVIMVVYF",
+      "start": 325
+    },
+    {
+      "end": 314,
+      "interpretation": "CorA signature motif at the end of TM1 and adjoining extracellular loop; known CorA structures place it at the ion entrance.",
+      "residues": "GMN",
+      "start": 312
+    },
+    {
+      "end": 315,
+      "interpretation": "Extended conserved motif encompassing GMN near the extracellular end of TM1.",
+      "residues": "YGMNF",
+      "start": 311
+    },
+    {
+      "end": 321,
+      "interpretation": "Second CorA signature motif in the short connecting region before TM2, assigned to the extracellular loop in known CorA topology.",
+      "residues": "MPEL",
+      "start": 318
+    }
+  ],
+  "status": "draft",
+  "transferable_skills": [
+    "Use the family assignment supplied by the question as context; treat matching sequence features as consistency checks rather than a de novo identification.",
+    "Locate hydrophobic segments and conserved motifs with accurate residue numbering, then relate their order to known domain organization.",
+    "Separate direct sequence observations from structural knowledge, especially pore orientation and oligomeric stoichiometry.",
+    "Distinguish pore-forming membrane helices from peripheral anchors, ATPase catalytic domains, and cytoplasmic regulatory regions."
+  ],
+  "worked_solution": "Question: What is the best-supported functional role of the first transmembrane domain in this CorA-family transporter?\n\nChoices:\nA. It contributes to the central ion permeation pathway, with one such domain from each subunit surrounding the pathway.\nB. It forms an external scaffold that anchors the transporter to the membrane but does not contribute to ion passage.\nC. It acts as an ATP-hydrolyzing domain that supplies energy for active ion pumping.\nD. It serves as a cytoplasmic metal-sensing domain that binds ions but does not form part of the permeation pathway.\n\nWorked solution:\n\nThe CorA-family assignment is already provided. The sequence supports the expected C-terminal membrane organization. Using 1-based residue numbering, two prominent hydrophobic stretches are:\n- Residues 293–313: VLTIIATIFMPLTFIAGIYGM, in the TM1 region.\n- Residues 325–345: WGYPVVLAVMGVIAVIMVVYF, in the TM2 region.\n\nThe GMN signature at residues 312–314 lies within YGMNF at 311–315, near the end of the first membrane-spanning region. It is followed by MPEL at 318–321 before TM2. In known CorA topology, the GMN-containing region lies at the extracellular ion entrance, adjoining the short loop connecting the two membrane helices. These features are consistent with CorA's two C-terminal transmembrane helices and much larger N-terminal cytoplasmic region.\n\nThe decisive functional information comes from established CorA structure, not from hydrophobicity alone. CorA has a characteristic homopentameric assembly in which one TM1 helix from each of the five subunits surrounds the shared central ion-permeation pathway. TM1 therefore contributes to the pore wall through which divalent cations pass when the channel is open. The sequence identifies relevant hydrophobic segments and motifs, but does not independently establish this five-subunit arrangement.\n\nThe alternatives can therefore be distinguished as follows:\n- A correctly describes the pore-forming contribution of TM1 from each subunit.\n- B is inconsistent with TM1's central, pore-lining position. TM1 is not merely an external membrane anchor that is excluded from ion passage.\n- C assigns an ATPase function to the wrong type of structural element. CorA functions as an ion channel, not as an ATP-hydrolyzing ion pump.\n- D confuses cytoplasmic regulation with membrane permeation. CorA has cytoplasmic metal-binding sites that help regulate channel function, but the membrane-spanning TM1 segment itself contributes to the ion pathway.\n\nThe best-supported answer is A."
+}

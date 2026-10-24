@@ -1,0 +1,19 @@
+{
+  "status": "PASS_as_pilot_draft",
+  "expert_human_review": false,
+  "verified": [
+    "all five residue ranges match",
+    "correct source answer A",
+    "TM1 pore role and homopentamer supported",
+    "channel versus ATPase distinction supported",
+    "cytoplasmic regulation distinct from membrane permeation",
+    "erroneous paper coordinates and fragile gating claims avoided"
+  ],
+  "caveats": [
+    "CorA family is supplied in question",
+    "precise topology and oligomeric architecture use annotation and known structural biology",
+    "training benefit unmeasured"
+  ],
+  "format_edit": "Repeated question and choices removed from display/student derivative; original solution and raw response preserved.",
+  "reviewer_type": "AI assistant source review; not expert human validation"
+}

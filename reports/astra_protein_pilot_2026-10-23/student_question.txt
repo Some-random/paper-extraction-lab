@@ -1,0 +1,12 @@
+Protein sequence:
+MEEKRLSAKKGLPPGTLVYTGKYREDFEIEVMNYSIEEFREFKTTDVESVLPFRDSSTPTWINITGIHRTDVVQRVGEFFGIHPLVLEDILNVHQRPKVEFFENYVFIVLKMFTYDKNLHELESEQVSLILTKNCVLMFQEKIGDVFDPVRERIRYNRGIIRKKRADYLLYSLIDALVDDYFVLLEKIDDEIDVLEEEVLERPEKETVQRTHQLKRNLVELRKTIWPLREVLSSLYRDVPPLIEKETVPYFRDVYDHTIQIADTVETFRDIVSGLLDVYLSSVSNKTNEVMKVLTIIATIFMPLTFIAGIYGMNFEYMPELRWKWGYPVVLAVMGVIAVIMVVYFKKKKWL
+
+Task: protein_domain_function
+
+Question: What is the best-supported functional role of the first transmembrane domain in this CorA-family transporter?
+
+Choices:
+A. It contributes to the central ion permeation pathway, with one such domain from each subunit surrounding the pathway.
+B. It forms an external scaffold that anchors the transporter to the membrane but does not contribute to ion passage.
+C. It acts as an ATP-hydrolyzing domain that supplies energy for active ion pumping.
+D. It serves as a cytoplasmic metal-sensing domain that binds ions but does not form part of the permeation pathway.

@@ -1,0 +1,6 @@
+{
+  "accession": "Q9WZ31",
+  "organism": "Thermotoga maritima",
+  "source_id": "annotation",
+  "text": "The central ion permeation pathway is formed by the first transmembrane domain from each of the five subunits. Mg(2+) binding strengthens interactions between subunits and leads to the formation of a symmetrical homopentamer surrounding a closed ion permeation pathway (PubMed:16598263, PubMed:16857941, PubMed:16902408, PubMed:23091000, PubMed:23112165, PubMed:23425532, PubMed:26871634). Co(2+) binding also induces a conformation change (PubMed:21454699). Low Mg(2+) concentrations trigger both a conformation change within each subunit and a loosening of the interactions between subunits. This results in an open ion conduction pathway. In addition, this results in a less symmetrical shape of the whole complex (PubMed:23112165, PubMed:26871634)"
+}

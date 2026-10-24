@@ -1,0 +1,36 @@
+{
+  "protein": {
+    "name": "CorA",
+    "organism": "Thermotoga maritima",
+    "uniprot_accession": "Q9WZ31",
+    "sequence_version": 1,
+    "amino_acids": 351,
+    "sequence_sha256": "79a46fd40b1f301927fa062c2ec3add509567ced2f388f017119b55cf6333ee3"
+  },
+  "original_training_example": "judge:sequence-mcq-existing-v1-10013",
+  "source_dataset": "https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k",
+  "source_split": "TRAIN",
+  "recorded_benchmark_matches": [],
+  "recorded_quarantine_reasons": [],
+  "main_paper": {
+    "pmid": "23425532",
+    "pmcid": "PMC3629940",
+    "doi": "10.1042/BJ20121745",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3629940/",
+    "license": "CC-BY-3.0"
+  },
+  "correction": {
+    "pmcid": "PMC3871142",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3871142/fullTextXML",
+    "included_in_original_teacher_input": true,
+    "public_full_text_included": false,
+    "reason": "No explicit redistribution license found in retrieved notice."
+  },
+  "annotation": {
+    "source": "UniProt Consortium",
+    "accession": "Q9WZ31",
+    "license": "CC-BY-4.0",
+    "url": "https://www.uniprot.org/uniprotkb/Q9WZ31/entry"
+  },
+  "derivative_edit": "Only the duplicated question/choices preface is removed from the readable/student derivative. Original generated scientific output is retained."
+}

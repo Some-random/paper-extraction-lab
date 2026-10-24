@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning": {
+    "effort": "max",
+    "mode": "pro"
+  },
+  "usage": {
+    "input_tokens": 78637,
+    "input_tokens_details": {
+      "cache_write_tokens": 19235,
+      "cached_tokens": 19235
+    },
+    "output_tokens": 21976,
+    "output_tokens_details": {
+      "reasoning_tokens": 19160
+    },
+    "total_tokens": 100613
+  },
+  "cost_usd": "1.7601425",
+  "components": {
+    "cache_read_usd": "0.019235",
+    "cache_write_usd": "0.2404375",
+    "output_including_reasoning_usd": "1.0988",
+    "uncached_input_usd": "0.40167"
+  },
+  "pricing_basis": "Recorded aggregate pro-mode usage at Standard rates: uncached input $10/M; cache reads $1/M; cache writes $12.50/M; output including reasoning $50/M. Invoice not retrieved.",
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "https://developers.openai.com/api/reference/resources/responses/methods/create"
+  ],
+  "note": "Usage-based calculation, not an independently retrieved invoice. Cache-write premium is included; the first local estimate omitted that premium."
+}

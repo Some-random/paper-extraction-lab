@@ -1,0 +1,118 @@
+{
+  "files": [
+    {
+      "file": ".gitignore",
+      "sha256": "581b67c5c64acce649238a8f4fc7a27641f5d5657ebd20523aeb1979ef898338",
+      "bytes": 46
+    },
+    {
+      "file": "ASTRA_ORIGINAL_WORKED_SOLUTION.txt",
+      "sha256": "1c6c2c4ef694b723842689cdc72a9df9a778ecc417d8abda34dbd0014067c400",
+      "bytes": 2539
+    },
+    {
+      "file": "EVIDENCE.md",
+      "sha256": "0877806e6277111ee37d2157931d310db61b6c94b50d2211e1a244886d116793",
+      "bytes": 2309
+    },
+    {
+      "file": "EXAMPLE.txt",
+      "sha256": "9d76c8b669ea3e46d104625bff8e00e93efd65d633c60ca475ed7284eb132161",
+      "bytes": 3629
+    },
+    {
+      "file": "README.md",
+      "sha256": "71af4c0edf756f5bdab9631797766e90073d14c5181daddfcb4b48a413b8b9e7",
+      "bytes": 6894
+    },
+    {
+      "file": "SOURCES_AND_LICENSES.md",
+      "sha256": "7209a43c1cf8618899ed7ccaa4192985723f59f92bb8553e02dd92b424e62f37",
+      "bytes": 2075
+    },
+    {
+      "file": "generated_output.json",
+      "sha256": "19ba257608f8c68d868683073cad263e5647413b587bc00c89131aa41eda8650",
+      "bytes": 6258
+    },
+    {
+      "file": "generation_request.public.json",
+      "sha256": "dc09d94a32cf8b65738e74cd62ce838968d84ebd6f52a2e1a01c4f1870e12eae",
+      "bytes": 63022
+    },
+    {
+      "file": "generation_settings.json",
+      "sha256": "d44718fbb798e4f727bd1c31ac5725552cd15587ba72e1e3c336ec93cbef03cc",
+      "bytes": 1405
+    },
+    {
+      "file": "generation_system_prompt.txt",
+      "sha256": "200fbdec6c9b01d40784d059ac5c725337117d869dbc24538db5628d76d1b62a",
+      "bytes": 1620
+    },
+    {
+      "file": "offline_checks.json",
+      "sha256": "18f1e8b43253911200df48efa55bc426158289ac2e788146a4a78c6dde87d422",
+      "bytes": 3433
+    },
+    {
+      "file": "reconstruct_request.py",
+      "sha256": "1e6421fc838181d6477432855a7187ed12575df19bf033789bf4f3135a251eb7",
+      "bytes": 1226
+    },
+    {
+      "file": "review.json",
+      "sha256": "98dcdf69a139ed2e981b0db5c67ecaf67e8a9ab375b8014e0ed5f955f5253290",
+      "bytes": 798
+    },
+    {
+      "file": "source_provenance.json",
+      "sha256": "ae979bea4a6a1dfaa31a7da4bf608c596e0f557cfe7b956011a82017a51c4596",
+      "bytes": 1370
+    },
+    {
+      "file": "sources/cora_paper.txt",
+      "sha256": "a21c849d837f55f287d558b2ec60ed451e3d40305dba5e691a02fb2619760021",
+      "bytes": 54285
+    },
+    {
+      "file": "sources/correction_notice.md",
+      "sha256": "1934078fdb2be54b36b540d44e5ec2a8ba0d312a996039d29a4cef98eb363625",
+      "bytes": 884
+    },
+    {
+      "file": "sources/sequence_features.json",
+      "sha256": "3e1bc64f44cdfb8a705efd6068c3b5f5c7bbd3b809b83dc6c9d40b6fbdf5c7dd",
+      "bytes": 538
+    },
+    {
+      "file": "sources/uniprot_annotation.json",
+      "sha256": "048f89b3ea3c830c4a311cb9e20a04c07cbe106ca32e959c482481b979e51517",
+      "bytes": 859
+    },
+    {
+      "file": "student_example.jsonl",
+      "sha256": "d5cf7fe13c000dc6e63ef936eb4a233e5090e5007673a5108b4423417e7c2fa3",
+      "bytes": 3332
+    },
+    {
+      "file": "student_question.txt",
+      "sha256": "f82456527802a630f5338363874cfd278237bd8f2147cc7a3a243e2faa621023",
+      "bytes": 972
+    },
+    {
+      "file": "teacher_packet.public.json",
+      "sha256": "1c53853e6fc0b8de577a26102719906ce09649c68e64eaafd228baf04ca5e7ce",
+      "bytes": 58438
+    },
+    {
+      "file": "usage_cost.json",
+      "sha256": "9d1e1651c561643bfca36c921e81ef0da23e188fd38650ca83f4e455d4e5d2e5",
+      "bytes": 1096
+    }
+  ],
+  "generation_requests": 1,
+  "account_transport_records_included": false,
+  "correction_fulltext_included": false,
+  "raw_scientific_output_preserved": true
+}

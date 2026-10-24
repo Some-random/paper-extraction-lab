@@ -8,6 +8,8 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[Protein question-answer dataset](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k):** a separate collection of 10,000 training examples. Start with [two complete training examples and the papers behind their explanations](reports/training_preparation_2026-10-21/PAPER_LINK_EXAMPLES.md).
 
+**[Astra protein reasoning pilot](reports/astra_protein_pilot_2026-10-23/README.md):** one complete protein question and paper-grounded solution, with the full sequence, supporting paper, generation settings, evidence checks and measured usage cost.
+
 The [October 19 paper-collection report](reports/paper_collection_2026-10-19/README.md),
 earlier [measured token counts](reports/corpus_count_2026-10-17/README.md), and
 [counting setup](docs/corpus_counting.md) remain as historical reports.

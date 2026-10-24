@@ -1,0 +1,75 @@
+{
+  "mechanical_status": "PASS",
+  "failures": [],
+  "answer_matches_source": true,
+  "sequence_claim_checks": [
+    {
+      "end": 313,
+      "interpretation": "Hydrophobic segment corresponding to the annotated TM1 span. Its pore-lining role follows from known CorA architecture, not from hydrophobicity alone.",
+      "residues": "VLTIIATIFMPLTFIAGIYGM",
+      "start": 293,
+      "exact_sequence_match": true
+    },
+    {
+      "end": 345,
+      "interpretation": "Hydrophobic segment corresponding to the annotated TM2 span, consistent with CorA's paired C-terminal membrane-spanning regions.",
+      "residues": "WGYPVVLAVMGVIAVIMVVYF",
+      "start": 325,
+      "exact_sequence_match": true
+    },
+    {
+      "end": 314,
+      "interpretation": "CorA signature motif at the end of TM1 and adjoining extracellular loop; known CorA structures place it at the ion entrance.",
+      "residues": "GMN",
+      "start": 312,
+      "exact_sequence_match": true
+    },
+    {
+      "end": 315,
+      "interpretation": "Extended conserved motif encompassing GMN near the extracellular end of TM1.",
+      "residues": "YGMNF",
+      "start": 311,
+      "exact_sequence_match": true
+    },
+    {
+      "end": 321,
+      "interpretation": "Second CorA signature motif in the short connecting region before TM2, assigned to the extracellular loop in known CorA topology.",
+      "residues": "MPEL",
+      "start": 318,
+      "exact_sequence_match": true
+    }
+  ],
+  "evidence_checks": [
+    {
+      "claim": "Established CorA architecture directly supports A: each of five subunits contributes its first transmembrane domain to the shared central ion pathway.",
+      "quote": "The central ion permeation pathway is formed by the first transmembrane domain from each of the five subunits.",
+      "source_id": "annotation",
+      "exact_quote_match": true,
+      "whitespace_normalized_match": true
+    },
+    {
+      "claim": "The conserved GMN motif belongs to the polar ion-entry region of CorA.",
+      "quote": "The universally conserved GMN motif is arranged in an almost exact way as that of MjCorA, creating a polar entry made of the Asn314 side chain with the underlying ring of the carbonyl group from Gly312 (Figure 1C).",
+      "source_id": "paper",
+      "exact_quote_match": true,
+      "whitespace_normalized_match": true
+    },
+    {
+      "claim": "MPEL is a second CorA signature motif in the extracellular connecting-loop region.",
+      "quote": "In MjCorA, this stretch is composed of SYLPLA (which is also less conserved within the family), whereas TmCorA contains the conserved region EYMPEL (where MPEL is the second signature motif of the CorA family).",
+      "source_id": "paper",
+      "exact_quote_match": true,
+      "whitespace_normalized_match": true
+    },
+    {
+      "claim": "Intracellular metal-binding sites have regulatory and stabilizing functions, distinct from TM1's membrane pore-forming role.",
+      "quote": "Finally, the roles of the intracellular metal-binding sites have been assigned to increased thermostability and regulation of the gating.",
+      "source_id": "paper",
+      "exact_quote_match": true,
+      "whitespace_normalized_match": true
+    }
+  ],
+  "review_scope": "Literal sequence checks, source quote matching and source answer comparison only. Scientific adequacy requires separate review.",
+  "expert_human_review_performed": false,
+  "student_training_released": false
+}
