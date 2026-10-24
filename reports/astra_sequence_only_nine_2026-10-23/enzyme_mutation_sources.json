@@ -1,0 +1,110 @@
+{
+  "status": "primary_source_shortlist_and_question_design_only",
+  "papers": [
+    {
+      "title": "Efficient proximity labeling in living cells and organisms with TurboID",
+      "year": 2018,
+      "doi": "10.1038/nbt.4201",
+      "url": "https://www.nature.com/articles/nbt.4201",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+      "Ting_relationship": "Alice Y. Ting is a senior author; directly from her research team.",
+      "enzyme_class": "Biotin ligase used for proximity labeling",
+      "variant_types_high_level": "Published evolved full-length ligases and a smaller deletion-bearing variant, compared with earlier ligases and intermediate variants.",
+      "recommended_evidence_panels": [
+        {
+          "panel": "Figure 2a–b",
+          "measured_quantity": "Promiscuous biotinylation band intensity, normalized to enzyme-expression signal; separate early and later labeling-time comparisons.",
+          "what_it_supports": "Published variants differ in cellular labeling activity and background. This measures the combined variant under stated conditions, not isolated causality for every substitution.",
+          "data_status": "Caption and normalization checked in primary full-text XML. Exact bar heights have not been transcribed."
+        },
+        {
+          "panel": "Figure 1f–g",
+          "measured_quantity": "Expression-normalized cellular labeling across intermediate and final ligase variants.",
+          "what_it_supports": "Comparison of measured phenotypes along the reported variant series."
+        }
+      ],
+      "evidence_question_template": "Given expression-normalized labeling results with and without added biotin, which published variant best meets a stated balance between labeling activity and background?",
+      "student_required_information": [
+        "Variant labels or parent/variant sequences and verified differences",
+        "Assay context and labeling-time labels",
+        "Actual normalized measurements with controls"
+      ],
+      "sequence_only_limit": "Anonymous sequence alone does not establish the measured activity or background.",
+      "correction": {
+        "doi": "10.1038/s41587-019-0355-0",
+        "url": "https://www.nature.com/articles/s41587-019-0355-0",
+        "scope": "Corrects copying errors in Supplementary Tables 2–7; use current corrected files for proteomic questions."
+      }
+    },
+    {
+      "title": "Directed evolution of APEX2 for electron microscopy and proximity labeling",
+      "year": 2015,
+      "online_year": 2014,
+      "doi": "10.1038/nmeth.3179",
+      "url": "https://www.nature.com/articles/nmeth.3179",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4296907/",
+      "Ting_relationship": "Alice Y. Ting is a senior author; directly from her research team.",
+      "enzyme_class": "Heme peroxidase reporter",
+      "variant_types_high_level": "Published parent, evolved single-substitution variant, combination variant and dimeric comparator.",
+      "recommended_evidence_panels": [
+        {
+          "panel": "Figure 2e",
+          "measured_quantity": "Initial guaiacol-oxidation rate versus peroxide concentration, under two substrate conditions.",
+          "what_it_supports": "The evolved enzyme retains activity over a different peroxide range; resistance to inhibition is condition-dependent.",
+          "data_status": "Corrected primary author PDF Results and full Figure 2 caption inspected. Numerical curve values have not been transcribed."
+        },
+        {
+          "panel": "Figure 2a–b",
+          "measured_quantity": "Cellular biotinylation fluorescence and separate enzyme-expression staining.",
+          "what_it_supports": "Cellular labeling differences; this readout alone is not a purified-enzyme catalytic constant."
+        }
+      ],
+      "evidence_question_template": "Given matched parent/variant activity curves, which interpretation distinguishes improved peroxide tolerance from an unconditional increase in catalytic activity?",
+      "student_required_information": [
+        "Parent/variant identity or verified sequence difference",
+        "Substrate and peroxide-axis context",
+        "Measured curves or a faithfully extracted data table"
+      ],
+      "sequence_only_limit": "A substitution position does not by itself prove the direction or size of an activity change.",
+      "correction": {
+        "url": "https://www.nature.com/articles/nmeth.3179",
+        "scope": "December 2014 correction fixes Figure 2a symbols and obscured Figure 2e ordinate labels; use the corrected version."
+      }
+    },
+    {
+      "title": "Directed Evolution of Split APEX2 Peroxidase",
+      "year": 2019,
+      "doi": "10.1021/acschembio.8b00919",
+      "url": "https://pubs.acs.org/doi/10.1021/acschembio.8b00919",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6548188/",
+      "Ting_relationship": "Alice Ting is a senior author; directly from her research team.",
+      "enzyme_class": "Split heme-peroxidase reporter",
+      "variant_types_high_level": "Published sequentially evolved fragment variants, paired with a common partner fragment, compared with the parent pair and full-length enzyme.",
+      "recommended_evidence_panels": [
+        {
+          "panel": "Figure 3b–d",
+          "measured_quantity": "DAB staining, proximity-labeling fluorescence and biotinylation blot signal; interaction-induced and control conditions, with expression controls.",
+          "what_it_supports": "Activity and interaction-dependence can change differently during variant evolution.",
+          "data_status": "Primary figure captions and Results inspected. Images and blot signals are comparative evidence; no new numerical values inferred."
+        },
+        {
+          "panel": "Figure 2b, corrected version only",
+          "measured_quantity": "Flow-cytometry activity/expression distributions and reported quadrant fractions.",
+          "what_it_supports": "Variant activity and background across published generations."
+        }
+      ],
+      "evidence_question_template": "Given induced and uninduced labeling plus expression controls, which published variant improves conditional activity without merely increasing background?",
+      "student_required_information": [
+        "Variant and paired-fragment identities",
+        "Induced/control condition labels",
+        "Actual activity and expression-control data"
+      ],
+      "sequence_only_limit": "Fragment identity alone does not establish reconstitution activity or background.",
+      "correction": {
+        "doi": "10.1021/acschembio.9b00798",
+        "url": "https://pubs.acs.org/doi/10.1021/acschembio.9b00798",
+        "scope": "Correction replaces duplicated images in Figure 1e and Figure 2b with independently repeated experiments. Use replacement panels; Figure 3 is not identified as corrected."
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "confidence": "high",
+  "limitations": "Sequence strongly supports one C-terminal membrane anchor, but exact membrane-spanning boundaries and membrane orientation cannot be established conclusively. The cytosolic location of the large upstream region is a well-supported topology inference, not a direct observation.",
+  "selected_answer": "B",
+  "sequence_claims": [
+    {
+      "end": 192,
+      "interpretation": "Large upstream region containing frequent charged and polar residues, without another obvious membrane-length hydrophobic stretch.",
+      "residues": "MSSDFEGYEQDFAVLTAEITSKIARVPRLPPDEKKQMVANVEKQLEEARELLEQMDLEVREIPPQSRGMYSNRMRSYKQEMGKLETDFKRSRIAYSDEVRNELLGDAGNSSENQRAHLLDNTERLERSSRRLEAGYQIAVETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNR",
+      "start": 1
+    },
+    {
+      "end": 30,
+      "interpretation": "Mixed-composition N terminus lacking the sustained hydrophobic core expected for a classical cleavable signal peptide.",
+      "residues": "MSSDFEGYEQDFAVLTAEITSKIARVPRLP",
+      "start": 1
+    },
+    {
+      "end": 192,
+      "interpretation": "Arginine-rich flank immediately preceding the hydrophobic core; consistent with, but not proof of, a cytosolic upstream region.",
+      "residues": "RRIIQNR",
+      "start": 186
+    },
+    {
+      "end": 214,
+      "interpretation": "A 22-residue strongly hydrophobic stretch with no charged residues, consistent with a membrane-spanning alpha helix.",
+      "residues": "ILLVILGIIVVIAILTAIAFFV",
+      "start": 193
+    },
+    {
+      "end": 217,
+      "interpretation": "Only three residues follow the hydrophobic core, placing the candidate membrane anchor near the C terminus.",
+      "residues": "KGH",
+      "start": 215
+    }
+  ],
+  "worked_solution": "B is the best-supported architecture: a large cytosolic region with a single membrane anchor near the C terminus.\n\nThe strongest evidence is residues 193–214, ILLVILGIIVVIAILTAIAFFV. This 22-residue stretch is strongly hydrophobic and contains no charged residues. Its length and composition are appropriate for an alpha helix spanning a lipid bilayer; such helices commonly contain roughly 18–25 predominantly hydrophobic residues. Only KGH at positions 215–217 follows it, so the candidate anchor lies very close to the protein's C terminus.\n\nIn contrast, residues 1–192 contain frequent charged and polar residues and no other comparably long hydrophobic stretch. They therefore support a large region outside the membrane rather than additional transmembrane helices. The N-terminal 30 residues also lack the sustained hydrophobic core expected in a classical cleavable signal peptide. Together, these features support a C-terminally anchored architecture. The basic flank RRIIQNR at residues 186–192 is consistent with the positive-inside tendency, in which positively charged flanks preferentially lie on the cytosolic side. This strengthens, but does not prove, the inference that the large upstream region is cytosolic.\n\nComparison of the choices:\n- A is disfavored because the sequence contains a conspicuous membrane-length hydrophobic segment, rather than lacking a membrane anchor.\n- B matches the large nonmembrane region, single near-terminal hydrophobic segment, and very short following tail.\n- C would require seven separate membrane-spanning hydrophobic segments; that repeated pattern is absent.\n- D requires an N-terminal signal peptide and a soluble mature protein. Here, the strong hydrophobic segment is at the C terminus, not the N terminus.\n\nThus, B best accounts for both the number and location of the candidate membrane-spanning segments."
+}

@@ -1,0 +1,24 @@
+{
+  "strict_schema_passed": true,
+  "sequence_claim_checks": [
+    {
+      "end": 57,
+      "exact_sequence_match": true,
+      "residues": "DRDGNGFISKQE",
+      "start": 46
+    },
+    {
+      "end": 93,
+      "exact_sequence_match": true,
+      "residues": "DMDGDGQVDFEE",
+      "start": 82
+    },
+    {
+      "end": 206,
+      "exact_sequence_match": true,
+      "residues": "LICAFAIAFIISVMLIAA",
+      "start": 189
+    }
+  ],
+  "sequence_claims_passed": true
+}

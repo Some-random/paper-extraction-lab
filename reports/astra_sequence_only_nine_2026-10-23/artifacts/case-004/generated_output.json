@@ -1,0 +1,26 @@
+{
+  "confidence": "high",
+  "limitations": "This is a sequence-based cofactor prediction, not direct evidence of bound heme. The sequence does not establish actual cofactor occupancy, substrate specificity, or catalytic reaction.",
+  "selected_answer": "D",
+  "sequence_claims": [
+    {
+      "end": 347,
+      "interpretation": "Matches the characteristic cytochrome P450 heme-binding pattern FxxGxxxCxG. Cys345 occupies the position expected for the axial thiolate ligand to heme iron.",
+      "residues": "FGHGHHVCLG",
+      "start": 338
+    },
+    {
+      "end": 277,
+      "interpretation": "Matches the conserved E-x-x-R pattern associated with the P450 K helix, supporting a P450-family assignment.",
+      "residues": "ECLR",
+      "start": 274
+    },
+    {
+      "end": 240,
+      "interpretation": "An acidic/threonine-containing sequence consistent with the conserved P450 I-helix region involved in oxygen activation.",
+      "residues": "AGHETT",
+      "start": 235
+    }
+  ],
+  "worked_solution": "D. Heme is the most strongly supported cofactor.\n\nThe decisive evidence is a coherent combination of cytochrome P450 sequence signatures, rather than simply the presence of cysteine or histidine residues.\n\n1. Heme-binding signature: residues 338–347 are FGHGHHVCLG. This matches FxxGxxxCxG, where x denotes any residue. In P450 proteins, the cysteine at this motif position supplies the axial sulfur ligand to the heme iron. Thus, Cys345 is a strong candidate for a heme-ligating cysteine. This is the most direct cofactor-related clue.\n\n2. Supporting P450 core signature: residues 274–277 are ECLR, matching the characteristic E-x-x-R motif associated with the P450 K helix. This motif supports the fold assignment; it is not itself a direct metal-binding motif.\n\n3. Supporting catalytic-region signature: residues 235–240 are AGHETT. Its acidic residue and adjacent threonines are consistent with the conserved I-helix region used in oxygen activation by many P450 enzymes. Assigning this segment to an I helix is an inference from the motif context, not an observed secondary structure.\n\nThese features occur in the expected sequence order: the I-helix-like segment, the E-x-x-R motif, and then the cysteine-containing heme-binding loop toward the C terminus. Together they strongly support a P450-family protein, whose defining prosthetic group is heme.\n\nComparison with the alternatives:\n- A. FAD and B. FMN: flavin-binding proteins are diverse, so neither cofactor can be excluded merely by the absence of one universal motif. Nevertheless, the observed combination specifically supports a P450 heme-binding domain, not a flavin-binding assignment.\n- C. A four-iron four-sulfur cluster: cysteines can ligate iron–sulfur clusters, but cysteine presence alone is insufficient evidence. Here the key cysteine occurs in a characteristic heme-thiolate signature reinforced by two other P450-associated motifs.\n- D. Heme: directly explains the predicted cysteine–iron coordination and the overall motif combination, making it the most defensible choice."
+}

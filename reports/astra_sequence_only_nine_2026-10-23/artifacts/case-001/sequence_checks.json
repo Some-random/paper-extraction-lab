@@ -1,0 +1,30 @@
+{
+  "strict_schema_passed": true,
+  "sequence_claim_checks": [
+    {
+      "end": 40,
+      "exact_sequence_match": true,
+      "residues": "LESMKMEIPI",
+      "start": 31
+    },
+    {
+      "end": 55,
+      "exact_sequence_match": true,
+      "residues": "EVKKKE",
+      "start": 50
+    },
+    {
+      "end": 19,
+      "exact_sequence_match": true,
+      "residues": "HVKAG",
+      "start": 15
+    },
+    {
+      "end": 26,
+      "exact_sequence_match": true,
+      "residues": "IEKGQ",
+      "start": 22
+    }
+  ],
+  "sequence_claims_passed": true
+}

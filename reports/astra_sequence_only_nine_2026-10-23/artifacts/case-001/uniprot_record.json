@@ -1,0 +1,1322 @@
+{
+  "annotationScore": 3.0,
+  "comments": [
+    {
+      "commentType": "INDUCTION",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "16699181",
+              "source": "PubMed"
+            }
+          ],
+          "value": "Detected in log-phase B.subtilis cells (at protein level)"
+        }
+      ]
+    },
+    {
+      "commentType": "PTM",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "16699181",
+              "source": "PubMed"
+            }
+          ],
+          "value": "Can be both biotinylated and lipoylated on Lys-35 upon overexpression in E.coli depending on the growth medium; the nature of the modification in situ in B.subtilis is unknown"
+        }
+      ]
+    },
+    {
+      "commentType": "MASS SPECTROMETRY",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "16699181",
+          "source": "PubMed"
+        }
+      ],
+      "method": "Unknown",
+      "molWeight": 7913.0,
+      "molWeightError": 0.0,
+      "note": "Upon overexpression in E.coli."
+    }
+  ],
+  "entryAudit": {
+    "entryVersion": 75,
+    "firstPublicDate": "2009-11-24",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2009-05-05",
+    "sequenceVersion": 1
+  },
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "extraAttributes": {
+    "countByCommentType": {
+      "INDUCTION": 1,
+      "MASS SPECTROMETRY": 1,
+      "PTM": 1
+    },
+    "countByFeatureType": {
+      "Beta strand": 5,
+      "Chain": 1,
+      "Domain": 1,
+      "Helix": 1,
+      "Initiator methionine": 1,
+      "Modified residue": 2,
+      "Mutagenesis": 1,
+      "Natural variant": 5
+    },
+    "uniParcId": "UPI0000168480"
+  },
+  "features": [
+    {
+      "description": "Removed",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 1
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 1
+        }
+      },
+      "type": "Initiator methionine"
+    },
+    {
+      "description": "Biotin/lipoyl attachment protein",
+      "featureId": "PRO_0000389494",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 73
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 2
+        }
+      },
+      "type": "Chain"
+    },
+    {
+      "description": "Biotinyl-binding",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU01066",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 69
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 2
+        }
+      },
+      "type": "Domain"
+    },
+    {
+      "description": "N6-biotinyllysine; alternate",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU01066",
+          "source": "PROSITE-ProRule"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "16699181",
+          "source": "PubMed"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 35
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 35
+        }
+      },
+      "type": "Modified residue"
+    },
+    {
+      "description": "N6-lipoyllysine; alternate",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "16699181",
+          "source": "PubMed"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 35
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 35
+        }
+      },
+      "type": "Modified residue"
+    },
+    {
+      "alternativeSequence": {
+        "alternativeSequences": [
+          "I"
+        ],
+        "originalSequence": "S"
+      },
+      "description": "in strain: ATCC 6633",
+      "featureId": "",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 4
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 4
+        }
+      },
+      "type": "Natural variant"
+    },
+    {
+      "alternativeSequence": {
+        "alternativeSequences": [
+          "H"
+        ],
+        "originalSequence": "Q"
+      },
+      "description": "in strain: ATCC 6633",
+      "featureId": "",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 21
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 21
+        }
+      },
+      "type": "Natural variant"
+    },
+    {
+      "alternativeSequence": {
+        "alternativeSequences": [
+          "T"
+        ],
+        "originalSequence": "I"
+      },
+      "description": "in strain: ATCC 6633",
+      "featureId": "",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 47
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 47
+        }
+      },
+      "type": "Natural variant"
+    },
+    {
+      "alternativeSequence": {
+        "alternativeSequences": [
+          "N"
+        ],
+        "originalSequence": "K"
+      },
+      "description": "in strain: ATCC 6633",
+      "featureId": "",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 54
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 54
+        }
+      },
+      "type": "Natural variant"
+    },
+    {
+      "alternativeSequence": {
+        "alternativeSequences": [
+          "D"
+        ],
+        "originalSequence": "N"
+      },
+      "description": "in strain: ATCC 6633",
+      "featureId": "",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 70
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 70
+        }
+      },
+      "type": "Natural variant"
+    },
+    {
+      "alternativeSequence": {
+        "alternativeSequences": [
+          "M"
+        ],
+        "originalSequence": "W"
+      },
+      "description": "No changes in biotinylation in E.coli.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "16699181",
+          "source": "PubMed"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 12
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 12
+        }
+      },
+      "type": "Mutagenesis"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1Z6H",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 14
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 7
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1Z6H",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 33
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 27
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1Z6H",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 41
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 36
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1Z6H",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 53
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 46
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1Z6H",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 68
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 64
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1Z6H",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 71
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 69
+        }
+      },
+      "type": "Helix"
+    }
+  ],
+  "genes": [
+    {
+      "geneName": {
+        "value": "yngHB"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "BSU18239"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "category": "Technical term",
+      "id": "KW-0002",
+      "name": "3D-structure"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0092",
+      "name": "Biotin"
+    },
+    {
+      "category": "Domain",
+      "id": "KW-0450",
+      "name": "Lipoyl"
+    },
+    {
+      "category": "Technical term",
+      "id": "KW-1185",
+      "name": "Reference proteome"
+    }
+  ],
+  "organism": {
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Caryophanales",
+      "Bacillaceae",
+      "Bacillus"
+    ],
+    "scientificName": "Bacillus subtilis (strain 168)",
+    "taxonId": 224308
+  },
+  "primaryAccession": "C0H419",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Biotin/lipoyl attachment protein"
+      },
+      "shortNames": [
+        {
+          "value": "BLAP"
+        }
+      ]
+    }
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "references": [
+    {
+      "citation": {
+        "authors": [
+          "Duitman E.H.",
+          "Hamoen L.W.",
+          "Rembold M.",
+          "Venema G.",
+          "Seitz H.",
+          "Saenger W.",
+          "Bernhard F.",
+          "Reinhardt R.",
+          "Schmidt M.",
+          "Ullrich C.",
+          "Stein T.",
+          "Leenders F.",
+          "Vater J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "10557314"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.96.23.13294"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "13294",
+        "id": "10557314",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "lastPage": "13299",
+        "publicationDate": "1999",
+        "title": "The mycosubtilin synthetase of Bacillus subtilis ATCC6633: a multifunctional hybrid between a peptide synthetase, an amino transferase, and a fatty acid synthase.",
+        "volume": "96"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "ATCC 6633 / PCI 219 / NRS 231"
+        }
+      ],
+      "referenceNumber": 1,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Kunst F.",
+          "Ogasawara N.",
+          "Moszer I.",
+          "Albertini A.M.",
+          "Alloni G.",
+          "Azevedo V.",
+          "Bertero M.G.",
+          "Bessieres P.",
+          "Bolotin A.",
+          "Borchert S.",
+          "Borriss R.",
+          "Boursier L.",
+          "Brans A.",
+          "Braun M.",
+          "Brignell S.C.",
+          "Bron S.",
+          "Brouillet S.",
+          "Bruschi C.V.",
+          "Caldwell B.",
+          "Capuano V.",
+          "Carter N.M.",
+          "Choi S.-K.",
+          "Codani J.-J.",
+          "Connerton I.F.",
+          "Cummings N.J.",
+          "Daniel R.A.",
+          "Denizot F.",
+          "Devine K.M.",
+          "Duesterhoeft A.",
+          "Ehrlich S.D.",
+          "Emmerson P.T.",
+          "Entian K.-D.",
+          "Errington J.",
+          "Fabret C.",
+          "Ferrari E.",
+          "Foulger D.",
+          "Fritz C.",
+          "Fujita M.",
+          "Fujita Y.",
+          "Fuma S.",
+          "Galizzi A.",
+          "Galleron N.",
+          "Ghim S.-Y.",
+          "Glaser P.",
+          "Goffeau A.",
+          "Golightly E.J.",
+          "Grandi G.",
+          "Guiseppi G.",
+          "Guy B.J.",
+          "Haga K.",
+          "Haiech J.",
+          "Harwood C.R.",
+          "Henaut A.",
+          "Hilbert H.",
+          "Holsappel S.",
+          "Hosono S.",
+          "Hullo M.-F.",
+          "Itaya M.",
+          "Jones L.-M.",
+          "Joris B.",
+          "Karamata D.",
+          "Kasahara Y.",
+          "Klaerr-Blanchard M.",
+          "Klein C.",
+          "Kobayashi Y.",
+          "Koetter P.",
+          "Koningstein G.",
+          "Krogh S.",
+          "Kumano M.",
+          "Kurita K.",
+          "Lapidus A.",
+          "Lardinois S.",
+          "Lauber J.",
+          "Lazarevic V.",
+          "Lee S.-M.",
+          "Levine A.",
+          "Liu H.",
+          "Masuda S.",
+          "Mauel C.",
+          "Medigue C.",
+          "Medina N.",
+          "Mellado R.P.",
+          "Mizuno M.",
+          "Moestl D.",
+          "Nakai S.",
+          "Noback M.",
+          "Noone D.",
+          "O'Reilly M.",
+          "Ogawa K.",
+          "Ogiwara A.",
+          "Oudega B.",
+          "Park S.-H.",
+          "Parro V.",
+          "Pohl T.M.",
+          "Portetelle D.",
+          "Porwollik S.",
+          "Prescott A.M.",
+          "Presecan E.",
+          "Pujic P.",
+          "Purnelle B.",
+          "Rapoport G.",
+          "Rey M.",
+          "Reynolds S.",
+          "Rieger M.",
+          "Rivolta C.",
+          "Rocha E.",
+          "Roche B.",
+          "Rose M.",
+          "Sadaie Y.",
+          "Sato T.",
+          "Scanlan E.",
+          "Schleich S.",
+          "Schroeter R.",
+          "Scoffone F.",
+          "Sekiguchi J.",
+          "Sekowska A.",
+          "Seror S.J.",
+          "Serror P.",
+          "Shin B.-S.",
+          "Soldo B.",
+          "Sorokin A.",
+          "Tacconi E.",
+          "Takagi T.",
+          "Takahashi H.",
+          "Takemaru K.",
+          "Takeuchi M.",
+          "Tamakoshi A.",
+          "Tanaka T.",
+          "Terpstra P.",
+          "Tognoni A.",
+          "Tosato V.",
+          "Uchiyama S.",
+          "Vandenbol M.",
+          "Vannier F.",
+          "Vassarotti A.",
+          "Viari A.",
+          "Wambutt R.",
+          "Wedler E.",
+          "Wedler H.",
+          "Weitzenegger T.",
+          "Winters P.",
+          "Wipat A.",
+          "Yamamoto H.",
+          "Yamane K.",
+          "Yasumoto K.",
+          "Yata K.",
+          "Yoshida K.",
+          "Yoshikawa H.-F.",
+          "Zumstein E.",
+          "Yoshikawa H.",
+          "Danchin A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9384377"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/36786"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "249",
+        "id": "9384377",
+        "journal": "Nature",
+        "lastPage": "256",
+        "publicationDate": "1997",
+        "title": "The complete genome sequence of the Gram-positive bacterium Bacillus subtilis.",
+        "volume": "390"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "168"
+        }
+      ],
+      "referenceNumber": 2,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Cui G.",
+          "Nan B.",
+          "Hu J.",
+          "Wang Y.",
+          "Jin C.",
+          "Xia B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16699181"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m602660200"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "20598",
+        "id": "16699181",
+        "journal": "J. Biol. Chem.",
+        "lastPage": "20607",
+        "publicationDate": "2006",
+        "title": "Identification and solution structures of a single domain biotin/lipoyl attachment protein from Bacillus subtilis.",
+        "volume": "281"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "168"
+        }
+      ],
+      "referenceNumber": 3,
+      "referencePositions": [
+        "STRUCTURE BY NMR OF 2-73 OF THE APO- AND BIOTINYLATED FORMS",
+        "BIOTINYLATION AT LYS-35",
+        "LIPOYLATION AT LYS-35",
+        "INDUCTION",
+        "MASS SPECTROMETRY",
+        "MUTAGENESIS OF TRP-12"
+      ]
+    }
+  ],
+  "secondaryAccessions": [
+    "Q9R9I3"
+  ],
+  "sequence": {
+    "crc64": "0358FB92D5DBED91",
+    "length": 73,
+    "md5": "4A4919D315A881F9DC975CE936CF8A7F",
+    "molWeight": 8041,
+    "value": "MTVSIQMAGNLWKVHVKAGDQIEKGQEVAILESMKMEIPIVADRSGIVKEVKKKEGDFVNEGDVLLELSNSTQ"
+  },
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF184956",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAF08803.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AL009126",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAX52627.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "T44814",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T44814"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_003245519.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000964.3"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1Z6H",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "NMR"
+        },
+        {
+          "key": "Resolution",
+          "value": "-"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-73"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1Z7T",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "NMR"
+        },
+        {
+          "key": "Resolution",
+          "value": "-"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-73"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2B8F",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "NMR"
+        },
+        {
+          "key": "Resolution",
+          "value": "-"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-73"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2B8G",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "NMR"
+        },
+        {
+          "key": "Resolution",
+          "value": "-"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-73"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1Z6H",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1Z7T",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2B8F",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2B8G",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BMRB",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "43"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "224308.BSU18239",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DrugBank",
+      "id": "DB07497",
+      "properties": [
+        {
+          "key": "GenericName",
+          "value": "5-(hexahydro-2-oxo-1H-thieno[3,4-D]imidazol-6-yl)pentanal"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "224308-BSU18239",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "CAX52627",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAX52627"
+        },
+        {
+          "key": "GeneId",
+          "value": "BSU_18239"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "8303012",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "bsu:BSU18239",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|224308.179.peg.1989",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0511",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "163546at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "BSUB:BSU18239-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001570",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "C0H419",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd06850",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "biotinyl_domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.40.50.100:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyl-CoA carboxylase biotin carboxyl carrier protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.40.50.100",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR050709",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Biotin_Carboxyl_Carrier/Decarb"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000089",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Biotin_lipoyl"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011053",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Single_hybrid_motif"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF004547",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK05889.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF006079",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK08225.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR45266",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "OXALOACETATE DECARBOXYLASE ALPHA CHAIN"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR45266:SF3",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "OXALOACETATE DECARBOXYLASE ALPHA CHAIN"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00364",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Biotin_lipoyl"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51230",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Single hybrid motif"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS50968",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BIOTINYL_LIPOYL"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "uniProtkbId": "BLAP_BACSU"
+}

@@ -1,0 +1,50 @@
+{
+  "confidence": "moderate",
+  "limitations": "This is a qualitative sequence-based architecture prediction. Several internal hydrophobic-rich regions are interrupted by charged residues or prolines, so they cannot all be assigned confidently as full membrane spans. The exact helix count, boundaries, membrane orientation and N-terminal processing are not established.",
+  "selected_answer": "C",
+  "sequence_claims": [
+    {
+      "end": 29,
+      "interpretation": "N-terminal hydrophobic-rich block; Asp22 makes it an imperfect membrane-spanning candidate.",
+      "residues": "INVAAVMCLGDTISQFFF",
+      "start": 12
+    },
+    {
+      "end": 42,
+      "interpretation": "Charged/polar-rich interval compatible with a connecting loop.",
+      "residues": "DKKSLDEWDAGRT",
+      "start": 30
+    },
+    {
+      "end": 64,
+      "interpretation": "Internal hydrophobic-rich block, although Arg58–Arg59 complicate assignment as a membrane span.",
+      "residues": "LRFGIVGLVFVGPTLRRWYHFL",
+      "start": 43
+    },
+    {
+      "end": 81,
+      "interpretation": "Charged/polar-rich interval compatible with a connecting loop.",
+      "residues": "ESRVPKTYSPMRRGVTK",
+      "start": 65
+    },
+    {
+      "end": 103,
+      "interpretation": "Another hydrophobic-rich block; Pro91–Pro92 make a conventional uninterrupted helix less certain.",
+      "residues": "MLVDQTLFAPPFTMAMSFLVPL",
+      "start": 82
+    },
+    {
+      "end": 119,
+      "interpretation": "Charged/polar-rich interval compatible with a connecting loop.",
+      "residues": "SNGEPIDRIRQRILDS",
+      "start": 104
+    },
+    {
+      "end": 166,
+      "interpretation": "Long C-terminal hydrophobic-rich region lacking Asp, Glu, Lys and Arg; the strongest membrane-spanning candidate.",
+      "residues": "FVPLGYQVLYAQFIALVWNCYLSMIL",
+      "start": 141
+    }
+  ],
+  "worked_solution": "C is the most defensible overall fit: a compact multipass alpha-helical membrane protein.\n\nA membrane-spanning alpha helix usually contains roughly 18–25 predominantly hydrophobic residues. Multiple such regions separated by short charged or polar intervals favor a multipass architecture, whereas one isolated hydrophobic segment favors a single-pass protein.\n\nHere, hydrophobic-rich blocks recur across the sequence:\n• 12–29: INVAAVMCLGDTISQFFF\n• 43–64: LRFGIVGLVFVGPTLRRWYHFL\n• 82–103: MLVDQTLFAPPFTMAMSFLVPL\n• 141–166: FVPLGYQVLYAQFIALVWNCYLSMIL\n\nThe C-terminal block is the strongest candidate: it is long, contains many nonpolar residues, and lacks Asp, Glu, Lys and Arg. The earlier blocks alternate with charged/polar-rich intervals at 30–42, 65–81 and 104–119. That repeated pattern is consistent with membrane-embedded helices connected by short loops.\n\nThese are candidate regions, not four established transmembrane helices. Asp22, Arg58–Arg59 and Pro91–Pro92 illustrate why the internal assignments are less secure. Polar or charged residues can occur in membrane helices, and prolines can introduce kinks, but these interruptions reduce confidence in a simple visual topology assignment.\n\nComparison of the choices:\n• A is disfavored by the long C-terminal hydrophobic region together with the repeated internal nonpolar-rich blocks.\n• B would require an N-terminal signal peptide followed by an otherwise soluble protein. Even if the N terminus were a signal peptide, the substantial downstream hydrophobic regions would still need explaining; a purely secreted soluble architecture is therefore less convincing.\n• D is the closest alternative because the C-terminal region is the clearest membrane-spanning candidate. However, a single-pass model would require the earlier hydrophobic-rich blocks to be accommodated within a soluble domain or as non-spanning membrane contacts. Their recurrence and intervening charged intervals favor a multipass interpretation instead.\n• C best accommodates the overall distribution of hydrophobic and charged regions, without requiring an exact helix count to be inferred."
+}

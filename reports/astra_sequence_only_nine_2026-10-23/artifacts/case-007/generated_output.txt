@@ -1,0 +1,44 @@
+{
+  "confidence": "high",
+  "limitations": "Confidence applies to choosing the best architecture among the supplied alternatives. Sequence inspection does not establish exact domain boundaries, confirm that both domains bind peptides, or identify their physiological partners, preferred peptide sequences, or affinities.",
+  "selected_answer": "C",
+  "sequence_claims": [
+    {
+      "end": 43,
+      "interpretation": "An aromatic/glycine-containing segment in the first PDZ-like region that closely resembles the corresponding segment in the second region.",
+      "residues": "EYGYNLHAEKGRGQFVGTVD",
+      "start": 24
+    },
+    {
+      "end": 173,
+      "interpretation": "The corresponding aromatic/glycine-containing segment in the second PDZ-like region.",
+      "residues": "EFGFNLHAERGRGHFIGTVD",
+      "start": 154
+    },
+    {
+      "end": 80,
+      "interpretation": "A downstream segment of the first repeat, showing that similarity extends beyond the initial aromatic/glycine-containing segment.",
+      "residues": "IFAVNGHSIIGENHKKVVERIK",
+      "start": 59
+    },
+    {
+      "end": 211,
+      "interpretation": "A related downstream segment in the second repeat, including the shared VNG-containing pattern.",
+      "residues": "IVGVNGQLIYPTTGHKEVVALIK",
+      "start": 189
+    },
+    {
+      "end": 133,
+      "interpretation": "A proline-rich tract; this is not itself evidence for an SH3 domain.",
+      "residues": "PPPPPP",
+      "start": 128
+    },
+    {
+      "end": 240,
+      "interpretation": "A WD dipeptide, which alone does not establish a WD40-repeat architecture.",
+      "residues": "WD",
+      "start": 239
+    }
+  ],
+  "worked_solution": "C. Two PDZ domains is the most consistent architecture.\n\nSequence evidence:\nThe N-terminal portion contains two related-looking regions. Residues 24–43, EYGYNLHAEKGRGQFVGTVD, closely resemble residues 154–173, EFGFNLHAERGRGHFIGTVD. Similarity also occurs farther downstream: residues 59–80, IFAVNGHSIIGENHKKVVERIK, resemble residues 189–211, IVGVNGQLIYPTTGHKEVVALIK. Thus, the repetition is not confined to one short motif or a low-complexity run.\n\nThese extended patterns are characteristic of PDZ-like domain sequences: aromatic/glycine-containing early segments are followed by similarly organized hydrophobic and polar regions, including the recurring VNG-containing segment. Together, they support two related PDZ-sized modules. This is a family-level inference from the broader sequence pattern, not a claimed exact GLGF-motif match; PDZ sequences are variable and need not contain that literal string.\n\nBiological interpretation:\nPDZ domains are compact, usually approximately 80–110-residue α/β interaction modules. They commonly recognize short peptides at a partner protein's C terminus, accommodating the terminal carboxylate and nearby side chains in a binding groove. Some PDZ domains also recognize internal peptide motifs. This general interaction mechanism matches choice C, although the precise preferences of these two candidate domains cannot be assigned here.\n\nComparison with the alternatives:\n• A: A WD40 β-propeller normally contains several shorter WD-repeat units. The WD at residues 239–240 is insufficient evidence: a single dipeptide does not establish a repeated propeller architecture. The extended PDZ-like duplication is more informative.\n• B: SH2 domains can also occur in tandem, so repeat number alone would not distinguish them. However, the sequence does not show a convincing common SH2 phosphotyrosine-binding signature, such as an FLVRES-like region. Absence of that exact motif is not conclusive by itself, but there is positive evidence for PDZ-like repeats instead.\n• D: Residues 128–133 are PPPPPP. Proline-rich sequences can be ligands for SH3 domains, but they are not themselves SH3 domains. SH3 domains are folded interaction modules, typically about 60 residues long; a single SH3 model also fails to account for the two extended PDZ-like regions.\n\nTherefore, the strongest supported choice is a tandem-PDZ interaction-domain architecture."
+}

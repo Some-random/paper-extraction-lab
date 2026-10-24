@@ -1,0 +1,285 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning": {
+    "effort": "max",
+    "mode": "pro"
+  },
+  "generation_started_utc": "2026-10-24T01:41:47.271881+00:00",
+  "generation_finished_utc": "2026-10-24T01:50:41.197531+00:00",
+  "parallel_batch_wall_seconds": 533.92565,
+  "known_cost_usd": "10.79521",
+  "billing_unknown_cases": 0,
+  "pricing_basis": "Standard rates per million aggregate tokens: uncached input10, cache read1, cache write12.50, output including internal reasoning50 USD. Usage calculation; invoice not independently retrieved.",
+  "cases": [
+    {
+      "id": "case-001",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 11960,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11184,
+        "output_tokens_details": {
+          "reasoning_tokens": 9797
+        },
+        "total_tokens": 23144
+      },
+      "known_cost_usd": "0.6788",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.5592",
+        "uncached_input_usd": "0.1196"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 124.9093315768987
+    },
+    {
+      "id": "case-002",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 7052,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 5972,
+        "output_tokens_details": {
+          "reasoning_tokens": 5298
+        },
+        "total_tokens": 13024
+      },
+      "known_cost_usd": "0.36912",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.2986",
+        "uncached_input_usd": "0.07052"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 75.0587093103677
+    },
+    {
+      "id": "case-003",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 40769,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 44142,
+        "output_tokens_details": {
+          "reasoning_tokens": 42086
+        },
+        "total_tokens": 84911
+      },
+      "known_cost_usd": "2.61479",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "2.2071",
+        "uncached_input_usd": "0.40769"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 531.7624947410077
+    },
+    {
+      "id": "case-004",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 16297,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 15429,
+        "output_tokens_details": {
+          "reasoning_tokens": 13848
+        },
+        "total_tokens": 31726
+      },
+      "known_cost_usd": "0.93442",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.77145",
+        "uncached_input_usd": "0.16297"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 163.80762056354433
+    },
+    {
+      "id": "case-005",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 18161,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 18273,
+        "output_tokens_details": {
+          "reasoning_tokens": 16614
+        },
+        "total_tokens": 36434
+      },
+      "known_cost_usd": "1.09526",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.91365",
+        "uncached_input_usd": "0.18161"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 198.205118031241
+    },
+    {
+      "id": "case-006",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 13715,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 12369,
+        "output_tokens_details": {
+          "reasoning_tokens": 10646
+        },
+        "total_tokens": 26084
+      },
+      "known_cost_usd": "0.75560",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.61845",
+        "uncached_input_usd": "0.13715"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 119.5248998478055
+    },
+    {
+      "id": "case-007",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 27035,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 27365,
+        "output_tokens_details": {
+          "reasoning_tokens": 25371
+        },
+        "total_tokens": 54400
+      },
+      "known_cost_usd": "1.63860",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "1.36825",
+        "uncached_input_usd": "0.27035"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 287.20488527975976
+    },
+    {
+      "id": "case-008",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 18223,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 17740,
+        "output_tokens_details": {
+          "reasoning_tokens": 15372
+        },
+        "total_tokens": 35963
+      },
+      "known_cost_usd": "1.06923",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "0.887",
+        "uncached_input_usd": "0.18223"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 168.7559707891196
+    },
+    {
+      "id": "case-009",
+      "status": "completed",
+      "model": "gpt-6-astra",
+      "reasoning": {
+        "effort": "max",
+        "mode": "pro"
+      },
+      "usage": {
+        "input_tokens": 25704,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 27647,
+        "output_tokens_details": {
+          "reasoning_tokens": 25531
+        },
+        "total_tokens": 53351
+      },
+      "known_cost_usd": "1.63939",
+      "cost_components_usd": {
+        "cache_read_usd": "0",
+        "cache_write_usd": "0.00",
+        "output_including_reasoning_usd": "1.38235",
+        "uncached_input_usd": "0.25704"
+      },
+      "billing_unknown": false,
+      "wall_seconds": 339.015521380119
+    }
+  ]
+}

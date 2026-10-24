@@ -1,0 +1,9 @@
+{"id": "case-001", "gold_choice": "A", "accession": "C0H419", "protein_name": "Biotin/lipoyl attachment protein", "source_information_supplied_to_solver": false}
+{"id": "case-002", "gold_choice": "B", "accession": "A6NFY7", "protein_name": "Succinate dehydrogenase assembly factor 1, mitochondrial", "source_information_supplied_to_solver": false}
+{"id": "case-003", "gold_choice": "C", "accession": "Q9V492", "protein_name": "Mitochondrial inner membrane protein Mpv17", "source_information_supplied_to_solver": false}
+{"id": "case-004", "gold_choice": "D", "accession": "P53554", "protein_name": "Biotin biosynthesis cytochrome P450", "source_information_supplied_to_solver": false}
+{"id": "case-005", "gold_choice": "A", "accession": "Q86V35", "protein_name": "Calcium-binding protein 7", "source_information_supplied_to_solver": false}
+{"id": "case-006", "gold_choice": "B", "accession": "O89116", "protein_name": "Vesicle transport through interaction with t-SNAREs homolog 1A", "source_information_supplied_to_solver": false}
+{"id": "case-007", "gold_choice": "C", "accession": "G5EDM4", "protein_name": "Na(+)/H(+) exchange regulatory cofactor-like protein nrfl-1", "source_information_supplied_to_solver": false}
+{"id": "case-008", "gold_choice": "D", "accession": "P42196", "protein_name": "Sensory rhodopsin-2", "source_information_supplied_to_solver": false}
+{"id": "case-009", "gold_choice": "A", "accession": "O60725", "protein_name": "Protein-S-isoprenylcysteine O-methyltransferase", "source_information_supplied_to_solver": false}

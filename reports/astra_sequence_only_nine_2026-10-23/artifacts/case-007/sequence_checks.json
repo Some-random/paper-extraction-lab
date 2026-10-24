@@ -1,0 +1,42 @@
+{
+  "strict_schema_passed": true,
+  "sequence_claim_checks": [
+    {
+      "end": 43,
+      "exact_sequence_match": true,
+      "residues": "EYGYNLHAEKGRGQFVGTVD",
+      "start": 24
+    },
+    {
+      "end": 173,
+      "exact_sequence_match": true,
+      "residues": "EFGFNLHAERGRGHFIGTVD",
+      "start": 154
+    },
+    {
+      "end": 80,
+      "exact_sequence_match": true,
+      "residues": "IFAVNGHSIIGENHKKVVERIK",
+      "start": 59
+    },
+    {
+      "end": 211,
+      "exact_sequence_match": true,
+      "residues": "IVGVNGQLIYPTTGHKEVVALIK",
+      "start": 189
+    },
+    {
+      "end": 133,
+      "exact_sequence_match": true,
+      "residues": "PPPPPP",
+      "start": 128
+    },
+    {
+      "end": 240,
+      "exact_sequence_match": true,
+      "residues": "WD",
+      "start": 239
+    }
+  ],
+  "sequence_claims_passed": true
+}

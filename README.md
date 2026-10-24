@@ -10,6 +10,8 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[Astra protein reasoning pilot](reports/astra_protein_pilot_2026-10-23/README.md):** one complete protein question and paper-grounded solution, with the full sequence, supporting paper, generation settings, evidence checks and measured usage cost.
 
+**[Nine sequence-only Astra examples](reports/astra_sequence_only_nine_2026-10-23/README.md):** diverse protein questions with full sequences, worked solutions and source checks. The [next data focus](reports/astra_sequence_only_nine_2026-10-23/ENZYME_MUTATION_FOCUS.md) is enzyme mutations and experimental evidence, starting with APEX2, TurboID and related studies.
+
 The [October 19 paper-collection report](reports/paper_collection_2026-10-19/README.md),
 earlier [measured token counts](reports/corpus_count_2026-10-17/README.md), and
 [counting setup](docs/corpus_counting.md) remain as historical reports.

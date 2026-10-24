@@ -1,0 +1,44 @@
+{
+  "confidence": "moderate",
+  "limitations": "This is a sequence-based family assignment, not direct evidence of catalytic activity. Hydrophobicity alone cannot distinguish ICMT from the membrane CaaX protease RCE1. The C-terminal sequence features favor ICMT, but do not establish individual catalytic residues, membrane topology, or cellular localization.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 34,
+      "interpretation": "Hydrophobic stretch supporting a multipass membrane-protein architecture.",
+      "residues": "LSLATFLLGASVLALPLLT",
+      "start": 16
+    },
+    {
+      "end": 59,
+      "interpretation": "Another hydrophobic stretch supporting a multipass membrane-protein architecture.",
+      "residues": "GLALYVAGLNALLLLLY",
+      "start": 43
+    },
+    {
+      "end": 173,
+      "interpretation": "Hydrophobic region in the central portion of the protein, consistent with membrane embedding.",
+      "residues": "ITWLSVTGLLMVVFGECL",
+      "start": 156
+    },
+    {
+      "end": 241,
+      "interpretation": "Strongly hydrophobic, aromatic-rich region supporting membrane embedding near the C-terminal portion.",
+      "residues": "YVGWFYWSIGTQVMLCNPICGVSYALTVW",
+      "start": 213
+    },
+    {
+      "end": 213,
+      "interpretation": "RHPxY-pattern segment supporting an ICMT/Ste14-family interpretation in the context of the membrane-rich architecture.",
+      "residues": "RHPSY",
+      "start": 209
+    },
+    {
+      "end": 266,
+      "interpretation": "C-terminal segment containing paired glutamates, compatible with the conserved acidic region of ICMT/Ste14-family proteins.",
+      "residues": "EEYLEY",
+      "start": 261
+    }
+  ],
+  "worked_solution": "The most defensible choice is A: SAM-dependent methylation of the terminal carboxyl group of a prenylated cysteine.\n\n1. Sequence architecture. This 284-residue protein contains repeated hydrophobic regions, including residues 16–34 (LSLATFLLGASVLALPLLT), 43–59 (GLALYVAGLNALLLLLY), 156–173 (ITWLSVTGLLMVVFGECL), and 213–241 (YVGWFYWSIGTQVMLCNPICGVSYALTVW). Their distribution supports a compact multipass membrane protein rather than a predominantly soluble enzyme. These are illustrative hydrophobic intervals, not established transmembrane-helix boundaries.\n\n2. Family-level evidence. The C-terminal portion contains RHPSY at residues 209–213, matching an RHPxY pattern, and paired glutamates within EEYLEY at residues 261–266. In combination with the multipass architecture, these fit the RHP-containing and acidic C-terminal regions associated with ICMT/Ste14-family isoprenylcysteine carboxyl methyltransferases. The combination is more informative than either a short motif or hydrophobicity alone; it does not independently prove SAM binding or catalysis.\n\n3. Biochemical interpretation. ICMT acts after a CaaX protein has been prenylated and its final three residues have been removed. That processing exposes the prenylated cysteine as the protein's terminal residue. ICMT transfers a methyl group from S-adenosylmethionine (SAM) to the terminal carboxylate oxygen, converting –COO− into the methyl ester –COOCH3 and producing S-adenosylhomocysteine. The modification is on the carboxyl group, not on the prenylated sulfur. A membrane-embedded enzyme is well suited to recognizing a lipid-modified protein substrate.\n\n4. Comparison with the alternatives.\n• B describes RCE1-type CaaX proteolysis, the processing step preceding ICMT-mediated methylation. RCE1 is also a multipass membrane enzyme, so membrane architecture alone does not exclude B. The ICMT-like C-terminal sequence features are the main reason to favor A.\n• C requires an ATP-dependent protein-kinase catalytic domain. Conventional serine kinases have a substantial globular kinase fold; the extensively hydrophobic architecture here does not support such a domain. A kinase can be membrane-associated, but membrane anchoring is different from having hydrophobic segments distributed throughout nearly the entire catalytic protein.\n• D describes biotin-protein ligase activity, which proceeds through ATP-dependent formation of biotinyl-AMP followed by attachment to lysine. Such enzymes require a globular adenylating catalytic domain, not the membrane-rich ICMT-like architecture observed here.\n\nThus, A best integrates the observed architecture, the C-terminal family-associated features, and the chemistry of prenylated-protein processing."
+}

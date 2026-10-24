@@ -77,3 +77,8 @@ Only a duplicated question-and-choices preface was removed from the displayed so
 | Protein–paper provenance and attribution | [source_provenance.json](source_provenance.json), [SOURCES_AND_LICENSES.md](SOURCES_AND_LICENSES.md) |
 
 The public request retains the scientific inputs and settings, with the account identifier removed. The full correction XML is replaced by a source link because redistribution terms were not verified. [reconstruct_request.py](reconstruct_request.py) restores that reference locally and checks its recorded hash; it makes no model-generation request. The cost includes internal reasoning and cache writes, calculated from API usage at [published standard rates](https://developers.openai.com/api/docs/models/gpt-6-astra).
+
+
+## Additional examples
+
+[Nine sequence-only Astra examples](../astra_sequence_only_nine_2026-10-23/README.md) include complete questions, unchanged worked solutions and separate source verification. The [enzyme-mutation focus](../astra_sequence_only_nine_2026-10-23/ENZYME_MUTATION_FOCUS.md) describes the next source pool.

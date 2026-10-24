@@ -1,0 +1,333 @@
+{
+  "role": "Post-generation source verification only",
+  "notes": [
+    {
+      "accession": "C0H419",
+      "plainEnglishname": "A small protein that can carry biotin or lipoate",
+      "topic": "Covalent modification of a particular lysine",
+      "theme": "Thematic connection to biotin-based labeling and protein modification. This is a natural bacterial attachment protein, not a Ting-lab engineered labeling reagent.",
+      "gold_support_paraphrase": "The primary study identified a natural 73-amino-acid protein from Bacillus subtilis. It characterized both unmodified and biotin-modified forms by solution NMR and placed the attached biotin on Lys35. The canonical sequence also has lysines at all four proposed answer positions, so the correct site is not established merely by checking that the residue is a lysine.",
+      "inference_caveats": [
+        "Biotin and lipoate modification were demonstrated when the protein was expressed in E. coli; the native modification in B. subtilis remains unknown.",
+        "The exact modification site requires family knowledge or experimental evidence. An explanation must not pretend that any isolated lysine or short motif proves modification.",
+        "The source record is a complete reviewed 73-residue protein, not a truncated construct; the mature-chain annotation removes the initial methionine."
+      ],
+      "paperreferences": [
+        {
+          "title": "Identification and solution structures of a single domain biotin/lipoyl attachment protein from Bacillus subtilis.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16699181/",
+          "doi": "10.1074/jbc.M602660200",
+          "support": "Primary abstract describes the natural 73-residue protein, modification in E. coli and NMR-supported biotin attachment at Lys35.",
+          "read_scope": "Primary abstract retrieved through Europe PMC; cached UniProt record and complete-sequence annotation inspected."
+        }
+      ],
+      "source_URLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/16699181/",
+        "https://doi.org/10.1074/jbc.M602660200",
+        "https://www.uniprot.org/uniprotkb/C0H419/entry"
+      ],
+      "review_type": "Assistant source review, not expert human validation.",
+      "Ting_authorship_claimed": false,
+      "id": "case-001"
+    },
+    {
+      "accession": "A6NFY7",
+      "plainEnglishname": "A helper protein for assembling a mitochondrial respiratory enzyme",
+      "topic": "Locating repeated LYR sequence motifs",
+      "theme": "Thematic connection to mitochondrial proteins and protein interactions, not a Ting-authored study.",
+      "gold_support_paraphrase": "The displayed sequence contains LYR exactly twice, at residues 14–16 and 53–55 using one-based numbering. The primary paper independently discusses those same two motifs. Its interaction experiments show that the first motif helps recruit the HSC20 iron-sulfur transfer machinery.",
+      "inference_caveats": [
+        "Finding the two motif positions is directly checkable from the sequence. Assigning their biological roles requires additional knowledge.",
+        "The two identical tripeptides are not functionally interchangeable: experiments distinguish the first motif from the second, and neighboring residues matter.",
+        "The pilot motif-location question does not independently test whether the model understands mitochondrial assembly or protein interactions."
+      ],
+      "paperreferences": [
+        {
+          "title": "Disease-Causing SDHAF1 Mutations Impair Transfer of Fe-S Clusters to SDHB.",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749439/",
+          "doi": "10.1016/j.cmet.2015.12.005",
+          "support": "The primary paper maps both LYR motifs and reports interaction assays distinguishing the HSC20-binding first motif from the second.",
+          "read_scope": "Primary abstract via Europe PMC and primary paper Results/Figure 2 text available in web search; exact motif positions independently replayed against the canonical sequence."
+        }
+      ],
+      "source_URLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/26749241/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749439/",
+        "https://www.uniprot.org/uniprotkb/A6NFY7/entry"
+      ],
+      "review_type": "Assistant source review, not expert human validation.",
+      "Ting_authorship_claimed": false,
+      "id": "case-002"
+    },
+    {
+      "accession": "Q9V492",
+      "plainEnglishname": "A small mitochondrial membrane channel from fruit flies",
+      "topic": "Recognizing a protein with multiple membrane-spanning segments",
+      "theme": "Thematic connection to organelle membranes and mitochondrial compartment mapping, not a Ting-authored study.",
+      "gold_support_paraphrase": "Microscopy in the primary study supports mitochondrial localization, and recordings after insertion into lipid bilayers demonstrate channel activity. Multiple hydrophobic stretches and source topology predictions support the broad multipass membrane-protein answer.",
+      "inference_caveats": [
+        "The paper predicts five transmembrane segments with AlphaFold and DeepTMHMM, whereas the frozen UniProt record annotates four. The pilot therefore uses broad multipass topology rather than treating an exact helix count as established.",
+        "Membrane localization and channel activity are experimental findings; the detailed topology in this source is predicted.",
+        "Hydrophobic stretches support membrane insertion but do not alone prove mitochondrial targeting, channel selectivity, metabolite specificity or precise helix boundaries."
+      ],
+      "paperreferences": [
+        {
+          "title": "Drosophila Mpv17 forms an ion channel and regulates energy metabolism.",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10558772/",
+          "doi": "10.1016/j.isci.2023.107955",
+          "support": "The primary study reports mitochondrial colocalization and membrane channel activity; Figure 1 and Results label the detailed topology as a prediction.",
+          "read_scope": "Primary abstract and full-text XML from Europe PMC; Figure 1, topology Results and Discussion inspected."
+        }
+      ],
+      "source_URLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/37810222/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10558772/",
+        "https://www.uniprot.org/uniprotkb/Q9V492/entry"
+      ],
+      "review_type": "Assistant source review, not expert human validation.",
+      "Ting_authorship_claimed": false,
+      "id": "case-003"
+    },
+    {
+      "accession": "P53554",
+      "plainEnglishname": "A heme-containing enzyme involved in making biotin",
+      "topic": "Distinguishing heme from flavin and iron-sulfur cofactors",
+      "theme": "Broader chemical-biology connection through redox-enzyme cofactors. This protein is a native P450 enzyme, not APEX or a Ting-authored labeling enzyme.",
+      "gold_support_paraphrase": "The primary structural study visualizes the enzyme with its carrier-protein-bound substrate above an active-site heme. It identifies Cys345 as the proximal sulfur ligand to the heme iron. These observations directly support heme as the cofactor.",
+      "inference_caveats": [
+        "A cysteine by itself does not prove heme binding; the relevant sequence context and protein-family evidence matter.",
+        "Do not claim that the paper demonstrates a covalent bond attaching the heme group to the polypeptide. The inspected text describes a cysteine thiolate ligand coordinating heme iron.",
+        "Identifying the cofactor does not establish the exact substrate, reaction specificity or biotin-biosynthesis role from the anonymous sequence alone."
+      ],
+      "paperreferences": [
+        {
+          "title": "Structural insights from a P450 Carrier Protein complex reveal how specificity is achieved in the P450BioI ACP complex.",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/",
+          "doi": "10.1073/pnas.0805983105",
+          "support": "The structure and Active Site Architecture section directly establish heme and the coordinating Cys345 residue.",
+          "read_scope": "Primary full-text paper, abstract, structural Results and Active Site Architecture section inspected."
+        }
+      ],
+      "source_URLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/18838690/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/",
+        "https://www.uniprot.org/uniprotkb/P53554/entry"
+      ],
+      "review_type": "Assistant source review, not expert human validation.",
+      "Ting_authorship_claimed": false,
+      "id": "case-004"
+    },
+    {
+      "accession": "Q86V35",
+      "plainEnglishname": "CaBP7, a membrane-associated calcium sensor",
+      "topic": "Calcium binding",
+      "theme": "Calcium sensing and organization of cell signaling",
+      "gold_support_paraphrase": "The primary NMR study reports two high-affinity calcium-binding EF-hand motifs in the N-terminal region of human CaBP7. Its N-terminal domain binds calcium rather than magnesium and changes conformation on binding. This directly supports calcium binding through EF-hand domains as the correct choice.",
+      "exact_protein_support": "Direct: the deposited NMR structure 2LV7 is human CaBP7, maps to Q86V35, has no reported mutations, and covers the N-terminal 100 residues. The two calcium ions in that structure correspond to the two high-affinity sites discussed in the paper.",
+      "inference_caveats": [
+        "Do not describe this as four functional calcium-binding sites: the supported answer concerns two high-affinity N-terminal sites.",
+        "Acidic sequence loops are consistent with EF-hand calcium binding, but exact affinity, ion selectivity and the PI4KIIIbeta interaction come from experiments, not from acidity alone.",
+        "The paper and annotation were retained for checking the answer after generation; they were not part of the solving prompt."
+      ],
+      "paperreferences": [
+        {
+          "title": "Solution NMR structure of the Ca2+-bound N-terminal domain of CaBP7: a regulator of golgi trafficking",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22989873/",
+          "DOI": "10.1074/jbc.M112.402289",
+          "PMID": "22989873",
+          "support": "Primary abstract explicitly identifies two high-affinity EF-hand calcium sites and calcium-dependent structural changes in CaBP7.",
+          "read_scope": "Primary abstract and associated experimental structure deposition."
+        },
+        {
+          "title": "Solution structure of Ca2+-bound CaBP7 N-terminal domain, PDB 2LV7",
+          "url": "https://www.rcsb.org/structure/2LV7",
+          "support": "Experimental structure explicitly maps human CaBP7 to Q86V35 and contains two calcium ions.",
+          "read_scope": "Experimental deposition page, including protein identity and ligands."
+        }
+      ],
+      "sourceURLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/22989873/",
+        "https://www.rcsb.org/structure/2LV7",
+        "https://www.uniprot.org/uniprotkb/Q86V35/entry"
+      ],
+      "paper_role": "Post-generation answer verification. These references, identities and annotations were withheld during the sequence-only solving attempt.",
+      "ting_relation": "Related to the Ting laboratory research themes; this does not claim that Alice Ting authored these protein studies.",
+      "thematic_sourceURLs": [
+        "https://www.tinglab.org/research",
+        "https://profiles.stanford.edu/alice-ting"
+      ],
+      "review_status": "Assistant source review; not expert human ground truth.",
+      "id": "case-005"
+    },
+    {
+      "accession": "O89116",
+      "plainEnglishname": "Vti1a, a vesicle-trafficking protein anchored near its C terminus",
+      "topic": "Membrane anchoring",
+      "theme": "Protein trafficking and spatial proteomics",
+      "gold_support_paraphrase": "The original Vti1-rp2 paper describes a 217-residue protein with a hydrophobic membrane anchor at its C terminus and an accessible cytoplasmic region. Antibody-based experiments identify it as an integral membrane protein enriched at the Golgi. This supports a large cytosolic region followed by a single C-terminal membrane anchor.",
+      "exact_protein_support": "Direct source link: the frozen mouse O89116 record cites the original Vti1-rp2 study for sequence and SNARE-complex identification. The reported 217-residue length matches the selected canonical sequence. Exact anchor boundaries remain curated sequence-analysis annotations.",
+      "inference_caveats": [
+        "The strongly hydrophobic C-terminal stretch supports an anchor, but sequence alone does not establish the precise Golgi or endosomal destination.",
+        "Treat the annotated anchor at residues 193-213 as a sequence-analysis boundary, not a membrane boundary measured in that paper.",
+        "Do not confuse the soluble N-terminal domain with the whole protein being soluble: a tail anchor still makes the full protein integral to a membrane."
+      ],
+      "paperreferences": [
+        {
+          "title": "A 29-kilodalton Golgi soluble N-ethylmaleimide-sensitive factor attachment protein receptor (Vti1-rp2) implicated in protein trafficking in the secretory pathway",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9705316/",
+          "DOI": "10.1074/jbc.273.34.21783",
+          "PMID": "9705316",
+          "support": "The primary abstract explicitly reports 217 residues, a C-terminal hydrophobic anchor, a cytoplasmic region, integral membrane behavior and Golgi enrichment.",
+          "read_scope": "Primary PubMed abstract retrieved in search results; direct page opening encountered a browser challenge."
+        }
+      ],
+      "sourceURLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/9705316/",
+        "https://doi.org/10.1074/jbc.273.34.21783",
+        "https://www.uniprot.org/uniprotkb/O89116/entry"
+      ],
+      "paper_role": "Post-generation answer verification. These references, identities and annotations were withheld during the sequence-only solving attempt.",
+      "ting_relation": "Related to the Ting laboratory research themes; this does not claim that Alice Ting authored these protein studies.",
+      "thematic_sourceURLs": [
+        "https://www.tinglab.org/research",
+        "https://profiles.stanford.edu/alice-ting"
+      ],
+      "review_status": "Assistant source review; not expert human ground truth.",
+      "id": "case-006"
+    },
+    {
+      "accession": "G5EDM4",
+      "plainEnglishname": "NRFL-1, a scaffold that binds other proteins through PDZ domains",
+      "topic": "Protein-interaction domains",
+      "theme": "Protein interaction networks and membrane-associated complexes",
+      "gold_support_paraphrase": "The primary study identifies the selected C. elegans NRFL-1 isoform as a two-PDZ-domain scaffold. It combines domain comparisons with direct binding experiments involving the end of the AAT-6 transporter. The results support recognition of short partner-protein peptide motifs by PDZ domains.",
+      "exact_protein_support": "Direct: the paper studies C01F6.6a/NRFL-1 and distinguishes its two-domain form from single-domain splice variants. The frozen G5EDM4 canonical sequence has two annotated PDZ domains, matching the double-domain group described in the study.",
+      "inference_caveats": [
+        "The literal motif GLGF occurs zero times in this selected sequence. A solution must not claim it found one or two exact GLGF motifs. PDZ loop sequences can differ.",
+        "Some NRFL-1 splice variants contain only one PDZ domain; the answer here is specific to the selected two-domain sequence.",
+        "The particular AAT-6 interaction and preference for PDZ2 require the paper. They are not proven by spotting two interaction domains.",
+        "The Results text says mutation of PDZ2 impairs binding; a duplicated phrase in the Figure 2 caption is inconsistent. Prefer the Results text and source annotation rather than repeating the caption typo."
+      ],
+      "paperreferences": [
+        {
+          "title": "NRFL-1, the C. elegans NHERF orthologue, interacts with amino acid transporter 6 (AAT-6) for age-dependent maintenance of AAT-6 on the membrane",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050",
+          "DOI": "10.1371/journal.pone.0043050",
+          "PMID": "22916205",
+          "support": "Figure 1 and Results describe double-PDZ NRFL-1 isoforms; the interaction section and Figure 2 test recognition of the AAT-6 C-terminal motif.",
+          "read_scope": "Full primary article, especially NRFL-1 identification, Figure 1 and the PDZ interaction Results section."
+        }
+      ],
+      "sourceURLs": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3419730/",
+        "https://www.uniprot.org/uniprotkb/G5EDM4/entry"
+      ],
+      "mechanically_verified_exact_GLGF_count": 0,
+      "paper_role": "Post-generation answer verification. These references, identities and annotations were withheld during the sequence-only solving attempt.",
+      "ting_relation": "Related to the Ting laboratory research themes; this does not claim that Alice Ting authored these protein studies.",
+      "thematic_sourceURLs": [
+        "https://www.tinglab.org/research",
+        "https://profiles.stanford.edu/alice-ting"
+      ],
+      "review_status": "Assistant source review; not expert human ground truth.",
+      "id": "case-007"
+    },
+    {
+      "accession": "P42196",
+      "plainEnglishname": "Sensory rhodopsin II, a retinal-based microbial light sensor",
+      "topic": "Chromophore binding",
+      "theme": "Light-responsive proteins and molecular sensing",
+      "gold_support_paraphrase": "Structural studies of this natural archaeal sensory rhodopsin establish a seven-helix membrane architecture surrounding retinal. The experimentally linked structure and paper identify attachment of retinal to Lys205, consistent with the Schiff-base mechanism in the correct answer.",
+      "exact_protein_support": "Direct: the experimental structure 1JGJ maps to P42196 and contains retinal. The primary study concerns NpSRII from Natronobacterium pharaonis, now named Natronomonas pharaonis. Its crystallized construct covers only part of the canonical 239-residue protein; the full canonical sequence is used in the question.",
+      "inference_caveats": [
+        "A seven-transmembrane pattern alone does not prove retinal binding: many unrelated receptors also cross membranes seven times. The microbial-opsin sequence pattern and conserved lysine provide the more specific connection.",
+        "The selected sequence contains lysine at canonical position 205, but the covalent chromophore attachment is experimentally established, not demonstrated just by the presence of a lysine.",
+        "Do not describe this microbial sensory rhodopsin as an animal G-protein-coupled receptor or infer a precise absorption wavelength from sequence inspection."
+      ],
+      "paperreferences": [
+        {
+          "title": "Crystal structure of sensory rhodopsin II at 2.4 angstroms: insights into color tuning and transducer interaction",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11452084/",
+          "DOI": "10.1126/science.1062977",
+          "PMID": "11452084",
+          "support": "Primary structure paper identifies retinal/retinylidene Schiff-base chemistry in this sensory rhodopsin; its figure descriptions locate retinal attachment at Lys205.",
+          "read_scope": "Primary abstract and indexed figure description, checked against the experimental deposition; PMC full-text page opening encountered a browser challenge."
+        },
+        {
+          "title": "Sensory rhodopsin II experimental structure, PDB 1JGJ",
+          "url": "https://www.rcsb.org/structure/1JGJ",
+          "support": "Experimental deposition maps the protein to P42196 and explicitly lists retinal as a ligand.",
+          "read_scope": "Experimental deposition page, protein mapping and ligand list."
+        },
+        {
+          "title": "Molecular basis of transmembrane signalling by sensory rhodopsin II-transducer complex",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12368857/",
+          "DOI": "10.1038/nature01109",
+          "PMID": "12368857",
+          "support": "Independent primary structure study describes seven-helix retinal-containing microbial rhodopsins and the exact N. pharaonis SRII-HtrII complex.",
+          "read_scope": "Primary abstract."
+        }
+      ],
+      "sourceURLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/11452084/",
+        "https://www.rcsb.org/structure/1JGJ",
+        "https://pubmed.ncbi.nlm.nih.gov/12368857/",
+        "https://www.uniprot.org/uniprotkb/P42196/entry"
+      ],
+      "mechanically_verified_canonical_residue_205": "K",
+      "paper_role": "Post-generation answer verification. These references, identities and annotations were withheld during the sequence-only solving attempt.",
+      "ting_relation": "Related to the Ting laboratory research themes; this does not claim that Alice Ting authored these protein studies.",
+      "thematic_sourceURLs": [
+        "https://www.tinglab.org/research",
+        "https://profiles.stanford.edu/alice-ting"
+      ],
+      "review_status": "Assistant source review; not expert human ground truth.",
+      "id": "case-008"
+    },
+    {
+      "accession": "O60725",
+      "plainEnglishname": "ICMT, an enzyme that methylates the end of prenylated proteins",
+      "topic": "Post-translational modification chemistry",
+      "theme": "Enzyme biochemistry, protein chemistry and membrane-associated signaling",
+      "gold_support_paraphrase": "The original human ICMT study establishes an active endoplasmic-reticulum membrane enzyme. A subsequent primary kinetic study of recombinant human ICMT explicitly shows that SAM supplies a methyl group to the terminal carboxyl group of a prenylated cysteine, producing a methyl ester. This directly supports the methylation answer and distinguishes it from CaaX-tail cleavage.",
+      "exact_protein_support": "Direct for human ICMT: the frozen O60725 annotation links its enzymatic function to the 1998 human myeloid cloning study. The additional kinetic paper studies recombinant human ICMT, providing direct same-protein biochemical evidence rather than analogy to a different methyltransferase family. The kinetic paper is an added posthoc verification source, not an original teacher input or a new registry admission.",
+      "inference_caveats": [
+        "A multipass membrane topology does not, by itself, identify SAM use, methyltransferase activity or the prenylcysteine substrate. The explanation must show legitimate family recognition or acknowledge the inference limit.",
+        "ICMT methylates the newly exposed terminal carboxyl group after another enzyme removes the three residues following the prenylated cysteine. It is not the CaaX endoprotease.",
+        "Do not mistake a CaaX motif on a substrate protein for a catalytic motif that must occur at the end of ICMT itself."
+      ],
+      "paperreferences": [
+        {
+          "title": "Mammalian prenylcysteine carboxyl methyltransferase is in the endoplasmic reticulum",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9614111/",
+          "DOI": "10.1074/jbc.273.24.15030",
+          "PMID": "9614111",
+          "support": "Primary human cloning and characterization study establishes enzymatic activity and ER localization of mammalian ICMT.",
+          "read_scope": "Primary PubMed abstract retrieved in search results; direct page opening encountered a browser challenge."
+        },
+        {
+          "title": "Analysis of the kinetic mechanism of recombinant human isoprenylcysteine carboxylmethyltransferase (Icmt)",
+          "url": "https://link.springer.com/article/10.1186/1471-2091-5-19",
+          "DOI": "10.1186/1471-2091-5-19",
+          "PMID": "15625008",
+          "support": "Primary human-enzyme study explicitly identifies SAM as methyl donor and terminal prenylcysteine carboxyl methyl ester as product. It distinguishes preceding Rce1 cleavage from ICMT methylation.",
+          "read_scope": "Full primary article, abstract Results and Background paragraphs on CaaX processing."
+        }
+      ],
+      "sourceURLs": [
+        "https://pubmed.ncbi.nlm.nih.gov/9614111/",
+        "https://link.springer.com/article/10.1186/1471-2091-5-19",
+        "https://www.uniprot.org/uniprotkb/O60725/entry"
+      ],
+      "paper_role": "Post-generation answer verification. These references, identities and annotations were withheld during the sequence-only solving attempt.",
+      "ting_relation": "Related to the Ting laboratory research themes; this does not claim that Alice Ting authored these protein studies.",
+      "thematic_sourceURLs": [
+        "https://www.tinglab.org/research",
+        "https://profiles.stanford.edu/alice-ting"
+      ],
+      "review_status": "Assistant source review; not expert human ground truth.",
+      "id": "case-009"
+    }
+  ]
+}

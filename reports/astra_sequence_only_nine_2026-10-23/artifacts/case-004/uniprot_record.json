@@ -1,0 +1,2352 @@
+{
+  "annotationScore": 5.0,
+  "comments": [
+    {
+      "commentType": "FUNCTION",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "11368323",
+              "source": "PubMed"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "8763940",
+              "source": "PubMed"
+            }
+          ],
+          "value": "Catalyzes the C-C bond cleavage of fatty acid linked to acyl carrier protein (ACP) to generate pimelic acid for biotin biosynthesis. It has high affinity for long-chain fatty acids with the greatest affinity for myristic acid"
+        }
+      ]
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "ecNumber": "1.14.14.46",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "id": "11368323",
+            "source": "PubMed"
+          }
+        ],
+        "name": "a C2-C8-saturated long-chain fatty acyl-[ACP] + 2 reduced [flavodoxin] + 3 O2 = 6-carboxyhexanoyl-[ACP] + a fatty aldehyde + 2 oxidized [flavodoxin] + 3 H2O + 3 H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:52852"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:9955"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:10622"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:10623"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:13382"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15379"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:35746"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57618"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58210"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:78846"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:136878"
+          }
+        ]
+      }
+    },
+    {
+      "cofactors": [
+        {
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:30413"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "18838690",
+              "source": "PubMed"
+            }
+          ],
+          "name": "heme"
+        }
+      ],
+      "commentType": "COFACTOR",
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "id": "18838690",
+                "source": "PubMed"
+              }
+            ],
+            "value": "Binds 1 heme group covalently per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "PATHWAY",
+      "texts": [
+        {
+          "value": "Cofactor biosynthesis; biotin biosynthesis"
+        }
+      ]
+    },
+    {
+      "commentType": "MASS SPECTROMETRY",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "11472016",
+          "source": "PubMed"
+        }
+      ],
+      "method": "Electrospray",
+      "molWeight": 44732.0,
+      "molWeightError": 0.0
+    },
+    {
+      "commentType": "MASS SPECTROMETRY",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "11368323",
+          "source": "PubMed"
+        }
+      ],
+      "method": "Electrospray",
+      "molWeight": 45348.0,
+      "molWeightError": 0.0
+    },
+    {
+      "commentType": "SIMILARITY",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the cytochrome P450 family"
+        }
+      ]
+    }
+  ],
+  "entryAudit": {
+    "entryVersion": 164,
+    "firstPublicDate": "1996-10-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1996-10-01",
+    "sequenceVersion": 1
+  },
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "extraAttributes": {
+    "countByCommentType": {
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "FUNCTION": 1,
+      "MASS SPECTROMETRY": 2,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Beta strand": 10,
+      "Binding site": 7,
+      "Chain": 1,
+      "Disulfide bond": 1,
+      "Helix": 23,
+      "Initiator methionine": 1,
+      "Turn": 2
+    },
+    "uniParcId": "UPI0000060921"
+  },
+  "features": [
+    {
+      "description": "Removed",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "11368323",
+          "source": "PubMed"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "11472016",
+          "source": "PubMed"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 1
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 1
+        }
+      },
+      "type": "Initiator methionine"
+    },
+    {
+      "description": "Biotin biosynthesis cytochrome P450",
+      "featureId": "PRO_0000052260",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 395
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 2
+        }
+      },
+      "type": "Chain"
+    },
+    {
+      "description": "",
+      "ligand": {
+        "name": "substrate"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 60
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 60
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30413"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:30413",
+        "name": "heme"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 93
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 89
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "ligand": {
+        "name": "substrate"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 173
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 169
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30413"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:30413",
+        "name": "heme"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 287
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 285
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "ligand": {
+        "name": "substrate"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 307
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 307
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30413"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:30413",
+        "name": "heme"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 345
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 343
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "axial binding residue",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30413"
+        },
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18248"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:30413",
+        "name": "heme"
+      },
+      "ligandPart": {
+        "id": "ChEBI:CHEBI:18248",
+        "name": "Fe"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 345
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 345
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "id": "15449931",
+          "source": "PubMed"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 275
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 250
+        }
+      },
+      "type": "Disulfide bond"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 14
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 11
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 26
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 16
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 34
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 28
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 42
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 37
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 53
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 45
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 78
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 71
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 83
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 81
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 97
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 88
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 100
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 98
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 106
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 102
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 121
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 109
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 126
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 122
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 130
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 127
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 136
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 132
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 148
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 137
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 154
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 152
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 166
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 155
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 169
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 167
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 201
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 175
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 213
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 207
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 252
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 222
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 263
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 255
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 267
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 265
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 278
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 268
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 291
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 284
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 295
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 293
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 300
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 298
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 309
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 305
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 313
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 310
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 319
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 317
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 322
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 320
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJE",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 343
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 341
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 365
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 348
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 384
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 382
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3EJB",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 393
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 391
+        }
+      },
+      "type": "Beta strand"
+    }
+  ],
+  "genes": [
+    {
+      "geneName": {
+        "value": "bioI"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "BSU30190"
+        }
+      ],
+      "synonyms": [
+        {
+          "value": "CYP107H"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "category": "Technical term",
+      "id": "KW-0002",
+      "name": "3D-structure"
+    },
+    {
+      "category": "Biological process",
+      "id": "KW-0093",
+      "name": "Biotin biosynthesis"
+    },
+    {
+      "category": "Technical term",
+      "id": "KW-0903",
+      "name": "Direct protein sequencing"
+    },
+    {
+      "category": "PTM",
+      "id": "KW-1015",
+      "name": "Disulfide bond"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0349",
+      "name": "Heme"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0408",
+      "name": "Iron"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0479",
+      "name": "Metal-binding"
+    },
+    {
+      "category": "Molecular function",
+      "id": "KW-0503",
+      "name": "Monooxygenase"
+    },
+    {
+      "category": "Molecular function",
+      "id": "KW-0560",
+      "name": "Oxidoreductase"
+    },
+    {
+      "category": "Technical term",
+      "id": "KW-1185",
+      "name": "Reference proteome"
+    }
+  ],
+  "organism": {
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Caryophanales",
+      "Bacillaceae",
+      "Bacillus"
+    ],
+    "scientificName": "Bacillus subtilis (strain 168)",
+    "taxonId": 224308
+  },
+  "primaryAccession": "P53554",
+  "proteinDescription": {
+    "recommendedName": {
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "11368323",
+              "source": "PubMed"
+            }
+          ],
+          "value": "1.14.14.46"
+        }
+      ],
+      "fullName": {
+        "value": "Biotin biosynthesis cytochrome P450"
+      }
+    }
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "references": [
+    {
+      "citation": {
+        "authors": [
+          "Bower S.",
+          "Perkins J.B.",
+          "Yocum R.R.",
+          "Howitt C.L.",
+          "Rahaim P.",
+          "Pero J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8763940"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.178.14.4122-4130.1996"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "4122",
+        "id": "8763940",
+        "journal": "J. Bacteriol.",
+        "lastPage": "4130",
+        "publicationDate": "1996",
+        "title": "Cloning, sequencing, and characterization of the Bacillus subtilis biotin biosynthetic operon.",
+        "volume": "178"
+      },
+      "referenceNumber": 1,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "FUNCTION"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Lapidus A.",
+          "Galleron N.",
+          "Sorokin A.",
+          "Ehrlich S.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9387221"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1099/00221287-143-11-3431"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "3431",
+        "id": "9387221",
+        "journal": "Microbiology",
+        "lastPage": "3441",
+        "publicationDate": "1997",
+        "title": "Sequencing and functional annotation of the Bacillus subtilis genes in the 200 kb rrnB-dnaB region.",
+        "volume": "143"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "168"
+        }
+      ],
+      "referenceNumber": 2,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Kunst F.",
+          "Ogasawara N.",
+          "Moszer I.",
+          "Albertini A.M.",
+          "Alloni G.",
+          "Azevedo V.",
+          "Bertero M.G.",
+          "Bessieres P.",
+          "Bolotin A.",
+          "Borchert S.",
+          "Borriss R.",
+          "Boursier L.",
+          "Brans A.",
+          "Braun M.",
+          "Brignell S.C.",
+          "Bron S.",
+          "Brouillet S.",
+          "Bruschi C.V.",
+          "Caldwell B.",
+          "Capuano V.",
+          "Carter N.M.",
+          "Choi S.-K.",
+          "Codani J.-J.",
+          "Connerton I.F.",
+          "Cummings N.J.",
+          "Daniel R.A.",
+          "Denizot F.",
+          "Devine K.M.",
+          "Duesterhoeft A.",
+          "Ehrlich S.D.",
+          "Emmerson P.T.",
+          "Entian K.-D.",
+          "Errington J.",
+          "Fabret C.",
+          "Ferrari E.",
+          "Foulger D.",
+          "Fritz C.",
+          "Fujita M.",
+          "Fujita Y.",
+          "Fuma S.",
+          "Galizzi A.",
+          "Galleron N.",
+          "Ghim S.-Y.",
+          "Glaser P.",
+          "Goffeau A.",
+          "Golightly E.J.",
+          "Grandi G.",
+          "Guiseppi G.",
+          "Guy B.J.",
+          "Haga K.",
+          "Haiech J.",
+          "Harwood C.R.",
+          "Henaut A.",
+          "Hilbert H.",
+          "Holsappel S.",
+          "Hosono S.",
+          "Hullo M.-F.",
+          "Itaya M.",
+          "Jones L.-M.",
+          "Joris B.",
+          "Karamata D.",
+          "Kasahara Y.",
+          "Klaerr-Blanchard M.",
+          "Klein C.",
+          "Kobayashi Y.",
+          "Koetter P.",
+          "Koningstein G.",
+          "Krogh S.",
+          "Kumano M.",
+          "Kurita K.",
+          "Lapidus A.",
+          "Lardinois S.",
+          "Lauber J.",
+          "Lazarevic V.",
+          "Lee S.-M.",
+          "Levine A.",
+          "Liu H.",
+          "Masuda S.",
+          "Mauel C.",
+          "Medigue C.",
+          "Medina N.",
+          "Mellado R.P.",
+          "Mizuno M.",
+          "Moestl D.",
+          "Nakai S.",
+          "Noback M.",
+          "Noone D.",
+          "O'Reilly M.",
+          "Ogawa K.",
+          "Ogiwara A.",
+          "Oudega B.",
+          "Park S.-H.",
+          "Parro V.",
+          "Pohl T.M.",
+          "Portetelle D.",
+          "Porwollik S.",
+          "Prescott A.M.",
+          "Presecan E.",
+          "Pujic P.",
+          "Purnelle B.",
+          "Rapoport G.",
+          "Rey M.",
+          "Reynolds S.",
+          "Rieger M.",
+          "Rivolta C.",
+          "Rocha E.",
+          "Roche B.",
+          "Rose M.",
+          "Sadaie Y.",
+          "Sato T.",
+          "Scanlan E.",
+          "Schleich S.",
+          "Schroeter R.",
+          "Scoffone F.",
+          "Sekiguchi J.",
+          "Sekowska A.",
+          "Seror S.J.",
+          "Serror P.",
+          "Shin B.-S.",
+          "Soldo B.",
+          "Sorokin A.",
+          "Tacconi E.",
+          "Takagi T.",
+          "Takahashi H.",
+          "Takemaru K.",
+          "Takeuchi M.",
+          "Tamakoshi A.",
+          "Tanaka T.",
+          "Terpstra P.",
+          "Tognoni A.",
+          "Tosato V.",
+          "Uchiyama S.",
+          "Vandenbol M.",
+          "Vannier F.",
+          "Vassarotti A.",
+          "Viari A.",
+          "Wambutt R.",
+          "Wedler E.",
+          "Wedler H.",
+          "Weitzenegger T.",
+          "Winters P.",
+          "Wipat A.",
+          "Yamamoto H.",
+          "Yamane K.",
+          "Yasumoto K.",
+          "Yata K.",
+          "Yoshida K.",
+          "Yoshikawa H.-F.",
+          "Zumstein E.",
+          "Yoshikawa H.",
+          "Danchin A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9384377"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/36786"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "249",
+        "id": "9384377",
+        "journal": "Nature",
+        "lastPage": "256",
+        "publicationDate": "1997",
+        "title": "The complete genome sequence of the Gram-positive bacterium Bacillus subtilis.",
+        "volume": "390"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "168"
+        }
+      ],
+      "referenceNumber": 3,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Stok J.E.",
+          "De Voss J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11368323"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1006/abbi.2000.2067"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "351",
+        "id": "11368323",
+        "journal": "Arch. Biochem. Biophys.",
+        "lastPage": "360",
+        "publicationDate": "2000",
+        "title": "Expression, purification, and characterization of BioI: a carbon-carbon bond cleaving cytochrome P450 involved in biotin biosynthesis in Bacillus subtilis.",
+        "volume": "384"
+      },
+      "referenceNumber": 4,
+      "referencePositions": [
+        "PROTEIN SEQUENCE OF 2-9",
+        "FUNCTION AS BIOTIN BIOSYNTHESIS CYTOCHROME P450",
+        "CATALYTIC ACTIVITY",
+        "MASS SPECTROMETRY",
+        "SUBSTRATE SPECIFICITY"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Green A.J.",
+          "Rivers S.L.",
+          "Cheeseman M.",
+          "Reid G.A.",
+          "Quaroni L.G.",
+          "Macdonald I.D.G.",
+          "Chapman S.K.",
+          "Munro A.W."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11472016"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s007750100229"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "523",
+        "id": "11472016",
+        "journal": "J. Biol. Inorg. Chem.",
+        "lastPage": "533",
+        "publicationDate": "2001",
+        "title": "Expression, purification and characterization of cytochrome P450 Biol: a novel P450 involved in biotin synthesis in Bacillus subtilis.",
+        "volume": "6"
+      },
+      "referenceNumber": 5,
+      "referencePositions": [
+        "PROTEIN SEQUENCE OF 2-11",
+        "MASS SPECTROMETRY",
+        "SUBSTRATE SPECIFICITY"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Lawson R.J.",
+          "Leys D.",
+          "Sutcliffe M.J.",
+          "Kemp C.A.",
+          "Cheesman M.R.",
+          "Smith S.J.",
+          "Clarkson J.",
+          "Smith W.E.",
+          "Haq I.",
+          "Perkins J.B.",
+          "Munro A.W."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15449931"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi049132l"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "12410",
+        "id": "15449931",
+        "journal": "Biochemistry",
+        "lastPage": "12426",
+        "publicationDate": "2004",
+        "title": "Thermodynamic and biophysical characterization of cytochrome P450 BioI from Bacillus subtilis.",
+        "volume": "43"
+      },
+      "referenceNumber": 6,
+      "referencePositions": [
+        "SUBSTRATE SPECIFICITY",
+        "DISULFIDE BOND"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Cryle M.J.",
+          "De Voss J.J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14737344"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1039/b311652b"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "86",
+        "id": "14737344",
+        "journal": "Chem. Commun. (Camb.)",
+        "lastPage": "87",
+        "publicationDate": "2004",
+        "title": "Carbon-carbon bond cleavage by cytochrome p450(BioI)(CYP107H1).",
+        "volume": "7"
+      },
+      "referenceNumber": 7,
+      "referencePositions": [
+        "REACTION MECHANISM"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Cryle M.J.",
+          "Schlichting I."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18838690"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0805983105"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "15696",
+        "id": "18838690",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "lastPage": "15701",
+        "publicationDate": "2008",
+        "title": "Structural insights from a P450 Carrier Protein complex reveal how specificity is achieved in the P450(BioI) ACP complex.",
+        "volume": "105"
+      },
+      "referenceNumber": 8,
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.0 ANGSTROMS) OF 2-395 IN COMPLEX WITH SUBSTRATE ANALOGS AND HEME",
+        "COFACTOR"
+      ]
+    }
+  ],
+  "sequence": {
+    "crc64": "E4AC3AF2637ACE1A",
+    "length": 395,
+    "md5": "73F7CD5D4785CC81C253E73A32D930BE",
+    "molWeight": 44865,
+    "value": "MTIASSTASSEFLKNPYSFYDTLRAVHPIYKGSFLKYPGWYVTGYEETAAILKDARFKVRTPLPESSTKYQDLSHVQNQMMLFQNQPDHRRLRTLASGAFTPRTTESYQPYIIETVHHLLDQVQGKKKMEVISDFAFPLASFVIANIIGVPEEDREQLKEWAASLIQTIDFTRSRKALTEGNIMAVQAMAYFKELIQKRKRHPQQDMISMLLKGREKDKLTEEEAASTCILLAIAGHETTVNLISNSVLCLLQHPEQLLKLRENPDLIGTAVEECLRYESPTQMTARVASEDIDICGVTIRQGEQVYLLLGAANRDPSIFTNPDVFDITRSPNPHLSFGHGHHVCLGSSLARLEAQIAINTLLQRMPSLNLADFEWRYRPLFGFRALEELPVTFE"
+  },
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "U51868",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAB17462.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AF008220",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC00266.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AL009126",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB14997.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "G69594",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "G69594"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_390897.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000964.3"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_004398783.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000964.3"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3EJB",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.00 A"
+        },
+        {
+          "key": "Chains",
+          "value": "B/D/F/H=2-395"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3EJD",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "B/D/F/H=2-395"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3EJE",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "B/D/F/H=2-395"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3EJB",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3EJD",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3EJE",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-46307N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "246"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "224308.BSU30190",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DrugBank",
+      "id": "DB04450",
+      "properties": [
+        {
+          "key": "GenericName",
+          "value": "Heptyl 1-Thiohexopyranoside"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "224308-BSU30190",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "CAB14997",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB14997"
+        },
+        {
+          "key": "GeneId",
+          "value": "BSU_30190"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "935928",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "bsu:BSU30190",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|224308.179.peg.3275",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG2124",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9801155at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "BSUB:BSU30190-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:BSU30190-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "1.14.14.46",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "658"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00078",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001570",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "P53554",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0020037",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:heme binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005506",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:iron ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004497",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:monooxygenase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016705",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "id": "11368323",
+          "source": "PubMed"
+        }
+      ],
+      "id": "GO:0009102",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:biotin biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd20625",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CYP164-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.630.10:FF:000018",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cytochrome P450 monooxygenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.630.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cytochrome P450"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001128",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cyt_P450"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002397",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cyt_P450_B"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR017972",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cyt_P450_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036396",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cyt_P450_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46696:SF4",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BIOTIN BIOSYNTHESIS CYTOCHROME P450"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46696",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "P450, PUTATIVE (EUROFUNG)-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00067",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "p450"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00359",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BP450"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00385",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "P450"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48264",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cytochrome P450"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00086",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CYTOCHROME_P450"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "uniProtkbId": "BIOI_BACSU"
+}

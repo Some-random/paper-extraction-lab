@@ -1,0 +1,2033 @@
+{
+  "annotationScore": 4.0,
+  "comments": [
+    {
+      "commentType": "FUNCTION",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "12368857",
+              "source": "PubMed"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "1597180",
+              "source": "PubMed"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "9598990",
+              "source": "PubMed"
+            }
+          ],
+          "value": "Photophobic photoreceptor responsible for the negative phototaxis. Activates the sensory rhodopsin II transducer (HTR-II) in response to blue light"
+        }
+      ]
+    },
+    {
+      "commentType": "SUBUNIT",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "11504917",
+              "source": "PubMed"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "id": "12368857",
+              "source": "PubMed"
+            }
+          ],
+          "value": "Homodimer. Interacts with HTR-II"
+        }
+      ]
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "intActId": "EBI-1034509",
+            "uniProtKBAccession": "P42196"
+          },
+          "interactantTwo": {
+            "geneName": "htr2",
+            "intActId": "EBI-1034515",
+            "uniProtKBAccession": "P42259"
+          },
+          "numberOfExperiments": 5,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "id": "11937052",
+                "source": "PubMed"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "id": "1597180",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-0039",
+            "value": "Cell membrane"
+          },
+          "topology": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "id": "11937052",
+                "source": "PubMed"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "id": "1597180",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-9909",
+            "value": "Multi-pass membrane protein"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "SIMILARITY",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the archaeal/bacterial/fungal opsin family"
+        }
+      ]
+    }
+  ],
+  "entryAudit": {
+    "entryVersion": 133,
+    "firstPublicDate": "1995-11-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1995-11-01",
+    "sequenceVersion": 1
+  },
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "INTERACTION": 1,
+      "SIMILARITY": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SUBUNIT": 1
+    },
+    "countByFeatureType": {
+      "Beta strand": 2,
+      "Chain": 1,
+      "Helix": 10,
+      "Modified residue": 1,
+      "Topological domain": 8,
+      "Transmembrane": 7,
+      "Turn": 4
+    },
+    "uniParcId": "UPI0000111A08"
+  },
+  "features": [
+    {
+      "description": "Sensory rhodopsin-2",
+      "featureId": "PRO_0000196282",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 239
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 1
+        }
+      },
+      "type": "Chain"
+    },
+    {
+      "description": "Extracellular",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 3
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 1
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix A",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 25
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 4
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Cytoplasmic",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 33
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 26
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix B",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 55
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 34
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Extracellular",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 69
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 56
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix C",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 91
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 70
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Cytoplasmic",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 94
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 92
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix D",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 117
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 95
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Extracellular",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 121
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 118
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix E",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 149
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 122
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Cytoplasmic",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 153
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 150
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix F",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 181
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 154
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Extracellular",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 189
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 182
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Name=Helix G",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 222
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 190
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Cytoplasmic",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 239
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 223
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "N6-(retinylidene)lysine",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 205
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 205
+        }
+      },
+      "type": "Modified residue"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 25
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 4
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "1H2S",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 28
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 26
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "3QAP",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 33
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 31
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 55
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 36
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 59
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 56
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 63
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 60
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 69
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 66
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 91
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 70
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 117
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 95
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 142
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 123
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 149
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 144
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 180
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 154
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 185
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 182
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 201
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 190
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 207
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 202
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "9H1X",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 216
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 208
+        }
+      },
+      "type": "Helix"
+    }
+  ],
+  "genes": [
+    {
+      "geneName": {
+        "value": "sop2"
+      },
+      "synonyms": [
+        {
+          "value": "sopII"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "category": "Technical term",
+      "id": "KW-0002",
+      "name": "3D-structure"
+    },
+    {
+      "category": "Cellular component",
+      "id": "KW-1003",
+      "name": "Cell membrane"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0157",
+      "name": "Chromophore"
+    },
+    {
+      "category": "Cellular component",
+      "id": "KW-0472",
+      "name": "Membrane"
+    },
+    {
+      "category": "Molecular function",
+      "id": "KW-0600",
+      "name": "Photoreceptor protein"
+    },
+    {
+      "category": "Molecular function",
+      "id": "KW-0675",
+      "name": "Receptor"
+    },
+    {
+      "category": "Molecular function",
+      "id": "KW-0681",
+      "name": "Retinal protein"
+    },
+    {
+      "category": "Biological process",
+      "id": "KW-0716",
+      "name": "Sensory transduction"
+    },
+    {
+      "category": "Domain",
+      "id": "KW-0812",
+      "name": "Transmembrane"
+    },
+    {
+      "category": "Domain",
+      "id": "KW-1133",
+      "name": "Transmembrane helix"
+    }
+  ],
+  "organism": {
+    "commonName": "Natronobacterium pharaonis",
+    "lineage": [
+      "Archaea",
+      "Methanobacteriati",
+      "Methanobacteriota",
+      "Stenosarchaea group",
+      "Halobacteria",
+      "Halobacteriales",
+      "Natronomonadaceae",
+      "Natronomonas"
+    ],
+    "scientificName": "Natronomonas pharaonis",
+    "taxonId": 2257
+  },
+  "primaryAccession": "P42196",
+  "proteinDescription": {
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Sensory rhodopsin II"
+        },
+        "shortNames": [
+          {
+            "value": "SR-II"
+          }
+        ]
+      }
+    ],
+    "recommendedName": {
+      "fullName": {
+        "value": "Sensory rhodopsin-2"
+      }
+    }
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "references": [
+    {
+      "citation": {
+        "authors": [
+          "Seidel R.",
+          "Scharf B.",
+          "Gautel M.",
+          "Kleine K.",
+          "Oesterhelt D.",
+          "Engelhard M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "7708770"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.92.7.3036"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "3036",
+        "id": "7708770",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "lastPage": "3040",
+        "publicationDate": "1995",
+        "title": "The primary structure of sensory rhodopsin II: a member of an additional retinal protein subgroup is coexpressed with its transducer, the halobacterial transducer of rhodopsin II.",
+        "volume": "92"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "SP-1 / 28"
+        }
+      ],
+      "referenceNumber": 1,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Scharf B.",
+          "Pevec B.",
+          "Hess B.",
+          "Engelhard M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "1597180"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/j.1432-1033.1992.tb16935.x"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "359",
+        "id": "1597180",
+        "journal": "Eur. J. Biochem.",
+        "lastPage": "366",
+        "publicationDate": "1992",
+        "title": "Biochemical and photochemical properties of the photophobic receptors from Halobacterium halobium and Natronobacterium pharaonis.",
+        "volume": "206"
+      },
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "SP-1 / 28"
+        }
+      ],
+      "referenceNumber": 2,
+      "referencePositions": [
+        "FUNCTION",
+        "SUBCELLULAR LOCATION"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Luttenberg B.",
+          "Wolff E.K.",
+          "Engelhard M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9598990"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0014-5793(98)00322-6"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "117",
+        "id": "9598990",
+        "journal": "FEBS Lett.",
+        "lastPage": "120",
+        "publicationDate": "1998",
+        "title": "Heterologous coexpression of the blue light receptor psRII and its transducer pHtrII from Natronobacterium pharaonis in the Halobacterium salinarium strain Pho81/w restores negative phototaxis.",
+        "volume": "426"
+      },
+      "referenceNumber": 3,
+      "referencePositions": [
+        "FUNCTION"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Luecke H.",
+          "Schobert B.",
+          "Lanyi J.K.",
+          "Spudich E.N.",
+          "Spudich J.L."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11452084"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1062977"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "1499",
+        "id": "11452084",
+        "journal": "Science",
+        "lastPage": "1503",
+        "publicationDate": "2001",
+        "title": "Crystal structure of sensory rhodopsin II at 2.4 Angstroms: insights into color tuning and transducer interaction.",
+        "volume": "293"
+      },
+      "referenceNumber": 4,
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.4 ANGSTROMS) OF 1-217",
+        "RETINAL-BINDING SITE"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Gordeliy V.I.",
+          "Labahn J.",
+          "Moukhametzianov R.",
+          "Efremov R.",
+          "Granzin J.",
+          "Schlesinger R.",
+          "Bueldt G.",
+          "Savopol T.",
+          "Scheidig A.J.",
+          "Klare J.P.",
+          "Engelhard M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12368857"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature01109"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "484",
+        "id": "12368857",
+        "journal": "Nature",
+        "lastPage": "487",
+        "publicationDate": "2002",
+        "title": "Molecular basis of transmembrane signalling by sensory rhodopsin II-transducer complex.",
+        "volume": "419"
+      },
+      "referenceNumber": 5,
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.9 ANGSTROMS) OF 1-225",
+        "FUNCTION",
+        "INTERACTION WITH HTR-II",
+        "RETINAL-BINDING SITE"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Royant A.",
+          "Nollert P.",
+          "Edman K.",
+          "Neutze R.",
+          "Landau E.M.",
+          "Pebay-Peyroula E.",
+          "Navarro J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11504917"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.181203898"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "10131",
+        "id": "11504917",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "lastPage": "10136",
+        "publicationDate": "2001",
+        "title": "X-ray structure of sensory rhodopsin II at 2.1-A resolution.",
+        "volume": "98"
+      },
+      "referenceNumber": 6,
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.1 ANGSTROMS) OF 2-219",
+        "SUBUNIT",
+        "RETINAL-BINDING SITE"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "Edman K.",
+          "Royant A.",
+          "Nollert P.",
+          "Maxwell C.A.",
+          "Pebay-Peyroula E.",
+          "Navarro J.",
+          "Neutze R.",
+          "Landau E.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11937052"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0969-2126(02)00736-0"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "473",
+        "id": "11937052",
+        "journal": "Structure",
+        "lastPage": "482",
+        "publicationDate": "2002",
+        "title": "Early structural rearrangements in the photocycle of an integral membrane sensory receptor.",
+        "volume": "10"
+      },
+      "referenceNumber": 7,
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.27 ANGSTROMS) OF 2-219",
+        "SUBCELLULAR LOCATION",
+        "RETINAL-BINDING SITE"
+      ]
+    }
+  ],
+  "sequence": {
+    "crc64": "C0E93EAF341B6B19",
+    "length": 239,
+    "md5": "650912B140566ACFC354ECB1D5904DBC",
+    "molWeight": 25355,
+    "value": "MVGLTTLFWLGAIGMLVGTLAFAWAGRDAGSGERRYYVTLVGISGIAAVAYVVMALGVGWVPVAERTVFAPRYIDWILTTPLIVYFLGLLAGLDSREFGIVITLNTVVMLAGFAGAMVPGIERYALFGMGAVAFLGLVYYLVGPMTESASQRSSGIKSLYVRLRNLTVILWAIYPFIWLLGPPGVALLTPTVDVALIVYLDLVTKVGFGFIALDAAATLRAEHGESLAGVDTDAPAVAD"
+  },
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "Z35086",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA84469.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S55300",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S55300"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1GU8",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.27 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1GUE",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.27 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1H2S",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.93 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-225"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1H68",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1JGJ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.40 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-217"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2F93",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.00 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2F95",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3QAP",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.90 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3QDC",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.50 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4GYC",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.05 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5JJE",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.90 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5JJF",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.90 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5JJJ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.50 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=2-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5JJN",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.25 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/C=2-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "7ZCM",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.85 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-225"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8PWG",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.94 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8PWI",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.96 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8PWJ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.14 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8PWP",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.08 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8PWQ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.95 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "9H1W",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "9H1X",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.85 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "9H20",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-239"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1GU8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1GUE",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1H2S",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1H68",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1JGJ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2F93",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2F95",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3QAP",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3QDC",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4GYC",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5JJE",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5JJF",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5JJJ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5JJN",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "7ZCM",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8PWG",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8PWI",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8PWJ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8PWP",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8PWQ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "9H1W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "9H1X",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "9H20",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P42196",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BMRB",
+      "id": "P42196",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SASBDB",
+      "id": "P42196",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P42196",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-35282N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P42196",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "TCDB",
+      "id": "3.E.1.3.3",
+      "properties": [
+        {
+          "key": "FamilyName",
+          "value": "the ion-translocating microbial rhodopsin (mr) family"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "P42196",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005886",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:plasma membrane"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005216",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:monoatomic ion channel activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd15029",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "7tm_SRI_SRII"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.20.1070.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rhodopsin 7-helix transmembrane proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Arc/bac/fun_rhodopsins"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018229",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rhodopsin_retinal_BS"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR28286",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR28286:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIORHODOPSIN _OPSIN, NOPA (EUROFUNG)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF01036",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bac_rhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00251",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTRLOPSIN"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM01021",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bac_rhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF81321",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Family A G protein-coupled receptor-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00950",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIAL_OPSIN_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00327",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIAL_OPSIN_RET"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "uniProtkbId": "BACS2_NATPH"
+}

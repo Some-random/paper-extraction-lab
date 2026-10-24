@@ -1,0 +1,137 @@
+{
+  "review_type": "Assistant review, not expert human validation",
+  "cases": [
+    {
+      "id": "case-001",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 4,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Qualified modification-site inference",
+      "notes": [
+        "MKM is a useful biotin-carrier clue, not a universal attachment rule for biotin or lipoate. The explanation retains that limitation.",
+        "Primary biotin-carrier work supports the motif heuristic and folded-domain recognition: https://doi.org/10.1042/bj3290589 . The BLAP paper independently supports Lys35.",
+        "The source modification was demonstrated during heterologous expression; native modification is not established."
+      ],
+      "reasoning_strength": "Moderate biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-002",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 4,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Supported sequence-indexing control",
+      "notes": [
+        "Both LYR occurrences and all distractor offsets are correct. This teaches exact indexing, with little biological inference; it is not counted as a deep biological example."
+      ],
+      "reasoning_strength": "Exact-indexing control; limited biological depth",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-003",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 7,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Qualified membrane-architecture inference",
+      "notes": [
+        "Repeated hydrophobic regions favor a multipass architecture among these choices. Charged residues and prolines weaken exact helix assignments; the explanation explicitly acknowledges that.",
+        "The frozen UniProt annotation lists four spans while the paper predicts five. The question deliberately asks only broad architecture."
+      ],
+      "reasoning_strength": "Moderate biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-004",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 3,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Strong sequence-based explanation",
+      "notes": [
+        "The cysteine heme-ligand signature, ExxR motif and I-helix-like region form a coherent P450-family argument. Actual heme occupancy and substrate specificity remain unmeasured."
+      ],
+      "reasoning_strength": "Strong biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-005",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 3,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Strong sequence-based explanation",
+      "notes": [
+        "Two exact 12-residue loops show repeated, position-specific calcium-ligand patterns. The explanation distinguishes candidate EF hands from measured affinity, selectivity or occupancy.",
+        "Source experiments support two high-affinity N-terminal sites. One reviewer had previously encountered this sequence's source association; this is not blinded expert validation."
+      ],
+      "reasoning_strength": "Strong biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-006",
+      "selected_answer": "B",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 5,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Strong sequence-based explanation",
+      "notes": [
+        "The long C-terminal hydrophobic stretch, short following tail and charged upstream region directly support the architecture. Cytosolic orientation is a weaker inference and is appropriately qualified."
+      ],
+      "reasoning_strength": "Strong biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-007",
+      "selected_answer": "C",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 6,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Strong sequence-based explanation",
+      "notes": [
+        "Extended similarity across two regions supports tandem domains. The explanation avoids inventing a literal GLGF motif and distinguishes a proline-rich SH3 ligand from an SH3 domain.",
+        "PDZ-family recognition depends on learned family knowledge; neither precise domain boundaries nor physiological partners are demonstrated from sequence alone."
+      ],
+      "reasoning_strength": "Strong biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-008",
+      "selected_answer": "D",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 9,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Qualified chromophore-mechanism inference",
+      "notes": [
+        "Repeated hydrophobic regions, a late lysine and the absence of cysteine discriminate among these choices. They do not uniquely prove an opsin identity or retinal attachment."
+      ],
+      "reasoning_strength": "Moderate biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    },
+    {
+      "id": "case-009",
+      "selected_answer": "A",
+      "gold_correct": true,
+      "sequence_claims_check": "All exact 1-based inclusive substrings match",
+      "sequence_claims_checked": 6,
+      "sequence_claims_passed": true,
+      "scientific_review_status": "Qualified enzyme-family inference",
+      "notes": [
+        "The explanation uses family-associated sequence features and correctly distinguishes methylation from the preceding CaaX proteolysis step. It does not infer enzyme identity from hydrophobicity alone.",
+        "Primary work supports the RHPxY–hydrophobic–EE pattern and includes human ICMT: https://pmc.ncbi.nlm.nih.gov/articles/PMC55642/ . Related membrane enzyme families also share it, so the pattern is not uniquely diagnostic."
+      ],
+      "reasoning_strength": "Moderate biological inference among the supplied choices",
+      "training_recommendation": "Retain as an assistant-reviewed quality-pilot draft; preserve all qualifications. Training benefit is not measured."
+    }
+  ]
+}

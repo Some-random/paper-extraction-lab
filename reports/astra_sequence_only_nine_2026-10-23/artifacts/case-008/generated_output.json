@@ -1,0 +1,62 @@
+{
+  "confidence": "high",
+  "limitations": "Sequence inspection does not demonstrate retinal occupancy, Schiff-base formation specifically at Lys205, or exact transmembrane-helix boundaries. Confidence is high for choosing among the supplied mechanisms, not for experimentally establishing the modification.",
+  "selected_answer": "D",
+  "sequence_claims": [
+    {
+      "end": 239,
+      "interpretation": "The complete sequence is 239 residues long and contains no cysteine.",
+      "residues": "MVGLTTLFWLGAIGMLVGTLAFAWAGRDAGSGERRYYVTLVGISGIAAVAYVVMALGVGWVPVAERTVFAPRYIDWILTTPLIVYFLGLLAGLDSREFGIVITLNTVVMLAGFAGAMVPGIERYALFGMGAVAFLGLVYYLVGPMTESASQRSSGIKSLYVRLRNLTVILWAIYPFIWLLGPPGVALLTPTVDVALIVYLDLVTKVGFGFIALDAAATLRAEHGESLAGVDTDAPAVAD",
+      "start": 1
+    },
+    {
+      "end": 26,
+      "interpretation": "Hydrophobic-rich N-terminal window compatible with a membrane-spanning segment.",
+      "residues": "MVGLTTLFWLGAIGMLVGTLAFAWAG",
+      "start": 1
+    },
+    {
+      "end": 64,
+      "interpretation": "A second long hydrophobic-rich window supporting a multipass membrane architecture.",
+      "residues": "YYVTLVGISGIAAVAYVVMALGVGWVPVA",
+      "start": 36
+    },
+    {
+      "end": 94,
+      "interpretation": "Hydrophobic-rich sequence window; its boundaries are not established helix boundaries.",
+      "residues": "YIDWILTTPLIVYFLGLLAGLD",
+      "start": 73
+    },
+    {
+      "end": 121,
+      "interpretation": "Another membrane-length, hydrophobic-rich sequence window.",
+      "residues": "FGIVITLNTVVMLAGFAGAMVPGI",
+      "start": 98
+    },
+    {
+      "end": 145,
+      "interpretation": "Another membrane-length, hydrophobic-rich sequence window.",
+      "residues": "YALFGMGAVAFLGLVYYLVGPM",
+      "start": 124
+    },
+    {
+      "end": 190,
+      "interpretation": "A late hydrophobic-rich window supporting a multipass membrane architecture.",
+      "residues": "LTVILWAIYPFIWLLGPPGVALLTP",
+      "start": 166
+    },
+    {
+      "end": 219,
+      "interpretation": "The final long hydrophobic-rich window contains Lys205, a plausible retinal-attachment residue.",
+      "residues": "VALIVYLDLVTKVGFGFIALDAAATL",
+      "start": 194
+    },
+    {
+      "end": 205,
+      "interpretation": "Lys205 is a candidate Schiff-base-forming residue, not a demonstrated modification site.",
+      "residues": "K",
+      "start": 205
+    }
+  ],
+  "worked_solution": "D is the most consistent choice: retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin.\n\n1. Overall sequence architecture\nThe 239-residue protein contains repeated long, hydrophobic-rich windows at residues 1–26, 36–64, 73–94, 98–121, 124–145, 166–190, and 194–219. Their distribution throughout the chain strongly favors a compact multipass membrane protein rather than a soluble chromophore-binding domain. These are illustrative sequence windows, not experimentally established helix boundaries. Nevertheless, this pattern is consistent with the seven-transmembrane-helical architecture typical of microbial opsins.\n\n2. A plausible attachment residue\nThe late hydrophobic-rich segment at residues 194–219, VALIVYLDLVTKVGFGFIALDAAATL, contains Lys205. In opsins, retinal's aldehyde forms a covalent imine, or Schiff base, with a lysine side chain's ε-amino group. In microbial opsins, the attachment lysine lies in the final transmembrane helix. Thus, Lys205 has both suitable chemistry and an appropriate qualitative sequence location. The combination of membrane architecture and lysine position is more informative than lysine presence alone.\n\n3. Comparison with the alternatives\nA: The sequence contains no cysteine, so no cysteine is available for the specified bilin linkage. Its compact, membrane-rich architecture also does not support the large phytochrome photosensory module described in this choice.\nB: Noncovalent FMN binding in a LOV domain requires a folded, predominantly soluble pocket. The extensive hydrophobic segments throughout this sequence instead favor a membrane-helical bundle.\nC: GFP-like chromophore formation requires the soluble GFP β-barrel scaffold. Although GFP proteins can have a similar overall length, length alone is not diagnostic, and the repeated membrane-length hydrophobic regions argue strongly against that architecture.\n\nTherefore, D best explains both the overall sequence organization and the candidate lysine attachment site, while the actual chromophore and covalent linkage remain inferred."
+}

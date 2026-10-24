@@ -1,0 +1,1824 @@
+{
+  "annotationScore": 3.0,
+  "comments": [
+    {
+      "commentType": "FUNCTION",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Negatively regulates Golgi-to-plasma membrane trafficking by interacting with PI4KB and inhibiting its activity"
+        }
+      ]
+    },
+    {
+      "commentType": "SUBUNIT",
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Interacts with PI4KB. This binding competes with FREQ/NCS1 binding in a calcium-dependent manner (By similarity)"
+        }
+      ]
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "intActId": "EBI-23900553",
+            "uniProtKBAccession": "Q86V35"
+          },
+          "interactantTwo": {
+            "geneName": "MTIF3",
+            "intActId": "EBI-3923617",
+            "uniProtKBAccession": "Q9H2K0"
+          },
+          "numberOfExperiments": 3,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305",
+                "id": "19338761",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-0267",
+            "value": "Golgi apparatus, trans-Golgi network membrane"
+          },
+          "topology": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305",
+                "id": "19338761",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-9908",
+            "value": "Single-pass type IV membrane protein"
+          }
+        },
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "id": "19338761",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-0198",
+            "value": "Cytoplasm, perinuclear region"
+          }
+        },
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305",
+                "id": "19338761",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-0039",
+            "value": "Cell membrane"
+          },
+          "topology": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305",
+                "id": "19338761",
+                "source": "PubMed"
+              }
+            ],
+            "id": "SL-9908",
+            "value": "Single-pass type IV membrane protein"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "DOMAIN",
+      "texts": [
+        {
+          "value": "The C-terminal transmembrane domain (TMD) is necessary and sufficient for membrane targeting"
+        }
+      ]
+    }
+  ],
+  "entryAudit": {
+    "entryVersion": 156,
+    "firstPublicDate": "2003-10-03",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2003-06-01",
+    "sequenceVersion": 1
+  },
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "extraAttributes": {
+    "countByCommentType": {
+      "DOMAIN": 1,
+      "FUNCTION": 1,
+      "INTERACTION": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SUBUNIT": 1
+    },
+    "countByFeatureType": {
+      "Beta strand": 2,
+      "Binding site": 9,
+      "Chain": 1,
+      "Domain": 2,
+      "Helix": 5,
+      "Topological domain": 2,
+      "Transmembrane": 1,
+      "Turn": 2
+    },
+    "uniParcId": "UPI0000004C1D"
+  },
+  "features": [
+    {
+      "description": "Calcium-binding protein 7",
+      "featureId": "PRO_0000073526",
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 215
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 1
+        }
+      },
+      "type": "Chain"
+    },
+    {
+      "description": "Cytoplasmic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 188
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 1
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "Helical; Anchor for type IV membrane protein",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 209
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 189
+        }
+      },
+      "type": "Transmembrane"
+    },
+    {
+      "description": "Extracellular",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 215
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 210
+        }
+      },
+      "type": "Topological domain"
+    },
+    {
+      "description": "EF-hand 1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 68
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 33
+        }
+      },
+      "type": "Domain"
+    },
+    {
+      "description": "EF-hand 2",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 104
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 69
+        }
+      },
+      "type": "Domain"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "1",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 46
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 46
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "1",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 48
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 48
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "1",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 50
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 50
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "1",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 57
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 57
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "2",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 82
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 82
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "2",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 84
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 84
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "2",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 86
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 86
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "2",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 88
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 88
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "id": "PRU00448",
+          "source": "PROSITE-ProRule"
+        }
+      ],
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29108"
+        }
+      ],
+      "ligand": {
+        "id": "ChEBI:CHEBI:29108",
+        "label": "2",
+        "name": "Ca(2+)"
+      },
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 93
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 93
+        }
+      },
+      "type": "Binding site"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 5
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 3
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 24
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 21
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 34
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 32
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 44
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 35
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 65
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 55
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 73
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 71
+        }
+      },
+      "type": "Turn"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 81
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 74
+        }
+      },
+      "type": "Helix"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 89
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 86
+        }
+      },
+      "type": "Beta strand"
+    },
+    {
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "id": "2LV7",
+          "source": "PDB"
+        }
+      ],
+      "location": {
+        "end": {
+          "modifier": "EXACT",
+          "value": 97
+        },
+        "start": {
+          "modifier": "EXACT",
+          "value": 91
+        }
+      },
+      "type": "Helix"
+    }
+  ],
+  "genes": [
+    {
+      "geneName": {
+        "value": "CABP7"
+      },
+      "synonyms": [
+        {
+          "value": "CALN2"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "category": "Technical term",
+      "id": "KW-0002",
+      "name": "3D-structure"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0106",
+      "name": "Calcium"
+    },
+    {
+      "category": "Cellular component",
+      "id": "KW-1003",
+      "name": "Cell membrane"
+    },
+    {
+      "category": "Cellular component",
+      "id": "KW-0963",
+      "name": "Cytoplasm"
+    },
+    {
+      "category": "Cellular component",
+      "id": "KW-0333",
+      "name": "Golgi apparatus"
+    },
+    {
+      "category": "Cellular component",
+      "id": "KW-0472",
+      "name": "Membrane"
+    },
+    {
+      "category": "Ligand",
+      "id": "KW-0479",
+      "name": "Metal-binding"
+    },
+    {
+      "category": "Technical term",
+      "id": "KW-1185",
+      "name": "Reference proteome"
+    },
+    {
+      "category": "Domain",
+      "id": "KW-0677",
+      "name": "Repeat"
+    },
+    {
+      "category": "Domain",
+      "id": "KW-0812",
+      "name": "Transmembrane"
+    },
+    {
+      "category": "Domain",
+      "id": "KW-1133",
+      "name": "Transmembrane helix"
+    }
+  ],
+  "organism": {
+    "commonName": "Human",
+    "lineage": [
+      "Eukaryota",
+      "Metazoa",
+      "Chordata",
+      "Craniata",
+      "Vertebrata",
+      "Euteleostomi",
+      "Mammalia",
+      "Eutheria",
+      "Euarchontoglires",
+      "Primates",
+      "Haplorrhini",
+      "Catarrhini",
+      "Hominidae",
+      "Homo"
+    ],
+    "scientificName": "Homo sapiens",
+    "taxonId": 9606
+  },
+  "primaryAccession": "Q86V35",
+  "proteinDescription": {
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Calneuron II"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Calneuron-2"
+        }
+      }
+    ],
+    "recommendedName": {
+      "fullName": {
+        "value": "Calcium-binding protein 7"
+      },
+      "shortNames": [
+        {
+          "value": "CaBP7"
+        }
+      ]
+    }
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "references": [
+    {
+      "citation": {
+        "authoringGroup": [
+          "The MGC Project Team"
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15489334"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1101/gr.2596504"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "2121",
+        "id": "15489334",
+        "journal": "Genome Res.",
+        "lastPage": "2127",
+        "publicationDate": "2004",
+        "title": "The status, quality, and expansion of the NIH full-length cDNA project: the Mammalian Gene Collection (MGC).",
+        "volume": "14"
+      },
+      "referenceComments": [
+        {
+          "type": "TISSUE",
+          "value": "Brain"
+        }
+      ],
+      "referenceNumber": 1,
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA]"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "McCue H.V.",
+          "Burgoyne R.D.",
+          "Haynes L.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19338761"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/j.bbrc.2009.01.177"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "825",
+        "id": "19338761",
+        "journal": "Biochem. Biophys. Res. Commun.",
+        "lastPage": "831",
+        "publicationDate": "2009",
+        "title": "Membrane targeting of the EF-hand containing calcium-sensing proteins CaBP7 and CaBP8.",
+        "volume": "380"
+      },
+      "referenceNumber": 2,
+      "referencePositions": [
+        "SUBCELLULAR LOCATION"
+      ]
+    },
+    {
+      "citation": {
+        "authors": [
+          "McCue H.V.",
+          "Patel P.",
+          "Herbert A.P.",
+          "Lian L.Y.",
+          "Burgoyne R.D.",
+          "Haynes L.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "22989873"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m112.402289"
+          }
+        ],
+        "citationType": "journal article",
+        "firstPage": "38231",
+        "id": "22989873",
+        "journal": "J. Biol. Chem.",
+        "lastPage": "38243",
+        "publicationDate": "2012",
+        "title": "Solution NMR structure of the Ca2+-bound N-terminal domain of CaBP7: a regulator of golgi trafficking.",
+        "volume": "287"
+      },
+      "referenceNumber": 3,
+      "referencePositions": [
+        "STRUCTURE BY NMR OF 1-100",
+        "CALCIUM-BINDING SITES"
+      ]
+    }
+  ],
+  "sequence": {
+    "crc64": "9C254C955F7AFFA8",
+    "length": 215,
+    "md5": "903BB214160ABE6AF5D34ADD9D9081D8",
+    "molWeight": 24453,
+    "value": "MPFHPVTAALMYRGIYTVPNLLSEQRPVDIPEDELEEIREAFKVFDRDGNGFISKQELGTAMRSLGYMPNEVELEVIIQRLDMDGDGQVDFEEFVTLLGPKLSTSGIPEKFHGTDFDTVFWKCDMQKLTVDELKRLLYDTFCEHLSMKDIENIIMTEEESHLGTAEECPVDVETCSNQQIRQTCVRKSLICAFAIAFIISVMLIAANQVLRSGMK"
+  },
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "BC051805",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAH51805.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "CCDS",
+      "id": "CCDS13867.1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_872333.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_182527.3"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2LV7",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "NMR"
+        },
+        {
+          "key": "Resolution",
+          "value": "-"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-100"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2LV7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BMRB",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "127897",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "39"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "9606.ENSP00000216144",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "iPTMnet",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhosphoSitePlus",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioMuta",
+      "id": "CABP7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DMDM",
+      "id": "37537777",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "jPOST",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "MassIVE",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "9606-ENSP00000216144",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PeptideAtlas",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "ProteomicsDB",
+      "id": "69960",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Antibodypedia",
+      "id": "24571",
+      "properties": [
+        {
+          "key": "antibodies",
+          "value": "114 antibodies from 29 providers"
+        }
+      ]
+    },
+    {
+      "database": "DNASU",
+      "id": "164633",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Ensembl",
+      "id": "ENST00000216144.4",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ENSP00000216144.3"
+        },
+        {
+          "key": "GeneId",
+          "value": "ENSG00000100314.5"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "164633",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "hsa:164633",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "MANE-Select",
+      "id": "ENST00000216144.4",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ENSP00000216144.3"
+        },
+        {
+          "key": "RefSeqNucleotideId",
+          "value": "NM_182527.3"
+        },
+        {
+          "key": "RefSeqProteinId",
+          "value": "NP_872333.1"
+        }
+      ]
+    },
+    {
+      "database": "UCSC",
+      "id": "uc003agl.4",
+      "properties": [
+        {
+          "key": "OrganismName",
+          "value": "human"
+        }
+      ]
+    },
+    {
+      "database": "AGR",
+      "id": "HGNC:20834",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "ClinPGx",
+      "id": "PA134928335",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "CTD",
+      "id": "164633",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneCards",
+      "id": "CABP7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HGNC",
+      "id": "HGNC:20834",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "CABP7"
+        }
+      ]
+    },
+    {
+      "database": "HPA",
+      "id": "ENSG00000100314",
+      "properties": [
+        {
+          "key": "ExpressionPatterns",
+          "value": "Tissue enriched (brain)"
+        }
+      ]
+    },
+    {
+      "database": "MIM",
+      "id": "618759",
+      "properties": [
+        {
+          "key": "Type",
+          "value": "gene"
+        }
+      ]
+    },
+    {
+      "database": "OpenTargets",
+      "id": "ENSG00000100314",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "HostDB:ENSG00000100314",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG0027",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "GeneTree",
+      "id": "ENSGT00940000159368",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_106115_0_0_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "TQQIKQT",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "26525at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PAN-GO",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Number of GO annotations",
+          "value": "1 GO annotation based on evolutionary models"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PathwayCommons",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SignaLink",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Agora",
+      "id": "ENSG00000100314",
+      "properties": [
+        {
+          "key": "NominatedTarget",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID-ORCS",
+      "id": "164633",
+      "properties": [
+        {
+          "key": "hits",
+          "value": "12 hits in 1140 CRISPR screens"
+        }
+      ]
+    },
+    {
+      "database": "ChiTaRS",
+      "id": "CABP7",
+      "properties": [
+        {
+          "key": "OrganismName",
+          "value": "human"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GenomeRNAi",
+      "id": "164633",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Pharos",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "DevelopmentLevel",
+          "value": "Tbio"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:Q86V35",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000005640",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 22"
+        }
+      ]
+    },
+    {
+      "database": "RNAct",
+      "id": "Q86V35",
+      "properties": [
+        {
+          "key": "moleculeType",
+          "value": "protein"
+        }
+      ]
+    },
+    {
+      "database": "Bgee",
+      "id": "ENSG00000100314",
+      "properties": [
+        {
+          "key": "ExpressionPatterns",
+          "value": "Expressed in pons and 96 other cell types or tissues"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0048471",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:perinuclear region of cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005886",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:plasma membrane"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "id": "19338761",
+          "source": "PubMed"
+        }
+      ],
+      "id": "GO:0032588",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:trans-Golgi network membrane"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:MGI"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005509",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:calcium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00051",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EFh"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.238.10:FF:000115",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Calcium-binding protein 8"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.238.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF-hand"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR051111",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ca-binding_regulatory"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011992",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF-hand-dom_pair"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018247",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF_Hand_1_Ca_BS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002048",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF_hand_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001751",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S100/CaBP7/8-like_CS"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46311:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CALCIUM-BINDING PROTEIN 7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46311",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CALCIUM-BINDING PROTEIN 8-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13499",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF-hand_7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00054",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EFh"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF47473",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF-hand"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00018",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF_HAND_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS50222",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EF_HAND_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    }
+  ],
+  "uniProtkbId": "CABP7_HUMAN"
+}

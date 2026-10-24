@@ -1,0 +1,26 @@
+{
+  "confidence": "high",
+  "limitations": "This is a strong sequence-based assignment, not a biochemical measurement. Calcium affinity, ion selectivity, site occupancy and the number of functional binding sites cannot be established from sequence alone. The EF-hand fold and membrane-anchor topology remain structural predictions.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 57,
+      "interpretation": "Candidate 12-residue EF-hand calcium-binding loop, with D, D and N at loop positions 1, 3 and 5, glycine at position 6, and glutamate at position 12.",
+      "residues": "DRDGNGFISKQE",
+      "start": 46
+    },
+    {
+      "end": 93,
+      "interpretation": "Second candidate 12-residue EF-hand calcium-binding loop, with aspartate at loop positions 1, 3 and 5, glycine at position 6, and glutamate at position 12.",
+      "residues": "DMDGDGQVDFEE",
+      "start": 82
+    },
+    {
+      "end": 206,
+      "interpretation": "Strongly hydrophobic near-C-terminal segment consistent with a membrane anchor; the candidate calcium-binding loops are located well upstream.",
+      "residues": "LICAFAIAFIISVMLIAA",
+      "start": 189
+    }
+  ],
+  "worked_solution": "A. Binding calcium ions through EF-hand domains is the best-supported choice.\n\nSequence context: Residues 189–206, LICAFAIAFIISVMLIAA, form a strongly hydrophobic near-C-terminal segment consistent with a membrane anchor. The candidate binding motifs lie well upstream, in the likely soluble portion of the protein.\n\nPositive evidence for EF hands: Two conspicuous 12-residue segments are residues 46–57, DRDGNGFISKQE, and residues 82–93, DMDGDGQVDFEE. A canonical EF hand contains a calcium-binding loop of approximately 12 residues between two helices. Characteristic features include oxygen-donating residues at particular loop positions, a frequently conserved glycine at position 6, and a terminal glutamate at position 12.\n\nThe first segment has D, D and N at loop positions 1, 3 and 5; the second has D, D and D at those positions. Both have G at position 6 and E at position 12. These features are chemically appropriate for calcium binding: Asp and Asn provide oxygen ligands, glycine accommodates the loop geometry, and the terminal glutamate commonly coordinates calcium through both carboxylate oxygens. Two repeated, position-specific patterns provide much stronger evidence than acidic composition alone.\n\nComparison with the alternatives:\n• A directly explains both candidate calcium-binding loops.\n• B requires the characteristically spaced Cys–Cys–His–His ligands of a classical C2H2 zinc finger. That arrangement is not present; scattered cysteine and histidine residues do not establish a zinc-finger domain.\n• C requires a heme-binding pocket and a peroxide-reactive catalytic environment. Individual potential heme-ligating residues would not establish that activity, and there is no comparably specific positive evidence for it here.\n• D requires a flavin-binding oxidoreductase architecture. Many FAD-binding proteins contain glycine-rich nucleotide-binding segments, but the glycine-containing segments identified here have the positional ligand pattern of calcium-binding loops instead. FAD proteins are diverse, so a missing generic motif would not categorically exclude them; the decisive point is the much stronger positive evidence for EF hands.\n\nThus, calcium binding through EF-hand domains is the most defensible role for the soluble region."
+}

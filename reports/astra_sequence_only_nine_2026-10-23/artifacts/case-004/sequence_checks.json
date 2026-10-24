@@ -1,0 +1,24 @@
+{
+  "strict_schema_passed": true,
+  "sequence_claim_checks": [
+    {
+      "end": 347,
+      "exact_sequence_match": true,
+      "residues": "FGHGHHVCLG",
+      "start": 338
+    },
+    {
+      "end": 277,
+      "exact_sequence_match": true,
+      "residues": "ECLR",
+      "start": 274
+    },
+    {
+      "end": 240,
+      "exact_sequence_match": true,
+      "residues": "AGHETT",
+      "start": 235
+    }
+  ],
+  "sequence_claims_passed": true
+}

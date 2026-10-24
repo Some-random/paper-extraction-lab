@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "limitations": "The sequence strongly favors one candidate site but does not establish that modification actually occurs. The MKM context is particularly suggestive of biotinylation, not a universal motif for both biotin and lipoate attachment. Cofactor identity and lysine accessibility cannot be established conclusively from this sequence alone.",
+  "selected_answer": "A",
+  "sequence_claims": [
+    {
+      "end": 40,
+      "interpretation": "This segment contains Met34–Lys35–Met36. The methionine-flanked Lys35 provides the strongest biotin-acceptor-like context among the choices.",
+      "residues": "LESMKMEIPI",
+      "start": 31
+    },
+    {
+      "end": 55,
+      "interpretation": "Lys52 is the first lysine in the Lys52–Lys54 cluster; it lacks the methionine-flanked context seen at Lys35.",
+      "residues": "EVKKKE",
+      "start": 50
+    },
+    {
+      "end": 19,
+      "interpretation": "Local context of Lys17, which lacks the MKM pattern.",
+      "residues": "HVKAG",
+      "start": 15
+    },
+    {
+      "end": 26,
+      "interpretation": "Local context of Lys24, which lacks the MKM pattern.",
+      "residues": "IEKGQ",
+      "start": 22
+    }
+  ],
+  "worked_solution": "The most plausible site is A: lysine at position 35.\n\nBiotin and lipoate are covalently attached through an amide bond to the side-chain ε-amino group of selected lysines in carrier domains. All four choices therefore have the appropriate residue chemistry; their surrounding sequences provide the useful distinction.\n\nCounting the initial methionine as residue 1, residues 31–40 are LESMKMEIPI. Lys35 lies between Met34 and Met36, producing an MKM motif. This methionine-flanked lysine context is characteristic of the acceptor region in many biotin-carrier domains. It is the strongest positive clue for the attachment site in the supplied sequence.\n\nComparison with the alternatives:\n- B, Lys52: residues 50–55 are EVKKKE. Lys52 begins a three-lysine cluster, but a cluster of lysines is not itself a biotin/lipoate attachment signal.\n- C, Lys17: residues 15–19 are HVKAG, without the characteristic MKM context.\n- D, Lys24: residues 22–26 are IEKGQ, likewise without that context.\n\nCofactor attachment depends on recognition of the folded carrier domain, so absence of MKM does not categorically exclude a lysine, especially for lipoylation. Nevertheless, Lys35 has a recognizable biotin-acceptor-like sequence context that the alternatives lack, making it the best-supported choice."
+}

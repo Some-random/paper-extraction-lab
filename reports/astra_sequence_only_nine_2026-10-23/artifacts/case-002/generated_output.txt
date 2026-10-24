@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "limitations": "None for this exact sequence-matching task; no functional or structural inference is needed.",
+  "selected_answer": "B",
+  "sequence_claims": [
+    {
+      "end": 20,
+      "interpretation": "Local sequence containing the first exact LYR occurrence.",
+      "residues": "VLSLYRDLLR",
+      "start": 11
+    },
+    {
+      "end": 16,
+      "interpretation": "First exact LYR occurrence.",
+      "residues": "LYR",
+      "start": 14
+    },
+    {
+      "end": 60,
+      "interpretation": "Local sequence containing the second exact LYR occurrence.",
+      "residues": "EYLYRRGRRQ",
+      "start": 51
+    },
+    {
+      "end": 55,
+      "interpretation": "Second exact LYR occurrence.",
+      "residues": "LYR",
+      "start": 53
+    }
+  ],
+  "worked_solution": "Number the initial M as residue 1 and search for consecutive L–Y–R residues (leucine–tyrosine–arginine).\n\nResidues 11–20 are VLSLYRDLLR: L is at 14, Y at 15, and R at 16. Thus the first match is 14–16.\n\nResidues 51–60 are EYLYRRGRRQ: L is at 53, Y at 54, and R at 55. Thus the second match is 53–55. There are no other exact LYR occurrences.\n\nTherefore, B is correct. Relative to the correct ranges, A shifts both windows one residue forward, C shifts them two residues forward, and D shifts them one residue backward."
+}
