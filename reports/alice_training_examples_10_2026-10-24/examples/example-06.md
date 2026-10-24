@@ -25,7 +25,7 @@ AFFVKGH
 
 B is the best-supported architecture: a large cytosolic region with a single membrane anchor near the C terminus.
 
-The strongest evidence is residues 193–214, ILLVILGIIVVIAILTAIAFFV. This 22-residue stretch is strongly hydrophobic and contains no charged residues. Its length and composition are appropriate for an alpha helix spanning a lipid bilayer; such helices commonly contain roughly 18–25 predominantly hydrophobic residues. Only KGH at positions 215–217 follows it, so the candidate anchor lies very close to the protein's C terminus.
+The strongest evidence is residues 193–213, ILLVILGIIVVIAILTAIAFF. This 21-residue stretch is strongly hydrophobic and contains no charged residues. Its length and composition are appropriate for an alpha helix spanning a lipid bilayer; such helices commonly contain roughly 18–25 predominantly hydrophobic residues. Only VKGH at positions 214–217 follows it, so the candidate anchor lies very close to the protein's C terminus.
 
 In contrast, residues 1–192 contain frequent charged and polar residues and no other comparably long hydrophobic stretch. They therefore support a large region outside the membrane rather than additional transmembrane helices. The N-terminal 30 residues also lack the sustained hydrophobic core expected in a classical cleavable signal peptide. Together, these features support a C-terminally anchored architecture. The basic flank RRIIQNR at residues 186–192 is consistent with the positive-inside tendency, in which positively charged flanks preferentially lie on the cytosolic side. This strengthens, but does not prove, the inference that the large upstream region is cytosolic.
 
@@ -83,5 +83,10 @@ Papers and experimental references:
 Source review was performed by assistants, not expert human reviewers. A matching answer and source support do not establish that every explanatory claim is sound or that training will improve a model.
 
 [Original source records and unchanged AI output](../../astra_sequence_only_nine_2026-10-23/examples/case-006.md)
+
+
+### Revision 4 coordinate clarification
+
+The frozen sequence and UniProt annotation identify residues 193–213 as a 21-residue predicted anchor, followed by VKGH at residues 214–217. The worked answer was AI-edited to use those coordinates consistently; the question and answer letter B are unchanged. These are sequence-analysis boundaries, not membrane boundaries measured in the paper. [Unchanged original AI output](../artifacts/example-06/original_generated_output.json) · [Frozen sequence annotation](../artifacts/example-06/frozen_uniprot_record.json) · [Exact coordinate correction](../artifacts/example-06/coordinate_correction.json) · [Prior presentation](../artifacts/example-06/previous_presentation_v2.txt).
 
 </details>

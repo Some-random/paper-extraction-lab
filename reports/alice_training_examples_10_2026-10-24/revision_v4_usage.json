@@ -1,0 +1,26 @@
+{
+  "new_requests": 2,
+  "known_cost_usd": "0.86597",
+  "billing_unknown_reserved_usd": "7.00",
+  "completed_outputs": 1,
+  "source_aware_authored_replacements": 1,
+  "earlier_usage_unchanged": "new_generation_usage.json",
+  "cases": [
+    {
+      "id": "example-02",
+      "receipt_sha256": "dfd29da5d23af8e25e92e7dd0e83750a5aa8ee1967864a13f33e3e7f91b96c0a",
+      "request_sha256": "8197c742348a7ee3e54169b3643dbc93520bbd7c0ae0c16226b6b669f95b72da",
+      "method": "fresh_teacher_unchanged",
+      "actual_output_sha256": "279ef67ef880b6fa2b0da13f73a17edd900d02b51afb871939755f5c601b87e2",
+      "failed_response_sha256": null
+    },
+    {
+      "id": "example-03",
+      "receipt_sha256": "e2b4771b22ee859da27553f484197b9f125594e4b7b4753e2ee0e5a851337a53",
+      "request_sha256": "9fbb2dad55eafae33606f784e70c806ac59fe19cd39f322d8e421b5b0ddb4c10",
+      "method": "source_aware_assistant_authored",
+      "actual_output_sha256": null,
+      "failed_response_sha256": "bb2fb7b51f18478e3ccde6376dc39285b20472f0394e7034fd2e0bdf6a5716e2"
+    }
+  ]
+}

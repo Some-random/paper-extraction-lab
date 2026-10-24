@@ -1,0 +1,22 @@
+{
+  "id": "alice-turboid-m241t-tradeoff-v3",
+  "status": "transport_or_billing_unknown",
+  "attempts": 1,
+  "automatic_retries": 0,
+  "http_status": 502,
+  "error_type": "JSONDecodeError",
+  "known_cost_usd": "0",
+  "billing_unknown_reserved_usd": "7.00",
+  "created_utc": "2026-10-24T21:18:26.328965+00:00",
+  "updated_utc": "2026-10-24T21:20:05.392984+00:00",
+  "wall_seconds": 99.36778504680842,
+  "raw_receipt_sha256": "e2b4771b22ee859da27553f484197b9f125594e4b7b4753e2ee0e5a851337a53",
+  "raw_receipt_preserved_privately": true,
+  "request": "request.json",
+  "request_sha256": "9fbb2dad55eafae33606f784e70c806ac59fe19cd39f322d8e421b5b0ddb4c10",
+  "response": "failed_response.txt",
+  "response_sha256": "bb2fb7b51f18478e3ccde6376dc39285b20472f0394e7034fd2e0bdf6a5716e2",
+  "public_record_sanitized": true,
+  "teacher_answer_available": false,
+  "note": "Known cost zero means unmeasured billing, not a free request; USD7 remains reserved."
+}

@@ -33,71 +33,69 @@ Supplied assay observations:
 
 ---
 
-# 2. Adenylate kinase: a conservative substitution can impair catalysis
+# 2. APEX: why an active enzyme can still be a poor cellular reporter
 
-Wild-type protein: Adenylate kinase (Escherichia coli K-12).
-Full canonical wild-type sequence, numbered from the initial methionine as residue 1:
+Protein: pea cytosolic ascorbate peroxidase (APX). The full canonical wild-type sequence below is a coordinate reference; residue 1 is the initial methionine. It is not the complete expressed fusion.
+
+Protein sequence:
 
 ```text
-MRIILLGAPGAGKGTQAQFIMEKYGIPQISTGDMLRAAVKSGSELGKQAKDIMDAGKLVTDELVIALVKE
-RIAQEDCRNGFLLDGFPRTIPQADAMKEAGINVDYVLEFDVPDELIVDRIVGRRVHAPSGRVYHVKFNPP
-KVEGKDDVTGEELTTRKDDQEETVRKRLVEYHQMTAPLIGYYSKEAEAGNTKYAKVDGTKPVAEVRADLE
-KILG
+MGKSYPTVSPDYQKAIEKAKRKLRGFIAEKKCAPLILRLAWHSAGTFDSKTKTGGPFGTIKHQAELAHGA
+NNGLDIAVRLLEPIKEQFPIVSYADFYQLAGVVAVEITGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH
+LRDVFGKAMGLSDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLTGEKDGLLQLPSDKA
+LLTDSVFRPLVEKYAADEDVFFADYAEAHLKLSELGFAEA
 ```
 
+Published variants use those wild-type coordinates: mAPX carries K14D/E112K; APEX carries K14D/E112K/W41F. The enzyme cores have no deletion. Experimental tags, targeting sequences and fusion partners are not shown.
 
-Published variant(s): R156K.
+Published observations:
+- Wild-type APX and mAPX had similar activity in the purified-enzyme comparison, which used guaiacol, an aromatic model substrate.
+- Wild-type APX fused to connexin43 was largely retained inside cells, whereas mAPX fusions reached gap junctions much more effectively.
+- In the cytosol, mAPX gave weaker DAB staining than wild-type APX; supplying heme increased its staining. DAB staining reports peroxidase-catalyzed product formation.
+- APEX gave stronger cellular DAB staining than mAPX while retaining similar predominantly monomeric behavior.
 
-Experimental evidence:
-Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):
-WT: kcat 330, Km 71.
-R156K: kcat 0.74, Km 52.
-Arginine and lysine both normally carry a positive side-chain charge near neutral pH.
+**Question:** Which interpretation best preserves what the biochemical and cellular comparisons actually measure?
 
-**Question:** Which interpretation best explains why calling R156K a conservative substitution does not establish functional conservation?
+- **A.** Purified guaiacol activity provides the per-molecule calibration for cellular DAB staining; after that calibration, the remaining signal differences can be assigned to amounts of correctly localized fusion protein.
+- **B.** The heme-supplementation response provides a direct ranking of equilibrium heme-binding affinity; it therefore identifies weaker heme affinity as the complete cause of the mAPX cellular defect.
+- **C.** The mutations balance different properties: reduced self-association can improve fusion trafficking, while cell staining also depends on active heme-containing enzyme and substrate chemistry. Similar purified guaiacol activity does not calibrate cellular DAB signal.
+- **D.** Because APEX and mAPX have similar oligomeric behavior, their cellular DAB difference primarily reports different amounts of correctly localized fusion protein, rather than a difference in activity per enzyme molecule.
 
-**Choices:**
-
-- **A.** The lower ATP Km compensates for the turnover loss, so R156K should retain near-WT catalytic efficiency when ATP is limiting.
-- **B.** The lower ATP Km establishes stronger equilibrium ATP binding, so the turnover defect must arise entirely from slower product release.
-- **C.** The roughly 450-fold turnover loss with a modest Km shift shows that retaining positive charge need not preserve residue-specific catalytic performance.
-- **D.** The roughly 450-fold turnover loss directly measures a 450-fold reduction in correctly folded protein, while catalysis by the folded molecules remains unchanged.
-
-Interpret the supplied published measurements. Explain the relevant biological and quantitative reasoning, then give one answer letter. Do not propose new variants or experimental procedures.
+Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ---
 
-# 3. PafA: inactive protein fraction versus inhibitor binding
+# 3. TurboID and miniTurbo: when more labeling weakens the time window
 
-Protein: PafA alkaline phosphatase.
+Reference protein: Escherichia coli BirA, the ancestral biotin ligase of TurboID and miniTurbo. The full canonical wild-type sequence is supplied only for coordinates; it is not the complete evolved or tagged assay construct.
 
-Full canonical reference sequence (546 amino acids):
+Protein sequence:
 
 ```text
-MLTPKKWLLGVLVVSGMLGAQKTNAVPRPKLVVGLVVDQMRWDYLYRYYSKYGEGGFKRMLNTGYSLNNV
-HIDYVPTVTAIGHTSIFTGSVPSIHGIAGNDWYDKELGKSVYCTSDETVQPVGTTSNSVGQHSPRNLWST
-TVTDQLGLATNFTSKVVGVSLKDRASILPAGHNPTGAFWFDDTTGKFITSTYYTKELPKWVNDFNNKNVP
-AQLVANGWNTLLPINQYTESSEDNVEWEGLLGSKKTPTFPYTDLAKDYEAKKGLIRTTPFGNTLTLQMAD
-AAIDGNQMGVDDITDFLTVNLASTDYVGHNFGPNSIEVEDTYLRLDRDLADFFNNLDKKVGKGNYLVFLS
-ADHGAAHSVGFMQAHKMPTGFFVEDMKKEMNAKLKQKFGADNIIAAAMNYQVYFDRKVLADSKLELDDVR
-DYVMTELKKEPSVLYVLSTDEIWESSIPEPIKSRVINGYNWKRSGDIQIISKDGYLSAYSKKGTTHSVWN
-SYDSHIPLLFMGWGIKQGESNQPYHMTDIAPTVSSLLKIQFPSGAVGKPITEVIGR
+MKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEPIQLLNAK
+QILGQLDGGSVAVLPVIDSTNQYLLDRIGELKSGDACIAEYQQAGRGRRGRKWFSPFGANLYLSMFWRLE
+QGPAAAIGLSLVIGIVMAEVLRKLGADKVRVKWPNDLYLQDRKLAGILVELTGKTGDAAQIVIGAGINMA
+MRRVEESVVNQGWITLQEAGINLDRNTLAAMLIRELRAALELFEQEGLAPYLSRWEKLDNFINRPVKLII
+GDKEIFGISRGIDKQGALLLEQDGIIKPWMGGEISLRSAEK
 ```
 
-
-Numbering: mutation labels use positions in this full reference. The published HT-MEK PafA construct contains an initiating methionine followed by reference residues21–546, with a C-terminal linker and eGFP for the on-chip experiments. Within the PafA-only expressed ORF, canonical position n maps to position n-19. The full reference is supplied for unambiguous mutation indexing; it is not a claim that the native N-terminal segment was present in the assay.
+Numbering uses the initial methionine as wild-type residue 1. Both evolved enzyme cores delete Ala146. miniTurbo additionally lacks wild-type residues 1-63. Thus wild-type Met241 corresponds to enzyme-core position 240 in TurboID and 177 in miniTurbo, before any added tags or linkers. The evolved backgrounds contain other substitutions; the sequence above does not represent either final variant.
 
 Published observations:
-The published H83G variant has a lower Pi inhibition constant than wild type, meaning stronger phosphate binding. The inhibition readout is a fractional rate v(I)/v(0) for the same variant. In a simple model with a long-lived inactive fraction, only the active population reacts and binds inhibitor, and its concentration multiplies both v(I) and v(0) by the same factor. There is no interconversion of populations during the measurement.
+- Screening found M241T potentially beneficial for labeling activity, and the substitution was included with other changes in TurboID.
+- M241T was also tested in the miniTurbo background but was not retained because signal increased when added biotin was omitted.
+- In the broader comparison, miniTurbo generally showed less labeling before biotin addition than TurboID, while TurboID generally gave greater labeling yield.
 
-**Question:** Can a smaller active population alone explain the changed normalized inhibition constant?
+The purpose is to label neighboring proteins within a defined time window after biotin addition. The omit-added-biotin condition does not experimentally remove the biotin already present in cells.
 
-**Choices:**
+**Question:** What is the most defensible interpretation of the M241T tradeoff for that time-window objective?
 
-- **A.** The inactive population changes the fitted inhibition constant because normalization removes enzyme concentration only from the uninhibited rate, leaving inhibitor-dependent population effects.
-- **B.** Cancellation of the active-enzyme factor shows that H83G stabilizes the catalytic transition state more strongly, so stronger inhibition establishes faster intrinsic chemistry.
-- **C.** A smaller active population lowers the inhibitor concentration needed to halve its fractional rate, so inactive abundance alone can explain stronger apparent binding.
-- **D.** The common active-enzyme factor cancels from the fractional rate; the changed inhibition constant therefore requires more than uniform dilution by inactive protein.
+- **A.** The higher omit-biotin signal identifies stronger equilibrium biotin binding as the M241T mechanism; correcting added biotin concentration for that affinity difference should recover the original labeling window.
+- **B.** Labeling before the intended start can use biotin already present and leave covalent marks on proteins. Greater total yield can therefore weaken temporal control; these observations do not identify which molecular step M241T changes or establish the same effect in every background.
+- **C.** Protein-by-protein subtraction of the omit-biotin sample converts the later accumulated signal into labels acquired exclusively after biotin addition, because the same labeling chemistry operates in both samples.
+- **D.** The difference between TurboID and miniTurbo identifies interaction with the deleted N-terminal domain as the source of the M241T tradeoff; the other evolved substitutions and expression differences need not contribute to that interpretation.
+
+Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ---
 

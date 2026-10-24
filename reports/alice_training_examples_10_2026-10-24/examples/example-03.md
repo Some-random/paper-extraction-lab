@@ -1,103 +1,104 @@
-# 3. PafA: inactive protein fraction versus inhibitor binding
+# 3. TurboID and miniTurbo: when more labeling weakens the time window
 
 ## Question
 
-Protein: PafA alkaline phosphatase.
+Reference protein: Escherichia coli BirA, the ancestral biotin ligase of TurboID and miniTurbo. The full canonical wild-type sequence is supplied only for coordinates; it is not the complete evolved or tagged assay construct.
 
-Full canonical reference sequence (546 amino acids):
+Protein sequence:
 
 ```text
-MLTPKKWLLGVLVVSGMLGAQKTNAVPRPKLVVGLVVDQMRWDYLYRYYSKYGEGGFKRMLNTGYSLNNV
-HIDYVPTVTAIGHTSIFTGSVPSIHGIAGNDWYDKELGKSVYCTSDETVQPVGTTSNSVGQHSPRNLWST
-TVTDQLGLATNFTSKVVGVSLKDRASILPAGHNPTGAFWFDDTTGKFITSTYYTKELPKWVNDFNNKNVP
-AQLVANGWNTLLPINQYTESSEDNVEWEGLLGSKKTPTFPYTDLAKDYEAKKGLIRTTPFGNTLTLQMAD
-AAIDGNQMGVDDITDFLTVNLASTDYVGHNFGPNSIEVEDTYLRLDRDLADFFNNLDKKVGKGNYLVFLS
-ADHGAAHSVGFMQAHKMPTGFFVEDMKKEMNAKLKQKFGADNIIAAAMNYQVYFDRKVLADSKLELDDVR
-DYVMTELKKEPSVLYVLSTDEIWESSIPEPIKSRVINGYNWKRSGDIQIISKDGYLSAYSKKGTTHSVWN
-SYDSHIPLLFMGWGIKQGESNQPYHMTDIAPTVSSLLKIQFPSGAVGKPITEVIGR
+MKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEPIQLLNAK
+QILGQLDGGSVAVLPVIDSTNQYLLDRIGELKSGDACIAEYQQAGRGRRGRKWFSPFGANLYLSMFWRLE
+QGPAAAIGLSLVIGIVMAEVLRKLGADKVRVKWPNDLYLQDRKLAGILVELTGKTGDAAQIVIGAGINMA
+MRRVEESVVNQGWITLQEAGINLDRNTLAAMLIRELRAALELFEQEGLAPYLSRWEKLDNFINRPVKLII
+GDKEIFGISRGIDKQGALLLEQDGIIKPWMGGEISLRSAEK
 ```
 
-
-Numbering: mutation labels use positions in this full reference. The published HT-MEK PafA construct contains an initiating methionine followed by reference residues21–546, with a C-terminal linker and eGFP for the on-chip experiments. Within the PafA-only expressed ORF, canonical position n maps to position n-19. The full reference is supplied for unambiguous mutation indexing; it is not a claim that the native N-terminal segment was present in the assay.
+Numbering uses the initial methionine as wild-type residue 1. Both evolved enzyme cores delete Ala146. miniTurbo additionally lacks wild-type residues 1-63. Thus wild-type Met241 corresponds to enzyme-core position 240 in TurboID and 177 in miniTurbo, before any added tags or linkers. The evolved backgrounds contain other substitutions; the sequence above does not represent either final variant.
 
 Published observations:
-The published H83G variant has a lower Pi inhibition constant than wild type, meaning stronger phosphate binding. The inhibition readout is a fractional rate v(I)/v(0) for the same variant. In a simple model with a long-lived inactive fraction, only the active population reacts and binds inhibitor, and its concentration multiplies both v(I) and v(0) by the same factor. There is no interconversion of populations during the measurement.
+- Screening found M241T potentially beneficial for labeling activity, and the substitution was included with other changes in TurboID.
+- M241T was also tested in the miniTurbo background but was not retained because signal increased when added biotin was omitted.
+- In the broader comparison, miniTurbo generally showed less labeling before biotin addition than TurboID, while TurboID generally gave greater labeling yield.
 
-**Question:** Can a smaller active population alone explain the changed normalized inhibition constant?
+The purpose is to label neighboring proteins within a defined time window after biotin addition. The omit-added-biotin condition does not experimentally remove the biotin already present in cells.
 
-**Choices:**
+**Question:** What is the most defensible interpretation of the M241T tradeoff for that time-window objective?
 
-- **A.** The inactive population changes the fitted inhibition constant because normalization removes enzyme concentration only from the uninhibited rate, leaving inhibitor-dependent population effects.
-- **B.** Cancellation of the active-enzyme factor shows that H83G stabilizes the catalytic transition state more strongly, so stronger inhibition establishes faster intrinsic chemistry.
-- **C.** A smaller active population lowers the inhibitor concentration needed to halve its fractional rate, so inactive abundance alone can explain stronger apparent binding.
-- **D.** The common active-enzyme factor cancels from the fractional rate; the changed inhibition constant therefore requires more than uniform dilution by inactive protein.
+- **A.** The higher omit-biotin signal identifies stronger equilibrium biotin binding as the M241T mechanism; correcting added biotin concentration for that affinity difference should recover the original labeling window.
+- **B.** Labeling before the intended start can use biotin already present and leave covalent marks on proteins. Greater total yield can therefore weaken temporal control; these observations do not identify which molecular step M241T changes or establish the same effect in every background.
+- **C.** Protein-by-protein subtraction of the omit-biotin sample converts the later accumulated signal into labels acquired exclusively after biotin addition, because the same labeling chemistry operates in both samples.
+- **D.** The difference between TurboID and miniTurbo identifies interaction with the deleted N-terminal domain as the source of the M241T tradeoff; the other evolved substitutions and expression differences need not contribute to that interpretation.
+
+Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ## Answer
 
-The reference confirms histidine at canonical position 83, the site of H83G. This identifies the substitution but does not, by itself, establish its effect on phosphate binding or catalysis. The decisive evidence is the normalized inhibition measurement and the supplied population model.
+*Source-aware AI explanation.*
 
-Let E_total be total enzyme concentration, f the fixed fraction belonging to the active population, and r(I) the rate per active enzyme at phosphate concentration I under otherwise identical assay conditions. Inhibition of active enzyme is included in r(I). Then:
+B. Greater labeling yield can weaken control over when the labels were acquired.
 
-v(I) = f E_total r(I)
-v(0) = f E_total r(0)
-v(I)/v(0) = r(I)/r(0).
+A promiscuous biotin ligase uses biotin and ATP to produce an activated intermediate that can covalently label nearby proteins. Omitting added biotin does not establish that the cell contains no biotin. Signal generated before the intended start can therefore contribute to a later accumulated readout. A protein carrying a label need not have acquired it during the intended window; movement and turnover can further change the observed population.
 
-Both the active fraction and total enzyme concentration cancel. If H83G changed only the abundance of inactive protein, its per-active-enzyme response r(I) would remain unchanged. Absolute rates would decrease, but the normalized inhibition curve—and therefore its fitted inhibition constant—would not shift. In particular, the phosphate concentration giving half of the uninhibited fractional rate would remain unchanged.
+This explains why the miniTurbo observation matters. M241T increased signal when added biotin was omitted, so excluding that substitution could favor temporal control even if including it increased total labeling. The choice of an enzyme variant depends on the measurement objective: maximal accumulated signal and a well-defined observation window are different objectives.
 
-Consequently, the reported lower Pi inhibition constant requires more than uniform dilution by inactive protein. Within the stated model, it reflects an altered inhibition/binding response of the active population.
+The observations do not identify the molecular step altered by M241T. More signal could reflect differences in the active enzyme population, substrate handling, intermediate production or release, or other context-dependent properties. It is not a measurement of an isolated affinity or catalytic constant, and the full-length and truncated evolved enzymes differ in more than their N-terminal domain.
 
-A is incorrect because the active-enzyme factor appears in both rates and cancels from their ratio. C is incorrect because decreasing active abundance alone cannot shift fractional half-inhibition. B correctly invokes cancellation but adds an unsupported conclusion: stronger binding of phosphate, a product inhibitor, does not establish greater catalytic transition-state stabilization or faster intrinsic chemistry. D states the justified conclusion.
+A confuses an accumulated labeling endpoint with an equilibrium binding measurement. No measured affinity change is supplied, so the proposed affinity correction is unsupported.
 
-**Final answer: D**
+B connects the covalent labeling chemistry to the timing problem while leaving the particular molecular mechanism and its generality unresolved.
+
+C overstates what background subtraction establishes. Subtraction can help quantify differences between matched samples. It does not generally identify when each individual covalent mark was formed or guarantee an exclusively post-addition protein set. Estimating an incremental signal under a validated model is a narrower claim.
+
+D assigns a unique causal interaction to the N-terminal deletion without isolating that change from the other substitutions and expression differences.
+
+The supplied wild-type BirA sequence is a coordinate reference. It does not, by itself, predict this mutation's labeling tradeoff. The experimental observations and labeling chemistry support the inference.
+
+Answer: B.
+
+Final answer: B
 
 <details>
 <summary>Sources, evidence checks and limitations</summary>
 
-### Evidence check
+**Source-supported answer: B.** The answer selects B and matches that reference.
 
-Cached primary full-text Results and Figure 6B support stronger phosphate binding for H83G. Cancellation of the active-enzyme fraction is a mathematical derivation from the fixed-population assumptions supplied in the question, not a separate measured result.
+### Primary evidence
+
+[Efficient proximity labeling in living cells and organisms with TurboID](https://doi.org/10.1038/nbt.4201) (2018).
+
+- Methods, Yeast display directed evolution, last two paragraphs: M241T activity observation, introduction with K194I/S263P into G3, and exclusion of M241T from miniTurbo because omit-biotin signal increased.
+- Methods, Cloning: all ligase variants have wild-type A146 deleted.
+- Supplementary Table 1: TurboID and miniTurbo genotype rows; miniTurbo retains wild-type span64-321 plus A146 deletion.
+- Figure 2a-b and Discussion: yield versus pre-biotin-labeling tradeoff; miniTurbo temporal-control consideration.
+- Supplementary Note2: biotin-AMP formation, release and covalent labeling; proposed mechanisms remain hypotheses.
+
+The paper reports the M241T decision and the broader yield/background tradeoff. Covalent label accumulation explains why pre-window activity matters. The multiple-choice inference is AI-created; no new M241T measurements, fixed affinity change or causal epistasis map is claimed.
 
 ### Answer limitations
 
-The conclusion applies to the supplied fixed-population model. A reduced active fraction could coexist with stronger phosphate binding, but cannot alone explain the normalized inhibition shift. The evidence does not identify the molecular cause of the binding change or establish effects on expression, stability, or intrinsic chemistry.
+- A baseline control improves interpretation but cannot generally timestamp individual covalent marks after the fact.
+- Protein movement and turnover can influence accumulated labeling; marks are not asserted permanent.
+- The result applies to the reported backgrounds and conditions, not every cell, compartment or variant.
 
-### References and source review
+### Source qualifications
 
-The reference label and the following verification material are separate from the solver input. Any biological facts already supplied to AI remain visible above.
+- The displayed sequence is native321-residue BirA, not TurboID, miniTurbo or a complete V5/NES fusion.
+- All substitution labels retain native BirA coordinates even after deletions.
+- A146 deletion gives n-1 for retained n>146 in TurboID; deletion1-63 plus146 gives n-64 for retained n>146 in miniTurbo. M241T is therefore core240 or177, respectively. Added fusion offsets are unknown here.
+- The enzyme-core genotypes are supported by Supplementary Table1; canonical references are checked independently against official UniProt.
+- The main-text methods describe the M241T miniTurbo result qualitatively without a numeric fold-change or isolated binding/turnover constants.
+- The comparison does not isolate the N-terminal domain as the cause of context dependence; other substitutions, enzyme stability and expression can matter.
 
-Source identity: **PafA alkaline phosphatase** — [UniProt Q9KJX5](https://www.uniprot.org/uniprotkb/Q9KJX5/entry).
+### Evidence review and provenance
 
-Source-supported reference answer: **D**. Selected answer matches.
+- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
+- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
 
-Scientific review: Assistant-reviewed; no material errors found.
+The sole fresh generation attempt returned HTTP 502 without an answer. This explanation was subsequently authored by an AI assistant with the frozen question and reviewed source evidence available; it is a source-aware authored explanation, not a successful teacher response or a blinded solve. The failed request and response are preserved; $7 remains reserved because billing is uncertain. No retry was made.
 
-Reference-sequence scope: Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.
+[Failed generation request](../artifacts/example-03/request.json) · [Recorded failed attempt](../artifacts/example-03/failed_attempt_public.json) · [Failed response](../artifacts/example-03/failed_response.txt) · [Authored explanation](../artifacts/example-03/source_aware_answer.json) · [Question, answer and source verification](../artifacts/example-03/source_verification.json) · [Revision record](../revision_v4.json)
 
-- The active-fraction and enzyme-concentration factors cancel correctly from v(I)/v(0); the solution distinguishes an absolute-rate change from a normalized inhibition-curve shift.
-- The conclusion is explicitly conditional on fixed, noninterconverting populations. It allows reduced active abundance to coexist with altered binding and does not infer faster chemical catalysis.
-- His83 and canonical83 to expressed-ORF64 indexing are correct. The explanation uses the provided binding result and population model rather than asserting a sequence-only affinity prediction.
-
-Source support:
-
-- Fig.6B, FC2/FC3 section; Fig.3D model
-- H83G is the representative strengthened-Pi-binding(FC2) mutant; the study separates long-lived inactive fractions from catalytic/binding effects.
-
-Source qualifications:
-
-- The result is conditional on the stated noninterconverting inactive-state model and normalization.
-- Do not assume every inactive conformation cannot bind phosphate in all possible biological systems.
-- Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.
-- Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.
-- Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.
-- On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.
-- The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio.
-
-Primary references:
-
-- [Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics](https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/). Fig.6B, FC2/FC3 section; Fig.3D model
-
-This is assistant review, not expert human ground truth. Matching a label does not validate every explanatory claim. Student training benefit has not been measured.
-
-[Original source records and unchanged AI output](../../astra_enzyme_mutation_pool_2026-10-23/examples/case-015.md)
+Assistant reviews are not expert human validation, and training gains have not been measured.
 
 </details>

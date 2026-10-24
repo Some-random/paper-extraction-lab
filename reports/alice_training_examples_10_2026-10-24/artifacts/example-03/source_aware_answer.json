@@ -1,0 +1,22 @@
+{
+  "id": "example-03",
+  "revision": 4,
+  "method": "source_aware_assistant_authored",
+  "worked_solution": "B. Greater labeling yield can weaken control over when the labels were acquired.\n\nA promiscuous biotin ligase uses biotin and ATP to produce an activated intermediate that can covalently label nearby proteins. Omitting added biotin does not establish that the cell contains no biotin. Signal generated before the intended start can therefore contribute to a later accumulated readout. A protein carrying a label need not have acquired it during the intended window; movement and turnover can further change the observed population.\n\nThis explains why the miniTurbo observation matters. M241T increased signal when added biotin was omitted, so excluding that substitution could favor temporal control even if including it increased total labeling. The choice of an enzyme variant depends on the measurement objective: maximal accumulated signal and a well-defined observation window are different objectives.\n\nThe observations do not identify the molecular step altered by M241T. More signal could reflect differences in the active enzyme population, substrate handling, intermediate production or release, or other context-dependent properties. It is not a measurement of an isolated affinity or catalytic constant, and the full-length and truncated evolved enzymes differ in more than their N-terminal domain.\n\nA confuses an accumulated labeling endpoint with an equilibrium binding measurement. No measured affinity change is supplied, so the proposed affinity correction is unsupported.\n\nB connects the covalent labeling chemistry to the timing problem while leaving the particular molecular mechanism and its generality unresolved.\n\nC overstates what background subtraction establishes. Subtraction can help quantify differences between matched samples. It does not generally identify when each individual covalent mark was formed or guarantee an exclusively post-addition protein set. Estimating an incremental signal under a validated model is a narrower claim.\n\nD assigns a unique causal interaction to the N-terminal deletion without isolating that change from the other substitutions and expression differences.\n\nThe supplied wild-type BirA sequence is a coordinate reference. It does not, by itself, predict this mutation's labeling tradeoff. The experimental observations and labeling chemistry support the inference.\n\nAnswer: B.",
+  "selected_answer": "B",
+  "source_supported_answer": "B",
+  "source_aware_edit": {
+    "edited_at_utc": "2026-10-24T21:28:15.409399+00:00",
+    "reason": "The sole fresh teacher attempt returned HTTP 502 and no generated answer. This replacement explanation was authored by the assistant using the frozen question and reviewed paper evidence; the failed attempt and USD7 billing-unknown reservation remain preserved.",
+    "review_notes": [
+      "No teacher output or offline response check was fabricated.",
+      "The selected answer agrees with the frozen source-supported reference B and the separate prompts-only assistant review.",
+      "The original paper supports the observations; the explanatory inference is AI-created, not an author-assigned label."
+    ]
+  },
+  "failed_receipt_sha256": "e2b4771b22ee859da27553f484197b9f125594e4b7b4753e2ee0e5a851337a53",
+  "failed_response_sha256": "bb2fb7b51f18478e3ccde6376dc39285b20472f0394e7034fd2e0bdf6a5716e2",
+  "teacher_output_available": false,
+  "expert_human_validation": false,
+  "student_training_released": false
+}

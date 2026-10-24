@@ -1,6 +1,6 @@
 {
   "selected_existing": 8,
-  "newly_generated": 2,
+  "newly_generated": 1,
   "examples": [
     {
       "id": "example-01",
@@ -8,23 +8,52 @@
       "source_report": "astra_enzyme_mutation_pool_2026-10-23",
       "source_case": "case-001",
       "student_prompt_sha256": "83bebb2b1c44021105b6d46b67989e2aea4ce0eab130f68957e18011fcc23010",
-      "output_sha256": "993f54784e47a0cf6fec294cb7cfac8387fc7c9c1b1fe554bcb8a875264f051d"
+      "output_sha256": "993f54784e47a0cf6fec294cb7cfac8387fc7c9c1b1fe554bcb8a875264f051d",
+      "revision_4_correction": {
+        "id": "example-01",
+        "method": "source-caption metadata clarification",
+        "student_prompt_changed": false,
+        "generated_answer_changed": false,
+        "source_caption": "wild-type soybean ascorbate-peroxidase reference backbone"
+      }
     },
     {
       "id": "example-02",
-      "reused": true,
-      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
-      "source_case": "case-004",
-      "student_prompt_sha256": "eeda80bd9420a4dd2a38e7033c5a6e07d762f3771892e751851ecc9d58d61509",
-      "output_sha256": "4c6eba6ee51b451fcfe8350b872034820e6920ad766123135156f42197c46902"
+      "reused": false,
+      "source_case": "alice-apex-monomerization-activity-v3",
+      "revision": 4,
+      "method": "fresh_teacher_unchanged",
+      "student_prompt_sha256": "f962cdfe5cf4ae4acecd02f3b326e8092de410c82284edf4569eff2c9da41fa2",
+      "worked_solution_sha256": "e9d205168635df49ffe1f6cfe553209d308c27e599049692e51e0f2a349fddb5",
+      "answer_artifact_sha256": "279ef67ef880b6fa2b0da13f73a17edd900d02b51afb871939755f5c601b87e2",
+      "request_sha256": "8197c742348a7ee3e54169b3643dbc93520bbd7c0ae0c16226b6b669f95b72da",
+      "paper": "https://doi.org/10.1038/nbt.2375",
+      "source_supported_answer": "C",
+      "selected_answer": "C",
+      "request_artifact": "artifacts/example-02/request.json",
+      "answer_artifact": "artifacts/example-02/generated_output.json",
+      "source_verification": "artifacts/example-02/source_verification.json",
+      "prior_example_replaced": true,
+      "fresh_teacher_output_available": true
     },
     {
       "id": "example-03",
-      "reused": true,
-      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
-      "source_case": "case-015",
-      "student_prompt_sha256": "b6048afb09a9ecda5b4010c4fb847917c97c72dfd4fea9ac5c88fc288efc76cc",
-      "output_sha256": "67e331994bde12ad1e518b0119f95e5bca0eecc583f8ac3273a55342d66511fd"
+      "reused": false,
+      "source_case": "alice-turboid-m241t-tradeoff-v3",
+      "revision": 4,
+      "method": "source_aware_assistant_authored",
+      "student_prompt_sha256": "c8ab1b56c5d7392f931aae35b49c2a994544f7a2d7da33277606e061da519bde",
+      "worked_solution_sha256": "e97b4411e90018863209ba2ba1bf4651fd44999b1df882d0f3bd686574478f18",
+      "answer_artifact_sha256": "41813cc28d6c30f632b26389af3eb23be6c52d2919d64fad195af17d7e2a0334",
+      "request_sha256": "9fbb2dad55eafae33606f784e70c806ac59fe19cd39f322d8e421b5b0ddb4c10",
+      "paper": "https://doi.org/10.1038/nbt.4201",
+      "source_supported_answer": "B",
+      "selected_answer": "B",
+      "request_artifact": "artifacts/example-03/request.json",
+      "answer_artifact": "artifacts/example-03/source_aware_answer.json",
+      "source_verification": "artifacts/example-03/source_verification.json",
+      "prior_example_replaced": true,
+      "fresh_teacher_output_available": false
     },
     {
       "id": "example-04",
@@ -48,7 +77,40 @@
       "source_report": "astra_sequence_only_nine_2026-10-23",
       "source_case": "case-006",
       "student_prompt_sha256": "ff543545afca298f1a8dd1e8b927c3d6a97ecf14b0f36b49a6440e8b05b442f6",
-      "output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18"
+      "output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18",
+      "revision_4_correction": {
+        "id": "example-06",
+        "revision": 4,
+        "method": "source-aware AI-edited coordinate clarification",
+        "source_record_sha256": "6df3def90efa53400f79ead01375012b7a7c390c5009165d435b46eeef1822a7",
+        "original_generated_output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18",
+        "accession": "O89116",
+        "sequence_length": 217,
+        "annotated_transmembrane_interval": [
+          193,
+          213
+        ],
+        "annotated_interval_residues": "ILLVILGIIVVIAILTAIAFF",
+        "following_tail_interval": [
+          214,
+          217
+        ],
+        "following_tail_residues": "VKGH",
+        "annotation_evidence": "ECO:0000255 sequence analysis",
+        "measured_membrane_boundary": false,
+        "student_prompt_changed": false,
+        "selected_answer_changed": false,
+        "replacements": [
+          {
+            "before": "residues 193–214, ILLVILGIIVVIAILTAIAFFV. This 22-residue stretch",
+            "after": "residues 193–213, ILLVILGIIVVIAILTAIAFF. This 21-residue stretch"
+          },
+          {
+            "before": "Only KGH at positions 215–217 follows it",
+            "after": "Only VKGH at positions 214–217 follows it"
+          }
+        ]
+      }
     },
     {
       "id": "example-07",
@@ -105,7 +167,9 @@
   ],
   "expert_human_review_performed": false,
   "student_training_released": false,
-  "current_revision": 2,
-  "source_aware_edited_examples": 2,
-  "revision_record": "revision_v2.json"
+  "current_revision": 4,
+  "source_aware_edited_examples": 4,
+  "revision_record": "revision_v4.json",
+  "newly_generated_this_revision": 1,
+  "new_source_aware_authored_examples": 1
 }

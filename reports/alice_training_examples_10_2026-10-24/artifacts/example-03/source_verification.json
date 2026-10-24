@@ -1,0 +1,74 @@
+{
+  "id": "example-03",
+  "title": "TurboID and miniTurbo: when more labeling weakens the time window",
+  "source_case_id": "alice-turboid-m241t-tradeoff-v3",
+  "student_prompt": "Reference protein: Escherichia coli BirA, the ancestral biotin ligase of TurboID and miniTurbo. The full canonical wild-type sequence is supplied only for coordinates; it is not the complete evolved or tagged assay construct.\n\n[Protein Sequence]\nMKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEPIQLLNAK\nQILGQLDGGSVAVLPVIDSTNQYLLDRIGELKSGDACIAEYQQAGRGRRGRKWFSPFGANLYLSMFWRLE\nQGPAAAIGLSLVIGIVMAEVLRKLGADKVRVKWPNDLYLQDRKLAGILVELTGKTGDAAQIVIGAGINMA\nMRRVEESVVNQGWITLQEAGINLDRNTLAAMLIRELRAALELFEQEGLAPYLSRWEKLDNFINRPVKLII\nGDKEIFGISRGIDKQGALLLEQDGIIKPWMGGEISLRSAEK\n[End Protein Sequence]\n\nNumbering uses the initial methionine as wild-type residue 1. Both evolved enzyme cores delete Ala146. miniTurbo additionally lacks wild-type residues 1-63. Thus wild-type Met241 corresponds to enzyme-core position 240 in TurboID and 177 in miniTurbo, before any added tags or linkers. The evolved backgrounds contain other substitutions; the sequence above does not represent either final variant.\n\nPublished observations:\n- Screening found M241T potentially beneficial for labeling activity, and the substitution was included with other changes in TurboID.\n- M241T was also tested in the miniTurbo background but was not retained because signal increased when added biotin was omitted.\n- In the broader comparison, miniTurbo generally showed less labeling before biotin addition than TurboID, while TurboID generally gave greater labeling yield.\n\nThe purpose is to label neighboring proteins within a defined time window after biotin addition. The omit-added-biotin condition does not experimentally remove the biotin already present in cells.\n\nQuestion: What is the most defensible interpretation of the M241T tradeoff for that time-window objective?\n\nA. The higher omit-biotin signal identifies stronger equilibrium biotin binding as the M241T mechanism; correcting added biotin concentration for that affinity difference should recover the original labeling window.\nB. Labeling before the intended start can use biotin already present and leave covalent marks on proteins. Greater total yield can therefore weaken temporal control; these observations do not identify which molecular step M241T changes or establish the same effect in every background.\nC. Protein-by-protein subtraction of the omit-biotin sample converts the later accumulated signal into labels acquired exclusively after biotin addition, because the same labeling chemistry operates in both samples.\nD. The difference between TurboID and miniTurbo identifies interaction with the deleted N-terminal domain as the source of the M241T tradeoff; the other evolved substitutions and expression differences need not contribute to that interpretation.\n\nInterpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.",
+  "question": "What is the most defensible interpretation of the M241T tradeoff for that time-window objective?",
+  "choices": {
+    "A": "The higher omit-biotin signal identifies stronger equilibrium biotin binding as the M241T mechanism; correcting added biotin concentration for that affinity difference should recover the original labeling window.",
+    "B": "Labeling before the intended start can use biotin already present and leave covalent marks on proteins. Greater total yield can therefore weaken temporal control; these observations do not identify which molecular step M241T changes or establish the same effect in every background.",
+    "C": "Protein-by-protein subtraction of the omit-biotin sample converts the later accumulated signal into labels acquired exclusively after biotin addition, because the same labeling chemistry operates in both samples.",
+    "D": "The difference between TurboID and miniTurbo identifies interaction with the deleted N-terminal domain as the source of the M241T tradeoff; the other evolved substitutions and expression differences need not contribute to that interpretation."
+  },
+  "selected_answer": "B",
+  "source_supported_answer": "B",
+  "paper": {
+    "alice_ting_authored": true,
+    "doi": "10.1038/nbt.4201",
+    "evidence_locations": [
+      "Methods, Yeast display directed evolution, last two paragraphs: M241T activity observation, introduction with K194I/S263P into G3, and exclusion of M241T from miniTurbo because omit-biotin signal increased.",
+      "Methods, Cloning: all ligase variants have wild-type A146 deleted.",
+      "Supplementary Table 1: TurboID and miniTurbo genotype rows; miniTurbo retains wild-type span64-321 plus A146 deletion.",
+      "Figure 2a-b and Discussion: yield versus pre-biotin-labeling tradeoff; miniTurbo temporal-control consideration.",
+      "Supplementary Note2: biotin-AMP formation, release and covalent labeling; proposed mechanisms remain hypotheses."
+    ],
+    "first_author": "Tess C. Branon",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126969/",
+    "pmcid": "PMC6126969",
+    "pmid": "30125270",
+    "supplementary_pdf_url": "https://perrimon.med.harvard.edu/sites/g/files/omnuum4036/files/perrimonlab/files/2018_NatBiotech_Branon_Supp.pdf",
+    "title": "Efficient proximity labeling in living cells and organisms with TurboID",
+    "url": "https://doi.org/10.1038/nbt.4201",
+    "year": 2018
+  },
+  "source_support": "The paper reports the M241T decision and the broader yield/background tradeoff. Covalent label accumulation explains why pre-window activity matters. The multiple-choice inference is AI-created; no new M241T measurements, fixed affinity change or causal epistasis map is claimed.",
+  "limitations": [
+    "A baseline control improves interpretation but cannot generally timestamp individual covalent marks after the fact.",
+    "Protein movement and turnover can influence accumulated labeling; marks are not asserted permanent.",
+    "The result applies to the reported backgrounds and conditions, not every cell, compartment or variant."
+  ],
+  "source_qualifications": [
+    "The displayed sequence is native321-residue BirA, not TurboID, miniTurbo or a complete V5/NES fusion.",
+    "All substitution labels retain native BirA coordinates even after deletions.",
+    "A146 deletion gives n-1 for retained n>146 in TurboID; deletion1-63 plus146 gives n-64 for retained n>146 in miniTurbo. M241T is therefore core240 or177, respectively. Added fusion offsets are unknown here.",
+    "The enzyme-core genotypes are supported by Supplementary Table1; canonical references are checked independently against official UniProt.",
+    "The main-text methods describe the M241T miniTurbo result qualitatively without a numeric fold-change or isolated binding/turnover constants.",
+    "The comparison does not isolate the N-terminal domain as the cause of context dependence; other substitutions, enzyme stability and expression can matter."
+  ],
+  "review_notes": [
+    "The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.",
+    "Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed."
+  ],
+  "revision": 4,
+  "method": "source_aware_assistant_authored",
+  "expert_human_validation": false,
+  "request_sha256": "9fbb2dad55eafae33606f784e70c806ac59fe19cd39f322d8e421b5b0ddb4c10",
+  "receipt_sha256": "e2b4771b22ee859da27553f484197b9f125594e4b7b4753e2ee0e5a851337a53",
+  "frozen_casefile_sha256": "4dca09d505d39f88c9e8ad9aadba6c6ae8874c901bb61a3f63935d240722322a",
+  "run_receipt_sha256": "5b3a1122baf6498a0d586a01852ab3bb576797a3ae961ce137ab51708d3ee4a4",
+  "run_authorization_sha256": "b2cd3cb66282ab331a61a1c05280aecc19a79a38ad0a0b761aee16cbcced1c14",
+  "frozen_source_review_sha256": "b3b805934336dc70a5b815d9b513cacf19eec889b00abb849d29c60b6e23fdcf",
+  "frozen_source_guard_sha256": "7c22b5be3b9ffdeaf6658b13330d5797c40adac197e8086a3441ca7bd0d19d40",
+  "authored_answer_sha256": "41813cc28d6c30f632b26389af3eb23be6c52d2919d64fad195af17d7e2a0334",
+  "failed_response_sha256": "bb2fb7b51f18478e3ccde6376dc39285b20472f0394e7034fd2e0bdf6a5716e2",
+  "source_aware_edit": {
+    "edited_at_utc": "2026-10-24T21:28:15.409399+00:00",
+    "reason": "The sole fresh teacher attempt returned HTTP 502 and no generated answer. This replacement explanation was authored by the assistant using the frozen question and reviewed paper evidence; the failed attempt and USD7 billing-unknown reservation remain preserved.",
+    "review_notes": [
+      "No teacher output or offline response check was fabricated.",
+      "The selected answer agrees with the frozen source-supported reference B and the separate prompts-only assistant review.",
+      "The original paper supports the observations; the explanatory inference is AI-created, not an author-assigned label."
+    ]
+  },
+  "teacher_output_available": false
+}

@@ -1,0 +1,12 @@
+{
+  "id": "example-06",
+  "student_prompt": "Protein sequence:\nMSSDFEGYEQDFAVLTAEITSKIARVPRLPPDEKKQMVANVEKQLEEARELLEQMDLEVREIPPQSRGMYSNRMRSYKQEMGKLETDFKRSRIAYSDEVRNELLGDAGNSSENQRAHLLDNTERLERSSRRLEAGYQIAVETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNRILLVILGIIVVIAILTAIAFFVKGH\n\nTask: transmembrane\n\nQuestion: Which overall membrane-association architecture best fits this protein sequence?\n\nChoices:\nA. A soluble peripheral membrane protein with no membrane-spanning segment.\nB. A protein with a large cytosolic region and a single membrane anchor near its C terminus.\nC. A seven-pass membrane receptor with short loops connecting its membrane-spanning helices.\nD. A secreted soluble protein whose only hydrophobic segment is a cleaved N-terminal signal peptide.",
+  "sequence": "MSSDFEGYEQDFAVLTAEITSKIARVPRLPPDEKKQMVANVEKQLEEARELLEQMDLEVREIPPQSRGMYSNRMRSYKQEMGKLETDFKRSRIAYSDEVRNELLGDAGNSSENQRAHLLDNTERLERSSRRLEAGYQIAVETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNRILLVILGIIVVIAILTAIAFFVKGH",
+  "question": "Which overall membrane-association architecture best fits this protein sequence?",
+  "choices": {
+    "A": "A soluble peripheral membrane protein with no membrane-spanning segment.",
+    "B": "A protein with a large cytosolic region and a single membrane anchor near its C terminus.",
+    "C": "A seven-pass membrane receptor with short loops connecting its membrane-spanning helices.",
+    "D": "A secreted soluble protein whose only hydrophobic segment is a cleaved N-terminal signal peptide."
+  }
+}

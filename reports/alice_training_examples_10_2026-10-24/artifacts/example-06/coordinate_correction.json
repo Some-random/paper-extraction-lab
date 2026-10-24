@@ -1,0 +1,33 @@
+{
+  "id": "example-06",
+  "revision": 4,
+  "method": "source-aware AI-edited coordinate clarification",
+  "source_record_sha256": "6df3def90efa53400f79ead01375012b7a7c390c5009165d435b46eeef1822a7",
+  "original_generated_output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18",
+  "accession": "O89116",
+  "sequence_length": 217,
+  "annotated_transmembrane_interval": [
+    193,
+    213
+  ],
+  "annotated_interval_residues": "ILLVILGIIVVIAILTAIAFF",
+  "following_tail_interval": [
+    214,
+    217
+  ],
+  "following_tail_residues": "VKGH",
+  "annotation_evidence": "ECO:0000255 sequence analysis",
+  "measured_membrane_boundary": false,
+  "student_prompt_changed": false,
+  "selected_answer_changed": false,
+  "replacements": [
+    {
+      "before": "residues 193–214, ILLVILGIIVVIAILTAIAFFV. This 22-residue stretch",
+      "after": "residues 193–213, ILLVILGIIVVIAILTAIAFF. This 21-residue stretch"
+    },
+    {
+      "before": "Only KGH at positions 215–217 follows it",
+      "after": "Only VKGH at positions 214–217 follows it"
+    }
+  ]
+}

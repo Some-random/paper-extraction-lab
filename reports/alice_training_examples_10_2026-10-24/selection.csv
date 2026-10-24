@@ -1,7 +1,7 @@
 example,question_topic,question_and_answer
 1,APEX: enzyme behavior depends on substrate conditions,examples/example-01.md
-2,Adenylate kinase: a conservative substitution can impair catalysis,examples/example-02.md
-3,PafA: inactive protein fraction versus inhibitor binding,examples/example-03.md
+2,APEX: why an active enzyme can still be a poor cellular reporter,examples/example-02.md
+3,TurboID and miniTurbo: when more labeling weakens the time window,examples/example-03.md
 4,Distinguishing heme from other cofactors,examples/example-04.md
 5,Calcium binding through repeated structural motifs,examples/example-05.md
 6,Membrane anchoring,examples/example-06.md

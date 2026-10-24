@@ -64,7 +64,7 @@ The reported rate maxima are approximate, condition-dependent markers, not forma
 
 The reference label and the following verification material are separate from the solver input. Any biological facts already supplied to AI remain visible above.
 
-Source identity: **APEX peroxidase** — [UniProt Q43758](https://www.uniprot.org/uniprotkb/Q43758/entry).
+Source identity: **wild-type soybean ascorbate-peroxidase reference backbone** — [UniProt Q43758](https://www.uniprot.org/uniprotkb/Q43758/entry).
 
 Source-supported reference answer: **C**. Selected answer matches.
 
@@ -95,5 +95,10 @@ Primary references:
 This is assistant review, not expert human ground truth. Matching a label does not validate every explanatory claim. Student training benefit has not been measured.
 
 [Original source records and unchanged AI output](../../astra_enzyme_mutation_pool_2026-10-23/examples/case-001.md)
+
+
+### Revision 4 source-caption clarification
+
+The UniProt sequence above is the wild-type soybean ascorbate-peroxidase reference backbone. It is a coordinate reference for the separately listed APEX/APEX2 variants, not the assayed engineered construct. Only this source caption was corrected; the question and generated answer are unchanged. [Prior presentation](../artifacts/example-01/previous_presentation_v2.txt) · [Revision record](../revision_v4.json).
 
 </details>

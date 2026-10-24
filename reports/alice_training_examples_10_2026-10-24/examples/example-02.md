@@ -1,114 +1,103 @@
-# 2. Adenylate kinase: a conservative substitution can impair catalysis
+# 2. APEX: why an active enzyme can still be a poor cellular reporter
 
 ## Question
 
-Wild-type protein: Adenylate kinase (Escherichia coli K-12).
-Full canonical wild-type sequence, numbered from the initial methionine as residue 1:
+Protein: pea cytosolic ascorbate peroxidase (APX). The full canonical wild-type sequence below is a coordinate reference; residue 1 is the initial methionine. It is not the complete expressed fusion.
+
+Protein sequence:
 
 ```text
-MRIILLGAPGAGKGTQAQFIMEKYGIPQISTGDMLRAAVKSGSELGKQAKDIMDAGKLVTDELVIALVKE
-RIAQEDCRNGFLLDGFPRTIPQADAMKEAGINVDYVLEFDVPDELIVDRIVGRRVHAPSGRVYHVKFNPP
-KVEGKDDVTGEELTTRKDDQEETVRKRLVEYHQMTAPLIGYYSKEAEAGNTKYAKVDGTKPVAEVRADLE
-KILG
+MGKSYPTVSPDYQKAIEKAKRKLRGFIAEKKCAPLILRLAWHSAGTFDSKTKTGGPFGTIKHQAELAHGA
+NNGLDIAVRLLEPIKEQFPIVSYADFYQLAGVVAVEITGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH
+LRDVFGKAMGLSDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLTGEKDGLLQLPSDKA
+LLTDSVFRPLVEKYAADEDVFFADYAEAHLKLSELGFAEA
 ```
 
+Published variants use those wild-type coordinates: mAPX carries K14D/E112K; APEX carries K14D/E112K/W41F. The enzyme cores have no deletion. Experimental tags, targeting sequences and fusion partners are not shown.
 
-Published variant(s): R156K.
+Published observations:
+- Wild-type APX and mAPX had similar activity in the purified-enzyme comparison, which used guaiacol, an aromatic model substrate.
+- Wild-type APX fused to connexin43 was largely retained inside cells, whereas mAPX fusions reached gap junctions much more effectively.
+- In the cytosol, mAPX gave weaker DAB staining than wild-type APX; supplying heme increased its staining. DAB staining reports peroxidase-catalyzed product formation.
+- APEX gave stronger cellular DAB staining than mAPX while retaining similar predominantly monomeric behavior.
 
-Experimental evidence:
-Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):
-WT: kcat 330, Km 71.
-R156K: kcat 0.74, Km 52.
-Arginine and lysine both normally carry a positive side-chain charge near neutral pH.
+**Question:** Which interpretation best preserves what the biochemical and cellular comparisons actually measure?
 
-**Question:** Which interpretation best explains why calling R156K a conservative substitution does not establish functional conservation?
+- **A.** Purified guaiacol activity provides the per-molecule calibration for cellular DAB staining; after that calibration, the remaining signal differences can be assigned to amounts of correctly localized fusion protein.
+- **B.** The heme-supplementation response provides a direct ranking of equilibrium heme-binding affinity; it therefore identifies weaker heme affinity as the complete cause of the mAPX cellular defect.
+- **C.** The mutations balance different properties: reduced self-association can improve fusion trafficking, while cell staining also depends on active heme-containing enzyme and substrate chemistry. Similar purified guaiacol activity does not calibrate cellular DAB signal.
+- **D.** Because APEX and mAPX have similar oligomeric behavior, their cellular DAB difference primarily reports different amounts of correctly localized fusion protein, rather than a difference in activity per enzyme molecule.
 
-**Choices:**
-
-- **A.** The lower ATP Km compensates for the turnover loss, so R156K should retain near-WT catalytic efficiency when ATP is limiting.
-- **B.** The lower ATP Km establishes stronger equilibrium ATP binding, so the turnover defect must arise entirely from slower product release.
-- **C.** The roughly 450-fold turnover loss with a modest Km shift shows that retaining positive charge need not preserve residue-specific catalytic performance.
-- **D.** The roughly 450-fold turnover loss directly measures a 450-fold reduction in correctly folded protein, while catalysis by the folded molecules remains unchanged.
-
-Interpret the supplied published measurements. Explain the relevant biological and quantitative reasoning, then give one answer letter. Do not propose new variants or experimental procedures.
+Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ## Answer
 
-The best interpretation is C: chemical similarity does not guarantee functional conservation.
+*AI-generated answer; unchanged response.*
 
-1. Quantitative evidence
-The turnover decrease is:
-330 / 0.74 ≈ 446-fold.
-Thus, R156K has roughly 450-fold lower reported kcat than WT. In contrast, its ATP Km decreases only modestly:
-52 / 71 ≈ 0.73,
-a decrease of about 27%.
+APX is a heme-dependent peroxidase that uses hydrogen peroxide to oxidize electron-donor substrates. Cellular DAB staining measures accumulated catalytic product, not protein abundance directly. Its intensity can depend on the amount of accessible enzyme, the fraction that is folded and heme-loaded, substrate-dependent catalytic performance, and local staining conditions.
 
-At ATP concentrations well below both Km values, with other assay conditions fixed, the rate per enzyme is approximately (kcat/Km)[ATP]. The relevant catalytic efficiencies are:
-• WT: 330/71 ≈ 4.65 s^-1 μM^-1.
-• R156K: 0.74/52 ≈ 0.0142 s^-1 μM^-1.
+What the observations establish
 
-The mutant therefore retains only about 0.31% of WT ATP-dependent catalytic efficiency, a roughly 327-fold loss. The modest Km decrease does not compensate for the turnover defect, ruling out A.
+1. Purified guaiacol activity: Wild-type APX and mAPX performed similarly with guaiacol under the supplied purified-enzyme conditions. Guaiacol and DAB are both aromatic substrates, but that does not make their binding and oxidation kinetics interchangeable. Even a rigorously equal-molecule guaiacol comparison would not establish equal DAB activity per molecule in cells or equal cellular fractions of active holoenzyme.
 
-2. Why a charge-conserving substitution can strongly impair function
-Arginine and lysine are both normally positively charged near neutral pH, making this substitution conservative in a broad chemical classification. However, arginine's guanidinium group and lysine's terminal ammonium group differ in geometry, charge distribution, and hydrogen-bonding arrangements. In an enzyme, these differences can affect substrate positioning, transition-state stabilization, or conformational steps during turnover. These are general mechanistic possibilities, not specific interactions established for residue 156 by the supplied sequence. The observed kinetic loss nevertheless demonstrates that preserving positive charge does not preserve this variant's catalytic performance.
+2. Connexin43 trafficking: The greater delivery of mAPX fusions to gap junctions is a localization/trafficking result. Reduced self-association can lessen interference with a fusion partner’s assembly and transport, providing a biologically plausible explanation for improved trafficking. This is distinct from catalytic activity. In particular, the connexin43 localization comparison cannot normalize the separate cytosolic DAB-staining comparison.
 
-3. Why the other interpretations are unsupported
-B incorrectly equates Km with an equilibrium dissociation constant. Even in the simple mechanism E + S ⇌ ES → E + P, Km = (koff + kcat)/kon, whereas Kd = koff/kon. Consequently, a lower Km can accompany slower turnover without stronger equilibrium binding. Adenylate kinase has a more complex, multisubstrate catalytic cycle, so the ATP Km likewise cannot automatically be interpreted as ATP binding affinity. Nothing supplied identifies slower product release as the sole cause of the turnover loss.
+3. Heme supplementation: Increased mAPX staining after heme supply is consistent with more functional heme-containing enzyme becoming available. It does not directly measure equilibrium heme-binding affinity. Cellular heme availability, delivery and incorporation, folding, and stability can all influence the active-enzyme population. Thus, the response neither ranks equilibrium affinities nor establishes weaker affinity as the complete cause of the staining deficit.
 
-D incorrectly treats kcat as a direct measurement of folding. A lower reported kcat can reflect changes in chemistry or other turnover-limiting steps; depending on enzyme normalization, an inactive fraction can also affect apparent turnover. These measurements do not establish a 450-fold reduction in correctly folded protein or unchanged catalysis by the folded molecules.
+4. APEX versus mAPX: APEX adds W41F and produces stronger cellular DAB staining while retaining similar predominantly monomeric behavior. This shows that improved staining does not require a further reported change in oligomerization. Similar oligomeric behavior does not establish equal DAB turnover, equal heme loading, equal stability, or equal cellular abundance. The precise contribution of each remains unresolved.
 
-Thus, the strong turnover defect with only a modest Km shift supports C.
+Evaluation of the alternatives
 
-**Final answer: C**
+A is incorrect because purified guaiacol activity is not a per-molecule calibration for cellular DAB staining. Differences in substrate chemistry, active-enzyme fraction, and cellular conditions remain unaccounted for.
+
+B is incorrect because a downstream activity response to heme supplementation is not an equilibrium binding measurement. Its claim of a complete causal explanation is also unsupported.
+
+C correctly separates reduced self-association and fusion trafficking from heme-dependent, substrate-specific catalytic output. It preserves both the measured observations and their mechanistic limits.
+
+D is incorrect because similar oligomerization does not control for catalytic performance or the fraction of active holoenzyme. Protein amount or localization could contribute, but the supplied evidence does not justify assigning them the primary role.
+
+Answer: C.
+
+Final answer: C
 
 <details>
 <summary>Sources, evidence checks and limitations</summary>
 
-### Evidence check
+**Source-supported answer: C.** The answer selects C and matches that reference.
 
-Primary full-text Results and a kinetic table support the reported measurements and fold-change calculations. General side-chain chemistry helps interpret them; a specific structural cause is not established by the table.
+### Primary evidence
+
+[Engineered ascorbate peroxidase as a genetically encoded reporter for electron microscopy](https://doi.org/10.1038/nbt.2375) (2012).
+
+- Figure 1b-e and Results, printed pp.1143-1144: K14D/E112K monomerization, concentration-dependent residual association and connexin43 trafficking.
+- Figure 2b-d and Results, printed pp.1144-1145: purified guaiacol kinetics, cellular DAB comparisons, and heme supplementation.
+- Online Methods, Cloning and mutagenesis: pea cytosolic APX reference, with some humanized-codon versions.
+
+The original pea-APX study distinguishes fusion trafficking, purified model-substrate activity, cellular staining and heme response. It supports the observations supplied to the solver; the multiple-choice interpretation is AI-created and is not an author-assigned experimental label.
 
 ### Answer limitations
 
-The conclusion applies to the supplied ATP-dependent kinetic measurements. Neither the sequence nor these kinetic parameters uniquely identify the affected microscopic step, establish equilibrium ATP affinity, or quantify the folded or active protein fraction.
+- No unique microscopic mechanism or full causal decomposition is established.
+- The question does not predict a mutation effect from unannotated sequence alone.
+- A matched reference label does not validate every future generated explanation or demonstrate training benefit.
 
-### References and source review
+### Source qualifications
 
-The reference label and the following verification material are separate from the solver input. Any biological facts already supplied to AI remain visible above.
+- Pea P48534 is distinct from the soybean Q43758 backbone in the retained APEX2 example.
+- The full canonical reference is shown, not a reconstruction of the His-tagged purification proteins, NES fusions or connexin43 fusions.
+- Predominantly monomeric is concentration-dependent; residual self-association at high concentration was reported.
+- Heme incorporation/stability is a supported working explanation; the experiment does not isolate equilibrium heme affinity or exclude other contributors.
+- Guaiacol and DAB are different substrates and the cellular endpoint is not a direct molecule count.
 
-Source identity: **adenylate_kinase** — [UniProt P69441](https://www.uniprot.org/uniprotkb/P69441/entry).
+### Evidence review and provenance
 
-Source-supported reference answer: **C**. Selected answer matches.
+- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
+- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
 
-Scientific review: Assistant-reviewed; no material errors found.
+This is an unchanged new AI-generated response to the question shown above. The solver received only the sequence and observations printed in the question; full papers and the private reference label were withheld. Assistant source review followed generation.
 
-Reference-sequence scope: Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.
+[Exact generation request](../artifacts/example-02/request.json) · [Unchanged generated output](../artifacts/example-02/generated_output.json) · [Question, answer and source verification](../artifacts/example-02/source_verification.json) · [Revision record](../revision_v4.json)
 
-Correct remapped answer C. Correctly calculates about 446-fold lower turnover, about 327-fold lower ATP-dependent catalytic efficiency, and a 27% Km decrease. Connects the shared positive charge to different guanidinium/ammonium geometry and hydrogen bonding without claiming specific Arg156 contacts were observed. Correctly distinguishes Km from Kd, and treats changes in chemistry, conformational steps, product release and active fraction as possibilities rather than measured causes.
-
-Source support:
-
-- 2021 Figure 2c / Table S2; 2023 Table 1, WT and R156K rows.
-- Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):
-WT: kcat 330, Km 71.
-R156K: kcat 0.74, Km 52.
-Arginine and lysine both normally carry a positive side-chain charge near neutral pH.
-- Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.
-- Table 1, footnote a.
-
-Source qualifications:
-
-- Canonical full-length sequence; initial methionine is residue 1. Published R36, R88, R123, R156 and R167 all match the reference residues.
-- The prompt supplies the verified canonical reference and published mutation labels. No unreported affinity tag, cloning scar or exact expressed-construct extension is inferred.
-
-Primary references:
-
-- [Dynamic Connection between Enzymatic Catalysis and Collective Protein Motions](https://pmc.ncbi.nlm.nih.gov/articles/PMC8297476/). Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.
-
-- [Mechanistic basis for a connection between the catalytic step and slow opening dynamics of adenylate kinase](https://pmc.ncbi.nlm.nih.gov/articles/PMC11779523/). Table 1, footnote a.
-
-This is assistant review, not expert human ground truth. Matching a label does not validate every explanatory claim. Student training benefit has not been measured.
-
-[Original source records and unchanged AI output](../../astra_enzyme_mutation_pool_2026-10-23/examples/case-004.md)
+Assistant reviews are not expert human validation, and training gains have not been measured.
 
 </details>

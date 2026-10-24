@@ -66,7 +66,7 @@ The reported rate maxima are approximate, condition-dependent markers, not forma
 
 The reference label and the following verification material are separate from the solver input. Any biological facts already supplied to AI remain visible above.
 
-Source identity: **APEX peroxidase** — [UniProt Q43758](https://www.uniprot.org/uniprotkb/Q43758/entry).
+Source identity: **wild-type soybean ascorbate-peroxidase reference backbone** — [UniProt Q43758](https://www.uniprot.org/uniprotkb/Q43758/entry).
 
 Source-supported reference answer: **C**. Selected answer matches.
 
@@ -98,233 +98,225 @@ This is assistant review, not expert human ground truth. Matching a label does n
 
 [Original source records and unchanged AI output](../astra_enzyme_mutation_pool_2026-10-23/examples/case-001.md)
 
-</details>
 
+### Revision 4 source-caption clarification
 
----
-
-# 2. Adenylate kinase: a conservative substitution can impair catalysis
-
-## Question
-
-Wild-type protein: Adenylate kinase (Escherichia coli K-12).
-Full canonical wild-type sequence, numbered from the initial methionine as residue 1:
-
-```text
-MRIILLGAPGAGKGTQAQFIMEKYGIPQISTGDMLRAAVKSGSELGKQAKDIMDAGKLVTDELVIALVKE
-RIAQEDCRNGFLLDGFPRTIPQADAMKEAGINVDYVLEFDVPDELIVDRIVGRRVHAPSGRVYHVKFNPP
-KVEGKDDVTGEELTTRKDDQEETVRKRLVEYHQMTAPLIGYYSKEAEAGNTKYAKVDGTKPVAEVRADLE
-KILG
-```
-
-
-Published variant(s): R156K.
-
-Experimental evidence:
-Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):
-WT: kcat 330, Km 71.
-R156K: kcat 0.74, Km 52.
-Arginine and lysine both normally carry a positive side-chain charge near neutral pH.
-
-**Question:** Which interpretation best explains why calling R156K a conservative substitution does not establish functional conservation?
-
-**Choices:**
-
-- **A.** The lower ATP Km compensates for the turnover loss, so R156K should retain near-WT catalytic efficiency when ATP is limiting.
-- **B.** The lower ATP Km establishes stronger equilibrium ATP binding, so the turnover defect must arise entirely from slower product release.
-- **C.** The roughly 450-fold turnover loss with a modest Km shift shows that retaining positive charge need not preserve residue-specific catalytic performance.
-- **D.** The roughly 450-fold turnover loss directly measures a 450-fold reduction in correctly folded protein, while catalysis by the folded molecules remains unchanged.
-
-Interpret the supplied published measurements. Explain the relevant biological and quantitative reasoning, then give one answer letter. Do not propose new variants or experimental procedures.
-
-## Answer
-
-The best interpretation is C: chemical similarity does not guarantee functional conservation.
-
-1. Quantitative evidence
-The turnover decrease is:
-330 / 0.74 ≈ 446-fold.
-Thus, R156K has roughly 450-fold lower reported kcat than WT. In contrast, its ATP Km decreases only modestly:
-52 / 71 ≈ 0.73,
-a decrease of about 27%.
-
-At ATP concentrations well below both Km values, with other assay conditions fixed, the rate per enzyme is approximately (kcat/Km)[ATP]. The relevant catalytic efficiencies are:
-• WT: 330/71 ≈ 4.65 s^-1 μM^-1.
-• R156K: 0.74/52 ≈ 0.0142 s^-1 μM^-1.
-
-The mutant therefore retains only about 0.31% of WT ATP-dependent catalytic efficiency, a roughly 327-fold loss. The modest Km decrease does not compensate for the turnover defect, ruling out A.
-
-2. Why a charge-conserving substitution can strongly impair function
-Arginine and lysine are both normally positively charged near neutral pH, making this substitution conservative in a broad chemical classification. However, arginine's guanidinium group and lysine's terminal ammonium group differ in geometry, charge distribution, and hydrogen-bonding arrangements. In an enzyme, these differences can affect substrate positioning, transition-state stabilization, or conformational steps during turnover. These are general mechanistic possibilities, not specific interactions established for residue 156 by the supplied sequence. The observed kinetic loss nevertheless demonstrates that preserving positive charge does not preserve this variant's catalytic performance.
-
-3. Why the other interpretations are unsupported
-B incorrectly equates Km with an equilibrium dissociation constant. Even in the simple mechanism E + S ⇌ ES → E + P, Km = (koff + kcat)/kon, whereas Kd = koff/kon. Consequently, a lower Km can accompany slower turnover without stronger equilibrium binding. Adenylate kinase has a more complex, multisubstrate catalytic cycle, so the ATP Km likewise cannot automatically be interpreted as ATP binding affinity. Nothing supplied identifies slower product release as the sole cause of the turnover loss.
-
-D incorrectly treats kcat as a direct measurement of folding. A lower reported kcat can reflect changes in chemistry or other turnover-limiting steps; depending on enzyme normalization, an inactive fraction can also affect apparent turnover. These measurements do not establish a 450-fold reduction in correctly folded protein or unchanged catalysis by the folded molecules.
-
-Thus, the strong turnover defect with only a modest Km shift supports C.
-
-**Final answer: C**
-
-<details>
-<summary>Sources, evidence checks and limitations</summary>
-
-### Evidence check
-
-Primary full-text Results and a kinetic table support the reported measurements and fold-change calculations. General side-chain chemistry helps interpret them; a specific structural cause is not established by the table.
-
-### Answer limitations
-
-The conclusion applies to the supplied ATP-dependent kinetic measurements. Neither the sequence nor these kinetic parameters uniquely identify the affected microscopic step, establish equilibrium ATP affinity, or quantify the folded or active protein fraction.
-
-### References and source review
-
-The reference label and the following verification material are separate from the solver input. Any biological facts already supplied to AI remain visible above.
-
-Source identity: **adenylate_kinase** — [UniProt P69441](https://www.uniprot.org/uniprotkb/P69441/entry).
-
-Source-supported reference answer: **C**. Selected answer matches.
-
-Scientific review: Assistant-reviewed; no material errors found.
-
-Reference-sequence scope: Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.
-
-Correct remapped answer C. Correctly calculates about 446-fold lower turnover, about 327-fold lower ATP-dependent catalytic efficiency, and a 27% Km decrease. Connects the shared positive charge to different guanidinium/ammonium geometry and hydrogen bonding without claiming specific Arg156 contacts were observed. Correctly distinguishes Km from Kd, and treats changes in chemistry, conformational steps, product release and active fraction as possibilities rather than measured causes.
-
-Source support:
-
-- 2021 Figure 2c / Table S2; 2023 Table 1, WT and R156K rows.
-- Published ATP-dependent kinetic measurements (central values; kcat in s^-1, ATP Km in micromolar):
-WT: kcat 330, Km 71.
-R156K: kcat 0.74, Km 52.
-Arginine and lysine both normally carry a positive side-chain charge near neutral pH.
-- Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.
-- Table 1, footnote a.
-
-Source qualifications:
-
-- Canonical full-length sequence; initial methionine is residue 1. Published R36, R88, R123, R156 and R167 all match the reference residues.
-- The prompt supplies the verified canonical reference and published mutation labels. No unreported affinity tag, cloning scar or exact expressed-construct extension is inferred.
-
-Primary references:
-
-- [Dynamic Connection between Enzymatic Catalysis and Collective Protein Motions](https://pmc.ncbi.nlm.nih.gov/articles/PMC8297476/). Figure 2c and supporting Table S2 for arginine variants; main-text Mg2+ comparison and Figure S9.
-
-- [Mechanistic basis for a connection between the catalytic step and slow opening dynamics of adenylate kinase](https://pmc.ncbi.nlm.nih.gov/articles/PMC11779523/). Table 1, footnote a.
-
-This is assistant review, not expert human ground truth. Matching a label does not validate every explanatory claim. Student training benefit has not been measured.
-
-[Original source records and unchanged AI output](../astra_enzyme_mutation_pool_2026-10-23/examples/case-004.md)
+The UniProt sequence above is the wild-type soybean ascorbate-peroxidase reference backbone. It is a coordinate reference for the separately listed APEX/APEX2 variants, not the assayed engineered construct. Only this source caption was corrected; the question and generated answer are unchanged. [Prior presentation](artifacts/example-01/previous_presentation_v2.txt) · [Revision record](revision_v4.json).
 
 </details>
 
-
 ---
 
-# 3. PafA: inactive protein fraction versus inhibitor binding
+# 2. APEX: why an active enzyme can still be a poor cellular reporter
 
 ## Question
 
-Protein: PafA alkaline phosphatase.
+Protein: pea cytosolic ascorbate peroxidase (APX). The full canonical wild-type sequence below is a coordinate reference; residue 1 is the initial methionine. It is not the complete expressed fusion.
 
-Full canonical reference sequence (546 amino acids):
+Protein sequence:
 
 ```text
-MLTPKKWLLGVLVVSGMLGAQKTNAVPRPKLVVGLVVDQMRWDYLYRYYSKYGEGGFKRMLNTGYSLNNV
-HIDYVPTVTAIGHTSIFTGSVPSIHGIAGNDWYDKELGKSVYCTSDETVQPVGTTSNSVGQHSPRNLWST
-TVTDQLGLATNFTSKVVGVSLKDRASILPAGHNPTGAFWFDDTTGKFITSTYYTKELPKWVNDFNNKNVP
-AQLVANGWNTLLPINQYTESSEDNVEWEGLLGSKKTPTFPYTDLAKDYEAKKGLIRTTPFGNTLTLQMAD
-AAIDGNQMGVDDITDFLTVNLASTDYVGHNFGPNSIEVEDTYLRLDRDLADFFNNLDKKVGKGNYLVFLS
-ADHGAAHSVGFMQAHKMPTGFFVEDMKKEMNAKLKQKFGADNIIAAAMNYQVYFDRKVLADSKLELDDVR
-DYVMTELKKEPSVLYVLSTDEIWESSIPEPIKSRVINGYNWKRSGDIQIISKDGYLSAYSKKGTTHSVWN
-SYDSHIPLLFMGWGIKQGESNQPYHMTDIAPTVSSLLKIQFPSGAVGKPITEVIGR
+MGKSYPTVSPDYQKAIEKAKRKLRGFIAEKKCAPLILRLAWHSAGTFDSKTKTGGPFGTIKHQAELAHGA
+NNGLDIAVRLLEPIKEQFPIVSYADFYQLAGVVAVEITGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH
+LRDVFGKAMGLSDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLTGEKDGLLQLPSDKA
+LLTDSVFRPLVEKYAADEDVFFADYAEAHLKLSELGFAEA
 ```
 
-
-Numbering: mutation labels use positions in this full reference. The published HT-MEK PafA construct contains an initiating methionine followed by reference residues21–546, with a C-terminal linker and eGFP for the on-chip experiments. Within the PafA-only expressed ORF, canonical position n maps to position n-19. The full reference is supplied for unambiguous mutation indexing; it is not a claim that the native N-terminal segment was present in the assay.
+Published variants use those wild-type coordinates: mAPX carries K14D/E112K; APEX carries K14D/E112K/W41F. The enzyme cores have no deletion. Experimental tags, targeting sequences and fusion partners are not shown.
 
 Published observations:
-The published H83G variant has a lower Pi inhibition constant than wild type, meaning stronger phosphate binding. The inhibition readout is a fractional rate v(I)/v(0) for the same variant. In a simple model with a long-lived inactive fraction, only the active population reacts and binds inhibitor, and its concentration multiplies both v(I) and v(0) by the same factor. There is no interconversion of populations during the measurement.
+- Wild-type APX and mAPX had similar activity in the purified-enzyme comparison, which used guaiacol, an aromatic model substrate.
+- Wild-type APX fused to connexin43 was largely retained inside cells, whereas mAPX fusions reached gap junctions much more effectively.
+- In the cytosol, mAPX gave weaker DAB staining than wild-type APX; supplying heme increased its staining. DAB staining reports peroxidase-catalyzed product formation.
+- APEX gave stronger cellular DAB staining than mAPX while retaining similar predominantly monomeric behavior.
 
-**Question:** Can a smaller active population alone explain the changed normalized inhibition constant?
+**Question:** Which interpretation best preserves what the biochemical and cellular comparisons actually measure?
 
-**Choices:**
+- **A.** Purified guaiacol activity provides the per-molecule calibration for cellular DAB staining; after that calibration, the remaining signal differences can be assigned to amounts of correctly localized fusion protein.
+- **B.** The heme-supplementation response provides a direct ranking of equilibrium heme-binding affinity; it therefore identifies weaker heme affinity as the complete cause of the mAPX cellular defect.
+- **C.** The mutations balance different properties: reduced self-association can improve fusion trafficking, while cell staining also depends on active heme-containing enzyme and substrate chemistry. Similar purified guaiacol activity does not calibrate cellular DAB signal.
+- **D.** Because APEX and mAPX have similar oligomeric behavior, their cellular DAB difference primarily reports different amounts of correctly localized fusion protein, rather than a difference in activity per enzyme molecule.
 
-- **A.** The inactive population changes the fitted inhibition constant because normalization removes enzyme concentration only from the uninhibited rate, leaving inhibitor-dependent population effects.
-- **B.** Cancellation of the active-enzyme factor shows that H83G stabilizes the catalytic transition state more strongly, so stronger inhibition establishes faster intrinsic chemistry.
-- **C.** A smaller active population lowers the inhibitor concentration needed to halve its fractional rate, so inactive abundance alone can explain stronger apparent binding.
-- **D.** The common active-enzyme factor cancels from the fractional rate; the changed inhibition constant therefore requires more than uniform dilution by inactive protein.
+Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ## Answer
 
-The reference confirms histidine at canonical position 83, the site of H83G. This identifies the substitution but does not, by itself, establish its effect on phosphate binding or catalysis. The decisive evidence is the normalized inhibition measurement and the supplied population model.
+*AI-generated answer; unchanged response.*
 
-Let E_total be total enzyme concentration, f the fixed fraction belonging to the active population, and r(I) the rate per active enzyme at phosphate concentration I under otherwise identical assay conditions. Inhibition of active enzyme is included in r(I). Then:
+APX is a heme-dependent peroxidase that uses hydrogen peroxide to oxidize electron-donor substrates. Cellular DAB staining measures accumulated catalytic product, not protein abundance directly. Its intensity can depend on the amount of accessible enzyme, the fraction that is folded and heme-loaded, substrate-dependent catalytic performance, and local staining conditions.
 
-v(I) = f E_total r(I)
-v(0) = f E_total r(0)
-v(I)/v(0) = r(I)/r(0).
+What the observations establish
 
-Both the active fraction and total enzyme concentration cancel. If H83G changed only the abundance of inactive protein, its per-active-enzyme response r(I) would remain unchanged. Absolute rates would decrease, but the normalized inhibition curve—and therefore its fitted inhibition constant—would not shift. In particular, the phosphate concentration giving half of the uninhibited fractional rate would remain unchanged.
+1. Purified guaiacol activity: Wild-type APX and mAPX performed similarly with guaiacol under the supplied purified-enzyme conditions. Guaiacol and DAB are both aromatic substrates, but that does not make their binding and oxidation kinetics interchangeable. Even a rigorously equal-molecule guaiacol comparison would not establish equal DAB activity per molecule in cells or equal cellular fractions of active holoenzyme.
 
-Consequently, the reported lower Pi inhibition constant requires more than uniform dilution by inactive protein. Within the stated model, it reflects an altered inhibition/binding response of the active population.
+2. Connexin43 trafficking: The greater delivery of mAPX fusions to gap junctions is a localization/trafficking result. Reduced self-association can lessen interference with a fusion partner’s assembly and transport, providing a biologically plausible explanation for improved trafficking. This is distinct from catalytic activity. In particular, the connexin43 localization comparison cannot normalize the separate cytosolic DAB-staining comparison.
 
-A is incorrect because the active-enzyme factor appears in both rates and cancels from their ratio. C is incorrect because decreasing active abundance alone cannot shift fractional half-inhibition. B correctly invokes cancellation but adds an unsupported conclusion: stronger binding of phosphate, a product inhibitor, does not establish greater catalytic transition-state stabilization or faster intrinsic chemistry. D states the justified conclusion.
+3. Heme supplementation: Increased mAPX staining after heme supply is consistent with more functional heme-containing enzyme becoming available. It does not directly measure equilibrium heme-binding affinity. Cellular heme availability, delivery and incorporation, folding, and stability can all influence the active-enzyme population. Thus, the response neither ranks equilibrium affinities nor establishes weaker affinity as the complete cause of the staining deficit.
 
-**Final answer: D**
+4. APEX versus mAPX: APEX adds W41F and produces stronger cellular DAB staining while retaining similar predominantly monomeric behavior. This shows that improved staining does not require a further reported change in oligomerization. Similar oligomeric behavior does not establish equal DAB turnover, equal heme loading, equal stability, or equal cellular abundance. The precise contribution of each remains unresolved.
+
+Evaluation of the alternatives
+
+A is incorrect because purified guaiacol activity is not a per-molecule calibration for cellular DAB staining. Differences in substrate chemistry, active-enzyme fraction, and cellular conditions remain unaccounted for.
+
+B is incorrect because a downstream activity response to heme supplementation is not an equilibrium binding measurement. Its claim of a complete causal explanation is also unsupported.
+
+C correctly separates reduced self-association and fusion trafficking from heme-dependent, substrate-specific catalytic output. It preserves both the measured observations and their mechanistic limits.
+
+D is incorrect because similar oligomerization does not control for catalytic performance or the fraction of active holoenzyme. Protein amount or localization could contribute, but the supplied evidence does not justify assigning them the primary role.
+
+Answer: C.
+
+Final answer: C
 
 <details>
 <summary>Sources, evidence checks and limitations</summary>
 
-### Evidence check
+**Source-supported answer: C.** The answer selects C and matches that reference.
 
-Cached primary full-text Results and Figure 6B support stronger phosphate binding for H83G. Cancellation of the active-enzyme fraction is a mathematical derivation from the fixed-population assumptions supplied in the question, not a separate measured result.
+### Primary evidence
+
+[Engineered ascorbate peroxidase as a genetically encoded reporter for electron microscopy](https://doi.org/10.1038/nbt.2375) (2012).
+
+- Figure 1b-e and Results, printed pp.1143-1144: K14D/E112K monomerization, concentration-dependent residual association and connexin43 trafficking.
+- Figure 2b-d and Results, printed pp.1144-1145: purified guaiacol kinetics, cellular DAB comparisons, and heme supplementation.
+- Online Methods, Cloning and mutagenesis: pea cytosolic APX reference, with some humanized-codon versions.
+
+The original pea-APX study distinguishes fusion trafficking, purified model-substrate activity, cellular staining and heme response. It supports the observations supplied to the solver; the multiple-choice interpretation is AI-created and is not an author-assigned experimental label.
 
 ### Answer limitations
 
-The conclusion applies to the supplied fixed-population model. A reduced active fraction could coexist with stronger phosphate binding, but cannot alone explain the normalized inhibition shift. The evidence does not identify the molecular cause of the binding change or establish effects on expression, stability, or intrinsic chemistry.
+- No unique microscopic mechanism or full causal decomposition is established.
+- The question does not predict a mutation effect from unannotated sequence alone.
+- A matched reference label does not validate every future generated explanation or demonstrate training benefit.
 
-### References and source review
+### Source qualifications
 
-The reference label and the following verification material are separate from the solver input. Any biological facts already supplied to AI remain visible above.
+- Pea P48534 is distinct from the soybean Q43758 backbone in the retained APEX2 example.
+- The full canonical reference is shown, not a reconstruction of the His-tagged purification proteins, NES fusions or connexin43 fusions.
+- Predominantly monomeric is concentration-dependent; residual self-association at high concentration was reported.
+- Heme incorporation/stability is a supported working explanation; the experiment does not isolate equilibrium heme affinity or exclude other contributors.
+- Guaiacol and DAB are different substrates and the cellular endpoint is not a direct molecule count.
 
-Source identity: **PafA alkaline phosphatase** — [UniProt Q9KJX5](https://www.uniprot.org/uniprotkb/Q9KJX5/entry).
+### Evidence review and provenance
 
-Source-supported reference answer: **D**. Selected answer matches.
+- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
+- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
 
-Scientific review: Assistant-reviewed; no material errors found.
+This is an unchanged new AI-generated response to the question shown above. The solver received only the sequence and observations printed in the question; full papers and the private reference label were withheld. Assistant source review followed generation.
 
-Reference-sequence scope: Canonical wild-type coordinate reference; this does not reconstruct the complete tagged, fused or truncated assay construct. See the prompt and source qualifications for any explicit canonical-to-assay mapping.
+[Exact generation request](artifacts/example-02/request.json) · [Unchanged generated output](artifacts/example-02/generated_output.json) · [Question, answer and source verification](artifacts/example-02/source_verification.json) · [Revision record](revision_v4.json)
 
-- The active-fraction and enzyme-concentration factors cancel correctly from v(I)/v(0); the solution distinguishes an absolute-rate change from a normalized inhibition-curve shift.
-- The conclusion is explicitly conditional on fixed, noninterconverting populations. It allows reduced active abundance to coexist with altered binding and does not infer faster chemical catalysis.
-- His83 and canonical83 to expressed-ORF64 indexing are correct. The explanation uses the provided binding result and population model rather than asserting a sequence-only affinity prediction.
-
-Source support:
-
-- Fig.6B, FC2/FC3 section; Fig.3D model
-- H83G is the representative strengthened-Pi-binding(FC2) mutant; the study separates long-lived inactive fractions from catalytic/binding effects.
-
-Source qualifications:
-
-- The result is conditional on the stated noninterconverting inactive-state model and normalization.
-- Do not assume every inactive conformation cannot bind phosphate in all possible biological systems.
-- Expression and assay conditions are distinct. These standard on-chip conditions are not assigned to separate off-chip or tagless measurements without explicit source support.
-- Initiating M followed by canonical Q9KJX5 residues21–546; linker/eGFP omitted from PafA-only ORF translation. This is an experimental truncation, not a claim about the natural signal-peptide cleavage position.
-- Canonical residue n (21<=n<=546) maps to one-based PafA_ORF residue n-19. GenBank T79 feature265..267 mapsORF60; N100328..330 mapsORF81; K162514..516 mapsORF143; R164520..522 mapsORF145.
-- On-chip PafA was fused to a Ser-Gly linker and eGFP. Canonical numbering of the PafA segment is retained; neither reporter sequence nor linker is treated as PafA.
-- The source separately reports a reporter-free Y103G control. Do not conflate its260-fold expression-temperature effect with a specific on-chip numeric ratio.
-
-Primary references:
-
-- [Revealing enzyme functional architecture via high-throughput microfluidic enzyme kinetics](https://pmc.ncbi.nlm.nih.gov/articles/PMC8454890/). Fig.6B, FC2/FC3 section; Fig.3D model
-
-This is assistant review, not expert human ground truth. Matching a label does not validate every explanatory claim. Student training benefit has not been measured.
-
-[Original source records and unchanged AI output](../astra_enzyme_mutation_pool_2026-10-23/examples/case-015.md)
+Assistant reviews are not expert human validation, and training gains have not been measured.
 
 </details>
 
+---
+
+# 3. TurboID and miniTurbo: when more labeling weakens the time window
+
+## Question
+
+Reference protein: Escherichia coli BirA, the ancestral biotin ligase of TurboID and miniTurbo. The full canonical wild-type sequence is supplied only for coordinates; it is not the complete evolved or tagged assay construct.
+
+Protein sequence:
+
+```text
+MKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEPIQLLNAK
+QILGQLDGGSVAVLPVIDSTNQYLLDRIGELKSGDACIAEYQQAGRGRRGRKWFSPFGANLYLSMFWRLE
+QGPAAAIGLSLVIGIVMAEVLRKLGADKVRVKWPNDLYLQDRKLAGILVELTGKTGDAAQIVIGAGINMA
+MRRVEESVVNQGWITLQEAGINLDRNTLAAMLIRELRAALELFEQEGLAPYLSRWEKLDNFINRPVKLII
+GDKEIFGISRGIDKQGALLLEQDGIIKPWMGGEISLRSAEK
+```
+
+Numbering uses the initial methionine as wild-type residue 1. Both evolved enzyme cores delete Ala146. miniTurbo additionally lacks wild-type residues 1-63. Thus wild-type Met241 corresponds to enzyme-core position 240 in TurboID and 177 in miniTurbo, before any added tags or linkers. The evolved backgrounds contain other substitutions; the sequence above does not represent either final variant.
+
+Published observations:
+- Screening found M241T potentially beneficial for labeling activity, and the substitution was included with other changes in TurboID.
+- M241T was also tested in the miniTurbo background but was not retained because signal increased when added biotin was omitted.
+- In the broader comparison, miniTurbo generally showed less labeling before biotin addition than TurboID, while TurboID generally gave greater labeling yield.
+
+The purpose is to label neighboring proteins within a defined time window after biotin addition. The omit-added-biotin condition does not experimentally remove the biotin already present in cells.
+
+**Question:** What is the most defensible interpretation of the M241T tradeoff for that time-window objective?
+
+- **A.** The higher omit-biotin signal identifies stronger equilibrium biotin binding as the M241T mechanism; correcting added biotin concentration for that affinity difference should recover the original labeling window.
+- **B.** Labeling before the intended start can use biotin already present and leave covalent marks on proteins. Greater total yield can therefore weaken temporal control; these observations do not identify which molecular step M241T changes or establish the same effect in every background.
+- **C.** Protein-by-protein subtraction of the omit-biotin sample converts the later accumulated signal into labels acquired exclusively after biotin addition, because the same labeling chemistry operates in both samples.
+- **D.** The difference between TurboID and miniTurbo identifies interaction with the deleted N-terminal domain as the source of the M241T tradeoff; the other evolved substitutions and expression differences need not contribute to that interpretation.
+
+Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
+
+## Answer
+
+*Source-aware AI explanation.*
+
+B. Greater labeling yield can weaken control over when the labels were acquired.
+
+A promiscuous biotin ligase uses biotin and ATP to produce an activated intermediate that can covalently label nearby proteins. Omitting added biotin does not establish that the cell contains no biotin. Signal generated before the intended start can therefore contribute to a later accumulated readout. A protein carrying a label need not have acquired it during the intended window; movement and turnover can further change the observed population.
+
+This explains why the miniTurbo observation matters. M241T increased signal when added biotin was omitted, so excluding that substitution could favor temporal control even if including it increased total labeling. The choice of an enzyme variant depends on the measurement objective: maximal accumulated signal and a well-defined observation window are different objectives.
+
+The observations do not identify the molecular step altered by M241T. More signal could reflect differences in the active enzyme population, substrate handling, intermediate production or release, or other context-dependent properties. It is not a measurement of an isolated affinity or catalytic constant, and the full-length and truncated evolved enzymes differ in more than their N-terminal domain.
+
+A confuses an accumulated labeling endpoint with an equilibrium binding measurement. No measured affinity change is supplied, so the proposed affinity correction is unsupported.
+
+B connects the covalent labeling chemistry to the timing problem while leaving the particular molecular mechanism and its generality unresolved.
+
+C overstates what background subtraction establishes. Subtraction can help quantify differences between matched samples. It does not generally identify when each individual covalent mark was formed or guarantee an exclusively post-addition protein set. Estimating an incremental signal under a validated model is a narrower claim.
+
+D assigns a unique causal interaction to the N-terminal deletion without isolating that change from the other substitutions and expression differences.
+
+The supplied wild-type BirA sequence is a coordinate reference. It does not, by itself, predict this mutation's labeling tradeoff. The experimental observations and labeling chemistry support the inference.
+
+Answer: B.
+
+Final answer: B
+
+<details>
+<summary>Sources, evidence checks and limitations</summary>
+
+**Source-supported answer: B.** The answer selects B and matches that reference.
+
+### Primary evidence
+
+[Efficient proximity labeling in living cells and organisms with TurboID](https://doi.org/10.1038/nbt.4201) (2018).
+
+- Methods, Yeast display directed evolution, last two paragraphs: M241T activity observation, introduction with K194I/S263P into G3, and exclusion of M241T from miniTurbo because omit-biotin signal increased.
+- Methods, Cloning: all ligase variants have wild-type A146 deleted.
+- Supplementary Table 1: TurboID and miniTurbo genotype rows; miniTurbo retains wild-type span64-321 plus A146 deletion.
+- Figure 2a-b and Discussion: yield versus pre-biotin-labeling tradeoff; miniTurbo temporal-control consideration.
+- Supplementary Note2: biotin-AMP formation, release and covalent labeling; proposed mechanisms remain hypotheses.
+
+The paper reports the M241T decision and the broader yield/background tradeoff. Covalent label accumulation explains why pre-window activity matters. The multiple-choice inference is AI-created; no new M241T measurements, fixed affinity change or causal epistasis map is claimed.
+
+### Answer limitations
+
+- A baseline control improves interpretation but cannot generally timestamp individual covalent marks after the fact.
+- Protein movement and turnover can influence accumulated labeling; marks are not asserted permanent.
+- The result applies to the reported backgrounds and conditions, not every cell, compartment or variant.
+
+### Source qualifications
+
+- The displayed sequence is native321-residue BirA, not TurboID, miniTurbo or a complete V5/NES fusion.
+- All substitution labels retain native BirA coordinates even after deletions.
+- A146 deletion gives n-1 for retained n>146 in TurboID; deletion1-63 plus146 gives n-64 for retained n>146 in miniTurbo. M241T is therefore core240 or177, respectively. Added fusion offsets are unknown here.
+- The enzyme-core genotypes are supported by Supplementary Table1; canonical references are checked independently against official UniProt.
+- The main-text methods describe the M241T miniTurbo result qualitatively without a numeric fold-change or isolated binding/turnover constants.
+- The comparison does not isolate the N-terminal domain as the cause of context dependence; other substitutions, enzyme stability and expression can matter.
+
+### Evidence review and provenance
+
+- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
+- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
+
+The sole fresh generation attempt returned HTTP 502 without an answer. This explanation was subsequently authored by an AI assistant with the frozen question and reviewed source evidence available; it is a source-aware authored explanation, not a successful teacher response or a blinded solve. The failed request and response are preserved; $7 remains reserved because billing is uncertain. No retry was made.
+
+[Failed generation request](artifacts/example-03/request.json) · [Recorded failed attempt](artifacts/example-03/failed_attempt_public.json) · [Failed response](artifacts/example-03/failed_response.txt) · [Authored explanation](artifacts/example-03/source_aware_answer.json) · [Question, answer and source verification](artifacts/example-03/source_verification.json) · [Revision record](revision_v4.json)
+
+Assistant reviews are not expert human validation, and training gains have not been measured.
+
+</details>
 
 ---
 
@@ -421,7 +413,6 @@ Source review was performed by assistants, not expert human reviewers. A matchin
 
 </details>
 
-
 ---
 
 # 5. Calcium binding through repeated structural motifs
@@ -516,7 +507,6 @@ Source review was performed by assistants, not expert human reviewers. A matchin
 
 </details>
 
-
 ---
 
 # 6. Membrane anchoring
@@ -546,7 +536,7 @@ AFFVKGH
 
 B is the best-supported architecture: a large cytosolic region with a single membrane anchor near the C terminus.
 
-The strongest evidence is residues 193–214, ILLVILGIIVVIAILTAIAFFV. This 22-residue stretch is strongly hydrophobic and contains no charged residues. Its length and composition are appropriate for an alpha helix spanning a lipid bilayer; such helices commonly contain roughly 18–25 predominantly hydrophobic residues. Only KGH at positions 215–217 follows it, so the candidate anchor lies very close to the protein's C terminus.
+The strongest evidence is residues 193–213, ILLVILGIIVVIAILTAIAFF. This 21-residue stretch is strongly hydrophobic and contains no charged residues. Its length and composition are appropriate for an alpha helix spanning a lipid bilayer; such helices commonly contain roughly 18–25 predominantly hydrophobic residues. Only VKGH at positions 214–217 follows it, so the candidate anchor lies very close to the protein's C terminus.
 
 In contrast, residues 1–192 contain frequent charged and polar residues and no other comparably long hydrophobic stretch. They therefore support a large region outside the membrane rather than additional transmembrane helices. The N-terminal 30 residues also lack the sustained hydrophobic core expected in a classical cleavable signal peptide. Together, these features support a C-terminally anchored architecture. The basic flank RRIIQNR at residues 186–192 is consistent with the positive-inside tendency, in which positively charged flanks preferentially lie on the cytosolic side. This strengthens, but does not prove, the inference that the large upstream region is cytosolic.
 
@@ -605,8 +595,12 @@ Source review was performed by assistants, not expert human reviewers. A matchin
 
 [Original source records and unchanged AI output](../astra_sequence_only_nine_2026-10-23/examples/case-006.md)
 
-</details>
 
+### Revision 4 coordinate clarification
+
+The frozen sequence and UniProt annotation identify residues 193–213 as a 21-residue predicted anchor, followed by VKGH at residues 214–217. The worked answer was AI-edited to use those coordinates consistently; the question and answer letter B are unchanged. These are sequence-analysis boundaries, not membrane boundaries measured in the paper. [Unchanged original AI output](artifacts/example-06/original_generated_output.json) · [Frozen sequence annotation](artifacts/example-06/frozen_uniprot_record.json) · [Exact coordinate correction](artifacts/example-06/coordinate_correction.json) · [Prior presentation](artifacts/example-06/previous_presentation_v2.txt).
+
+</details>
 
 ---
 
@@ -706,7 +700,6 @@ Source review was performed by assistants, not expert human reviewers. A matchin
 
 </details>
 
-
 ---
 
 # 8. Chromophore binding
@@ -799,7 +792,6 @@ Source review was performed by assistants, not expert human reviewers. A matchin
 [Original source records and unchanged AI output](../astra_sequence_only_nine_2026-10-23/examples/case-008.md)
 
 </details>
-
 
 ---
 

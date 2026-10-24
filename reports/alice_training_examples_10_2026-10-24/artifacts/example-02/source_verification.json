@@ -1,0 +1,61 @@
+{
+  "id": "example-02",
+  "title": "APEX: why an active enzyme can still be a poor cellular reporter",
+  "source_case_id": "alice-apex-monomerization-activity-v3",
+  "student_prompt": "Protein: pea cytosolic ascorbate peroxidase (APX). The full canonical wild-type sequence below is a coordinate reference; residue 1 is the initial methionine. It is not the complete expressed fusion.\n\n[Protein Sequence]\nMGKSYPTVSPDYQKAIEKAKRKLRGFIAEKKCAPLILRLAWHSAGTFDSKTKTGGPFGTIKHQAELAHGA\nNNGLDIAVRLLEPIKEQFPIVSYADFYQLAGVVAVEITGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH\nLRDVFGKAMGLSDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLTGEKDGLLQLPSDKA\nLLTDSVFRPLVEKYAADEDVFFADYAEAHLKLSELGFAEA\n[End Protein Sequence]\n\nPublished variants use those wild-type coordinates: mAPX carries K14D/E112K; APEX carries K14D/E112K/W41F. The enzyme cores have no deletion. Experimental tags, targeting sequences and fusion partners are not shown.\n\nPublished observations:\n- Wild-type APX and mAPX had similar activity in the purified-enzyme comparison, which used guaiacol, an aromatic model substrate.\n- Wild-type APX fused to connexin43 was largely retained inside cells, whereas mAPX fusions reached gap junctions much more effectively.\n- In the cytosol, mAPX gave weaker DAB staining than wild-type APX; supplying heme increased its staining. DAB staining reports peroxidase-catalyzed product formation.\n- APEX gave stronger cellular DAB staining than mAPX while retaining similar predominantly monomeric behavior.\n\nQuestion: Which interpretation best preserves what the biochemical and cellular comparisons actually measure?\n\nA. Purified guaiacol activity provides the per-molecule calibration for cellular DAB staining; after that calibration, the remaining signal differences can be assigned to amounts of correctly localized fusion protein.\nB. The heme-supplementation response provides a direct ranking of equilibrium heme-binding affinity; it therefore identifies weaker heme affinity as the complete cause of the mAPX cellular defect.\nC. The mutations balance different properties: reduced self-association can improve fusion trafficking, while cell staining also depends on active heme-containing enzyme and substrate chemistry. Similar purified guaiacol activity does not calibrate cellular DAB signal.\nD. Because APEX and mAPX have similar oligomeric behavior, their cellular DAB difference primarily reports different amounts of correctly localized fusion protein, rather than a difference in activity per enzyme molecule.\n\nInterpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.",
+  "question": "Which interpretation best preserves what the biochemical and cellular comparisons actually measure?",
+  "choices": {
+    "A": "Purified guaiacol activity provides the per-molecule calibration for cellular DAB staining; after that calibration, the remaining signal differences can be assigned to amounts of correctly localized fusion protein.",
+    "B": "The heme-supplementation response provides a direct ranking of equilibrium heme-binding affinity; it therefore identifies weaker heme affinity as the complete cause of the mAPX cellular defect.",
+    "C": "The mutations balance different properties: reduced self-association can improve fusion trafficking, while cell staining also depends on active heme-containing enzyme and substrate chemistry. Similar purified guaiacol activity does not calibrate cellular DAB signal.",
+    "D": "Because APEX and mAPX have similar oligomeric behavior, their cellular DAB difference primarily reports different amounts of correctly localized fusion protein, rather than a difference in activity per enzyme molecule."
+  },
+  "selected_answer": "C",
+  "source_supported_answer": "C",
+  "paper": {
+    "alice_ting_authored": true,
+    "doi": "10.1038/nbt.2375",
+    "evidence_locations": [
+      "Figure 1b-e and Results, printed pp.1143-1144: K14D/E112K monomerization, concentration-dependent residual association and connexin43 trafficking.",
+      "Figure 2b-d and Results, printed pp.1144-1145: purified guaiacol kinetics, cellular DAB comparisons, and heme supplementation.",
+      "Online Methods, Cloning and mutagenesis: pea cytosolic APX reference, with some humanized-codon versions."
+    ],
+    "first_author": "Jeffrey D. Martell",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3699407/",
+    "pmcid": "PMC3699407",
+    "pmid": "23086203",
+    "primary_pdf_url": "https://static1.squarespace.com/static/5617d7d8e4b09f2fdf34baa6/t/562f8880e4b0c7b6ee97fbcf/1445955712941/MartellNBT.pdf",
+    "title": "Engineered ascorbate peroxidase as a genetically encoded reporter for electron microscopy",
+    "url": "https://doi.org/10.1038/nbt.2375",
+    "year": 2012
+  },
+  "source_support": "The original pea-APX study distinguishes fusion trafficking, purified model-substrate activity, cellular staining and heme response. It supports the observations supplied to the solver; the multiple-choice interpretation is AI-created and is not an author-assigned experimental label.",
+  "limitations": [
+    "No unique microscopic mechanism or full causal decomposition is established.",
+    "The question does not predict a mutation effect from unannotated sequence alone.",
+    "A matched reference label does not validate every future generated explanation or demonstrate training benefit."
+  ],
+  "source_qualifications": [
+    "Pea P48534 is distinct from the soybean Q43758 backbone in the retained APEX2 example.",
+    "The full canonical reference is shown, not a reconstruction of the His-tagged purification proteins, NES fusions or connexin43 fusions.",
+    "Predominantly monomeric is concentration-dependent; residual self-association at high concentration was reported.",
+    "Heme incorporation/stability is a supported working explanation; the experiment does not isolate equilibrium heme affinity or exclude other contributors.",
+    "Guaiacol and DAB are different substrates and the cellular endpoint is not a direct molecule count."
+  ],
+  "review_notes": [
+    "The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.",
+    "Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed."
+  ],
+  "revision": 4,
+  "method": "fresh_teacher_unchanged",
+  "expert_human_validation": false,
+  "request_sha256": "8197c742348a7ee3e54169b3643dbc93520bbd7c0ae0c16226b6b669f95b72da",
+  "receipt_sha256": "dfd29da5d23af8e25e92e7dd0e83750a5aa8ee1967864a13f33e3e7f91b96c0a",
+  "frozen_casefile_sha256": "4dca09d505d39f88c9e8ad9aadba6c6ae8874c901bb61a3f63935d240722322a",
+  "run_receipt_sha256": "5b3a1122baf6498a0d586a01852ab3bb576797a3ae961ce137ab51708d3ee4a4",
+  "run_authorization_sha256": "b2cd3cb66282ab331a61a1c05280aecc19a79a38ad0a0b761aee16cbcced1c14",
+  "frozen_source_review_sha256": "b3b805934336dc70a5b815d9b513cacf19eec889b00abb849d29c60b6e23fdcf",
+  "frozen_source_guard_sha256": "7c22b5be3b9ffdeaf6658b13330d5797c40adac197e8086a3441ca7bd0d19d40",
+  "generated_output_sha256": "279ef67ef880b6fa2b0da13f73a17edd900d02b51afb871939755f5c601b87e2",
+  "offline_checks_sha256": "982fc99026565de69f1a3e65e23db96b76e556344cee29260a8b20845db68cc5"
+}
