@@ -87,8 +87,6 @@ Interpret the published observations using the relevant biology. Explain the alt
 
 ## Answer
 
-*AI-generated answer; unchanged response.*
-
 APX is a heme-dependent peroxidase that uses hydrogen peroxide to oxidize electron-donor substrates. Cellular DAB staining measures accumulated catalytic product, not protein abundance directly. Its intensity can depend on the amount of accessible enzyme, the fraction that is folded and heme-loaded, substrate-dependent catalytic performance, and local staining conditions.
 
 What the observations establish
@@ -152,8 +150,6 @@ The purpose is to label neighboring proteins within a defined time window after 
 Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ## Answer
-
-*Source-aware AI explanation.*
 
 B. Greater labeling yield can weaken control over when the labels were acquired.
 

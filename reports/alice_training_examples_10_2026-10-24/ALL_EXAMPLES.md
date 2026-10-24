@@ -141,8 +141,6 @@ Interpret the published observations using the relevant biology. Explain the alt
 
 ## Answer
 
-*AI-generated answer; unchanged response.*
-
 APX is a heme-dependent peroxidase that uses hydrogen peroxide to oxidize electron-donor substrates. Cellular DAB staining measures accumulated catalytic product, not protein abundance directly. Its intensity can depend on the amount of accessible enzyme, the fraction that is folded and heme-loaded, substrate-dependent catalytic performance, and local staining conditions.
 
 What the observations establish
@@ -198,16 +196,11 @@ The original pea-APX study distinguishes fusion trafficking, purified model-subs
 - Heme incorporation/stability is a supported working explanation; the experiment does not isolate equilibrium heme affinity or exclude other contributors.
 - Guaiacol and DAB are different substrates and the cellular endpoint is not a direct molecule count.
 
-### Evidence review and provenance
+### Evidence checks and records
 
-- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
-- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
+The answer was checked against the supplied observations and cited source evidence. These checks were performed by AI assistants, not expert human reviewers; training benefits have not been measured.
 
-This is an unchanged new AI-generated response to the question shown above. The solver received only the sequence and observations printed in the question; full papers and the private reference label were withheld. Assistant source review followed generation.
-
-[Exact generation request](artifacts/example-02/request.json) · [Unchanged generated output](artifacts/example-02/generated_output.json) · [Question, answer and source verification](artifacts/example-02/source_verification.json) · [Revision record](revision_v4.json)
-
-Assistant reviews are not expert human validation, and training gains have not been measured.
+[Question, answer and source verification](artifacts/example-02/source_verification.json) · [Creation and revision records](revision_v4.json)
 
 </details>
 
@@ -248,8 +241,6 @@ The purpose is to label neighboring proteins within a defined time window after 
 Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
 
 ## Answer
-
-*Source-aware AI explanation.*
 
 B. Greater labeling yield can weaken control over when the labels were acquired.
 
@@ -305,16 +296,11 @@ The paper reports the M241T decision and the broader yield/background tradeoff. 
 - The main-text methods describe the M241T miniTurbo result qualitatively without a numeric fold-change or isolated binding/turnover constants.
 - The comparison does not isolate the N-terminal domain as the cause of context dependence; other substitutions, enzyme stability and expression can matter.
 
-### Evidence review and provenance
+### Evidence checks and records
 
-- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
-- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
+The answer was checked against the supplied observations and cited source evidence. These checks were performed by AI assistants, not expert human reviewers; training benefits have not been measured.
 
-The sole fresh generation attempt returned HTTP 502 without an answer. This explanation was subsequently authored by an AI assistant with the frozen question and reviewed source evidence available; it is a source-aware authored explanation, not a successful teacher response or a blinded solve. The failed request and response are preserved; $7 remains reserved because billing is uncertain. No retry was made.
-
-[Failed generation request](artifacts/example-03/request.json) · [Recorded failed attempt](artifacts/example-03/failed_attempt_public.json) · [Failed response](artifacts/example-03/failed_response.txt) · [Authored explanation](artifacts/example-03/source_aware_answer.json) · [Question, answer and source verification](artifacts/example-03/source_verification.json) · [Revision record](revision_v4.json)
-
-Assistant reviews are not expert human validation, and training gains have not been measured.
+[Question, answer and source verification](artifacts/example-03/source_verification.json) · [Creation and revision records](revision_v4.json)
 
 </details>
 

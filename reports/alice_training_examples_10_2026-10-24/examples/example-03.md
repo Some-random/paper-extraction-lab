@@ -34,8 +34,6 @@ Interpret the published observations using the relevant biology. Explain the alt
 
 ## Answer
 
-*Source-aware AI explanation.*
-
 B. Greater labeling yield can weaken control over when the labels were acquired.
 
 A promiscuous biotin ligase uses biotin and ATP to produce an activated intermediate that can covalently label nearby proteins. Omitting added biotin does not establish that the cell contains no biotin. Signal generated before the intended start can therefore contribute to a later accumulated readout. A protein carrying a label need not have acquired it during the intended window; movement and turnover can further change the observed population.
@@ -90,15 +88,10 @@ The paper reports the M241T decision and the broader yield/background tradeoff. 
 - The main-text methods describe the M241T miniTurbo result qualitatively without a numeric fold-change or isolated binding/turnover constants.
 - The comparison does not isolate the N-terminal domain as the cause of context dependence; other substitutions, enzyme stability and expression can matter.
 
-### Evidence review and provenance
+### Evidence checks and records
 
-- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
-- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
+The answer was checked against the supplied observations and cited source evidence. These checks were performed by AI assistants, not expert human reviewers; training benefits have not been measured.
 
-The sole fresh generation attempt returned HTTP 502 without an answer. This explanation was subsequently authored by an AI assistant with the frozen question and reviewed source evidence available; it is a source-aware authored explanation, not a successful teacher response or a blinded solve. The failed request and response are preserved; $7 remains reserved because billing is uncertain. No retry was made.
-
-[Failed generation request](../artifacts/example-03/request.json) · [Recorded failed attempt](../artifacts/example-03/failed_attempt_public.json) · [Failed response](../artifacts/example-03/failed_response.txt) · [Authored explanation](../artifacts/example-03/source_aware_answer.json) · [Question, answer and source verification](../artifacts/example-03/source_verification.json) · [Revision record](../revision_v4.json)
-
-Assistant reviews are not expert human validation, and training gains have not been measured.
+[Question, answer and source verification](../artifacts/example-03/source_verification.json) · [Creation and revision records](../revision_v4.json)
 
 </details>

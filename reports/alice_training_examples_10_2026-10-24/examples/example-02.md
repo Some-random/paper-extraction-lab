@@ -32,8 +32,6 @@ Interpret the published observations using the relevant biology. Explain the alt
 
 ## Answer
 
-*AI-generated answer; unchanged response.*
-
 APX is a heme-dependent peroxidase that uses hydrogen peroxide to oxidize electron-donor substrates. Cellular DAB staining measures accumulated catalytic product, not protein abundance directly. Its intensity can depend on the amount of accessible enzyme, the fraction that is folded and heme-loaded, substrate-dependent catalytic performance, and local staining conditions.
 
 What the observations establish
@@ -89,15 +87,10 @@ The original pea-APX study distinguishes fusion trafficking, purified model-subs
 - Heme incorporation/stability is a supported working explanation; the experiment does not isolate equilibrium heme affinity or exclude other contributors.
 - Guaiacol and DAB are different substrates and the cellular endpoint is not a direct molecule count.
 
-### Evidence review and provenance
+### Evidence checks and records
 
-- The canonical sequence and published observations are supplied; this is experimental interpretation, not sequence-only prediction.
-- Source-backed AI interpretation, not an expert-human label; no measured training benefit or item discrimination is claimed.
+The answer was checked against the supplied observations and cited source evidence. These checks were performed by AI assistants, not expert human reviewers; training benefits have not been measured.
 
-This is an unchanged new AI-generated response to the question shown above. The solver received only the sequence and observations printed in the question; full papers and the private reference label were withheld. Assistant source review followed generation.
-
-[Exact generation request](../artifacts/example-02/request.json) · [Unchanged generated output](../artifacts/example-02/generated_output.json) · [Question, answer and source verification](../artifacts/example-02/source_verification.json) · [Revision record](../revision_v4.json)
-
-Assistant reviews are not expert human validation, and training gains have not been measured.
+[Question, answer and source verification](../artifacts/example-02/source_verification.json) · [Creation and revision records](../revision_v4.json)
 
 </details>
