@@ -1,0 +1,14 @@
+{
+  "id": "example-09",
+  "title": "Testing whether a protein label changes its target",
+  "student_prompt": "Streptavidin is used to label biotinylated proteins. A4 is a tetramer of four active, His-tagged subunits; A1D3 is a tetramer containing one active and three binding-inactive subunits. The affinity measurements below use these tagged preparations, whereas the cellular comparison uses wild-type streptavidin versus A1D3.\n\nPreparation | Biotins bound per tetramer | Biotin Kd, mean ± SEM\nA4 | 4 | (4.4 ± 1.1) × 10^-14 M\nA1D3 | 1 | (4.8 ± 0.5) × 10^-14 M\n\nIn cultured neurons expressing acceptor-peptide-tagged neuroligin-1, both fluorescent labels initially gave diffuse surface labeling. Two hours later, wild-type streptavidin produced strong clustering, whereas A1D3 labeling remained predominantly diffuse.\n\nA colleague argues: \"Because the soluble-biotin affinities are similar, the two labels should be interchangeable for observing neuroligin's native organization once the amount of initial labeling is matched.\"\n\nIn each proposed follow-up, the chosen matching strategy would be followed by tracking neuroligin organization with the same independent readout that does not link target molecules together. These are thought-experiment comparisons, not additional experiments reported in the paper.\n\nQuestion: Which matching strategy most directly tests whether the labels differently perturb neuroligin organization?\n\nA. Match the measured fraction of neuroligin molecules initially occupied by each preparation.\nB. Measure soluble-biotin binding in the neuronal assay medium, then choose probe concentrations giving the same predicted occupancy in that soluble-binding measurement.\nC. Match the total concentration of functional biotin-binding sites supplied by the two preparations.\nD. Match the initial surface fluorescence intensity using the same imaging settings, without separately calibrating fluorophores per bound complex.",
+  "question": "Which matching strategy most directly tests whether the labels differently perturb neuroligin organization?",
+  "choices": {
+    "A": "Match the measured fraction of neuroligin molecules initially occupied by each preparation.",
+    "B": "Measure soluble-biotin binding in the neuronal assay medium, then choose probe concentrations giving the same predicted occupancy in that soluble-binding measurement.",
+    "C": "Match the total concentration of functional biotin-binding sites supplied by the two preparations.",
+    "D": "Match the initial surface fluorescence intensity using the same imaging settings, without separately calibrating fluorophores per bound complex."
+  },
+  "revision": 2,
+  "method": "source-aware AI-edited revision"
+}

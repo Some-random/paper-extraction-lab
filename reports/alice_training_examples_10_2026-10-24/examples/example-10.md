@@ -1,79 +1,81 @@
-# 10. Background controls, compartment references and dual localization
+# 10. What does a proximity-labeling ratio measure?
 
 ## Question
 
-Split-TurboID was used to label proteins near contacts between the endoplasmic reticulum (ER) and mitochondria in human cells. Its fragments were attached separately to the ER membrane and the outer mitochondrial membrane. Nearby proteins were recovered for mass spectrometry. The authors used these sequential comparisons:
+Cho and colleagues used split-TurboID targeted to contacts between the endoplasmic reticulum and mitochondria. They compared the recovered proteins with a reference made using full-length TurboID in the cytosol.
 
-| Stage | Reference sample | Proteins retained in two independent +rapamycin replicates |
-|---|---|---|
-| Filter 1 | Split-TurboID with added biotin omitted | 607 and 619 |
-| Filter 2 | Full-length TurboID in the cytosol, after filter 1 | 97 and 97 |
-| Intersection of the filtered replicates | Both replicates | 67 |
+The contact-targeted samples were labeled for four hours; the cytosolic-reference samples for one minute. The authors chose these different durations because the enzymes had different activities. Under those conditions, the preparations gave comparable overall signals for biotinylated proteins.
 
-Split-TurboID samples were labeled for four hours; full-length TurboID samples for one minute. These are enrichment comparisons under the published conditions, not equal-duration catalytic-rate measurements.
+Proteins were first compared with an omit-added-biotin control, then filtered using their contact-targeted/cytosolic-reference enrichment ratios. The latter threshold was calibrated using a reference list of cytosolic proteins and the paper's 10% false-discovery criterion.
 
-**Question:** What does the cytosolic-reference filter add, and what kind of genuine contact-associated protein could it exclude?
+Consider a hypothetical protein P that reproducibly exceeds the omit-biotin background but fails the cytosolic-reference filter. No protein-specific labeling kinetics or independent localization measurements are available for P.
 
-- **A.** It removes biotin-independent capture rather than cytosolic labeling; therefore a protein present in both contact sites and cytosol should always be retained.
-- **B.** It favors contact-site labeling over cytosolic labeling; therefore a genuine contact-associated protein may be lost if it also labels strongly in the cytosol.
-- **C.** It favors general cytosolic labeling over contact-site labeling; therefore abundant cytosolic proteins should become more prominent in the final contact-site list.
-- **D.** It identifies direct binding between the two organelle membranes; therefore a retained protein is established as a physical tether that holds those membranes together.
+**Question:** Which interpretation best explains what this comparison establishes?
+
+- **A.** Dividing P's contact-targeted signal by 240 would compensate for the unequal labeling durations. The adjusted ratio could estimate its relative contact-encounter rate, although direct molecular binding would remain unproven.
+- **B.** P failed a comparison of accumulated labeling under these conditions. A cytosolic pool could depress its ratio even if P visits contacts, and covalent labels can persist after movement; matching bulk signal does not calibrate P's labeling kinetics or contact occupancy.
+- **C.** Matching overall labeling compensates for the enzymes' different activities. P's ratio can therefore estimate its relative contact occupancy; failure favors predominantly cytosolic localization, although brief visits to contacts would remain possible.
+- **D.** Calibrating the threshold with cytosolic reference proteins supplies an error probability for each candidate. A passing protein would have at most a 10% probability of being a false contact hit; P's failure chiefly reflects insufficient statistical confidence rather than compartment-dependent labeling.
 
 ## Answer
 
-B is correct: the cytosolic-reference filter favors contact-site labeling over general cytosolic labeling, but can exclude genuine contact-associated proteins that also label strongly in the cytosol.
+B gives the interpretation supported by this comparison: P did not pass a condition-specific enrichment filter on accumulated labeling.
 
-Reported observations: The no-added-biotin comparison retained 607 and 619 proteins. The subsequent cytosolic-reference comparison reduced these lists to 97 proteins each, with 67 shared between replicates. These numbers document progressively more selective enrichment and reproducibility criteria; they do not establish that every excluded protein was a false positive.
+What is measured: proximity labeling produces covalent modifications on accessible proteins near an active enzyme. Recovery therefore reflects a history of labeling, rather than a direct count of how many molecules occupy a contact at the moment of collection. A protein can acquire a label during a visit and move elsewhere while retaining it. Label persistence is subject to protein turnover and other biological processes; it is not permanent by definition.
 
-What each filter adds: TurboID biotinylates nearby accessible proteins, so recovery reflects proximity-dependent labeling as well as factors such as protein abundance and exposure to the enzyme. Filter 1 addresses background recovery present without added biotin, including nonspecific capture and pre-existing biotinylation. It does not by itself establish contact-site specificity. Filter 2 adds a spatial-enrichment criterion: candidates must be preferentially labeled by contact-targeted split-TurboID relative to cytosolic full-length TurboID. It therefore reduces inclusion of proteins that are readily labeled in the general cytosolic environment.
+What the cytosolic reference adds: the comparison favors proteins recovered more strongly from contact-targeted labeling than from the cytosolic reference. A protein with both a contact-associated pool and a substantial cytosolic pool can be labeled in both conditions. Strong cytosolic-reference labeling can reduce its ratio even when genuine contact association occurs. The paper explicitly discusses loss of such dual-localized proteins through this filtering approach.
 
-Potential genuine exclusion: A peripheral contact-associated protein could have both a contact-localized pool and a substantial soluble cytosolic pool. Alternatively, it could visit contacts only transiently. If its cytosolic-reference labeling is strong, its genuine contact-site signal may not be sufficiently enriched to pass filter 2. Such a protein is not necessarily absent from contacts; it fails the relative-enrichment criterion.
+Why the unequal durations matter: four hours and one minute sample different histories of protein movement and enzyme exposure. The two preparations also use different enzyme forms and locations. Comparable overall biotinylation establishes a bulk comparison, not a separate calibration for each protein. Local accessibility, enzyme exposure, abundance, movement and potential saturation can all affect a particular protein's recovered signal.
 
-Assay interpretation: Split-TurboID labeling lasted four hours, whereas full-length TurboID labeling lasted one minute. The filter compares enrichment under those specific conditions, not equal-duration catalytic rates. Proximity labeling also does not demonstrate direct molecular binding or a functional membrane-tethering role.
+A introduces an unsupported kinetic correction. Four hours is 240 minutes, but dividing the contact-targeted signal by 240 only estimates a rate under additional assumptions about linear signal accumulation and relevant enzyme activity. Those assumptions are not established for P. A simple time correction therefore cannot recover its encounter rate from these endpoints.
 
-Why the other choices fail: A confuses the cytosolic-reference filter with the no-added-biotin control and incorrectly guarantees retention of dual-localized proteins. C reverses the direction of enrichment. D mistakes proximity evidence for proof of direct binding and physical tethering.
+C extends bulk matching into an individual localization measurement. Equal total signal can arise from different distributions of labeling across proteins and time. It does not convert P's ratio into a fraction of molecules, or a fraction of time, at contacts.
+
+D turns reference-set calibration into an individual error probability. The paper's cutoff uses recovery of specified reference false-positive proteins. That procedure does not assign a probability of incorrect localization to each candidate, and failing the filter is not itself an estimate of statistical confidence about P's compartment.
+
+P's result is compatible with several biological histories. It does not establish absence from contacts, contact residence time, the size of a contact-associated pool, or direct molecular binding. The supported conclusion remains its failure to meet this particular relative-labeling criterion.
 
 **Final answer: B**
 
 <details>
 <summary>Sources, evidence checks and limitations</summary>
 
+**Source-supported answer: B.** The edited answer selects B and matches that reference.
+
 ### Primary evidence
 
 [Split-TurboID enables contact-dependent proximity labeling in cells](https://doi.org/10.1073/pnas.1919528117) (2020).
 
-- Figure 3A and Results: complementary fragments targeted to opposing organelle membranes
-- Figure 4A: four-hour split-TurboID versus one-minute full-length TurboID labeling
-- Figure 4B: 607/619 after filter 1, 97/97 after filter 2, and 67 intersected +rapamycin hits
-- Figure 4B–C and Results, printed page 12147: omit-biotin versus cytosolic references
-- Results, printed page 12147, paragraph before Validation of ER–Mitochondria Contact Orphans: reduced recovery of dual-localized contact/cytosol proteins
+- Results before Figure 4 and Figure 3F: different enzyme activities, four-hour versus one-minute labeling, and comparable overall biotinylation
+- Figure 4A-C: labeling conditions and sequential omit-biotin/cytosolic-reference comparisons
+- Methods, Generation of ER-Mitochondria Proteome Lists: reference-protein sets and false-discovery cutoffs
+- Results before Validation of ER-Mitochondria Contact Orphans: reduced recovery of contact/cytosol dual-localized proteins
 
-Figure 4B contrasts added-biotin labeling with the omit-biotin baseline, then contrasts contact-site labeling with a cytosolic TurboID reference. The second comparison selects relative contact enrichment rather than generic labeling strength. The Results explicitly explain that ratiometric filtering can remove genuine proteins dual-localized to contacts and cytosol. Proximity labeling alone does not identify direct tethers.
+The published assay used different labeling durations to obtain comparable overall biotinylation and applied reference-based enrichment filters. The authors explicitly identify dual-localized contact/cytosol proteins as a source of lost recovery. P is an AI-created hypothetical case; its behavior is used to reason about the assay, not presented as a new observation from the paper.
 
 ### Answer limitations
 
-Individual protein enrichments and filtering thresholds are not provided, so the identities and number of genuine contact-associated proteins excluded cannot be determined. The unequal labeling durations also prevent interpreting these comparisons as measurements of intrinsic catalytic rates.
+- P is hypothetical. No identity, individual kinetics, localization measurement or numerical enrichment value is supplied.
+- The question does not establish how much temporal integration, saturation or any other mechanism affected an actual protein. Those are relevant possibilities, not measured explanations for P.
+- The ratio is an assay-condition-dependent enrichment measure; it is not a calibrated contact-occupancy fraction or encounter rate.
+- The reference-set false-discovery criterion does not establish a per-protein posterior error probability.
 
 ### Source qualifications
 
-- P06709 is the canonical native BirA backbone used for private source-exclusion screening, not the complete evolved split-TurboID fragments with tags, localization elements and dimerization domains.
-- The question interprets an already published assay and filtering comparison; it supplies neither novel variants nor engineering instructions.
-- Enrichment and specificity depend on the reported conditions; the unequal labeling times do not support a direct catalytic-rate comparison.
-- Surviving proteins are proximity-enriched candidates. Neither membership nor absence establishes direct binding, membrane tethering or exclusive localization.
-- The displayed counts are the +rapamycin replicate filtering path only; they are not the full union of +rapamycin and omit-rapamycin datasets.
+- The enzymes differ in activity and spatial distribution. Matching bulk labeling does not establish matched protein-specific kinetics or equal-duration sampling.
+- The original reported counts remain in the archived first version. They were removed from this question because selecting the answer should not depend on copying retained-list counts.
+- The original paper used reference-protein false-discovery cutoffs, not a rule retaining exactly 97 proteins per replicate.
+- Proximity enrichment does not establish direct binding, physical membrane tethering or exclusive localization.
 
-### Evidence review
+### Evidence review and revision provenance
 
-- Correctly reproduces the +rapamycin path 607/619 to 97/97 and intersection 67, without conflating excluded proteins with false positives.
-- Correctly separates omit-added-biotin background comparison from cytosolic-reference spatial enrichment.
-- Correctly explains the documented loss of genuine contact/cytosol dual-localized proteins through a relative enrichment threshold.
-- Labels a transient-contact scenario as a possible exclusion mechanism, not a paper-measured example.
-- Correctly preserves the four-hour split versus one-minute full-length caveat and does not infer intrinsic catalytic rates.
-- Correctly distinguishes proximity enrichment from direct physical binding or functional tether proof.
-- Correctly rejects A, C and D without requiring hidden source facts.
+- The stem no longer tells the solver to name an excluded genuine protein or states the correct interpretation of unequal durations.
+- All distractors preserve the reported observations. Their errors involve time normalization, bulk-to-protein calibration or reference-set-to-individual probability inference.
+- An independent solver given only the final question selected B and found no material ambiguity.
+- This is an experimental-interpretation exercise; its difficulty and training benefit have not been measured.
 
-Both the primary-source facts and this answer were reviewed by assistants. No material errors were found. This is not expert human validation or evidence of a training gain. Full author-copy PDFs were inspected; they are not redistributed here. No protein sequence, private gold label or full paper was supplied to the AI for this question.
+This question and explanation were AI-edited after source review. They are source-aware revisions, not unchanged teacher responses or a new blinded generation. Assistant review passed for the frozen revision; this is not expert human validation or evidence of a training gain. No new teacher API request was made for the revision.
 
-[Exact generation request](../artifacts/example-10/request.json) · [Unchanged generated output](../artifacts/example-10/generated_output.json)
+[Revised question](../artifacts/example-10/revised_question.json) · [Revised answer and source label](../artifacts/example-10/revised_answer.json) · [Original earlier question and answer](../artifacts/example-10/original_presentation.md) · [Original generation request for the earlier question](../artifacts/example-10/request.json) · [Unchanged original output for the earlier question](../artifacts/example-10/generated_output.json) · [Revision record](../revision_v2.json)
 
 </details>

@@ -1,0 +1,39 @@
+{
+  "id": "example-10",
+  "worked_solution": "B gives the interpretation supported by this comparison: P did not pass a condition-specific enrichment filter on accumulated labeling.\n\nWhat is measured: proximity labeling produces covalent modifications on accessible proteins near an active enzyme. Recovery therefore reflects a history of labeling, rather than a direct count of how many molecules occupy a contact at the moment of collection. A protein can acquire a label during a visit and move elsewhere while retaining it. Label persistence is subject to protein turnover and other biological processes; it is not permanent by definition.\n\nWhat the cytosolic reference adds: the comparison favors proteins recovered more strongly from contact-targeted labeling than from the cytosolic reference. A protein with both a contact-associated pool and a substantial cytosolic pool can be labeled in both conditions. Strong cytosolic-reference labeling can reduce its ratio even when genuine contact association occurs. The paper explicitly discusses loss of such dual-localized proteins through this filtering approach.\n\nWhy the unequal durations matter: four hours and one minute sample different histories of protein movement and enzyme exposure. The two preparations also use different enzyme forms and locations. Comparable overall biotinylation establishes a bulk comparison, not a separate calibration for each protein. Local accessibility, enzyme exposure, abundance, movement and potential saturation can all affect a particular protein's recovered signal.\n\nA introduces an unsupported kinetic correction. Four hours is 240 minutes, but dividing the contact-targeted signal by 240 only estimates a rate under additional assumptions about linear signal accumulation and relevant enzyme activity. Those assumptions are not established for P. A simple time correction therefore cannot recover its encounter rate from these endpoints.\n\nC extends bulk matching into an individual localization measurement. Equal total signal can arise from different distributions of labeling across proteins and time. It does not convert P's ratio into a fraction of molecules, or a fraction of time, at contacts.\n\nD turns reference-set calibration into an individual error probability. The paper's cutoff uses recovery of specified reference false-positive proteins. That procedure does not assign a probability of incorrect localization to each candidate, and failing the filter is not itself an estimate of statistical confidence about P's compartment.\n\nP's result is compatible with several biological histories. It does not establish absence from contacts, contact residence time, the size of a contact-associated pool, or direct molecular binding. The supported conclusion remains its failure to meet this particular relative-labeling criterion.",
+  "selected_answer": "B",
+  "source_supported_answer": "B",
+  "paper": {
+    "title": "Split-TurboID enables contact-dependent proximity labeling in cells",
+    "url": "https://doi.org/10.1073/pnas.1919528117",
+    "year": 2020,
+    "evidence_locations": [
+      "Results before Figure 4 and Figure 3F: different enzyme activities, four-hour versus one-minute labeling, and comparable overall biotinylation",
+      "Figure 4A-C: labeling conditions and sequential omit-biotin/cytosolic-reference comparisons",
+      "Methods, Generation of ER-Mitochondria Proteome Lists: reference-protein sets and false-discovery cutoffs",
+      "Results before Validation of ER-Mitochondria Contact Orphans: reduced recovery of contact/cytosol dual-localized proteins"
+    ]
+  },
+  "source_support": "The published assay used different labeling durations to obtain comparable overall biotinylation and applied reference-based enrichment filters. The authors explicitly identify dual-localized contact/cytosol proteins as a source of lost recovery. P is an AI-created hypothetical case; its behavior is used to reason about the assay, not presented as a new observation from the paper.",
+  "limitations": [
+    "P is hypothetical. No identity, individual kinetics, localization measurement or numerical enrichment value is supplied.",
+    "The question does not establish how much temporal integration, saturation or any other mechanism affected an actual protein. Those are relevant possibilities, not measured explanations for P.",
+    "The ratio is an assay-condition-dependent enrichment measure; it is not a calibrated contact-occupancy fraction or encounter rate.",
+    "The reference-set false-discovery criterion does not establish a per-protein posterior error probability."
+  ],
+  "source_qualifications": [
+    "The enzymes differ in activity and spatial distribution. Matching bulk labeling does not establish matched protein-specific kinetics or equal-duration sampling.",
+    "The original reported counts remain in the archived first version. They were removed from this question because selecting the answer should not depend on copying retained-list counts.",
+    "The original paper used reference-protein false-discovery cutoffs, not a rule retaining exactly 97 proteins per replicate.",
+    "Proximity enrichment does not establish direct binding, physical membrane tethering or exclusive localization."
+  ],
+  "review_notes": [
+    "The stem no longer tells the solver to name an excluded genuine protein or states the correct interpretation of unequal durations.",
+    "All distractors preserve the reported observations. Their errors involve time normalization, bulk-to-protein calibration or reference-set-to-individual probability inference.",
+    "An independent solver given only the final question selected B and found no material ambiguity.",
+    "This is an experimental-interpretation exercise; its difficulty and training benefit have not been measured."
+  ],
+  "revision": 2,
+  "method": "source-aware AI-edited revision",
+  "expert_human_validation": false
+}

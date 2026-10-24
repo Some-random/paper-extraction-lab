@@ -1,0 +1,38 @@
+{
+  "id": "example-09",
+  "worked_solution": "A is the most direct comparison because it matches initial target engagement, rather than a proxy for it.\n\nThe biological question is whether the label changes the organization of the protein being observed. Before comparing later organization, the two treatments should engage comparable fractions of neuroligin molecules. Measuring that fraction directly addresses this variable. The shared independent readout then helps distinguish redistribution of neuroligin from differences in how the streptavidin probes themselves appear.\n\nWhy occupancy matters: soluble-biotin affinity, the number of available binding sites and the number of occupied target molecules are different quantities. Several active sites grouped on one tetramer can connect biotins on different targets. The same number of active sites distributed among separate monovalent tetramers does not create that connection through biotin binding. Thus, equal initial target coverage can coexist with different capacities to reorganize targets.\n\nIf the two labels produce different later organization at matched initial target occupancy, that would support differential probe-induced perturbation. It would not by itself prove that every observed cluster arose through direct bridging, or identify which treatment best reproduces an unlabeled native state.\n\nWhy the other matching strategies are less direct:\n\nB addresses a real evidence gap: the printed affinity measurements use tagged A4, while the cell experiment uses wild-type streptavidin. Measuring soluble-biotin binding in the relevant medium would improve that comparison. However, predicted occupancy in a soluble-binding measurement is not measured occupancy of membrane-bound neuroligin. Surface geometry, accessibility, multivalent attachment and the labeling history can change how the probes engage cellular targets. A comparable equilibrium affinity also does not establish identical binding kinetics.\n\nC matches the supply of functional sites. It does not establish how many neuroligin molecules are occupied. It also leaves the sites grouped differently: four on a multivalent complex versus one on each monovalent complex. Equal binding capacity supplied to cells therefore does not remove the biological distinction of interest.\n\nD matches an optical signal. Fluorescence counts fluorophores, rather than target molecules directly. Differences in fluorophores per bound complex, or in the number of targets engaged by each complex, can produce the same intensity with different target coverage. Using identical imaging settings does not supply those missing calibrations.\n\nThe distinction is between matching the actual biological variable and matching a convenient measurement related to it. All four strategies can be useful; A most directly controls initial target engagement for the stated comparison.",
+  "selected_answer": "A",
+  "source_supported_answer": "A",
+  "paper": {
+    "title": "A monovalent streptavidin with a single femtomolar biotin binding site",
+    "url": "https://doi.org/10.1038/nmeth861",
+    "year": 2006,
+    "evidence_locations": [
+      "Table 1, printed page 268: bound-biotin stoichiometry for A4 and A1D3",
+      "Figure 3b and Results, printed page 269: soluble-biotin affinity measurements",
+      "Figure 4a and Results, printed page 270: initially diffuse and later divergent neuroligin labeling",
+      "Introduction and Discussion: distinction between strong biotin binding and multivalent target crosslinking"
+    ]
+  },
+  "source_support": "The paper supports the affinity, binding-site counts and neuronal labeling observations. Its distinction between affinity and multivalent crosslinking motivates the revised question. The occupancy-matched comparison and independent readout are AI-created follow-up reasoning, not an additional experiment or result reported by the authors.",
+  "limitations": [
+    "This is a proposed comparison. No occupancy-matched follow-up or independent-readout outcome is asserted to have been measured.",
+    "An independent readout must itself avoid linking or substantially perturbing the targets. No particular implementation is assumed.",
+    "Matched occupancy can test differential perturbation, but does not establish which condition reproduces native organization; a suitable independent baseline would be needed.",
+    "The comparison does not isolate every difference between preparations or prove the molecular origin of every cluster."
+  ],
+  "source_qualifications": [
+    "The affinity data compare tagged A4 with A1D3. The published neuronal experiment compares wild-type streptavidin with A1D3; that distinction is explicit in the question.",
+    "A1D3 is monovalent and tetrameric. Functional valency, oligomeric assembly, equilibrium affinity and target occupancy are separate properties.",
+    "The question concerns transfected acceptor-peptide-tagged neuroligin-1. It does not claim the same outcome for every native receptor."
+  ],
+  "review_notes": [
+    "All four strategies share the same downstream organization readout; no option is singled out merely by measuring that endpoint.",
+    "Rejected choices are compatible with the printed observations. They rely on soluble binding, supplied site concentration or fluorescence as an insufficiently calibrated proxy for occupied targets.",
+    "An independent solver given only the final question selected A and found no material ambiguity.",
+    "Question difficulty and benefit for model training have not been measured."
+  ],
+  "revision": 2,
+  "method": "source-aware AI-edited revision",
+  "expert_human_validation": false
+}

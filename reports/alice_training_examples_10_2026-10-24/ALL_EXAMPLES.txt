@@ -401,11 +401,11 @@ Therefore, D best explains both the overall sequence organization and the candid
 
 ---
 
-# 9. Binding affinity versus valency and probe-induced clustering
+# 9. Testing whether a protein label changes its target
 
 ## Question
 
-Streptavidin is used to attach labels to biotinylated proteins. Compare these published observations. A4 is a tetramer of four active, His-tagged subunits; A1D3 is a tetramer containing one active and three binding-inactive subunits. The affinity measurements below use these tagged preparations, whereas the cellular comparison uses wild-type streptavidin versus A1D3.
+Streptavidin is used to label biotinylated proteins. A4 is a tetramer of four active, His-tagged subunits; A1D3 is a tetramer containing one active and three binding-inactive subunits. The affinity measurements below use these tagged preparations, whereas the cellular comparison uses wild-type streptavidin versus A1D3.
 
 | Preparation | Biotins bound per tetramer | Biotin Kd, mean ± SEM |
 |---|---|---|
@@ -414,65 +414,76 @@ Streptavidin is used to attach labels to biotinylated proteins. Compare these pu
 
 In cultured neurons expressing acceptor-peptide-tagged neuroligin-1, both fluorescent labels initially gave diffuse surface labeling. Two hours later, wild-type streptavidin produced strong clustering, whereas A1D3 labeling remained predominantly diffuse.
 
-**Question:** Which explanation best reconciles the binding measurements with the cellular labeling pattern?
+A colleague argues: "Because the soluble-biotin affinities are similar, the two labels should be interchangeable for observing neuroligin's native organization once the amount of initial labeling is matched."
 
-- **A.** A1D3 retains strong binding at its remaining site but has fewer sites for bridging labeled proteins; affinity and crosslinking capacity can therefore separate.
-- **B.** A1D3 retains four-site bridging but has substantially weaker binding at every site; reduced occupancy therefore explains the predominantly diffuse labeling.
-- **C.** A1D3 loses tetramer assembly and its neighboring-subunit support for binding; monomer formation therefore explains the reduced cellular clustering.
-- **D.** A1D3 retains four functional binding sites because its Kd is similar to A4; the Kd measurement therefore establishes equivalent crosslinking capacity.
+In each proposed follow-up, the chosen matching strategy would be followed by tracking neuroligin organization with the same independent readout that does not link target molecules together. These are thought-experiment comparisons, not additional experiments reported in the paper.
+
+**Question:** Which matching strategy most directly tests whether the labels differently perturb neuroligin organization?
+
+- **A.** Match the measured fraction of neuroligin molecules initially occupied by each preparation.
+- **B.** Measure soluble-biotin binding in the neuronal assay medium, then choose probe concentrations giving the same predicted occupancy in that soluble-binding measurement.
+- **C.** Match the total concentration of functional biotin-binding sites supplied by the two preparations.
+- **D.** Match the initial surface fluorescence intensity using the same imaging settings, without separately calibrating fluorophores per bound complex.
 
 ## Answer
 
-A best reconciles the observations because binding affinity and binding valency are different properties.
+A is the most direct comparison because it matches initial target engagement, rather than a proxy for it.
 
-Measured binding: A4 binds four biotins per tetramer, whereas A1D3 binds only one. Nevertheless, their biotin Kd values—(4.4 ± 1.1) × 10^-14 M and (4.8 ± 0.5) × 10^-14 M, respectively—are very similar. These measurements support retention of strong binding at A1D3’s remaining functional site, rather than substantial weakening of that site. Similar Kd values do not imply equal numbers of functional binding sites.
+The biological question is whether the label changes the organization of the protein being observed. Before comparing later organization, the two treatments should engage comparable fractions of neuroligin molecules. Measuring that fraction directly addresses this variable. The shared independent readout then helps distinguish redistribution of neuroligin from differences in how the streptavidin probes themselves appear.
 
-Biological mechanism: Kd describes equilibrium binding affinity. Crosslinking instead requires a reagent to engage at least two distinct target molecules simultaneously. Wild-type streptavidin has multiple functional biotin-binding sites and can therefore bridge biotinylated surface proteins. A1D3 remains tetrameric, but its single functional site cannot directly bridge two biotinylated proteins through biotin binding.
+Why occupancy matters: soluble-biotin affinity, the number of available binding sites and the number of occupied target molecules are different quantities. Several active sites grouped on one tetramer can connect biotins on different targets. The same number of active sites distributed among separate monovalent tetramers does not create that connection through biotin binding. Thus, equal initial target coverage can coexist with different capacities to reorganize targets.
 
-Connection to the cellular observations: Both labels can bind biotinylated neuroligin-1, explaining why both initially label the surface. The strong clustering observed after two hours with wild-type streptavidin is consistent with its multivalent crosslinking capacity. Predominantly diffuse A1D3 labeling is consistent with high-affinity attachment without direct bridging of separate labeled proteins.
+If the two labels produce different later organization at matched initial target occupancy, that would support differential probe-induced perturbation. It would not by itself prove that every observed cluster arose through direct bridging, or identify which treatment best reproduces an unlabeled native state.
 
-Why the alternatives fail:
-• B contradicts both the one-biotin-per-tetramer measurement and the similar measured affinities.
-• C contradicts the stated tetrameric assembly of A1D3; reduced functional valency does not require monomer formation.
-• D confuses affinity with valency. A similar Kd cannot establish four functional sites or equivalent crosslinking capacity, and the measured binding stoichiometry explicitly shows only one functional site in A1D3.
+Why the other matching strategies are less direct:
+
+B addresses a real evidence gap: the printed affinity measurements use tagged A4, while the cell experiment uses wild-type streptavidin. Measuring soluble-biotin binding in the relevant medium would improve that comparison. However, predicted occupancy in a soluble-binding measurement is not measured occupancy of membrane-bound neuroligin. Surface geometry, accessibility, multivalent attachment and the labeling history can change how the probes engage cellular targets. A comparable equilibrium affinity also does not establish identical binding kinetics.
+
+C matches the supply of functional sites. It does not establish how many neuroligin molecules are occupied. It also leaves the sites grouped differently: four on a multivalent complex versus one on each monovalent complex. Equal binding capacity supplied to cells therefore does not remove the biological distinction of interest.
+
+D matches an optical signal. Fluorescence counts fluorophores, rather than target molecules directly. Differences in fluorophores per bound complex, or in the number of targets engaged by each complex, can produce the same intensity with different target coverage. Using identical imaging settings does not supply those missing calibrations.
+
+The distinction is between matching the actual biological variable and matching a convenient measurement related to it. All four strategies can be useful; A most directly controls initial target engagement for the stated comparison.
 
 **Final answer: A**
 
 ---
 
-# 10. Background controls, compartment references and dual localization
+# 10. What does a proximity-labeling ratio measure?
 
 ## Question
 
-Split-TurboID was used to label proteins near contacts between the endoplasmic reticulum (ER) and mitochondria in human cells. Its fragments were attached separately to the ER membrane and the outer mitochondrial membrane. Nearby proteins were recovered for mass spectrometry. The authors used these sequential comparisons:
+Cho and colleagues used split-TurboID targeted to contacts between the endoplasmic reticulum and mitochondria. They compared the recovered proteins with a reference made using full-length TurboID in the cytosol.
 
-| Stage | Reference sample | Proteins retained in two independent +rapamycin replicates |
-|---|---|---|
-| Filter 1 | Split-TurboID with added biotin omitted | 607 and 619 |
-| Filter 2 | Full-length TurboID in the cytosol, after filter 1 | 97 and 97 |
-| Intersection of the filtered replicates | Both replicates | 67 |
+The contact-targeted samples were labeled for four hours; the cytosolic-reference samples for one minute. The authors chose these different durations because the enzymes had different activities. Under those conditions, the preparations gave comparable overall signals for biotinylated proteins.
 
-Split-TurboID samples were labeled for four hours; full-length TurboID samples for one minute. These are enrichment comparisons under the published conditions, not equal-duration catalytic-rate measurements.
+Proteins were first compared with an omit-added-biotin control, then filtered using their contact-targeted/cytosolic-reference enrichment ratios. The latter threshold was calibrated using a reference list of cytosolic proteins and the paper's 10% false-discovery criterion.
 
-**Question:** What does the cytosolic-reference filter add, and what kind of genuine contact-associated protein could it exclude?
+Consider a hypothetical protein P that reproducibly exceeds the omit-biotin background but fails the cytosolic-reference filter. No protein-specific labeling kinetics or independent localization measurements are available for P.
 
-- **A.** It removes biotin-independent capture rather than cytosolic labeling; therefore a protein present in both contact sites and cytosol should always be retained.
-- **B.** It favors contact-site labeling over cytosolic labeling; therefore a genuine contact-associated protein may be lost if it also labels strongly in the cytosol.
-- **C.** It favors general cytosolic labeling over contact-site labeling; therefore abundant cytosolic proteins should become more prominent in the final contact-site list.
-- **D.** It identifies direct binding between the two organelle membranes; therefore a retained protein is established as a physical tether that holds those membranes together.
+**Question:** Which interpretation best explains what this comparison establishes?
+
+- **A.** Dividing P's contact-targeted signal by 240 would compensate for the unequal labeling durations. The adjusted ratio could estimate its relative contact-encounter rate, although direct molecular binding would remain unproven.
+- **B.** P failed a comparison of accumulated labeling under these conditions. A cytosolic pool could depress its ratio even if P visits contacts, and covalent labels can persist after movement; matching bulk signal does not calibrate P's labeling kinetics or contact occupancy.
+- **C.** Matching overall labeling compensates for the enzymes' different activities. P's ratio can therefore estimate its relative contact occupancy; failure favors predominantly cytosolic localization, although brief visits to contacts would remain possible.
+- **D.** Calibrating the threshold with cytosolic reference proteins supplies an error probability for each candidate. A passing protein would have at most a 10% probability of being a false contact hit; P's failure chiefly reflects insufficient statistical confidence rather than compartment-dependent labeling.
 
 ## Answer
 
-B is correct: the cytosolic-reference filter favors contact-site labeling over general cytosolic labeling, but can exclude genuine contact-associated proteins that also label strongly in the cytosol.
+B gives the interpretation supported by this comparison: P did not pass a condition-specific enrichment filter on accumulated labeling.
 
-Reported observations: The no-added-biotin comparison retained 607 and 619 proteins. The subsequent cytosolic-reference comparison reduced these lists to 97 proteins each, with 67 shared between replicates. These numbers document progressively more selective enrichment and reproducibility criteria; they do not establish that every excluded protein was a false positive.
+What is measured: proximity labeling produces covalent modifications on accessible proteins near an active enzyme. Recovery therefore reflects a history of labeling, rather than a direct count of how many molecules occupy a contact at the moment of collection. A protein can acquire a label during a visit and move elsewhere while retaining it. Label persistence is subject to protein turnover and other biological processes; it is not permanent by definition.
 
-What each filter adds: TurboID biotinylates nearby accessible proteins, so recovery reflects proximity-dependent labeling as well as factors such as protein abundance and exposure to the enzyme. Filter 1 addresses background recovery present without added biotin, including nonspecific capture and pre-existing biotinylation. It does not by itself establish contact-site specificity. Filter 2 adds a spatial-enrichment criterion: candidates must be preferentially labeled by contact-targeted split-TurboID relative to cytosolic full-length TurboID. It therefore reduces inclusion of proteins that are readily labeled in the general cytosolic environment.
+What the cytosolic reference adds: the comparison favors proteins recovered more strongly from contact-targeted labeling than from the cytosolic reference. A protein with both a contact-associated pool and a substantial cytosolic pool can be labeled in both conditions. Strong cytosolic-reference labeling can reduce its ratio even when genuine contact association occurs. The paper explicitly discusses loss of such dual-localized proteins through this filtering approach.
 
-Potential genuine exclusion: A peripheral contact-associated protein could have both a contact-localized pool and a substantial soluble cytosolic pool. Alternatively, it could visit contacts only transiently. If its cytosolic-reference labeling is strong, its genuine contact-site signal may not be sufficiently enriched to pass filter 2. Such a protein is not necessarily absent from contacts; it fails the relative-enrichment criterion.
+Why the unequal durations matter: four hours and one minute sample different histories of protein movement and enzyme exposure. The two preparations also use different enzyme forms and locations. Comparable overall biotinylation establishes a bulk comparison, not a separate calibration for each protein. Local accessibility, enzyme exposure, abundance, movement and potential saturation can all affect a particular protein's recovered signal.
 
-Assay interpretation: Split-TurboID labeling lasted four hours, whereas full-length TurboID labeling lasted one minute. The filter compares enrichment under those specific conditions, not equal-duration catalytic rates. Proximity labeling also does not demonstrate direct molecular binding or a functional membrane-tethering role.
+A introduces an unsupported kinetic correction. Four hours is 240 minutes, but dividing the contact-targeted signal by 240 only estimates a rate under additional assumptions about linear signal accumulation and relevant enzyme activity. Those assumptions are not established for P. A simple time correction therefore cannot recover its encounter rate from these endpoints.
 
-Why the other choices fail: A confuses the cytosolic-reference filter with the no-added-biotin control and incorrectly guarantees retention of dual-localized proteins. C reverses the direction of enrichment. D mistakes proximity evidence for proof of direct binding and physical tethering.
+C extends bulk matching into an individual localization measurement. Equal total signal can arise from different distributions of labeling across proteins and time. It does not convert P's ratio into a fraction of molecules, or a fraction of time, at contacts.
+
+D turns reference-set calibration into an individual error probability. The paper's cutoff uses recovery of specified reference false-positive proteins. That procedure does not assign a probability of incorrect localization to each candidate, and failing the filter is not itself an estimate of statistical confidence about P's compartment.
+
+P's result is compatible with several biological histories. It does not establish absence from contacts, contact residence time, the size of a contact-associated pool, or direct molecular binding. The supported conclusion remains its failure to meet this particular relative-labeling criterion.
 
 **Final answer: B**

@@ -7,5 +7,5 @@ example,question_topic,question_and_answer
 6,Membrane anchoring,examples/example-06.md
 7,Protein-interaction domains,examples/example-07.md
 8,Chromophore binding,examples/example-08.md
-9,Binding affinity versus valency and probe-induced clustering,examples/example-09.md
-10,"Background controls, compartment references and dual localization",examples/example-10.md
+9,Testing whether a protein label changes its target,examples/example-09.md
+10,What does a proximity-labeling ratio measure?,examples/example-10.md

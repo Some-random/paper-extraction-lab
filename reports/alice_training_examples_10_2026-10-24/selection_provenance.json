@@ -70,19 +70,42 @@
       "id": "example-09",
       "reused": false,
       "source_case": "alice-streptavidin-valency",
-      "student_prompt_sha256": "d6bf3724a3ccf900f4ebabf6abd6d651a6766365fc7b708b1bcd1bf98c2ebc0a",
-      "output_sha256": "f6704f2edac45e3a3c61f7c490520451455fa7aa4174e139bcf483b2494e6bb3",
-      "paper": "https://doi.org/10.1038/nmeth861"
+      "student_prompt_sha256": "a184b0baa90fded0b5e1017373c655959ed56546b44f9aedf119009f122ef97c",
+      "output_sha256": "370476a6b9c931a61fca8c93f6af375a5e0f8c48c9de0f1b6166d98291570d63",
+      "paper": "https://doi.org/10.1038/nmeth861",
+      "revision": 2,
+      "method": "source-aware AI-edited revision",
+      "original_student_prompt_sha256": "d6bf3724a3ccf900f4ebabf6abd6d651a6766365fc7b708b1bcd1bf98c2ebc0a",
+      "original_output_sha256": "f6704f2edac45e3a3c61f7c490520451455fa7aa4174e139bcf483b2494e6bb3",
+      "worked_solution_sha256": "8ff2e4bb04f7c0d206a1f4f1f07d51643db5288f1e786b197c40a6372d165d7e",
+      "source_supported_answer": "A",
+      "original_generation_request": "artifacts/example-09/request.json",
+      "original_generated_output": "artifacts/example-09/generated_output.json",
+      "revised_question": "artifacts/example-09/revised_question.json",
+      "revised_answer": "artifacts/example-09/revised_answer.json"
     },
     {
       "id": "example-10",
       "reused": false,
       "source_case": "alice-split-turboid-localization-controls",
-      "student_prompt_sha256": "facae5a37fa9be2c7a4167c1e2fa137f358ce5b73fc28ffb716ef1e4a45ac5da",
-      "output_sha256": "567ace5db046f550b22c8f435fa2de57b5468d152b4bdf34ae61a6331600f466",
-      "paper": "https://doi.org/10.1073/pnas.1919528117"
+      "student_prompt_sha256": "d2c19235ef1f8e2ab056b996d72f4ab2780483093714bee1365d9408b8dcc118",
+      "output_sha256": "4cc5c5bd7c51ae269182e57ee33d4d1265af2cdfdee7446f3ec2032c1ecb1902",
+      "paper": "https://doi.org/10.1073/pnas.1919528117",
+      "revision": 2,
+      "method": "source-aware AI-edited revision",
+      "original_student_prompt_sha256": "facae5a37fa9be2c7a4167c1e2fa137f358ce5b73fc28ffb716ef1e4a45ac5da",
+      "original_output_sha256": "567ace5db046f550b22c8f435fa2de57b5468d152b4bdf34ae61a6331600f466",
+      "worked_solution_sha256": "b07e8b7d048058bd0c2ff461b7d3e5b3f90b967e85f126e7e3f0b4aee38b442b",
+      "source_supported_answer": "B",
+      "original_generation_request": "artifacts/example-10/request.json",
+      "original_generated_output": "artifacts/example-10/generated_output.json",
+      "revised_question": "artifacts/example-10/revised_question.json",
+      "revised_answer": "artifacts/example-10/revised_answer.json"
     }
   ],
   "expert_human_review_performed": false,
-  "student_training_released": false
+  "student_training_released": false,
+  "current_revision": 2,
+  "source_aware_edited_examples": 2,
+  "revision_record": "revision_v2.json"
 }

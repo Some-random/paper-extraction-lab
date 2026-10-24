@@ -1,0 +1,86 @@
+{
+  "revision": 2,
+  "method": "source-aware AI-edited revision",
+  "original_snapshot_commit": "3960ff5ffa3e2c403759e95c1792d9ea935dca0b",
+  "revised_examples": [
+    "example-09",
+    "example-10"
+  ],
+  "unchanged_examples": [
+    "example-01",
+    "example-02",
+    "example-03",
+    "example-04",
+    "example-05",
+    "example-06",
+    "example-07",
+    "example-08"
+  ],
+  "final_cases_sha256": "f8419b8712c30c25a0a7e45db822808a79019e7a35bb9fb694a9ca7b5a789f2f",
+  "review_record_sha256": "73d3699721e72751b231afa8761b577838fecd017578115b88742d690beacb9a",
+  "review_status": "PASS",
+  "review_type": "assistant source and question review",
+  "expert_human_validation": false,
+  "student_training_gain_measured": false,
+  "new_teacher_api_calls": 0,
+  "new_teacher_api_cost_usd": "0",
+  "original_generation_cost_usd": "0.70678",
+  "original_artifacts_preserved": true,
+  "provenance_note": "The current two questions and explanations were edited after source review. Original requests and generated outputs concern the earlier question versions; they are not responses to the revisions.",
+  "cases": [
+    {
+      "id": "example-09",
+      "title": "Testing whether a protein label changes its target",
+      "method": "source-aware AI-edited revision",
+      "student_prompt_sha256": "a184b0baa90fded0b5e1017373c655959ed56546b44f9aedf119009f122ef97c",
+      "worked_solution_sha256": "8ff2e4bb04f7c0d206a1f4f1f07d51643db5288f1e786b197c40a6372d165d7e",
+      "question_artifact_sha256": "7508f0dd4eb251c607ede4b6806bf634cf6224b1d09aaf2ddb3973a302c82d95",
+      "answer_artifact_sha256": "370476a6b9c931a61fca8c93f6af375a5e0f8c48c9de0f1b6166d98291570d63",
+      "original_request_sha256": "e93bd3392bdd4580342904ffa87fae42b3798de98b41af9333f24e89688d0a15",
+      "original_output_sha256": "f6704f2edac45e3a3c61f7c490520451455fa7aa4174e139bcf483b2494e6bb3",
+      "source_supported_answer": "A",
+      "selected_answer": "A",
+      "paper": {
+        "title": "A monovalent streptavidin with a single femtomolar biotin binding site",
+        "url": "https://doi.org/10.1038/nmeth861",
+        "year": 2006,
+        "evidence_locations": [
+          "Table 1, printed page 268: bound-biotin stoichiometry for A4 and A1D3",
+          "Figure 3b and Results, printed page 269: soluble-biotin affinity measurements",
+          "Figure 4a and Results, printed page 270: initially diffuse and later divergent neuroligin labeling",
+          "Introduction and Discussion: distinction between strong biotin binding and multivalent target crosslinking"
+        ]
+      },
+      "review_status": "PASS",
+      "new_teacher_api_calls": 0
+    },
+    {
+      "id": "example-10",
+      "title": "What does a proximity-labeling ratio measure?",
+      "method": "source-aware AI-edited revision",
+      "student_prompt_sha256": "d2c19235ef1f8e2ab056b996d72f4ab2780483093714bee1365d9408b8dcc118",
+      "worked_solution_sha256": "b07e8b7d048058bd0c2ff461b7d3e5b3f90b967e85f126e7e3f0b4aee38b442b",
+      "question_artifact_sha256": "020e8774c32f2ac014f3a67b937fd68d4dfa9f6af6cc569944c9717f508e7861",
+      "answer_artifact_sha256": "4cc5c5bd7c51ae269182e57ee33d4d1265af2cdfdee7446f3ec2032c1ecb1902",
+      "original_request_sha256": "865d2285616d30dd6a6880c7eddb4bc4c963c3d5937edd71edcf8bafe656003f",
+      "original_output_sha256": "567ace5db046f550b22c8f435fa2de57b5468d152b4bdf34ae61a6331600f466",
+      "source_supported_answer": "B",
+      "selected_answer": "B",
+      "paper": {
+        "title": "Split-TurboID enables contact-dependent proximity labeling in cells",
+        "url": "https://doi.org/10.1073/pnas.1919528117",
+        "year": 2020,
+        "evidence_locations": [
+          "Results before Figure 4 and Figure 3F: different enzyme activities, four-hour versus one-minute labeling, and comparable overall biotinylation",
+          "Figure 4A-C: labeling conditions and sequential omit-biotin/cytosolic-reference comparisons",
+          "Methods, Generation of ER-Mitochondria Proteome Lists: reference-protein sets and false-discovery cutoffs",
+          "Results before Validation of ER-Mitochondria Contact Orphans: reduced recovery of contact/cytosol dual-localized proteins"
+        ]
+      },
+      "review_status": "PASS",
+      "new_teacher_api_calls": 0
+    }
+  ],
+  "questions_frozen_at_utc": "2026-10-24T06:47:10.402917+00:00",
+  "question_freeze_sha256": "e38d4e8767ab2794f73dc6a347ace034750cc06b648784c323ae56a577b7e27f"
+}
