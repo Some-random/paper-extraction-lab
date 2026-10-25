@@ -10,7 +10,7 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[AI-created protein reasoning pilot](reports/astra_protein_pilot_2026-10-23/README.md):** one complete protein question and paper-grounded solution, with the full sequence, supporting paper, generation settings, evidence checks and measured usage cost.
 
-**[AI-created protein reasoning training data](reports/alice_training_examples_10_2026-10-24/README.md):** ten selected examples connecting sequences and published experiments to reusable biological reasoning, with enzyme-mutation examples first. Questions and worked answers appear up front; sources and limitations expand on request. Includes downloadable training question-and-answer messages.
+**[AI-created protein reasoning questions](reports/alice_training_examples_10_2026-10-24/README.md):** ten revised open-response examples with concise reference answers and assessment rubrics. They combine Ting-lab assay interpretation and research judgment with foundational sequence reasoning; sources and earlier versions remain linked.
 
 **[Nine sequence-only AI-created examples](reports/astra_sequence_only_nine_2026-10-23/README.md):** diverse protein questions with full sequences, worked solutions and source checks.
 

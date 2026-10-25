@@ -1,11 +1,11 @@
-example,question_topic,question_and_answer
-1,APEX: enzyme behavior depends on substrate conditions,examples/example-01.md
-2,APEX: why an active enzyme can still be a poor cellular reporter,examples/example-02.md
-3,TurboID and miniTurbo: when more labeling weakens the time window,examples/example-03.md
-4,Distinguishing heme from other cofactors,examples/example-04.md
-5,Calcium binding through repeated structural motifs,examples/example-05.md
-6,Membrane anchoring,examples/example-06.md
-7,Protein-interaction domains,examples/example-07.md
-8,Chromophore binding,examples/example-08.md
-9,Testing whether a protein label changes its target,examples/example-09.md
-10,What does a proximity-labeling ratio measure?,examples/example-10.md
+example,question_topic,question_and_answer,format
+1,APEX: what transfers across assay conditions?,examples/example-01.md,open_response
+2,APEX: can staining measure delivery of a reporter fusion?,examples/example-02.md,open_response
+3,Choosing a labeling tool for the measurement objective,examples/example-03.md,open_response
+4,Inferring a cofactor from a motif combination,examples/example-04.md,open_response
+5,Recognizing repeated calcium-binding loops,examples/example-05.md,open_response
+6,Separating membrane anchoring from topology,examples/example-06.md,open_response
+7,Distinguishing interaction domains from ligand motifs,examples/example-07.md,open_response
+8,Judging a chromophore-binding hypothesis,examples/example-08.md,open_response
+9,Does a label reveal or change protein organization?,examples/example-09.md,open_response
+10,What does exclusion from a proximity-labeling list mean?,examples/example-10.md,open_response

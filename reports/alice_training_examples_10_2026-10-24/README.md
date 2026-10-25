@@ -1,33 +1,37 @@
-# AI-created protein reasoning training data — ten examples
+# AI-created protein reasoning questions — ten revised examples
 
-Ten AI-created question-and-answer examples intended for protein-model training. The first three use enzyme engineering from Alice Ting's laboratory: APEX/APEX2 and TurboID. The remaining questions preserve variety in cofactors, calcium binding, membranes, interaction domains and labeling controls.
+Ten open-response questions with concise reference answers and assessment rubrics. The first three concern APEX/APEX2 and TurboID work from Alice Ting's laboratory. Questions 4–8 retain foundational sequence interpretation; questions 9–10 address probe perturbation and interpretation of filtered evidence.
 
-Each example shows the complete question, supplied sequence or experimental observations, choices and worked answer. Sources and limitations expand below each answer.
+**[Read all ten questions and answers](ALL_EXAMPLES.md)** · [Questions only](QUESTIONS_ONLY.md) · [Plain-text Q&A](ALL_EXAMPLES.txt) · [Selection and assessment rubric](RUBRIC.md)
 
-**[Read all ten questions and answers](ALL_EXAMPLES.md)** · [Plain-text Q&A](ALL_EXAMPLES.txt) · [Questions only](QUESTIONS_ONLY.md) · [Selection spreadsheet](selection.csv)
-
-| Example | Question topic |
+| Example | Topic |
 |---|---|
-| 1 | [APEX: enzyme behavior depends on substrate conditions](examples/example-01.md) |
-| 2 | [APEX: why an active enzyme can still be a poor cellular reporter](examples/example-02.md) |
-| 3 | [TurboID and miniTurbo: when more labeling weakens the time window](examples/example-03.md) |
-| 4 | [Distinguishing heme from other cofactors](examples/example-04.md) |
-| 5 | [Calcium binding through repeated structural motifs](examples/example-05.md) |
-| 6 | [Membrane anchoring](examples/example-06.md) |
-| 7 | [Protein-interaction domains](examples/example-07.md) |
-| 8 | [Chromophore binding](examples/example-08.md) |
-| 9 | [Testing whether a protein label changes its target](examples/example-09.md) |
-| 10 | [What does a proximity-labeling ratio measure?](examples/example-10.md) |
+| 1 | [APEX: what transfers across assay conditions?](examples/example-01.md) |
+| 2 | [APEX: can staining measure delivery of a reporter fusion?](examples/example-02.md) |
+| 3 | [Choosing a labeling tool for the measurement objective](examples/example-03.md) |
+| 4 | [Inferring a cofactor from a motif combination](examples/example-04.md) |
+| 5 | [Recognizing repeated calcium-binding loops](examples/example-05.md) |
+| 6 | [Separating membrane anchoring from topology](examples/example-06.md) |
+| 7 | [Distinguishing interaction domains from ligand motifs](examples/example-07.md) |
+| 8 | [Judging a chromophore-binding hypothesis](examples/example-08.md) |
+| 9 | [Does a label reveal or change protein organization?](examples/example-09.md) |
+| 10 | [What does exclusion from a proximity-labeling list mean?](examples/example-10.md) |
+
+The original five criteria remain: source-supported answers, fair input, reusable biological lessons, substantive clear reasoning, and variety. Revision 6 incorporates lab feedback by removing answer-choice shortcuts, unused sequence material and irrelevant numerical detail. Reference answers are illustrative; justified alternatives receive credit under each item's rubric. More explanation does not earn credit by itself.
+
+All ten are source-aware AI revisions. The supplied observations and retained sequences come from the earlier source-reviewed collection; hypothetical decisions and comparisons are identified in the notes. Assistant review is not expert human validation. Question difficulty and training benefit have not been measured. This collection remains separate from the completed 10,000-example training run.
 
 <details>
-<summary>Selection criteria and evidence checks</summary>
+<summary>Sources, versions and machine-readable files</summary>
 
-The examples were selected for a supported answer, fair input, a reusable biological lesson, clear reasoning and variety. All ten are AI-created. The collection includes generated explanations and explanations revised with source evidence. Creation and revision records are preserved in the [source provenance](selection_provenance.json) and [revision record](revision_v4.json).
+[Current revision](revision_v6.json) · [Review scope and checks](review_v6.json) · [Per-example provenance](selection_provenance.json) · [Earlier substantive revision](revision_v4.json).
 
-All ten selected answers agree with their recorded source evidence. Explanations include qualified biological inferences and calculations; cited papers do not prove every sentence. Reviews are assistant checks, not expert human ground truth. Training gains have not been measured, and this package does not release model training. Some questions use sequence and choices alone; others supply the observations needed for experimental reasoning. These examples are not a reproduction of the LiveProteinBench evaluation set.
+[Exact student prompts](questions.jsonl) · [Training messages](training_examples.jsonl) · [Reference answers and rubrics](verification.jsonl) · [Selection spreadsheet](selection.csv).
 
-[Training messages](training_examples.jsonl) · [Exact student prompts](questions.jsonl) · [Source provenance](selection_provenance.json) · [Verification labels](verification.jsonl) · [Generation records](revision_v4_usage.json).
+Revision 6 changes the machine-readable format to open responses. Letter-choice fields are removed; reference answers and assessment rubrics replace single-letter answer matches. `training_examples.jsonl` contains only the student question and the reference answer in its user/assistant messages. Source notes and grading rubrics remain outside those messages. These examples are not an automatically validated large training dataset.
 
-UniProt-derived sequence references retain [UniProt Consortium](https://www.uniprot.org/) attribution and [CC BY 4.0](https://www.uniprot.org/help/license) terms. Experimental observations are attributed to their primary papers. Full paper texts and PDFs are not redistributed.
+The ten per-example Markdown files are canonical. Run `python3 build_exports.py` to regenerate exports, and `python3 build_exports.py --check` to validate them. Earlier prompts, outputs and source-aware revisions remain in the existing artifacts and Git history; their creation and billing records are unchanged. No new teacher API calls were made for revision 6.
+
+UniProt-derived sequences retain [UniProt Consortium](https://www.uniprot.org/) attribution and [CC BY 4.0](https://www.uniprot.org/help/license) terms. Experimental observations are attributed to the linked primary papers. Full papers and PDFs are not redistributed.
 
 </details>

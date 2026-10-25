@@ -1,175 +1,157 @@
 {
-  "selected_existing": 8,
-  "newly_generated": 1,
+  "schema": "alice10-provenance-v6",
+  "current_revision": 6,
+  "authoring_method": "source_aware_assistant_revision",
   "examples": [
     {
       "id": "example-01",
-      "reused": true,
-      "source_report": "astra_enzyme_mutation_pool_2026-10-23",
-      "source_case": "case-001",
-      "student_prompt_sha256": "83bebb2b1c44021105b6d46b67989e2aea4ce0eab130f68957e18011fcc23010",
-      "output_sha256": "993f54784e47a0cf6fec294cb7cfac8387fc7c9c1b1fe554bcb8a875264f051d",
-      "revision_4_correction": {
-        "id": "example-01",
-        "method": "source-caption metadata clarification",
-        "student_prompt_changed": false,
-        "generated_answer_changed": false,
-        "source_caption": "wild-type soybean ascorbate-peroxidase reference backbone"
-      }
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "comparative evidence transfer",
+      "source_references": [
+        "https://doi.org/10.1038/nmeth.3179"
+      ],
+      "canonical_page": "examples/example-01.md",
+      "canonical_page_sha256": "85a3b2ec1edfa599250037a67605549b466d0b75f86b0594f3e4143100233c19",
+      "student_prompt_sha256": "28398e58553d862b5c98a1450119eb54a6f1fad372afad01a88a7d0881c514b8",
+      "reference_answer_sha256": "67722935137032dd611cc2ea5eef39b9dc6e123a5b09f9e5f352e3b3888f65be",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-01.md"
     },
     {
       "id": "example-02",
-      "reused": false,
-      "source_case": "alice-apex-monomerization-activity-v3",
-      "revision": 4,
-      "method": "fresh_teacher_unchanged",
-      "student_prompt_sha256": "f962cdfe5cf4ae4acecd02f3b326e8092de410c82284edf4569eff2c9da41fa2",
-      "worked_solution_sha256": "e9d205168635df49ffe1f6cfe553209d308c27e599049692e51e0f2a349fddb5",
-      "answer_artifact_sha256": "279ef67ef880b6fa2b0da13f73a17edd900d02b51afb871939755f5c601b87e2",
-      "request_sha256": "8197c742348a7ee3e54169b3643dbc93520bbd7c0ae0c16226b6b669f95b72da",
-      "paper": "https://doi.org/10.1038/nbt.2375",
-      "source_supported_answer": "C",
-      "selected_answer": "C",
-      "request_artifact": "artifacts/example-02/request.json",
-      "answer_artifact": "artifacts/example-02/generated_output.json",
-      "source_verification": "artifacts/example-02/source_verification.json",
-      "prior_example_replaced": true,
-      "fresh_teacher_output_available": true
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "cross-assay interpretation",
+      "source_references": [
+        "https://doi.org/10.1038/nbt.2375"
+      ],
+      "canonical_page": "examples/example-02.md",
+      "canonical_page_sha256": "1690e85c1d4463eb83d37fd50988e91c8896640461a86e3ca5e2ab56e71d7cb7",
+      "student_prompt_sha256": "c4e41dc942d07da66cb04dcd9989ae229336257e7809e7086f82d1cbf8e0d34c",
+      "reference_answer_sha256": "545eaafe591550e458e5f04ee149da95f99c5f21c4a7b97b006506d393c778f3",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-02.md"
     },
     {
       "id": "example-03",
-      "reused": false,
-      "source_case": "alice-turboid-m241t-tradeoff-v3",
-      "revision": 4,
-      "method": "source_aware_assistant_authored",
-      "student_prompt_sha256": "c8ab1b56c5d7392f931aae35b49c2a994544f7a2d7da33277606e061da519bde",
-      "worked_solution_sha256": "e97b4411e90018863209ba2ba1bf4651fd44999b1df882d0f3bd686574478f18",
-      "answer_artifact_sha256": "41813cc28d6c30f632b26389af3eb23be6c52d2919d64fad195af17d7e2a0334",
-      "request_sha256": "9fbb2dad55eafae33606f784e70c806ac59fe19cd39f322d8e421b5b0ddb4c10",
-      "paper": "https://doi.org/10.1038/nbt.4201",
-      "source_supported_answer": "B",
-      "selected_answer": "B",
-      "request_artifact": "artifacts/example-03/request.json",
-      "answer_artifact": "artifacts/example-03/source_aware_answer.json",
-      "source_verification": "artifacts/example-03/source_verification.json",
-      "prior_example_replaced": true,
-      "fresh_teacher_output_available": false
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "objective-dependent tool choice",
+      "source_references": [
+        "https://doi.org/10.1038/nbt.4201"
+      ],
+      "canonical_page": "examples/example-03.md",
+      "canonical_page_sha256": "f60fffa9119d2baeef9621e72539e01b8e7d4d9dde52ef22df499656f51f9498",
+      "student_prompt_sha256": "bf91e51b157fcf73aad21c90d68650f61417c64dc86f6d588fe2e6d798f105a5",
+      "reference_answer_sha256": "63e038c56daa0334c48fc45c141f8f2f0812f4b1a3b2e778da7c3a2b0b517d2b",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-03.md"
     },
     {
       "id": "example-04",
-      "reused": true,
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-004",
-      "student_prompt_sha256": "1119321cd7a5bd2a072c1a1e1eb8d8b138f2afc99daa696e31cb7ec51ef0c0bd",
-      "output_sha256": "e525c8336267ab1dee568e79f710e3245ff60303a3382c4174b8f37d1edc5690"
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "foundational cofactor inference",
+      "source_references": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/"
+      ],
+      "canonical_page": "examples/example-04.md",
+      "canonical_page_sha256": "064e1d7793e1ae3bdbc3e05bf49ce157c9bedb501ae3f7a7e5dd3465db4ad5d6",
+      "student_prompt_sha256": "46cbe5a4519fd14d1b19cbd8ad3b6da30d56c58849f2d3debee3ff68b398ed59",
+      "reference_answer_sha256": "d13e7ca86feb279e5de9d17e3465d93a31876bc149387102596eab218791bc94",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-04.md"
     },
     {
       "id": "example-05",
-      "reused": true,
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-005",
-      "student_prompt_sha256": "c51059d51b97f4097547c942d8bc59a460f6dd9f082bfb98b41b662f550894e8",
-      "output_sha256": "61637de060f6320b952958ace2007672650ea308412227b21dc8413c4b358dc0"
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "foundational repeated binding architecture",
+      "source_references": [
+        "https://pubmed.ncbi.nlm.nih.gov/22989873/",
+        "https://www.rcsb.org/structure/2LV7"
+      ],
+      "canonical_page": "examples/example-05.md",
+      "canonical_page_sha256": "5b7d85d4604eb01750124ff2eced058ecc2e3033b32d8dd473f36d22d97c7876",
+      "student_prompt_sha256": "3238ff6126c6e9ae205d899a607ece91fb0d6aef220670cfa77b30b4eed03bcb",
+      "reference_answer_sha256": "21df274377f73e1d33bae04f7e4c22bcf24a9e459ff0f60194426871083aaa0a",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-05.md"
     },
     {
       "id": "example-06",
-      "reused": true,
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-006",
-      "student_prompt_sha256": "ff543545afca298f1a8dd1e8b927c3d6a97ecf14b0f36b49a6440e8b05b442f6",
-      "output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18",
-      "revision_4_correction": {
-        "id": "example-06",
-        "revision": 4,
-        "method": "source-aware AI-edited coordinate clarification",
-        "source_record_sha256": "6df3def90efa53400f79ead01375012b7a7c390c5009165d435b46eeef1822a7",
-        "original_generated_output_sha256": "164b58920c91c81f0e4b932a55e0fb3a9c90ffb937721371fde2f106667f3f18",
-        "accession": "O89116",
-        "sequence_length": 217,
-        "annotated_transmembrane_interval": [
-          193,
-          213
-        ],
-        "annotated_interval_residues": "ILLVILGIIVVIAILTAIAFF",
-        "following_tail_interval": [
-          214,
-          217
-        ],
-        "following_tail_residues": "VKGH",
-        "annotation_evidence": "ECO:0000255 sequence analysis",
-        "measured_membrane_boundary": false,
-        "student_prompt_changed": false,
-        "selected_answer_changed": false,
-        "replacements": [
-          {
-            "before": "residues 193–214, ILLVILGIIVVIAILTAIAFFV. This 22-residue stretch",
-            "after": "residues 193–213, ILLVILGIIVVIAILTAIAFF. This 21-residue stretch"
-          },
-          {
-            "before": "Only KGH at positions 215–217 follows it",
-            "after": "Only VKGH at positions 214–217 follows it"
-          }
-        ]
-      }
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "foundational anchoring versus topology",
+      "source_references": [
+        "https://pubmed.ncbi.nlm.nih.gov/9705316/"
+      ],
+      "canonical_page": "examples/example-06.md",
+      "canonical_page_sha256": "d7d1d27667f07f44d4ac46ac2062491f6c334e90a7c9d30e27d2d108d1a4f27b",
+      "student_prompt_sha256": "8087e5fb7ee60fbc5f11760655c2eedf5ae1bde72688801fc326bcdbfec5531f",
+      "reference_answer_sha256": "8bd9dca5e491dd7e3282e5fe4aaff35300ce36f642aa25c36b4e08cb73545153",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-06.md"
     },
     {
       "id": "example-07",
-      "reused": true,
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-007",
-      "student_prompt_sha256": "769b2ce704a3f12a88bea134a14eb8cd53cb81f39b35fe0a3957d9473c41164d",
-      "output_sha256": "fd34a366e5e28a7076b351c477116b9cc9a1fc2c725755cebc3ca8c946e4b780"
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "foundational domains versus motifs",
+      "source_references": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050"
+      ],
+      "canonical_page": "examples/example-07.md",
+      "canonical_page_sha256": "bfaed71f9409f6f94e6ad017837d901b3ea84ca695f4cca46c753f81afe7f6b8",
+      "student_prompt_sha256": "6bdb2988e7059974c0fa060620bb513f49666fec64af2866cd2fc5c1d0e585e6",
+      "reference_answer_sha256": "3e5f33a69644011ddc2f3f80603f8bbcf9ce259e85c7c23e3352c0ab72e12450",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-07.md"
     },
     {
       "id": "example-08",
-      "reused": true,
-      "source_report": "astra_sequence_only_nine_2026-10-23",
-      "source_case": "case-008",
-      "student_prompt_sha256": "8ae686eba13d606969ae23ca81c0fb03ba7de23248330ac59c48cbf48bff0aec",
-      "output_sha256": "420edc455e6b8139b24376162b2f5fcd946c44de4133068e84de5e90394730a0"
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "foundational chromophore hypothesis",
+      "source_references": [
+        "https://pubmed.ncbi.nlm.nih.gov/11452084/",
+        "https://www.rcsb.org/structure/1JGJ",
+        "https://pubmed.ncbi.nlm.nih.gov/12368857/"
+      ],
+      "canonical_page": "examples/example-08.md",
+      "canonical_page_sha256": "e634bfdbec9d593771a5eb3708153c57825dfe01696701ac2f2129764065f185",
+      "student_prompt_sha256": "7c7cc4900ddbc7363e159a07b8abea0e8d2050d9a7ee1c8fdbeb4d2204c86497",
+      "reference_answer_sha256": "ab032ac07b1581cb2fea6e2a4ef739e013a13eae0f1538a8f67c97e61366bc0f",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-08.md"
     },
     {
       "id": "example-09",
-      "reused": false,
-      "source_case": "alice-streptavidin-valency",
-      "student_prompt_sha256": "a184b0baa90fded0b5e1017373c655959ed56546b44f9aedf119009f122ef97c",
-      "output_sha256": "370476a6b9c931a61fca8c93f6af375a5e0f8c48c9de0f1b6166d98291570d63",
-      "paper": "https://doi.org/10.1038/nmeth861",
-      "revision": 2,
-      "method": "source-aware AI-edited revision",
-      "original_student_prompt_sha256": "d6bf3724a3ccf900f4ebabf6abd6d651a6766365fc7b708b1bcd1bf98c2ebc0a",
-      "original_output_sha256": "f6704f2edac45e3a3c61f7c490520451455fa7aa4174e139bcf483b2494e6bb3",
-      "worked_solution_sha256": "8ff2e4bb04f7c0d206a1f4f1f07d51643db5288f1e786b197c40a6372d165d7e",
-      "source_supported_answer": "A",
-      "original_generation_request": "artifacts/example-09/request.json",
-      "original_generated_output": "artifacts/example-09/generated_output.json",
-      "revised_question": "artifacts/example-09/revised_question.json",
-      "revised_answer": "artifacts/example-09/revised_answer.json"
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "probe perturbation and evidence selection",
+      "source_references": [
+        "https://doi.org/10.1038/nmeth861"
+      ],
+      "canonical_page": "examples/example-09.md",
+      "canonical_page_sha256": "1bba4c412cef87cd8bdb767e40cbdc7db92451ae0518785e1be6cba28d1eb41f",
+      "student_prompt_sha256": "b4edeb6a0f7397cce7252bec855bbd199ac12bf129574467a067c092ed722938",
+      "reference_answer_sha256": "f8873fc158919ecdf7bd5dc88401179103bd7e7b94d38660bcea2d6447def562",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-09.md"
     },
     {
       "id": "example-10",
-      "reused": false,
-      "source_case": "alice-split-turboid-localization-controls",
-      "student_prompt_sha256": "d2c19235ef1f8e2ab056b996d72f4ab2780483093714bee1365d9408b8dcc118",
-      "output_sha256": "4cc5c5bd7c51ae269182e57ee33d4d1265af2cdfdee7446f3ec2032c1ecb1902",
-      "paper": "https://doi.org/10.1073/pnas.1919528117",
-      "revision": 2,
-      "method": "source-aware AI-edited revision",
-      "original_student_prompt_sha256": "facae5a37fa9be2c7a4167c1e2fa137f358ce5b73fc28ffb716ef1e4a45ac5da",
-      "original_output_sha256": "567ace5db046f550b22c8f435fa2de57b5468d152b4bdf34ae61a6331600f466",
-      "worked_solution_sha256": "b07e8b7d048058bd0c2ff461b7d3e5b3f90b967e85f126e7e3f0b4aee38b442b",
-      "source_supported_answer": "B",
-      "original_generation_request": "artifacts/example-10/request.json",
-      "original_generated_output": "artifacts/example-10/generated_output.json",
-      "revised_question": "artifacts/example-10/revised_question.json",
-      "revised_answer": "artifacts/example-10/revised_answer.json"
+      "revision": 6,
+      "method": "source_aware_assistant_revision",
+      "purpose": "enrichment-based research prioritization",
+      "source_references": [
+        "https://doi.org/10.1073/pnas.1919528117"
+      ],
+      "canonical_page": "examples/example-10.md",
+      "canonical_page_sha256": "f6635dd2cff7adc9af1bad5c49c87fd0f90e99c282d846e6c2bd49a3ad415aa2",
+      "student_prompt_sha256": "dc49f8553e0edd3e0f651ecbe125f8a5ce91e244aac7b825419586e3ca4f79a9",
+      "reference_answer_sha256": "8cc3ddfdfade5ec48dddf7ad87780dcfe18b9ff63ae3432bbb5cc6b412cd7552",
+      "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-10.md"
     }
   ],
+  "previous_commit": "a612e06348afdc5f00b6f504b2b0b4c526a8471b",
+  "revision_record": "revision_v6.json",
+  "review_record": "review_v6.json",
+  "new_teacher_api_calls": 0,
   "expert_human_review_performed": false,
   "student_training_released": false,
-  "current_revision": 4,
-  "source_aware_edited_examples": 4,
-  "revision_record": "revision_v4.json",
-  "newly_generated_this_revision": 1,
-  "new_source_aware_authored_examples": 1
+  "training_gain_measured": false
 }

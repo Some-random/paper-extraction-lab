@@ -1,105 +1,52 @@
-# Protein questions
+# Protein questions — revision 6
 
-# 1. APEX: enzyme behavior depends on substrate conditions
+Open-response questions. Reference answers and assessment criteria are in ALL_EXAMPLES.md.
 
-Reference protein sequence (canonical wild-type backbone; coordinate reference only):
+# 1. APEX: what transfers across assay conditions?
 
-```text
-MGKSYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAWHSAGTFDKGTKTGGPFGTIKHPAELAHSA
-NNGLDIAVRLLEPLKAEFPILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH
-LRDVFGKAMGLTDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLSGEKEGLLQLPSDKA
-LLSDPVFRPLVDKYAADEDAFFADYAEAHQKLSELGFADA
-```
+A published comparison of APEX and APEX2 reports the following approximate peroxide concentrations at which the measured reaction rate reaches its maximum and then declines:
 
+| Guaiacol concentration | APEX | APEX2 |
+|---|---|---|
+| 1.4 mM | 0.1 mM peroxide | 2.5 mM peroxide |
+| 0.5 mM | 0.05 mM peroxide | 0.5 mM peroxide |
 
-Reference: Q43758. All listed substitutions and deletions use the one-based canonical wild-type coordinates, including the initial methionine. Tags, linkers and targeting fusions are excluded. The sequence is not the complete tagged assay construct.
+Guaiacol is the electron-donor substrate in this purified-enzyme assay. The table gives the location of each rate maximum, not the height of that maximum. These are approximate reported observations, not fitted inhibition constants.
 
-Published variant identities:
-APEX: substitutions K14D, W41F, E112K; deletions none.
-APEX2: substitutions K14D, W41F, E112K, A134P; deletions none.
+A colleague wants to summarize this result as a single fold improvement in APEX2's peroxide tolerance and use that number to predict which enzyme will have the greater reaction rate at an untested guaiacol concentration.
 
-Supplied assay observations:
-- With 1.4 mM guaiacol, the reported rate maximum occurs around 0.1 mM peroxide for APEX and 2.5 mM for APEX2; rates decrease above these ranges.
-- With 0.5 mM guaiacol, the corresponding values are around 0.05 mM and 0.5 mM.
-
-**Question:** Which interpretation best explains the variant difference across both substrate conditions?
-
-**Choices:**
-
-- **A.** Only the higher-guaiacol condition shows an APEX2 advantage; the lower-guaiacol condition gives the same inhibition threshold for both enzymes.
-- **B.** Both substrate conditions show a higher peroxide-inhibition threshold for APEX2, with unchanged thresholds when guaiacol concentration changes.
-- **C.** Both substrate conditions show a higher peroxide-inhibition threshold for APEX2, with the threshold also depending on guaiacol concentration.
-- **D.** Both substrate conditions give the same peroxide-inhibition threshold for APEX and APEX2, despite different guaiacol concentrations.
+Write a defensible replacement conclusion. Explain what comparison is reproduced across the two tested conditions, whether one fold-improvement number captures the result, and whether the proposed reaction-rate prediction follows.
 
 ---
 
-# 2. APEX: why an active enzyme can still be a poor cellular reporter
+# 2. APEX: can staining measure delivery of a reporter fusion?
 
-Protein: pea cytosolic ascorbate peroxidase (APX). The full canonical wild-type sequence below is a coordinate reference; residue 1 is the initial methionine. It is not the complete expressed fusion.
+A published APX reporter study compared wild-type APX, a form with reduced self-association called mAPX, and a further reporter form called APEX. It reported:
 
-Protein sequence:
-
-```text
-MGKSYPTVSPDYQKAIEKAKRKLRGFIAEKKCAPLILRLAWHSAGTFDSKTKTGGPFGTIKHQAELAHGA
-NNGLDIAVRLLEPIKEQFPIVSYADFYQLAGVVAVEITGGPEVPFHPGREDKPEPPPEGRLPDATKGSDH
-LRDVFGKAMGLSDQDIVALSGGHTIGAAHKERSGFEGPWTSNPLIFDNSYFTELLTGEKDGLLQLPSDKA
-LLTDSVFRPLVEKYAADEDVFFADYAEAHLKLSELGFAEA
-```
-
-Published variants use those wild-type coordinates: mAPX carries K14D/E112K; APEX carries K14D/E112K/W41F. The enzyme cores have no deletion. Experimental tags, targeting sequences and fusion partners are not shown.
-
-Published observations:
-- Wild-type APX and mAPX had similar activity in the purified-enzyme comparison, which used guaiacol, an aromatic model substrate.
-- Wild-type APX fused to connexin43 was largely retained inside cells, whereas mAPX fusions reached gap junctions much more effectively.
-- In the cytosol, mAPX gave weaker DAB staining than wild-type APX; supplying heme increased its staining. DAB staining reports peroxidase-catalyzed product formation.
+- Wild-type APX and mAPX had similar activity in a purified-enzyme comparison using guaiacol, an aromatic model substrate.
+- When fused to connexin43, wild-type APX was largely retained inside cells, whereas mAPX fusions reached gap junctions much more effectively.
+- In a separate cytosolic comparison, mAPX gave weaker DAB staining than wild-type APX; supplying heme increased mAPX staining. DAB staining reports accumulated peroxidase-catalyzed product.
 - APEX gave stronger cellular DAB staining than mAPX while retaining similar predominantly monomeric behavior.
 
-**Question:** Which interpretation best preserves what the biochemical and cellular comparisons actually measure?
+An analyst wants to use cellular DAB intensity to rank how much connexin43 fusion reaches gap junctions across these reporter forms. Their argument is that similar purified guaiacol activity already controls for catalytic differences, leaving staining intensity to report correctly localized protein amount.
 
-- **A.** Purified guaiacol activity provides the per-molecule calibration for cellular DAB staining; after that calibration, the remaining signal differences can be assigned to amounts of correctly localized fusion protein.
-- **B.** The heme-supplementation response provides a direct ranking of equilibrium heme-binding affinity; it therefore identifies weaker heme affinity as the complete cause of the mAPX cellular defect.
-- **C.** The mutations balance different properties: reduced self-association can improve fusion trafficking, while cell staining also depends on active heme-containing enzyme and substrate chemistry. Similar purified guaiacol activity does not calibrate cellular DAB signal.
-- **D.** Because APEX and mAPX have similar oligomeric behavior, their cellular DAB difference primarily reports different amounts of correctly localized fusion protein, rather than a difference in activity per enzyme molecule.
-
-Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
+Should the analysis use that interpretation? Explain how the observations fit together, what the APEX–mAPX comparison adds, and which conclusions about reporter performance remain supported.
 
 ---
 
-# 3. TurboID and miniTurbo: when more labeling weakens the time window
+# 3. Choosing a labeling tool for the measurement objective
 
-Reference protein: Escherichia coli BirA, the ancestral biotin ligase of TurboID and miniTurbo. The full canonical wild-type sequence is supplied only for coordinates; it is not the complete evolved or tagged assay construct.
+The TurboID study reported a candidate sequence change that appeared beneficial for labeling activity and was included, with other changes, in TurboID. It was also examined in the miniTurbo background but was not retained there because labeling increased when added biotin was omitted. In the broader comparison, miniTurbo generally produced less labeling before biotin addition, whereas TurboID generally produced greater labeling yield.
 
-Protein sequence:
+These enzymes produce covalent labels. Omitting added biotin does not remove biotin already present in cells. The reported candidate-change comparison is qualitative; it supplies neither an isolated binding constant nor a protein-by-protein history of when labels formed.
 
-```text
-MKDNTVPLKLIALLANGEFHSGEQLGETLGMSRAAINKHIQTLRDWGVDVFTVPGKGYSLPEPIQLLNAK
-QILGQLDGGSVAVLPVIDSTNQYLLDRIGELKSGDACIAEYQQAGRGRRGRKWFSPFGANLYLSMFWRLE
-QGPAAAIGLSLVIGIVMAEVLRKLGADKVRVKWPNDLYLQDRKLAGILVELTGKTGDAAQIVIGAGINMA
-MRRVEESVVNQGWITLQEAGINLDRNTLAAMLIRELRAALELFEQEGLAPYLSRWEKLDNFINRPVKLII
-GDKEIFGISRGIDKQGALLLEQDGIIKPWMGGEISLRSAEK
-```
+Consider a project whose purpose is to associate recovered proteins with a defined interval beginning at biotin addition. It also needs enough recovered material for analysis. There are no project-specific measurements of background labeling or recovery yet.
 
-Numbering uses the initial methionine as wild-type residue 1. Both evolved enzyme cores delete Ala146. miniTurbo additionally lacks wild-type residues 1-63. Thus wild-type Met241 corresponds to enzyme-core position 240 in TurboID and 177 in miniTurbo, before any added tags or linkers. The evolved backgrounds contain other substitutions; the sequence above does not represent either final variant.
-
-Published observations:
-- Screening found M241T potentially beneficial for labeling activity, and the substitution was included with other changes in TurboID.
-- M241T was also tested in the miniTurbo background but was not retained because signal increased when added biotin was omitted.
-- In the broader comparison, miniTurbo generally showed less labeling before biotin addition than TurboID, while TurboID generally gave greater labeling yield.
-
-The purpose is to label neighboring proteins within a defined time window after biotin addition. The omit-added-biotin condition does not experimentally remove the biotin already present in cells.
-
-**Question:** What is the most defensible interpretation of the M241T tradeoff for that time-window objective?
-
-- **A.** The higher omit-biotin signal identifies stronger equilibrium biotin binding as the M241T mechanism; correcting added biotin concentration for that affinity difference should recover the original labeling window.
-- **B.** Labeling before the intended start can use biotin already present and leave covalent marks on proteins. Greater total yield can therefore weaken temporal control; these observations do not identify which molecular step M241T changes or establish the same effect in every background.
-- **C.** Protein-by-protein subtraction of the omit-biotin sample converts the later accumulated signal into labels acquired exclusively after biotin addition, because the same labeling chemistry operates in both samples.
-- **D.** The difference between TurboID and miniTurbo identifies interaction with the deleted N-terminal domain as the source of the M241T tradeoff; the other evolved substitutions and expression differences need not contribute to that interpretation.
-
-Interpret the published observations using the relevant biology. Explain the alternatives, then give one answer letter. Do not propose new variants or experimental procedures.
+Compare TurboID and miniTurbo as initial candidates for this project. Make a provisional choice and explain the tradeoff. What missing information would most affect that choice? Explain whether the reported candidate change counts as an improvement for this objective, and how your recommendation could change for a project that prioritizes cumulative yield instead.
 
 ---
 
-# 4. Distinguishing heme from other cofactors
+# 4. Inferring a cofactor from a motif combination
 
 Protein sequence:
 
@@ -112,19 +59,11 @@ PTQMTARVASEDIDICGVTIRQGEQVYLLLGAANRDPSIFTNPDVFDITRSPNPHLSFGHGHHVCLGSSL
 ARLEAQIAINTLLQRMPSLNLADFEWRYRPLFGFRALEELPVTFE
 ```
 
-
-**Question:** Which cofactor is most strongly supported by this protein sequence?
-
-**Choices:**
-
-- **A.** FAD
-- **B.** FMN
-- **C.** A four-iron four-sulfur cluster
-- **D.** Heme
+What cofactor and protein-family assignment does this sequence most strongly support? Identify the sequence evidence that matters, explain why it is stronger than one plausible alternative cofactor interpretation, and state what the sequence cannot establish about the protein’s activity.
 
 ---
 
-# 5. Calcium binding through repeated structural motifs
+# 5. Recognizing repeated calcium-binding loops
 
 Protein sequence:
 
@@ -135,19 +74,11 @@ FCEHLSMKDIENIIMTEEESHLGTAEECPVDVETCSNQQIRQTCVRKSLICAFAIAFIISVMLIAANQVL
 RSGMK
 ```
 
-
-**Question:** Which binding role is most consistent with the soluble region of this protein?
-
-**Choices:**
-
-- **A.** Binding calcium ions through EF-hand domains.
-- **B.** Binding a structural zinc ion through a C2H2 zinc-finger domain.
-- **C.** Binding heme to catalyze peroxide-dependent oxidation.
-- **D.** Binding FAD to transfer electrons during redox catalysis.
+What ion-binding architecture is supported by the likely soluble region of this sequence? Cite the relevant segments and explain why their arrangement is more informative than acidic composition alone. Contrast your interpretation with a nonspecific acidic region, and distinguish the prediction from properties that require experimental evidence.
 
 ---
 
-# 6. Membrane anchoring
+# 6. Separating membrane anchoring from topology
 
 Protein sequence:
 
@@ -158,19 +89,11 @@ ETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNRILLVILGIIVVIAILTAI
 AFFVKGH
 ```
 
-
-**Question:** Which overall membrane-association architecture best fits this protein sequence?
-
-**Choices:**
-
-- **A.** A soluble peripheral membrane protein with no membrane-spanning segment.
-- **B.** A protein with a large cytosolic region and a single membrane anchor near its C terminus.
-- **C.** A seven-pass membrane receptor with short loops connecting its membrane-spanning helices.
-- **D.** A secreted soluble protein whose only hydrophobic segment is a cleaved N-terminal signal peptide.
+Infer this protein’s membrane-association architecture from the sequence. Identify the strongest evidence for an integral anchor rather than peripheral association, and explain how confidently you can assign the orientation of the large upstream region. What cellular information remains unresolved?
 
 ---
 
-# 7. Protein-interaction domains
+# 7. Distinguishing interaction domains from ligand motifs
 
 Protein sequence:
 
@@ -184,19 +107,11 @@ LPPTDDISSVSSLSSHRESAVDVPVSHQYVPSYATESHQKHEQHSQTHHHHHQHQQPSPLSNGSSHGYAA
 SSTSGYDDDDIYHLSAREARERLRMKNRKHHLHEMSLNEKYQLVSNM
 ```
 
-
-**Question:** Which protein-interaction domain architecture is most consistent with this sequence?
-
-**Choices:**
-
-- **A.** A WD40-repeat beta-propeller that lacks PDZ domains.
-- **B.** Two SH2 domains specialized for recognizing phosphotyrosine-containing peptides.
-- **C.** Two PDZ domains capable of recognizing short peptide motifs on partner proteins.
-- **D.** A single SH3 domain specialized for recognizing proline-rich peptides.
+What interaction-domain architecture is a reasonable hypothesis for this sequence? Use repeated sequence regions to support your assessment. Explain whether the proline-rich stretch identifies a folded interaction domain or could instead be a partner-binding motif, and state which conclusions about binding partners remain unsupported.
 
 ---
 
-# 8. Chromophore binding
+# 8. Judging a chromophore-binding hypothesis
 
 Protein sequence:
 
@@ -207,55 +122,32 @@ LVGPMTESASQRSSGIKSLYVRLRNLTVILWAIYPFIWLLGPPGVALLTPTVDVALIVYLDLVTKVGFGF
 IALDAAATLRAEHGESLAGVDTDAPAVAD
 ```
 
-
-**Question:** Which chromophore-association mechanism is most consistent with this protein sequence?
-
-**Choices:**
-
-- **A.** Covalent bilin attachment to a cysteine in a large phytochrome photosensory domain.
-- **B.** Noncovalent FMN binding in a soluble LOV-domain pocket.
-- **C.** Formation of an internal GFP-like chromophore by cyclization of residues in a soluble beta-barrel.
-- **D.** Retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin.
+What chromophore-binding mechanism would you prioritize as a hypothesis for this sequence, and why? Identify evidence from the overall architecture and a candidate attachment residue. Compare that hypothesis with a soluble chromophore-binding protein, and distinguish compatibility from proof of chromophore attachment.
 
 ---
 
-# 9. Testing whether a protein label changes its target
+# 9. Does a label reveal or change protein organization?
 
-Streptavidin is used to label biotinylated proteins. A4 is a tetramer of four active, His-tagged subunits; A1D3 is a tetramer containing one active and three binding-inactive subunits. The affinity measurements below use these tagged preparations, whereas the cellular comparison uses wild-type streptavidin versus A1D3.
+Published observations from a study of biotinylated neuroligin-1 on cultured neurons:
 
-| Preparation | Biotins bound per tetramer | Biotin Kd, mean ± SEM |
-|---|---|---|
-| A4 | 4 | (4.4 ± 1.1) × 10^-14 M |
-| A1D3 | 1 | (4.8 ± 0.5) × 10^-14 M |
+- Wild-type streptavidin has four functional biotin-binding sites. A1D3 is still a tetramer, but only one of its sites binds biotin.
+- Tagged four-site and one-site preparations had similar soluble-biotin affinities. The cellular comparison used wild-type streptavidin and A1D3, so the affinity and cell experiments were not comparisons of exactly the same preparations.
+- Both cellular labels initially appeared diffuse. Later, wild-type streptavidin labeling showed pronounced clustering while A1D3 labeling remained predominantly diffuse.
 
-In cultured neurons expressing acceptor-peptide-tagged neuroligin-1, both fluorescent labels initially gave diffuse surface labeling. Two hours later, wild-type streptavidin produced strong clustering, whereas A1D3 labeling remained predominantly diffuse.
+A collaborator concludes that the diffuse A1D3 image reveals native neuroligin organization and that similar soluble-biotin affinity makes further comparison unnecessary.
 
-A colleague argues: "Because the soluble-biotin affinities are similar, the two labels should be interchangeable for observing neuroligin's native organization once the amount of initial labeling is matched."
-
-In each proposed follow-up, the chosen matching strategy would be followed by tracking neuroligin organization with the same independent readout that does not link target molecules together. These are thought-experiment comparisons, not additional experiments reported in the paper.
-
-**Question:** Which matching strategy most directly tests whether the labels differently perturb neuroligin organization?
-
-- **A.** Match the measured fraction of neuroligin molecules initially occupied by each preparation.
-- **B.** Measure soluble-biotin binding in the neuronal assay medium, then choose probe concentrations giving the same predicted occupancy in that soluble-binding measurement.
-- **C.** Match the total concentration of functional biotin-binding sites supplied by the two preparations.
-- **D.** Match the initial surface fluorescence intensity using the same imaging settings, without separately calibrating fluorophores per bound complex.
+**Question:** Assess that conclusion. Choose two high-level comparisons that would most help separate probe-induced redistribution from differences in target engagement or detection. For each, explain which competing explanations it addresses and what possible result would change your interpretation. You may consider functional valency, concentration dependence, direct target engagement, or an independent organization readout; justify your choices rather than listing every possibility. Explain what would still be needed to call either pattern native. No experimental protocol is requested.
 
 ---
 
-# 10. What does a proximity-labeling ratio measure?
+# 10. What does exclusion from a proximity-labeling list mean?
 
-Cho and colleagues used split-TurboID targeted to contacts between the endoplasmic reticulum and mitochondria. They compared the recovered proteins with a reference made using full-length TurboID in the cytosol.
+Cho and colleagues compared proteins recovered by contact-targeted split-TurboID at endoplasmic reticulum–mitochondria contacts with proteins recovered using a cytosolic TurboID reference. The preparations used different labeling durations because their activities differed; overall labeling signals were comparable. The comparison measures accumulated labeling under those conditions.
 
-The contact-targeted samples were labeled for four hours; the cytosolic-reference samples for one minute. The authors chose these different durations because the enzymes had different activities. Under those conditions, the preparations gave comparable overall signals for biotinylated proteins.
+Proteins were first compared with a no-added-biotin control and then filtered for enrichment in contact-targeted labeling relative to the cytosolic reference.
 
-Proteins were first compared with an omit-added-biotin control, then filtered using their contact-targeted/cytosolic-reference enrichment ratios. The latter threshold was calibrated using a reference list of cytosolic proteins and the paper's 10% false-discovery criterion.
+Consider a hypothetical protein P that reproducibly passes the no-added-biotin comparison but fails the contact-versus-cytosol enrichment filter. There are no independent localization measurements, protein-specific labeling kinetics, or functional measurements for P.
 
-Consider a hypothetical protein P that reproducibly exceeds the omit-biotin background but fails the cytosolic-reference filter. No protein-specific labeling kinetics or independent localization measurements are available for P.
+A collaborator proposes prioritizing proteins that passed both filters and deferring P because follow-up resources are limited. There is no independent evidence that P is especially important to this project's biological question.
 
-**Question:** Which interpretation best explains what this comparison establishes?
-
-- **A.** Dividing P's contact-targeted signal by 240 would compensate for the unequal labeling durations. The adjusted ratio could estimate its relative contact-encounter rate, although direct molecular binding would remain unproven.
-- **B.** P failed a comparison of accumulated labeling under these conditions. A cytosolic pool could depress its ratio even if P visits contacts, and covalent labels can persist after movement; matching bulk signal does not calibrate P's labeling kinetics or contact occupancy.
-- **C.** Matching overall labeling compensates for the enzymes' different activities. P's ratio can therefore estimate its relative contact occupancy; failure favors predominantly cytosolic localization, although brief visits to contacts would remain possible.
-- **D.** Calibrating the threshold with cytosolic reference proteins supplies an error probability for each candidate. A passing protein would have at most a 10% probability of being a false contact hit; P's failure chiefly reflects insufficient statistical confidence rather than compartment-dependent labeling.
+**Question:** Would you follow that priority or make a case for following up P? Distinguish the measured result from at least two possible biological explanations. Explain how independent evidence about localization and about function would answer different questions, and what information would most affect your decision. A justified decision either to defer or to follow up P is acceptable; state its basis and what would change it.

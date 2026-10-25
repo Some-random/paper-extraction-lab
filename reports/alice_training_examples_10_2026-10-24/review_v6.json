@@ -1,0 +1,39 @@
+{
+  "schema": "alice10-source-and-feedback-review-v6",
+  "status": "assistant_review_passed",
+  "reviewed_example_sha256": {
+    "example-01": "85a3b2ec1edfa599250037a67605549b466d0b75f86b0594f3e4143100233c19",
+    "example-02": "1690e85c1d4463eb83d37fd50988e91c8896640461a86e3ca5e2ab56e71d7cb7",
+    "example-03": "f60fffa9119d2baeef9621e72539e01b8e7d4d9dde52ef22df499656f51f9498",
+    "example-04": "064e1d7793e1ae3bdbc3e05bf49ce157c9bedb501ae3f7a7e5dd3465db4ad5d6",
+    "example-05": "5b7d85d4604eb01750124ff2eced058ecc2e3033b32d8dd473f36d22d97c7876",
+    "example-06": "d7d1d27667f07f44d4ac46ac2062491f6c334e90a7c9d30e27d2d108d1a4f27b",
+    "example-07": "bfaed71f9409f6f94e6ad017837d901b3ea84ca695f4cca46c753f81afe7f6b8",
+    "example-08": "e634bfdbec9d593771a5eb3708153c57825dfe01696701ac2f2129764065f185",
+    "example-09": "1bba4c412cef87cd8bdb767e40cbdc7db92451ae0518785e1be6cba28d1eb41f",
+    "example-10": "f6635dd2cff7adc9af1bad5c49c87fd0f90e99c282d846e6c2bd49a3ad415aa2"
+  },
+  "original_criteria_review": {
+    "source-supported answer": "passed for this curated teaching collection",
+    "fair input": "passed for this curated teaching collection",
+    "reusable biological lesson": "passed for this curated teaching collection",
+    "substantive clear reasoning": "passed for this curated teaching collection",
+    "variety": "passed for this curated teaching collection"
+  },
+  "source_check_scope": "Existing source-bound observations reused; original sequences retained in Q4-8. All18 previously cited residue-coordinate checks passed against these unchanged sequences. Current question/answer consistency and inferential limits reviewed by assistants; no fresh full-text review claimed for earlier abstract-only references.",
+  "independent_assistant_reviews": [
+    "Q1-3 input fairness, conditional claims, and source consistency",
+    "Q4-8 exact retained sequence claims, open-response fairness and limits",
+    "Q9-10 evidence selection and interpretation, original criteria and lab feedback"
+  ],
+  "review_corrections_applied": [
+    "Q3 qualifies candidate-change interpretation to the tested miniTurbo background.",
+    "Q9 distinguishes observed labeling patterns from established redistribution.",
+    "Q10 uses a practical prioritization decision, avoiding an obvious absolute-exclusion strawman.",
+    "Q10 rubric accepts multiple compatible biological explanations rather than a required pair."
+  ],
+  "expert_human_validation": false,
+  "difficulty_measured": false,
+  "training_gain_measured": false,
+  "teacher_resampling_performed": false
+}

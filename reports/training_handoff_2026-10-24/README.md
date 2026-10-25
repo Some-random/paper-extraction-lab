@@ -147,11 +147,11 @@ Public provenance is under `experiments/sequence_mcq_10000_2026-10-23/hf_release
 
 ## Alice Ting lab review examples
 
-The reviewed ten-example presentation now starts with APEX/APEX2 and TurboID mutations from Alice Ting lab papers. [Read all ten examples](../alice_training_examples_10_2026-10-24/ALL_EXAMPLES.md). Its local final package is `experiments/alice_training_examples_10_2026-10-24/revision_v3/public_package_v4/`; the publication record is `revision_v4.json` inside that package.
+The ten examples now use open responses, concise reference answers and assessment rubrics incorporating lab feedback. [Read the revised collection](../alice_training_examples_10_2026-10-24/ALL_EXAMPLES.md) and its [selection rubric](../alice_training_examples_10_2026-10-24/RUBRIC.md). The current revision is recorded in `revision_v6.json` and `review_v6.json` in that report directory. Questions 4–8 are explicitly foundational; the other items emphasize comparative evidence, assay interpretation and research judgments.
 
-The new APEX explanation is an unchanged successful teacher response. The TurboID call returned HTTP 502 without an answer; its replacement explanation is explicitly source-aware, assistant-authored writing checked against the paper. It is not a blinded teacher response. Earlier outputs and the failed attempt remain preserved. These are AI source checks, not expert human ground truth or measured training gains.
+All ten current explanations are source-aware assistant revisions. Earlier unchanged teacher responses, source-aware edits and the failed TurboID generation attempt remain preserved in prior records. These are assistant source checks, not expert human validation or measured training gains. No new teacher calls were made for this revision.
 
-These ten presentation examples do not change the 10,000 training rows. Confirm their final reviewed version before considering them for a future data recipe.
+These ten presentation examples do not change the 10,000 training rows. Their open-response format and per-item criteria provide a reviewed starting point for discussing a future data recipe.
 
 ## Next work for the training session
 

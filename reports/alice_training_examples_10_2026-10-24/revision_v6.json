@@ -1,0 +1,74 @@
+{
+  "schema": "alice10-revision-v6",
+  "revision": 6,
+  "date": "2026-10-25",
+  "format": "open_response",
+  "previous_commit": "a612e06348afdc5f00b6f504b2b0b4c526a8471b",
+  "authoring_method": "source_aware_assistant_revision",
+  "trigger": "Lab reviewer feedback on utility, unnecessary reasoning, choice cues and irrelevant numerical detail.",
+  "original_selection_criteria": [
+    "source-supported answer",
+    "fair input",
+    "reusable biological lesson",
+    "substantive clear reasoning",
+    "variety"
+  ],
+  "changes": {
+    "all": "Open responses with concise reference answers and explicit assessment rubrics; no letter-choice gold labels.",
+    "example-01": "Replaces numerical read-off with conditional transfer and distinction between peak location and rate.",
+    "example-02": "Cross-assay interpretation and reporter-delivery judgment; removes unused sequence.",
+    "example-03": "Provisional tool choice balancing temporal control with adequate recovery; removes unused sequence and mutation coordinates.",
+    "example-04_to_08": "Retains foundational sequence inference, exact original sequences, plausible alternatives and explicit inferential limits.",
+    "example-09": "Multiple justified comparison priorities, competing explanations and native-state evidence.",
+    "example-10": "Practical follow-up versus deferral decision; removes irrelevant duration/FDR numbers and forced normalization distractors."
+  },
+  "purposes": {
+    "example-01": "comparative evidence transfer",
+    "example-02": "cross-assay interpretation",
+    "example-03": "objective-dependent tool choice",
+    "example-04": "foundational cofactor inference",
+    "example-05": "foundational repeated binding architecture",
+    "example-06": "foundational anchoring versus topology",
+    "example-07": "foundational domains versus motifs",
+    "example-08": "foundational chromophore hypothesis",
+    "example-09": "probe perturbation and evidence selection",
+    "example-10": "enrichment-based research prioritization"
+  },
+  "retained_sequence_sha256": {
+    "example-04": "e83aa1ebad26a6491998623f5ae9b5b2acc9abb9a342d96b29be1f163cca82ac",
+    "example-05": "dd81e2d48b7f6ec6c523c090cf0db62071b823a324535a9bbbc45832f6928112",
+    "example-06": "acfcd539b69f3433a7f9acb68e9431fb0f41539d34d63f12a1595f93c0286ea8",
+    "example-07": "361bf69b3d065a3faf0798b6e9f6bdf433d73ed364343e1895a8175da1910bf1",
+    "example-08": "61ce5bb4f51864e0d7f5c1acc642d4f702e737a10ae0403fe47dd7cdd3139c8d"
+  },
+  "previous_file_sha256": {
+    "ALL_EXAMPLES.md": "4925c6ba9c869ef1d35e74bc61964a723cfe9edf508dfc77bf2d46b5c5cbc346",
+    "QUESTIONS_ONLY.md": "41a85c771e622cb71981193af6a53dfd47434b806da9efeae2ffe2fd896aaa5e",
+    "README.md": "21807442cac0b41ed116c5683e2e4251940090b0855f78a6d73ac0c6674f7b35",
+    "examples/example-01.md": "21f8854e09571345035eb8061263808dcd453e129e25a046990f28d7e9e864c4",
+    "examples/example-02.md": "e70579ea50514ffe3d32f51513bdd491968ac73d22fe4f2dfbe9807b99005a6e",
+    "examples/example-03.md": "d90ad738873c9a6a14e8414983ff814f10e8584e3012e63caba453c0b2122488",
+    "examples/example-04.md": "966e3f4e69ca3a9992b4ef306664906fffffb42ed1018ddc6a7d6ec07efdd578",
+    "examples/example-05.md": "1ddc32d7c1055e62d54d79b609b987bc91a146319af9876162bb16387114a0be",
+    "examples/example-06.md": "7133e2d8d23d1a68717fe32b07ffa650d6ce23dea70c42d02470f272e11aba2f",
+    "examples/example-07.md": "e4bfbe12c03892e6f2c2e80b3247ea57463c775fa59aca258a28602e2d59d88c",
+    "examples/example-08.md": "50b32c2b4d73614d25a7f9616eaee0af4c1db07aa901292206982e448a6da77a",
+    "examples/example-09.md": "dae6b6589dc978c7f5c9f283a0fbe8349392cd637a0f75953e267d1d6a332d44",
+    "examples/example-10.md": "99b7b87c1001d63b8c49d3cbb3a5dae74abc587d7688f20efcfe06dde0cf3cdf",
+    "questions.jsonl": "86ee52b87fa3ad32e46aa606d2568cce949ccbf3dd8201127627972db4cf6652",
+    "training_examples.jsonl": "ee0ab97627d822385b3f304692d23fe07299375566af0144ad7e55ef6114d54c",
+    "verification.jsonl": "e440f1aa7e0ed674337ca0ca75b9c692a0aabaab931e10c5f25a6ad693e60fc9",
+    "selection_provenance.json": "4d562285dba1ee914b12c6d6220c0bc82b3abed282e3850f74dd56e2284329e2",
+    "selection.csv": "e7d2a1355c544e0ab555cab5c9715c144882b3da22a85fd4bcbb2a33512fe753"
+  },
+  "original_artifacts_preserved": true,
+  "previous_records": [
+    "revision_v2.json",
+    "revision_v4.json",
+    "revision_v4_usage.json"
+  ],
+  "new_teacher_api_calls": 0,
+  "expert_human_validation": false,
+  "training_gain_measured": false,
+  "student_training_released": false
+}
