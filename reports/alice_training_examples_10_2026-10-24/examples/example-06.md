@@ -15,22 +15,22 @@ Infer this protein’s membrane-association architecture from the sequence. Iden
 
 ## Answer
 
-A single near-C-terminal membrane anchor is strongly supported by the continuous hydrophobic stretch ILLVILGIIVVIAILTAIAFFV at residues 193–214, followed by KGH. This composition-based 22-residue call favors a bilayer-spanning helix over purely peripheral association; it is not an exact membrane-boundary measurement. The much longer upstream region is rich in charged and polar residues, without comparable hydrophobic stretches. The basic RRIIQNR flank at 186–192 supports a cytosolic upstream region through the positive-inside tendency, although assigning a membrane side is less secure than identifying the anchor. The sequence does not establish exact helix boundaries, insertion route or organelle destination.
+The sequence strongly supports a protein with one membrane anchor near its C terminus and a much larger region outside the bilayer. Its most conspicuous feature is ILLVILGIIVVIAILTAIAFFV at residues 193–214: a continuous 22-residue hydrophobic stretch followed by only KGH.
 
-## Assessment rubric
+That combination of length, composition and position is appropriate for a membrane-spanning alpha helix. There are no charged residues within this stretch, whereas the surrounding protein contains many charged and polar residues. Placing such a long hydrophobic segment in the lipid bilayer provides a more coherent interpretation than treating the entire protein as a soluble domain that associates only peripherally with a membrane. Peripheral association can occur through interactions with lipids or other proteins, but does not by itself explain this pronounced hydrophobic tail.
 
-- Identifies the actual near-terminal hydrophobic stretch and short following tail as support for a single integral anchor.
-- Accepts a justified approximate span ending at 213 or 214; distinguishing a hydrophobic-composition call from a precise helix boundary matters more than one-residue agreement.
-- Contrasts an integral anchor with peripheral association using that sequence evidence, rather than assuming all membrane-associated proteins span the bilayer.
-- Distinguishes strong anchor evidence from the weaker orientation inference; a cautious refusal to assign orientation is acceptable if explained.
-- Does not infer Golgi/endosomal destination, exact measured boundaries or an insertion mechanism. Credit defensible alternatives that account for the hydrophobic segment and explain what evidence is missing.
+The upstream region does not contain several comparable hydrophobic stretches. The sequence therefore supports one anchor rather than a multipass membrane bundle. The anchor’s near-terminal position and very short following tail are also consistent with a tail-anchored architecture. This is an architectural assignment, not identification of the cellular machinery or route that inserts it.
+
+Orientation is a separate, less certain inference. The RRIIQNR segment at residues 186–192 places several basic residues immediately before the candidate anchor. This agrees with the positive-inside tendency, in which positively charged flanks often occur on the cytosolic side of membrane-spanning helices. It therefore supports a cytosolic location for the large upstream region. However, a tendency is not a direct observation, and saying that a region lies outside the bilayer does not by itself identify which membrane side it occupies.
+
+Residues 193–214 describe a hydrophobic-composition window, not a measured helix boundary. A structural boundary could differ slightly without changing the overall conclusion. The sequence alone does not establish the exact membrane-spanning endpoints, prove orientation, identify the insertion pathway or distinguish a Golgi, endosomal or other membrane destination. Confidence is strongest for the single C-terminal anchor and weaker for those more specific cellular assignments.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 Source identity: Vti1-rp2/Vti1a, [UniProt O89116](https://www.uniprot.org/uniprotkb/O89116/entry). The primary abstract supports a C-terminal anchor, cytoplasmic region and integral membrane behavior.

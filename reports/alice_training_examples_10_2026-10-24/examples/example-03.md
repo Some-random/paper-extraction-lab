@@ -12,20 +12,22 @@ Compare TurboID and miniTurbo as initial candidates for this project. Make a pro
 
 ## Answer
 
-miniTurbo is a reasonable initial candidate when the defined start time is the priority, because its lower reported pre-addition labeling better serves that objective. This is provisional: its recovery and background in the project's actual context could change the choice. If recovery were inadequate, TurboID's higher yield could become more valuable, with the timing compromise made explicit. In the tested miniTurbo background, the candidate change's increased omit-added-biotin signal is a disadvantage for temporal control despite possible yield benefits; the supplied evidence does not establish its molecular mechanism. A project prioritizing cumulative yield could instead favor TurboID. Neither recommendation is universal.
+I would provisionally favor miniTurbo for a project that makes the defined start time its main interpretive requirement, provided it can recover enough material. The reason is the reported lower pre-addition labeling, rather than a claim that miniTurbo is generally the better enzyme. TurboID's greater yield addresses an equally real constraint, so the decision cannot be settled from timing considerations alone.
 
-## Assessment rubric
+The timing problem concerns the history represented by the recovered labels. Omitting added biotin does not remove biotin already in cells, and these enzymes produce covalent marks. Labeling before the intended start can therefore contribute to the material recovered later. A stronger accumulated signal need not mean that more of the signal represents the interval of interest. Conversely, a preparation with lower pre-start labeling is not useful to this project if its recovery is too low to support the analysis. The appropriate comparison is between temporal interpretability and sufficient recovery, rather than between low and high signal in isolation.
 
-- Makes a provisional tool choice using both the temporal objective and the need for sufficient recovery. Accept either candidate when the tradeoff and assumptions are defensible.
-- Identifies project-specific background and recovery as decision-relevant missing evidence; does not convert the paper's broader comparison into a guaranteed outcome in the new context.
-- Explains how the candidate change and an objective emphasizing cumulative yield could be valued differently. Do not require a unique molecular mechanism, a universal tool preference, or extra discussion of subtraction.
+The missing information most likely to reverse my choice is how those two constraints balance in the project's actual context: the extent of pre-addition labeling, the recovered material associated with the intended interval, and whether the amount and reproducibility of that recovery meet the analytical need. If miniTurbo gives adequate recovery with substantially less pre-start contribution, its reported advantage fits the objective. If recovery is inadequate, TurboID could be the more useful candidate, but its greater yield would not by itself restore a sharply defined labeling interval. The timing compromise would remain part of interpreting the result. The paper's broad comparison does not establish any of these project-specific outcomes.
+
+The candidate change illustrates the same distinction at the variant level. In the tested miniTurbo background, its increased omit-added-biotin signal counts against temporal control, even if some aspect of labeling activity improved. Its inclusion with other changes in TurboID does not establish that its isolated effect is identical in the two backgrounds. The qualitative observations also do not identify a change in affinity, a catalytic constant, or the particular molecular step responsible.
+
+For a project that prioritizes cumulative yield over a sharply defined start time, I could instead provisionally favor TurboID. The greater yield reported in the broader comparison would then serve the stated objective more directly, and activity before biotin addition might carry less penalty. It would still matter if that activity made the recovered material unsuitable for the biological interpretation. Thus, changing the objective can change the recommendation without changing any of the published observations; the decision depends on what the measurement must mean and whether it produces enough usable material.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 Primary source: [Branon et al., Efficient proximity labeling in living cells and organisms with TurboID](https://doi.org/10.1038/nbt.4201), Methods under “Yeast display directed evolution” for the reported candidate-change decision, Figure 2a–b and Discussion for the yield/background comparison, and Supplementary Note 2 for labeling chemistry and qualified mechanistic interpretations.
@@ -34,6 +36,6 @@ Supplied evidence: the published qualitative activity and omit-added-biotin obse
 
 Inference being assessed: how a measurement objective and a recovery constraint change the value of an observed property, and which missing evidence could reverse a provisional recommendation. The example does not identify an affinity change, predict a new variant, or prescribe a labeling procedure. The candidate's identity and the unused reference sequence from the earlier question were removed because they are unnecessary to the decision.
 
-This is an assistant source-aware revision of the existing example, not a fresh teacher-generated solution. Source agreement and the rubric have not been validated by an expert human or a student-learning study.
+This is an assistant source-aware revision of the existing example, not a fresh teacher-generated solution. Expert human validation and student-learning benefit have not been established.
 
 </details>

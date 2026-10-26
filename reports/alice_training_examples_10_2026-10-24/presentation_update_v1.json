@@ -1,0 +1,40 @@
+{
+  "schema": "alice10-reader-presentation-update-v1",
+  "current_revision": 6,
+  "previous_commit": "86dce44a5f26beb34856258b8dc78f5a9f12a71a",
+  "reason": "User requested complete worked answers and removal of grading rubrics from the version shared with Alice.",
+  "changes": [
+    "Removes per-question assessment rubrics from canonical and aggregate reader pages.",
+    "Keeps preparation criteria separately in internal/assessment_rubrics.json.",
+    "Replaces short reference answers with complete worked explanations; no word-count ceiling.",
+    "Preserves exact current questions and the previously clarified source qualifications.",
+    "Regenerates all exports so training messages carry the same worked answers as the readable pages."
+  ],
+  "previous_canonical_page_sha256": {
+    "example-01": "39f719758e34cb881d0656e9083633470044df9b49262c1e56c104f7f04d3bf3",
+    "example-02": "9b00bf423ac7c50c60674d8a4d6aef20cf029400f78221853254ac8450c5594e",
+    "example-03": "88d1a3fe6c77e80307c0c51c613a6a762f6895f1eb3057d9a85c763f1c26499e",
+    "example-04": "2fdd6642e12d1795933e7795527b38f05124dcae73991a5763c293db06ba0192",
+    "example-05": "102d76472c6eaa839e959ecbe1b667027e8ecf9a871688b2fcb6f5e4c9ad9c14",
+    "example-06": "fbbfb91e915691a75747e482306b367f22cf0c0f3413419c83493c2f911d70bb",
+    "example-07": "b96841ceb1cccd9850d7a84273f84fbd243e83c3a79b7d7ec138bc8dab8698d5",
+    "example-08": "f9be6b6ba1ba69fc0533c997fab29ca0ddf2b0f7c88612b025059bd1f8f79b01",
+    "example-09": "cef451085220a8db91cad8423278642231f4dddfba7405b5370a439507fbeaad",
+    "example-10": "42750b416fdeff2d90a063b01c0f438b62a2e9d9f04e9b63eb7b5c8f9e637aed"
+  },
+  "reviewed_example_sha256": {
+    "example-01": "794a4ac35ca5e1a1c6899034508ecd320bb3f43c5f4f8df76cb9dd8ea286cda0",
+    "example-02": "fd59189e8baee3dffd841410219eb086fc56490147bbcbfb63045b9da2b41129",
+    "example-03": "a95187fb1bec7a98eb551b99f96192d35a504b2563b33dcf4157d53dbce8dfd0",
+    "example-04": "fa228800bd6c86cca4ee024f0b843b90a7c4d04e57fd16f91102f26275aaba44",
+    "example-05": "a0fe034ac3ce14bb3572e70fb1db7aa189adbc318b00219a7e2ead5a693f2769",
+    "example-06": "ffe3584dcdc9ccb8683f5771dde7dd732299164de11c69c4d7a5c9c04a8470c9",
+    "example-07": "7649fde5f53da78f8e51b00693c706ca7a589db5ff0359b15c930a1fcd3962f5",
+    "example-08": "6921124a6dc6eed2ba5983fc6e3df022f6a7c864d9d532041975c31ebe9ba4fe",
+    "example-09": "1a92f5922125be55d138f6085185324e210fc5ab71becb7bfe76536cbbb09191",
+    "example-10": "3dbfbcdee27b0ba5aed5fe78371fc7ec2acfc420846578ad8a14bd3d69526cc2"
+  },
+  "new_teacher_api_calls": 0,
+  "expert_human_validation": false,
+  "training_gain_measured": false
+}

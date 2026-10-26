@@ -15,21 +15,22 @@ What ion-binding architecture is supported by the likely soluble region of this 
 
 ## Answer
 
-Two candidate EF-hand calcium-binding loops are DRDGNGFISKQE at residues 46–57 and DMDGDGQVDFEE at 82–93. Both place oxygen-donating residues at positions 1, 3 and 5, glycine at 6, and glutamate at 12, supporting a repeated calcium-binding architecture. A generally acidic region could also attract ions, but would not explain these repeated positional patterns as well. The motifs lie upstream of a strongly hydrophobic near-terminal region, consistent with a soluble binding domain and membrane anchor. Sequence does not measure calcium affinity, ion selectivity, occupancy or how many sites are functional, and it does not directly demonstrate the EF-hand fold.
+The likely soluble region supports an EF-hand calcium-binding architecture, with two particularly convincing candidate loops. They are DRDGNGFISKQE at residues 46–57 and DMDGDGQVDFEE at residues 82–93.
 
-## Assessment rubric
+An EF hand contains a calcium-binding loop of about 12 residues between two helices. The informative feature here is the arrangement of potential ligands within each loop. In DRDGNGFISKQE, positions 1, 3 and 5 are Asp, Asp and Asn. In DMDGDGQVDFEE, those positions are all Asp. Both loops have glycine at position 6 and glutamate at position 12. Asp, Asn and Glu provide oxygen-containing groups compatible with calcium coordination. Glycine can accommodate the tight loop geometry, while the terminal glutamate commonly contributes its carboxylate to calcium binding. The repeated positional pattern is therefore chemically and structurally coherent.
 
-- Proposes EF-hand calcium binding and identifies both actual 12-residue segments, explaining at least two relevant positional features.
-- Explains why repeated ligand-compatible patterns support more than a generic acidic-composition claim.
-- Uses the near-terminal hydrophobic region only as architectural context, without assigning an experimentally established topology.
-- Does not infer affinity, selectivity, occupancy or four functional sites from sequence. Credit a reasoned tentative assignment or alternative if it addresses both loops and distinguishes evidence from speculation.
+This is stronger evidence than high acidic content alone. A nonspecific acidic region could interact with positively charged ions, but acidity does not specify a calcium-binding fold. Two separate segments with the same ligand-compatible positions, loop length and conserved glycine are more suggestive of repeated binding modules than an arbitrary Asp/Glu-rich stretch would be. The interpretation depends on their organization, not simply on counting negative charges.
+
+The candidate loops lie well upstream of the hydrophobic near-terminal sequence LICAFAIAFIISVMLIAA. That distribution is consistent with a soluble binding region attached to a membrane through a C-terminal anchor. It helps place the proposed ion-binding loops outside the hydrophobic segment, but does not establish membrane orientation or the protein’s cellular destination.
+
+The sequence supports candidate EF hands; it does not directly demonstrate their three-dimensional fold or prove that both bind ions under physiological conditions. Nor does it measure calcium affinity, calcium-versus-magnesium selectivity, occupancy or a calcium-dependent conformational change. In particular, recognizing these two loops does not justify claiming four functional calcium-binding sites. The architecture prediction and the biochemical properties of its sites require different evidence.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 The existing review identifies the sequence as human CaBP7, UniProt Q86V35. The primary abstract and experimental deposition support two high-affinity N-terminal calcium sites. The NMR construct omits the full canonical C-terminal region. Those experimental facts are withheld from the student input; they do not make affinity or selectivity readable from the anonymous sequence.

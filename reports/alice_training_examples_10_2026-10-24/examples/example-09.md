@@ -14,22 +14,20 @@ A collaborator concludes that the diffuse A1D3 image reveals native neuroligin o
 
 ## Answer
 
-The observations show probe-dependent labeling patterns consistent with redistribution; neither similar soluble affinity nor a diffuse image establishes the native state. One useful comparison is organization across functional valencies with measured initial target engagement and detection differences accounted for. A systematic valency-dependent change would support crosslinking as a contributor; persistence without that pattern would motivate other preparation or cellular effects. A second comparison is agreement with an independently validated organization readout that minimizes probe perturbation. Agreement would strengthen, but not prove, a native-state interpretation; disagreement would challenge it. Concentration dependence is another defensible comparison, although changing concentration can also change engagement. Matching engagement alone does not establish a molecular mechanism or the unlabelled baseline.
+The observations justify concern that the probe affects the observed pattern, but they do not establish which pattern represents native neuroligin organization. Similar affinity for soluble biotin controls only part of the problem. A tetramer with four active sites can connect separate biotinylated targets; an A1D3 tetramer has only one functional site and cannot make that same connection through multiple biotin-binding sites. This difference in functional valency remains even though both preparations are tetramers. Cellular target engagement and fluorophores per detected complex can also affect the image, and the affinity measurements did not use exactly the same preparations as the cellular comparison.
 
-## Assessment rubric
+My first comparison would ask whether the organization pattern depends on functional valency after accounting for initial target engagement and detection. An intermediate-valency preparation could be informative here: a corresponding intermediate tendency to form clusters would support a valency-dependent contribution. A difference between multivalent and monovalent labels at comparable engagement would be consistent with probe-mediated crosslinking. If the apparent difference instead largely disappeared after accounting for engagement or detection, the original images would give weaker support for redistribution. Neither pattern alone would isolate every difference between the preparations, and matching initial engagement would not guarantee identical engagement later.
 
-- Separate binding affinity, functional valency, cellular target engagement, optical detection, and native organization.
-- Develop two useful comparisons: identify the uncertainty each addresses and a possible result that would alter the conclusion. A well-justified concentration-based comparison may replace either reference comparison.
-- Explain relevant confounding. Initial engagement matching does not control every later interaction, and concentration effects alone do not isolate a mechanism.
-- Require independent evidence before calling either observed pattern native. Do not claim that the suggested comparisons or their outcomes were reported in the paper.
-- Accept other defensible priorities and compatible interpretations. Naming a particular comparison without explaining its evidential value is insufficient.
+My second comparison would ask whether the organization agrees with an independent readout that has been evaluated for perturbation. If that readout also showed diffuse organization, the A1D3 image would gain support as a less perturbing representation. If it instead revealed clusters or a different organization, the diffuse A1D3 image could be missing a feature of the target distribution. Agreement is useful only to the extent that the independent method has different, understood biases; agreement between two perturbing methods is not sufficient validation.
+
+A concentration-dependence comparison is another defensible priority, especially if the concern is whether clustering occurs only in a particular labeling regime. Its interpretation would still need to distinguish altered opportunities for crosslinking from altered target coverage and detection. Thus, the next evidence should resolve a specific competing explanation. The current results motivate testing probe-induced perturbation, while a native-state claim additionally needs a suitable independent baseline and attention to the perturbations introduced by that baseline.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 [Howarth et al., A monovalent streptavidin with a single femtomolar biotin binding site](https://doi.org/10.1038/nmeth861) (2006): Table 1 and Figure 3 for stoichiometry and soluble binding; Figure 4 and accompanying Results for neuronal labeling and clustering.

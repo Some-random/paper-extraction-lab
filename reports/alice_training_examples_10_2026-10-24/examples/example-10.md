@@ -14,22 +14,22 @@ A collaborator proposes prioritizing proteins that passed both filters and defer
 
 ## Answer
 
-The result establishes failure of this relative-enrichment filter, not absence from contacts or lack of biological importance. P might have a substantial cytosolic pool alongside genuine contact association, or it might have little contact association under the sampled conditions. The current data do not distinguish these possibilities. Independent localization evidence would address where P is found; functional evidence would address its contribution to the process of interest. Neither claim follows directly from the other. Deferring P can be reasonable when stronger candidates or limited resources dominate, provided it is a prioritization decision rather than a biological exclusion. Relevant independent evidence and the project's objective could change that priority.
+With limited resources and no independent reason to prioritize P, I would provisionally follow the collaborator's priority and defer it. That is a practical ranking of candidates, not a conclusion that P is absent from contacts or biologically unimportant. Passing both filters provides the passing candidates with stronger support under this particular selection scheme. It does not make the filtered list a complete inventory of proteins relevant to the biological process.
 
-## Assessment rubric
+The two comparisons answer different questions. P's recovery exceeds the no-added-biotin background, so it passes that first selection step. It nevertheless fails the required enrichment relative to the cytosolic reference. The second result establishes insufficient relative enrichment under the sampled conditions. It does not identify the reason: the ratio depends on recovery in both the contact-targeted condition and the reference condition.
 
-- State exactly what P passed and failed; distinguish a filtered enrichment list from an inventory of all biologically important proteins.
-- Give at least two compatible explanations without asserting either as P's measured biology. Dual localization and weak or absent contact association are examples; other justified explanations involving biological accessibility or labeling history also receive credit.
-- Distinguish evidence about localization from evidence about function. Do not equate proximity with direct binding or functional necessity.
-- Make a reasoned prioritization decision. Accept follow-up or deferral when assumptions, competing priorities, and evidence that would change the decision are explained.
-- No numerical calculation is required. Do not infer protein-specific rates, occupancy, or an individual error probability from the supplied comparison.
+One compatible explanation is that P has a substantial cytosolic pool as well as a genuine contact-associated pool. Recovery from the cytosolic population can reduce relative enrichment even if some P is present at contacts. Another is that P has little or no contact association in this setting, making deferral biologically appropriate as well as practical. Differences in accessibility to labeling or in the labeling history could also contribute. These remain possible explanations; no protein-specific evidence supplied here selects among them. Comparable overall labeling does not provide a separate calibration of P's recovery, kinetics or occupancy.
+
+Independent localization evidence would address whether P is found at contacts, in the cytosol, or in more than one compartment under relevant conditions. Evidence about function would address a separate question: whether P contributes to the process the project aims to understand. A small contact-associated pool could be functionally important, while a readily detected contact-associated protein need not be a key functional factor. Neither localization nor proximity labeling alone establishes direct molecular binding or functional necessity.
+
+My priority would change if independent evidence linked P to the relevant contact-associated process, supported a meaningful contact-localized pool, or suggested that this filtering scheme systematically misses the kind of protein the project seeks. A different project objective could also justify following up P despite its failed filter. Without such a reason, deferral is reasonable, provided the record states the actual basis: P currently has weaker support from this assay's enrichment criterion, not a demonstrated lack of biological relevance.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 [Cho et al., Split-TurboID enables contact-dependent proximity labeling in cells](https://doi.org/10.1073/pnas.1919528117) (2020): Figure 3F and Results before Figure 4 for unequal-duration bulk matching; Figure 4 and Methods, Generation of ER–Mitochondria Proteome Lists, for sequential filtering; Results before Validation of ER–Mitochondria Contact Orphans for loss of dual-localized proteins.

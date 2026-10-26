@@ -15,21 +15,22 @@ What chromophore-binding mechanism would you prioritize as a hypothesis for this
 
 ## Answer
 
-A retinal-binding microbial opsin is a plausible leading hypothesis. Repeated hydrophobic regions across this compact sequence support a multipass membrane bundle. Lys205 lies in the late hydrophobic segment VALIVYLDLVTKVGFGFIALDAAATL, a position compatible with the lysine that forms a retinal Schiff base in microbial opsins. This combined architecture and residue context is more persuasive than lysine presence alone. A soluble chromophore-binding fold fits the extensive membrane-length hydrophobicity less well. Nevertheless, other membrane proteins can have multiple helices and lysines. Sequence inspection does not prove retinal occupancy, attachment at Lys205, exact helix boundaries, spectral properties or sensory function.
+A retinal-binding microbial opsin is a plausible leading hypothesis. The reasoning combines the protein’s overall membrane-rich architecture with the position and chemistry of a candidate attachment lysine; neither feature is sufficient alone.
 
-## Assessment rubric
+Long hydrophobic regions occur throughout this compact 239-residue sequence, rather than being confined to one terminal anchor. Illustrative windows occur at residues 1–26, 36–64, 73–94, 98–121, 124–145, 166–190 and 194–219. Their distribution is consistent with a compact bundle of membrane-spanning helices, including the seven-helix architecture characteristic of microbial opsins. These are approximate sequence windows, not experimentally established helix boundaries or a demonstrated count of seven helices.
 
-- Connects repeated hydrophobic regions with a multipass membrane architecture, without presenting sequence windows as experimentally measured helices.
-- Identifies Lys205 in the actual late hydrophobic segment and explains its compatibility with retinal Schiff-base chemistry.
-- Compares a soluble chromophore-binding interpretation using architecture; does not claim that seven helices or a lysine uniquely establishes an opsin.
-- Separates the proposed mechanism from demonstrated attachment, occupancy, spectra or function. Credit a more cautious membrane-protein conclusion or defensible alternative if it addresses the residue evidence and explains what prevents a unique assignment.
+The late hydrophobic region, VALIVYLDLVTKVGFGFIALDAAATL at residues 194–219, contains Lys205. In a retinal-binding opsin, retinal’s aldehyde can form an imine, or Schiff base, with the lysine side chain’s amino group. The corresponding attachment lysine in microbial opsins lies in the final membrane helix. Lys205 therefore has compatible chemistry and a qualitatively appropriate position within the proposed membrane architecture. Its relevance comes from that context, not simply from finding a lysine somewhere in the protein.
+
+A soluble chromophore-binding protein is a meaningful alternative. A soluble LOV-domain protein can bind FMN, for example, but its folded pocket would need to accommodate the chromophore within a largely soluble domain. The many long hydrophobic regions here fit a membrane bundle substantially better than that overall architecture. Likewise, protein length alone would not justify a GFP-like soluble beta-barrel interpretation. The distribution of hydrophobicity is more discriminating than size.
+
+The strongest conclusion from direct inspection is that this is likely a multipass membrane protein. The retinal/opsin interpretation is a more specific hypothesis that draws on family knowledge. Other membrane proteins can also contain several helices and lysines, so these observations do not uniquely prove opsin identity. They also do not demonstrate retinal occupancy, a Schiff-base linkage specifically at Lys205, an absorption wavelength or sensory rather than transport function. Those claims go beyond the anonymous sequence evidence.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 The existing review identifies the sequence as sensory rhodopsin II, UniProt P42196. Experimental structures establish retinal binding and the Lys205 linkage; the student must not treat those withheld findings as observations available from sequence alone. This microbial protein should not be labeled an animal G-protein-coupled receptor.

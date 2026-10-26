@@ -18,21 +18,22 @@ What interaction-domain architecture is a reasonable hypothesis for this sequenc
 
 ## Answer
 
-Two PDZ-like interaction modules are a reasonable family-level hypothesis. EYGYNLHAEKGRGQFVGTVD resembles EFGFNLHAERGRGHFIGTVD, with additional downstream similarity between IFAVNGHSIIGENHKKVVERIK and IVGVNGQLIYPTTGHKEVVALIK. Extended repetition supports two related modules more than a single short motif does, although repetition alone does not uniquely identify PDZ domains. The PPPPPP stretch could be an SH3-binding ligand motif; it is not evidence that this protein contains an SH3 fold. No literal GLGF motif occurs, so that cannot be cited. Sequence inspection does not establish precise domain boundaries, whether both modules bind peptides, their affinities or their physiological partners.
+A reasonable hypothesis is a tandem arrangement of two PDZ-like interaction modules. The clearest sequence evidence is extended similarity between two regions of the N-terminal portion, rather than one short conserved word or a low-complexity repeat.
 
-## Assessment rubric
+For example, EYGYNLHAEKGRGQFVGTVD at residues 24–43 resembles EFGFNLHAERGRGHFIGTVD at residues 154–173. Both contain related aromatic/glycine-rich portions followed by a similar GTVD-containing segment. The similarity continues farther along the candidate modules: IFAVNGHSIIGENHKKVVERIK at residues 59–80 resembles IVGVNGQLIYPTTGHKEVVALIK at residues 189–211. Agreement across separated parts of each region is more informative than matching a single short motif. It supports two related modules with internal sequence complexity.
 
-- Identifies extended similarity in two regions using actual sequence segments; does not rely only on a low-complexity run.
-- Treats tandem PDZ-like modules as a hypothesis requiring family knowledge, not a deduction from repeat count alone. A cautious tandem-module answer can receive full credit if it explains why exact family identification remains uncertain.
-- Distinguishes a potential proline-rich ligand motif from a folded SH3 domain; does not invent a literal GLGF motif.
-- Separates architecture from precise boundaries, partner identity, functional binding and affinity. Credit another family hypothesis if it explains the extended sequence evidence and acknowledges its limitations.
+The broader pattern is compatible with PDZ domains, compact interaction modules whose folded binding grooves often recognize short peptides at the C termini of partner proteins. Recognition can involve the partner’s terminal carboxylate and nearby side chains; some PDZ domains also recognize internal motifs. This explains how a tandem-domain protein could participate in partner recognition without identifying any particular partner. The PDZ assignment requires family knowledge: duplication alone would establish related regions, not uniquely name their fold. There is no literal GLGF motif in this sequence, so that familiar PDZ motif cannot be claimed as observed evidence here.
+
+The PPPPPP stretch at residues 128–133 illustrates a different kind of sequence feature. A proline-rich segment could serve as a ligand for an SH3-containing partner. It is not itself evidence for an SH3 domain in this protein. A ligand motif is a short recognition sequence; a domain is a larger folded module that performs recognition. Confusing the two would substitute a potential partner-binding site for a domain-architecture assignment.
+
+The sequence therefore supports tandem related interaction modules, with PDZ-like domains as a reasonable leading interpretation. It does not determine exact domain boundaries, prove that both modules bind peptides, establish their affinities or identify their physiological partners. A more cautious tandem-module conclusion is appropriate if family recognition remains uncertain.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 The existing review identifies the selected sequence as the tandem-PDZ NRFL-1 isoform, UniProt G5EDM4. Some splice variants have one PDZ domain. The primary study supports the selected two-domain architecture and examines AAT-6 binding; the specific partner and PDZ2 preference are not supplied in the student input. The prior review preferred the Results text over an inconsistent duplicated phrase in the Figure 2 caption.

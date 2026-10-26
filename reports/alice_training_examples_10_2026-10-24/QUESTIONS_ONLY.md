@@ -1,6 +1,6 @@
-# Protein questions — revision 6
+# Ten protein reasoning problems
 
-Open-response questions. Reference answers and assessment criteria are in ALL_EXAMPLES.md.
+Worked answers are in ALL_EXAMPLES.md.
 
 # 1. APEX: what transfers across assay conditions?
 

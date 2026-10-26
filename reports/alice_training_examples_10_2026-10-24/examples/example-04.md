@@ -17,21 +17,22 @@ What cofactor and protein-family assignment does this sequence most strongly sup
 
 ## Answer
 
-A heme-containing cytochrome P450 is the strongest assignment. The segment FGHGHHVCLG at residues 338–347 matches the P450 FxxGxxxCxG signature; Cys345 is a candidate axial ligand to heme iron. ECLR at 274–277 and AGHETT at 235–240 provide supporting P450-context evidence in the expected order. A cysteine could also participate in iron–sulfur binding, but that possibility alone does not explain this combined pattern. The argument depends on family context, rather than cysteine presence. Sequence supports a cofactor hypothesis; it does not demonstrate bound heme, the substrate, reaction specificity or catalytic activity.
+The strongest assignment is a heme-containing cytochrome P450. The evidence is a combination of sequence features in the appropriate order, rather than the presence of a metal-binding amino acid by itself.
 
-## Assessment rubric
+The most direct clue is FGHGHHVCLG at residues 338–347. It matches the P450-associated pattern FxxGxxxCxG, where x can be any residue. The cysteine in this pattern is Cys345. In P450 enzymes, the corresponding cysteine supplies a thiolate sulfur that coordinates the heme iron. This makes Cys345 a plausible axial ligand and connects the sequence pattern to a specific cofactor-binding chemistry. Coordination of heme iron should not be confused with a covalent bond attaching the heme group to the polypeptide.
 
-- Identifies heme/P450 as the leading assignment and cites the actual FGHGHHVCLG segment, with at least one supporting P450-associated segment.
-- Explains the proposed cysteine–heme-iron coordination without calling it a covalent attachment of heme to the polypeptide.
-- Compares one plausible alternative using positive sequence context; does not treat a missing generic motif as definitive exclusion.
-- Separates predicted family/cofactor from measured occupancy or activity. Credit a defensible alternative assessment if it addresses the same sequence evidence and explains its uncertainty.
+Two other regions strengthen the family assignment. ECLR at residues 274–277 matches the characteristic P450 E-x-x-R pattern. This supports the P450 core architecture; it is not itself a direct heme-binding site. AGHETT at residues 235–240 contains an acidic residue and adjacent threonines consistent with the I-helix region involved in oxygen activation in many P450s. Calling it an I helix is a family-based structural inference, not an observed secondary structure. These regions precede the cysteine-containing signature in the expected sequence order, so they provide mutually consistent support.
+
+An iron–sulfur protein is a reasonable alternative to consider when a sequence contains cysteines. However, cysteine presence alone does not distinguish an iron–sulfur ligand from a heme ligand or an unrelated cysteine. Here, the specific cysteine-containing signature together with the supporting P450 patterns explains the evidence better than a generic iron–sulfur assignment. Flavin-binding families are also diverse, so the argument should not be that one missing universal FAD or FMN motif rules them out.
+
+The supported conclusion is a strong P450/heme hypothesis. The sequence does not demonstrate that the protein actually contains heme, identify its substrate or establish its reaction specificity and catalytic activity. Those are separate claims from recognizing a cofactor-binding family.
 
 <details>
 <summary>Sources and review notes</summary>
 
 **Creation method:** Source-aware assistant revision (revision 6, final polish 1).
 
-**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
 
 The existing source review identifies the sequence as UniProt P53554. The primary structure supports heme and Cys345 coordination; the anonymous sequence does not independently reveal the biotin-biosynthesis substrate.

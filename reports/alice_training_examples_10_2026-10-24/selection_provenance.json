@@ -13,9 +13,9 @@
         "https://www.uniprot.org/uniprotkb/Q43758/entry"
       ],
       "canonical_page": "examples/example-01.md",
-      "canonical_page_sha256": "39f719758e34cb881d0656e9083633470044df9b49262c1e56c104f7f04d3bf3",
+      "canonical_page_sha256": "794a4ac35ca5e1a1c6899034508ecd320bb3f43c5f4f8df76cb9dd8ea286cda0",
       "student_prompt_sha256": "28398e58553d862b5c98a1450119eb54a6f1fad372afad01a88a7d0881c514b8",
-      "reference_answer_sha256": "67722935137032dd611cc2ea5eef39b9dc6e123a5b09f9e5f352e3b3888f65be",
+      "reference_answer_sha256": "4df5a96059465669546dbd1ab59975d37154356a2b42afbe1de14a6cb74ace86",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-01.md"
     },
     {
@@ -27,9 +27,9 @@
         "https://doi.org/10.1038/nbt.2375"
       ],
       "canonical_page": "examples/example-02.md",
-      "canonical_page_sha256": "9b00bf423ac7c50c60674d8a4d6aef20cf029400f78221853254ac8450c5594e",
+      "canonical_page_sha256": "fd59189e8baee3dffd841410219eb086fc56490147bbcbfb63045b9da2b41129",
       "student_prompt_sha256": "c4e41dc942d07da66cb04dcd9989ae229336257e7809e7086f82d1cbf8e0d34c",
-      "reference_answer_sha256": "545eaafe591550e458e5f04ee149da95f99c5f21c4a7b97b006506d393c778f3",
+      "reference_answer_sha256": "cca2b386a82b38c56eaca2a41485c9d07d21cc6dcf950888bb9fd7284b3824e5",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-02.md"
     },
     {
@@ -41,9 +41,9 @@
         "https://doi.org/10.1038/nbt.4201"
       ],
       "canonical_page": "examples/example-03.md",
-      "canonical_page_sha256": "88d1a3fe6c77e80307c0c51c613a6a762f6895f1eb3057d9a85c763f1c26499e",
+      "canonical_page_sha256": "a95187fb1bec7a98eb551b99f96192d35a504b2563b33dcf4157d53dbce8dfd0",
       "student_prompt_sha256": "bf91e51b157fcf73aad21c90d68650f61417c64dc86f6d588fe2e6d798f105a5",
-      "reference_answer_sha256": "63e038c56daa0334c48fc45c141f8f2f0812f4b1a3b2e778da7c3a2b0b517d2b",
+      "reference_answer_sha256": "1ccab7ea97dbbbe750b4c5a4640fed837cea27e8e53fa4f88bb40e5e09136382",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-03.md"
     },
     {
@@ -55,9 +55,9 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/"
       ],
       "canonical_page": "examples/example-04.md",
-      "canonical_page_sha256": "2fdd6642e12d1795933e7795527b38f05124dcae73991a5763c293db06ba0192",
+      "canonical_page_sha256": "fa228800bd6c86cca4ee024f0b843b90a7c4d04e57fd16f91102f26275aaba44",
       "student_prompt_sha256": "46cbe5a4519fd14d1b19cbd8ad3b6da30d56c58849f2d3debee3ff68b398ed59",
-      "reference_answer_sha256": "d13e7ca86feb279e5de9d17e3465d93a31876bc149387102596eab218791bc94",
+      "reference_answer_sha256": "a6bc92d26fe24f69d50c75a3e6738afd1bd5773aebc1353c88a1af126082618b",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-04.md"
     },
     {
@@ -70,9 +70,9 @@
         "https://www.rcsb.org/structure/2LV7"
       ],
       "canonical_page": "examples/example-05.md",
-      "canonical_page_sha256": "102d76472c6eaa839e959ecbe1b667027e8ecf9a871688b2fcb6f5e4c9ad9c14",
+      "canonical_page_sha256": "a0fe034ac3ce14bb3572e70fb1db7aa189adbc318b00219a7e2ead5a693f2769",
       "student_prompt_sha256": "3238ff6126c6e9ae205d899a607ece91fb0d6aef220670cfa77b30b4eed03bcb",
-      "reference_answer_sha256": "21df274377f73e1d33bae04f7e4c22bcf24a9e459ff0f60194426871083aaa0a",
+      "reference_answer_sha256": "0f7a51e9e8b4e2ef77e9db3d5692e4370ab83ad17c4fb181cfd18827eee71c9c",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-05.md"
     },
     {
@@ -85,9 +85,9 @@
         "https://pubmed.ncbi.nlm.nih.gov/9705316/"
       ],
       "canonical_page": "examples/example-06.md",
-      "canonical_page_sha256": "fbbfb91e915691a75747e482306b367f22cf0c0f3413419c83493c2f911d70bb",
+      "canonical_page_sha256": "ffe3584dcdc9ccb8683f5771dde7dd732299164de11c69c4d7a5c9c04a8470c9",
       "student_prompt_sha256": "8087e5fb7ee60fbc5f11760655c2eedf5ae1bde72688801fc326bcdbfec5531f",
-      "reference_answer_sha256": "4d5caaf3df16248d5f4b43f9f5abbc1b659c814757859b121223b4f4a9363bfc",
+      "reference_answer_sha256": "2163a4ca55157493d86323aa06e25bc0d30c19e9fcc2fc67d9e4aa04acc17d88",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-06.md"
     },
     {
@@ -99,9 +99,9 @@
         "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050"
       ],
       "canonical_page": "examples/example-07.md",
-      "canonical_page_sha256": "b96841ceb1cccd9850d7a84273f84fbd243e83c3a79b7d7ec138bc8dab8698d5",
+      "canonical_page_sha256": "7649fde5f53da78f8e51b00693c706ca7a589db5ff0359b15c930a1fcd3962f5",
       "student_prompt_sha256": "6bdb2988e7059974c0fa060620bb513f49666fec64af2866cd2fc5c1d0e585e6",
-      "reference_answer_sha256": "3e5f33a69644011ddc2f3f80603f8bbcf9ce259e85c7c23e3352c0ab72e12450",
+      "reference_answer_sha256": "b429f8b9eda69c1fd9f78de9bba0ea544a5f25e062fa0b1bf9733240e1372337",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-07.md"
     },
     {
@@ -115,9 +115,9 @@
         "https://pubmed.ncbi.nlm.nih.gov/12368857/"
       ],
       "canonical_page": "examples/example-08.md",
-      "canonical_page_sha256": "f9be6b6ba1ba69fc0533c997fab29ca0ddf2b0f7c88612b025059bd1f8f79b01",
+      "canonical_page_sha256": "6921124a6dc6eed2ba5983fc6e3df022f6a7c864d9d532041975c31ebe9ba4fe",
       "student_prompt_sha256": "7c7cc4900ddbc7363e159a07b8abea0e8d2050d9a7ee1c8fdbeb4d2204c86497",
-      "reference_answer_sha256": "ab032ac07b1581cb2fea6e2a4ef739e013a13eae0f1538a8f67c97e61366bc0f",
+      "reference_answer_sha256": "1a7adf6dc043a9837dc1918650c3a767e5d86288bfc2b9470ae490e69565d19b",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-08.md"
     },
     {
@@ -130,9 +130,9 @@
         "https://www.uniprot.org/uniprotkb/P22629/entry"
       ],
       "canonical_page": "examples/example-09.md",
-      "canonical_page_sha256": "cef451085220a8db91cad8423278642231f4dddfba7405b5370a439507fbeaad",
+      "canonical_page_sha256": "1a92f5922125be55d138f6085185324e210fc5ab71becb7bfe76536cbbb09191",
       "student_prompt_sha256": "b4edeb6a0f7397cce7252bec855bbd199ac12bf129574467a067c092ed722938",
-      "reference_answer_sha256": "f8873fc158919ecdf7bd5dc88401179103bd7e7b94d38660bcea2d6447def562",
+      "reference_answer_sha256": "127b3b1bb45a8846a2e4fe8af6db278dd25b574659018537307e3f7da0bb3f79",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-09.md"
     },
     {
@@ -145,9 +145,9 @@
         "https://www.uniprot.org/uniprotkb/P06709/entry"
       ],
       "canonical_page": "examples/example-10.md",
-      "canonical_page_sha256": "42750b416fdeff2d90a063b01c0f438b62a2e9d9f04e9b63eb7b5c8f9e637aed",
+      "canonical_page_sha256": "3dbfbcdee27b0ba5aed5fe78371fc7ec2acfc420846578ad8a14bd3d69526cc2",
       "student_prompt_sha256": "dc49f8553e0edd3e0f651ecbe125f8a5ce91e244aac7b825419586e3ca4f79a9",
-      "reference_answer_sha256": "8cc3ddfdfade5ec48dddf7ad87780dcfe18b9ff63ae3432bbb5cc6b412cd7552",
+      "reference_answer_sha256": "6a8ae748aed683b395570f09849bbf177e8d275a32c9235dae7414d89f31aa9f",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-10.md"
     }
   ],
@@ -155,6 +155,7 @@
   "revision_record": "revision_v6.json",
   "review_record": "review_v6.json",
   "new_teacher_api_calls": 0,
+  "presentation_record": "presentation_update_v1.json",
   "expert_human_review_performed": false,
   "student_training_released": false,
   "training_gain_measured": false

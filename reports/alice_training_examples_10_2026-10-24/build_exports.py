@@ -43,6 +43,7 @@ def aggregate_links(text: str) -> str:
 def render(root: Path) -> dict[str, str]:
     revision = json.loads((root / 'revision_v6.json').read_text())
     review = json.loads((root / 'review_v6.json').read_text())
+    internal = json.loads((root / 'internal/assessment_rubrics.json').read_text())
     assert review['status'] == 'assistant_review_passed'
     assert revision['format'] == 'open_response'
     questions, training, verification, provenance, docs = [], [], [], [], []
@@ -57,15 +58,13 @@ def render(root: Path) -> dict[str, str]:
         title = text.splitlines()[0].split('. ', 1)[1]
         assert text.count('\n## Question\n') == 1, rel
         assert text.count('\n## Answer\n') == 1, rel
-        assert text.count('\n## Assessment rubric\n') == 1, rel
+        assert '\n## Assessment rubric\n' not in text, (rel, 'grading rubric in reader-facing page')
         question = text.split('\n## Question\n', 1)[1].split('\n## Answer\n', 1)[0].strip()
-        answer = text.split('\n## Answer\n', 1)[1].split('\n## Assessment rubric\n', 1)[0].strip()
-        tail = text.split('\n## Assessment rubric\n', 1)[1]
-        rubric, notes = tail.split('<details>', 1)
-        rubric = rubric.strip()
+        answer, notes = text.split('\n## Answer\n', 1)[1].split('<details>', 1)
+        answer = answer.strip()
+        rubric = internal['examples'][item_id]['assessment_rubric']
         assert '</details>' in notes, rel
         assert question and answer and rubric, rel
-        assert len(answer.split()) <= 200, (rel, 'answer disproportionately long')
         assert 'Final answer:' not in question and 'Choices:' not in question, rel
         assert rubric.count('\n- ') + int(rubric.startswith('- ')) >= 3, rel
         references = re.findall(r'\]\((https?://[^)]+)\)', notes)
@@ -87,7 +86,7 @@ def render(root: Path) -> dict[str, str]:
         verification.append({'schema': 'alice10-reference-review-v6', 'id': item_id,
                              'format': 'open_response', 'reference_answer': answer,
                              'assessment_rubric': rubric, 'review_status': 'assistant_review_passed',
-                             'review_scope': 'source consistency, evidence use, fairness and feedback',
+                             'review_scope': 'source consistency, evidence use and worked-answer completeness',
                              'student_prompt_sha256': sha(question), 'reference_answer_sha256': sha(answer),
                              'expert_human_validation': False, 'training_gain_measured': False})
         provenance.append({'id': item_id, 'revision': 6, 'method': 'source_aware_assistant_revision',
@@ -97,13 +96,14 @@ def render(root: Path) -> dict[str, str]:
                            'earlier_version': f"https://github.com/Some-random/paper-extraction-lab/blob/{revision['previous_commit']}/reports/alice_training_examples_10_2026-10-24/{rel}"})
         writer.writerow([i, title, rel, 'open_response'])
         docs.append(aggregate_links(text.strip()))
-    all_md = '# AI-created protein reasoning training data — ten revised examples\n\n' + '\n\n---\n\n'.join(docs) + '\n'
-    questions_md = '# Protein questions — revision 6\n\nOpen-response questions. Reference answers and assessment criteria are in ALL_EXAMPLES.md.\n\n'
+    all_md = '# Ten protein reasoning problems and worked answers\n\n' + '\n\n---\n\n'.join(docs) + '\n'
+    questions_md = '# Ten protein reasoning problems\n\nWorked answers are in ALL_EXAMPLES.md.\n\n'
     questions_md += '\n\n---\n\n'.join(f"# {i}. {row['title']}\n\n{row['student_prompt']}" for i, row in enumerate(questions, 1)) + '\n'
     prov = {'schema': 'alice10-provenance-v6', 'current_revision': 6,
             'authoring_method': 'source_aware_assistant_revision', 'examples': provenance,
             'previous_commit': revision['previous_commit'], 'revision_record': 'revision_v6.json',
             'review_record': 'review_v6.json', 'new_teacher_api_calls': 0,
+            'presentation_record': 'presentation_update_v1.json',
             'expert_human_review_performed': False, 'student_training_released': False,
             'training_gain_measured': False}
     return {'ALL_EXAMPLES.md': all_md, 'ALL_EXAMPLES.txt': plain(all_md),
