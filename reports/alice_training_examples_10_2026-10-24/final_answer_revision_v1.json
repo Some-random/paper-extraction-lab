@@ -1,0 +1,241 @@
+{
+  "schema": "alice10-final-answer-revision-v1",
+  "previous_commit": "3bb30970f52d1ce162dcc60f8c13ce620403fa91",
+  "question_revision": 7,
+  "reviewed_at_utc": "2026-10-26T06:31:35.150931+00:00",
+  "status": "assistant_content_review_passed",
+  "scope": "Focused correction of worked answers and source-note presentation; every question, A-D choice and answer key preserved.",
+  "changes": {
+    "example-01": "Direct conclusion; retain condition-specific ratios, peak position/rate distinction and all option comparisons; remove repeated conclusion.",
+    "example-02": "Direct assay interpretation; scope causal limits to supplied comparisons and use precise trafficking/staining terms.",
+    "example-03": "Temporal priority with recovery as feasibility constraint; correct characterization of option C; remove personal preference and repetition.",
+    "example-04": "Remove duplicate label; precise cysteine-iron versus porphyrin attachment statement; merge repeated alternatives.",
+    "example-05": "Remove duplicate label and irrelevant four-site warning; preserve ligand geometry and biochemical limits.",
+    "example-06": "Remove duplicate label/repeated alternatives; retain full topology and boundary qualifications.",
+    "example-07": "Remove duplicate label/repeated alternatives; preserve positive domain evidence and ligand/domain distinction.",
+    "example-08": "Remove duplicate label/repeated alternatives; retain architecture, Lys205 chemistry and evidence limits.",
+    "example-09": "Direct explanation of A; distinguish unknown comparable engagement from asserted unequal engagement; preserve valency, concentration and native-state reasoning.",
+    "example-10": "Evidence-grounded prioritization, no personal deference, no biological-deferral overclaim; retain alternative explanations and localization/function distinction."
+  },
+  "source_notes": "Primary citations, source identities, accession qualifications and meaningful evidence limits retained. Internal authoring/review history consolidated in PROVENANCE.md.",
+  "examples": {
+    "example-01": {
+      "answer_letter": "C",
+      "student_question_unchanged": true,
+      "question_section_sha256": "113934cc7d2fcdf38d5f849acc9a779dd182321fec140b4d0bd7bc7db93d8b69",
+      "previous_page_sha256": "b361353d67484869e1da557cb9232a0e4e5fecf31fd8d080e91ed692418146c6",
+      "current_page_sha256": "9011241cd21d9de7d23882a20dedd9cbab1b59430ab2e4374cfdbd41e32a7dc5",
+      "answer_words": 240,
+      "previous_primary_citations_retained": true
+    },
+    "example-02": {
+      "answer_letter": "C",
+      "student_question_unchanged": true,
+      "question_section_sha256": "112a6bb8676015f51be889268e4c136e9505591057c4318ab8c76ba1270ffb28",
+      "previous_page_sha256": "13ddd01e4b37f7afad16de13952c4d8064d4f6137f39c3e3009526143e2e0183",
+      "current_page_sha256": "4b941f0987ddd47d20033a15324d3285f75fa722decf8a7bf5b1de492ed96749",
+      "answer_words": 428,
+      "previous_primary_citations_retained": true
+    },
+    "example-03": {
+      "answer_letter": "B",
+      "student_question_unchanged": true,
+      "question_section_sha256": "3e2349bb7f3e07dde9844fb0ecdf6ee5508a16cbd398a6604842d8cc8043fc11",
+      "previous_page_sha256": "3f2e7388c1bbc40e52a6943c15ba1000e3128ba1dca83c30fab57f458c2fc43b",
+      "current_page_sha256": "c1bfe557d4971616c8c172e580ca3bb1a6655d3b8ac96cad1777754bb5ca0b85",
+      "answer_words": 355,
+      "previous_primary_citations_retained": true
+    },
+    "example-04": {
+      "answer_letter": "D",
+      "student_question_unchanged": true,
+      "question_section_sha256": "301a2e5e7ddc2abd3fc5ed1248058f9c8d818e4fe85a4321b41a94a6a084cbee",
+      "previous_page_sha256": "bb1744ced422396ce01bab7e5a4f4b25358d5025c62bacd472aa9c6967a035d1",
+      "current_page_sha256": "3ff748ad92cc416ffe1ce9483b77e883bd466e718ded39166650a951de94bf30",
+      "answer_words": 325,
+      "previous_primary_citations_retained": true
+    },
+    "example-05": {
+      "answer_letter": "A",
+      "student_question_unchanged": true,
+      "question_section_sha256": "37804beaa65d3697e33fd2e678e77d38acd419aad237b70e0916bdd09226a327",
+      "previous_page_sha256": "4086feed7cea70bb158135a62cc2961bdb8661fccbb2314765095099c4a86403",
+      "current_page_sha256": "db9995284339af3e2c591041edac169b33e8082c729b1ea933aa492da4f5ae26",
+      "answer_words": 338,
+      "previous_primary_citations_retained": true
+    },
+    "example-06": {
+      "answer_letter": "B",
+      "student_question_unchanged": true,
+      "question_section_sha256": "f1472e622aface02279e6d35957d97a5e566ded41854a836e13caf139706373f",
+      "previous_page_sha256": "4372e1e1faa7fb79ae5fa27880fe7f5ccdbf488811fcb144fb4f2673a0909094",
+      "current_page_sha256": "b6accfb35c156e228111bdcf886d13c926bc39854c52a2937dc337b95fb3c983",
+      "answer_words": 331,
+      "previous_primary_citations_retained": true
+    },
+    "example-07": {
+      "answer_letter": "C",
+      "student_question_unchanged": true,
+      "question_section_sha256": "368dc8d1671c0cdb8b71f8a5682e0142fcc2c2d8bf0232ff6dd27dd672867be4",
+      "previous_page_sha256": "c4a08cdf75be00b2fb10902ad3b863499704a653cc18630e10fd186ff75e71de",
+      "current_page_sha256": "794a83a41a65c60d1cdc0a01c9050e58a7876ad7513da091224742b26115a633",
+      "answer_words": 352,
+      "previous_primary_citations_retained": true
+    },
+    "example-08": {
+      "answer_letter": "D",
+      "student_question_unchanged": true,
+      "question_section_sha256": "09cf6dfd868afaae4de13d526d74b020fd8f5a3628ec578234daccd924b8002b",
+      "previous_page_sha256": "007038b381646d29ce376691346187144d9c10ad6f69ba5b262674850366d950",
+      "current_page_sha256": "a6a6c377d26147d48b92360915fd95a26461e24e64dfc6195de088b2a4dec4ae",
+      "answer_words": 337,
+      "previous_primary_citations_retained": true
+    },
+    "example-09": {
+      "answer_letter": "A",
+      "student_question_unchanged": true,
+      "question_section_sha256": "abe94d08a077a3fc58a19d6e1ffaa15d4862d070114dddfeed7f4bed56ce95cd",
+      "previous_page_sha256": "14158cbd68ab003de6d9fc44a5e6af64be122a06fa0b7675cd9aab82cbc97bd9",
+      "current_page_sha256": "b967d06cec035b147971da65103c397e8a49c689614a2d3bbea2fca3ce3b2223",
+      "answer_words": 413,
+      "previous_primary_citations_retained": true
+    },
+    "example-10": {
+      "answer_letter": "B",
+      "student_question_unchanged": true,
+      "question_section_sha256": "ec4a94c4bf5b46b653b9c3c912e4c0669658dd5107f983e52c9443a1147746e8",
+      "previous_page_sha256": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e",
+      "current_page_sha256": "f0d54560f5a5a819ef3d57c2b950d2f3430893bd0455da70b863e9c386f3797c",
+      "answer_words": 412,
+      "previous_primary_citations_retained": true
+    }
+  },
+  "sequence_coordinate_checks": [
+    {
+      "example": 4,
+      "start": 338,
+      "end": 347,
+      "sequence": "FGHGHHVCLG"
+    },
+    {
+      "example": 4,
+      "start": 345,
+      "end": 345,
+      "sequence": "C"
+    },
+    {
+      "example": 4,
+      "start": 274,
+      "end": 277,
+      "sequence": "ECLR"
+    },
+    {
+      "example": 4,
+      "start": 235,
+      "end": 240,
+      "sequence": "AGHETT"
+    },
+    {
+      "example": 5,
+      "start": 46,
+      "end": 57,
+      "sequence": "DRDGNGFISKQE"
+    },
+    {
+      "example": 5,
+      "start": 82,
+      "end": 93,
+      "sequence": "DMDGDGQVDFEE"
+    },
+    {
+      "example": 6,
+      "start": 193,
+      "end": 214,
+      "sequence": "ILLVILGIIVVIAILTAIAFFV"
+    },
+    {
+      "example": 6,
+      "start": 186,
+      "end": 192,
+      "sequence": "RRIIQNR"
+    },
+    {
+      "example": 6,
+      "start": 215,
+      "end": 217,
+      "sequence": "KGH"
+    },
+    {
+      "example": 7,
+      "start": 24,
+      "end": 43,
+      "sequence": "EYGYNLHAEKGRGQFVGTVD"
+    },
+    {
+      "example": 7,
+      "start": 154,
+      "end": 173,
+      "sequence": "EFGFNLHAERGRGHFIGTVD"
+    },
+    {
+      "example": 7,
+      "start": 59,
+      "end": 80,
+      "sequence": "IFAVNGHSIIGENHKKVVERIK"
+    },
+    {
+      "example": 7,
+      "start": 189,
+      "end": 211,
+      "sequence": "IVGVNGQLIYPTTGHKEVVALIK"
+    },
+    {
+      "example": 7,
+      "start": 128,
+      "end": 133,
+      "sequence": "PPPPPP"
+    },
+    {
+      "example": 8,
+      "start": 194,
+      "end": 219,
+      "sequence": "VALIVYLDLVTKVGFGFIALDAAATL"
+    },
+    {
+      "example": 8,
+      "start": 205,
+      "end": 205,
+      "sequence": "K"
+    }
+  ],
+  "additional_sequence_checks": {
+    "Q5_membrane_segment_present": true,
+    "Q7_literal_GLGF_absent": true,
+    "Q8_length_239": true,
+    "Q8_cysteine_absent": true
+  },
+  "assistant_review": {
+    "editors": "Separate assistant reviews for Q1-3, Q4-8, Q9-10.",
+    "final_review": "A separate assistant read the final ten answers, questions/options and source qualifications. No material scientific or logical answer blocker identified within existing-evidence review scope. Root assistant also read all final answers.",
+    "expert_human_validation": false,
+    "fresh_full_text_verification": false,
+    "independently_blinded_solver_test": false
+  },
+  "mechanical_checks": {
+    "status": "passed",
+    "canonical_questions_and_options_byte_preserved": true,
+    "exact_student_jsonl_unchanged": true,
+    "A_D_and_answer_keys_match_all_versions": true,
+    "training_prompts_and_reference_answers_match": true,
+    "full_sequences_preserved": true,
+    "source_citations_preserved": true,
+    "all_local_markdown_links_exist": true,
+    "readable_and_machine_exports_current": true,
+    "reader_pages_have_no_grading_rubrics_or_editing_boilerplate": true,
+    "single_answer_label_per_example": true
+  },
+  "question_design_scope": "Earlier question-design limitations recorded in alignment_audit_v1.json remain; this answer revision does not establish difficulty or eliminate answer-selection shortcuts.",
+  "new_teacher_api_calls": 0,
+  "training_gain_measured": false,
+  "historical_artifacts_modified": false
+}

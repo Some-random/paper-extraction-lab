@@ -23,34 +23,25 @@ A collaborator proposes prioritizing proteins that passed both filters and defer
 
 **Answer: B.**
 
-With limited resources and no independent reason to prioritize P, I would provisionally follow the collaborator's priority and defer it. That is a practical ranking of candidates, not a conclusion that P is absent from contacts or biologically unimportant. Passing both filters provides the passing candidates with stronger support under this particular selection scheme. It does not make the filtered list a complete inventory of proteins relevant to the biological process.
+P passes the no-added-biotin comparison but fails the contact-versus-cytosol enrichment filter. Under the stated resource constraint, and without independent evidence giving P higher priority, these results support prioritizing proteins that passed both filters and provisionally deferring P. This is a practical ranking based on the assay's selection criterion, not a conclusion that P is absent from contacts or biologically unimportant. The filtered list is not a complete inventory of proteins relevant to the biological process.
 
 The two comparisons answer different questions. P's recovery exceeds the no-added-biotin background, so it passes that first selection step. It nevertheless fails the required enrichment relative to the cytosolic reference. The second result establishes insufficient relative enrichment under the sampled conditions. It does not identify the reason: the ratio depends on recovery in both the contact-targeted condition and the reference condition.
 
-One compatible explanation is that P has a substantial cytosolic pool as well as a genuine contact-associated pool. Recovery from the cytosolic population can reduce relative enrichment even if some P is present at contacts. Another is that P has little or no contact association in this setting, making deferral biologically appropriate as well as practical. Differences in accessibility to labeling or in the labeling history could also contribute. These remain possible explanations; no protein-specific evidence supplied here selects among them. Comparable overall labeling does not provide a separate calibration of P's recovery, kinetics or occupancy.
+One compatible explanation is that P has a substantial cytosolic pool as well as a genuine contact-associated pool. Recovery from the cytosolic population can reduce relative enrichment even if some P is present at contacts. Another is that P has little or no contact association in this setting. Differences in accessibility to labeling or in the labeling history could also contribute. These remain possible explanations; no protein-specific evidence supplied here selects among them. Comparable overall labeling does not provide a separate calibration of P's recovery, kinetics or occupancy.
 
 Independent localization evidence would address whether P is found at contacts, in the cytosol, or in more than one compartment under relevant conditions. Evidence about function would address a separate question: whether P contributes to the process the project aims to understand. A small contact-associated pool could be functionally important, while a readily detected contact-associated protein need not be a key functional factor. Neither localization nor proximity labeling alone establishes direct molecular binding or functional necessity.
 
-My priority would change if independent evidence linked P to the relevant contact-associated process, supported a meaningful contact-localized pool, or suggested that this filtering scheme systematically misses the kind of protein the project seeks. A different project objective could also justify following up P despite its failed filter. Without such a reason, deferral is reasonable, provided the record states the actual basis: P currently has weaker support from this assay's enrichment criterion, not a demonstrated lack of biological relevance.
+P would merit reconsideration if independent evidence linked it to the relevant contact-associated process, supported a meaningful contact-localized pool, or suggested that this filtering scheme systematically misses the kind of protein the project seeks. A different project objective could also justify following up P despite its failed filter. In the absence of such evidence, provisional deferral reflects weaker support from this assay's enrichment criterion, not a demonstrated lack of biological relevance.
 
-B makes an evidence-based priority decision without claiming biological absence or unimportance. A promotes background-control passage into localization evidence. C assumes an unavailable occupancy calibration. D treats one possible explanation as an established result and then infers function.
+A promotes background-control passage into localization evidence. C assumes an unavailable occupancy calibration. D treats one possible explanation as an established result and then infers function. B avoids those unsupported biological conclusions while retaining a practical basis for prioritization.
 
 <details>
-<summary>Sources and review notes</summary>
-
-**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
-
-**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
-
+<summary>Sources and qualifications</summary>
 
 [Cho et al., Split-TurboID enables contact-dependent proximity labeling in cells](https://doi.org/10.1073/pnas.1919528117) (2020): Figure 3F and Results before Figure 4 for unequal-duration bulk matching; Figure 4 and Methods, Generation of ER–Mitochondria Proteome Lists, for sequential filtering; Results before Validation of ER–Mitochondria Contact Orphans for loss of dual-localized proteins.
 
 Source qualification: [UniProt P06709](https://www.uniprot.org/uniprotkb/P06709/entry) is native Escherichia coli BirA, the ancestral reference backbone. It is not the complete evolved split-TurboID fragments or their tags, localization elements and dimerization domains.
 
-[Historical independent-check status](../artifacts/example-10/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current question is claimed.
-
-The assay description is source-derived. P, the collaborator's proposal, and the prioritization discussion are hypothetical. The paper does not supply P's identity, localization, function, or labeling kinetics. Exact durations and the reference-set false-discovery criterion were removed because this item requires no valid protein-specific quantitative calculation. Relative enrichment remains useful for its intended filtering role.
-
-This is a source-aware assistant revision responding to review feedback, not a fresh teacher-model response or expert human validation. No new experiments or outcomes are claimed, and training benefit has not been measured. Earlier questions, answers, and generation records remain in Git history and existing artifacts.
+The assay description is source-derived. P and the prioritization scenario are hypothetical. The paper does not supply P's identity, localization, function, labeling kinetics or a quantitative occupancy calibration. Relative enrichment remains useful for its filtering role; the possible explanations discussed here are not measured outcomes for P.
 
 </details>

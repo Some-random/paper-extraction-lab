@@ -24,8 +24,6 @@ RSGMK
 
 **Answer: A.**
 
-A. Binding calcium through EF-hand domains.
-
 The likely soluble region supports an EF-hand calcium-binding architecture, with two particularly convincing candidate loops. They are DRDGNGFISKQE at residues 46–57 and DMDGDGQVDFEE at residues 82–93.
 
 An EF hand contains a calcium-binding loop of about 12 residues between two helices. The informative feature here is the arrangement of potential ligands within each loop. In DRDGNGFISKQE, positions 1, 3 and 5 are Asp, Asp and Asn. In DMDGDGQVDFEE, those positions are all Asp. Both loops have glycine at position 6 and glutamate at position 12. Asp, Asn and Glu provide oxygen-containing groups compatible with calcium coordination. Glycine can accommodate the tight loop geometry, while the terminal glutamate commonly contributes its carboxylate to calcium binding. The repeated positional pattern is therefore chemically and structurally coherent.
@@ -34,22 +32,17 @@ This is stronger evidence than high acidic content alone. A nonspecific acidic r
 
 The candidate loops lie well upstream of the hydrophobic near-terminal sequence LICAFAIAFIISVMLIAA. That distribution is consistent with a soluble binding region attached to a membrane through a C-terminal anchor. It helps place the proposed ion-binding loops outside the hydrophobic segment, but does not establish membrane orientation or the protein’s cellular destination.
 
-The sequence supports candidate EF hands; it does not directly demonstrate their three-dimensional fold or prove that both bind ions under physiological conditions. Nor does it measure calcium affinity, calcium-versus-magnesium selectivity, occupancy or a calcium-dependent conformational change. In particular, recognizing these two loops does not justify claiming four functional calcium-binding sites. The architecture prediction and the biochemical properties of its sites require different evidence.
+B would require the characteristic Cys/His arrangement of a C2H2 zinc finger; scattered cysteines and histidines do not supply that architecture. The heme- and FAD-binding roles in C and D likewise do not explain the two repeated ligand-compatible loop patterns as directly as the EF-hand assignment.
 
-A best explains the repeated ligand-compatible loop patterns. B would require evidence for the characteristic Cys/His arrangement of a C2H2 zinc finger; scattered cysteines and histidines do not supply that architecture. C and D describe other genuine binding roles, but neither explains the repeated EF-hand-like positions as directly. Acidity alone would not rule those families out; the stronger evidence is the specific organization of the two candidate loops.
+The sequence supports candidate EF hands; it does not directly demonstrate their three-dimensional fold or prove that both bind ions under physiological conditions. Nor does it measure calcium affinity, calcium-versus-magnesium selectivity, occupancy or a calcium-dependent conformational change. The architecture prediction and the biochemical properties of its sites require different evidence.
 
 <details>
-<summary>Sources and review notes</summary>
+<summary>Sources and qualifications</summary>
 
-**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
+Source identity: human calcium-binding protein 7 (CaBP7), [UniProt Q86V35](https://www.uniprot.org/uniprotkb/Q86V35/entry). The primary abstract and experimental deposition support two high-affinity N-terminal calcium sites. The NMR construct omits the full canonical C-terminal region.
 
-**Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+Primary references: [Solution NMR structure of the Ca2+-bound N-terminal domain of CaBP7: a regulator of Golgi trafficking](https://pubmed.ncbi.nlm.nih.gov/22989873/) and [experimental structure PDB 2LV7](https://www.rcsb.org/structure/2LV7).
 
-
-The existing review identifies the sequence as human CaBP7, UniProt Q86V35. The primary abstract and experimental deposition support two high-affinity N-terminal calcium sites. The NMR construct omits the full canonical C-terminal region. Those experimental facts are withheld from the student input; they do not make affinity or selectivity readable from the anonymous sequence.
-
-Primary references: [Solution NMR structure of the Ca2+-bound N-terminal domain of CaBP7: a regulator of Golgi trafficking](https://pubmed.ncbi.nlm.nih.gov/22989873/) and [experimental structure PDB 2LV7](https://www.rcsb.org/structure/2LV7). The prior review used the primary abstract and deposition; it was not a new full-text review.
-
-This is a source-aware assistant revision of the existing source-checked example as a multiple-choice question with a worked answer. The original full sequence is unchanged. No new experiment, measurement or variant is proposed. The question uses only the anonymous sequence and standard family knowledge; the source identity and experimental findings remain in these review notes. No expert human validation or measured training benefit is claimed.
+Those experimental findings support the EF-hand assignment, but affinity, ion selectivity and calcium-dependent structural changes cannot be read directly from the anonymous sequence. The complete sequence’s proposed membrane anchor is outside the NMR construct.
 
 </details>

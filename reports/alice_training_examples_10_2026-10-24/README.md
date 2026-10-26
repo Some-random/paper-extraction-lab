@@ -17,19 +17,6 @@ Ten multiple-choice questions, each with A–D options and a complete worked exp
 | 9 | [Does a label reveal or change protein organization?](examples/example-09.md) |
 | 10 | [What does exclusion from a proximity-labeling list mean?](examples/example-10.md) |
 
-The worked answers explain how the supplied evidence supports each conclusion, which alternatives remain plausible, and what would change a research decision. The questions incorporate feedback from lab reviewers. All ten current answers are source-aware AI revisions; hypothetical scenarios are identified in the source notes.
+The worked answers explain the decisive biological evidence, compare the alternatives, and distinguish supported conclusions from unresolved mechanisms. Hypothetical scenarios and source qualifications are identified beside each answer.
 
-<details>
-<summary>Sources, versions and machine-readable files</summary>
-
-[Current question format](mcq_restoration_v1.json) · [Earlier presentation update](presentation_update_v1.json) · [Earlier question revision](revision_v6.json) · [Final review and clarifications](final_review_v1.json) · [Review scope and checks](review_v6.json) · [Criteria and feedback audit](alignment_audit_v1.json) · [Per-example provenance](selection_provenance.json) · [Earlier substantive revision](revision_v4.json).
-
-[Exact student prompts](questions.jsonl) · [Training messages](training_examples.jsonl) · [Answer review records](verification.jsonl) · [Selection spreadsheet](selection.csv).
-
-The current question pages are the canonical source for the readable collection and its exports. The shared pages contain questions, worked answers and expandable source notes. Preparation criteria are kept separately. Earlier prompts, outputs and review records remain preserved in the existing artifacts and Git history. No new teacher API calls were made for this format correction.
-
-The criteria and feedback audit records remaining teaching weaknesses, including answer-selection shortcuts and the retained foundational difficulty of questions 4–8. Assistant source checks are not expert human validation, and training benefit has not been measured. The historical independent-solver assertions for examples 9–10 lack recovered standalone execution artifacts; the linked status records document that limitation. This collection is separate from the completed 10,000-example training run.
-
-UniProt-derived sequences retain [UniProt Consortium](https://www.uniprot.org/) attribution and [CC BY 4.0](https://www.uniprot.org/help/license) terms. Experimental observations are attributed to the linked primary papers. Full papers and PDFs are not redistributed.
-
-</details>
+[Provenance, review scope and downloads](PROVENANCE.md).

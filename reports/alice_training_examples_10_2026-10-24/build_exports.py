@@ -101,7 +101,8 @@ def render(root: Path) -> dict[str, str]:
                            'earlier_version': f"https://github.com/Some-random/paper-extraction-lab/blob/{revision['previous_commit']}/reports/alice_training_examples_10_2026-10-24/{rel}"})
         writer.writerow([i, title, rel, 'multiple_choice'])
         docs.append(aggregate_links(text.strip()))
-    all_md = '# Ten protein reasoning problems and worked answers\n\n' + '\n\n---\n\n'.join(docs) + '\n'
+    all_md = '# Ten protein reasoning problems and worked answers\n\n' + '\n\n---\n\n'.join(docs)
+    all_md += '\n\n---\n\n[Provenance and review scope](PROVENANCE.md).\n'
     questions_md = '# Ten protein reasoning problems\n\nWorked answers are in ALL_EXAMPLES.md.\n\n'
     questions_md += '\n\n---\n\n'.join(f"# {i}. {row['title']}\n\n{row['student_prompt']}" for i, row in enumerate(questions, 1)) + '\n'
     prov = {'schema': 'alice10-provenance-v7', 'current_revision': 7,
@@ -109,6 +110,8 @@ def render(root: Path) -> dict[str, str]:
             'previous_commit': current['previous_commit'], 'revision_record': 'mcq_restoration_v1.json',
             'review_record': 'review_v6.json', 'new_teacher_api_calls': 0,
             'presentation_record': 'presentation_update_v1.json',
+            'answer_revision_record': 'final_answer_revision_v1.json',
+            'review_scope_note': 'PROVENANCE.md',
             'expert_human_review_performed': False, 'student_training_released': False,
             'training_gain_measured': False}
     return {'ALL_EXAMPLES.md': all_md, 'ALL_EXAMPLES.txt': plain(all_md),
@@ -126,6 +129,7 @@ def main() -> None:
     outputs = render(root)
     pages = {root / name: text for name, text in outputs.items() if name.endswith('.md')}
     pages.update({path: path.read_text() for path in (root / 'examples').glob('example-*.md')})
+    pages.update({root / name: (root / name).read_text() for name in ('README.md', 'PROVENANCE.md')})
     for path, text in pages.items():
         for target in re.findall(r'\]\(([^)]+)\)', text):
             if target.startswith('#') or re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target):

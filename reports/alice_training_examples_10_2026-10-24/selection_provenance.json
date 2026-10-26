@@ -10,12 +10,13 @@
       "purpose": "comparative evidence transfer",
       "source_references": [
         "https://doi.org/10.1038/nmeth.3179",
-        "https://www.uniprot.org/uniprotkb/Q43758/entry"
+        "https://www.uniprot.org/uniprotkb/Q43758/entry",
+        "https://www.uniprot.org/uniprotkb/P48534/entry"
       ],
       "canonical_page": "examples/example-01.md",
-      "canonical_page_sha256": "b361353d67484869e1da557cb9232a0e4e5fecf31fd8d080e91ed692418146c6",
+      "canonical_page_sha256": "9011241cd21d9de7d23882a20dedd9cbab1b59430ab2e4374cfdbd41e32a7dc5",
       "student_prompt_sha256": "2f0527c8f36aa3e786c19d892c9a7fa77105dbd221b7e9e7d80328f7fb7cbe45",
-      "reference_answer_sha256": "9078dfca3dfe2c91ccd2d34e11bdc42416aa6a1b3a5d6e1b465105862a232520",
+      "reference_answer_sha256": "680ec76236a25737569b3e00effa4ca6e0f918d76095c149d1682008adc07c59",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-01.md"
     },
     {
@@ -27,9 +28,9 @@
         "https://doi.org/10.1038/nbt.2375"
       ],
       "canonical_page": "examples/example-02.md",
-      "canonical_page_sha256": "13ddd01e4b37f7afad16de13952c4d8064d4f6137f39c3e3009526143e2e0183",
+      "canonical_page_sha256": "4b941f0987ddd47d20033a15324d3285f75fa722decf8a7bf5b1de492ed96749",
       "student_prompt_sha256": "c5b5b8f83db862f73447f03a1b5ee46b0f776a246189279a8f1cec8de81c5889",
-      "reference_answer_sha256": "8cd3fd0f3e9c0fdae8219566675f95879386829980a465eed3d4dfd8428b55ca",
+      "reference_answer_sha256": "e8affa0d3fdc170e3134996a60bc8e07b93fb9b58f981a86cbb12a8b3a12a1b3",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-02.md"
     },
     {
@@ -41,9 +42,9 @@
         "https://doi.org/10.1038/nbt.4201"
       ],
       "canonical_page": "examples/example-03.md",
-      "canonical_page_sha256": "3f2e7388c1bbc40e52a6943c15ba1000e3128ba1dca83c30fab57f458c2fc43b",
+      "canonical_page_sha256": "c1bfe557d4971616c8c172e580ca3bb1a6655d3b8ac96cad1777754bb5ca0b85",
       "student_prompt_sha256": "5f076915e41bd7110d1ccf39afe1adc2d7cd7e59e8f1ea5b24f96134a48115be",
-      "reference_answer_sha256": "0b453fdf9bbbcdf32dbabc6165fb6ffcf071b19cdbeb8386991c878d4de43c31",
+      "reference_answer_sha256": "22025ed196114ede6e7fc4f5d076382abf092d061afd889a1767029aba96aeb4",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-03.md"
     },
     {
@@ -52,12 +53,13 @@
       "method": "source_aware_assistant_revision",
       "purpose": "foundational cofactor inference",
       "source_references": [
+        "https://www.uniprot.org/uniprotkb/P53554/entry",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/"
       ],
       "canonical_page": "examples/example-04.md",
-      "canonical_page_sha256": "bb1744ced422396ce01bab7e5a4f4b25358d5025c62bacd472aa9c6967a035d1",
+      "canonical_page_sha256": "3ff748ad92cc416ffe1ce9483b77e883bd466e718ded39166650a951de94bf30",
       "student_prompt_sha256": "1421f19dab30a580d19ecc3ce26c3ddcf71e6ca84a6ed0f9d8f58f904ce6b8c9",
-      "reference_answer_sha256": "bddbd0911b1946de5fabfffd61eb574256ac217ab1c280d6b389621e80072121",
+      "reference_answer_sha256": "66cd0502058beafcce520732638514d4d69eec7ad331301852a8fb4c60370aab",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-04.md"
     },
     {
@@ -66,13 +68,14 @@
       "method": "source_aware_assistant_revision",
       "purpose": "foundational repeated binding architecture",
       "source_references": [
+        "https://www.uniprot.org/uniprotkb/Q86V35/entry",
         "https://pubmed.ncbi.nlm.nih.gov/22989873/",
         "https://www.rcsb.org/structure/2LV7"
       ],
       "canonical_page": "examples/example-05.md",
-      "canonical_page_sha256": "4086feed7cea70bb158135a62cc2961bdb8661fccbb2314765095099c4a86403",
+      "canonical_page_sha256": "db9995284339af3e2c591041edac169b33e8082c729b1ea933aa492da4f5ae26",
       "student_prompt_sha256": "c87cffa94d27a39ac57be8f19590c5032581786744713da8c01ea27a4064525c",
-      "reference_answer_sha256": "cd40af5c552d6b6460dbc31cc164c8297a9f89fa106453f61979d45944945f41",
+      "reference_answer_sha256": "7e8520030414f3358f3a57f37a7134c4c43f2bec26233b95b278993247e404cb",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-05.md"
     },
     {
@@ -85,9 +88,9 @@
         "https://pubmed.ncbi.nlm.nih.gov/9705316/"
       ],
       "canonical_page": "examples/example-06.md",
-      "canonical_page_sha256": "4372e1e1faa7fb79ae5fa27880fe7f5ccdbf488811fcb144fb4f2673a0909094",
+      "canonical_page_sha256": "b6accfb35c156e228111bdcf886d13c926bc39854c52a2937dc337b95fb3c983",
       "student_prompt_sha256": "c002f85c758614e5c789a99d750adf92fbf08a0823825b15f9d44a166ebaa432",
-      "reference_answer_sha256": "a9401fa15cea9e5f7a2467ec9442c63c040089ba3eaefd881581e4575dc24287",
+      "reference_answer_sha256": "a65da6efe6cf5cde3b354e17fd4cd4c2650f10ad8b58d44447f9b91f24c67bb9",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-06.md"
     },
     {
@@ -96,12 +99,13 @@
       "method": "source_aware_assistant_revision",
       "purpose": "foundational domains versus motifs",
       "source_references": [
+        "https://www.uniprot.org/uniprotkb/G5EDM4/entry",
         "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050"
       ],
       "canonical_page": "examples/example-07.md",
-      "canonical_page_sha256": "c4a08cdf75be00b2fb10902ad3b863499704a653cc18630e10fd186ff75e71de",
+      "canonical_page_sha256": "794a83a41a65c60d1cdc0a01c9050e58a7876ad7513da091224742b26115a633",
       "student_prompt_sha256": "e1128202d54ce90b7018e9460c1c29cfa4c9206e84a49e0dbf760d47deaaefc2",
-      "reference_answer_sha256": "2790e39dbc5f1976e58588ff5e3638fd280377cf65467eec33f425b38857f4ce",
+      "reference_answer_sha256": "6f49b96b2d1bc887cf0894b675129c8bb62c5ff464db107a3eb759decf987d69",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-07.md"
     },
     {
@@ -110,14 +114,15 @@
       "method": "source_aware_assistant_revision",
       "purpose": "foundational chromophore hypothesis",
       "source_references": [
+        "https://www.uniprot.org/uniprotkb/P42196/entry",
         "https://pubmed.ncbi.nlm.nih.gov/11452084/",
         "https://www.rcsb.org/structure/1JGJ",
         "https://pubmed.ncbi.nlm.nih.gov/12368857/"
       ],
       "canonical_page": "examples/example-08.md",
-      "canonical_page_sha256": "007038b381646d29ce376691346187144d9c10ad6f69ba5b262674850366d950",
+      "canonical_page_sha256": "a6a6c377d26147d48b92360915fd95a26461e24e64dfc6195de088b2a4dec4ae",
       "student_prompt_sha256": "b1731fc22daba7dfbaa6819702a7814d908fd7f87ed6f9566d77b0094c19952e",
-      "reference_answer_sha256": "2b08eff31f2c576567954db9a25c106edc8bab4594bf099c29ef0450bda6f93f",
+      "reference_answer_sha256": "8519ef7c2a11e8b437c90f13b32cb730938484f5fb1971e3edcae893247b00d8",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-08.md"
     },
     {
@@ -130,9 +135,9 @@
         "https://www.uniprot.org/uniprotkb/P22629/entry"
       ],
       "canonical_page": "examples/example-09.md",
-      "canonical_page_sha256": "14158cbd68ab003de6d9fc44a5e6af64be122a06fa0b7675cd9aab82cbc97bd9",
+      "canonical_page_sha256": "b967d06cec035b147971da65103c397e8a49c689614a2d3bbea2fca3ce3b2223",
       "student_prompt_sha256": "dd53153581c8e3c49f62a108bb502527c2213dc9a7aa9c756fa6dfebdd1d5d10",
-      "reference_answer_sha256": "6824742d7eb9ca32805615fa0611a5d36208132d1a0794f7ff091be0cbd06756",
+      "reference_answer_sha256": "f821c46674b8e5741f2a87fa99a63a471b15ff113b681cef7c6718798fdbd974",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-09.md"
     },
     {
@@ -145,9 +150,9 @@
         "https://www.uniprot.org/uniprotkb/P06709/entry"
       ],
       "canonical_page": "examples/example-10.md",
-      "canonical_page_sha256": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e",
+      "canonical_page_sha256": "f0d54560f5a5a819ef3d57c2b950d2f3430893bd0455da70b863e9c386f3797c",
       "student_prompt_sha256": "cca5688d4064066f409be2f073717b89ae50ad37cb4a2fa39e0623e51f7a9854",
-      "reference_answer_sha256": "00bf452ff45555ea8f14c61f4a71a6491625b149ca74fd071a28faa0e875b81e",
+      "reference_answer_sha256": "7ce1698035d8400c13eec4708bbb8bb484a0e893a6716860296627a5f299a09b",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-10.md"
     }
   ],
@@ -156,6 +161,8 @@
   "review_record": "review_v6.json",
   "new_teacher_api_calls": 0,
   "presentation_record": "presentation_update_v1.json",
+  "answer_revision_record": "final_answer_revision_v1.json",
+  "review_scope_note": "PROVENANCE.md",
   "expert_human_review_performed": false,
   "student_training_released": false,
   "training_gain_measured": false

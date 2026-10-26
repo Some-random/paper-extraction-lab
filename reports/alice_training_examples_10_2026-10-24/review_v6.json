@@ -2,22 +2,22 @@
   "schema": "alice10-source-and-feedback-review-v6",
   "status": "assistant_review_passed",
   "reviewed_example_sha256": {
-    "example-01": "b361353d67484869e1da557cb9232a0e4e5fecf31fd8d080e91ed692418146c6",
-    "example-02": "13ddd01e4b37f7afad16de13952c4d8064d4f6137f39c3e3009526143e2e0183",
-    "example-03": "3f2e7388c1bbc40e52a6943c15ba1000e3128ba1dca83c30fab57f458c2fc43b",
-    "example-04": "bb1744ced422396ce01bab7e5a4f4b25358d5025c62bacd472aa9c6967a035d1",
-    "example-05": "4086feed7cea70bb158135a62cc2961bdb8661fccbb2314765095099c4a86403",
-    "example-06": "4372e1e1faa7fb79ae5fa27880fe7f5ccdbf488811fcb144fb4f2673a0909094",
-    "example-07": "c4a08cdf75be00b2fb10902ad3b863499704a653cc18630e10fd186ff75e71de",
-    "example-08": "007038b381646d29ce376691346187144d9c10ad6f69ba5b262674850366d950",
-    "example-09": "14158cbd68ab003de6d9fc44a5e6af64be122a06fa0b7675cd9aab82cbc97bd9",
-    "example-10": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e"
+    "example-01": "9011241cd21d9de7d23882a20dedd9cbab1b59430ab2e4374cfdbd41e32a7dc5",
+    "example-02": "4b941f0987ddd47d20033a15324d3285f75fa722decf8a7bf5b1de492ed96749",
+    "example-03": "c1bfe557d4971616c8c172e580ca3bb1a6655d3b8ac96cad1777754bb5ca0b85",
+    "example-04": "3ff748ad92cc416ffe1ce9483b77e883bd466e718ded39166650a951de94bf30",
+    "example-05": "db9995284339af3e2c591041edac169b33e8082c729b1ea933aa492da4f5ae26",
+    "example-06": "b6accfb35c156e228111bdcf886d13c926bc39854c52a2937dc337b95fb3c983",
+    "example-07": "794a83a41a65c60d1cdc0a01c9050e58a7876ad7513da091224742b26115a633",
+    "example-08": "a6a6c377d26147d48b92360915fd95a26461e24e64dfc6195de088b2a4dec4ae",
+    "example-09": "b967d06cec035b147971da65103c397e8a49c689614a2d3bbea2fca3ce3b2223",
+    "example-10": "f0d54560f5a5a819ef3d57c2b950d2f3430893bd0455da70b863e9c386f3797c"
   },
   "original_criteria_review": {
     "source-supported answer": "Assistant source-consistency review found no new factual blocker; existing source evidence and its limits are preserved. Not a new full-text or expert validation.",
-    "fair input": "No hidden source prerequisite identified. Q1, Q2 and Q10 retain answer-selection shortcuts; Q3 retains some unnecessary background.",
+    "fair input": "All student questions and A-D options preserved. Earlier question-design limitations remain in alignment_audit_v1.json; answer prose now matches the stated task without mischaracterizing alternatives.",
     "reusable biological lesson": "Each item has an identifiable lesson. Q1 remains mainly measurement interpretation; advanced biological reasoning is not established.",
-    "substantive clear reasoning": "Complete explanations retained. Unnecessary reasoning remains a concern in Q3; depth and difficulty are unmeasured.",
+    "substantive clear reasoning": "Complete biological explanations and option comparisons retained; specific answer overstatements, personal deference and duplicate passages corrected. Question difficulty and training benefit remain unmeasured.",
     "variety": "Retains assay interpretation, tool selection, five foundational sequence items, probe perturbation and filtered-evidence interpretation. Variety does not imply uniformly advanced difficulty."
   },
   "source_check_scope": "Existing source-bound observations reused; original sequences retained in Q4-8. All18 previously cited residue-coordinate checks passed against these unchanged sequences. Current question/answer consistency and inferential limits reviewed by assistants; no fresh full-text review claimed for earlier abstract-only references.",
@@ -28,10 +28,10 @@
   "final_polish_record": "final_review_v1.json",
   "final_polish_scope": "Boundary-method distinction, source accession qualifications, standardized current creation method, and explicit missing historical blinded-check evidence.",
   "presentation_record": "presentation_update_v1.json",
-  "current_answer_scope": "Complete worked explanations with A-D choice comparisons and no fixed word-count cap.",
+  "current_answer_scope": "Complete, impersonal worked explanations based on biological evidence, with A-D alternative analysis and specific inference limits.",
   "current_revision": 7,
   "format_restoration_record": "mcq_restoration_v1.json",
-  "current_review_scope": "Assistant review of sources, A-D options, answer consistency, complete explanations, original criteria and student feedback. No independently blinded solver test; substantive feedback alignment remains partial.",
+  "current_review_scope": "Final answer-level scientific/editorial review, unchanged questions/options/keys, residue-coordinate checks and synchronized exports; existing source evidence reused. No fresh full-text, expert or blinded-solver validation.",
   "mcq_review": "Assistant review found no competing equally supported options for the stated question. Q3 explicitly prioritizes timing, Q9 directly controls engagement/detection, and Q10 is practical prioritization.",
   "earlier_revision_assistant_reviews": [
     "Q1-3 input fairness, conditional claims, and source consistency",
@@ -46,5 +46,6 @@
   ],
   "current_alignment_audit": "alignment_audit_v1.json",
   "criteria_alignment_status": "reviewed_with_residual_pedagogical_issues",
-  "feedback_alignment_status": "partial"
+  "feedback_alignment_status": "partial",
+  "answer_revision_record": "final_answer_revision_v1.json"
 }
