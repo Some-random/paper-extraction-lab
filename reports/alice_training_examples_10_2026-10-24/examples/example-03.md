@@ -23,6 +23,11 @@ miniTurbo is a reasonable initial candidate when the defined start time is the p
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 Primary source: [Branon et al., Efficient proximity labeling in living cells and organisms with TurboID](https://doi.org/10.1038/nbt.4201), Methods under “Yeast display directed evolution” for the reported candidate-change decision, Figure 2a–b and Discussion for the yield/background comparison, and Supplementary Note 2 for labeling chemistry and qualified mechanistic interpretations.
 
 Supplied evidence: the published qualitative activity and omit-added-biotin observations, the broader reported tool comparison, and the covalent nature of labeling. The proposed project and its alternative objectives are hypothetical assessment framing. No new quantitative effect size or project-specific performance is supplied or inferred.

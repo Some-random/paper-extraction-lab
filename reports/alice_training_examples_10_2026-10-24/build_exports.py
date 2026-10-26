@@ -7,6 +7,7 @@ import csv
 import hashlib
 import io
 import json
+import posixpath
 import re
 from pathlib import Path
 
@@ -25,6 +26,18 @@ def plain(text: str) -> str:
     text = re.sub(r'^```[^\n]*\n|^```\s*$', '', text, flags=re.M)
     text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
     return text.replace('**', '').strip() + '\n'
+
+
+def aggregate_links(text: str) -> str:
+    """Rebase links from an examples/ page into the collection-root render."""
+    def replace(match: re.Match) -> str:
+        target = match.group(1)
+        if target.startswith('#') or re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target):
+            return match.group(0)
+        path, marker, fragment = target.partition('#')
+        rebased = posixpath.normpath(posixpath.join('examples', path))
+        return '](' + rebased + (marker + fragment if marker else '') + ')'
+    return re.sub(r'\]\(([^)]+)\)', replace, text)
 
 
 def render(root: Path) -> dict[str, str]:
@@ -83,7 +96,7 @@ def render(root: Path) -> dict[str, str]:
                            'student_prompt_sha256': sha(question), 'reference_answer_sha256': sha(answer),
                            'earlier_version': f"https://github.com/Some-random/paper-extraction-lab/blob/{revision['previous_commit']}/reports/alice_training_examples_10_2026-10-24/{rel}"})
         writer.writerow([i, title, rel, 'open_response'])
-        docs.append(text.strip())
+        docs.append(aggregate_links(text.strip()))
     all_md = '# AI-created protein reasoning training data — ten revised examples\n\n' + '\n\n---\n\n'.join(docs) + '\n'
     questions_md = '# Protein questions — revision 6\n\nOpen-response questions. Reference answers and assessment criteria are in ALL_EXAMPLES.md.\n\n'
     questions_md += '\n\n---\n\n'.join(f"# {i}. {row['title']}\n\n{row['student_prompt']}" for i, row in enumerate(questions, 1)) + '\n'
@@ -106,6 +119,14 @@ def main() -> None:
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
     outputs = render(root)
+    pages = {root / name: text for name, text in outputs.items() if name.endswith('.md')}
+    pages.update({path: path.read_text() for path in (root / 'examples').glob('example-*.md')})
+    for path, text in pages.items():
+        for target in re.findall(r'\]\(([^)]+)\)', text):
+            if target.startswith('#') or re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target):
+                continue
+            local = (path.parent / target.split('#', 1)[0]).resolve()
+            assert local.exists() or local in {p.resolve() for p in pages}, (str(path), 'broken local link', target)
     for name, text in outputs.items():
         path = root / name
         if args.check:

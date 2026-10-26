@@ -24,13 +24,13 @@ All ten are source-aware AI revisions. The supplied observations and retained se
 <details>
 <summary>Sources, versions and machine-readable files</summary>
 
-[Current revision](revision_v6.json) · [Review scope and checks](review_v6.json) · [Per-example provenance](selection_provenance.json) · [Earlier substantive revision](revision_v4.json).
+[Current revision](revision_v6.json) · [Final review and clarifications](final_review_v1.json) · [Review scope and checks](review_v6.json) · [Per-example provenance](selection_provenance.json) · [Earlier substantive revision](revision_v4.json).
 
 [Exact student prompts](questions.jsonl) · [Training messages](training_examples.jsonl) · [Reference answers and rubrics](verification.jsonl) · [Selection spreadsheet](selection.csv).
 
 Revision 6 changes the machine-readable format to open responses. Letter-choice fields are removed; reference answers and assessment rubrics replace single-letter answer matches. `training_examples.jsonl` contains only the student question and the reference answer in its user/assistant messages. Source notes and grading rubrics remain outside those messages. These examples are not an automatically validated large training dataset.
 
-The ten per-example Markdown files are canonical. Run `python3 build_exports.py` to regenerate exports, and `python3 build_exports.py --check` to validate them. Earlier prompts, outputs and source-aware revisions remain in the existing artifacts and Git history; their creation and billing records are unchanged. No new teacher API calls were made for revision 6.
+The ten per-example Markdown files are canonical. Run `python3 build_exports.py` to regenerate exports, and `python3 build_exports.py --check` to validate them. Earlier prompts, outputs and source-aware revisions remain in the existing artifacts and Git history; their creation and billing records are unchanged. No new teacher API calls were made for revision 6 or its final polish. Historical independent-solver assertions for examples 9–10 lack recovered standalone execution artifacts; their linked status records state that limitation explicitly. Current answers are source-aware revisions, not a replication of those checks.
 
 UniProt-derived sequences retain [UniProt Consortium](https://www.uniprot.org/) attribution and [CC BY 4.0](https://www.uniprot.org/help/license) terms. Experimental observations are attributed to the linked primary papers. Full papers and PDFs are not redistributed.
 

@@ -1,0 +1,29 @@
+{
+  "schema": "historical-independent-check-evidence-status-v1",
+  "id": "example-10",
+  "scope": "historical revision 2 only; not current open-response question",
+  "status": "historical_assertion_execution_artifact_not_recovered",
+  "historical_claim": "An independent solver given only the final question selected B and found no material ambiguity.",
+  "historical_selected_answer_assertion": "B",
+  "frozen_solver_prompt_sha256": "d2c19235ef1f8e2ab056b996d72f4ab2780483093714bee1365d9408b8dcc118",
+  "frozen_question_artifact": "revised_question.json",
+  "frozen_question_artifact_sha256": "020e8774c32f2ac014f3a67b937fd68d4dfa9f6af6cc569944c9717f508e7861",
+  "claim_artifact": "revised_answer.json",
+  "claim_artifact_sha256": "4cc5c5bd7c51ae269182e57ee33d4d1265af2cdfdee7446f3ec2032c1ecb1902",
+  "solver_response": null,
+  "solver_model": null,
+  "solver_execution_date": null,
+  "missing_evidence": [
+    "standalone exact solver request",
+    "raw solver response",
+    "solver model/version",
+    "solver execution timestamp"
+  ],
+  "recovered_review_assertion_date_utc": "2026-10-24T06:52:14.831469Z",
+  "date_scope": "Date of the historical review record, not a recovered solver execution time.",
+  "earlier_real_generation_is_different_prompt": true,
+  "current_revision_method": "source_aware_assistant_revision",
+  "current_blinded_check_performed": false,
+  "limitation": "A prompt hash binds the known prompt but does not prove an undocumented solver run. Earlier generation receipts concern different prompts and are not substituted.",
+  "new_teacher_api_calls": 0
+}

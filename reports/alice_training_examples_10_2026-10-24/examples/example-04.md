@@ -29,6 +29,11 @@ A heme-containing cytochrome P450 is the strongest assignment. The segment FGHGH
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 The existing source review identifies the sequence as UniProt P53554. The primary structure supports heme and Cys345 coordination; the anonymous sequence does not independently reveal the biotin-biosynthesis substrate.
 
 Primary reference: [Structural insights from a P450 carrier protein complex reveal how specificity is achieved in the P450BioI ACP complex](https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/), especially Active Site Architecture.

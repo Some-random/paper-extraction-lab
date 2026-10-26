@@ -26,6 +26,11 @@ I would not use DAB intensity as a calibrated ranking of fusion delivery. Simila
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 Primary source: [Martell et al., Engineered ascorbate peroxidase as a genetically encoded reporter for electron microscopy](https://doi.org/10.1038/nbt.2375), Figure 1b–e and accompanying Results on self-association and connexin43 trafficking, and Figure 2b–d and accompanying Results on purified activity, cellular DAB staining, and heme supplementation.
 
 Supplied evidence: the four published comparisons above. The proposed DAB-based ranking of junction delivery is hypothetical assessment framing. The source study did not establish that cross-assay calibration. The cytosolic and connexin43-fusion observations concern different comparisons and must not be merged into one measurement.

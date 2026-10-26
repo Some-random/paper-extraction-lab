@@ -30,7 +30,14 @@ APEX2 reaches its rate maximum at a higher peroxide concentration than APEX in b
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 Primary source: [Lam et al., Directed evolution of APEX2 for electron microscopy and proximity labeling](https://doi.org/10.1038/nmeth.3179), Figure 2e and the accompanying purified-protein kinetics Results. The existing source review records the corrected Figure 2e axis labels and the December 10, 2014 correction.
+
+Source qualification: [UniProt Q43758](https://www.uniprot.org/uniprotkb/Q43758/entry) is wild-type soybean (Glycine max) ascorbate peroxidase. It was the coordinate reference in the earlier APEX2 example, not the complete engineered assay construct. Pea APX has a different accession, P48534. The unused reference sequence is not part of the current student question.
 
 Supplied evidence: the two guaiacol conditions and approximate concentrations at the reported rate maxima. No absolute reaction rates, new fitted parameters, or measurements at an additional condition are supplied. The colleague's proposed summary and transfer claim are hypothetical assessment framing, not statements attributed to the paper.
 
@@ -70,6 +77,11 @@ I would not use DAB intensity as a calibrated ranking of fusion delivery. Simila
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 Primary source: [Martell et al., Engineered ascorbate peroxidase as a genetically encoded reporter for electron microscopy](https://doi.org/10.1038/nbt.2375), Figure 1b–e and accompanying Results on self-association and connexin43 trafficking, and Figure 2b–d and accompanying Results on purified activity, cellular DAB staining, and heme supplementation.
 
 Supplied evidence: the four published comparisons above. The proposed DAB-based ranking of junction delivery is hypothetical assessment framing. The source study did not establish that cross-assay calibration. The cytosolic and connexin43-fusion observations concern different comparisons and must not be merged into one measurement.
@@ -106,6 +118,11 @@ miniTurbo is a reasonable initial candidate when the defined start time is the p
 
 <details>
 <summary>Sources and review notes</summary>
+
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
 
 Primary source: [Branon et al., Efficient proximity labeling in living cells and organisms with TurboID](https://doi.org/10.1038/nbt.4201), Methods under “Yeast display directed evolution” for the reported candidate-change decision, Figure 2a–b and Discussion for the yield/background comparison, and Supplementary Note 2 for labeling chemistry and qualified mechanistic interpretations.
 
@@ -150,6 +167,11 @@ A heme-containing cytochrome P450 is the strongest assignment. The segment FGHGH
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 The existing source review identifies the sequence as UniProt P53554. The primary structure supports heme and Cys345 coordination; the anonymous sequence does not independently reveal the biotin-biosynthesis substrate.
 
 Primary reference: [Structural insights from a P450 carrier protein complex reveal how specificity is achieved in the P450BioI ACP complex](https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/), especially Active Site Architecture.
@@ -189,6 +211,11 @@ Two candidate EF-hand calcium-binding loops are DRDGNGFISKQE at residues 46–57
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 The existing review identifies the sequence as human CaBP7, UniProt Q86V35. The primary abstract and experimental deposition support two high-affinity N-terminal calcium sites. The NMR construct omits the full canonical C-terminal region. Those experimental facts are withheld from the student input; they do not make affinity or selectivity readable from the anonymous sequence.
 
 Primary references: [Solution NMR structure of the Ca2+-bound N-terminal domain of CaBP7: a regulator of Golgi trafficking](https://pubmed.ncbi.nlm.nih.gov/22989873/) and [experimental structure PDB 2LV7](https://www.rcsb.org/structure/2LV7). The prior review used the primary abstract and deposition; it was not a new full-text review.
@@ -216,11 +243,12 @@ Infer this protein’s membrane-association architecture from the sequence. Iden
 
 ## Answer
 
-A single near-C-terminal membrane anchor is strongly supported by ILLVILGIIVVIAILTAIAFF at residues 193–213, followed by only VKGH. Its length, hydrophobicity and lack of charged residues favor a bilayer-spanning helix over purely peripheral association. The much longer upstream region contains many charged and polar residues, without comparable hydrophobic stretches. The basic RRIIQNR flank is consistent with a cytosolic upstream region through the positive-inside tendency, but this orientation is less secure than the anchor prediction. These are sequence-based boundaries and topology inferences. The sequence does not establish the exact membrane boundary, insertion route or organelle destination.
+A single near-C-terminal membrane anchor is strongly supported by the continuous hydrophobic stretch ILLVILGIIVVIAILTAIAFFV at residues 193–214, followed by KGH. This composition-based 22-residue call favors a bilayer-spanning helix over purely peripheral association; it is not an exact membrane-boundary measurement. The much longer upstream region is rich in charged and polar residues, without comparable hydrophobic stretches. The basic RRIIQNR flank at 186–192 supports a cytosolic upstream region through the positive-inside tendency, although assigning a membrane side is less secure than identifying the anchor. The sequence does not establish exact helix boundaries, insertion route or organelle destination.
 
 ## Assessment rubric
 
 - Identifies the actual near-terminal hydrophobic stretch and short following tail as support for a single integral anchor.
+- Accepts a justified approximate span ending at 213 or 214; distinguishing a hydrophobic-composition call from a precise helix boundary matters more than one-residue agreement.
 - Contrasts an integral anchor with peripheral association using that sequence evidence, rather than assuming all membrane-associated proteins span the bilayer.
 - Distinguishes strong anchor evidence from the weaker orientation inference; a cautious refusal to assign orientation is acceptable if explained.
 - Does not infer Golgi/endosomal destination, exact measured boundaries or an insertion mechanism. Credit defensible alternatives that account for the hydrophobic segment and explain what evidence is missing.
@@ -228,7 +256,24 @@ A single near-C-terminal membrane anchor is strongly supported by ILLVILGIIVVIAI
 <details>
 <summary>Sources and review notes</summary>
 
-The existing review identifies the sequence as Vti1-rp2/Vti1a, UniProt O89116. The primary abstract supports a C-terminal anchor, cytoplasmic region and integral membrane behavior. Residues 193–213 are corrected sequence-analysis coordinates, not membrane boundaries measured by that paper.
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
+Source identity: Vti1-rp2/Vti1a, [UniProt O89116](https://www.uniprot.org/uniprotkb/O89116/entry). The primary abstract supports a C-terminal anchor, cytoplasmic region and integral membrane behavior.
+
+Two boundary descriptions are legitimate and should not be conflated:
+
+| Quantity | Residues | Interpretation |
+|---|---|---|
+| Composition-based hydrophobic call in the reference answer | 193–214 | A continuous 22-residue hydrophobic stretch, with KGH following it. |
+| UniProt annotated helical anchor | 193–213 | Annotated helix; V214 is assigned to the following vesicular region. |
+| UniProt topological domains | 1–192 cytoplasmic; 214–217 vesicular | Annotation-based orientation and residue partition. |
+
+The frozen UniProt record assigns all three topology features evidence code ECO:0000255 (sequence analysis). The RRIIQNR flank at 186–192 and the proposed cytosolic upstream region agree with that annotation. This is a source-consistency check, not independent experimental confirmation of a residue-exact boundary or proof that the current answer was produced blind. An extramembrane assignment alone does not specify the cytoplasmic side. The current reference answer remains a source-aware revision; its confidence must reflect the anonymous student input.
+
+[Frozen UniProt record](artifacts/example-06/frozen_uniprot_record.json) · [Final-review disposition](final_review_v1.json). The historical coordinate-edit record is preserved; this clarification supersedes treating the one-residue composition/annotation difference as a sequence error.
 
 Primary reference: [A 29-kilodalton Golgi soluble N-ethylmaleimide-sensitive factor attachment protein receptor (Vti1-rp2) implicated in protein trafficking in the secretory pathway](https://pubmed.ncbi.nlm.nih.gov/9705316/). The prior review used the primary abstract retrieved in search results; direct page opening encountered a browser challenge.
 
@@ -270,6 +315,11 @@ Two PDZ-like interaction modules are a reasonable family-level hypothesis. EYGYN
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 The existing review identifies the selected sequence as the tandem-PDZ NRFL-1 isoform, UniProt G5EDM4. Some splice variants have one PDZ domain. The primary study supports the selected two-domain architecture and examines AAT-6 binding; the specific partner and PDZ2 preference are not supplied in the student input. The prior review preferred the Results text over an inconsistent duplicated phrase in the Figure 2 caption.
 
 Primary reference: [NRFL-1, the C. elegans NHERF orthologue, interacts with amino acid transporter 6 (AAT-6) for age-dependent maintenance of AAT-6 on the membrane](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050), especially Figure 1 and the PDZ-interaction Results.
@@ -308,6 +358,11 @@ A retinal-binding microbial opsin is a plausible leading hypothesis. Repeated hy
 
 <details>
 <summary>Sources and review notes</summary>
+
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
 
 The existing review identifies the sequence as sensory rhodopsin II, UniProt P42196. Experimental structures establish retinal binding and the Lys205 linkage; the student must not treat those withheld findings as observations available from sequence alone. This microbial protein should not be labeled an animal G-protein-coupled receptor.
 
@@ -348,7 +403,16 @@ The observations show probe-dependent labeling patterns consistent with redistri
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 [Howarth et al., A monovalent streptavidin with a single femtomolar biotin binding site](https://doi.org/10.1038/nmeth861) (2006): Table 1 and Figure 3 for stoichiometry and soluble binding; Figure 4 and accompanying Results for neuronal labeling and clustering.
+
+Source qualification: [UniProt P22629](https://www.uniprot.org/uniprotkb/P22629/entry) is the native 183-residue streptavidin precursor from Streptomyces avidinii. It identifies the source protein, not the exact mature, engineered or tagged assayed subunit, and does not specify the A1D3 preparation.
+
+[Historical independent-check status](artifacts/example-09/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current open-response question is claimed.
 
 The three observations are paraphrases of the published comparisons. The collaborator's claim and follow-up choices are hypothetical teaching material. No new comparison, result, native-state measurement, or experimental procedure is asserted. The answer offers conditional reasoning, not a unique experimental prescription.
 
@@ -387,7 +451,16 @@ The result establishes failure of this relative-enrichment filter, not absence f
 <details>
 <summary>Sources and review notes</summary>
 
+**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+
+**Review type:** Assistant source-consistency and rubric review. No independently documented blinded solver test or expert human validation is claimed for the current question.
+
+
 [Cho et al., Split-TurboID enables contact-dependent proximity labeling in cells](https://doi.org/10.1073/pnas.1919528117) (2020): Figure 3F and Results before Figure 4 for unequal-duration bulk matching; Figure 4 and Methods, Generation of ER–Mitochondria Proteome Lists, for sequential filtering; Results before Validation of ER–Mitochondria Contact Orphans for loss of dual-localized proteins.
+
+Source qualification: [UniProt P06709](https://www.uniprot.org/uniprotkb/P06709/entry) is native Escherichia coli BirA, the ancestral reference backbone. It is not the complete evolved split-TurboID fragments or their tags, localization elements and dimerization domains.
+
+[Historical independent-check status](artifacts/example-10/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current open-response question is claimed.
 
 The assay description is source-derived. P, the collaborator's proposal, and the prioritization discussion are hypothetical. The paper does not supply P's identity, localization, function, or labeling kinetics. Exact durations and the reference-set false-discovery criterion were removed because this item requires no valid protein-specific quantitative calculation. Relative enrichment remains useful for its intended filtering role.
 

@@ -2,16 +2,16 @@
   "schema": "alice10-source-and-feedback-review-v6",
   "status": "assistant_review_passed",
   "reviewed_example_sha256": {
-    "example-01": "85a3b2ec1edfa599250037a67605549b466d0b75f86b0594f3e4143100233c19",
-    "example-02": "1690e85c1d4463eb83d37fd50988e91c8896640461a86e3ca5e2ab56e71d7cb7",
-    "example-03": "f60fffa9119d2baeef9621e72539e01b8e7d4d9dde52ef22df499656f51f9498",
-    "example-04": "064e1d7793e1ae3bdbc3e05bf49ce157c9bedb501ae3f7a7e5dd3465db4ad5d6",
-    "example-05": "5b7d85d4604eb01750124ff2eced058ecc2e3033b32d8dd473f36d22d97c7876",
-    "example-06": "d7d1d27667f07f44d4ac46ac2062491f6c334e90a7c9d30e27d2d108d1a4f27b",
-    "example-07": "bfaed71f9409f6f94e6ad017837d901b3ea84ca695f4cca46c753f81afe7f6b8",
-    "example-08": "e634bfdbec9d593771a5eb3708153c57825dfe01696701ac2f2129764065f185",
-    "example-09": "1bba4c412cef87cd8bdb767e40cbdc7db92451ae0518785e1be6cba28d1eb41f",
-    "example-10": "f6635dd2cff7adc9af1bad5c49c87fd0f90e99c282d846e6c2bd49a3ad415aa2"
+    "example-01": "39f719758e34cb881d0656e9083633470044df9b49262c1e56c104f7f04d3bf3",
+    "example-02": "9b00bf423ac7c50c60674d8a4d6aef20cf029400f78221853254ac8450c5594e",
+    "example-03": "88d1a3fe6c77e80307c0c51c613a6a762f6895f1eb3057d9a85c763f1c26499e",
+    "example-04": "2fdd6642e12d1795933e7795527b38f05124dcae73991a5763c293db06ba0192",
+    "example-05": "102d76472c6eaa839e959ecbe1b667027e8ecf9a871688b2fcb6f5e4c9ad9c14",
+    "example-06": "fbbfb91e915691a75747e482306b367f22cf0c0f3413419c83493c2f911d70bb",
+    "example-07": "b96841ceb1cccd9850d7a84273f84fbd243e83c3a79b7d7ec138bc8dab8698d5",
+    "example-08": "f9be6b6ba1ba69fc0533c997fab29ca0ddf2b0f7c88612b025059bd1f8f79b01",
+    "example-09": "cef451085220a8db91cad8423278642231f4dddfba7405b5370a439507fbeaad",
+    "example-10": "42750b416fdeff2d90a063b01c0f438b62a2e9d9f04e9b63eb7b5c8f9e637aed"
   },
   "original_criteria_review": {
     "source-supported answer": "passed for this curated teaching collection",
@@ -35,5 +35,7 @@
   "expert_human_validation": false,
   "difficulty_measured": false,
   "training_gain_measured": false,
-  "teacher_resampling_performed": false
+  "teacher_resampling_performed": false,
+  "final_polish_record": "final_review_v1.json",
+  "final_polish_scope": "Boundary-method distinction, source accession qualifications, standardized current creation method, and explicit missing historical blinded-check evidence."
 }

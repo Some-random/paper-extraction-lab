@@ -1,0 +1,142 @@
+{
+  "schema": "alice10-final-review-disposition-v1",
+  "current_revision": 6,
+  "maintenance_revision": 1,
+  "previous_commit": "a8247a6cec955e4bbf86ec3420192b47e5c769b0",
+  "source_records_checked": [
+    {
+      "accession": "O89116",
+      "url": "https://rest.uniprot.org/uniprotkb/O89116.json",
+      "sha256": "ebbf10262831f0c060aaa62d8cafebeb1fddc2d7d3e62f9179f441cbfc4fa77c",
+      "length": 217,
+      "organism": "Mus musculus",
+      "sequence_version": 1,
+      "topology": [
+        {
+          "type": "Topological domain",
+          "location": {
+            "start": {
+              "value": 1,
+              "modifier": "EXACT"
+            },
+            "end": {
+              "value": 192,
+              "modifier": "EXACT"
+            }
+          },
+          "description": "Cytoplasmic",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255"
+            }
+          ]
+        },
+        {
+          "type": "Transmembrane",
+          "location": {
+            "start": {
+              "value": 193,
+              "modifier": "EXACT"
+            },
+            "end": {
+              "value": 213,
+              "modifier": "EXACT"
+            }
+          },
+          "description": "Helical; Anchor for type IV membrane protein",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255"
+            }
+          ]
+        },
+        {
+          "type": "Topological domain",
+          "location": {
+            "start": {
+              "value": 214,
+              "modifier": "EXACT"
+            },
+            "end": {
+              "value": 217,
+              "modifier": "EXACT"
+            }
+          },
+          "description": "Vesicular",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "Q43758",
+      "url": "https://rest.uniprot.org/uniprotkb/Q43758.json",
+      "sha256": "50a10368d361edb5985a91f454a3ca560c6eb9c47be07d4300d945ef0bb72d72",
+      "length": 250,
+      "organism": "Glycine max",
+      "sequence_version": 1
+    },
+    {
+      "accession": "P48534",
+      "url": "https://rest.uniprot.org/uniprotkb/P48534.json",
+      "sha256": "84c0ecf895913a24b73a4c10712d4124a0ff7452a59abfe0d765b1fd8439db39",
+      "length": 250,
+      "organism": "Pisum sativum",
+      "sequence_version": 2
+    },
+    {
+      "accession": "P22629",
+      "url": "https://rest.uniprot.org/uniprotkb/P22629.json",
+      "sha256": "af77a7254de1ee7158ff9abfbd01bb7f5bf1ae77e8036bc9faa1d6b348fd77f5",
+      "length": 183,
+      "organism": "Streptomyces avidinii",
+      "sequence_version": 1
+    },
+    {
+      "accession": "P06709",
+      "url": "https://rest.uniprot.org/uniprotkb/P06709.json",
+      "sha256": "88322788c8263c0bac2b254027e733e3b1a70df113dc15cca8b4fd9e6ce3a3a4",
+      "length": 321,
+      "organism": "Escherichia coli (strain K12)",
+      "sequence_version": 1
+    }
+  ],
+  "source_check_epoch": 1792984088.6321135,
+  "changes": {
+    "example-06": "Distinguishes the composition-based 193-214 hydrophobic stretch from the annotated 193-213 helical anchor and 214-217 vesicular region. Retains calibrated sequence-only orientation confidence.",
+    "example-09_and_10": "Restores source accessions with precursor/reference-backbone qualifications; links evidence-status artifacts for unrecovered historical solver checks.",
+    "all_examples": "Uniform source-aware creation and review labels; no label-match or blinded-generation attestation for current authored questions.",
+    "example-01": "Explicitly identifies Q43758 as soybean, not pea, and separates the wild-type reference from an engineered assay construct."
+  },
+  "review_dispositions": {
+    "boundary_method_distinction": "accepted; a one-residue hydrophobic/annotation difference is not inherently a sequence error",
+    "residue_exact_vindication": "qualified; ECO:0000255 annotations are sequence-analysis evidence, not independent measured boundary validation; extramembrane alone does not assign a side",
+    "independent_check_artifact": "accepted with honest missing-evidence status; no response, model or execution date invented",
+    "restore_accessions": "accepted in source qualifications only",
+    "attestation_wording": "current revision uniformly source-aware; historical records preserved",
+    "readme_label_agreement": "obsolete for current open-response format; historical outcomes are not evidence for current revised answers",
+    "caption_Q43758": "review text corrected: soybean Q43758; pea P48534",
+    "adenylate_kinase": "obsolete current example2 already replaced; historical text retained as history",
+    "97_607_and_export_sync": "current question has no unnecessary counts; all exports regenerated from canonical pages"
+  },
+  "historical_artifacts_modified": false,
+  "expert_human_validation": false,
+  "training_gain_measured": false,
+  "reviewed_example_sha256": {
+    "example-01": "39f719758e34cb881d0656e9083633470044df9b49262c1e56c104f7f04d3bf3",
+    "example-02": "9b00bf423ac7c50c60674d8a4d6aef20cf029400f78221853254ac8450c5594e",
+    "example-03": "88d1a3fe6c77e80307c0c51c613a6a762f6895f1eb3057d9a85c763f1c26499e",
+    "example-04": "2fdd6642e12d1795933e7795527b38f05124dcae73991a5763c293db06ba0192",
+    "example-05": "102d76472c6eaa839e959ecbe1b667027e8ecf9a871688b2fcb6f5e4c9ad9c14",
+    "example-06": "fbbfb91e915691a75747e482306b367f22cf0c0f3413419c83493c2f911d70bb",
+    "example-07": "b96841ceb1cccd9850d7a84273f84fbd243e83c3a79b7d7ec138bc8dab8698d5",
+    "example-08": "f9be6b6ba1ba69fc0533c997fab29ca0ddf2b0f7c88612b025059bd1f8f79b01",
+    "example-09": "cef451085220a8db91cad8423278642231f4dddfba7405b5370a439507fbeaad",
+    "example-10": "42750b416fdeff2d90a063b01c0f438b62a2e9d9f04e9b63eb7b5c8f9e637aed"
+  },
+  "new_teacher_api_calls": 0,
+  "rendering_check": "Aggregate links are rebased from per-example paths, and the export validator checks local artifact links in canonical and aggregate pages."
+}
