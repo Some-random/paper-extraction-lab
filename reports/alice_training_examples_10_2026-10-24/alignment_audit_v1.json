@@ -1,0 +1,89 @@
+{
+  "schema": "alice10-criteria-and-feedback-audit-v1",
+  "reviewed_at_utc": "2026-10-26T04:48:36.690289+00:00",
+  "reviewed_commit": "3189f6ff41352641bc656d3b53033d6a8231cdcd",
+  "question_revision": 7,
+  "scope": "Current ten A-D questions and complete worked answers, original five selection criteria, student feedback, source qualifications and exports.",
+  "method": "Primary assistant read plus two separate assistant reviews of the final questions. Existing source records reused; no fresh full-text or expert review claimed.",
+  "content_changed_in_this_audit": false,
+  "answer_labels_changed_in_this_audit": false,
+  "overall_disposition": "Source/format consistency reviewed; feedback alignment partial. This is a curated teaching collection, not a validated hard-reasoning benchmark.",
+  "original_criteria_review": {
+    "source-supported answer": "Assistant source-consistency review found no new factual blocker; existing source evidence and its limits are preserved. Not a new full-text or expert validation.",
+    "fair input": "No hidden source prerequisite identified. Q1, Q2 and Q10 retain answer-selection shortcuts; Q3 retains some unnecessary background.",
+    "reusable biological lesson": "Each item has an identifiable lesson. Q1 remains mainly measurement interpretation; advanced biological reasoning is not established.",
+    "substantive clear reasoning": "Complete explanations retained. Unnecessary reasoning remains a concern in Q3; depth and difficulty are unmeasured.",
+    "variety": "Retains assay interpretation, tool selection, five foundational sequence items, probe perturbation and filtered-evidence interpretation. Variety does not imply uniformly advanced difficulty."
+  },
+  "feedback_disposition": {
+    "Q1": {
+      "status": "partially_addressed",
+      "incorporated": "Removed unused sequence/variant material and changed the task from a fold read-off to transfer between assay conditions and measured quantities.",
+      "residual": "The stem supplies the peak-location versus peak-height distinction; all distractors make rate extrapolations. The correct option can be identified with limited biological reasoning."
+    },
+    "Q2": {
+      "status": "partially_addressed",
+      "incorporated": "The question now addresses whether cellular staining can calibrate fusion delivery, separating localization, substrate and heme-dependent readouts.",
+      "residual": "A, B and D each propose unsupported calibration while C rejects it, preserving a reject-the-overclaim shortcut."
+    },
+    "Q3": {
+      "status": "mostly_addressed",
+      "incorporated": "The question compares TurboID and miniTurbo for an explicit temporal objective subject to recovery, with a provisional choice and conditions that could reverse it.",
+      "residual": "The candidate-change background is not necessary to select B. Discussion of that change and the alternative cumulative-yield objective exceeds the narrow MCQ task."
+    },
+    "Q4-Q8": {
+      "status": "foundational_scope_retained",
+      "incorporated": "The collection explicitly identifies these as foundational sequence interpretation rather than advanced research problems; sequences and qualified inferences are preserved.",
+      "residual": "They have not been made or demonstrated to be difficult. Retaining them satisfies variety, not a claim of advanced reasoning."
+    },
+    "Q9": {
+      "status": "partially_addressed",
+      "incorporated": "Intermediate valency is included in the correct comparison; the worked answer explicitly accepts concentration dependence as another useful priority.",
+      "residual": "The options give the valency comparison stronger engagement/detection controls than the concentration alternative. This tests control quality rather than a balanced practical choice between the two approaches."
+    },
+    "Q10": {
+      "status": "scientific_feedback_addressed_with_pedagogical_limit",
+      "incorporated": "Removed incidental exact durations/FDR counts and invalid duration normalization; retains relative enrichment for filtering and separates exclusion from localization or function.",
+      "residual": "B alone is a qualified practical recommendation; other options assert unsupported localization, occupancy or function. An epistemic wording shortcut remains."
+    }
+  },
+  "source_and_provenance_checks": {
+    "Q6_boundary": "Hydrophobic-composition call 193-214 is distinguished from annotated helix 193-213; sequence-based topology is not represented as independent experimental boundary validation.",
+    "Q43758_identity": "Wild-type soybean APX; not pea APX or the complete engineered assay construct.",
+    "Q9_Q10_accessions": "P22629 and P06709 restored with native precursor/ancestral-backbone qualifications.",
+    "authorship": "All current questions are source-aware assistant revisions. Human feedback on earlier versions is not final human validation.",
+    "historical_independent_checks": "Standalone solver evidence for the historical Q9/Q10 assertions remains unrecovered; no new blinded check is claimed."
+  },
+  "mechanical_checks": {
+    "status": "passed",
+    "command": "python3 reports/alice_training_examples_10_2026-10-24/build_exports.py --check",
+    "examples": 10,
+    "generated_exports": 9,
+    "all_questions_have_A_D": true,
+    "answer_letters_match": true,
+    "markdown_and_plain_text_exports_current": true,
+    "training_user_prompts_and_reference_answers_match": true,
+    "retained_sequence_hashes_Q4_Q8_match": true,
+    "canonical_and_aggregate_local_links_exist": true,
+    "reader_pages_contain_no_grading_rubrics": true,
+    "canonical_page_hashes_unchanged": true
+  },
+  "documentation_fix": "Replaced stale open-response preparation instructions with current A-D criteria; removed blanket all-criteria-passed wording from the current review record. No grading rubric was added to reader pages.",
+  "canonical_page_sha256": {
+    "example-01": "b361353d67484869e1da557cb9232a0e4e5fecf31fd8d080e91ed692418146c6",
+    "example-02": "13ddd01e4b37f7afad16de13952c4d8064d4f6137f39c3e3009526143e2e0183",
+    "example-03": "3f2e7388c1bbc40e52a6943c15ba1000e3128ba1dca83c30fab57f458c2fc43b",
+    "example-04": "bb1744ced422396ce01bab7e5a4f4b25358d5025c62bacd472aa9c6967a035d1",
+    "example-05": "4086feed7cea70bb158135a62cc2961bdb8661fccbb2314765095099c4a86403",
+    "example-06": "4372e1e1faa7fb79ae5fa27880fe7f5ccdbf488811fcb144fb4f2673a0909094",
+    "example-07": "c4a08cdf75be00b2fb10902ad3b863499704a653cc18630e10fd186ff75e71de",
+    "example-08": "007038b381646d29ce376691346187144d9c10ad6f69ba5b262674850366d950",
+    "example-09": "14158cbd68ab003de6d9fc44a5e6af64be122a06fa0b7675cd9aab82cbc97bd9",
+    "example-10": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e"
+  },
+  "expert_human_validation": false,
+  "independently_blinded_final_solver_check": false,
+  "difficulty_measured": false,
+  "training_gain_measured": false,
+  "new_teacher_api_calls": 0
+}

@@ -14,24 +14,13 @@
     "example-10": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e"
   },
   "original_criteria_review": {
-    "source-supported answer": "passed for this curated teaching collection",
-    "fair input": "passed for this curated teaching collection",
-    "reusable biological lesson": "passed for this curated teaching collection",
-    "substantive clear reasoning": "passed for this curated teaching collection",
-    "variety": "passed for this curated teaching collection"
+    "source-supported answer": "Assistant source-consistency review found no new factual blocker; existing source evidence and its limits are preserved. Not a new full-text or expert validation.",
+    "fair input": "No hidden source prerequisite identified. Q1, Q2 and Q10 retain answer-selection shortcuts; Q3 retains some unnecessary background.",
+    "reusable biological lesson": "Each item has an identifiable lesson. Q1 remains mainly measurement interpretation; advanced biological reasoning is not established.",
+    "substantive clear reasoning": "Complete explanations retained. Unnecessary reasoning remains a concern in Q3; depth and difficulty are unmeasured.",
+    "variety": "Retains assay interpretation, tool selection, five foundational sequence items, probe perturbation and filtered-evidence interpretation. Variety does not imply uniformly advanced difficulty."
   },
   "source_check_scope": "Existing source-bound observations reused; original sequences retained in Q4-8. All18 previously cited residue-coordinate checks passed against these unchanged sequences. Current question/answer consistency and inferential limits reviewed by assistants; no fresh full-text review claimed for earlier abstract-only references.",
-  "independent_assistant_reviews": [
-    "Q1-3 input fairness, conditional claims, and source consistency",
-    "Q4-8 exact retained sequence claims, open-response fairness and limits",
-    "Q9-10 evidence selection and interpretation, original criteria and lab feedback"
-  ],
-  "review_corrections_applied": [
-    "Q3 qualifies candidate-change interpretation to the tested miniTurbo background.",
-    "Q9 distinguishes observed labeling patterns from established redistribution.",
-    "Q10 uses a practical prioritization decision, avoiding an obvious absolute-exclusion strawman.",
-    "Q10 rubric accepts multiple compatible biological explanations rather than a required pair."
-  ],
   "expert_human_validation": false,
   "difficulty_measured": false,
   "training_gain_measured": false,
@@ -39,9 +28,23 @@
   "final_polish_record": "final_review_v1.json",
   "final_polish_scope": "Boundary-method distinction, source accession qualifications, standardized current creation method, and explicit missing historical blinded-check evidence.",
   "presentation_record": "presentation_update_v1.json",
-  "current_answer_scope": "Complete worked explanations appropriate to each question, with no fixed word-count cap; current questions unchanged.",
+  "current_answer_scope": "Complete worked explanations with A-D choice comparisons and no fixed word-count cap.",
   "current_revision": 7,
   "format_restoration_record": "mcq_restoration_v1.json",
-  "current_review_scope": "Four A-D options per question, single best supported answer, letter/explanation consistency, source limits and full worked answers; no independently blinded solver test.",
-  "mcq_review": "Assistant review found no competing equally supported options for the stated question. Q3 explicitly prioritizes timing, Q9 directly controls engagement/detection, and Q10 is practical prioritization."
+  "current_review_scope": "Assistant review of sources, A-D options, answer consistency, complete explanations, original criteria and student feedback. No independently blinded solver test; substantive feedback alignment remains partial.",
+  "mcq_review": "Assistant review found no competing equally supported options for the stated question. Q3 explicitly prioritizes timing, Q9 directly controls engagement/detection, and Q10 is practical prioritization.",
+  "earlier_revision_assistant_reviews": [
+    "Q1-3 input fairness, conditional claims, and source consistency",
+    "Q4-8 exact retained sequence claims, open-response fairness and limits",
+    "Q9-10 evidence selection and interpretation, original criteria and lab feedback"
+  ],
+  "earlier_revision_corrections_applied": [
+    "Q3 qualifies candidate-change interpretation to the tested miniTurbo background.",
+    "Q9 distinguishes observed labeling patterns from established redistribution.",
+    "Q10 uses a practical prioritization decision, avoiding an obvious absolute-exclusion strawman.",
+    "Q10 rubric accepts multiple compatible biological explanations rather than a required pair."
+  ],
+  "current_alignment_audit": "alignment_audit_v1.json",
+  "criteria_alignment_status": "reviewed_with_residual_pedagogical_issues",
+  "feedback_alignment_status": "partial"
 }
