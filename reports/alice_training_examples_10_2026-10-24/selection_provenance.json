@@ -55,7 +55,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/"
       ],
       "canonical_page": "examples/example-04.md",
-      "canonical_page_sha256": "3de89450b75a29e15922ee8578ae473143e024b299e1decaa6cfb05601e2e981",
+      "canonical_page_sha256": "bb1744ced422396ce01bab7e5a4f4b25358d5025c62bacd472aa9c6967a035d1",
       "student_prompt_sha256": "1421f19dab30a580d19ecc3ce26c3ddcf71e6ca84a6ed0f9d8f58f904ce6b8c9",
       "reference_answer_sha256": "bddbd0911b1946de5fabfffd61eb574256ac217ab1c280d6b389621e80072121",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-04.md"
@@ -70,7 +70,7 @@
         "https://www.rcsb.org/structure/2LV7"
       ],
       "canonical_page": "examples/example-05.md",
-      "canonical_page_sha256": "e55f5c1ff4ae9023bec6648b489c2f637837171dc3ae661829083bbcf59877c0",
+      "canonical_page_sha256": "4086feed7cea70bb158135a62cc2961bdb8661fccbb2314765095099c4a86403",
       "student_prompt_sha256": "c87cffa94d27a39ac57be8f19590c5032581786744713da8c01ea27a4064525c",
       "reference_answer_sha256": "cd40af5c552d6b6460dbc31cc164c8297a9f89fa106453f61979d45944945f41",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-05.md"
@@ -85,7 +85,7 @@
         "https://pubmed.ncbi.nlm.nih.gov/9705316/"
       ],
       "canonical_page": "examples/example-06.md",
-      "canonical_page_sha256": "54876b9601062ed0c6cc428a9c73d2750e1da46f0b438fd5fc8eb5fda566b13e",
+      "canonical_page_sha256": "4372e1e1faa7fb79ae5fa27880fe7f5ccdbf488811fcb144fb4f2673a0909094",
       "student_prompt_sha256": "c002f85c758614e5c789a99d750adf92fbf08a0823825b15f9d44a166ebaa432",
       "reference_answer_sha256": "a9401fa15cea9e5f7a2467ec9442c63c040089ba3eaefd881581e4575dc24287",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-06.md"
@@ -99,7 +99,7 @@
         "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050"
       ],
       "canonical_page": "examples/example-07.md",
-      "canonical_page_sha256": "ee4efe8c23fe881cbe1aa92b1d87a7b8e2547bce4176d213834150df8c073909",
+      "canonical_page_sha256": "c4a08cdf75be00b2fb10902ad3b863499704a653cc18630e10fd186ff75e71de",
       "student_prompt_sha256": "e1128202d54ce90b7018e9460c1c29cfa4c9206e84a49e0dbf760d47deaaefc2",
       "reference_answer_sha256": "2790e39dbc5f1976e58588ff5e3638fd280377cf65467eec33f425b38857f4ce",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-07.md"
@@ -115,7 +115,7 @@
         "https://pubmed.ncbi.nlm.nih.gov/12368857/"
       ],
       "canonical_page": "examples/example-08.md",
-      "canonical_page_sha256": "c4ab253b2ad2e6b391616c71bc71b8c09439657dd8ee123022dfdba230549d10",
+      "canonical_page_sha256": "007038b381646d29ce376691346187144d9c10ad6f69ba5b262674850366d950",
       "student_prompt_sha256": "b1731fc22daba7dfbaa6819702a7814d908fd7f87ed6f9566d77b0094c19952e",
       "reference_answer_sha256": "2b08eff31f2c576567954db9a25c106edc8bab4594bf099c29ef0450bda6f93f",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-08.md"
