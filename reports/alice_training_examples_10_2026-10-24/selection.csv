@@ -1,11 +1,11 @@
 example,question_topic,question_and_answer,format
-1,APEX: what transfers across assay conditions?,examples/example-01.md,open_response
-2,APEX: can staining measure delivery of a reporter fusion?,examples/example-02.md,open_response
-3,Choosing a labeling tool for the measurement objective,examples/example-03.md,open_response
-4,Inferring a cofactor from a motif combination,examples/example-04.md,open_response
-5,Recognizing repeated calcium-binding loops,examples/example-05.md,open_response
-6,Separating membrane anchoring from topology,examples/example-06.md,open_response
-7,Distinguishing interaction domains from ligand motifs,examples/example-07.md,open_response
-8,Judging a chromophore-binding hypothesis,examples/example-08.md,open_response
-9,Does a label reveal or change protein organization?,examples/example-09.md,open_response
-10,What does exclusion from a proximity-labeling list mean?,examples/example-10.md,open_response
+1,APEX: what transfers across assay conditions?,examples/example-01.md,multiple_choice
+2,APEX: can staining measure delivery of a reporter fusion?,examples/example-02.md,multiple_choice
+3,Choosing a labeling tool for the measurement objective,examples/example-03.md,multiple_choice
+4,Inferring a cofactor from a motif combination,examples/example-04.md,multiple_choice
+5,Recognizing repeated calcium-binding loops,examples/example-05.md,multiple_choice
+6,Separating membrane anchoring from topology,examples/example-06.md,multiple_choice
+7,Distinguishing interaction domains from ligand motifs,examples/example-07.md,multiple_choice
+8,Judging a chromophore-binding hypothesis,examples/example-08.md,multiple_choice
+9,Does a label reveal or change protein organization?,examples/example-09.md,multiple_choice
+10,What does exclusion from a proximity-labeling list mean?,examples/example-10.md,multiple_choice

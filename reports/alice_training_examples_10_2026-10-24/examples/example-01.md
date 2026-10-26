@@ -13,9 +13,18 @@ Guaiacol is the electron-donor substrate in this purified-enzyme assay. The tabl
 
 A colleague wants to summarize this result as a single fold improvement in APEX2's peroxide tolerance and use that number to predict which enzyme will have the greater reaction rate at an untested guaiacol concentration.
 
-Write a defensible replacement conclusion. Explain what comparison is reproduced across the two tested conditions, whether one fold-improvement number captures the result, and whether the proposed reaction-rate prediction follows.
+**Question:** Which replacement conclusion best preserves what these comparisons establish and what can be predicted at an untested guaiacol concentration?
+
+**Choices:**
+
+- **A.** Average the two fold differences to summarize tolerance, then use that factor to predict relative reaction rates when guaiacol lies between the tested concentrations.
+- **B.** Use the smaller observed fold difference as a conservative tolerance improvement, then use that bound to predict APEX2's rate advantage at untested guaiacol concentrations.
+- **C.** Report APEX2's higher concentration at the maximum in both conditions, with a condition-dependent ratio; these locations do not establish the reaction-rate ranking at an untested condition.
+- **D.** Report separate fold improvements for the two conditions, then use each factor to scale APEX reaction rates when comparing the enzymes at that guaiacol concentration.
 
 ## Answer
+
+**Answer: C.**
 
 I would replace the single-number claim with: “APEX2 reaches its rate maximum at a higher peroxide concentration than APEX in both tested guaiacol conditions, but the magnitude of that difference depends on the assay condition. These observations do not establish which enzyme has the greater reaction rate at an untested guaiacol concentration.”
 
@@ -23,10 +32,12 @@ The repeated comparison is straightforward. At 1.4 mM guaiacol, the peroxide con
 
 There is a second distinction between where the maximum occurs and how high it is. The table describes the peroxide concentration at a turning point on a rate curve. It supplies no absolute rates or curve shapes. An enzyme can reach that turning point at a higher concentration without having the higher maximum rate or the higher rate at a particular peroxide concentration. The table therefore cannot rank rates even throughout the tested conditions, much less at an untested guaiacol concentration. It supports a repeated, condition-dependent shift in the response, rather than the colleague's proposed general prediction of catalytic performance.
 
+C preserves the repeated direction and changing magnitude while separating the concentration at a maximum from the rate itself. A averages a condition-dependent response and converts it into an unsupported rate prediction. B treats the smaller observed ratio as a guaranteed bound outside the observations and makes the same quantity error. D retains the two conditions but still uses peak-position ratios to scale unreported rates.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

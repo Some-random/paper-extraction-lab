@@ -11,9 +11,18 @@ A published APX reporter study compared wild-type APX, a form with reduced self-
 
 An analyst wants to use cellular DAB intensity to rank how much connexin43 fusion reaches gap junctions across these reporter forms. Their argument is that similar purified guaiacol activity already controls for catalytic differences, leaving staining intensity to report correctly localized protein amount.
 
-Should the analysis use that interpretation? Explain how the observations fit together, what the APEX–mAPX comparison adds, and which conclusions about reporter performance remain supported.
+**Question:** Which interpretation best evaluates the proposed use of cellular DAB intensity to rank junction-localized fusion protein across these reporter forms?
+
+**Choices:**
+
+- **A.** Apply the guaiacol comparison as a catalytic calibration for DAB, then interpret cellular staining differences as differences in the amount of correctly localized active fusion protein.
+- **B.** Use the heme-supplementation response to calibrate the active-enzyme fraction, then interpret remaining DAB differences as fusion delivery; the separate localization comparison supports improved mAPX trafficking.
+- **C.** Keep trafficking and staining comparisons separate: similar guaiacol activity does not calibrate cellular DAB, and stronger APEX staining can coexist with similar predominantly monomeric behavior.
+- **D.** Use similar oligomeric behavior to normalize APEX and mAPX before ranking delivery by DAB; interpret wild-type APX separately because its greater self-association can affect fusion trafficking.
 
 ## Answer
+
+**Answer: C.**
 
 I would not interpret cellular DAB intensity as a calibrated ranking of how much connexin43 fusion reaches gap junctions. The argument combines measurements of different properties and assumes that the purified assay has removed sources of variation that it did not measure.
 
@@ -27,10 +36,12 @@ Finally, APEX produced stronger cellular DAB staining than mAPX while retaining 
 
 The useful conclusion is that reporter fidelity and signal production must be interpreted separately. The supplied evidence supports better connexin43 trafficking with mAPX than with wild-type APX, and stronger cellular DAB staining with APEX than with mAPX in their respective comparisons. Those results matter for reporter performance, but they do not form a single three-way ranking of junction-localized fusion abundance. DAB remains an informative catalytic endpoint; it has not been shown here to be an interchangeable measure of the quantity the analyst wants to rank.
 
+C preserves the supported trafficking result without converting separate catalytic endpoints into a protein-amount calibration. A assumes transfer between substrates and cellular contexts. B treats a qualitative downstream heme response as a quantitative calibration that was not supplied. D treats similar oligomeric behavior as control for catalytic performance and active-enzyme abundance, which it does not establish.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

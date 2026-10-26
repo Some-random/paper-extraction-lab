@@ -15,7 +15,14 @@ Guaiacol is the electron-donor substrate in this purified-enzyme assay. The tabl
 
 A colleague wants to summarize this result as a single fold improvement in APEX2's peroxide tolerance and use that number to predict which enzyme will have the greater reaction rate at an untested guaiacol concentration.
 
-Write a defensible replacement conclusion. Explain what comparison is reproduced across the two tested conditions, whether one fold-improvement number captures the result, and whether the proposed reaction-rate prediction follows.
+Question: Which replacement conclusion best preserves what these comparisons establish and what can be predicted at an untested guaiacol concentration?
+
+Choices:
+
+- A. Average the two fold differences to summarize tolerance, then use that factor to predict relative reaction rates when guaiacol lies between the tested concentrations.
+- B. Use the smaller observed fold difference as a conservative tolerance improvement, then use that bound to predict APEX2's rate advantage at untested guaiacol concentrations.
+- C. Report APEX2's higher concentration at the maximum in both conditions, with a condition-dependent ratio; these locations do not establish the reaction-rate ranking at an untested condition.
+- D. Report separate fold improvements for the two conditions, then use each factor to scale APEX reaction rates when comparing the enzymes at that guaiacol concentration.
 
 ---
 
@@ -30,7 +37,14 @@ A published APX reporter study compared wild-type APX, a form with reduced self-
 
 An analyst wants to use cellular DAB intensity to rank how much connexin43 fusion reaches gap junctions across these reporter forms. Their argument is that similar purified guaiacol activity already controls for catalytic differences, leaving staining intensity to report correctly localized protein amount.
 
-Should the analysis use that interpretation? Explain how the observations fit together, what the APEX–mAPX comparison adds, and which conclusions about reporter performance remain supported.
+Question: Which interpretation best evaluates the proposed use of cellular DAB intensity to rank junction-localized fusion protein across these reporter forms?
+
+Choices:
+
+- A. Apply the guaiacol comparison as a catalytic calibration for DAB, then interpret cellular staining differences as differences in the amount of correctly localized active fusion protein.
+- B. Use the heme-supplementation response to calibrate the active-enzyme fraction, then interpret remaining DAB differences as fusion delivery; the separate localization comparison supports improved mAPX trafficking.
+- C. Keep trafficking and staining comparisons separate: similar guaiacol activity does not calibrate cellular DAB, and stronger APEX staining can coexist with similar predominantly monomeric behavior.
+- D. Use similar oligomeric behavior to normalize APEX and mAPX before ranking delivery by DAB; interpret wild-type APX separately because its greater self-association can affect fusion trafficking.
 
 ---
 
@@ -42,7 +56,14 @@ These enzymes produce covalent labels. Omitting added biotin does not remove bio
 
 Consider a project whose purpose is to associate recovered proteins with a defined interval beginning at biotin addition. It also needs enough recovered material for analysis. There are no project-specific measurements of background labeling or recovery yet.
 
-Compare TurboID and miniTurbo as initial candidates for this project. Make a provisional choice and explain the tradeoff. What missing information would most affect that choice? Explain whether the reported candidate change counts as an improvement for this objective, and how your recommendation could change for a project that prioritizes cumulative yield instead.
+Question: For this project, treat a defined labeling start time as the primary objective, subject to recovering enough material for analysis. Which provisional decision best uses the published comparison while respecting both requirements?
+
+Choices:
+
+- A. Prefer TurboID initially, taking its greater reported yield as evidence of faster labeling within the intended interval; reconsider if the project's recovered material is insufficient.
+- B. Prefer miniTurbo initially, using its lower reported pre-addition labeling to serve the temporal objective; reconsider if project-specific background or inadequate recovery undermines that advantage.
+- C. Withhold an initial preference because the published comparison is not project specific; project-specific background and recovery must be known before either candidate can receive provisional priority.
+- D. Prefer TurboID initially, using subtraction of the omit-added-biotin signal to identify labels acquired within the interval; reconsider if project-specific recovery falls below the analytical requirement.
 
 ---
 
@@ -57,7 +78,14 @@ LLKGREKDKLTEEEAASTCILLAIAGHETTVNLISNSVLCLLQHPEQLLKLRENPDLIGTAVEECLRYES
 PTQMTARVASEDIDICGVTIRQGEQVYLLLGAANRDPSIFTNPDVFDITRSPNPHLSFGHGHHVCLGSSL
 ARLEAQIAINTLLQRMPSLNLADFEWRYRPLFGFRALEELPVTFE
 
-What cofactor and protein-family assignment does this sequence most strongly support? Identify the sequence evidence that matters, explain why it is stronger than one plausible alternative cofactor interpretation, and state what the sequence cannot establish about the protein’s activity.
+Question: Which cofactor is most strongly supported by this protein sequence?
+
+Choices:
+
+- A. FAD
+- B. FMN
+- C. A four-iron four-sulfur cluster
+- D. Heme
 
 ---
 
@@ -70,7 +98,14 @@ EVELEVIIQRLDMDGDGQVDFEEFVTLLGPKLSTSGIPEKFHGTDFDTVFWKCDMQKLTVDELKRLLYDT
 FCEHLSMKDIENIIMTEEESHLGTAEECPVDVETCSNQQIRQTCVRKSLICAFAIAFIISVMLIAANQVL
 RSGMK
 
-What ion-binding architecture is supported by the likely soluble region of this sequence? Cite the relevant segments and explain why their arrangement is more informative than acidic composition alone. Contrast your interpretation with a nonspecific acidic region, and distinguish the prediction from properties that require experimental evidence.
+Question: Which binding role is most consistent with the soluble region of this protein?
+
+Choices:
+
+- A. Binding calcium through EF-hand domains.
+- B. Binding zinc through C2H2 zinc-finger domains.
+- C. Binding heme within a peroxidase domain.
+- D. Binding FAD within an oxidoreductase domain.
 
 ---
 
@@ -83,7 +118,14 @@ SNRMRSYKQEMGKLETDFKRSRIAYSDEVRNELLGDAGNSSENQRAHLLDNTERLERSSRRLEAGYQIAV
 ETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNRILLVILGIIVVIAILTAI
 AFFVKGH
 
-Infer this protein’s membrane-association architecture from the sequence. Identify the strongest evidence for an integral anchor rather than peripheral association, and explain how confidently you can assign the orientation of the large upstream region. What cellular information remains unresolved?
+Question: Which overall membrane-association architecture best fits this protein sequence?
+
+Choices:
+
+- A. Peripheral membrane association without a membrane-spanning segment.
+- B. A single C-terminal membrane anchor with a large upstream domain.
+- C. Multiple membrane-spanning segments distributed throughout the protein.
+- D. An N-terminal cleaved signal peptide followed by a soluble domain.
 
 ---
 
@@ -99,7 +141,14 @@ QVNEEREISKMTTTTRTETITNSNSAYQYKESSTAYDAYATPPVDSNDLMDEVFGRVNLPGVTMSSHTEV
 LPPTDDISSVSSLSSHRESAVDVPVSHQYVPSYATESHQKHEQHSQTHHHHHQHQQPSPLSNGSSHGYAA
 SSTSGYDDDDIYHLSAREARERLRMKNRKHHLHEMSLNEKYQLVSNM
 
-What interaction-domain architecture is a reasonable hypothesis for this sequence? Use repeated sequence regions to support your assessment. Explain whether the proline-rich stretch identifies a folded interaction domain or could instead be a partner-binding motif, and state which conclusions about binding partners remain unsupported.
+Question: Which protein-interaction domain architecture is most consistent with this sequence?
+
+Choices:
+
+- A. A WD40-repeat beta-propeller interaction scaffold.
+- B. Two SH2 interaction domains for phosphotyrosine-containing peptides.
+- C. Two PDZ interaction domains for short partner-protein peptides.
+- D. One SH3 interaction domain for proline-rich partner peptides.
 
 ---
 
@@ -112,7 +161,14 @@ PRYIDWILTTPLIVYFLGLLAGLDSREFGIVITLNTVVMLAGFAGAMVPGIERYALFGMGAVAFLGLVYY
 LVGPMTESASQRSSGIKSLYVRLRNLTVILWAIYPFIWLLGPPGVALLTPTVDVALIVYLDLVTKVGFGF
 IALDAAATLRAEHGESLAGVDTDAPAVAD
 
-What chromophore-binding mechanism would you prioritize as a hypothesis for this sequence, and why? Identify evidence from the overall architecture and a candidate attachment residue. Compare that hypothesis with a soluble chromophore-binding protein, and distinguish compatibility from proof of chromophore attachment.
+Question: Which chromophore-association mechanism is most consistent with this protein sequence?
+
+Choices:
+
+- A. Covalent bilin attachment to a cysteine in a large phytochrome photosensory domain.
+- B. Noncovalent FMN binding in a soluble LOV-domain pocket.
+- C. Formation of an internal GFP-like chromophore by cyclization of residues in a soluble beta-barrel.
+- D. Retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin.
 
 ---
 
@@ -126,7 +182,14 @@ Published observations from a study of biotinylated neuroligin-1 on cultured neu
 
 A collaborator concludes that the diffuse A1D3 image reveals native neuroligin organization and that similar soluble-biotin affinity makes further comparison unnecessary.
 
-Question: Assess that conclusion. Choose two high-level comparisons that would most help separate probe-induced redistribution from differences in target engagement or detection. For each, explain which competing explanations it addresses and what possible result would change your interpretation. You may consider functional valency, concentration dependence, direct target engagement, or an independent organization readout; justify your choices rather than listing every possibility. Explain what would still be needed to call either pattern native. No experimental protocol is requested.
+Question: Which initial comparison most directly tests a contribution from functional valency while accounting for differences in cellular target engagement and detection?
+
+Choices:
+
+- A. Compare one-, intermediate- and four-site probes at comparable measured initial target engagement, using an independently calibrated organization readout.
+- B. Compare probe concentrations selected from soluble-biotin affinity estimates, using the original labeling images to quantify organization and initial target engagement.
+- C. Compare preparations supplying equal total functional binding-site concentrations, using their matched initial surface fluorescence as the measure of target engagement.
+- D. Compare the probes at equal tetramer concentrations, using identical imaging settings and the initially diffuse patterns as the baseline for organization.
 
 ---
 
@@ -140,4 +203,11 @@ Consider a hypothetical protein P that reproducibly passes the no-added-biotin c
 
 A collaborator proposes prioritizing proteins that passed both filters and deferring P because follow-up resources are limited. There is no independent evidence that P is especially important to this project's biological question.
 
-Question: Would you follow that priority or make a case for following up P? Distinguish the measured result from at least two possible biological explanations. Explain how independent evidence about localization and about function would answer different questions, and what information would most affect your decision. A justified decision either to defer or to follow up P is acceptable; state its basis and what would change it.
+Question: Given the stated resource limit and lack of independent evidence prioritizing P, which recommendation best follows the available evidence?
+
+Choices:
+
+- A. Follow up P first because passing the no-added-biotin comparison establishes contact association; treat the second filter as a measure of detection sensitivity.
+- B. Prioritize the passing proteins and provisionally defer P; reconsider its priority if independent localization or functional evidence makes it relevant to the project.
+- C. Defer P until its enrichment ratio is converted into contact occupancy; use that quantity to decide whether its contact-associated pool merits functional study.
+- D. Follow up P first because failure of the cytosolic-reference filter identifies a dual-localized protein; treat that inferred pool as evidence of a missed contact function.

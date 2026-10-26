@@ -1,6 +1,6 @@
 # Ten protein reasoning problems and worked answers
 
-Ten open-response questions with complete worked explanations. The first three concern APEX/APEX2 and TurboID work from Alice Ting's laboratory. Questions 4–8 retain foundational sequence interpretation; questions 9–10 address probe perturbation and interpretation of filtered evidence.
+Ten multiple-choice questions, each with A–D options and a complete worked explanation. The first three concern APEX/APEX2 and TurboID work from Alice Ting's laboratory. Questions 4–8 retain foundational sequence interpretation; questions 9–10 address probe perturbation and interpretation of filtered evidence.
 
 **[Read all ten questions and answers](ALL_EXAMPLES.md)** · [Questions only](QUESTIONS_ONLY.md) · [Plain-text Q&A](ALL_EXAMPLES.txt)
 
@@ -22,11 +22,11 @@ The worked answers explain how the supplied evidence supports each conclusion, w
 <details>
 <summary>Sources, versions and machine-readable files</summary>
 
-[Current presentation](presentation_update_v1.json) · [Question revision](revision_v6.json) · [Final review and clarifications](final_review_v1.json) · [Review scope and checks](review_v6.json) · [Per-example provenance](selection_provenance.json) · [Earlier substantive revision](revision_v4.json).
+[Current question format](mcq_restoration_v1.json) · [Earlier presentation update](presentation_update_v1.json) · [Earlier question revision](revision_v6.json) · [Final review and clarifications](final_review_v1.json) · [Review scope and checks](review_v6.json) · [Per-example provenance](selection_provenance.json) · [Earlier substantive revision](revision_v4.json).
 
 [Exact student prompts](questions.jsonl) · [Training messages](training_examples.jsonl) · [Answer review records](verification.jsonl) · [Selection spreadsheet](selection.csv).
 
-The current question pages are the canonical source for the readable collection and its exports. The shared pages contain questions, worked answers and expandable source notes. Preparation criteria are kept separately. Earlier prompts, outputs and review records remain preserved in the existing artifacts and Git history. No new teacher API calls were made for this presentation update.
+The current question pages are the canonical source for the readable collection and its exports. The shared pages contain questions, worked answers and expandable source notes. Preparation criteria are kept separately. Earlier prompts, outputs and review records remain preserved in the existing artifacts and Git history. No new teacher API calls were made for this format correction.
 
 Assistant source checks are not expert human validation, and training benefit has not been measured. The historical independent-solver assertions for examples 9–10 lack recovered standalone execution artifacts; the linked status records document that limitation. This collection is separate from the completed 10,000-example training run.
 

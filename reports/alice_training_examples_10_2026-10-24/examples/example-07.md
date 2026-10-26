@@ -14,9 +14,20 @@ LPPTDDISSVSSLSSHRESAVDVPVSHQYVPSYATESHQKHEQHSQTHHHHHQHQQPSPLSNGSSHGYAA
 SSTSGYDDDDIYHLSAREARERLRMKNRKHHLHEMSLNEKYQLVSNM
 ```
 
-What interaction-domain architecture is a reasonable hypothesis for this sequence? Use repeated sequence regions to support your assessment. Explain whether the proline-rich stretch identifies a folded interaction domain or could instead be a partner-binding motif, and state which conclusions about binding partners remain unsupported.
+**Question:** Which protein-interaction domain architecture is most consistent with this sequence?
+
+**Choices:**
+
+- **A.** A WD40-repeat beta-propeller interaction scaffold.
+- **B.** Two SH2 interaction domains for phosphotyrosine-containing peptides.
+- **C.** Two PDZ interaction domains for short partner-protein peptides.
+- **D.** One SH3 interaction domain for proline-rich partner peptides.
 
 ## Answer
+
+**Answer: C.**
+
+C. Two PDZ interaction domains for short partner-protein peptides.
 
 A reasonable hypothesis is a tandem arrangement of two PDZ-like interaction modules. The clearest sequence evidence is extended similarity between two regions of the N-terminal portion, rather than one short conserved word or a low-complexity repeat.
 
@@ -28,10 +39,12 @@ The PPPPPP stretch at residues 128–133 illustrates a different kind of sequenc
 
 The sequence therefore supports tandem related interaction modules, with PDZ-like domains as a reasonable leading interpretation. It does not determine exact domain boundaries, prove that both modules bind peptides, establish their affinities or identify their physiological partners. A more cautious tandem-module conclusion is appropriate if family recognition remains uncertain.
 
+C best matches the extended tandem PDZ-like sequence patterns. A would require a repeated WD40 architecture, not merely an isolated WD pair. B is not excluded simply because SH2 domains can occur in tandem: repeat number alone cannot decide the family. The positive PDZ-like similarity across separated parts of both modules is the stronger evidence here. D confuses a possible proline-rich ligand with a folded SH3 domain and does not account for the two extended related regions.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

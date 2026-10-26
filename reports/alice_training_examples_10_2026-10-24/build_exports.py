@@ -43,9 +43,9 @@ def aggregate_links(text: str) -> str:
 def render(root: Path) -> dict[str, str]:
     revision = json.loads((root / 'revision_v6.json').read_text())
     review = json.loads((root / 'review_v6.json').read_text())
-    internal = json.loads((root / 'internal/assessment_rubrics.json').read_text())
+    current = json.loads((root / 'mcq_restoration_v1.json').read_text())
     assert review['status'] == 'assistant_review_passed'
-    assert revision['format'] == 'open_response'
+    assert current['format'] == 'multiple_choice'
     questions, training, verification, provenance, docs = [], [], [], [], []
     table = io.StringIO(newline='')
     writer = csv.writer(table, lineterminator='\n')
@@ -62,11 +62,15 @@ def render(root: Path) -> dict[str, str]:
         question = text.split('\n## Question\n', 1)[1].split('\n## Answer\n', 1)[0].strip()
         answer, notes = text.split('\n## Answer\n', 1)[1].split('<details>', 1)
         answer = answer.strip()
-        rubric = internal['examples'][item_id]['assessment_rubric']
         assert '</details>' in notes, rel
-        assert question and answer and rubric, rel
-        assert 'Final answer:' not in question and 'Choices:' not in question, rel
-        assert rubric.count('\n- ') + int(rubric.startswith('- ')) >= 3, rel
+        assert question and answer, rel
+        item = current['items'][item_id]
+        assert list(item['choices']) == list('ABCD'), rel
+        assert item['correct_answer'] in 'ABCD', rel
+        assert question.count('**Choices:**') == 1, rel
+        for letter, choice in item['choices'].items():
+            assert f'- **{letter}.** {choice}' in question, (rel, letter)
+        assert answer.startswith(f"**Answer: {item['correct_answer']}.**"), (rel, 'answer letter mismatch')
         references = re.findall(r'\]\((https?://[^)]+)\)', notes)
         assert references, rel
         if 4 <= i <= 8:
@@ -76,32 +80,33 @@ def render(root: Path) -> dict[str, str]:
             raise AssertionError((rel, 'unused full sequence retained'))
         assert sha(text) == review['reviewed_example_sha256'][item_id], (rel, 'unreviewed edit')
         purpose = revision['purposes'][item_id]
-        questions.append({'schema': 'alice10-open-response-v6', 'id': item_id, 'title': title,
-                          'format': 'open_response', 'purpose': purpose,
-                          'student_prompt': question, 'question': question})
-        training.append({'schema': 'alice10-training-example-v6', 'id': item_id,
+        questions.append({'schema': 'alice10-multiple-choice-v7', 'id': item_id, 'title': title,
+                          'format': 'multiple_choice', 'purpose': purpose,
+                          'student_prompt': question, 'question': item['question'], 'choices': item['choices']})
+        training.append({'schema': 'alice10-training-example-v7', 'id': item_id,
                          'authoring_method': 'source_aware_assistant_revision',
                          'messages': [{'role': 'user', 'content': question},
                                       {'role': 'assistant', 'content': answer}]})
-        verification.append({'schema': 'alice10-reference-review-v6', 'id': item_id,
-                             'format': 'open_response', 'reference_answer': answer,
-                             'assessment_rubric': rubric, 'review_status': 'assistant_review_passed',
+        verification.append({'schema': 'alice10-reference-review-v7', 'id': item_id,
+                             'format': 'multiple_choice', 'reference_answer': answer,
+                             'reference_answer_letter': item['correct_answer'],
+                             'review_status': 'assistant_review_passed',
                              'review_scope': 'source consistency, evidence use and worked-answer completeness',
                              'student_prompt_sha256': sha(question), 'reference_answer_sha256': sha(answer),
                              'expert_human_validation': False, 'training_gain_measured': False})
-        provenance.append({'id': item_id, 'revision': 6, 'method': 'source_aware_assistant_revision',
+        provenance.append({'id': item_id, 'revision': 7, 'method': 'source_aware_assistant_revision',
                            'purpose': purpose, 'source_references': references,
                            'canonical_page': rel, 'canonical_page_sha256': sha(text),
                            'student_prompt_sha256': sha(question), 'reference_answer_sha256': sha(answer),
                            'earlier_version': f"https://github.com/Some-random/paper-extraction-lab/blob/{revision['previous_commit']}/reports/alice_training_examples_10_2026-10-24/{rel}"})
-        writer.writerow([i, title, rel, 'open_response'])
+        writer.writerow([i, title, rel, 'multiple_choice'])
         docs.append(aggregate_links(text.strip()))
     all_md = '# Ten protein reasoning problems and worked answers\n\n' + '\n\n---\n\n'.join(docs) + '\n'
     questions_md = '# Ten protein reasoning problems\n\nWorked answers are in ALL_EXAMPLES.md.\n\n'
     questions_md += '\n\n---\n\n'.join(f"# {i}. {row['title']}\n\n{row['student_prompt']}" for i, row in enumerate(questions, 1)) + '\n'
-    prov = {'schema': 'alice10-provenance-v6', 'current_revision': 6,
+    prov = {'schema': 'alice10-provenance-v7', 'current_revision': 7,
             'authoring_method': 'source_aware_assistant_revision', 'examples': provenance,
-            'previous_commit': revision['previous_commit'], 'revision_record': 'revision_v6.json',
+            'previous_commit': current['previous_commit'], 'revision_record': 'mcq_restoration_v1.json',
             'review_record': 'review_v6.json', 'new_teacher_api_calls': 0,
             'presentation_record': 'presentation_update_v1.json',
             'expert_human_review_performed': False, 'student_training_released': False,

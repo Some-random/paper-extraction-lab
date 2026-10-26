@@ -10,9 +10,18 @@ Published observations from a study of biotinylated neuroligin-1 on cultured neu
 
 A collaborator concludes that the diffuse A1D3 image reveals native neuroligin organization and that similar soluble-biotin affinity makes further comparison unnecessary.
 
-**Question:** Assess that conclusion. Choose two high-level comparisons that would most help separate probe-induced redistribution from differences in target engagement or detection. For each, explain which competing explanations it addresses and what possible result would change your interpretation. You may consider functional valency, concentration dependence, direct target engagement, or an independent organization readout; justify your choices rather than listing every possibility. Explain what would still be needed to call either pattern native. No experimental protocol is requested.
+**Question:** Which initial comparison most directly tests a contribution from functional valency while accounting for differences in cellular target engagement and detection?
+
+**Choices:**
+
+- **A.** Compare one-, intermediate- and four-site probes at comparable measured initial target engagement, using an independently calibrated organization readout.
+- **B.** Compare probe concentrations selected from soluble-biotin affinity estimates, using the original labeling images to quantify organization and initial target engagement.
+- **C.** Compare preparations supplying equal total functional binding-site concentrations, using their matched initial surface fluorescence as the measure of target engagement.
+- **D.** Compare the probes at equal tetramer concentrations, using identical imaging settings and the initially diffuse patterns as the baseline for organization.
 
 ## Answer
+
+**Answer: A.**
 
 The observations justify concern that the probe affects the observed pattern, but they do not establish which pattern represents native neuroligin organization. Similar affinity for soluble biotin controls only part of the problem. A tetramer with four active sites can connect separate biotinylated targets; an A1D3 tetramer has only one functional site and cannot make that same connection through multiple biotin-binding sites. This difference in functional valency remains even though both preparations are tetramers. Cellular target engagement and fluorophores per detected complex can also affect the image, and the affinity measurements did not use exactly the same preparations as the cellular comparison.
 
@@ -22,10 +31,12 @@ My second comparison would ask whether the organization agrees with an independe
 
 A concentration-dependence comparison is another defensible priority, especially if the concern is whether clustering occurs only in a particular labeling regime. Its interpretation would still need to distinguish altered opportunities for crosslinking from altered target coverage and detection. Thus, the next evidence should resolve a specific competing explanation. The current results motivate testing probe-induced perturbation, while a native-state claim additionally needs a suitable independent baseline and attention to the perturbations introduced by that baseline.
 
+A varies functional valency while directly addressing target engagement and detection. B substitutes soluble binding for cellular engagement; C substitutes supplied capacity and fluorescence for measured engagement; D leaves functional-site supply and engagement unequal. These other comparisons can be informative for different questions, but do not control the stated alternatives as directly.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
@@ -34,10 +45,10 @@ A concentration-dependence comparison is another defensible priority, especially
 
 Source qualification: [UniProt P22629](https://www.uniprot.org/uniprotkb/P22629/entry) is the native 183-residue streptavidin precursor from Streptomyces avidinii. It identifies the source protein, not the exact mature, engineered or tagged assayed subunit, and does not specify the A1D3 preparation.
 
-[Historical independent-check status](../artifacts/example-09/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current open-response question is claimed.
+[Historical independent-check status](../artifacts/example-09/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current question is claimed.
 
 The three observations are paraphrases of the published comparisons. The collaborator's claim and follow-up choices are hypothetical teaching material. No new comparison, result, native-state measurement, or experimental procedure is asserted. The answer offers conditional reasoning, not a unique experimental prescription.
 
-This is a source-aware assistant revision responding to review feedback. It replaces the earlier fixed-choice matching question. It is not a fresh teacher-model response or expert human validation, and training benefit has not been measured. Earlier versions remain in Git history and the existing revision artifacts.
+This is a source-aware assistant revision responding to review feedback. It retains A–D choices and a complete worked answer. It is not a fresh teacher-model response or expert human validation, and training benefit has not been measured. Earlier versions remain in Git history and the existing revision artifacts.
 
 </details>

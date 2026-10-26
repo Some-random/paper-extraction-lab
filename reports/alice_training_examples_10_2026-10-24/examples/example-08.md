@@ -11,9 +11,20 @@ LVGPMTESASQRSSGIKSLYVRLRNLTVILWAIYPFIWLLGPPGVALLTPTVDVALIVYLDLVTKVGFGF
 IALDAAATLRAEHGESLAGVDTDAPAVAD
 ```
 
-What chromophore-binding mechanism would you prioritize as a hypothesis for this sequence, and why? Identify evidence from the overall architecture and a candidate attachment residue. Compare that hypothesis with a soluble chromophore-binding protein, and distinguish compatibility from proof of chromophore attachment.
+**Question:** Which chromophore-association mechanism is most consistent with this protein sequence?
+
+**Choices:**
+
+- **A.** Covalent bilin attachment to a cysteine in a large phytochrome photosensory domain.
+- **B.** Noncovalent FMN binding in a soluble LOV-domain pocket.
+- **C.** Formation of an internal GFP-like chromophore by cyclization of residues in a soluble beta-barrel.
+- **D.** Retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin.
 
 ## Answer
+
+**Answer: D.**
+
+D. Retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin.
 
 A retinal-binding microbial opsin is a plausible leading hypothesis. The reasoning combines the protein’s overall membrane-rich architecture with the position and chemistry of a candidate attachment lysine; neither feature is sufficient alone.
 
@@ -25,10 +36,12 @@ A soluble chromophore-binding protein is a meaningful alternative. A soluble LOV
 
 The strongest conclusion from direct inspection is that this is likely a multipass membrane protein. The retinal/opsin interpretation is a more specific hypothesis that draws on family knowledge. Other membrane proteins can also contain several helices and lysines, so these observations do not uniquely prove opsin identity. They also do not demonstrate retinal occupancy, a Schiff-base linkage specifically at Lys205, an absorption wavelength or sensory rather than transport function. Those claims go beyond the anonymous sequence evidence.
 
+D is the best-supported mechanism among these choices. A specifically requires a cysteine for the stated bilin linkage, but this sequence has no cysteine; its compact membrane-rich architecture also differs from the proposed large photosensory domain. B and C require soluble chromophore-binding folds that fit the repeated long hydrophobic regions less well. The choice comparison strengthens the relative case for D without experimentally establishing retinal attachment.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

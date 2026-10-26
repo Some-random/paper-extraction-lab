@@ -11,9 +11,20 @@ ETEQIGQEMLENLSHDREKIQRARDRLRDADANLGKSSRILTGMLRRIIQNRILLVILGIIVVIAILTAI
 AFFVKGH
 ```
 
-Infer this protein’s membrane-association architecture from the sequence. Identify the strongest evidence for an integral anchor rather than peripheral association, and explain how confidently you can assign the orientation of the large upstream region. What cellular information remains unresolved?
+**Question:** Which overall membrane-association architecture best fits this protein sequence?
+
+**Choices:**
+
+- **A.** Peripheral membrane association without a membrane-spanning segment.
+- **B.** A single C-terminal membrane anchor with a large upstream domain.
+- **C.** Multiple membrane-spanning segments distributed throughout the protein.
+- **D.** An N-terminal cleaved signal peptide followed by a soluble domain.
 
 ## Answer
+
+**Answer: B.**
+
+B. A single C-terminal membrane anchor with a large upstream domain.
 
 The sequence strongly supports a protein with one membrane anchor near its C terminus and a much larger region outside the bilayer. Its most conspicuous feature is ILLVILGIIVVIAILTAIAFFV at residues 193–214: a continuous 22-residue hydrophobic stretch followed by only KGH.
 
@@ -25,10 +36,12 @@ Orientation is a separate, less certain inference. The RRIIQNR segment at residu
 
 Residues 193–214 describe a hydrophobic-composition window, not a measured helix boundary. A structural boundary could differ slightly without changing the overall conclusion. The sequence alone does not establish the exact membrane-spanning endpoints, prove orientation, identify the insertion pathway or distinguish a Golgi, endosomal or other membrane destination. Confidence is strongest for the single C-terminal anchor and weaker for those more specific cellular assignments.
 
+B best accounts for the single near-terminal hydrophobic stretch and large upstream region. A does not explain the conspicuous membrane-length hydrophobic segment. C would require several comparable hydrophobic segments distributed across the protein. D places the targeting hydrophobic segment at the N terminus, whereas the sequence instead has its strongest such segment at the C terminus. The choice establishes the most plausible architecture; it does not turn the proposed upstream orientation into a direct observation.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

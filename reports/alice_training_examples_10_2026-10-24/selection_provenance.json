@@ -1,11 +1,11 @@
 {
-  "schema": "alice10-provenance-v6",
-  "current_revision": 6,
+  "schema": "alice10-provenance-v7",
+  "current_revision": 7,
   "authoring_method": "source_aware_assistant_revision",
   "examples": [
     {
       "id": "example-01",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "comparative evidence transfer",
       "source_references": [
@@ -13,56 +13,56 @@
         "https://www.uniprot.org/uniprotkb/Q43758/entry"
       ],
       "canonical_page": "examples/example-01.md",
-      "canonical_page_sha256": "794a4ac35ca5e1a1c6899034508ecd320bb3f43c5f4f8df76cb9dd8ea286cda0",
-      "student_prompt_sha256": "28398e58553d862b5c98a1450119eb54a6f1fad372afad01a88a7d0881c514b8",
-      "reference_answer_sha256": "4df5a96059465669546dbd1ab59975d37154356a2b42afbe1de14a6cb74ace86",
+      "canonical_page_sha256": "b361353d67484869e1da557cb9232a0e4e5fecf31fd8d080e91ed692418146c6",
+      "student_prompt_sha256": "2f0527c8f36aa3e786c19d892c9a7fa77105dbd221b7e9e7d80328f7fb7cbe45",
+      "reference_answer_sha256": "9078dfca3dfe2c91ccd2d34e11bdc42416aa6a1b3a5d6e1b465105862a232520",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-01.md"
     },
     {
       "id": "example-02",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "cross-assay interpretation",
       "source_references": [
         "https://doi.org/10.1038/nbt.2375"
       ],
       "canonical_page": "examples/example-02.md",
-      "canonical_page_sha256": "fd59189e8baee3dffd841410219eb086fc56490147bbcbfb63045b9da2b41129",
-      "student_prompt_sha256": "c4e41dc942d07da66cb04dcd9989ae229336257e7809e7086f82d1cbf8e0d34c",
-      "reference_answer_sha256": "cca2b386a82b38c56eaca2a41485c9d07d21cc6dcf950888bb9fd7284b3824e5",
+      "canonical_page_sha256": "13ddd01e4b37f7afad16de13952c4d8064d4f6137f39c3e3009526143e2e0183",
+      "student_prompt_sha256": "c5b5b8f83db862f73447f03a1b5ee46b0f776a246189279a8f1cec8de81c5889",
+      "reference_answer_sha256": "8cd3fd0f3e9c0fdae8219566675f95879386829980a465eed3d4dfd8428b55ca",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-02.md"
     },
     {
       "id": "example-03",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "objective-dependent tool choice",
       "source_references": [
         "https://doi.org/10.1038/nbt.4201"
       ],
       "canonical_page": "examples/example-03.md",
-      "canonical_page_sha256": "a95187fb1bec7a98eb551b99f96192d35a504b2563b33dcf4157d53dbce8dfd0",
-      "student_prompt_sha256": "bf91e51b157fcf73aad21c90d68650f61417c64dc86f6d588fe2e6d798f105a5",
-      "reference_answer_sha256": "1ccab7ea97dbbbe750b4c5a4640fed837cea27e8e53fa4f88bb40e5e09136382",
+      "canonical_page_sha256": "3f2e7388c1bbc40e52a6943c15ba1000e3128ba1dca83c30fab57f458c2fc43b",
+      "student_prompt_sha256": "5f076915e41bd7110d1ccf39afe1adc2d7cd7e59e8f1ea5b24f96134a48115be",
+      "reference_answer_sha256": "0b453fdf9bbbcdf32dbabc6165fb6ffcf071b19cdbeb8386991c878d4de43c31",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-03.md"
     },
     {
       "id": "example-04",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "foundational cofactor inference",
       "source_references": [
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572933/"
       ],
       "canonical_page": "examples/example-04.md",
-      "canonical_page_sha256": "fa228800bd6c86cca4ee024f0b843b90a7c4d04e57fd16f91102f26275aaba44",
-      "student_prompt_sha256": "46cbe5a4519fd14d1b19cbd8ad3b6da30d56c58849f2d3debee3ff68b398ed59",
-      "reference_answer_sha256": "a6bc92d26fe24f69d50c75a3e6738afd1bd5773aebc1353c88a1af126082618b",
+      "canonical_page_sha256": "3de89450b75a29e15922ee8578ae473143e024b299e1decaa6cfb05601e2e981",
+      "student_prompt_sha256": "1421f19dab30a580d19ecc3ce26c3ddcf71e6ca84a6ed0f9d8f58f904ce6b8c9",
+      "reference_answer_sha256": "bddbd0911b1946de5fabfffd61eb574256ac217ab1c280d6b389621e80072121",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-04.md"
     },
     {
       "id": "example-05",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "foundational repeated binding architecture",
       "source_references": [
@@ -70,14 +70,14 @@
         "https://www.rcsb.org/structure/2LV7"
       ],
       "canonical_page": "examples/example-05.md",
-      "canonical_page_sha256": "a0fe034ac3ce14bb3572e70fb1db7aa189adbc318b00219a7e2ead5a693f2769",
-      "student_prompt_sha256": "3238ff6126c6e9ae205d899a607ece91fb0d6aef220670cfa77b30b4eed03bcb",
-      "reference_answer_sha256": "0f7a51e9e8b4e2ef77e9db3d5692e4370ab83ad17c4fb181cfd18827eee71c9c",
+      "canonical_page_sha256": "e55f5c1ff4ae9023bec6648b489c2f637837171dc3ae661829083bbcf59877c0",
+      "student_prompt_sha256": "c87cffa94d27a39ac57be8f19590c5032581786744713da8c01ea27a4064525c",
+      "reference_answer_sha256": "cd40af5c552d6b6460dbc31cc164c8297a9f89fa106453f61979d45944945f41",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-05.md"
     },
     {
       "id": "example-06",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "foundational anchoring versus topology",
       "source_references": [
@@ -85,28 +85,28 @@
         "https://pubmed.ncbi.nlm.nih.gov/9705316/"
       ],
       "canonical_page": "examples/example-06.md",
-      "canonical_page_sha256": "ffe3584dcdc9ccb8683f5771dde7dd732299164de11c69c4d7a5c9c04a8470c9",
-      "student_prompt_sha256": "8087e5fb7ee60fbc5f11760655c2eedf5ae1bde72688801fc326bcdbfec5531f",
-      "reference_answer_sha256": "2163a4ca55157493d86323aa06e25bc0d30c19e9fcc2fc67d9e4aa04acc17d88",
+      "canonical_page_sha256": "54876b9601062ed0c6cc428a9c73d2750e1da46f0b438fd5fc8eb5fda566b13e",
+      "student_prompt_sha256": "c002f85c758614e5c789a99d750adf92fbf08a0823825b15f9d44a166ebaa432",
+      "reference_answer_sha256": "a9401fa15cea9e5f7a2467ec9442c63c040089ba3eaefd881581e4575dc24287",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-06.md"
     },
     {
       "id": "example-07",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "foundational domains versus motifs",
       "source_references": [
         "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0043050"
       ],
       "canonical_page": "examples/example-07.md",
-      "canonical_page_sha256": "7649fde5f53da78f8e51b00693c706ca7a589db5ff0359b15c930a1fcd3962f5",
-      "student_prompt_sha256": "6bdb2988e7059974c0fa060620bb513f49666fec64af2866cd2fc5c1d0e585e6",
-      "reference_answer_sha256": "b429f8b9eda69c1fd9f78de9bba0ea544a5f25e062fa0b1bf9733240e1372337",
+      "canonical_page_sha256": "ee4efe8c23fe881cbe1aa92b1d87a7b8e2547bce4176d213834150df8c073909",
+      "student_prompt_sha256": "e1128202d54ce90b7018e9460c1c29cfa4c9206e84a49e0dbf760d47deaaefc2",
+      "reference_answer_sha256": "2790e39dbc5f1976e58588ff5e3638fd280377cf65467eec33f425b38857f4ce",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-07.md"
     },
     {
       "id": "example-08",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "foundational chromophore hypothesis",
       "source_references": [
@@ -115,14 +115,14 @@
         "https://pubmed.ncbi.nlm.nih.gov/12368857/"
       ],
       "canonical_page": "examples/example-08.md",
-      "canonical_page_sha256": "6921124a6dc6eed2ba5983fc6e3df022f6a7c864d9d532041975c31ebe9ba4fe",
-      "student_prompt_sha256": "7c7cc4900ddbc7363e159a07b8abea0e8d2050d9a7ee1c8fdbeb4d2204c86497",
-      "reference_answer_sha256": "1a7adf6dc043a9837dc1918650c3a767e5d86288bfc2b9470ae490e69565d19b",
+      "canonical_page_sha256": "c4ab253b2ad2e6b391616c71bc71b8c09439657dd8ee123022dfdba230549d10",
+      "student_prompt_sha256": "b1731fc22daba7dfbaa6819702a7814d908fd7f87ed6f9566d77b0094c19952e",
+      "reference_answer_sha256": "2b08eff31f2c576567954db9a25c106edc8bab4594bf099c29ef0450bda6f93f",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-08.md"
     },
     {
       "id": "example-09",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "probe perturbation and evidence selection",
       "source_references": [
@@ -130,14 +130,14 @@
         "https://www.uniprot.org/uniprotkb/P22629/entry"
       ],
       "canonical_page": "examples/example-09.md",
-      "canonical_page_sha256": "1a92f5922125be55d138f6085185324e210fc5ab71becb7bfe76536cbbb09191",
-      "student_prompt_sha256": "b4edeb6a0f7397cce7252bec855bbd199ac12bf129574467a067c092ed722938",
-      "reference_answer_sha256": "127b3b1bb45a8846a2e4fe8af6db278dd25b574659018537307e3f7da0bb3f79",
+      "canonical_page_sha256": "14158cbd68ab003de6d9fc44a5e6af64be122a06fa0b7675cd9aab82cbc97bd9",
+      "student_prompt_sha256": "dd53153581c8e3c49f62a108bb502527c2213dc9a7aa9c756fa6dfebdd1d5d10",
+      "reference_answer_sha256": "6824742d7eb9ca32805615fa0611a5d36208132d1a0794f7ff091be0cbd06756",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-09.md"
     },
     {
       "id": "example-10",
-      "revision": 6,
+      "revision": 7,
       "method": "source_aware_assistant_revision",
       "purpose": "enrichment-based research prioritization",
       "source_references": [
@@ -145,14 +145,14 @@
         "https://www.uniprot.org/uniprotkb/P06709/entry"
       ],
       "canonical_page": "examples/example-10.md",
-      "canonical_page_sha256": "3dbfbcdee27b0ba5aed5fe78371fc7ec2acfc420846578ad8a14bd3d69526cc2",
-      "student_prompt_sha256": "dc49f8553e0edd3e0f651ecbe125f8a5ce91e244aac7b825419586e3ca4f79a9",
-      "reference_answer_sha256": "6a8ae748aed683b395570f09849bbf177e8d275a32c9235dae7414d89f31aa9f",
+      "canonical_page_sha256": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e",
+      "student_prompt_sha256": "cca5688d4064066f409be2f073717b89ae50ad37cb4a2fa39e0623e51f7a9854",
+      "reference_answer_sha256": "00bf452ff45555ea8f14c61f4a71a6491625b149ca74fd071a28faa0e875b81e",
       "earlier_version": "https://github.com/Some-random/paper-extraction-lab/blob/a612e06348afdc5f00b6f504b2b0b4c526a8471b/reports/alice_training_examples_10_2026-10-24/examples/example-10.md"
     }
   ],
-  "previous_commit": "a612e06348afdc5f00b6f504b2b0b4c526a8471b",
-  "revision_record": "revision_v6.json",
+  "previous_commit": "7c974d217f16c5759fb6e0acf6d1bdec80c483cf",
+  "revision_record": "mcq_restoration_v1.json",
   "review_record": "review_v6.json",
   "new_teacher_api_calls": 0,
   "presentation_record": "presentation_update_v1.json",

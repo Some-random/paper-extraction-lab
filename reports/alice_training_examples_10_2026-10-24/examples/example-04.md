@@ -13,9 +13,20 @@ PTQMTARVASEDIDICGVTIRQGEQVYLLLGAANRDPSIFTNPDVFDITRSPNPHLSFGHGHHVCLGSSL
 ARLEAQIAINTLLQRMPSLNLADFEWRYRPLFGFRALEELPVTFE
 ```
 
-What cofactor and protein-family assignment does this sequence most strongly support? Identify the sequence evidence that matters, explain why it is stronger than one plausible alternative cofactor interpretation, and state what the sequence cannot establish about the protein’s activity.
+**Question:** Which cofactor is most strongly supported by this protein sequence?
+
+**Choices:**
+
+- **A.** FAD
+- **B.** FMN
+- **C.** A four-iron four-sulfur cluster
+- **D.** Heme
 
 ## Answer
+
+**Answer: D.**
+
+D. Heme
 
 The strongest assignment is a heme-containing cytochrome P450. The evidence is a combination of sequence features in the appropriate order, rather than the presence of a metal-binding amino acid by itself.
 
@@ -27,10 +38,12 @@ An iron–sulfur protein is a reasonable alternative to consider when a sequence
 
 The supported conclusion is a strong P450/heme hypothesis. The sequence does not demonstrate that the protein actually contains heme, identify its substrate or establish its reaction specificity and catalytic activity. Those are separate claims from recognizing a cofactor-binding family.
 
+Among the choices, D is therefore the strongest assignment. C is a plausible alternative for a cysteine-containing protein, but the complete motif combination supports heme-thiolate P450 chemistry more specifically. A and B represent flavin cofactors; flavin-binding proteins are diverse, but neither assignment explains the observed P450-associated signatures as well. Their rejection rests on stronger positive evidence for heme, not on claiming a universal flavin-binding motif is absent.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

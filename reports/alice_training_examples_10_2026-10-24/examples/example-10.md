@@ -10,9 +10,18 @@ Consider a hypothetical protein P that reproducibly passes the no-added-biotin c
 
 A collaborator proposes prioritizing proteins that passed both filters and deferring P because follow-up resources are limited. There is no independent evidence that P is especially important to this project's biological question.
 
-**Question:** Would you follow that priority or make a case for following up P? Distinguish the measured result from at least two possible biological explanations. Explain how independent evidence about localization and about function would answer different questions, and what information would most affect your decision. A justified decision either to defer or to follow up P is acceptable; state its basis and what would change it.
+**Question:** Given the stated resource limit and lack of independent evidence prioritizing P, which recommendation best follows the available evidence?
+
+**Choices:**
+
+- **A.** Follow up P first because passing the no-added-biotin comparison establishes contact association; treat the second filter as a measure of detection sensitivity.
+- **B.** Prioritize the passing proteins and provisionally defer P; reconsider its priority if independent localization or functional evidence makes it relevant to the project.
+- **C.** Defer P until its enrichment ratio is converted into contact occupancy; use that quantity to decide whether its contact-associated pool merits functional study.
+- **D.** Follow up P first because failure of the cytosolic-reference filter identifies a dual-localized protein; treat that inferred pool as evidence of a missed contact function.
 
 ## Answer
+
+**Answer: B.**
 
 With limited resources and no independent reason to prioritize P, I would provisionally follow the collaborator's priority and defer it. That is a practical ranking of candidates, not a conclusion that P is absent from contacts or biologically unimportant. Passing both filters provides the passing candidates with stronger support under this particular selection scheme. It does not make the filtered list a complete inventory of proteins relevant to the biological process.
 
@@ -24,10 +33,12 @@ Independent localization evidence would address whether P is found at contacts, 
 
 My priority would change if independent evidence linked P to the relevant contact-associated process, supported a meaningful contact-localized pool, or suggested that this filtering scheme systematically misses the kind of protein the project seeks. A different project objective could also justify following up P despite its failed filter. Without such a reason, deferral is reasonable, provided the record states the actual basis: P currently has weaker support from this assay's enrichment criterion, not a demonstrated lack of biological relevance.
 
+B makes an evidence-based priority decision without claiming biological absence or unimportance. A promotes background-control passage into localization evidence. C assumes an unavailable occupancy calibration. D treats one possible explanation as an established result and then infers function.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 
@@ -36,7 +47,7 @@ My priority would change if independent evidence linked P to the relevant contac
 
 Source qualification: [UniProt P06709](https://www.uniprot.org/uniprotkb/P06709/entry) is native Escherichia coli BirA, the ancestral reference backbone. It is not the complete evolved split-TurboID fragments or their tags, localization elements and dimerization domains.
 
-[Historical independent-check status](../artifacts/example-10/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current open-response question is claimed.
+[Historical independent-check status](../artifacts/example-10/independent_check.json). The earlier revision records a check assertion, but its standalone solver response and model metadata were not recovered. No independently verifiable blinded check of the current question is claimed.
 
 The assay description is source-derived. P, the collaborator's proposal, and the prioritization discussion are hypothetical. The paper does not supply P's identity, localization, function, or labeling kinetics. Exact durations and the reference-set false-discovery criterion were removed because this item requires no valid protein-specific quantitative calculation. Relative enrichment remains useful for its intended filtering role.
 

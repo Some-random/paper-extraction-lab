@@ -2,16 +2,16 @@
   "schema": "alice10-source-and-feedback-review-v6",
   "status": "assistant_review_passed",
   "reviewed_example_sha256": {
-    "example-01": "794a4ac35ca5e1a1c6899034508ecd320bb3f43c5f4f8df76cb9dd8ea286cda0",
-    "example-02": "fd59189e8baee3dffd841410219eb086fc56490147bbcbfb63045b9da2b41129",
-    "example-03": "a95187fb1bec7a98eb551b99f96192d35a504b2563b33dcf4157d53dbce8dfd0",
-    "example-04": "fa228800bd6c86cca4ee024f0b843b90a7c4d04e57fd16f91102f26275aaba44",
-    "example-05": "a0fe034ac3ce14bb3572e70fb1db7aa189adbc318b00219a7e2ead5a693f2769",
-    "example-06": "ffe3584dcdc9ccb8683f5771dde7dd732299164de11c69c4d7a5c9c04a8470c9",
-    "example-07": "7649fde5f53da78f8e51b00693c706ca7a589db5ff0359b15c930a1fcd3962f5",
-    "example-08": "6921124a6dc6eed2ba5983fc6e3df022f6a7c864d9d532041975c31ebe9ba4fe",
-    "example-09": "1a92f5922125be55d138f6085185324e210fc5ab71becb7bfe76536cbbb09191",
-    "example-10": "3dbfbcdee27b0ba5aed5fe78371fc7ec2acfc420846578ad8a14bd3d69526cc2"
+    "example-01": "b361353d67484869e1da557cb9232a0e4e5fecf31fd8d080e91ed692418146c6",
+    "example-02": "13ddd01e4b37f7afad16de13952c4d8064d4f6137f39c3e3009526143e2e0183",
+    "example-03": "3f2e7388c1bbc40e52a6943c15ba1000e3128ba1dca83c30fab57f458c2fc43b",
+    "example-04": "3de89450b75a29e15922ee8578ae473143e024b299e1decaa6cfb05601e2e981",
+    "example-05": "e55f5c1ff4ae9023bec6648b489c2f637837171dc3ae661829083bbcf59877c0",
+    "example-06": "54876b9601062ed0c6cc428a9c73d2750e1da46f0b438fd5fc8eb5fda566b13e",
+    "example-07": "ee4efe8c23fe881cbe1aa92b1d87a7b8e2547bce4176d213834150df8c073909",
+    "example-08": "c4ab253b2ad2e6b391616c71bc71b8c09439657dd8ee123022dfdba230549d10",
+    "example-09": "14158cbd68ab003de6d9fc44a5e6af64be122a06fa0b7675cd9aab82cbc97bd9",
+    "example-10": "4337db9112dfa8c4cffeebc66abcb88570f0d762600e470725d9511e91b5c35e"
   },
   "original_criteria_review": {
     "source-supported answer": "passed for this curated teaching collection",
@@ -39,5 +39,9 @@
   "final_polish_record": "final_review_v1.json",
   "final_polish_scope": "Boundary-method distinction, source accession qualifications, standardized current creation method, and explicit missing historical blinded-check evidence.",
   "presentation_record": "presentation_update_v1.json",
-  "current_answer_scope": "Complete worked explanations appropriate to each question, with no fixed word-count cap; current questions unchanged."
+  "current_answer_scope": "Complete worked explanations appropriate to each question, with no fixed word-count cap; current questions unchanged.",
+  "current_revision": 7,
+  "format_restoration_record": "mcq_restoration_v1.json",
+  "current_review_scope": "Four A-D options per question, single best supported answer, letter/explanation consistency, source limits and full worked answers; no independently blinded solver test.",
+  "mcq_review": "Assistant review found no competing equally supported options for the stated question. Q3 explicitly prioritizes timing, Q9 directly controls engagement/detection, and Q10 is practical prioritization."
 }

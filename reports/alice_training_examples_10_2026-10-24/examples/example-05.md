@@ -11,9 +11,20 @@ FCEHLSMKDIENIIMTEEESHLGTAEECPVDVETCSNQQIRQTCVRKSLICAFAIAFIISVMLIAANQVL
 RSGMK
 ```
 
-What ion-binding architecture is supported by the likely soluble region of this sequence? Cite the relevant segments and explain why their arrangement is more informative than acidic composition alone. Contrast your interpretation with a nonspecific acidic region, and distinguish the prediction from properties that require experimental evidence.
+**Question:** Which binding role is most consistent with the soluble region of this protein?
+
+**Choices:**
+
+- **A.** Binding calcium through EF-hand domains.
+- **B.** Binding zinc through C2H2 zinc-finger domains.
+- **C.** Binding heme within a peroxidase domain.
+- **D.** Binding FAD within an oxidoreductase domain.
 
 ## Answer
+
+**Answer: A.**
+
+A. Binding calcium through EF-hand domains.
 
 The likely soluble region supports an EF-hand calcium-binding architecture, with two particularly convincing candidate loops. They are DRDGNGFISKQE at residues 46–57 and DMDGDGQVDFEE at residues 82–93.
 
@@ -25,10 +36,12 @@ The candidate loops lie well upstream of the hydrophobic near-terminal sequence 
 
 The sequence supports candidate EF hands; it does not directly demonstrate their three-dimensional fold or prove that both bind ions under physiological conditions. Nor does it measure calcium affinity, calcium-versus-magnesium selectivity, occupancy or a calcium-dependent conformational change. In particular, recognizing these two loops does not justify claiming four functional calcium-binding sites. The architecture prediction and the biochemical properties of its sites require different evidence.
 
+A best explains the repeated ligand-compatible loop patterns. B would require evidence for the characteristic Cys/His arrangement of a C2H2 zinc finger; scattered cysteines and histidines do not supply that architecture. C and D describe other genuine binding roles, but neither explains the repeated EF-hand-like positions as directly. Acidity alone would not rule those families out; the stronger evidence is the specific organization of the two candidate loops.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

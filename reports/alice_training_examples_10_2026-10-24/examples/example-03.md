@@ -8,9 +8,18 @@ These enzymes produce covalent labels. Omitting added biotin does not remove bio
 
 Consider a project whose purpose is to associate recovered proteins with a defined interval beginning at biotin addition. It also needs enough recovered material for analysis. There are no project-specific measurements of background labeling or recovery yet.
 
-Compare TurboID and miniTurbo as initial candidates for this project. Make a provisional choice and explain the tradeoff. What missing information would most affect that choice? Explain whether the reported candidate change counts as an improvement for this objective, and how your recommendation could change for a project that prioritizes cumulative yield instead.
+**Question:** For this project, treat a defined labeling start time as the primary objective, subject to recovering enough material for analysis. Which provisional decision best uses the published comparison while respecting both requirements?
+
+**Choices:**
+
+- **A.** Prefer TurboID initially, taking its greater reported yield as evidence of faster labeling within the intended interval; reconsider if the project's recovered material is insufficient.
+- **B.** Prefer miniTurbo initially, using its lower reported pre-addition labeling to serve the temporal objective; reconsider if project-specific background or inadequate recovery undermines that advantage.
+- **C.** Withhold an initial preference because the published comparison is not project specific; project-specific background and recovery must be known before either candidate can receive provisional priority.
+- **D.** Prefer TurboID initially, using subtraction of the omit-added-biotin signal to identify labels acquired within the interval; reconsider if project-specific recovery falls below the analytical requirement.
 
 ## Answer
+
+**Answer: B.**
 
 I would provisionally favor miniTurbo for a project that makes the defined start time its main interpretive requirement, provided it can recover enough material. The reason is the reported lower pre-addition labeling, rather than a claim that miniTurbo is generally the better enzyme. TurboID's greater yield addresses an equally real constraint, so the decision cannot be settled from timing considerations alone.
 
@@ -22,10 +31,12 @@ The candidate change illustrates the same distinction at the variant level. In t
 
 For a project that prioritizes cumulative yield over a sharply defined start time, I could instead provisionally favor TurboID. The greater yield reported in the broader comparison would then serve the stated objective more directly, and activity before biotin addition might carry less penalty. It would still matter if that activity made the recovered material unsuitable for the biological interpretation. Thus, changing the objective can change the recommendation without changing any of the published observations; the decision depends on what the measurement must mean and whether it produces enough usable material.
 
+B uses lower reported pre-addition labeling as a provisional advantage for the explicitly primary temporal objective, while retaining the recovery constraint. A converts accumulated yield into evidence about within-interval labeling rate. C confuses a provisional evidence-based preference with a guaranteed project-specific outcome. D assumes that subtracting an aggregate background timestamps the recovered covalent labels.
+
 <details>
 <summary>Sources and review notes</summary>
 
-**Creation method:** Source-aware assistant revision (revision 6, final polish 1).
+**Creation method:** Source-aware assistant revision (revision 7, A–D restoration).
 
 **Review type:** Assistant source-consistency review. No independently documented blinded solver test or expert human validation is claimed for the current question.
 

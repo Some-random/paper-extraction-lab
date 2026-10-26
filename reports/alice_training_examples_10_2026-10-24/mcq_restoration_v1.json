@@ -1,0 +1,142 @@
+{
+  "schema": "alice10-mcq-restoration-v1",
+  "revision": 7,
+  "format": "multiple_choice",
+  "previous_commit": "7c974d217f16c5759fb6e0acf6d1bdec80c483cf",
+  "reason": "User clarified that A-D options were required; their removal was an assistant interpretation error.",
+  "items": {
+    "example-01": {
+      "question": "Which replacement conclusion best preserves what these comparisons establish and what can be predicted at an untested guaiacol concentration?",
+      "choices": {
+        "A": "Average the two fold differences to summarize tolerance, then use that factor to predict relative reaction rates when guaiacol lies between the tested concentrations.",
+        "B": "Use the smaller observed fold difference as a conservative tolerance improvement, then use that bound to predict APEX2's rate advantage at untested guaiacol concentrations.",
+        "C": "Report APEX2's higher concentration at the maximum in both conditions, with a condition-dependent ratio; these locations do not establish the reaction-rate ranking at an untested condition.",
+        "D": "Report separate fold improvements for the two conditions, then use each factor to scale APEX reaction rates when comparing the enzymes at that guaiacol concentration."
+      },
+      "correct_answer": "C"
+    },
+    "example-02": {
+      "question": "Which interpretation best evaluates the proposed use of cellular DAB intensity to rank junction-localized fusion protein across these reporter forms?",
+      "choices": {
+        "A": "Apply the guaiacol comparison as a catalytic calibration for DAB, then interpret cellular staining differences as differences in the amount of correctly localized active fusion protein.",
+        "B": "Use the heme-supplementation response to calibrate the active-enzyme fraction, then interpret remaining DAB differences as fusion delivery; the separate localization comparison supports improved mAPX trafficking.",
+        "C": "Keep trafficking and staining comparisons separate: similar guaiacol activity does not calibrate cellular DAB, and stronger APEX staining can coexist with similar predominantly monomeric behavior.",
+        "D": "Use similar oligomeric behavior to normalize APEX and mAPX before ranking delivery by DAB; interpret wild-type APX separately because its greater self-association can affect fusion trafficking."
+      },
+      "correct_answer": "C"
+    },
+    "example-03": {
+      "question": "For this project, treat a defined labeling start time as the primary objective, subject to recovering enough material for analysis. Which provisional decision best uses the published comparison while respecting both requirements?",
+      "choices": {
+        "A": "Prefer TurboID initially, taking its greater reported yield as evidence of faster labeling within the intended interval; reconsider if the project's recovered material is insufficient.",
+        "B": "Prefer miniTurbo initially, using its lower reported pre-addition labeling to serve the temporal objective; reconsider if project-specific background or inadequate recovery undermines that advantage.",
+        "C": "Withhold an initial preference because the published comparison is not project specific; project-specific background and recovery must be known before either candidate can receive provisional priority.",
+        "D": "Prefer TurboID initially, using subtraction of the omit-added-biotin signal to identify labels acquired within the interval; reconsider if project-specific recovery falls below the analytical requirement."
+      },
+      "correct_answer": "B"
+    },
+    "example-04": {
+      "question": "Which cofactor is most strongly supported by this protein sequence?",
+      "choices": {
+        "A": "FAD",
+        "B": "FMN",
+        "C": "A four-iron four-sulfur cluster",
+        "D": "Heme"
+      },
+      "correct_answer": "D"
+    },
+    "example-05": {
+      "question": "Which binding role is most consistent with the soluble region of this protein?",
+      "choices": {
+        "A": "Binding calcium through EF-hand domains.",
+        "B": "Binding zinc through C2H2 zinc-finger domains.",
+        "C": "Binding heme within a peroxidase domain.",
+        "D": "Binding FAD within an oxidoreductase domain."
+      },
+      "correct_answer": "A"
+    },
+    "example-06": {
+      "question": "Which overall membrane-association architecture best fits this protein sequence?",
+      "choices": {
+        "A": "Peripheral membrane association without a membrane-spanning segment.",
+        "B": "A single C-terminal membrane anchor with a large upstream domain.",
+        "C": "Multiple membrane-spanning segments distributed throughout the protein.",
+        "D": "An N-terminal cleaved signal peptide followed by a soluble domain."
+      },
+      "correct_answer": "B"
+    },
+    "example-07": {
+      "question": "Which protein-interaction domain architecture is most consistent with this sequence?",
+      "choices": {
+        "A": "A WD40-repeat beta-propeller interaction scaffold.",
+        "B": "Two SH2 interaction domains for phosphotyrosine-containing peptides.",
+        "C": "Two PDZ interaction domains for short partner-protein peptides.",
+        "D": "One SH3 interaction domain for proline-rich partner peptides."
+      },
+      "correct_answer": "C"
+    },
+    "example-08": {
+      "question": "Which chromophore-association mechanism is most consistent with this protein sequence?",
+      "choices": {
+        "A": "Covalent bilin attachment to a cysteine in a large phytochrome photosensory domain.",
+        "B": "Noncovalent FMN binding in a soluble LOV-domain pocket.",
+        "C": "Formation of an internal GFP-like chromophore by cyclization of residues in a soluble beta-barrel.",
+        "D": "Retinal attachment through a Schiff-base linkage to a lysine in a membrane-embedded opsin."
+      },
+      "correct_answer": "D"
+    },
+    "example-09": {
+      "question": "Which initial comparison most directly tests a contribution from functional valency while accounting for differences in cellular target engagement and detection?",
+      "choices": {
+        "A": "Compare one-, intermediate- and four-site probes at comparable measured initial target engagement, using an independently calibrated organization readout.",
+        "B": "Compare probe concentrations selected from soluble-biotin affinity estimates, using the original labeling images to quantify organization and initial target engagement.",
+        "C": "Compare preparations supplying equal total functional binding-site concentrations, using their matched initial surface fluorescence as the measure of target engagement.",
+        "D": "Compare the probes at equal tetramer concentrations, using identical imaging settings and the initially diffuse patterns as the baseline for organization."
+      },
+      "correct_answer": "A"
+    },
+    "example-10": {
+      "question": "Given the stated resource limit and lack of independent evidence prioritizing P, which recommendation best follows the available evidence?",
+      "choices": {
+        "A": "Follow up P first because passing the no-added-biotin comparison establishes contact association; treat the second filter as a measure of detection sensitivity.",
+        "B": "Prioritize the passing proteins and provisionally defer P; reconsider its priority if independent localization or functional evidence makes it relevant to the project.",
+        "C": "Defer P until its enrichment ratio is converted into contact occupancy; use that quantity to decide whether its contact-associated pool merits functional study.",
+        "D": "Follow up P first because failure of the cytosolic-reference filter identifies a dual-localized protein; treat that inferred pool as evidence of a missed contact function."
+      },
+      "correct_answer": "B"
+    }
+  },
+  "preserved": [
+    "Complete worked answers",
+    "Scientific source qualifications and known evidence limits",
+    "Exact full sequences for examples4-8",
+    "No reader-facing grading rubrics"
+  ],
+  "previous_open_prompt_sha256": {
+    "example-01": "28398e58553d862b5c98a1450119eb54a6f1fad372afad01a88a7d0881c514b8",
+    "example-02": "c4e41dc942d07da66cb04dcd9989ae229336257e7809e7086f82d1cbf8e0d34c",
+    "example-03": "bf91e51b157fcf73aad21c90d68650f61417c64dc86f6d588fe2e6d798f105a5",
+    "example-04": "46cbe5a4519fd14d1b19cbd8ad3b6da30d56c58849f2d3debee3ff68b398ed59",
+    "example-05": "3238ff6126c6e9ae205d899a607ece91fb0d6aef220670cfa77b30b4eed03bcb",
+    "example-06": "8087e5fb7ee60fbc5f11760655c2eedf5ae1bde72688801fc326bcdbfec5531f",
+    "example-07": "6bdb2988e7059974c0fa060620bb513f49666fec64af2866cd2fc5c1d0e585e6",
+    "example-08": "7c7cc4900ddbc7363e159a07b8abea0e8d2050d9a7ee1c8fdbeb4d2204c86497",
+    "example-09": "b4edeb6a0f7397cce7252bec855bbd199ac12bf129574467a067c092ed722938",
+    "example-10": "dc49f8553e0edd3e0f651ecbe125f8a5ce91e244aac7b825419586e3ca4f79a9"
+  },
+  "previous_canonical_page_sha256": {
+    "example-01": "794a4ac35ca5e1a1c6899034508ecd320bb3f43c5f4f8df76cb9dd8ea286cda0",
+    "example-02": "fd59189e8baee3dffd841410219eb086fc56490147bbcbfb63045b9da2b41129",
+    "example-03": "a95187fb1bec7a98eb551b99f96192d35a504b2563b33dcf4157d53dbce8dfd0",
+    "example-04": "fa228800bd6c86cca4ee024f0b843b90a7c4d04e57fd16f91102f26275aaba44",
+    "example-05": "a0fe034ac3ce14bb3572e70fb1db7aa189adbc318b00219a7e2ead5a693f2769",
+    "example-06": "ffe3584dcdc9ccb8683f5771dde7dd732299164de11c69c4d7a5c9c04a8470c9",
+    "example-07": "7649fde5f53da78f8e51b00693c706ca7a589db5ff0359b15c930a1fcd3962f5",
+    "example-08": "6921124a6dc6eed2ba5983fc6e3df022f6a7c864d9d532041975c31ebe9ba4fe",
+    "example-09": "1a92f5922125be55d138f6085185324e210fc5ab71becb7bfe76536cbbb09191",
+    "example-10": "3dbfbcdee27b0ba5aed5fe78371fc7ec2acfc420846578ad8a14bd3d69526cc2"
+  },
+  "new_teacher_api_calls": 0,
+  "expert_human_validation": false,
+  "training_gain_measured": false
+}
