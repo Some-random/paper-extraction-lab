@@ -1,0 +1,70 @@
+{
+  "example_count": 1,
+  "feedback_checks": {
+    "biotin_history_limitation_in_worked_answer": true,
+    "cautious_wording_identifies_key": false,
+    "choice_word_counts": {
+      "A": 19,
+      "B": 20,
+      "C": 19,
+      "D": 19
+    },
+    "hypothetical_measurements_explicit": true,
+    "numerical_read_off_or_decorative_arithmetic": false,
+    "other_controls_recognized_as_useful_for_their_own_objectives": true,
+    "unpublished_turbo2_data_used": false
+  },
+  "file_sha256": {
+    "QUESTION_ONLY.md": "d722f3f7aa81e7d41578a793875b5cbbdff339f1a9bd4d14f4af64f33e6188eb",
+    "README.md": "cf2ea301ee7f6b1f4256a5266681c1e64b5597c01f4e77722358dae6f1eb02c5",
+    "item.json": "b245c79b089fe249f19e9d39c44e305602c77995f22d46e74bfed2113426a94f",
+    "questions.jsonl": "e152fd2dd9cba1adf5a24a52a890ebd6c639b41ef12c94ffa6f29d519a0d3e4d",
+    "render.py": "63be6ec579931d77060060eea97018c0ccc6b24c62cbc2a4425fe51c5d244f14",
+    "review/answer_check.json": "6ed1ed578b2e2453899cf62af20f03b160b8f459106661eefac781a9705a996b",
+    "review/independent_check.json": "3f3654be6373c99a64380cf856eafe6a3049c56a9dac4e54fd4ece59f34de291",
+    "review/source_evidence.json": "320b4daac4acb21f0df4cf04d7b1edd763bb1c937c3f6f5bd44c9cd7a56374f1",
+    "training_examples.jsonl": "a9114d0d017fdedd3d1d7457aa195817119610bedc41bbb27bbc04250250a1cb"
+  },
+  "limitations": [
+    "AI source-based assessment, not expert or Alice Ting review.",
+    "The question chiefly tests generally applicable experimental-design reasoning; difficulty and learning gains have not been measured.",
+    "A negative delayed-biotin result does not certify the actual biotin-containing pulse history or every trafficking route.",
+    "reasoning_content contains a visible worked explanation, not a captured native hidden-thinking trajectory."
+  ],
+  "mechanical_checks": {
+    "all_outputs_regenerated_from_item_json": true,
+    "blinded_final_question_hash_matches": true,
+    "four_AD_options": true,
+    "matching_answer_letter": true,
+    "reviewed_item_hash_matches": true,
+    "source_file_integrity_checked": true,
+    "student_messages_match_question_export": true,
+    "worked_explanation_matches_training_export": true
+  },
+  "models": {
+    "draft": {
+      "configured_model": "gpt-6-astra",
+      "method": "source-aware authoring",
+      "reasoning_effort": "xhigh"
+    },
+    "review": {
+      "configured_model": "gpt-6-astra",
+      "method": "separate context, final question-only solve saved before opening key/sources; later source-aware worked-answer review",
+      "reasoning_effort": "xhigh"
+    }
+  },
+  "original_ten_example_collection_modified": false,
+  "recorded_at_utc": "2026-10-27T17:53:01.293626+00:00",
+  "rubric_checks": {
+    "clear_reasoning": "Complete focused explanation, role of controls, each distractor and outcome-dependent limits.",
+    "fair_input": "Covalent-label background, substrate availability, expression/localization and fractionation observations supplied. Four plausible choices, one best under the temporal objective.",
+    "reusable_biology_lesson": "Differentiate photosensor recovery, cumulative labeling and endpoint recovery from post-illumination catalytic activity.",
+    "supported_answer": "Published control logic plus explicitly supplied hypothetical assumptions; observation and inference kept separate.",
+    "variety": "Adds cross-assay experimental-design judgment; single-item difficulty and collection diversity are not measured."
+  },
+  "rubric_reference": "../../alice_training_examples_10_2026-10-24/RUBRIC.md",
+  "rubric_scope": "Existing five preparation criteria applied; variety is a contribution to the collection, not a measured property of one item. No grading rubric is placed in the reader.",
+  "selected_answer": "B",
+  "status": "passed_source_and_independent_AI_review",
+  "ten_thousand_question_work": "on_hold_by_user;0rewrites/0newFlashNextanswers"
+}

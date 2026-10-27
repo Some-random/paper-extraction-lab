@@ -1,0 +1,115 @@
+{
+  "claim_checks": [
+    {
+      "assessment": "Supported chemistry and pulse-chase logic. The item does not claim indefinite protein or tag survival.",
+      "claim": "Proximity biotinylation creates covalent tags, which can remain after catalytic labeling stops.",
+      "support": "Branon 2018 body line 1; Lee 2023 lines 41-48. Lee lines 1193-1209 explicitly use dark chasing to follow the labeled proteome."
+    },
+    {
+      "assessment": "Supported context. The candidate and its measurements are explicitly hypothetical; no new construct or phenotype is represented as a published result.",
+      "claim": "A linker-engineered LOV-Turbo follow-up is a credible engineering context.",
+      "support": "Lee 2023 lines 69-74 and 175-196 describe allosteric coupling, insertion sites, and sensitivity to linker alterations."
+    },
+    {
+      "assessment": "Directly supported assay logic. The question requires an experimental choice, not a read-off of the published timing values.",
+      "claim": "Adding biotin after illumination tests post-illumination labeling activity.",
+      "support": "Lee 2023 lines 887-902 describe reversibility tests and the light-followed-by-biotin turn-off assay; the specific delayed-biotin experiment is identified there as Supplementary Figure 3b."
+    },
+    {
+      "assessment": "Appropriate. Comparable assay timing and exposure are naturally implied; no invented numerical sensitivity or kinetic parameter is used.",
+      "claim": "The never-illuminated and freshly illuminated comparisons give baseline and positive-control information.",
+      "support": "This is experimental inference from B and the supplied assay assumptions, consistent with the light/biotin controls underlying Lee 2023 lines 887-902 and 1170-1178."
+    },
+    {
+      "assessment": "Fairly supplied assay-specific fact. The worked answer does not generalize this low background to all TurboID or LOV-Turbo contexts.",
+      "claim": "Negligible labeling without supplied biotin makes the delayed-addition comparison interpretable.",
+      "support": "Explicit hypothetical assumption in the prompt. Branon 2018 body line 43 and Lee 2023 lines 1170-1178 show why background biotin use cannot be assumed absent universally."
+    },
+    {
+      "assessment": "Sound. The answer does not claim that the source paper actually observed a spectral/catalytic mismatch, nor that any particular molecular failure mechanism has been demonstrated.",
+      "claim": "Purified LOV optical recovery is insufficient evidence for catalytic shutdown in the cellular fusion.",
+      "support": "The recovery result is explicitly hypothetical. Distinguishing photosensor state from cellular catalytic output is an inferential limit; Lee 2023 experimentally assays activity and shows sensitivity of function to allosteric engineering."
+    },
+    {
+      "assessment": "Plausible at finite assay resolution. The answer correctly treats a measured plateau as insufficient to time-stamp individual proteins, rather than claiming that exact conservation of all biotin labels was demonstrated.",
+      "claim": "A bulk streptavidin plateau can conceal labeling of a small subset subsequently detected after nuclear enrichment.",
+      "support": "Methodological inference about aggregate measurement and enriched subpopulations, applied to the hypothetical readouts; not attributed to a published measurement."
+    },
+    {
+      "assessment": "Supported application and correct inferential scope. The wording distinguishes where labeled proteins are recovered from when they were labeled or their full trafficking route.",
+      "claim": "ER-associated labeling followed by nuclear fractionation is a relevant pulse-chase application; nuclear recovery alone does not identify label-addition time.",
+      "support": "Lee 2023 lines 1193-1212, 1233-1243, and Figure 5 legend at 1725-1729. The source explicitly labels from the cytosolic face of the ER membrane."
+    },
+    {
+      "assessment": "Fair. The explanation expressly calls D useful and does not dismiss real controls as bad experiments. Matching total signal or adding spatial controls does not independently establish the end of cellular labeling.",
+      "claim": "A, C, and D address useful but less direct comparisons for the question posed.",
+      "support": "A matches labeling amount, C evaluates purified behavior, and D evaluates spatial enrichment by their stated designs. Lee 2023 lines 1295-1299 actually includes cytosolic and whole-cell spatial references."
+    },
+    {
+      "assessment": "The revised final paragraph now states this limitation explicitly and correctly. It also avoids claiming proof of every protein's trafficking route.",
+      "claim": "A negative delayed-biotin result supports shutdown only under that comparison and does not by itself validate the actual biotin-containing pulse.",
+      "support": "The delayed-addition history differs from the proposed light-plus-biotin pulse. This is a limitation of the experiment itself, not a claimed empirical source result."
+    }
+  ],
+  "explanation_quality": {
+    "assessment": "The answer leads with B and the separating intervention, explains both controls, identifies the inferential gaps in the existing readouts, gives concise reasons the alternatives are less direct, and bounds positive and negative outcomes. The final caveat refines the conclusion without turning the key into a merely cautious response.",
+    "fabricated_turbo2_property_or_measurement": false,
+    "focused_and_complete": true,
+    "irrelevant_arithmetic_or_numeric_read_off": false,
+    "publication_specificity": "The chosen experiment and application have concrete primary-source anchors. Solving the item still mainly tests general temporal-validation reasoning, a limitation of discrimination rather than a source-validity defect.",
+    "readme_worked_answer_matches_item_json": true,
+    "worked_solution_word_count": 238
+  },
+  "metadata": {
+    "additional_external_model_api_calls_or_gpu_jobs_by_reviewer": false,
+    "final_presentation_change_after_review": {
+      "change": "Citation locator refined to explicitly name the main-text description of Supplementary Figure3b. Question, options, key and worked answer unchanged.",
+      "final_reader_sha256": "cf2ea301ee7f6b1f4256a5266681c1e64b5597c01f4e77722358dae6f1eb02c5"
+    },
+    "key_and_sources_opened_only_after_blind_check_saved": true,
+    "local_artifact_sha256": {
+      "branon2018": "ca36dbcf6d4b2b6656051f7b9e24de30339ff1062fe629d95953b9f917d8af41",
+      "item": "b245c79b089fe249f19e9d39c44e305602c77995f22d46e74bfed2113426a94f",
+      "lee2023": "b73c8c4ffab80591371162870485ba2e64e86e7115bfbb2fcba6bd2dcb180938",
+      "question": "d722f3f7aa81e7d41578a793875b5cbbdff339f1a9bd4d14f4af64f33e6188eb",
+      "readme": "febc8ad48a76708045d3a5ac4a95f3c4da2ba2a39baca1eb5cc4d72222992f97"
+    },
+    "model": "gpt-6-astra",
+    "model_and_effort_source": "Original review assignment; raw provider metadata is unavailable.",
+    "preceding_blind_check_file": "independent_check.json",
+    "preceding_blind_check_recorded_at_utc": "2026-10-27T17:48:55.795142+00:00",
+    "prompt_summary": "After saving the final blind check, compare item.json and README worked answer with the supplied primary-source text and hypothetical assumptions. Check substantive claims, complete focused explanation, limits of a negative delayed-biotin result, and absence of fabricated Turbo2 properties. Report material defects without editing publication files or using model APIs or GPUs.",
+    "provider_hash_note": "Local file hashes identify reviewed artifacts only; no raw model-provider request or response hashes are claimed.",
+    "publication_files_edited": false,
+    "question_sha256": "d722f3f7aa81e7d41578a793875b5cbbdff339f1a9bd4d14f4af64f33e6188eb",
+    "raw_provider_request_hash": null,
+    "raw_provider_response_hash": null,
+    "reasoning_effort": "xhigh",
+    "recorded_at_utc": "2026-10-27T17:51:34.777867+00:00",
+    "source_read_scope": {
+      "branon2018": "Targeted body passages, especially lines 1, 11, 13, 15, 29, and 43. A broad initial search encountered a long methods line; no protocol details were needed for the review.",
+      "lee2023": "Lines 875-905 and 1170-1212, plus targeted context at 39-74, 175-202, 1228-1245, 1280-1305, and 1725-1740."
+    }
+  },
+  "nonblocking_observations": [
+    {
+      "action_required": false,
+      "observation": "README cites Figure 3a and the accompanying Results. This is defensible, but Supplementary Figure 3b is the exact locator for the delayed light-before-biotin turn-off test.",
+      "topic": "Source locator precision"
+    },
+    {
+      "action_required": false,
+      "observation": "The positive-result conclusion should be understood for activity persisting at delays relevant to the claimed pulse boundary. The question and successive-delay design provide that context; no numerical cutoff is asserted.",
+      "topic": "Temporal interpretation of a positive result"
+    }
+  ],
+  "review_type": "explicitly_source_aware_worked_answer_check",
+  "verdict": {
+    "agrees_with_previously_saved_blind_answer": true,
+    "exactly_one_best_answer": true,
+    "recommended_disposition": "Ready to freeze from this bounded question-and-worked-answer review. No mandatory correction identified.",
+    "remaining_material_defects": [],
+    "selected_answer": "B",
+    "worked_answer_passes": true
+  }
+}

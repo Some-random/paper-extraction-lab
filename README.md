@@ -12,6 +12,8 @@ the data-curation recipes; PDF extractor comparisons remain a separate branch.
 
 **[AI-created protein reasoning questions](reports/alice_training_examples_10_2026-10-24/README.md):** ten revised A–D multiple-choice examples with complete worked answers. They combine Ting-lab assay interpretation and research judgment with foundational sequence reasoning; sources and earlier versions remain linked.
 
+**[LOV-Turbo experimental-design example](reports/alice_presentation_example_2026-10-27/README.md):** one A–D question and complete worked answer on validating a labeling window for pulse-chase proteomics, based on the TurboID and LOV-Turbo papers.
+
 **[Nine sequence-only AI-created examples](reports/astra_sequence_only_nine_2026-10-23/README.md):** diverse protein questions with full sequences, worked solutions and source checks.
 
 **[Additional enzyme-mutation candidate bank](reports/astra_enzyme_mutation_pool_2026-10-23/README.md):** 32 candidates and 28 completed AI-created worked answers for selecting alternatives. This is one component of the broader protein dataset; the mixed selection above uses three of these examples. Four candidates remain held for source overlap.
