@@ -1,27 +1,9 @@
-# General data preparation
+**General data preparation — observed through November 2, 2026**
 
-Updated **October 27, 11:00 UTC, 2026**. PMC downloading and extraction continue, and the verified processed-text total has increased. BioCollection’s internal checks, known benchmark exclusions, actual loader checks and held-out prose-usefulness review have passed; wider near-copy and cross-source checks remain. FineWeb-Edu’s full-source exact pass, near-copy candidate search and candidate-pair verification are complete; applying the near-copy decisions and qualifying biology selection remain. The protein question-answer dataset is documented separately.
-
-## Source content and progress
-
-**Completion refers to the named processing stage, not a finished training corpus.** Recent changes compare with the preceding report from **October 27, 09:25 UTC**.
-
-| Source content | Collection | Processing progress and measured content | Remaining work and recent change |
-|---|---|---|---|
-| **PMC research papers** | **3.05 million verified downloaded XML papers in the current batch**, with approximately **5.14 million targets still to check**. The broader inventory contains **9.27 million entries**; some do not offer accessible full text. | **1,331,412 papers processed; 58.72 GB of paper text; 15.105 billion measured tokens.** This main paper-text total remains **partial**. It uses one primary text per paper and includes all available full text without the old keyword filter. Newly downloaded papers enter this total after verified extraction and reconciliation. | Continue downloading and extracting, then complete duplicate removal, eligibility checks and packaging.<br>Recent change: **167,190 more papers processed**, adding **7.31 GB and 1.872 billion measured tokens** to the verified main total. |
-| **TheBioCollection: biological text, protein/DNA/RNA sequences and molecular representations** | **All 32 selected files downloaded and verified; 37.23 million source records.** | **36,642,380 selected records; 91.56 GB; 36.451 billion measured tokens.** Exact duplicate removal, basic format and internal content-consistency checks, known benchmark exclusions and actual source-linked loader checks are complete. A held-out assistant review passed for retained prose usefulness; it does not establish scientific correctness. An updated export is available. | Qualify wider near-copy coverage and finish cross-source checks and packaging. Provisional prose near-copy discovery traversed all 32 files and every retrieved pair was checked, with no omissions applied; corpus-wide near-copy clearance remains unestablished. Protein/DNA/RNA variants are preserved.<br>Recent change: **actual loader verification, held-out prose review and the updated export completed.** |
-| **FineWeb-Edu: educational web pages** | **190.17 million source pages across all 234 files are available.** | **Full-source exact duplicate pass, near-copy candidate discovery and candidate-pair verification complete (100%).** All **100.89 million candidate pairs** have been checked. Near-copy removals have not yet been applied. Final biology-selected page count, text size and token total are not yet measured. Earlier retained candidates remain provisional. | Qualify and apply biology/content-quality selection; combine near-copy decisions with benchmark exclusions, then finish current cross-source checks and export. The historical standalone classifier and the latest content-filter pilot **failed their quality checks**. A stronger local classifier trial is running; further bulk filtering awaits a qualified replacement.<br>Recent change: **replacement classifier trial started; quality results remain pending.** |
-
-## Preparation stages
-
-Remove exact duplicates before further expensive scoring, then check near-copies before final selection.
-
-| Stage | Purpose | Current position |
+| Source | Current result | Remaining work |
 |---|---|---|
-| **1. Collect** | Download and verify original material | PMC downloading continues. Selected BioCollection and FineWeb-Edu files are available. |
-| **2. Extract** | Convert source material into usable text and sequences, preserving source links | PMC extraction is partial and the verified processed-text total is increasing while downloading continues. BioCollection and FineWeb-Edu records are available for processing. |
-| **3. Remove duplicates** | Remove exact repeats and check near-identical copies within and across sources | BioCollection’s exact pass and provisional prose near-copy discovery are complete; wider near-copy qualification remains. FineWeb-Edu’s exact pass and candidate-pair verification are complete; applying the near-copy decisions remains. Current cross-source coverage remains unfinished. |
-| **4. Score and filter** | Select useful biological content and check filtering quality | BioCollection’s internal checks and held-out assistant prose-usefulness audit have passed. FineWeb-Edu candidates remain provisional; its replacement classifier trial is running after failed quality review. |
-| **5. Validate and package** | Confirm counts, exclusions, source permissions and final training exports | BioCollection’s selected totals, known benchmark exclusions and actual loader are verified, with an updated export available. Wider duplicate checks, current PMC/FineWeb exclusions and the final combined corpus remain unfinished. |
+| **PMC papers** | The October 30 verified snapshot contains **9,090,547 paper texts**, **390.511 decimal GB** and **99.711 billion tokens**. Cleanup retained **8,519,207 papers** and preserved **550,634 unresolved papers** for review. | The main download queue is practically complete; reconciliation and eligibility checks remain. |
+| **BioCollection** | **36,642,380 selected records**, **91.558 decimal GB** and **36.451 billion tokens**. Exact duplicates and candidate near-copies have been checked. | Further cross-source checks and quality validation remain. |
+| **FineWeb-Edu** | All **190,168,005 local pages** were processed. The biology filter provisionally retained **11,795,871 pages**, **40.163 decimal GB** and **9.139 billion tokens**. A separate deduplicated view is available. | The biology labels remain provisional; the standalone BERT quality gate failed. |
 
-**The combined training corpus is not yet released.** GB uses decimal units; token amounts are measured tokenizer counts. No model training is part of this corpus-preparation work.
+**Preparation stages:** collection, text extraction, duplicate checks, scoring and filtering, then validation and packaging. The individual source snapshots have reached different stages; a combined training corpus has not been released. Sizes are decimal GB and token counts are measured.
