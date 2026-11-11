@@ -8,11 +8,12 @@ Figures are from the November 2, 2026 snapshot. GB uses decimal units.
 
 | Overall source collection | Available material | Average length |
 |---|---|---:|
+| **Swiss-Prot** | **575.7K** reviewed records; **0.942 GB compressed**. **574K** remain after exact-match exclusions. | **6.35K Qwen tokens per record**, measured across the 100K saved candidates. |
 | **PMC papers** | **9.09M** paper texts; **390.5 GB**; **99.7B tokens**. Cleanup retained **8.52M** papers and set aside **551K** for review. | **11K tokens per paper** |
 | **BioCollection** | **36.6M** selected records; **91.6 GB**; **36.5B tokens**. | **995 tokens per record** |
 | **FineWeb-Edu** | **190.2M** pages processed; **11.8M** provisionally selected as biology; **40.2 GB**; **9.14B tokens**. | **775 tokens per selected page** |
 
-These approximate averages are calculated from each source's reported total tokens and number of texts. The original source workflows used different tokenizers, so the averages are not directly comparable to one another or to the Qwen-tokenized selection below.
+The Swiss-Prot compressed size is for the full 575.7K-record snapshot; the size of the 574K subset has not been measured. Its token average is for the 100K saved candidates. The other averages are approximate, calculated from each source's reported total tokens and number of texts. The source workflows used different tokenizers, so the averages are not directly comparable to one another or to the Qwen-tokenized selection below.
 
 ## Selected source data
 
