@@ -2,6 +2,18 @@
 
 Updated November 11, 2026. The goal is to continue training Qwen3.5-4B on protein-related material and compare how different data mixtures affect its loss on held-out text.
 
+## Overall source collections
+
+Figures are from the November 2, 2026 snapshot. GB uses decimal units.
+
+| Overall source collection | Available material | Average length |
+|---|---|---:|
+| **PMC papers** | **9.09M** paper texts; **390.5 GB**; **99.7B tokens**. Cleanup retained **8.52M** papers and set aside **551K** for review. | **11K tokens per paper** |
+| **BioCollection** | **36.6M** selected records; **91.6 GB**; **36.5B tokens**. | **995 tokens per record** |
+| **FineWeb-Edu** | **190.2M** pages processed; **11.8M** provisionally selected as biology; **40.2 GB**; **9.14B tokens**. | **775 tokens per selected page** |
+
+These approximate averages are calculated from each source's reported total tokens and number of texts. The original source workflows used different tokenizers, so the averages are not directly comparable to one another or to the Qwen-tokenized selection below.
+
 ## Selected source data
 
 | Source | Material selected for the first comparison | Average selected record length |
