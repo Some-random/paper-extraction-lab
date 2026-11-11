@@ -1,14 +1,23 @@
-**General data preparation — source snapshots through November 11, 2026**
+# Protein mid-training: data and comparison
 
-The PMC, BioCollection and FineWeb-Edu figures are from the November 2 snapshot. The Swiss-Prot row describes the November 11 selection.
+Updated November 11, 2026. The goal is to continue training Qwen3.5-4B on protein-related material and compare how different data mixtures affect its loss on held-out text.
 
-| Source | Available data | Average length | Remaining work |
-|---|---|---:|---|
-| **Swiss-Prot** | **10K** selected records; **64.9M** Qwen tokens. | **6.49K tokens per selected record** | Rewriting is stopped; further preparation remains. |
-| **PMC papers** | **9.09M** paper texts; **390.5 GB**; **99.7B** tokens. Cleanup retained **8.52M** papers and set aside **551K** for review. | **11K tokens per paper** | Reconciliation and eligibility checks remain. |
-| **BioCollection** | **36.6M** selected records; **91.6 GB**; **36.5B** tokens. Exact duplicates and candidate near-copies were checked. | **995 tokens per record** | Further checks across sources and quality validation remain. |
-| **FineWeb-Edu** | **190.2M** pages processed; **11.8M** provisionally retained as biology; **40.2 GB**; **9.14B** tokens. | **775 tokens per retained page** | Biology labels remain provisional; the standalone classifier failed its quality check. |
+## Selected source data
 
-Average lengths are approximate, calculated from each source’s reported total tokens divided by its reported number of texts. The sources used different tokenizers, so the averages are not directly comparable. The Swiss-Prot average uses the Qwen3.5-4B tokenizer.
+| Source | Material selected for the first comparison | Average selected record length |
+|---|---|---:|
+| **Swiss-Prot** | **10K** reviewed protein records, including sequences and annotations | **6.49K Qwen tokens** |
+| **BioCollection** | **10K** biological database records | **1.10K Qwen tokens** |
+| **PMC** | **10K** protein-related papers | **11.79K Qwen tokens** |
+| **FineWeb-Edu** | **10K** provisionally selected protein-related web pages | **362 Qwen tokens** |
 
-**Preparation stages:** collection, text extraction, duplicate checks, scoring and filtering, then validation and packaging. The individual source snapshots have reached different stages; a combined training corpus has not been released. Sizes are decimal GB and token counts are measured.
+These averages describe the selected originals and use the Qwen3.5-4B tokenizer. The Swiss-Prot average counts the whole structured record, including annotations, markup and sequence; it is not the length of the sequence alone. BioCollection has 9,998 selected records, rounded to 10K.
+
+The 10K per source was a starting target for the initial comparison, not the total available. Swiss-Prot selection stopped when it reached the target; it did not scan all of Swiss-Prot for this selection. Records were selected for relevant annotations and sequences, with exact matches to a held-out sequence set excluded.
+
+## Comparison
+
+- **Original text:** Two mixes are prepared. The equal mix assigns 25% of training tokens to each of the four sources. The other assigns 30% each to Swiss-Prot, BioCollection and PMC, and 10% to FineWeb-Edu. The two training jobs and the original-model loss evaluation are queued and can start automatically.
+- **Rewrites:** Compare rewritten material with original material once the rewrite approach is agreed. Rewrite jobs are stopped. The model should see the protein sequence and be instructed not to change it.
+- **Measurement:** Compare the original and trained Qwen3.5-4B models using next-token loss on text held out from training. The prepared data targets an 80% training, 10% validation and 10% test split, with related records grouped together when forming the splits.
+- **Document length:** The queued original-text preparation splits records into chunks of at most 8,192 tokens. The broader choice of how to handle long papers and short records for mid-training remains to be discussed.
