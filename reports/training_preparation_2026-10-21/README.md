@@ -275,15 +275,15 @@ Mutated forms of the EGFR gene and protein have been identified in certain types
 
 ## Mixing experiments
 
-We are testing how the proportions of the four sources affect mid-training.  We have prepared over 200M rewritten training tokens, with roughly 50M from each source
+We are testing how the proportions of the four sources affect mid-training.  We have prepared over 200M rewritten training tokens, with roughly 50M from each source. We will keep a total token budget of 120M for each mix run.
 
-| Source | Mix 1 | Mix 2 | Mix 3 | Training tokens |
+| Source | Mix 1 | Mix 2 | Mix 3 | Mix 4 |
 |---|---:| ---:| ---:| ---:|
-| Swiss-Prot | 25% | 40% | 20% | 30M |
-| PMC | 25% | 20% | 40% | 30M |
-| BioCollection | 25% | 20%| 20% | 30M |
-| FineWeb-Edu | 25% | 20% | 20% | 30M |
-| **Results** | | | | **120M** |
+| Swiss-Prot | 25% | 40% | 20% | 20% |
+| PMC | 25% | 20% | 40% | 20% |
+| BioCollection | 25% | 20%| 20% | 40% |
+| FineWeb-Edu | 25% | 20% | 20% | 20% |
+| **LogProbs** | | | |  |
 
 The current model is **Qwen3.5-4B**, trained on this mixture with a LoRA adapter. We can compare other mixtures against this equal-source run.
 
