@@ -311,7 +311,7 @@ D. GTPase activity</p>
 
 The saved correct choice is **C: Unfolded protein holdase activity**.
 
-The correct-answer log-probability evaluation gives the model the question and choices, then scores the text of the correct choice—not the letter C—after the prompt <code>Answer:</code>. For a multi-token answer, it averages the log probabilities across the answer tokens. Higher average log probability means the model assigns more probability to that correct answer text; the corresponding loss is its negative, so lower is better.
+The correct-answer log-probability evaluation gives the model the question and choices, then scores the text of the correct choice—not the letter C—after the prompt <code>Answer:</code>. 
 
 A separate multiple-choice accuracy calculation scores the text of all four choices and selects the letter with the highest average score.
 
