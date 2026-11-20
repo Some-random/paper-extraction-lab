@@ -277,6 +277,14 @@ Mutated forms of the EGFR gene and protein have been identified in certain types
 
 We are running the mixing experiments from the pretrained **Qwen3.5-0.8B-Base** checkpoint (0.9B total parameters), with a target pool of **250 million rewritten tokens per source**. The goal is to test whether a smaller model trained on more data can outperform a larger model trained on less.
 
+| Source | Mix 1 | Mix 2 | Mix 3 | Mix 4 |
+|---|---:| ---:| ---:| ---:|
+| Swiss-Prot | 25% | 40% | 20% | 20% |
+| PMC | 25% | 20% | 40% | 20% |
+| BioCollection | 25% | 20%| 20% | 40% |
+| FineWeb-Edu | 25% | 20% | 20% | 20% |
+| **LogProbs** | | | |  |
+
 Adding general-purpose rewritten passages alongside question-answer examples gave mixed results. A broad rewrite can omit the specific details needed to answer an individual question.
 
 In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a **post-trained Qwen3.5-4B checkpoint** on the same 9,988 question-answer examples. After three passes through the training data, they scored **35.0%** and **34.7%**, respectively, on the same 1,674 questions with a common answer key. The runs used different inference settings.
