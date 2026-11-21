@@ -320,3 +320,15 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 Adding general-purpose rewritten passages alongside question-answer examples gave mixed results. A broad rewrite can omit the specific details needed to answer an individual question.
 
 In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a **post-trained Qwen3.5-4B checkpoint** on the same 9,988 question-answer examples. After three passes through the training data, they scored **35.0%** and **34.7%**, respectively, on the same 1,674 questions with a common answer key. The runs used different inference settings.
+
+## Qwen3.5-9B evaluation results
+
+| Model and run | Next-token A–D accuracy | Free-form answer accuracy |
+|---|---:|---:|
+| Untouched 9B Base · Tinker | 37.57% (629) | 29.63% (496) |
+| Fine-tuned 9B Base, 3 epochs · Tinker | **38.11% (638)** | 35.01% (586) |
+| Official 9B Instruct · Tinker | 31.24% (523) | 29.69% (497) |
+| Fine-tuned 9B Base, 3 epochs · Local | — | **36.08% (604)** |
+| Official 9B Instruct · Local | — | 32.92% (551) |
+
+All scores use the same 1,674 LiveProteinBench questions. Next-token scoring ranks A–D after `2. answer:`. Free-form scoring extracts the answer from the generated response. The local runs used a presence penalty of 1.5. The local fine-tuned run used a separate three-epoch retrain. A dash indicates an evaluation that was not run.
