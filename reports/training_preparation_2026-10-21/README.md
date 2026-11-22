@@ -4,17 +4,19 @@ We are continuing training on Qwen3.5-4B with protein-related material to study 
 
 ## Source data
 
-| Source or dataset | Documents or examples | Tokens | Average length |
-|---|---:|---:|---:|
-| **Swiss-Prot** | 575.7K records | 3.66B | 6.35K per record |
-| **PMC** | 9.09M papers | 99.7B | 11K per paper |
-| **BioCollection** | 36.6M records | 36.5B | 995 per record |
-| **FineWeb-Edu (filtered for bio)** | 11.8M pages | 9.14B | 775 per page |
-| **QA post-training datasets** | | | |
-| 10K QA post-training | 10K questions | 22.34M | 2.24K per example |
-| 124K QA post-training | 124K questions | 270.28M | 2.18K per example |
+| Source or dataset | Documents or examples | Tokens | Average length | Rewritten tokens | Average length after rewrite |
+|---|---:|---:|---:|---:|---:|
+| **Swiss-Prot** | 0.5757M records | 3.66B | 6.35K per record | 0.3025B | 0.858K per rewrite |
+| **PMC** | 9.09M papers | 99.7B | 11K per paper | 0.3568B | 1.486K per rewrite |
+| **BioCollection** | 36.6M records | 36.5B | 0.995K per record | 0.5046B | 1.255K per rewrite |
+| **FineWeb-Edu (filtered for bio)** | 11.8M pages | 9.14B | 0.775K per page | 0.3759B | 0.427K per rewrite |
+| **QA post-training datasets** | | | | | |
+| 10K QA post-training | 0.010M questions | 0.02234B | 2.24K per example | — | — |
+| 124K QA post-training | 0.124M questions | 0.27028B | 2.18K per example | — | — |
 
-The Swiss-Prot total scales the measured average from 100K selected records to 575.7K. Source collection counts used different tokenizers. The QA token counts use the Qwen3.5-4B tokenizer and include each question, reasoning trace, and answer once; multiple training epochs process the data again.
+The Swiss-Prot original-token estimate scales the measured average from 0.1M selected records to 0.5757M. Source collection counts used different tokenizers. The QA token counts use the Qwen3.5-4B tokenizer and include each question, reasoning trace, and answer once; multiple training epochs process the data again.
+
+Rewrite totals include accepted local and Tinker rewrites through November 21, 2026, with each document ID counted once. Average length is the mean token count per accepted rewrite.
 
 ## Selecting and rewriting the data
 
