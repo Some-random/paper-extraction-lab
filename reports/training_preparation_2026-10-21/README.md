@@ -4,7 +4,7 @@ We are continuing training on Qwen3.5-4B with protein-related material to study 
 
 <a name="source-data"></a>
 <details>
-<summary><strong>Source data</strong></summary>
+<summary><h3>Source data</h3></summary>
 
 | Source or dataset | Documents or examples | Total tokens | Currently available rewritten tokens | Average length | Average length after rewrite |
 |---|---:|---:|---:|---:|---:|
@@ -21,7 +21,7 @@ We are continuing training on Qwen3.5-4B with protein-related material to study 
 
 <a name="selecting-and-rewriting-the-data"></a>
 <details>
-<summary><strong>Selecting and rewriting the data</strong></summary>
+<summary><h3>Selecting and rewriting the data</h3></summary>
 
 We use a strong model to label biological relevance, then train a fastText classifier to rank documents.
 
@@ -281,28 +281,29 @@ Mutated forms of the EGFR gene and protein have been identified in certain types
 </details>
 
 <a name="why-we-switched-to-base-models"></a>
+<a name="switching-to-base-models"></a>
 <details>
-<summary><strong>Why we switched to base models</strong></summary>
+<summary><h3>Switching to base models</h3></summary>
 
-We initially trained from Qwen3.5-4B Instruct. Mixing synthetic question-answer trajectories with rewritten biology passages doubled the training tokens per pass from **22.3M to 44.7M**. The mixed run was ahead for the first four passes, then finished at **33.8%** compared with **35.4%** for QA alone. In a separate experiment, rewriting the questions to target specific skills gave **28.4%** at pass two, compared with **32.5%** for the original questions.
+We started with Qwen3.5-4B Instruct. Adding rewritten biology passages to the protein trajectories doubled training tokens per pass from **22.3M to 44.7M**. The rewrites helped in the first four passes, but the mixed run finished at **33.8%** versus **35.4%** for trajectories alone. In a separate experiment, rewriting the training questions around specific skills scored **28.4%** versus **32.5%** at pass two.
 
-In the QuaLITY experiment in Synthetic Mixed Training, the synthetic training material came from the documents behind the reading-comprehension questions. Our goal is to transfer what the model learns from related biology material to held-out proteins, whose properties it has to infer from their sequences. [Synthetic Mixed Training](https://aclanthology.org/2026.findings-emnlp.438/)
+Synthetic Mixed Training generated training material from the **265 documents** behind QuaLITY. Our biology corpus spans millions of papers, protein records, and web pages, and LiveProteinBench tests held-out proteins. A fixed rewrite budget has to cover far more facts and tasks. That helps explain why adding rewritten passages during post-training gave inconsistent gains. [Synthetic Mixed Training](https://aclanthology.org/2026.findings-emnlp.438/)
 
-We switched to pretrained base checkpoints and fine-tuned them on about **10,000 protein trajectories**, each with a question, reasoning trace, and answer. All three sizes outscored their released Instruct counterparts on free-form LiveProteinBench accuracy.
+We then fine-tuned Qwen3.5 base checkpoints on about **10,000 protein trajectories**, each containing a question, reasoning trace, and answer.
 
-| Qwen3.5 size | Base + ~10K trajectories | Released Instruct |
-|---|---:|---:|
-| 0.8B | **25.63%** | 21.33% |
-| 4B | **35.72%** | 32.86% |
-| 9B | **36.08%** | 32.92% |
+| Model size | Base + ~10K trajectories | Instruct + ~10K trajectories | Released Instruct |
+|---|---:|---:|---:|
+| 0.8B | 25.63% | — | 21.33% |
+| 4B | 35.72% | 34.59% | 32.86% |
+| 9B | 36.08% | — | 32.92% |
 
-The 4B Instruct score comes from an earlier run rescored with the same answer parser. These base-plus-QA runs give us a baseline for measuring what mid-training adds.
+Fine-tuned scores are after three passes. The 4B Instruct run used the same trajectories as 4B Base and reached **36.08%** after four passes. Dashes indicate unavailable comparisons.
 
 </details>
 
 <a name="mixing-experiments"></a>
 <details>
-<summary><strong>Mixing experiments</strong></summary>
+<summary><h3>Mixing experiments</h3></summary>
 
 We are running the mixing experiments from the pretrained **Qwen3.5-0.8B-Base** checkpoint (0.9B total parameters), with a target pool of **250 million rewritten tokens per source**. The goal is to test whether a smaller model trained on more data can outperform a larger model trained on less.
 
@@ -352,9 +353,34 @@ In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a *
 
 </details>
 
+<a name="mid-training-scaling-and-mixing"></a>
+<details>
+<summary><h3>Mid-training scaling and mixing</h3></summary>
+
+**0.8B learned to predict biology text, but answered fewer questions correctly.** Rewrite mid-training lowered held-out text perplexity from **6.74 to 4.75**. After the same 10K trajectory post-training, free-form accuracy fell from **25.63% to 22.46%** and the share of answers we could parse fell from **94.7% to 83.5%**. The model may need more capacity or more training tokens. It may also lose some ability to produce usable answers as it learns to predict prose. [Synthetic Mixed Training scaling results](https://aclanthology.org/2026.findings-emnlp.438/)
+
+**4B scaling.** We evaluated the original Base checkpoint and the near-even 943M-token checkpoint, both before and after three passes of post-training on the same protein trajectories.
+
+| Rewrite mid-training | Free-form accuracy before post-training | Free-form accuracy after post-training | Correct-answer probability before post-training | Correct-answer probability after post-training |
+|---|---:|---:|---:|---:|
+| 0 tokens | 18.22% | 35.72% | 28.48% | 28.00% |
+| 943M tokens | 25.63% | 36.20% | 29.49% | 28.68% |
+
+We are preparing an extension to **1,885M rewrite tokens**. It adds more PMC and FineWeb-Edu than Swiss-Prot, so both the amount of data and its source proportions change.
+
+**Next mixing comparison.** Keep the total token budget, Swiss-Prot share, starting checkpoint, and post-training fixed across three runs. Emphasize BioCollection in one run, PMC in another, and FineWeb-Edu in the third. Evaluate each checkpoint before and after post-training.
+
+- **Perplexity** measures how well the model predicts held-out text from each source. Lower is better.
+- **Correct-answer probability** is the average probability the model assigns to the correct option among A–D.
+- **Free-form accuracy** measures whether the model generates the correct answer, with unanswered or unparseable cases counted as incorrect. Track answer completion alongside accuracy.
+
+A held-out general-task check would help measure whether the models retain abilities learned before mid-training.
+
+</details>
+
 <a name="qwen35-9b-evaluation-results"></a>
 <details>
-<summary><strong>Qwen3.5-9B evaluation results</strong></summary>
+<summary><h3>Qwen3.5-9B evaluation results</h3></summary>
 
 | Model and run | Next-token A–D accuracy | Free-form answer accuracy |
 |---|---:|---:|
