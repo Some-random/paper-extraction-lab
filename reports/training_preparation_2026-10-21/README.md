@@ -280,6 +280,26 @@ Mutated forms of the EGFR gene and protein have been identified in certain types
 
 </details>
 
+<a name="why-we-switched-to-base-models"></a>
+<details>
+<summary><strong>Why we switched to base models</strong></summary>
+
+We initially trained from Qwen3.5-4B Instruct. Mixing synthetic question-answer trajectories with rewritten biology passages doubled the training tokens per pass from **22.3M to 44.7M**. The mixed run was ahead for the first four passes, then finished at **33.8%** compared with **35.4%** for QA alone. In a separate experiment, rewriting the questions to target specific skills gave **28.4%** at pass two, compared with **32.5%** for the original questions.
+
+In the QuaLITY experiment in Synthetic Mixed Training, the synthetic training material came from the documents behind the reading-comprehension questions. Our goal is to transfer what the model learns from related biology material to held-out proteins, whose properties it has to infer from their sequences. [Synthetic Mixed Training](https://aclanthology.org/2026.findings-emnlp.438/)
+
+We switched to pretrained base checkpoints and fine-tuned them on about **10,000 protein trajectories**, each with a question, reasoning trace, and answer. All three sizes outscored their released Instruct counterparts on free-form LiveProteinBench accuracy.
+
+| Qwen3.5 size | Base + ~10K trajectories | Released Instruct |
+|---|---:|---:|
+| 0.8B | **25.63%** | 21.33% |
+| 4B | **35.72%** | 32.86% |
+| 9B | **36.08%** | 32.92% |
+
+The 4B Instruct score comes from an earlier run rescored with the same answer parser. These base-plus-QA runs give us a baseline for measuring what mid-training adds.
+
+</details>
+
 <a name="mixing-experiments"></a>
 <details>
 <summary><strong>Mixing experiments</strong></summary>
