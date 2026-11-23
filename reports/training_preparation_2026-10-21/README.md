@@ -2,7 +2,9 @@
 
 We are continuing training on Qwen3.5-4B with protein-related material to study how data sources and mixtures affect the model.
 
-## Source data
+<a name="source-data"></a>
+<details>
+<summary><strong>Source data</strong></summary>
 
 | Source or dataset | Documents or examples | Total tokens | Currently available rewritten tokens | Average length | Average length after rewrite |
 |---|---:|---:|---:|---:|---:|
@@ -15,7 +17,11 @@ We are continuing training on Qwen3.5-4B with protein-related material to study 
 | 10K QA post-training | 0.01M questions | 0.02B | — | 2.24K | — |
 | 124K QA post-training | 0.12M questions | 0.27B | — | 2.18K | — |
 
-## Selecting and rewriting the data
+</details>
+
+<a name="selecting-and-rewriting-the-data"></a>
+<details>
+<summary><strong>Selecting and rewriting the data</strong></summary>
 
 We use a strong model to label biological relevance, then train a fastText classifier to rank documents.
 
@@ -272,7 +278,11 @@ Mutated forms of the EGFR gene and protein have been identified in certain types
 
 </details>
 
-## Mixing experiments
+</details>
+
+<a name="mixing-experiments"></a>
+<details>
+<summary><strong>Mixing experiments</strong></summary>
 
 We are running the mixing experiments from the pretrained **Qwen3.5-0.8B-Base** checkpoint (0.9B total parameters), with a target pool of **250 million rewritten tokens per source**. The goal is to test whether a smaller model trained on more data can outperform a larger model trained on less.
 
@@ -320,7 +330,11 @@ Adding general-purpose rewritten passages alongside question-answer examples gav
 
 In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a **post-trained Qwen3.5-4B checkpoint** on the same 9,988 question-answer examples. After three passes through the training data, they scored **35.0%** and **34.7%**, respectively, on the same 1,674 questions with a common answer key. The runs used different inference settings.
 
-## Qwen3.5-9B evaluation results
+</details>
+
+<a name="qwen35-9b-evaluation-results"></a>
+<details>
+<summary><strong>Qwen3.5-9B evaluation results</strong></summary>
 
 | Model and run | Next-token A–D accuracy | Free-form answer accuracy |
 |---|---:|---:|
@@ -331,3 +345,5 @@ In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a *
 | Official 9B Instruct · Local | — | 32.92% (551) |
 
 All scores use the same 1,674 LiveProteinBench questions. Next-token scoring ranks A–D after `2. answer:`. Free-form scoring extracts the answer from the generated response. The local runs used a presence penalty of 1.5. The local fine-tuned run used a separate three-epoch retrain. A dash indicates an evaluation that was not run.
+
+</details>
