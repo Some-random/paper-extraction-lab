@@ -357,39 +357,28 @@ In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a *
 <details>
 <summary><h3>Mid-training scaling and mixing</h3></summary>
 
-**0.8B learned to predict biology text, but answered fewer questions correctly.** Rewrite mid-training lowered held-out text perplexity from **6.74 to 4.75**. After the same 10K trajectory post-training, free-form accuracy fell from **25.63% to 22.46%** and the share of answers we could parse fell from **94.7% to 83.5%**. The model may need more capacity or more training tokens. It may also lose some ability to produce usable answers as it learns to predict prose. [Synthetic Mixed Training scaling results](https://aclanthology.org/2026.findings-emnlp.438/)
+**Held-out perplexity** measures how well the model predicts the next token in validation text. The 0.8B comparison uses the same 250K tokens of rewritten text from each of Swiss-Prot, BioCollection, PMC, and FineWeb-Edu, held out from training. Lower is better.
 
-**4B scaling.** We evaluated the original Base checkpoint and the near-even 943M-token checkpoint, both before and after three passes of post-training on the same protein trajectories.
+| 0.8B rewrite mid-training | Held-out perplexity before post-training | Free-form accuracy after post-training | Parseable answers after post-training |
+|---|---:|---:|---:|
+| 0 tokens | 6.74 | 25.63% | 94.7% |
+| 943M tokens, near-even mix | 4.75 | 22.46% | 83.5% |
 
-| Rewrite mid-training | Free-form accuracy before post-training | Free-form accuracy after post-training | Correct-answer probability before post-training | Correct-answer probability after post-training |
-|---|---:|---:|---:|---:|
-| 0 tokens | 18.22% | 35.72% | 28.48% | 28.00% |
-| 943M tokens | 25.63% | 36.20% | 29.49% | 28.68% |
+| 4B rewrite mid-training | Perplexity before / after post-training | Correct-answer probability before / after post-training | Free-form accuracy before / after post-training |
+|---|---:|---:|---:|
+| 0 tokens | | 28.48% / 28.00% | 18.22% / 35.72% |
+| 943M tokens, near-even mix | | 29.49% / 28.68% | 25.63% / 36.20% |
+| 1,885M tokens, extended run | | | |
+| 943M tokens, BioCollection-heavy | | | |
+| 943M tokens, PMC-heavy | | | |
+| 943M tokens, FineWeb-Edu-heavy | | | |
 
-We are preparing an extension to **1,885M rewrite tokens**. It adds more PMC and FineWeb-Edu than Swiss-Prot, so both the amount of data and its source proportions change.
-
-**Next mixing comparison.** Keep the total token budget, Swiss-Prot share, starting checkpoint, and post-training fixed across three runs. Emphasize BioCollection in one run, PMC in another, and FineWeb-Edu in the third. Evaluate each checkpoint before and after post-training.
-
-- **Perplexity** measures how well the model predicts held-out text from each source. Lower is better.
-- **Correct-answer probability** is the average probability the model assigns to the correct option among A–D.
-- **Free-form accuracy** measures whether the model generates the correct answer, with unanswered or unparseable cases counted as incorrect. Track answer completion alongside accuracy.
-
-A held-out general-task check would help measure whether the models retain abilities learned before mid-training.
-
-</details>
-
-<a name="qwen35-9b-evaluation-results"></a>
-<details>
-<summary><h3>Qwen3.5-9B evaluation results</h3></summary>
-
-| Model and run | Next-token A–D accuracy | Free-form answer accuracy |
-|---|---:|---:|
-| Untouched 9B Base · Tinker | 37.57% (629) | 29.63% (496) |
-| Fine-tuned 9B Base, 3 epochs · Tinker | **38.11% (638)** | 35.01% (586) |
-| Official 9B Instruct · Tinker | 31.24% (523) | 29.69% (497) |
-| Fine-tuned 9B Base, 3 epochs · Local | — | **36.08% (604)** |
-| Official 9B Instruct · Local | — | 32.92% (551) |
-
-All scores use the same 1,674 LiveProteinBench questions. Next-token scoring ranks A–D after `2. answer:`. Free-form scoring extracts the answer from the generated response. The local runs used a presence penalty of 1.5. The local fine-tuned run used a separate three-epoch retrain. A dash indicates an evaluation that was not run.
+| 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu |
+|---|---:|---:|---:|---:|---:|
+| Near-even reference | 943M | 250M | 250M | 233M | 210M |
+| Extended run | 1,885M | 300M | 500M | 570M | 515M |
+| BioCollection-heavy | 943M | 94M | 679M | 85M | 85M |
+| PMC-heavy | 943M | 94M | 85M | 679M | 85M |
+| FineWeb-Edu-heavy | 943M | 94M | 85M | 85M | 679M |
 
 </details>
