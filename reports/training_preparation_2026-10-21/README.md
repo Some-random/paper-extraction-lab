@@ -1,6 +1,4 @@
-# Protein mid-training: data and mixing
-
-We are continuing training on Qwen3.5-4B with protein-related material to study how data sources and mixtures affect the model.
+# Protein mid-training
 
 <a name="source-data"></a>
 <details>
@@ -8,7 +6,7 @@ We are continuing training on Qwen3.5-4B with protein-related material to study 
 
 | Source or dataset | Documents or examples | Total tokens | Currently available rewritten tokens | Average length | Average length after rewrite |
 |---|---:|---:|---:|---:|---:|
-| **Swiss-Prot** | 0.58M records | 3.66B | 0.30B | 6.35K | 0.86K |
+| **Swiss-Prot** | 0.58M records | 3.66B | **0.30B** | 6.35K | 0.86K |
 | **PMC** | 9.09M papers | 99.70B | 1.49B | 11.00K | 1.23K |
 | **BioCollection** | 36.60M records | 36.50B | 1.00B | 1.00K | 1.23K |
 | **FineWeb-Edu (filtered for bio)** | 11.80M pages | 9.14B | 1.51B | 0.78K | 0.40K |
@@ -285,25 +283,26 @@ Mutated forms of the EGFR gene and protein have been identified in certain types
 <details>
 <summary><h3>Switching to base models</h3></summary>
 
-We started with Qwen3.5-4B Instruct. Adding rewritten biology passages to the protein trajectories doubled training tokens per pass from **22.3M to 44.7M**. The rewrites helped in the first four passes, but the mixed run finished at **33.8%** versus **35.4%** for trajectories alone. In a separate experiment, rewriting the training questions around specific skills scored **28.4%** versus **32.5%** at pass two.
+The starting point we have been using for fine-turning has been Qwen3.5-4B Instruct, and we tried something similar as [Synthetic Mixed Training](https://aclanthology.org/2026.findings-emnlp.438/) by doubling the total (QA) SFT token budget with extar synthetic document, but didn't see any improvement, even when we instruct the rewrites to focus on the skills student model miss and the relevant knowledge we're interested in.
 
-Synthetic Mixed Training generated training material from the **265 documents** behind QuaLITY. Our biology corpus spans millions of papers, protein records, and web pages, and LiveProteinBench tests held-out proteins. A fixed rewrite budget has to cover far more facts and tasks. That helps explain why adding rewritten passages during post-training gave inconsistent gains. [Synthetic Mixed Training](https://aclanthology.org/2026.findings-emnlp.438/)
+One hypothesis: Synthetic Mixed Training generated training material from the **265 documents** behind QuaLITY. Our biology corpus and bio reasoning is much more board. Post-training also introduces a lot of knowledge about math, code, etc that is OOD of bio knowledge.
 
-We then fine-tuned Qwen3.5 base checkpoints on about **10,000 protein trajectories**, each containing a question, reasoning trace, and answer.
+We then fine-tuned Qwen3.5 **base** checkpoints on the **10,000 protein trajectories**, each containing a question, reasoning trace, and answer.
 
-| Model size | Base + ~10K trajectories | Instruct + ~10K trajectories | Released Instruct |
+| Model size | Base + ~10K trajectories | Released Instruct | Instruct + ~10K trajectories |
 |---|---:|---:|---:|
-| 0.8B | 25.63% | — | 21.33% |
-| 4B | 35.72% | 34.59% | 32.86% |
-| 9B | 36.08% | — | 32.92% |
+| 0.8B | 25.63% | 21.33% | 22.63% |
+| 4B | 35.72% | 32.62% | 34.59%  |
+| 9B | 36.08% | 32.92% | 36.12% |
 
-Fine-tuned scores are after three passes. The 4B Instruct run used the same trajectories as 4B Base and reached **36.08%** after four passes. Dashes indicate unavailable comparisons.
 
 </details>
 
-<a name="mixing-experiments"></a>
+
+
+<a name="mid-training-scaling-and-mixing"></a>
 <details>
-<summary><h3>Mixing experiments</h3></summary>
+<summary><h3>Mid-training scaling and mixing</h3></summary>
 
 We are running the mixing experiments from the pretrained **Qwen3.5-0.8B-Base** checkpoint (0.9B total parameters), with a target pool of **250 million rewritten tokens per source**. The goal is to test whether a smaller model trained on more data can outperform a larger model trained on less.
 
@@ -347,38 +346,29 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 </details>
 
-Adding general-purpose rewritten passages alongside question-answer examples gave mixed results. A broad rewrite can omit the specific details needed to answer an individual question.
-
-In an earlier experiment, we fine-tuned a **Qwen3.5-9B base checkpoint** and a **post-trained Qwen3.5-4B checkpoint** on the same 9,988 question-answer examples. After three passes through the training data, they scored **35.0%** and **34.7%**, respectively, on the same 1,674 questions with a common answer key. The runs used different inference settings.
-
-</details>
-
-<a name="mid-training-scaling-and-mixing"></a>
-<details>
-<summary><h3>Mid-training scaling and mixing</h3></summary>
-
 **Held-out perplexity** measures how well the model predicts the next token in validation text. The 0.8B comparison uses the same 250K tokens of rewritten text from each of Swiss-Prot, BioCollection, PMC, and FineWeb-Edu, held out from training. Lower is better.
 
-| 0.8B rewrite mid-training | Held-out perplexity before post-training | Free-form accuracy after post-training | Parseable answers after post-training |
-|---|---:|---:|---:|
-| 0 tokens | 6.74 | 25.63% | 94.7% |
-| 943M tokens, near-even mix | 4.75 | 22.46% | 83.5% |
+We first test how good QWen 3.5 0.8B base works with mid-training, but we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
-| 4B rewrite mid-training | Perplexity before / after post-training | Correct-answer probability before / after post-training | Free-form accuracy before / after post-training |
-|---|---:|---:|---:|
-| 0 tokens | | 28.48% / 28.00% | 18.22% / 35.72% |
-| 943M tokens, near-even mix | | 29.49% / 28.68% | 25.63% / 36.20% |
-| 1,885M tokens, extended run | | | |
-| 943M tokens, BioCollection-heavy | | | |
-| 943M tokens, PMC-heavy | | | |
-| 943M tokens, FineWeb-Edu-heavy | | | |
 
-| 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu |
+
+| 4B rewrite mid-training | Correct-answer probability after mid-training | Free-form accuracy after post-training |
+|---|---:|---:|---:|
+| 0 tokens | 28.48%  | 35.72% |
+| 943M tokens, near-even mix |  29.49% | 37.20% |
+| 943M tokens, Swiss-Prot-heavy | 30.12% | 38.53% |
+| 943M tokens, BioCollection-heavy | 27.93% | 35.43% |
+| 943M tokens, PMC-heavy | 28.76% | 36.92% |
+| 943M tokens, FineWeb-Edu-heavy | 27.75% | 36.34% |
+
+Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. Adding the BioCollection data is hurting the model, most likely because it's data are too broad?
+
+**Scaling experiments**
+
+| 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | Free-form accuracy after post-training |
 |---|---:|---:|---:|---:|---:|
-| Near-even reference | 943M | 250M | 250M | 233M | 210M |
-| Extended run | 1,885M | 300M | 500M | 570M | 515M |
-| BioCollection-heavy | 943M | 94M | 679M | 85M | 85M |
-| PMC-heavy | 943M | 94M | 85M | 679M | 85M |
-| FineWeb-Edu-heavy | 943M | 94M | 85M | 85M | 679M |
+| Swiss-Prot-heavy | 943M | 300M | 200M | 233M | 210M | 38.53% |
+| Extended run | 1,885M | 300M | 200M | 692M | 693M | 39.87% |
+
 
 </details>
