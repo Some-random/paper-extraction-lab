@@ -338,7 +338,7 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 We first test how good QWen 3.5 0.8B base works with mid-training, but we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
-We then move on to the mixing experiments on QWen 3.5 4B base models
+So we changed the starting points to QWen 3.5 4B base models
 
 | 4B rewrite mid-training | Correct-answer probability after mid-training | Free-form accuracy after post-training |
 |---|---:|---:|
@@ -349,7 +349,7 @@ We then move on to the mixing experiments on QWen 3.5 4B base models
 | 943M tokens, PMC-heavy | 28.76% | 36.92% |
 | 943M tokens, FineWeb-Edu-heavy | 27.75% | 36.34% |
 
-Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. Adding the BioCollection data is hurting the model, most likely because it's data are too broad?
+Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which does not use structure information.
 
 **Scaling experiments**
 
