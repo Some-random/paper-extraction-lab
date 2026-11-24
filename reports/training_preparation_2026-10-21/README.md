@@ -304,7 +304,7 @@ We then fine-tuned Qwen3.5 **base** checkpoints on the **10,000 protein trajecto
 <details>
 <summary><h3>Mid-training scaling and mixing</h3></summary>
 
-**Evaluation**: We compare the original and mid-trained models on the same 200 synthetic protein questions by measuring the log probabilities assigned to the correct answer text.
+**Evaluation**: (1) measuring the log probabilities assigned to the correct answer text. (2) measuring the accuracy after post-training.
 
 <details>
 <summary>How answer log probabilities work</summary>
@@ -336,27 +336,29 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 </details>
 
-We first test how good QWen 3.5 0.8B base works with mid-training, but we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
+On 0.8B base models, we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
-So we changed the starting points to QWen 3.5 4B base models
+So we changed the starting points to Qwen 3.5 4B base models. However, the training time for different models are 2h for 0.8B, 6h for 4B, 19h for 9B.
 
-| 4B rewrite mid-training | Correct-answer probability after mid-training | Free-form accuracy after post-training |
+| 4B rewrite mid-training | Correct-answer probability after mid-training | Accuracy after post-training |
 |---|---:|---:|
 | 0 tokens | 28.48%  | 35.72% |
-| 943M tokens, near-even mix |  29.49% | 37.20% |
-| 943M tokens, Swiss-Prot-heavy | **30.12%** | **38.53%** |
-| 943M tokens, BioCollection-heavy | 27.93% | 35.43% |
-| 943M tokens, PMC-heavy | 28.76% | 36.92% |
-| 943M tokens, FineWeb-Edu-heavy | 27.75% | 36.34% |
+| 500M tokens, near-even mix |  29.49% | 37.20% |
+| 500M tokens, Swiss-Prot-heavy | **30.12%** | **38.53%** |
+| 500M tokens, BioCollection-heavy | 27.93% | 35.43% |
+| 500M tokens, PMC-heavy | 28.76% | 36.92% |
+| 500M tokens, FineWeb-Edu-heavy | 28.71% | 36.34% |
 
-Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which was intentionally filtered to not rely on structure information.
+Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. 
+
+Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which was intentionally filtered to not rely on structure information.
 
 **Scaling experiments**
 
-| 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | Free-form accuracy after post-training |
+| 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | Accuracy after post-training |
 |---|---:|---:|---:|---:|---:|---:|
-| Swiss-Prot-heavy | 943M | 300M | 200M | 233M | 210M | 38.53% |
-| Extended run | 1,885M | 300M | 200M | 692M | 693M | 39.87% |
+| Swiss-Prot-heavy | 500M | 300M | 66M | 66M | 66M | 38.53% |
+| Extended run | 1,500M | 300M * 3 | 200M | 200M | 200M | 40.87% |
 
 
 </details>
