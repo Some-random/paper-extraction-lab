@@ -9,10 +9,10 @@ We are continuing training on Qwen3.5-4B with protein-related material to study 
 | Source or dataset | Documents or examples | Total tokens | Currently available rewritten tokens | Average length | Average length after rewrite |
 |---|---:|---:|---:|---:|---:|
 | **Swiss-Prot** | 0.58M records | 3.66B | 0.30B | 6.35K | 0.86K |
-| **PMC** | 9.09M papers | 99.70B | 0.99B | 11.00K | 1.26K |
-| **BioCollection** | 36.60M records | 36.50B | 0.50B | 1.00K | 1.25K |
-| **FineWeb-Edu (filtered for bio)** | 11.80M pages | 9.14B | 1.01B | 0.78K | 0.41K |
-| **Total accepted rewrites** | — | — | **2.80B** | — | **0.70K** |
+| **PMC** | 9.09M papers | 99.70B | 1.49B | 11.00K | 1.23K |
+| **BioCollection** | 36.60M records | 36.50B | 1.00B | 1.00K | 1.23K |
+| **FineWeb-Edu (filtered for bio)** | 11.80M pages | 9.14B | 1.51B | 0.78K | 0.40K |
+| **Total accepted rewrites** | — | — | **4.30B** | — | **0.70K** |
 | **QA post-training datasets** | | | | | |
 | 10K QA post-training | 0.01M questions | 0.02B | — | 2.24K | — |
 | 124K QA post-training | 0.12M questions | 0.27B | — | 2.18K | — |
