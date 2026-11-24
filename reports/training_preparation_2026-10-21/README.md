@@ -304,17 +304,7 @@ We then fine-tuned Qwen3.5 **base** checkpoints on the **10,000 protein trajecto
 <details>
 <summary><h3>Mid-training scaling and mixing</h3></summary>
 
-We are running the mixing experiments from the pretrained **Qwen3.5-0.8B-Base** checkpoint (0.9B total parameters), with a target pool of **250 million rewritten tokens per source**. The goal is to test whether a smaller model trained on more data can outperform a larger model trained on less.
-
-| Source | Mix 1 | Mix 2 | Mix 3 | Mix 4 |
-|---|---:| ---:| ---:| ---:|
-| Swiss-Prot | 25% | 40% | 20% | 20% |
-| PMC | 25% | 20% | 40% | 20% |
-| BioCollection | 25% | 20%| 20% | 40% |
-| FineWeb-Edu | 25% | 20% | 20% | 20% |
-| **LogProbs** | | | |  |
-
-We compare the original and mid-trained models on the same 200 synthetic protein questions by measuring the log probabilities assigned to the correct answer text.
+**Evaluation**: We compare the original and mid-trained models on the same 200 synthetic protein questions by measuring the log probabilities assigned to the correct answer text.
 
 <details>
 <summary>How answer log probabilities work</summary>
@@ -346,14 +336,11 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 </details>
 
-**Held-out perplexity** measures how well the model predicts the next token in validation text. The 0.8B comparison uses the same 250K tokens of rewritten text from each of Swiss-Prot, BioCollection, PMC, and FineWeb-Edu, held out from training. Lower is better.
-
 We first test how good QWen 3.5 0.8B base works with mid-training, but we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
 
-
 | 4B rewrite mid-training | Correct-answer probability after mid-training | Free-form accuracy after post-training |
-|---|---:|---:|---:|
+|---|---:|---:|
 | 0 tokens | 28.48%  | 35.72% |
 | 943M tokens, near-even mix |  29.49% | 37.20% |
 | 943M tokens, Swiss-Prot-heavy | 30.12% | 38.53% |
@@ -366,7 +353,7 @@ Having Swiss-Prot is most helpful for our task, most likely because our tasks' d
 **Scaling experiments**
 
 | 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | Free-form accuracy after post-training |
-|---|---:|---:|---:|---:|---:|
+|---|---:|---:|---:|---:|---:|---:|
 | Swiss-Prot-heavy | 943M | 300M | 200M | 233M | 210M | 38.53% |
 | Extended run | 1,885M | 300M | 200M | 692M | 693M | 39.87% |
 
