@@ -349,7 +349,7 @@ So we changed the starting points to QWen 3.5 4B base models
 | 943M tokens, PMC-heavy | 28.76% | 36.92% |
 | 943M tokens, FineWeb-Edu-heavy | 27.75% | 36.34% |
 
-Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which does not use structure information.
+Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which was intentionally filtered to not rely on structure information.
 
 **Scaling experiments**
 
