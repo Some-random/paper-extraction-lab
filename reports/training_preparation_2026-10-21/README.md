@@ -338,7 +338,7 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 On 0.8B base models, we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
-So we changed the starting points to Qwen 3.5 4B base models. However, the training time for different models are 2h for 0.8B, 6h for 4B, 19h for 9B.
+So we changed the starting points to Qwen 3.5 4B base models. (However, the training time for different models are 2h for 0.8B, 6h for 4B, 19h for 9B!)
 
 | 4B rewrite mid-training | Correct-answer probability after mid-training | Accuracy after post-training |
 |---|---:|---:|
