@@ -393,10 +393,10 @@ LVGSCRKCDMCSDDLENYCPG
     ^  ^  ^       ^
 ```
 
-**How we checked**  
+**Where does this knowledge come from**  
 The protein database UniProt marks those exact four spots as places where this protein binds zinc. [UniProt annotation](https://www.uniprot.org/uniprotkb/A0A0U4AHM6/entry)
 
-*LiveProteinBench case `GO_molecular_function_0018`. The saved answer is from the Qwen3.5-4B checkpoint after 1.885B rewrite tokens and five passes on protein question-and-answer examples.*
+*LiveProteinBench case `GO_molecular_function_0018`. The saved answer is from the Qwen3.5-4B checkpoint*
 
 </details>
 
