@@ -362,4 +362,42 @@ Adding the BioCollection data is hurting the model -- upon closer inspection, I 
 
 
 
+<details>
+<summary>Example · What does this protein do?</summary>
+
+**Question**  
+Each letter represents one building block of a protein. Which activity best fits this sequence?
+
+```text
+MAKSPEVEHPVKAFGWAARDPSGVLSPFNFSRRATGEHDVQFKVLYCGICHSDLHMIKNEWGFTKYPIVPGH
+EIVGVVTEVGSKVEKFKVGDKVGVGCLVGSCRKCDMCSDDLENYCPGQILTYSAAYTDGTTTYGGYSNLMVS
+DEHFVICWPENLPMDIGAPLLCAGITTYSPLRYFGLDKPGTHVGVVGLGGLGHVAVKFAKAFGAKVTVISTS
+ESKKQEAIEKLGADAFLVSRDPEQMQGAAGSMDGIIDTVSAVHPVLPLVNLLKSQGKLIMVGAPEKPLELPV
+FPLLAGRRIIAGSAIGGLKETQEMIDFAAKNNILPDVELVPMDYVNTAMERLLKADVKYRFVIDIGNTLKSA
+```
+
+**Answer choices in plain language**
+
+- **A.** Bind zinc.
+- **B.** Move cadmium, another metal, across a cell membrane.
+- **C.** Rearrange the atoms in a molecule.
+- **D.** Add an oxygen atom to a molecule.
+
+**How the mid-trained model answered**  
+It spotted four `C`s close together. This pattern can help a protein hold zinc in place, so the model chose **A. Bind zinc**.
+
+The four `C`s are at **positions 103, 106, 109, and 117**, counting from the first letter. Here are positions 99–119 with the four `C`s marked.
+
+```text
+LVGSCRKCDMCSDDLENYCPG
+    ^  ^  ^       ^
+```
+
+**How we checked**  
+The protein database UniProt marks those exact four spots as places where this protein binds zinc. [UniProt annotation](https://www.uniprot.org/uniprotkb/A0A0U4AHM6/entry)
+
+*LiveProteinBench case `GO_molecular_function_0018`. The saved answer is from the Qwen3.5-4B checkpoint after 1.885B rewrite tokens and five passes on protein question-and-answer examples.*
+
+</details>
+
 </details>
