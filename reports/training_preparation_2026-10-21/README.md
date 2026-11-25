@@ -336,7 +336,7 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 </details>
 
-On 0.8B base models, we can't find any benefits on **LogProbs** or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
+On 0.8B base models, we can't find any benefits on Probs or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
 So we changed the starting points to Qwen 3.5 4B base models. (However, the training time for different models are 2h for 0.8B, 6h for 4B, 19h for 9B!)
 
@@ -359,6 +359,7 @@ Adding the BioCollection data is hurting the model -- upon closer inspection, I 
 |---|---:|---:|---:|---:|---:|---:|
 | Swiss-Prot-heavy | 500M | 300M | 66M | 66M | 66M | 38.53% |
 | Extended run | 1,500M | 300M * 3 | 200M | 200M | 200M | 40.87% |
+
 
 
 </details>
