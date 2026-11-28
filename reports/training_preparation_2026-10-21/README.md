@@ -353,6 +353,25 @@ Having Swiss-Prot is most helpful for our task, most likely because our tasks' d
 
 Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which was intentionally filtered to not rely on structure information.
 
+<details>
+<summary>400M mix comparison before post-training</summary>
+
+All five Qwen3.5-4B-Base runs used 400M rewritten tokens. The equal mix used 100M tokens per source. Each heavy mix used 280M from the named source and 40M from each of the other three.
+
+We scored the next answer letter on the same 1,674 LiveProteinBench questions before QA post-training. We normalized each model’s probabilities across A–D and summed the probability assigned to all accepted choices.
+
+| 400M training mix | Mean probability on correct answers | Correct top choice |
+|---|---:|---:|
+| Equal mix | 30.13% | **34.89%** |
+| Swiss-Prot-heavy | **30.39%** | 34.35% |
+| FineWeb-Edu-heavy | 30.14% | 33.33% |
+| PMC-heavy | 28.96% | 31.24% |
+| BioCollection-heavy | 29.20% | 30.76% |
+
+The equal mix picked the most correct answers. Swiss-Prot-heavy assigned the most probability to correct choices.
+
+</details>
+
 **Scaling experiments**
 
 | 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | Accuracy after post-training |
