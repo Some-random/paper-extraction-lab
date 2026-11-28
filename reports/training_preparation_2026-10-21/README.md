@@ -304,10 +304,10 @@ We then fine-tuned Qwen3.5 **base** checkpoints on the **10,000 protein trajecto
 <details>
 <summary><h3>Mid-training scaling and mixing</h3></summary>
 
-**Evaluation**: (1) measuring the log probabilities assigned to the correct answer text. (2) measuring the accuracy after post-training.
+**Evaluation.** The current tables score the next A–D letter before QA fine-tuning and generated answers after QA fine-tuning. Both use the 1,674-question held-out benchmark.
 
 <details>
-<summary>How answer log probabilities work</summary>
+<summary>Earlier 200-question answer-text scoring</summary>
 
 Each of the 200 questions has four choices, A–D. Here is one of the actual questions:
 
@@ -338,23 +338,9 @@ The 200 questions come from the earlier synthetic QA datasets; this is not a ful
 
 On 0.8B base models, we can't find any benefits on Probs or results after SFT. One hypothesis: smaller models need more data to show benefits from mid-training, and that smaller models might suffer more from forgetting than bigger models.
 
-So we changed the starting points to Qwen 3.5 4B base models. (However, the training time for different models are 2h for 0.8B, 6h for 4B, 19h for 9B!)
+We also tested Qwen3.5-4B Base. On two B200s, a single pass over the same 942.7M rewrite tokens took 2h 31m for 0.8B, 6h 25m for 4B, and 21h 14m for 9B.
 
-| 4B rewrite mid-training | Correct-answer probability after mid-training | Accuracy after post-training |
-|---|---:|---:|
-| 0 tokens | 28.48%  | 35.72% |
-| 500M tokens, near-even mix |  29.49% | 37.20% |
-| 500M tokens, Swiss-Prot-heavy | **30.12%** | **38.53%** |
-| 500M tokens, BioCollection-heavy | 27.93% | 35.43% |
-| 500M tokens, PMC-heavy | 28.76% | 36.92% |
-| 500M tokens, FineWeb-Edu-heavy | 28.71% | 36.34% |
-
-Having Swiss-Prot is most helpful for our task, most likely because our tasks' data are also coming from Swiss-Prot. 
-
-Adding the BioCollection data is hurting the model -- upon closer inspection, I found a big portion of the BioCollection data contains information about protein structures an their confidence, which is not directly related to my task, which was intentionally filtered to not rely on structure information.
-
-<details>
-<summary>400M mix comparison before post-training</summary>
+**400M mix comparison before post-training**
 
 All five Qwen3.5-4B-Base runs used 400M rewritten tokens. The equal mix used 100M tokens per source. Each heavy mix used 280M from the named source and 40M from each of the other three.
 
@@ -370,14 +356,28 @@ We scored the next answer letter on the same 1,674 LiveProteinBench questions be
 
 The equal mix picked the most correct answers. Swiss-Prot-heavy assigned the most probability to correct choices.
 
-</details>
+**4B scaling experiments**
 
-**Scaling experiments**
+All runs start from Qwen3.5-4B-Base. The 1,885M-token run continued the 943M-token checkpoint for another 943M tokens with a different source mix. Source columns show cumulative rewritten tokens.
 
-| 4B mix | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | Accuracy after post-training |
-|---|---:|---:|---:|---:|---:|---:|
-| Swiss-Prot-heavy | 500M | 300M | 66M | 66M | 66M | 38.53% |
-| Extended run | 1,500M | 300M * 3 | 200M | 200M | 200M | 40.87% |
+| 4B checkpoint | Total | Swiss-Prot | BioCollection | PMC | FineWeb-Edu | A–D accuracy before QA fine-tuning | Generated accuracy after 3 QA epochs | Generated accuracy after 5 QA epochs |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| No mid-training | 0 | 0 | 0 | 0 | 0 | 32.20% | 35.72% | 33.39% |
+| Near-even mix | 943M | 250M | 250M | 232.56M | 210.16M | 34.47% | 36.20% | 33.99% |
+| Continued mid-training | 1,885M | 300M | 500M | 570.18M | 515.27M | 33.45% | 32.97% | 36.74% |
+
+All scores use the same 1,674 held-out questions. Before QA fine-tuning, we score the next answer letter on A100s. After fine-tuning on 9,988 QAs, we generate answers on B200s with matching prompts, sampling settings, and scoring.
+
+**9B mid-training**
+
+Qwen3.5-9B-Base used one pass over 942.7M rewritten tokens (250M Swiss-Prot, 250M BioCollection, 232.56M PMC, and 210.16M FineWeb-Edu). Both checkpoints were scored on the same 1,674 held-out questions on one A100.
+
+| 9B checkpoint | Mid-training tokens | Mean probability of the correct A–D choice | A–D accuracy |
+|---|---:|---:|---:|
+| Original Base | 0 | 29.48% | 38.41% |
+| After mid-training | 942.7M | 30.58% | 37.69% |
+
+For each question, the four letter probabilities are normalized to sum to 100%. We sum the probability of all accepted letters and average across questions. The earlier 200-question evaluation described above scored full answer text.
 
 
 
